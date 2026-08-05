@@ -41,7 +41,7 @@
     ],
     "answer_text": "Bulwark",
     "source_page": 250,
-    "prompt": "Which of these words is closest in meaning to the word rampart?",
+    "prompt": "Which of these words is closest in meaning to the word \"rampart\"?",
     "correctLabel": "E",
     "hint": "A rampart is the raised earthen or stone barrier thrown up around a fort to hold off attackers."
   },
@@ -87,7 +87,7 @@
     ],
     "answer_text": "Urgent",
     "source_page": 250,
-    "prompt": "Which of these words is closest in meaning to the word imperative?",
+    "prompt": "Which of these words is closest in meaning to the word \"imperative\"?",
     "correctLabel": "D",
     "hint": "Something imperative cannot be put off; it demands action immediately."
   },
@@ -133,7 +133,7 @@
     ],
     "answer_text": "Wonder",
     "source_page": 251,
-    "prompt": "Which of these words is closest in meaning to the word marvel?",
+    "prompt": "Which of these words is closest in meaning to the word \"marvel\"?",
     "correctLabel": "D",
     "hint": "A marvel is something so astonishing that it leaves you staring."
   },
@@ -179,7 +179,7 @@
     ],
     "answer_text": "Perfect",
     "source_page": 251,
-    "prompt": "Which of these words is closest in meaning to the word consummate?",
+    "prompt": "Which of these words is closest in meaning to the word \"consummate\"?",
     "correctLabel": "A",
     "hint": "Consummate describes something carried to the highest degree, with nothing left wanting."
   },
@@ -225,7 +225,7 @@
     ],
     "answer_text": "Preliminary",
     "source_page": 252,
-    "prompt": "Which of these words is closest in meaning to the word prevenient?",
+    "prompt": "Which of these words is closest in meaning to the word \"prevenient\"?",
     "correctLabel": "E",
     "hint": "Prevenient describes what comes ahead of the main event and prepares the way for it."
   },
@@ -271,7 +271,7 @@
     ],
     "answer_text": "Sage",
     "source_page": 252,
-    "prompt": "Which of these words is closest in meaning to the word sapient?",
+    "prompt": "Which of these words is closest in meaning to the word \"sapient\"?",
     "correctLabel": "A",
     "hint": "Sapient describes a person possessed of deep wisdom and sound judgment."
   },
@@ -317,7 +317,7 @@
     ],
     "answer_text": "Cancel",
     "source_page": 253,
-    "prompt": "Which of these words is closest in meaning to the word annul?",
+    "prompt": "Which of these words is closest in meaning to the word \"annul\"?",
     "correctLabel": "D",
     "hint": "To annul something is to declare it void so that it no longer holds."
   },
@@ -363,7 +363,7 @@
     ],
     "answer_text": "Armed",
     "source_page": 253,
-    "prompt": "Which of these words is closest in meaning to the word aculeated?",
+    "prompt": "Which of these words is closest in meaning to the word \"aculeated\"?",
     "correctLabel": "A",
     "hint": "Aculeated describes a plant or creature fitted with sharp spines or prickles."
   },
@@ -409,7 +409,7 @@
     ],
     "answer_text": "Straight",
     "source_page": 253,
-    "prompt": "Which of these words is closest in meaning to the word right?",
+    "prompt": "Which of these words is closest in meaning to the word \"right\"?",
     "correctLabel": "E",
     "hint": "Used of a line or an angle, this word means running without bend or curve."
   },
@@ -455,7 +455,7 @@
     ],
     "answer_text": "Primordial",
     "source_page": 254,
-    "prompt": "Which of these words is closest in meaning to the word aboriginal?",
+    "prompt": "Which of these words is closest in meaning to the word \"aboriginal\"?",
     "correctLabel": "D",
     "hint": "Aboriginal describes what belonged to a place from the very earliest times."
   },
@@ -501,7 +501,7 @@
     ],
     "answer_text": "Sharply",
     "source_page": 255,
-    "prompt": "Which of these words is closest in meaning to the word acutely?",
+    "prompt": "Which of these words is closest in meaning to the word \"acutely\"?",
     "correctLabel": "B",
     "hint": "Acutely describes feeling something with a keen, piercing edge rather than dully."
   },
@@ -547,7 +547,7 @@
     ],
     "answer_text": "Complete",
     "source_page": 255,
-    "prompt": "Which of these words is closest in meaning to the word crown?",
+    "prompt": "Which of these words is closest in meaning to the word \"crown\"?",
     "correctLabel": "C",
     "hint": "To crown an effort is to put the finishing touch on it."
   },
@@ -593,7 +593,7 @@
     ],
     "answer_text": "Social",
     "source_page": 256,
-    "prompt": "Which of these words is closest in meaning to the word gregarious?",
+    "prompt": "Which of these words is closest in meaning to the word \"gregarious\"?",
     "correctLabel": "E",
     "hint": "Gregarious describes someone who thrives in company and seeks out other people."
   },
@@ -639,7 +639,7 @@
     ],
     "answer_text": "Rend",
     "source_page": 256,
-    "prompt": "Which of these words is closest in meaning to the word tear?",
+    "prompt": "Which of these words is closest in meaning to the word \"tear\"?",
     "correctLabel": "D",
     "hint": "To tear cloth is to pull it violently apart along a split."
   },
@@ -685,7 +685,7 @@
     ],
     "answer_text": "Arrange",
     "source_page": 257,
-    "prompt": "Which of these words is closest in meaning to the word classify?",
+    "prompt": "Which of these words is closest in meaning to the word \"classify\"?",
     "correctLabel": "D",
     "hint": "To classify things is to sort them into orderly groups by kind."
   },
@@ -731,7 +731,7 @@
     ],
     "answer_text": "Cruelty",
     "source_page": 257,
-    "prompt": "Which of these words is closest in meaning to the word oppression?",
+    "prompt": "Which of these words is closest in meaning to the word \"oppression\"?",
     "correctLabel": "D",
     "hint": "Oppression is the harsh, unjust treatment of people held under someone's power."
   },
@@ -777,7 +777,7 @@
     ],
     "answer_text": "Higgle",
     "source_page": 258,
-    "prompt": "Which of these words is closest in meaning to the word haggle?",
+    "prompt": "Which of these words is closest in meaning to the word \"haggle\"?",
     "correctLabel": "A",
     "hint": "To haggle is to wrangle back and forth over a price before agreeing."
   },
@@ -823,7 +823,7 @@
     ],
     "answer_text": "Breed",
     "source_page": 258,
-    "prompt": "Which of these words is closest in meaning to the word propagate?",
+    "prompt": "Which of these words is closest in meaning to the word \"propagate\"?",
     "correctLabel": "C",
     "hint": "To propagate a species is to multiply it by producing new generations."
   },
@@ -869,7 +869,7 @@
     ],
     "answer_text": "Silent",
     "source_page": 258,
-    "prompt": "Which of these words is closest in meaning to the word tacit?",
+    "prompt": "Which of these words is closest in meaning to the word \"tacit\"?",
     "correctLabel": "C",
     "hint": "A tacit agreement is one understood by both sides without a word being spoken."
   },
@@ -915,7 +915,7 @@
     ],
     "answer_text": "Unreal",
     "source_page": 259,
-    "prompt": "Which of these words is closest in meaning to the word fictitious?",
+    "prompt": "Which of these words is closest in meaning to the word \"fictitious\"?",
     "correctLabel": "C",
     "hint": "Fictitious describes something invented rather than drawn from fact."
   },
@@ -961,7 +961,7 @@
     ],
     "answer_text": "Smell",
     "source_page": 260,
-    "prompt": "Which of these words is closest in meaning to the word odor?",
+    "prompt": "Which of these words is closest in meaning to the word \"odor\"?",
     "correctLabel": "B",
     "hint": "An odor is what reaches you through the nose, whether pleasant or foul."
   },
@@ -1007,7 +1007,7 @@
     ],
     "answer_text": "Undesirable",
     "source_page": 260,
-    "prompt": "Which of these words is closest in meaning to the word inexpedient?",
+    "prompt": "Which of these words is closest in meaning to the word \"inexpedient\"?",
     "correctLabel": "A",
     "hint": "Inexpedient describes a course that would be unwise to take, however possible it is."
   },
@@ -1053,7 +1053,7 @@
     ],
     "answer_text": "Undying",
     "source_page": 261,
-    "prompt": "Which of these words is closest in meaning to the word deathless?",
+    "prompt": "Which of these words is closest in meaning to the word \"deathless\"?",
     "correctLabel": "D",
     "hint": "Deathless describes fame or glory that never fades with the passing of time."
   },
@@ -1099,7 +1099,7 @@
     ],
     "answer_text": "Devious",
     "source_page": 261,
-    "prompt": "Which of these words is closest in meaning to the word tortuous?",
+    "prompt": "Which of these words is closest in meaning to the word \"tortuous\"?",
     "correctLabel": "C",
     "hint": "Tortuous describes a path or an argument full of twists and turns."
   },
@@ -1145,7 +1145,7 @@
     ],
     "answer_text": "Inferred",
     "source_page": 262,
-    "prompt": "Which of these words is closest in meaning to the word consequent?",
+    "prompt": "Which of these words is closest in meaning to the word \"consequent\"?",
     "correctLabel": "C",
     "hint": "Consequent describes what follows as a result of what came before."
   },
@@ -1191,7 +1191,7 @@
     ],
     "answer_text": "Sympathize",
     "source_page": 262,
-    "prompt": "Which of these words is closest in meaning to the word condole?",
+    "prompt": "Which of these words is closest in meaning to the word \"condole\"?",
     "correctLabel": "B",
     "hint": "To condole with someone is to grieve alongside them in their loss."
   },
@@ -1237,7 +1237,7 @@
     ],
     "answer_text": "Measurement",
     "source_page": 263,
-    "prompt": "Which of these words is closest in meaning to the word diminish?",
+    "prompt": "Which of these words is closest in meaning to the word \"diminish\"?",
     "correctLabel": "C"
   },
   {
@@ -1282,7 +1282,7 @@
     ],
     "answer_text": "Ungainly",
     "source_page": 263,
-    "prompt": "Which of these words is closest in meaning to the word awkward?",
+    "prompt": "Which of these words is closest in meaning to the word \"awkward\"?",
     "correctLabel": "D",
     "hint": "Awkward describes a clumsy way of moving that lacks all grace."
   },
@@ -1328,7 +1328,7 @@
     ],
     "answer_text": "Intoxicated",
     "source_page": 263,
-    "prompt": "Which of these words is closest in meaning to the word besotted?",
+    "prompt": "Which of these words is closest in meaning to the word \"besotted\"?",
     "correctLabel": "C",
     "hint": "Besotted describes someone whose judgment has been muddled by drink."
   },
@@ -1374,7 +1374,7 @@
     ],
     "answer_text": "Annex",
     "source_page": 264,
-    "prompt": "Which of these words is closest in meaning to the word affiliate?",
+    "prompt": "Which of these words is closest in meaning to the word \"affiliate\"?",
     "correctLabel": "B",
     "hint": "To affiliate a smaller body is to attach it to a larger one."
   },
@@ -1420,7 +1420,7 @@
     ],
     "answer_text": "Fastidious",
     "source_page": 265,
-    "prompt": "Which of these words is closest in meaning to the word noisome?",
+    "prompt": "Which of these words is closest in meaning to the word \"noisome\"?",
     "correctLabel": "A"
   },
   {
@@ -1465,7 +1465,7 @@
     ],
     "answer_text": "Nonsensical",
     "source_page": 265,
-    "prompt": "Which of these words is closest in meaning to the word senseless?",
+    "prompt": "Which of these words is closest in meaning to the word \"senseless\"?",
     "correctLabel": "D",
     "hint": "Senseless describes talk or action with no meaning behind it at all."
   },
@@ -1511,7 +1511,7 @@
     ],
     "answer_text": "Careless",
     "source_page": 266,
-    "prompt": "Which of these words is closest in meaning to the word reckless?",
+    "prompt": "Which of these words is closest in meaning to the word \"reckless\"?",
     "correctLabel": "E",
     "hint": "Reckless describes acting without any thought for the danger involved."
   },
@@ -1557,7 +1557,7 @@
     ],
     "answer_text": "Equal",
     "source_page": 266,
-    "prompt": "Which of these words is closest in meaning to the word adequate?",
+    "prompt": "Which of these words is closest in meaning to the word \"adequate\"?",
     "correctLabel": "C",
     "hint": "Adequate describes an amount that just measures up to what the task requires."
   },
@@ -1603,7 +1603,7 @@
     ],
     "answer_text": "Productive",
     "source_page": 267,
-    "prompt": "Which of these words is closest in meaning to the word fruitful?",
+    "prompt": "Which of these words is closest in meaning to the word \"fruitful\"?",
     "correctLabel": "E",
     "hint": "Fruitful describes effort that yields plenty in return."
   },
@@ -1649,7 +1649,7 @@
     ],
     "answer_text": "Specious",
     "source_page": 267,
-    "prompt": "Which of these words is closest in meaning to the word colorable?",
+    "prompt": "Which of these words is closest in meaning to the word \"colorable\"?",
     "correctLabel": "A",
     "hint": "Colorable describes an argument that looks sound on its face but will not stand up."
   },
@@ -1695,7 +1695,7 @@
     ],
     "answer_text": "Restore",
     "source_page": 268,
-    "prompt": "Which of these words is closest in meaning to the word repair?",
+    "prompt": "Which of these words is closest in meaning to the word \"repair\"?",
     "correctLabel": "C",
     "hint": "To repair something is to put it back into working order."
   },
@@ -1741,7 +1741,7 @@
     ],
     "answer_text": "Exemption",
     "source_page": 268,
-    "prompt": "Which of these words is closest in meaning to the word immunity?",
+    "prompt": "Which of these words is closest in meaning to the word \"immunity\"?",
     "correctLabel": "B",
     "hint": "Immunity means being let off a duty that binds everyone else."
   },
@@ -1787,7 +1787,7 @@
     ],
     "answer_text": "Disembowel",
     "source_page": 268,
-    "prompt": "Which of these words is closest in meaning to the word eviscerate?",
+    "prompt": "Which of these words is closest in meaning to the word \"eviscerate\"?",
     "correctLabel": "A",
     "hint": "To eviscerate an animal is to take out its inner organs."
   },
@@ -1833,7 +1833,7 @@
     ],
     "answer_text": "Purge",
     "source_page": 269,
-    "prompt": "Which of these words is closest in meaning to the word scour?",
+    "prompt": "Which of these words is closest in meaning to the word \"scour\"?",
     "correctLabel": "E",
     "hint": "To scour a place is to clear it out thoroughly, leaving nothing behind."
   },
@@ -1879,7 +1879,7 @@
     ],
     "answer_text": "Wash",
     "source_page": 270,
-    "prompt": "Which of these words is closest in meaning to the word drench?",
+    "prompt": "Which of these words is closest in meaning to the word \"drench\"?",
     "correctLabel": "E",
     "hint": "To drench something is to soak it through with liquid."
   },
@@ -1925,7 +1925,7 @@
     ],
     "answer_text": "Model",
     "source_page": 270,
-    "prompt": "Which of these words is closest in meaning to the word pattern?",
+    "prompt": "Which of these words is closest in meaning to the word \"pattern\"?",
     "correctLabel": "B",
     "hint": "A pattern is the design you copy when making something else like it."
   },
@@ -1971,7 +1971,7 @@
     ],
     "answer_text": "Fight",
     "source_page": 271,
-    "prompt": "Which of these words is closest in meaning to the word battle?",
+    "prompt": "Which of these words is closest in meaning to the word \"battle\"?",
     "correctLabel": "A",
     "hint": "A battle is an armed clash between two opposing forces."
   },
@@ -2017,7 +2017,7 @@
     ],
     "answer_text": "Break",
     "source_page": 271,
-    "prompt": "Which of these words is closest in meaning to the word infringe?",
+    "prompt": "Which of these words is closest in meaning to the word \"infringe\"?",
     "correctLabel": "B",
     "hint": "To infringe a rule is to go against it and violate its terms."
   },
@@ -2063,7 +2063,7 @@
     ],
     "answer_text": "Liable",
     "source_page": 272,
-    "prompt": "Which of these words is closest in meaning to the word answerable?",
+    "prompt": "Which of these words is closest in meaning to the word \"answerable\"?",
     "correctLabel": "E",
     "hint": "Answerable describes someone who must account for a result and bear the blame."
   },
@@ -2109,7 +2109,7 @@
     ],
     "answer_text": "Weak",
     "source_page": 272,
-    "prompt": "Which of these words is closest in meaning to the word washy?",
+    "prompt": "Which of these words is closest in meaning to the word \"washy\"?",
     "correctLabel": "A",
     "hint": "Washy describes something watered down until it has no strength or flavor left."
   },
@@ -2155,7 +2155,7 @@
     ],
     "answer_text": "Enchantment",
     "source_page": 273,
-    "prompt": "Which of these words is closest in meaning to the word witchery?",
+    "prompt": "Which of these words is closest in meaning to the word \"witchery\"?",
     "correctLabel": "B",
     "hint": "Witchery is the working of magic spells to bend someone to your will."
   },
@@ -2201,7 +2201,7 @@
     ],
     "answer_text": "Exclude",
     "source_page": 273,
-    "prompt": "Which of these words is closest in meaning to the word debar?",
+    "prompt": "Which of these words is closest in meaning to the word \"debar\"?",
     "correctLabel": "C",
     "hint": "To debar someone is to shut them out of taking part."
   },
@@ -2247,7 +2247,7 @@
     ],
     "answer_text": "Invade",
     "source_page": 273,
-    "prompt": "Which of these words is closest in meaning to the word enter?",
+    "prompt": "Which of these words is closest in meaning to the word \"enter\"?",
     "correctLabel": "C",
     "hint": "To enter forcefully is to push your way into a place uninvited."
   },
@@ -2293,7 +2293,7 @@
     ],
     "answer_text": "real",
     "source_page": 274,
-    "prompt": "Which of these words is closest in meaning to the word positive?",
+    "prompt": "Which of these words is closest in meaning to the word \"positive\"?",
     "correctLabel": "E",
     "hint": "Positive can mean actual and beyond any doubt, not merely supposed."
   },
@@ -2339,7 +2339,7 @@
     ],
     "answer_text": "compensation",
     "source_page": 275,
-    "prompt": "Which of these words is closest in meaning to the word amends?",
+    "prompt": "Which of these words is closest in meaning to the word \"amends\"?",
     "correctLabel": "D",
     "hint": "To make amends is to give something back to right a wrong you did."
   },
@@ -2385,7 +2385,7 @@
     ],
     "answer_text": "Resistant",
     "source_page": 275,
-    "prompt": "Which of these words is closest in meaning to the word insubordinate?",
+    "prompt": "Which of these words is closest in meaning to the word \"insubordinate\"?",
     "correctLabel": "E",
     "hint": "Insubordinate describes someone who refuses to obey those set over them."
   },
@@ -2431,7 +2431,7 @@
     ],
     "answer_text": "Complete",
     "source_page": 276,
-    "prompt": "Which of these words is closest in meaning to the word faultless?",
+    "prompt": "Which of these words is closest in meaning to the word \"faultless\"?",
     "correctLabel": "E",
     "hint": "Faultless describes work in which not one flaw can be found."
   },
@@ -2477,7 +2477,7 @@
     ],
     "answer_text": "Lustful",
     "source_page": 276,
-    "prompt": "Which of these words is closest in meaning to the word lascivious?",
+    "prompt": "Which of these words is closest in meaning to the word \"lascivious\"?",
     "correctLabel": "B",
     "hint": "Lascivious describes behavior driven by open and improper desire."
   },
@@ -2523,7 +2523,7 @@
     ],
     "answer_text": "Dolorous",
     "source_page": 277,
-    "prompt": "Which of these words is closest in meaning to the word doll?",
+    "prompt": "Which of these words is closest in meaning to the word \"doll\"?",
     "correctLabel": "D"
   },
   {
@@ -2568,7 +2568,7 @@
     ],
     "answer_text": "Purchase",
     "source_page": 277,
-    "prompt": "Which of these words is closest in meaning to the word buy?",
+    "prompt": "Which of these words is closest in meaning to the word \"buy\"?",
     "correctLabel": "C",
     "hint": "To buy something is to hand over money and take it away as yours."
   },
@@ -2614,7 +2614,7 @@
     ],
     "answer_text": "Exertion",
     "source_page": 278,
-    "prompt": "Which of these words is closest in meaning to the word exercise?",
+    "prompt": "Which of these words is closest in meaning to the word \"exercise\"?",
     "correctLabel": "C",
     "hint": "Exercise means putting the body or mind hard to work."
   },
@@ -2660,7 +2660,7 @@
     ],
     "answer_text": "Supply",
     "source_page": 278,
-    "prompt": "Which of these words is closest in meaning to the word furnish?",
+    "prompt": "Which of these words is closest in meaning to the word \"furnish\"?",
     "correctLabel": "B",
     "hint": "To furnish someone is to provide them with what they need."
   },
@@ -2706,7 +2706,7 @@
     ],
     "answer_text": "Renegade",
     "source_page": 279,
-    "prompt": "Which of these words is closest in meaning to the word deserter?",
+    "prompt": "Which of these words is closest in meaning to the word \"deserter\"?",
     "correctLabel": "D",
     "hint": "A deserter is one who abandons the cause he had sworn to serve."
   },
@@ -2752,7 +2752,7 @@
     ],
     "answer_text": "Tell",
     "source_page": 279,
-    "prompt": "Which of these words is closest in meaning to the word apprise?",
+    "prompt": "Which of these words is closest in meaning to the word \"apprise\"?",
     "correctLabel": "A",
     "hint": "To apprise someone is to let them know what has happened."
   },
@@ -2798,7 +2798,7 @@
     ],
     "answer_text": "Wake",
     "source_page": 280,
-    "prompt": "Which of these words is closest in meaning to the word enliven?",
+    "prompt": "Which of these words is closest in meaning to the word \"enliven\"?",
     "correctLabel": "B",
     "hint": "To enliven a dull room is to stir it back into life."
   },
@@ -2844,7 +2844,7 @@
     ],
     "answer_text": "Immaterial",
     "source_page": 280,
-    "prompt": "Which of these words is closest in meaning to the word impassible?",
+    "prompt": "Which of these words is closest in meaning to the word \"impassible\"?",
     "correctLabel": "A",
     "hint": "Impassible describes a being beyond the reach of bodily pain or feeling."
   },
@@ -2890,7 +2890,7 @@
     ],
     "answer_text": "Eldership",
     "source_page": 281,
-    "prompt": "Which of these words is closest in meaning to the word seniority?",
+    "prompt": "Which of these words is closest in meaning to the word \"seniority\"?",
     "correctLabel": "E",
     "hint": "Seniority is the standing a person gains from age or long service."
   },
@@ -2936,7 +2936,7 @@
     ],
     "answer_text": "Lawful",
     "source_page": 281,
-    "prompt": "Which of these words is closest in meaning to the word licit?",
+    "prompt": "Which of these words is closest in meaning to the word \"licit\"?",
     "correctLabel": "D",
     "hint": "Licit describes conduct that the law allows."
   },
@@ -2982,7 +2982,7 @@
     ],
     "answer_text": "Imbecile",
     "source_page": 282,
-    "prompt": "Which of these words is closest in meaning to the word idiot?",
+    "prompt": "Which of these words is closest in meaning to the word \"idiot\"?",
     "correctLabel": "A",
     "hint": "Idiot is an old and blunt label for a person thought to lack all sense."
   },
@@ -3028,7 +3028,7 @@
     ],
     "answer_text": "Tarry",
     "source_page": 282,
-    "prompt": "Which of these words is closest in meaning to the word linger?",
+    "prompt": "Which of these words is closest in meaning to the word \"linger\"?",
     "correctLabel": "C",
     "hint": "To linger is to stay on longer than you needed to."
   },
@@ -3074,7 +3074,7 @@
     ],
     "answer_text": "Facing",
     "source_page": 283,
-    "prompt": "Which of these words is closest in meaning to the word opposite?",
+    "prompt": "Which of these words is closest in meaning to the word \"opposite\"?",
     "correctLabel": "C",
     "hint": "Opposite describes two things set directly across from one another."
   },
@@ -3120,7 +3120,7 @@
     ],
     "answer_text": "Artistic",
     "source_page": 283,
-    "prompt": "Which of these words is closest in meaning to the word finished?",
+    "prompt": "Which of these words is closest in meaning to the word \"finished\"?",
     "correctLabel": "D",
     "hint": "Finished work has been brought to a high polish rather than left rough."
   },
@@ -3166,7 +3166,7 @@
     ],
     "answer_text": "Fill",
     "source_page": 283,
-    "prompt": "Which of these words is closest in meaning to the word replenish?",
+    "prompt": "Which of these words is closest in meaning to the word \"replenish\"?",
     "correctLabel": "E",
     "hint": "To replenish a store is to build the supply back up to where it was."
   },
@@ -3212,7 +3212,7 @@
     ],
     "answer_text": "Fortunate",
     "source_page": 284,
-    "prompt": "Which of these words is closest in meaning to the word lucky?",
+    "prompt": "Which of these words is closest in meaning to the word \"lucky\"?",
     "correctLabel": "A",
     "hint": "Lucky describes someone on whom good chance has happened to fall."
   },
@@ -3258,7 +3258,7 @@
     ],
     "answer_text": "Terrible",
     "source_page": 285,
-    "prompt": "Which of these words is closest in meaning to the word tremendous?",
+    "prompt": "Which of these words is closest in meaning to the word \"tremendous\"?",
     "correctLabel": "A",
     "hint": "Tremendous, in its older sense, describes something so vast that it inspires dread."
   },
@@ -3304,7 +3304,7 @@
     ],
     "answer_text": "Disappoint",
     "source_page": 285,
-    "prompt": "Which of these words is closest in meaning to the word tantalize?",
+    "prompt": "Which of these words is closest in meaning to the word \"tantalize\"?",
     "correctLabel": "B",
     "hint": "To tantalize is to dangle something just out of reach and never let it be had."
   },
@@ -3350,7 +3350,7 @@
     ],
     "answer_text": "Untrodden",
     "source_page": 286,
-    "prompt": "Which of these words is closest in meaning to the word trackless?",
+    "prompt": "Which of these words is closest in meaning to the word \"trackless\"?",
     "correctLabel": "C",
     "hint": "Trackless describes wild ground where no path has ever been worn."
   },
@@ -3396,7 +3396,7 @@
     ],
     "answer_text": "Pouring",
     "source_page": 286,
-    "prompt": "Which of these words is closest in meaning to the word effusion?",
+    "prompt": "Which of these words is closest in meaning to the word \"effusion\"?",
     "correctLabel": "E",
     "hint": "An effusion is a stream of liquid or feeling flowing freely out."
   },
@@ -3442,7 +3442,7 @@
     ],
     "answer_text": "Note",
     "source_page": 287,
-    "prompt": "Which of these words is closest in meaning to the word comment?",
+    "prompt": "Which of these words is closest in meaning to the word \"comment\"?",
     "correctLabel": "A",
     "hint": "A comment is a brief remark offered about something."
   },
@@ -3488,7 +3488,7 @@
     ],
     "answer_text": "Shout",
     "source_page": 287,
-    "prompt": "Which of these words is closest in meaning to the word bawl?",
+    "prompt": "Which of these words is closest in meaning to the word \"bawl\"?",
     "correctLabel": "E",
     "hint": "To bawl is to raise the voice to its loudest pitch."
   },
@@ -3534,7 +3534,7 @@
     ],
     "answer_text": "Chastise",
     "source_page": 288,
-    "prompt": "Which of these words is closest in meaning to the word punish?",
+    "prompt": "Which of these words is closest in meaning to the word \"punish\"?",
     "correctLabel": "B",
     "hint": "To punish someone is to impose a penalty for what they did wrong."
   },
@@ -3580,7 +3580,7 @@
     ],
     "answer_text": "Booty",
     "source_page": 288,
-    "prompt": "Which of these words is closest in meaning to the word prize?",
+    "prompt": "Which of these words is closest in meaning to the word \"prize\"?",
     "correctLabel": "E",
     "hint": "In the old naval sense, a prize is the plunder carried off from a captured ship."
   },
@@ -3626,7 +3626,7 @@
     ],
     "answer_text": "Sad",
     "source_page": 288,
-    "prompt": "Which of these words is closest in meaning to the word grievous?",
+    "prompt": "Which of these words is closest in meaning to the word \"grievous\"?",
     "correctLabel": "B",
     "hint": "Grievous describes something heavy enough to cause real grief."
   },
@@ -3672,7 +3672,7 @@
     ],
     "answer_text": "Intention",
     "source_page": 289,
-    "prompt": "Which of these words is closest in meaning to the word purpose?",
+    "prompt": "Which of these words is closest in meaning to the word \"purpose\"?",
     "correctLabel": "E",
     "hint": "Your purpose is the aim you set out to achieve."
   },
@@ -3718,7 +3718,7 @@
     ],
     "answer_text": "Soothing",
     "source_page": 290,
-    "prompt": "Which of these words is closest in meaning to the word demulcent?",
+    "prompt": "Which of these words is closest in meaning to the word \"demulcent\"?",
     "correctLabel": "D",
     "hint": "A demulcent is a remedy that calms and softens an irritated surface."
   },
@@ -3764,7 +3764,7 @@
     ],
     "answer_text": "Compound",
     "source_page": 290,
-    "prompt": "Which of these words is closest in meaning to the word concoct?",
+    "prompt": "Which of these words is closest in meaning to the word \"concoct\"?",
     "correctLabel": "A",
     "hint": "To concoct a remedy is to blend several ingredients into one."
   },
@@ -3810,7 +3810,7 @@
     ],
     "answer_text": "Soundness",
     "source_page": 291,
-    "prompt": "Which of these words is closest in meaning to the word probity?",
+    "prompt": "Which of these words is closest in meaning to the word \"probity\"?",
     "correctLabel": "D",
     "hint": "Probity is the firm honesty of a character that will not bend."
   },
@@ -3856,7 +3856,7 @@
     ],
     "answer_text": "Recommend",
     "source_page": 291,
-    "prompt": "Which of these words is closest in meaning to the word ingratiate?",
+    "prompt": "Which of these words is closest in meaning to the word \"ingratiate\"?",
     "correctLabel": "E",
     "hint": "To ingratiate yourself is to work your way into another's good favor."
   },
@@ -3902,7 +3902,7 @@
     ],
     "answer_text": "Moot",
     "source_page": 292,
-    "prompt": "Which of these words is closest in meaning to the word broach?",
+    "prompt": "Which of these words is closest in meaning to the word \"broach\"?",
     "correctLabel": "C",
     "hint": "To broach a subject is to raise it for discussion for the first time."
   },
@@ -3948,7 +3948,7 @@
     ],
     "answer_text": "Retaliation",
     "source_page": 292,
-    "prompt": "Which of these words is closest in meaning to the word revenge?",
+    "prompt": "Which of these words is closest in meaning to the word \"revenge\"?",
     "correctLabel": "B",
     "hint": "Revenge is the harm you deal back to someone who wronged you."
   },
@@ -3994,7 +3994,7 @@
     ],
     "answer_text": "Torpor",
     "source_page": 293,
-    "prompt": "Which of these words is closest in meaning to the word deadness?",
+    "prompt": "Which of these words is closest in meaning to the word \"deadness\"?",
     "correctLabel": "B",
     "hint": "Deadness is a heavy dullness in which nothing stirs or feels."
   },
@@ -4040,7 +4040,7 @@
     ],
     "answer_text": "Treasure",
     "source_page": 293,
-    "prompt": "Which of these words is closest in meaning to the word store?",
+    "prompt": "Which of these words is closest in meaning to the word \"store\"?",
     "correctLabel": "B",
     "hint": "A store in this sense is a hoard of valuables laid up and kept safe."
   },
@@ -4086,7 +4086,7 @@
     ],
     "answer_text": "Combination",
     "source_page": 293,
-    "prompt": "Which of these words is closest in meaning to the word coalition?",
+    "prompt": "Which of these words is closest in meaning to the word \"coalition\"?",
     "correctLabel": "B",
     "hint": "A coalition is an alliance of separate parties joined for one purpose."
   },
@@ -4132,7 +4132,7 @@
     ],
     "answer_text": "Lively",
     "source_page": 294,
-    "prompt": "Which of these words is closest in meaning to the word cheerful?",
+    "prompt": "Which of these words is closest in meaning to the word \"cheerful\"?",
     "correctLabel": "E",
     "hint": "Cheerful describes a bright and happy frame of mind."
   },
@@ -4178,7 +4178,7 @@
     ],
     "answer_text": "Amazing",
     "source_page": 295,
-    "prompt": "Which of these words is closest in meaning to the word stupendous?",
+    "prompt": "Which of these words is closest in meaning to the word \"stupendous\"?",
     "correctLabel": "E",
     "hint": "Stupendous describes something so vast that it stuns you."
   },
@@ -4224,7 +4224,7 @@
     ],
     "answer_text": "Repurchase",
     "source_page": 295,
-    "prompt": "Which of these words is closest in meaning to the word redemption?",
+    "prompt": "Which of these words is closest in meaning to the word \"redemption\"?",
     "correctLabel": "C",
     "hint": "Redemption in its original sense is paying to get back what you had pledged."
   },
@@ -4270,7 +4270,7 @@
     ],
     "answer_text": "Oily",
     "source_page": 296,
-    "prompt": "Which of these words is closest in meaning to the word oleaginous?",
+    "prompt": "Which of these words is closest in meaning to the word \"oleaginous\"?",
     "correctLabel": "A",
     "hint": "Oleaginous describes a surface slick and greasy to the touch."
   },
@@ -4316,7 +4316,7 @@
     ],
     "answer_text": "Occupant",
     "source_page": 296,
-    "prompt": "Which of these words is closest in meaning to the word inhabitant?",
+    "prompt": "Which of these words is closest in meaning to the word \"inhabitant\"?",
     "correctLabel": "D",
     "hint": "An inhabitant is a person who lives in a particular place."
   },
@@ -4362,7 +4362,7 @@
     ],
     "answer_text": "White",
     "source_page": 297,
-    "prompt": "Which of these words is closest in meaning to the word milky?",
+    "prompt": "Which of these words is closest in meaning to the word \"milky\"?",
     "correctLabel": "C",
     "hint": "Milky describes a pale clouded look, like that of fresh milk."
   },
@@ -4408,7 +4408,7 @@
     ],
     "answer_text": "Redoubted",
     "source_page": 297,
-    "prompt": "Which of these words is closest in meaning to the word doughty?",
+    "prompt": "Which of these words is closest in meaning to the word \"doughty\"?",
     "correctLabel": "C",
     "hint": "Doughty describes a fighter so brave that enemies think twice."
   },
@@ -4454,7 +4454,7 @@
     ],
     "answer_text": "Talkativeness",
     "source_page": 298,
-    "prompt": "Which of these words is closest in meaning to the word loquacity?",
+    "prompt": "Which of these words is closest in meaning to the word \"loquacity\"?",
     "correctLabel": "B",
     "hint": "Loquacity is the habit of pouring out far more words than the moment needs."
   },
@@ -4500,7 +4500,7 @@
     ],
     "answer_text": "Germ",
     "source_page": 298,
-    "prompt": "Which of these words is closest in meaning to the word embryo?",
+    "prompt": "Which of these words is closest in meaning to the word \"embryo\"?",
     "correctLabel": "D",
     "hint": "An embryo is the first tiny beginning out of which something grows."
   },
@@ -4546,7 +4546,7 @@
     ],
     "answer_text": "Loftiness",
     "source_page": 298,
-    "prompt": "Which of these words is closest in meaning to the word pride?",
+    "prompt": "Which of these words is closest in meaning to the word \"pride\"?",
     "correctLabel": "C",
     "hint": "Pride is the habit of carrying yourself as though set above others."
   },
@@ -4592,7 +4592,7 @@
     ],
     "answer_text": "Unjustifiable",
     "source_page": 299,
-    "prompt": "Which of these words is closest in meaning to the word irremissible?",
+    "prompt": "Which of these words is closest in meaning to the word \"irremissible\"?",
     "correctLabel": "A",
     "hint": "Irremissible describes a fault that can never be pardoned or explained away."
   },
@@ -4638,7 +4638,7 @@
     ],
     "answer_text": "Strike",
     "source_page": 300,
-    "prompt": "Which of these words is closest in meaning to the word beat?",
+    "prompt": "Which of these words is closest in meaning to the word \"beat\"?",
     "correctLabel": "B",
     "hint": "To beat something is to hit it hard and repeatedly."
   },
@@ -4684,7 +4684,7 @@
     ],
     "answer_text": "Draw",
     "source_page": 300,
-    "prompt": "Which of these words is closest in meaning to the word deduce?",
+    "prompt": "Which of these words is closest in meaning to the word \"deduce\"?",
     "correctLabel": "A",
     "hint": "To deduce is to reason a conclusion out of the facts before you."
   },
@@ -4730,7 +4730,7 @@
     ],
     "answer_text": "Merciless",
     "source_page": 301,
-    "prompt": "Which of these words is closest in meaning to the word inexorable?",
+    "prompt": "Which of these words is closest in meaning to the word \"inexorable\"?",
     "correctLabel": "B",
     "hint": "Inexorable describes a force that no amount of pleading will turn aside."
   },
@@ -4776,7 +4776,7 @@
     ],
     "answer_text": "Ultimatum",
     "source_page": 301,
-    "prompt": "Which of these words is closest in meaning to the word maximum?",
+    "prompt": "Which of these words is closest in meaning to the word \"maximum\"?",
     "correctLabel": "E",
     "hint": "Maximum names the utmost point, past which nothing further is offered."
   },
@@ -4822,7 +4822,7 @@
     ],
     "answer_text": "Religion",
     "source_page": 302,
-    "prompt": "Which of these words is closest in meaning to the word piety?",
+    "prompt": "Which of these words is closest in meaning to the word \"piety\"?",
     "correctLabel": "C",
     "hint": "Piety is devout reverence toward what one holds sacred."
   },
@@ -4868,7 +4868,7 @@
     ],
     "answer_text": "Initiate",
     "source_page": 302,
-    "prompt": "Which of these words is closest in meaning to the word begin?",
+    "prompt": "Which of these words is closest in meaning to the word \"begin\"?",
     "correctLabel": "B",
     "hint": "To begin something is to set it going for the first time."
   },
@@ -4914,7 +4914,7 @@
     ],
     "answer_text": "Estrange",
     "source_page": 303,
-    "prompt": "Which of these words is closest in meaning to the word alienate?",
+    "prompt": "Which of these words is closest in meaning to the word \"alienate\"?",
     "correctLabel": "D",
     "hint": "To alienate a friend is to drive away someone once close to you."
   },
@@ -4960,7 +4960,7 @@
     ],
     "answer_text": "Industrious",
     "source_page": 303,
-    "prompt": "Which of these words is closest in meaning to the word busy?",
+    "prompt": "Which of these words is closest in meaning to the word \"busy\"?",
     "correctLabel": "C",
     "hint": "Busy describes a person always hard at work with much to do."
   },
@@ -5006,7 +5006,7 @@
     ],
     "answer_text": "Choice",
     "source_page": 303,
-    "prompt": "Which of these words is closest in meaning to the word election?",
+    "prompt": "Which of these words is closest in meaning to the word \"election\"?",
     "correctLabel": "A",
     "hint": "An election is the act of picking one out from several."
   },
@@ -5052,7 +5052,7 @@
     ],
     "answer_text": "Overornament",
     "source_page": 304,
-    "prompt": "Which of these words is closest in meaning to the word finery?",
+    "prompt": "Which of these words is closest in meaning to the word \"finery\"?",
     "correctLabel": "C",
     "hint": "Finery is showy dress piled on well past what taste requires."
   },
@@ -5098,7 +5098,7 @@
     ],
     "answer_text": "Cool",
     "source_page": 305,
-    "prompt": "Which of these words is closest in meaning to the word refresh?",
+    "prompt": "Which of these words is closest in meaning to the word \"refresh\"?",
     "correctLabel": "A",
     "hint": "To refresh someone is to revive them by taking the heat out of the moment."
   },
@@ -5144,7 +5144,7 @@
     ],
     "answer_text": "Boused",
     "source_page": 305,
-    "prompt": "Which of these words is closest in meaning to the word animated?",
+    "prompt": "Which of these words is closest in meaning to the word \"animated\"?",
     "correctLabel": "B"
   },
   {
@@ -5189,7 +5189,7 @@
     ],
     "answer_text": "Uniform",
     "source_page": 306,
-    "prompt": "Which of these words is closest in meaning to the word livery?",
+    "prompt": "Which of these words is closest in meaning to the word \"livery\"?",
     "correctLabel": "A",
     "hint": "Livery is the distinctive dress worn by the servants of one house."
   },
@@ -5235,7 +5235,7 @@
     ],
     "answer_text": "Associate",
     "source_page": 306,
-    "prompt": "Which of these words is closest in meaning to the word companion?",
+    "prompt": "Which of these words is closest in meaning to the word \"companion\"?",
     "correctLabel": "D",
     "hint": "A companion is someone who regularly keeps you company."
   },
@@ -5281,7 +5281,7 @@
     ],
     "answer_text": "Trouble",
     "source_page": 307,
-    "prompt": "Which of these words is closest in meaning to the word tribulation?",
+    "prompt": "Which of these words is closest in meaning to the word \"tribulation\"?",
     "correctLabel": "A",
     "hint": "Tribulation is a long spell of hardship and suffering."
   },
@@ -5327,7 +5327,7 @@
     ],
     "answer_text": "Fill",
     "source_page": 307,
-    "prompt": "Which of these words is closest in meaning to the word fulfill?",
+    "prompt": "Which of these words is closest in meaning to the word \"fulfill\"?",
     "correctLabel": "A",
     "hint": "This word means to carry a promise all the way through to completion."
   },
@@ -5373,7 +5373,7 @@
     ],
     "answer_text": "Pigmy",
     "source_page": 308,
-    "prompt": "Which of these words is closest in meaning to the word dwarf?",
+    "prompt": "Which of these words is closest in meaning to the word \"dwarf\"?",
     "correctLabel": "B",
     "hint": "A dwarf is a person or thing far below the usual size."
   },
@@ -5419,7 +5419,7 @@
     ],
     "answer_text": "Sophistry",
     "source_page": 308,
-    "prompt": "Which of these words is closest in meaning to the word fallacy?",
+    "prompt": "Which of these words is closest in meaning to the word \"fallacy\"?",
     "correctLabel": "D",
     "hint": "A fallacy is a piece of false reasoning that looks sound at a glance."
   },
@@ -5465,7 +5465,7 @@
     ],
     "answer_text": "Vagabond",
     "source_page": 308,
-    "prompt": "Which of these words is closest in meaning to the word rogue?",
+    "prompt": "Which of these words is closest in meaning to the word \"rogue\"?",
     "correctLabel": "B",
     "hint": "A rogue is a shifty wanderer with no honest trade."
   },
@@ -5511,7 +5511,7 @@
     ],
     "answer_text": "Judge",
     "source_page": 309,
-    "prompt": "Which of these words is closest in meaning to the word critic?",
+    "prompt": "Which of these words is closest in meaning to the word \"critic\"?",
     "correctLabel": "C",
     "hint": "A critic is one who weighs the merit of a work and pronounces on it."
   },
@@ -5557,7 +5557,7 @@
     ],
     "answer_text": "Tell",
     "source_page": 310,
-    "prompt": "Which of these words is closest in meaning to the word relate?",
+    "prompt": "Which of these words is closest in meaning to the word \"relate\"?",
     "correctLabel": "D",
     "hint": "To relate what happened is to give an account of it in words."
   },
@@ -5603,7 +5603,7 @@
     ],
     "answer_text": "Swell",
     "source_page": 310,
-    "prompt": "Which of these words is closest in meaning to the word expand?",
+    "prompt": "Which of these words is closest in meaning to the word \"expand\"?",
     "correctLabel": "C",
     "hint": "To expand is to grow larger and take up more room."
   },
@@ -5649,7 +5649,7 @@
     ],
     "answer_text": "Jump",
     "source_page": 311,
-    "prompt": "Which of these words is closest in meaning to the word leap?",
+    "prompt": "Which of these words is closest in meaning to the word \"leap\"?",
     "correctLabel": "A",
     "hint": "To leap is to spring off the ground with one push."
   },
@@ -5695,7 +5695,7 @@
     ],
     "answer_text": "Tinge",
     "source_page": 311,
-    "prompt": "Which of these words is closest in meaning to the word imbue?",
+    "prompt": "Which of these words is closest in meaning to the word \"imbue\"?",
     "correctLabel": "B",
     "hint": "To imbue something is to steep it through until it takes on that quality."
   },
@@ -5741,7 +5741,7 @@
     ],
     "answer_text": "Kindness",
     "source_page": 312,
-    "prompt": "Which of these words is closest in meaning to the word benevolence?",
+    "prompt": "Which of these words is closest in meaning to the word \"benevolence\"?",
     "correctLabel": "C",
     "hint": "Benevolence is a settled goodwill toward other people."
   },
@@ -5787,7 +5787,7 @@
     ],
     "answer_text": "Arrest",
     "source_page": 312,
-    "prompt": "Which of these words is closest in meaning to the word intercept?",
+    "prompt": "Which of these words is closest in meaning to the word \"intercept\"?",
     "correctLabel": "A",
     "hint": "To intercept something is to stop it partway to where it was headed."
   },
@@ -5833,7 +5833,7 @@
     ],
     "answer_text": "Granted",
     "source_page": 313,
-    "prompt": "Which of these words is closest in meaning to the word provided?",
+    "prompt": "Which of these words is closest in meaning to the word \"provided\"?",
     "correctLabel": "E",
     "hint": "Provided introduces the condition on which the rest depends."
   },
@@ -5879,7 +5879,7 @@
     ],
     "answer_text": "Shamelessness",
     "source_page": 313,
-    "prompt": "Which of these words is closest in meaning to the word profligacy?",
+    "prompt": "Which of these words is closest in meaning to the word \"profligacy\"?",
     "correctLabel": "B",
     "hint": "Profligacy is reckless indulgence that throws off every restraint."
   },
@@ -5925,7 +5925,7 @@
     ],
     "answer_text": "Posture",
     "source_page": 313,
-    "prompt": "Which of these words is closest in meaning to the word attitude?",
+    "prompt": "Which of these words is closest in meaning to the word \"attitude\"?",
     "correctLabel": "D",
     "hint": "In its physical sense, attitude is the way the body is held."
   },
@@ -5971,7 +5971,7 @@
     ],
     "answer_text": "Subsidence",
     "source_page": 314,
-    "prompt": "Which of these words is closest in meaning to the word settlement?",
+    "prompt": "Which of these words is closest in meaning to the word \"settlement\"?",
     "correctLabel": "E",
     "hint": "Settlement here is the slow sinking of ground beneath a building."
   },
@@ -6017,7 +6017,7 @@
     ],
     "answer_text": "Obedient",
     "source_page": 315,
-    "prompt": "Which of these words is closest in meaning to the word submissive?",
+    "prompt": "Which of these words is closest in meaning to the word \"submissive\"?",
     "correctLabel": "D",
     "hint": "Submissive describes someone who yields readily to another's authority."
   },
@@ -6063,7 +6063,7 @@
     ],
     "answer_text": "Reignite",
     "source_page": 315,
-    "prompt": "Which of these words is closest in meaning to the word rekindle?",
+    "prompt": "Which of these words is closest in meaning to the word \"rekindle\"?",
     "correctLabel": "A",
     "hint": "To rekindle a fire or a feeling is to set it burning once more."
   },
@@ -6109,7 +6109,7 @@
     ],
     "answer_text": "Period",
     "source_page": 316,
-    "prompt": "Which of these words is closest in meaning to the word season?",
+    "prompt": "Which of these words is closest in meaning to the word \"season\"?",
     "correctLabel": "A",
     "hint": "A season is one marked stretch of the year."
   },
@@ -6155,7 +6155,7 @@
     ],
     "answer_text": "Primary",
     "source_page": 316,
-    "prompt": "Which of these words is closest in meaning to the word original?",
+    "prompt": "Which of these words is closest in meaning to the word \"original\"?",
     "correctLabel": "A",
     "hint": "Original describes what came first and gave rise to all the rest."
   },
@@ -6201,7 +6201,7 @@
     ],
     "answer_text": "Comely",
     "source_page": 317,
-    "prompt": "Which of these words is closest in meaning to the word picturesque?",
+    "prompt": "Which of these words is closest in meaning to the word \"picturesque\"?",
     "correctLabel": "C",
     "hint": "Picturesque describes a scene pleasant enough to be worth painting."
   },
@@ -6247,7 +6247,7 @@
     ],
     "answer_text": "Labor",
     "source_page": 317,
-    "prompt": "Which of these words is closest in meaning to the word strive?",
+    "prompt": "Which of these words is closest in meaning to the word \"strive\"?",
     "correctLabel": "C",
     "hint": "To strive is to press on hard against difficulty toward a goal."
   },
@@ -6293,7 +6293,7 @@
     ],
     "answer_text": "Boil",
     "source_page": 318,
-    "prompt": "Which of these words is closest in meaning to the word effervesce?",
+    "prompt": "Which of these words is closest in meaning to the word \"effervesce\"?",
     "correctLabel": "C",
     "hint": "To effervesce is to throw off bubbles at the surface of a liquid."
   },
@@ -6339,7 +6339,7 @@
     ],
     "answer_text": "Snug",
     "source_page": 318,
-    "prompt": "Which of these words is closest in meaning to the word comical?",
+    "prompt": "Which of these words is closest in meaning to the word \"comical\"?",
     "correctLabel": "A"
   },
   {
@@ -6384,7 +6384,7 @@
     ],
     "answer_text": "Total",
     "source_page": 318,
-    "prompt": "Which of these words is closest in meaning to the word amount?",
+    "prompt": "Which of these words is closest in meaning to the word \"amount\"?",
     "correctLabel": "E",
     "hint": "An amount is how much of something there is when it is all added up."
   },
@@ -6430,7 +6430,7 @@
     ],
     "answer_text": "Office",
     "source_page": 319,
-    "prompt": "Which of these words is closest in meaning to the word function?",
+    "prompt": "Which of these words is closest in meaning to the word \"function\"?",
     "correctLabel": "A",
     "hint": "A function is the particular work a person or thing is there to do."
   },
@@ -6476,7 +6476,7 @@
     ],
     "answer_text": "Requite",
     "source_page": 320,
-    "prompt": "Which of these words is closest in meaning to the word recompense?",
+    "prompt": "Which of these words is closest in meaning to the word \"recompense\"?",
     "correctLabel": "D",
     "hint": "To recompense someone is to pay them back for what they gave or lost."
   },
@@ -6522,7 +6522,7 @@
     ],
     "answer_text": "Communication",
     "source_page": 320,
-    "prompt": "Which of these words is closest in meaning to the word message?",
+    "prompt": "Which of these words is closest in meaning to the word \"message\"?",
     "correctLabel": "E",
     "hint": "A message is a piece of information sent from one person to another."
   },
@@ -6568,7 +6568,7 @@
     ],
     "answer_text": "Cheerless",
     "source_page": 321,
-    "prompt": "Which of these words is closest in meaning to the word inconsolable?",
+    "prompt": "Which of these words is closest in meaning to the word \"inconsolable\"?",
     "correctLabel": "D",
     "hint": "Inconsolable describes grief so deep that no comfort can reach it."
   },
@@ -6614,7 +6614,7 @@
     ],
     "answer_text": "Fetch",
     "source_page": 321,
-    "prompt": "Which of these words is closest in meaning to the word bring?",
+    "prompt": "Which of these words is closest in meaning to the word \"bring\"?",
     "correctLabel": "B",
     "hint": "To bring something is to go and carry it to where it is wanted."
   },
@@ -6660,7 +6660,7 @@
     ],
     "answer_text": "Vindictive",
     "source_page": 322,
-    "prompt": "Which of these words is closest in meaning to the word revengeful?",
+    "prompt": "Which of these words is closest in meaning to the word \"revengeful\"?",
     "correctLabel": "B",
     "hint": "Revengeful describes someone set on paying back a wrong."
   },
@@ -6706,7 +6706,7 @@
     ],
     "answer_text": "Ancestor",
     "source_page": 322,
-    "prompt": "Which of these words is closest in meaning to the word predecessor?",
+    "prompt": "Which of these words is closest in meaning to the word \"predecessor\"?",
     "correctLabel": "E",
     "hint": "A predecessor is whoever held the place before the present holder."
   },
@@ -6752,7 +6752,7 @@
     ],
     "answer_text": "Depreciate",
     "source_page": 323,
-    "prompt": "Which of these words is closest in meaning to the word disparage?",
+    "prompt": "Which of these words is closest in meaning to the word \"disparage\"?",
     "correctLabel": "B",
     "hint": "To disparage something is to talk it down and belittle its worth."
   },
@@ -6798,7 +6798,7 @@
     ],
     "answer_text": "Condense",
     "source_page": 323,
-    "prompt": "Which of these words is closest in meaning to the word thicken?",
+    "prompt": "Which of these words is closest in meaning to the word \"thicken\"?",
     "correctLabel": "A",
     "hint": "To thicken a sauce is to cook it down until it grows dense."
   },
@@ -6844,7 +6844,7 @@
     ],
     "answer_text": "Stricture",
     "source_page": 323,
-    "prompt": "Which of these words is closest in meaning to the word criticism?",
+    "prompt": "Which of these words is closest in meaning to the word \"criticism\"?",
     "correctLabel": "E",
     "hint": "Criticism is a judgment passed on a fault someone has found."
   },
@@ -6890,7 +6890,7 @@
     ],
     "answer_text": "Recently",
     "source_page": 324,
-    "prompt": "Which of these words is closest in meaning to the word lately?",
+    "prompt": "Which of these words is closest in meaning to the word \"lately\"?",
     "correctLabel": "E",
     "hint": "Lately points to the short span of time just gone by."
   },
@@ -6936,7 +6936,7 @@
     ],
     "answer_text": "Greatness",
     "source_page": 325,
-    "prompt": "Which of these words is closest in meaning to the word size?",
+    "prompt": "Which of these words is closest in meaning to the word \"size\"?",
     "correctLabel": "D",
     "hint": "Size is how big something is when you measure it."
   },
@@ -6982,7 +6982,7 @@
     ],
     "answer_text": "Atom",
     "source_page": 325,
-    "prompt": "Which of these words is closest in meaning to the word corpuscle?",
+    "prompt": "Which of these words is closest in meaning to the word \"corpuscle\"?",
     "correctLabel": "C",
     "hint": "A corpuscle is a body so minute that it cannot be seen alone."
   },
@@ -7028,7 +7028,7 @@
     ],
     "answer_text": "Agony",
     "source_page": 326,
-    "prompt": "Which of these words is closest in meaning to the word torture?",
+    "prompt": "Which of these words is closest in meaning to the word \"torture\"?",
     "correctLabel": "A",
     "hint": "Torture is suffering pushed to the furthest extreme."
   },
@@ -7074,7 +7074,7 @@
     ],
     "answer_text": "Named",
     "source_page": 326,
-    "prompt": "Which of these words is closest in meaning to the word called?",
+    "prompt": "Which of these words is closest in meaning to the word \"called\"?",
     "correctLabel": "E",
     "hint": "Called refers to the title by which a thing goes."
   },
@@ -7120,7 +7120,7 @@
     ],
     "answer_text": "Essay",
     "source_page": 327,
-    "prompt": "Which of these words is closest in meaning to the word disquisition?",
+    "prompt": "Which of these words is closest in meaning to the word \"disquisition\"?",
     "correctLabel": "A",
     "hint": "A disquisition is a long, careful written treatment of a subject."
   },
@@ -7166,7 +7166,7 @@
     ],
     "answer_text": "Enlighten",
     "source_page": 327,
-    "prompt": "Which of these words is closest in meaning to the word inform?",
+    "prompt": "Which of these words is closest in meaning to the word \"inform\"?",
     "correctLabel": "B",
     "hint": "To inform someone is to leave them wiser than you found them."
   },
@@ -7212,7 +7212,7 @@
     ],
     "answer_text": "Gear",
     "source_page": 328,
-    "prompt": "Which of these words is closest in meaning to the word trapping?",
+    "prompt": "Which of these words is closest in meaning to the word \"trapping\"?",
     "correctLabel": "D",
     "hint": "Trappings are the full set of equipment and ornament that go with a role."
   },
@@ -7258,7 +7258,7 @@
     ],
     "answer_text": "Found",
     "source_page": 328,
-    "prompt": "Which of these words is closest in meaning to the word institute?",
+    "prompt": "Which of these words is closest in meaning to the word \"institute\"?",
     "correctLabel": "E",
     "hint": "To institute something is to set it up so that it will continue."
   },
@@ -7304,7 +7304,7 @@
     ],
     "answer_text": "Useful",
     "source_page": 328,
-    "prompt": "Which of these words is closest in meaning to the word serviceable?",
+    "prompt": "Which of these words is closest in meaning to the word \"serviceable\"?",
     "correctLabel": "D",
     "hint": "Serviceable describes something plain that still does its job well."
   },
@@ -7350,7 +7350,7 @@
     ],
     "answer_text": "Agent",
     "source_page": 329,
-    "prompt": "Which of these words is closest in meaning to the word doer?",
+    "prompt": "Which of these words is closest in meaning to the word \"doer\"?",
     "correctLabel": "A",
     "hint": "A doer is the one who actually performs the deed."
   },
@@ -7396,7 +7396,7 @@
     ],
     "answer_text": "Affliction",
     "source_page": 330,
-    "prompt": "Which of these words is closest in meaning to the word trouble?",
+    "prompt": "Which of these words is closest in meaning to the word \"trouble\"?",
     "correctLabel": "C",
     "hint": "Trouble is a real burden of hardship, not a passing nuisance."
   },
@@ -7442,7 +7442,7 @@
     ],
     "answer_text": "Agitate",
     "source_page": 330,
-    "prompt": "Which of these words is closest in meaning to the word shake?",
+    "prompt": "Which of these words is closest in meaning to the word \"shake\"?",
     "correctLabel": "B",
     "hint": "To shake something is to move it briskly to and fro."
   },
@@ -7488,7 +7488,7 @@
     ],
     "answer_text": "Incessant",
     "source_page": 331,
-    "prompt": "Which of these words is closest in meaning to the word inexhaustible?",
+    "prompt": "Which of these words is closest in meaning to the word \"inexhaustible\"?",
     "correctLabel": "B",
     "hint": "Inexhaustible describes a supply that simply never runs out."
   },
@@ -7534,7 +7534,7 @@
     ],
     "answer_text": "Indigestible",
     "source_page": 331,
-    "prompt": "Which of these words is closest in meaning to the word innutritious?",
+    "prompt": "Which of these words is closest in meaning to the word \"innutritious\"?",
     "correctLabel": "C",
     "hint": "Innutritious describes food the body gains nothing from."
   },
@@ -7580,7 +7580,7 @@
     ],
     "answer_text": "Little",
     "source_page": 332,
-    "prompt": "Which of these words is closest in meaning to the word small?",
+    "prompt": "Which of these words is closest in meaning to the word \"small\"?",
     "correctLabel": "E",
     "hint": "Small describes anything below the usual size."
   },
@@ -7626,7 +7626,7 @@
     ],
     "answer_text": "Pressing",
     "source_page": 332,
-    "prompt": "Which of these words is closest in meaning to the word incumbent?",
+    "prompt": "Which of these words is closest in meaning to the word \"incumbent\"?",
     "correctLabel": "D",
     "hint": "Incumbent describes a duty that rests on you and cannot be shrugged off."
   },
@@ -7672,7 +7672,7 @@
     ],
     "answer_text": "Adventurous",
     "source_page": 333,
-    "prompt": "Which of these words is closest in meaning to the word daring?",
+    "prompt": "Which of these words is closest in meaning to the word \"daring\"?",
     "correctLabel": "A",
     "hint": "Daring describes someone ready to face risk without flinching."
   },
@@ -7718,7 +7718,7 @@
     ],
     "answer_text": "Voracious",
     "source_page": 333,
-    "prompt": "Which of these words is closest in meaning to the word insatiable?",
+    "prompt": "Which of these words is closest in meaning to the word \"insatiable\"?",
     "correctLabel": "B",
     "hint": "Insatiable describes an appetite that no amount will ever fill."
   },
@@ -7764,7 +7764,7 @@
     ],
     "answer_text": "Aged",
     "source_page": 334,
-    "prompt": "Which of these words is closest in meaning to the word senile?",
+    "prompt": "Which of these words is closest in meaning to the word \"senile\"?",
     "correctLabel": "B",
     "hint": "Senile describes the weakening that comes with great age."
   },
@@ -7810,7 +7810,7 @@
     ],
     "answer_text": "Exertion",
     "source_page": 334,
-    "prompt": "Which of these words is closest in meaning to the word exercise?",
+    "prompt": "Which of these words is closest in meaning to the word \"exercise\"?",
     "correctLabel": "B",
     "hint": "Exercise is the spending of energy on a demanding task."
   },
@@ -7856,7 +7856,7 @@
     ],
     "answer_text": "Impulse",
     "source_page": 335,
-    "prompt": "Which of these words is closest in meaning to the word brunt?",
+    "prompt": "Which of these words is closest in meaning to the word \"brunt\"?",
     "correctLabel": "C",
     "hint": "The brunt is the main force of a blow, borne by whoever stands in the way."
   },
@@ -7902,7 +7902,7 @@
     ],
     "answer_text": "Integrity",
     "source_page": 335,
-    "prompt": "Which of these words is closest in meaning to the word honesty?",
+    "prompt": "Which of these words is closest in meaning to the word \"honesty\"?",
     "correctLabel": "D",
     "hint": "Honesty is the habit of telling the truth and dealing fairly."
   },
@@ -7948,7 +7948,7 @@
     ],
     "answer_text": "Change",
     "source_page": 336,
-    "prompt": "Which of these words is closest in meaning to the word shift?",
+    "prompt": "Which of these words is closest in meaning to the word \"shift\"?",
     "correctLabel": "E",
     "hint": "To shift is to move from one position or state to another."
   },
@@ -7994,7 +7994,7 @@
     ],
     "answer_text": "Aspirant",
     "source_page": 336,
-    "prompt": "Which of these words is closest in meaning to the word candidate?",
+    "prompt": "Which of these words is closest in meaning to the word \"candidate\"?",
     "correctLabel": "D",
     "hint": "A candidate is someone putting themselves forward for a post."
   },
@@ -8040,7 +8040,7 @@
     ],
     "answer_text": "Understanding",
     "source_page": 337,
-    "prompt": "Which of these words is closest in meaning to the word comprehension?",
+    "prompt": "Which of these words is closest in meaning to the word \"comprehension\"?",
     "correctLabel": "A",
     "hint": "Comprehension is the grasping of what something means."
   },
@@ -8086,7 +8086,7 @@
     ],
     "answer_text": "Careful",
     "source_page": 337,
-    "prompt": "Which of these words is closest in meaning to the word accurate?",
+    "prompt": "Which of these words is closest in meaning to the word \"accurate\"?",
     "correctLabel": "D",
     "hint": "Accurate describes work done exactly, without a single slip."
   },
@@ -8132,7 +8132,7 @@
     ],
     "answer_text": "Adore",
     "source_page": 338,
-    "prompt": "Which of these words is closest in meaning to the word worship?",
+    "prompt": "Which of these words is closest in meaning to the word \"worship\"?",
     "correctLabel": "B",
     "hint": "To worship is to offer the deepest reverence to something sacred."
   },
@@ -8178,7 +8178,7 @@
     ],
     "answer_text": "firstfruits",
     "source_page": 338,
-    "prompt": "Which of these words is closest in meaning to the word instalment?",
+    "prompt": "Which of these words is closest in meaning to the word \"instalment\"?",
     "correctLabel": "D",
     "hint": "An instalment is the opening portion handed over before the whole is paid."
   },
@@ -8224,7 +8224,7 @@
     ],
     "answer_text": "Detail",
     "source_page": 339,
-    "prompt": "Which of these words is closest in meaning to the word particular?",
+    "prompt": "Which of these words is closest in meaning to the word \"particular\"?",
     "correctLabel": "E",
     "hint": "A particular is one small item within a larger account."
   },
@@ -8270,7 +8270,7 @@
     ],
     "answer_text": "Attack",
     "source_page": 339,
-    "prompt": "Which of these words is closest in meaning to the word offence?",
+    "prompt": "Which of these words is closest in meaning to the word \"offence\"?",
     "correctLabel": "B",
     "hint": "Offence in this sense is striking out against someone rather than defending."
   },
@@ -8316,7 +8316,7 @@
     ],
     "answer_text": "Share",
     "source_page": 340,
-    "prompt": "Which of these words is closest in meaning to the word partake?",
+    "prompt": "Which of these words is closest in meaning to the word \"partake\"?",
     "correctLabel": "A",
     "hint": "To partake is to join with others in taking a portion."
   },
@@ -8362,7 +8362,7 @@
     ],
     "answer_text": "Adventitious",
     "source_page": 340,
-    "prompt": "Which of these words is closest in meaning to the word adroit?",
+    "prompt": "Which of these words is closest in meaning to the word \"adroit\"?",
     "correctLabel": "E"
   },
   {
@@ -8407,7 +8407,7 @@
     ],
     "answer_text": "Flourishing",
     "source_page": 341,
-    "prompt": "Which of these words is closest in meaning to the word blooming?",
+    "prompt": "Which of these words is closest in meaning to the word \"blooming\"?",
     "correctLabel": "D",
     "hint": "Blooming describes something growing strongly and in full health."
   },
@@ -8453,7 +8453,7 @@
     ],
     "answer_text": "Perfection",
     "source_page": 341,
-    "prompt": "Which of these words is closest in meaning to the word flower?",
+    "prompt": "Which of these words is closest in meaning to the word \"flower\"?",
     "correctLabel": "A",
     "hint": "The flower of a group is its very finest and choicest part."
   },
@@ -8499,7 +8499,7 @@
     ],
     "answer_text": "Bold",
     "source_page": 342,
-    "prompt": "Which of these words is closest in meaning to the word adventurous?",
+    "prompt": "Which of these words is closest in meaning to the word \"adventurous\"?",
     "correctLabel": "E",
     "hint": "Adventurous describes someone eager to take on risk for the sake of new experience."
   },
@@ -8545,7 +8545,7 @@
     ],
     "answer_text": "Amercement",
     "source_page": 342,
-    "prompt": "Which of these words is closest in meaning to the word mulct?",
+    "prompt": "Which of these words is closest in meaning to the word \"mulct\"?",
     "correctLabel": "B",
     "hint": "A mulct is a sum of money taken from someone as a penalty."
   },
@@ -8591,7 +8591,7 @@
     ],
     "answer_text": "Personal",
     "source_page": 343,
-    "prompt": "Which of these words is closest in meaning to the word individual?",
+    "prompt": "Which of these words is closest in meaning to the word \"individual\"?",
     "correctLabel": "C",
     "hint": "Individual describes what belongs to one single person rather than the group."
   },
@@ -8637,7 +8637,7 @@
     ],
     "answer_text": "Divide",
     "source_page": 343,
-    "prompt": "Which of these words is closest in meaning to the word split?",
+    "prompt": "Which of these words is closest in meaning to the word \"split\"?",
     "correctLabel": "A",
     "hint": "To split something is to break it apart into separate pieces."
   },
@@ -8683,7 +8683,7 @@
     ],
     "answer_text": "Confuse",
     "source_page": 343,
-    "prompt": "Which of these words is closest in meaning to the word shuffle?",
+    "prompt": "Which of these words is closest in meaning to the word \"shuffle\"?",
     "correctLabel": "D",
     "hint": "To shuffle things is to mix them up so their order is lost."
   },
@@ -8729,7 +8729,7 @@
     ],
     "answer_text": "Venomous",
     "source_page": 344,
-    "prompt": "Which of these words is closest in meaning to the word poisonous?",
+    "prompt": "Which of these words is closest in meaning to the word \"poisonous\"?",
     "correctLabel": "D",
     "hint": "Poisonous describes something that harms or kills when it enters the body."
   },
@@ -8775,7 +8775,7 @@
     ],
     "answer_text": "Vend",
     "source_page": 345,
-    "prompt": "Which of these words is closest in meaning to the word sell?",
+    "prompt": "Which of these words is closest in meaning to the word \"sell\"?",
     "correctLabel": "D",
     "hint": "To sell something is to hand it over in exchange for money."
   },
@@ -8821,7 +8821,7 @@
     ],
     "answer_text": "Rhetorical",
     "source_page": 345,
-    "prompt": "Which of these words is closest in meaning to the word dialectic?",
+    "prompt": "Which of these words is closest in meaning to the word \"dialectic\"?",
     "correctLabel": "D",
     "hint": "Dialectic concerns the art of reasoning and disputing a point."
   },
@@ -8867,7 +8867,7 @@
     ],
     "answer_text": "Cunning",
     "source_page": 346,
-    "prompt": "Which of these words is closest in meaning to the word sly?",
+    "prompt": "Which of these words is closest in meaning to the word \"sly\"?",
     "correctLabel": "D",
     "hint": "Sly describes someone clever at getting around others by stealth."
   },
@@ -8913,7 +8913,7 @@
     ],
     "answer_text": "Murky",
     "source_page": 346,
-    "prompt": "Which of these words is closest in meaning to the word lurid?",
+    "prompt": "Which of these words is closest in meaning to the word \"lurid\"?",
     "correctLabel": "D",
     "hint": "Lurid describes a dull, smoky glare that hides more than it shows."
   },
@@ -8959,7 +8959,7 @@
     ],
     "answer_text": "Dubious",
     "source_page": 347,
-    "prompt": "Which of these words is closest in meaning to the word debate?",
+    "prompt": "Which of these words is closest in meaning to the word \"debate\"?",
     "correctLabel": "A",
     "hint": "A matter under debate is one still open and not yet settled."
   },
@@ -9005,7 +9005,7 @@
     ],
     "answer_text": "Tete-a-tete",
     "source_page": 347,
-    "prompt": "Which of these words is closest in meaning to the word dialogue?",
+    "prompt": "Which of these words is closest in meaning to the word \"dialogue\"?",
     "correctLabel": "E",
     "hint": "A dialogue is talk passing back and forth between two parties."
   },
@@ -9051,7 +9051,7 @@
     ],
     "answer_text": "Insolent",
     "source_page": 348,
-    "prompt": "Which of these words is closest in meaning to the word audacious?",
+    "prompt": "Which of these words is closest in meaning to the word \"audacious\"?",
     "correctLabel": "B",
     "hint": "Audacious describes boldness that shades into open disrespect."
   },
@@ -9097,7 +9097,7 @@
     ],
     "answer_text": "Independent",
     "source_page": 348,
-    "prompt": "Which of these words is closest in meaning to the word autocratic?",
+    "prompt": "Which of these words is closest in meaning to the word \"autocratic\"?",
     "correctLabel": "E",
     "hint": "Autocratic describes a ruler who answers to nobody at all."
   },
@@ -9143,7 +9143,7 @@
     ],
     "answer_text": "Ebullition",
     "source_page": 348,
-    "prompt": "Which of these words is closest in meaning to the word exsufflation?",
+    "prompt": "Which of these words is closest in meaning to the word \"exsufflation\"?",
     "correctLabel": "C",
     "hint": "Exsufflation is a forcible blowing out, driven violently outward."
   },
@@ -9189,7 +9189,7 @@
     ],
     "answer_text": "Recall",
     "source_page": 349,
-    "prompt": "Which of these words is closest in meaning to the word revoke?",
+    "prompt": "Which of these words is closest in meaning to the word \"revoke\"?",
     "correctLabel": "B",
     "hint": "To revoke a licence is to withdraw it so it no longer stands."
   },
@@ -9235,7 +9235,7 @@
     ],
     "answer_text": "Fitting",
     "source_page": 350,
-    "prompt": "Which of these words is closest in meaning to the word befitting?",
+    "prompt": "Which of these words is closest in meaning to the word \"befitting\"?",
     "correctLabel": "D",
     "hint": "This word describes what is proper and suited to the occasion."
   },
@@ -9281,7 +9281,7 @@
     ],
     "answer_text": "Compound",
     "source_page": 350,
-    "prompt": "Which of these words is closest in meaning to the word composition?",
+    "prompt": "Which of these words is closest in meaning to the word \"composition\"?",
     "correctLabel": "E",
     "hint": "A composition is a whole put together out of several parts."
   },
@@ -9327,7 +9327,7 @@
     ],
     "answer_text": "Verity",
     "source_page": 351,
-    "prompt": "Which of these words is closest in meaning to the word actually?",
+    "prompt": "Which of these words is closest in meaning to the word \"actually\"?",
     "correctLabel": "C"
   },
   {
@@ -9372,7 +9372,7 @@
     ],
     "answer_text": "Tremble",
     "source_page": 351,
-    "prompt": "Which of these words is closest in meaning to the word quake?",
+    "prompt": "Which of these words is closest in meaning to the word \"quake\"?",
     "correctLabel": "B",
     "hint": "To quake is to shake all over with small rapid movements."
   },
@@ -9418,7 +9418,7 @@
     ],
     "answer_text": "Flaming",
     "source_page": 352,
-    "prompt": "Which of these words is closest in meaning to the word flaring?",
+    "prompt": "Which of these words is closest in meaning to the word \"flaring\"?",
     "correctLabel": "A",
     "hint": "Flaring describes fire blazing up bright and sudden."
   },
@@ -9464,7 +9464,7 @@
     ],
     "answer_text": "Whimsical",
     "source_page": 352,
-    "prompt": "Which of these words is closest in meaning to the word droll?",
+    "prompt": "Which of these words is closest in meaning to the word \"droll\"?",
     "correctLabel": "E",
     "hint": "Droll describes humor that comes from being quaintly odd."
   },
@@ -9510,7 +9510,7 @@
     ],
     "answer_text": "Fast",
     "source_page": 353,
-    "prompt": "Which of these words is closest in meaning to the word quick?",
+    "prompt": "Which of these words is closest in meaning to the word \"quick\"?",
     "correctLabel": "B",
     "hint": "Quick describes covering ground or acting in very little time."
   },
@@ -9556,7 +9556,7 @@
     ],
     "answer_text": "Accoutrements",
     "source_page": 353,
-    "prompt": "Which of these words is closest in meaning to the word equipage?",
+    "prompt": "Which of these words is closest in meaning to the word \"equipage\"?",
     "correctLabel": "C",
     "hint": "Equipage is the gear and trappings that outfit a person or carriage."
   },
@@ -9602,7 +9602,7 @@
     ],
     "answer_text": "Winning",
     "source_page": 353,
-    "prompt": "Which of these words is closest in meaning to the word attractive?",
+    "prompt": "Which of these words is closest in meaning to the word \"attractive\"?",
     "correctLabel": "B",
     "hint": "Attractive describes an appeal that draws other people toward you."
   },
@@ -9648,7 +9648,7 @@
     ],
     "answer_text": "Mark",
     "source_page": 354,
-    "prompt": "Which of these words is closest in meaning to the word type?",
+    "prompt": "Which of these words is closest in meaning to the word \"type\"?",
     "correctLabel": "E",
     "hint": "In printing, type is the figure stamped onto the page."
   },
@@ -9694,7 +9694,7 @@
     ],
     "answer_text": "Arid",
     "source_page": 355,
-    "prompt": "Which of these words is closest in meaning to the word dry?",
+    "prompt": "Which of these words is closest in meaning to the word \"dry\"?",
     "correctLabel": "B",
     "hint": "Dry describes ground with all the moisture gone out of it."
   },
@@ -9740,7 +9740,7 @@
     ],
     "answer_text": "Decoration",
     "source_page": 355,
-    "prompt": "Which of these words is closest in meaning to the word ornament?",
+    "prompt": "Which of these words is closest in meaning to the word \"ornament\"?",
     "correctLabel": "B",
     "hint": "An ornament is something added purely to please the eye."
   },
@@ -9786,7 +9786,7 @@
     ],
     "answer_text": "Propose",
     "source_page": 356,
-    "prompt": "Which of these words is closest in meaning to the word propound?",
+    "prompt": "Which of these words is closest in meaning to the word \"propound\"?",
     "correctLabel": "C",
     "hint": "To propound a theory is to set it before others for consideration."
   },
@@ -9832,7 +9832,7 @@
     ],
     "answer_text": "Unmitigated",
     "source_page": 356,
-    "prompt": "Which of these words is closest in meaning to the word inexcusable?",
+    "prompt": "Which of these words is closest in meaning to the word \"inexcusable\"?",
     "correctLabel": "C",
     "hint": "Inexcusable describes a fault with nothing whatever to soften it."
   },
@@ -9878,7 +9878,7 @@
     ],
     "answer_text": "Blessedness",
     "source_page": 357,
-    "prompt": "Which of these words is closest in meaning to the word bliss?",
+    "prompt": "Which of these words is closest in meaning to the word \"bliss\"?",
     "correctLabel": "D",
     "hint": "Bliss is joy so complete that it feels almost sacred."
   },
@@ -9924,7 +9924,7 @@
     ],
     "answer_text": "Gladly",
     "source_page": 357,
-    "prompt": "Which of these words is closest in meaning to the word lief?",
+    "prompt": "Which of these words is closest in meaning to the word \"lief\"?",
     "correctLabel": "C",
     "hint": "Lief is an old word for doing something willingly and without reluctance."
   },
@@ -9970,7 +9970,7 @@
     ],
     "answer_text": "Enthusiast",
     "source_page": 358,
-    "prompt": "Which of these words is closest in meaning to the word fanatic?",
+    "prompt": "Which of these words is closest in meaning to the word \"fanatic\"?",
     "correctLabel": "C",
     "hint": "A fanatic is a person carried away by extreme devotion to a cause."
   },
@@ -10016,7 +10016,7 @@
     ],
     "answer_text": "Staple",
     "source_page": 358,
-    "prompt": "Which of these words is closest in meaning to the word commodity?",
+    "prompt": "Which of these words is closest in meaning to the word \"commodity\"?",
     "correctLabel": "D",
     "hint": "A commodity is a good regularly bought and sold in quantity."
   },
@@ -10062,7 +10062,7 @@
     ],
     "answer_text": "Sparing",
     "source_page": 359,
-    "prompt": "Which of these words is closest in meaning to the word parsimonious?",
+    "prompt": "Which of these words is closest in meaning to the word \"parsimonious\"?",
     "correctLabel": "A",
     "hint": "Parsimonious describes someone who parts with as little money as possible."
   },
@@ -10108,7 +10108,7 @@
     ],
     "answer_text": "Compound",
     "source_page": 359,
-    "prompt": "Which of these words is closest in meaning to the word concoct?",
+    "prompt": "Which of these words is closest in meaning to the word \"concoct\"?",
     "correctLabel": "C",
     "hint": "To concoct is to put several ingredients together into one whole."
   },
@@ -10154,7 +10154,7 @@
     ],
     "answer_text": "Honor",
     "source_page": 360,
-    "prompt": "Which of these words is closest in meaning to the word reverence?",
+    "prompt": "Which of these words is closest in meaning to the word \"reverence\"?",
     "correctLabel": "E",
     "hint": "Reverence is the deep respect paid to what is held sacred."
   },
@@ -10200,7 +10200,7 @@
     ],
     "answer_text": "Imperative",
     "source_page": 360,
-    "prompt": "Which of these words is closest in meaning to the word dictation?",
+    "prompt": "Which of these words is closest in meaning to the word \"dictation\"?",
     "correctLabel": "C"
   },
   {
@@ -10245,7 +10245,7 @@
     ],
     "answer_text": "Obstinate",
     "source_page": 361,
-    "prompt": "Which of these words is closest in meaning to the word pertinacious?",
+    "prompt": "Which of these words is closest in meaning to the word \"pertinacious\"?",
     "correctLabel": "B",
     "hint": "Pertinacious describes someone who clings doggedly and will not be shifted."
   },
@@ -10291,7 +10291,7 @@
     ],
     "answer_text": "Abundant",
     "source_page": 361,
-    "prompt": "Which of these words is closest in meaning to the word much?",
+    "prompt": "Which of these words is closest in meaning to the word \"much\"?",
     "correctLabel": "A",
     "hint": "Much points to a great quantity of something."
   },
@@ -10337,7 +10337,7 @@
     ],
     "answer_text": "Altitude",
     "source_page": 362,
-    "prompt": "Which of these words is closest in meaning to the word height?",
+    "prompt": "Which of these words is closest in meaning to the word \"height\"?",
     "correctLabel": "B",
     "hint": "Height is how far up something reaches."
   },
@@ -10383,7 +10383,7 @@
     ],
     "answer_text": "Circumvent",
     "source_page": 362,
-    "prompt": "Which of these words is closest in meaning to the word cozen?",
+    "prompt": "Which of these words is closest in meaning to the word \"cozen\"?",
     "correctLabel": "D",
     "hint": "To cozen someone is to cheat them by clever trickery."
   },
@@ -10429,7 +10429,7 @@
     ],
     "answer_text": "Accost",
     "source_page": 363,
-    "prompt": "Which of these words is closest in meaning to the word appeal?",
+    "prompt": "Which of these words is closest in meaning to the word \"appeal\"?",
     "correctLabel": "A",
     "hint": "To appeal to someone is to go up and put a request to them."
   },
@@ -10475,7 +10475,7 @@
     ],
     "answer_text": "Introduction",
     "source_page": 363,
-    "prompt": "Which of these words is closest in meaning to the word admittance?",
+    "prompt": "Which of these words is closest in meaning to the word \"admittance\"?",
     "correctLabel": "A",
     "hint": "Admittance is being let into a place or a company."
   },
@@ -10521,7 +10521,7 @@
     ],
     "answer_text": "Firm",
     "source_page": 363,
-    "prompt": "Which of these words is closest in meaning to the word tight?",
+    "prompt": "Which of these words is closest in meaning to the word \"tight\"?",
     "correctLabel": "D",
     "hint": "Tight describes something held so closely that it will not shift."
   },
@@ -10567,7 +10567,7 @@
     ],
     "answer_text": "Core",
     "source_page": 364,
-    "prompt": "Which of these words is closest in meaning to the word heart?",
+    "prompt": "Which of these words is closest in meaning to the word \"heart\"?",
     "correctLabel": "E",
     "hint": "The heart of a matter is its innermost and most essential part."
   },
@@ -10613,7 +10613,7 @@
     ],
     "answer_text": "Failure",
     "source_page": 365,
-    "prompt": "Which of these words is closest in meaning to the word defalcation?",
+    "prompt": "Which of these words is closest in meaning to the word \"defalcation\"?",
     "correctLabel": "D",
     "hint": "Defalcation is a coming up short in what one was trusted to deliver."
   },
@@ -10659,7 +10659,7 @@
     ],
     "answer_text": "Bind",
     "source_page": 365,
-    "prompt": "Which of these words is closest in meaning to the word cramp?",
+    "prompt": "Which of these words is closest in meaning to the word \"cramp\"?",
     "correctLabel": "E",
     "hint": "To cramp something is to confine it within limits too narrow for it."
   },
@@ -10705,7 +10705,7 @@
     ],
     "answer_text": "Reference",
     "source_page": 366,
-    "prompt": "Which of these words is closest in meaning to the word recourse?",
+    "prompt": "Which of these words is closest in meaning to the word \"recourse\"?",
     "correctLabel": "D",
     "hint": "To have recourse to something is to turn to it for help."
   },
@@ -10751,7 +10751,7 @@
     ],
     "answer_text": "Disseminate",
     "source_page": 366,
-    "prompt": "Which of these words is closest in meaning to the word circulate?",
+    "prompt": "Which of these words is closest in meaning to the word \"circulate\"?",
     "correctLabel": "D",
     "hint": "To circulate news is to pass it around so it spreads widely."
   },
@@ -10797,7 +10797,7 @@
     ],
     "answer_text": "Rudeness",
     "source_page": 367,
-    "prompt": "Which of these words is closest in meaning to the word rusticity?",
+    "prompt": "Which of these words is closest in meaning to the word \"rusticity\"?",
     "correctLabel": "A",
     "hint": "Rusticity is the rough, unpolished quality of country ways."
   },
@@ -10843,7 +10843,7 @@
     ],
     "answer_text": "Top",
     "source_page": 367,
-    "prompt": "Which of these words is closest in meaning to the word crest?",
+    "prompt": "Which of these words is closest in meaning to the word \"crest\"?",
     "correctLabel": "E",
     "hint": "The crest is the ridge running along the highest line of a hill or wave."
   },
@@ -10889,7 +10889,7 @@
     ],
     "answer_text": "Longing",
     "source_page": 368,
-    "prompt": "Which of these words is closest in meaning to the word inclination?",
+    "prompt": "Which of these words is closest in meaning to the word \"inclination\"?",
     "correctLabel": "D",
     "hint": "An inclination is the way your mind leans toward something you want."
   },
@@ -10935,7 +10935,7 @@
     ],
     "answer_text": "Like",
     "source_page": 368,
-    "prompt": "Which of these words is closest in meaning to the word enjoy?",
+    "prompt": "Which of these words is closest in meaning to the word \"enjoy\"?",
     "correctLabel": "E",
     "hint": "To enjoy something is to take pleasure in it."
   },
@@ -10981,7 +10981,7 @@
     ],
     "answer_text": "Follow",
     "source_page": 368,
-    "prompt": "Which of these words is closest in meaning to the word prosecute?",
+    "prompt": "Which of these words is closest in meaning to the word \"prosecute\"?",
     "correctLabel": "A",
     "hint": "To prosecute an inquiry is to press on with it to the end."
   },
@@ -11027,7 +11027,7 @@
     ],
     "answer_text": "Pale",
     "source_page": 369,
-    "prompt": "Which of these words is closest in meaning to the word warfare?",
+    "prompt": "Which of these words is closest in meaning to the word \"warfare\"?",
     "correctLabel": "E"
   },
   {
@@ -11072,7 +11072,7 @@
     ],
     "answer_text": "Merciless",
     "source_page": 370,
-    "prompt": "Which of these words is closest in meaning to the word pitiless?",
+    "prompt": "Which of these words is closest in meaning to the word \"pitiless\"?",
     "correctLabel": "A",
     "hint": "Pitiless describes someone whose heart is untouched by another's suffering."
   },
@@ -11118,7 +11118,7 @@
     ],
     "answer_text": "Prune",
     "source_page": 370,
-    "prompt": "Which of these words is closest in meaning to the word amputate?",
+    "prompt": "Which of these words is closest in meaning to the word \"amputate\"?",
     "correctLabel": "E",
     "hint": "To amputate is to cut a limb clean away."
   },
@@ -11164,7 +11164,7 @@
     ],
     "answer_text": "Indentation",
     "source_page": 371,
-    "prompt": "Which of these words is closest in meaning to the word dent?",
+    "prompt": "Which of these words is closest in meaning to the word \"dent\"?",
     "correctLabel": "D",
     "hint": "A dent is the hollow left where something pressed hard into a surface."
   },
@@ -11210,7 +11210,7 @@
     ],
     "answer_text": "Raised",
     "source_page": 371,
-    "prompt": "Which of these words is closest in meaning to the word sublime?",
+    "prompt": "Which of these words is closest in meaning to the word \"sublime\"?",
     "correctLabel": "E",
     "hint": "Sublime describes something lifted far above the common level in grandeur."
   },
@@ -11256,7 +11256,7 @@
     ],
     "answer_text": "Bleach",
     "source_page": 372,
-    "prompt": "Which of these words is closest in meaning to the word blanch?",
+    "prompt": "Which of these words is closest in meaning to the word \"blanch\"?",
     "correctLabel": "A",
     "hint": "To blanch is to turn something white by drawing the color out."
   },
@@ -11302,7 +11302,7 @@
     ],
     "answer_text": "Destruction",
     "source_page": 372,
-    "prompt": "Which of these words is closest in meaning to the word extinction?",
+    "prompt": "Which of these words is closest in meaning to the word \"extinction\"?",
     "correctLabel": "C",
     "hint": "Extinction is the total blotting out of something so that none remains."
   },
@@ -11348,7 +11348,7 @@
     ],
     "answer_text": "Speedy",
     "source_page": 373,
-    "prompt": "Which of these words is closest in meaning to the word hasty?",
+    "prompt": "Which of these words is closest in meaning to the word \"hasty\"?",
     "correctLabel": "A",
     "hint": "Hasty describes something done in a great hurry."
   },
@@ -11394,7 +11394,7 @@
     ],
     "answer_text": "Chairman",
     "source_page": 373,
-    "prompt": "Which of these words is closest in meaning to the word president?",
+    "prompt": "Which of these words is closest in meaning to the word \"president\"?",
     "correctLabel": "D",
     "hint": "A president is the one who presides over a body and directs its business."
   },
@@ -11440,7 +11440,7 @@
     ],
     "answer_text": "Separation",
     "source_page": 373,
-    "prompt": "Which of these words is closest in meaning to the word resolution?",
+    "prompt": "Which of these words is closest in meaning to the word \"resolution\"?",
     "correctLabel": "A",
     "hint": "Resolution here is the breaking of a whole down into the parts it is made of."
   },
@@ -11486,7 +11486,7 @@
     ],
     "answer_text": "Bear",
     "source_page": 374,
-    "prompt": "Which of these words is closest in meaning to the word suffer?",
+    "prompt": "Which of these words is closest in meaning to the word \"suffer\"?",
     "correctLabel": "C",
     "hint": "To suffer hardship is to undergo it and carry it through."
   },
@@ -11532,7 +11532,7 @@
     ],
     "answer_text": "Submission",
     "source_page": 375,
-    "prompt": "Which of these words is closest in meaning to the word obedience?",
+    "prompt": "Which of these words is closest in meaning to the word \"obedience\"?",
     "correctLabel": "C",
     "hint": "Obedience is the giving way to the authority of another."
   },
@@ -11578,7 +11578,7 @@
     ],
     "answer_text": "Advancement",
     "source_page": 375,
-    "prompt": "Which of these words is closest in meaning to the word progress?",
+    "prompt": "Which of these words is closest in meaning to the word \"progress\"?",
     "correctLabel": "D",
     "hint": "Progress is steady forward movement toward a better state."
   },
@@ -11624,7 +11624,7 @@
     ],
     "answer_text": "Witness",
     "source_page": 376,
-    "prompt": "Which of these words is closest in meaning to the word testimony?",
+    "prompt": "Which of these words is closest in meaning to the word \"testimony\"?",
     "correctLabel": "D",
     "hint": "Testimony is the evidence given by one who can vouch for the facts."
   },
@@ -11670,7 +11670,7 @@
     ],
     "answer_text": "Abstract",
     "source_page": 376,
-    "prompt": "Which of these words is closest in meaning to the word pilfer?",
+    "prompt": "Which of these words is closest in meaning to the word \"pilfer\"?",
     "correctLabel": "C",
     "hint": "To pilfer is to take small things quietly without being noticed."
   },
@@ -11716,7 +11716,7 @@
     ],
     "answer_text": "Vitreous",
     "source_page": 377,
-    "prompt": "Which of these words is closest in meaning to the word glassy?",
+    "prompt": "Which of these words is closest in meaning to the word \"glassy\"?",
     "correctLabel": "C",
     "hint": "Glassy describes a surface smooth and clear like glass."
   },
@@ -11762,7 +11762,7 @@
     ],
     "answer_text": "Liberate",
     "source_page": 377,
-    "prompt": "Which of these words is closest in meaning to the word deliver?",
+    "prompt": "Which of these words is closest in meaning to the word \"deliver\"?",
     "correctLabel": "A",
     "hint": "To deliver a captive is to set them free from what held them."
   },
@@ -11808,7 +11808,7 @@
     ],
     "answer_text": "Close",
     "source_page": 378,
-    "prompt": "Which of these words is closest in meaning to the word logical?",
+    "prompt": "Which of these words is closest in meaning to the word \"logical\"?",
     "correctLabel": "D",
     "hint": "Logical describes reasoning drawn so tight that nothing slips through."
   },
@@ -11854,7 +11854,7 @@
     ],
     "answer_text": "Compunction",
     "source_page": 378,
-    "prompt": "Which of these words is closest in meaning to the word remorse?",
+    "prompt": "Which of these words is closest in meaning to the word \"remorse\"?",
     "correctLabel": "D",
     "hint": "Remorse is the sharp regret that follows a wrong you did."
   },
@@ -11900,7 +11900,7 @@
     ],
     "answer_text": "Endurable",
     "source_page": 378,
-    "prompt": "Which of these words is closest in meaning to the word tolerable?",
+    "prompt": "Which of these words is closest in meaning to the word \"tolerable\"?",
     "correctLabel": "E",
     "hint": "Tolerable describes something unpleasant that can still be put up with."
   },
@@ -11946,7 +11946,7 @@
     ],
     "answer_text": "Same",
     "source_page": 379,
-    "prompt": "Which of these words is closest in meaning to the word identical?",
+    "prompt": "Which of these words is closest in meaning to the word \"identical\"?",
     "correctLabel": "A",
     "hint": "Identical describes two things alike in every respect."
   },
@@ -11992,7 +11992,7 @@
     ],
     "answer_text": "Masticate",
     "source_page": 380,
-    "prompt": "Which of these words is closest in meaning to the word chew?",
+    "prompt": "Which of these words is closest in meaning to the word \"chew\"?",
     "correctLabel": "D",
     "hint": "To chew is to work food between the teeth before swallowing."
   },
@@ -12038,7 +12038,7 @@
     ],
     "answer_text": "Niggardly",
     "source_page": 380,
-    "prompt": "Which of these words is closest in meaning to the word penurious?",
+    "prompt": "Which of these words is closest in meaning to the word \"penurious\"?",
     "correctLabel": "E",
     "hint": "Penurious describes someone who grudges every penny spent."
   },
@@ -12084,7 +12084,7 @@
     ],
     "answer_text": "Amazement",
     "source_page": 381,
-    "prompt": "Which of these words is closest in meaning to the word wonder?",
+    "prompt": "Which of these words is closest in meaning to the word \"wonder\"?",
     "correctLabel": "E",
     "hint": "Wonder is the feeling of being struck by something remarkable."
   },
@@ -12130,7 +12130,7 @@
     ],
     "answer_text": "Support",
     "source_page": 381,
-    "prompt": "Which of these words is closest in meaning to the word sustenance?",
+    "prompt": "Which of these words is closest in meaning to the word \"sustenance\"?",
     "correctLabel": "E",
     "hint": "Sustenance is the nourishment that keeps a body alive."
   },
@@ -12176,7 +12176,7 @@
     ],
     "answer_text": "Casual",
     "source_page": 382,
-    "prompt": "Which of these words is closest in meaning to the word incidental?",
+    "prompt": "Which of these words is closest in meaning to the word \"incidental\"?",
     "correctLabel": "D",
     "hint": "Incidental describes something that crops up by the way rather than by design."
   },
@@ -12222,7 +12222,7 @@
     ],
     "answer_text": "Upstart",
     "source_page": 382,
-    "prompt": "Which of these words is closest in meaning to the word new-fangled?",
+    "prompt": "Which of these words is closest in meaning to the word \"new-fangled\"?",
     "correctLabel": "C",
     "hint": "New-fangled describes a novelty that pushes itself forward before it has earned a place."
   },
@@ -12268,7 +12268,7 @@
     ],
     "answer_text": "Full",
     "source_page": 383,
-    "prompt": "Which of these words is closest in meaning to the word plenary?",
+    "prompt": "Which of these words is closest in meaning to the word \"plenary\"?",
     "correctLabel": "D",
     "hint": "Plenary describes power granted entire, with no part held back."
   },
@@ -12314,7 +12314,7 @@
     ],
     "answer_text": "Rattle",
     "source_page": 383,
-    "prompt": "Which of these words is closest in meaning to the word chatter?",
+    "prompt": "Which of these words is closest in meaning to the word \"chatter\"?",
     "correctLabel": "D",
     "hint": "Chatter is a run of quick sharp sounds following one on another."
   },
@@ -12360,7 +12360,7 @@
     ],
     "answer_text": "Tell",
     "source_page": 383,
-    "prompt": "Which of these words is closest in meaning to the word bid?",
+    "prompt": "Which of these words is closest in meaning to the word \"bid\"?",
     "correctLabel": "D",
     "hint": "To bid someone do something is to direct them to do it."
   },
@@ -12406,7 +12406,7 @@
     ],
     "answer_text": "Aver",
     "source_page": 384,
-    "prompt": "Which of these words is closest in meaning to the word avouch?",
+    "prompt": "Which of these words is closest in meaning to the word \"avouch\"?",
     "correctLabel": "B",
     "hint": "To avouch something is to declare firmly that it is so."
   },
@@ -12452,7 +12452,7 @@
     ],
     "answer_text": "Foreign",
     "source_page": 385,
-    "prompt": "Which of these words is closest in meaning to the word alien?",
+    "prompt": "Which of these words is closest in meaning to the word \"alien\"?",
     "correctLabel": "A",
     "hint": "Alien describes what comes from outside and does not belong here."
   },
@@ -12498,7 +12498,7 @@
     ],
     "answer_text": "Imbue",
     "source_page": 385,
-    "prompt": "Which of these words is closest in meaning to the word taint?",
+    "prompt": "Which of these words is closest in meaning to the word \"taint\"?",
     "correctLabel": "E",
     "hint": "To taint something is to work a bad quality all the way through it."
   },
@@ -12544,7 +12544,7 @@
     ],
     "answer_text": "Obscure",
     "source_page": 386,
-    "prompt": "Which of these words is closest in meaning to the word apocryphal?",
+    "prompt": "Which of these words is closest in meaning to the word \"apocryphal\"?",
     "correctLabel": "A",
     "hint": "Apocryphal describes a story whose source cannot be vouched for."
   },
@@ -12590,7 +12590,7 @@
     ],
     "answer_text": "Aggregate",
     "source_page": 386,
-    "prompt": "Which of these words is closest in meaning to the word total?",
+    "prompt": "Which of these words is closest in meaning to the word \"total\"?",
     "correctLabel": "E",
     "hint": "A total is the complete sum reached by adding every part."
   },
@@ -12636,7 +12636,7 @@
     ],
     "answer_text": "Carousal",
     "source_page": 387,
-    "prompt": "Which of these words is closest in meaning to the word revelry?",
+    "prompt": "Which of these words is closest in meaning to the word \"revelry\"?",
     "correctLabel": "E",
     "hint": "Revelry is loud, unrestrained celebration."
   },
@@ -12682,7 +12682,7 @@
     ],
     "answer_text": "Attractive",
     "source_page": 387,
-    "prompt": "Which of these words is closest in meaning to the word engaging?",
+    "prompt": "Which of these words is closest in meaning to the word \"engaging\"?",
     "correctLabel": "A",
     "hint": "Engaging describes a manner that wins people over and holds their interest."
   },
@@ -12728,7 +12728,7 @@
     ],
     "answer_text": "Rubbing",
     "source_page": 388,
-    "prompt": "Which of these words is closest in meaning to the word friction?",
+    "prompt": "Which of these words is closest in meaning to the word \"friction\"?",
     "correctLabel": "D",
     "hint": "Friction is the resistance felt when two surfaces drag on each other."
   },
@@ -12774,7 +12774,7 @@
     ],
     "answer_text": "Pure",
     "source_page": 388,
-    "prompt": "Which of these words is closest in meaning to the word sheer?",
+    "prompt": "Which of these words is closest in meaning to the word \"sheer\"?",
     "correctLabel": "E",
     "hint": "Sheer describes something unmixed and unqualified, all of one kind."
   },
@@ -12820,7 +12820,7 @@
     ],
     "answer_text": "Strive",
     "source_page": 388,
-    "prompt": "Which of these words is closest in meaning to the word contend?",
+    "prompt": "Which of these words is closest in meaning to the word \"contend\"?",
     "correctLabel": "E",
     "hint": "To contend is to struggle hard against something that resists."
   },
@@ -12866,7 +12866,7 @@
     ],
     "answer_text": "Litigious",
     "source_page": 389,
-    "prompt": "Which of these words is closest in meaning to the word disputatious?",
+    "prompt": "Which of these words is closest in meaning to the word \"disputatious\"?",
     "correctLabel": "D",
     "hint": "Disputatious describes a person always ready to pick a quarrel."
   },
@@ -12912,7 +12912,7 @@
     ],
     "answer_text": "Outer",
     "source_page": 390,
-    "prompt": "Which of these words is closest in meaning to the word exterior?",
+    "prompt": "Which of these words is closest in meaning to the word \"exterior\"?",
     "correctLabel": "D",
     "hint": "The exterior is the surface that faces outward."
   },
@@ -12958,7 +12958,7 @@
     ],
     "answer_text": "Grasp",
     "source_page": 390,
-    "prompt": "Which of these words is closest in meaning to the word co-operate?",
+    "prompt": "Which of these words is closest in meaning to the word \"co-operate\"?",
     "correctLabel": "E"
   },
   {
@@ -13003,7 +13003,7 @@
     ],
     "answer_text": "Certain",
     "source_page": 391,
-    "prompt": "Which of these words is closest in meaning to the word sure?",
+    "prompt": "Which of these words is closest in meaning to the word \"sure\"?",
     "correctLabel": "B",
     "hint": "Sure describes knowing something beyond any doubt."
   },
@@ -13049,7 +13049,7 @@
     ],
     "answer_text": "Margin",
     "source_page": 391,
-    "prompt": "Which of these words is closest in meaning to the word side?",
+    "prompt": "Which of these words is closest in meaning to the word \"side\"?",
     "correctLabel": "E",
     "hint": "The side of something is the border running along its edge."
   },
@@ -13095,7 +13095,7 @@
     ],
     "answer_text": "Augment",
     "source_page": 392,
-    "prompt": "Which of these words is closest in meaning to the word redouble?",
+    "prompt": "Which of these words is closest in meaning to the word \"redouble\"?",
     "correctLabel": "C",
     "hint": "To redouble effort is to increase it greatly."
   },
@@ -13141,7 +13141,7 @@
     ],
     "answer_text": "Convert",
     "source_page": 392,
-    "prompt": "Which of these words is closest in meaning to the word proselyte?",
+    "prompt": "Which of these words is closest in meaning to the word \"proselyte\"?",
     "correctLabel": "E",
     "hint": "A proselyte is someone newly won over to a different faith."
   },
@@ -13187,7 +13187,7 @@
     ],
     "answer_text": "Rule",
     "source_page": 393,
-    "prompt": "Which of these words is closest in meaning to the word lordship?",
+    "prompt": "Which of these words is closest in meaning to the word \"lordship\"?",
     "correctLabel": "C",
     "hint": "Lordship is the authority a lord holds over those beneath him."
   },
@@ -13233,7 +13233,7 @@
     ],
     "answer_text": "Fixed",
     "source_page": 393,
-    "prompt": "Which of these words is closest in meaning to the word rooted?",
+    "prompt": "Which of these words is closest in meaning to the word \"rooted\"?",
     "correctLabel": "E",
     "hint": "Rooted describes something settled so firmly that it will not budge."
   },
@@ -13279,7 +13279,7 @@
     ],
     "answer_text": "Further",
     "source_page": 393,
-    "prompt": "Which of these words is closest in meaning to the word ulterior?",
+    "prompt": "Which of these words is closest in meaning to the word \"ulterior\"?",
     "correctLabel": "B",
     "hint": "Ulterior describes what lies beyond the point already reached."
   },
@@ -13325,7 +13325,7 @@
     ],
     "answer_text": "Sullen",
     "source_page": 394,
-    "prompt": "Which of these words is closest in meaning to the word sulky?",
+    "prompt": "Which of these words is closest in meaning to the word \"sulky\"?",
     "correctLabel": "E",
     "hint": "Sulky describes a bad temper held in silence rather than spoken."
   },
@@ -13371,7 +13371,7 @@
     ],
     "answer_text": "Slander",
     "source_page": 395,
-    "prompt": "Which of these words is closest in meaning to the word calumny?",
+    "prompt": "Which of these words is closest in meaning to the word \"calumny\"?",
     "correctLabel": "B",
     "hint": "Calumny is a lie put about deliberately to ruin someone's good name."
   },
@@ -13417,7 +13417,7 @@
     ],
     "answer_text": "Buffoonery",
     "source_page": 395,
-    "prompt": "Which of these words is closest in meaning to the word scurrility?",
+    "prompt": "Which of these words is closest in meaning to the word \"scurrility\"?",
     "correctLabel": "D",
     "hint": "Scurrility is coarse, jeering abuse meant to raise a cheap laugh."
   },
@@ -13463,7 +13463,7 @@
     ],
     "answer_text": "Pliant",
     "source_page": 396,
-    "prompt": "Which of these words is closest in meaning to the word sequacious?",
+    "prompt": "Which of these words is closest in meaning to the word \"sequacious\"?",
     "correctLabel": "A",
     "hint": "Sequacious describes a mind that follows wherever it is led."
   },
@@ -13509,7 +13509,7 @@
     ],
     "answer_text": "Harmonization",
     "source_page": 396,
-    "prompt": "Which of these words is closest in meaning to the word modulation?",
+    "prompt": "Which of these words is closest in meaning to the word \"modulation\"?",
     "correctLabel": "A",
     "hint": "Modulation is the adjusting of tones so they fall into agreement."
   },
@@ -13555,7 +13555,7 @@
     ],
     "answer_text": "Unwritten",
     "source_page": 397,
-    "prompt": "Which of these words is closest in meaning to the word oral?",
+    "prompt": "Which of these words is closest in meaning to the word \"oral\"?",
     "correctLabel": "A",
     "hint": "Oral describes what is carried by the spoken voice rather than the page."
   },
@@ -13601,7 +13601,7 @@
     ],
     "answer_text": "Enlighten",
     "source_page": 397,
-    "prompt": "Which of these words is closest in meaning to the word inform?",
+    "prompt": "Which of these words is closest in meaning to the word \"inform\"?",
     "correctLabel": "D",
     "hint": "To inform someone is to give them knowledge they did not have."
   },
@@ -13647,7 +13647,7 @@
     ],
     "answer_text": "Structure",
     "source_page": 398,
-    "prompt": "Which of these words is closest in meaning to the word edifice?",
+    "prompt": "Which of these words is closest in meaning to the word \"edifice\"?",
     "correctLabel": "D",
     "hint": "An edifice is a large building raised up in one piece."
   },
@@ -13693,7 +13693,7 @@
     ],
     "answer_text": "Amazing",
     "source_page": 398,
-    "prompt": "Which of these words is closest in meaning to the word astonishing?",
+    "prompt": "Which of these words is closest in meaning to the word \"astonishing\"?",
     "correctLabel": "D",
     "hint": "Astonishing describes something that stops you short with surprise."
   },
@@ -13739,7 +13739,7 @@
     ],
     "answer_text": "Philosophical",
     "source_page": 398,
-    "prompt": "Which of these words is closest in meaning to the word stoical?",
+    "prompt": "Which of these words is closest in meaning to the word \"stoical\"?",
     "correctLabel": "A",
     "hint": "Stoical describes bearing hardship calmly and without complaint."
   },
@@ -13785,7 +13785,7 @@
     ],
     "answer_text": "Boast",
     "source_page": 399,
-    "prompt": "Which of these words is closest in meaning to the word vaunt?",
+    "prompt": "Which of these words is closest in meaning to the word \"vaunt\"?",
     "correctLabel": "D",
     "hint": "To vaunt is to blow your own trumpet in front of others."
   },
@@ -13831,7 +13831,7 @@
     ],
     "answer_text": "Well-being",
     "source_page": 399,
-    "prompt": "Which of these words is closest in meaning to the word welfare?",
+    "prompt": "Which of these words is closest in meaning to the word \"welfare\"?",
     "correctLabel": "C",
     "hint": "Welfare is how a person is faring in health and comfort."
   },
@@ -13877,7 +13877,7 @@
     ],
     "answer_text": "Suit",
     "source_page": 400,
-    "prompt": "Which of these words is closest in meaning to the word agree?",
+    "prompt": "Which of these words is closest in meaning to the word \"agree\"?",
     "correctLabel": "E",
     "hint": "To agree, said of things, is to match and be in keeping with one another."
   },
@@ -13923,7 +13923,7 @@
     ],
     "answer_text": "Single",
     "source_page": 400,
-    "prompt": "Which of these words is closest in meaning to the word singular?",
+    "prompt": "Which of these words is closest in meaning to the word \"singular\"?",
     "correctLabel": "E",
     "hint": "This word describes standing alone as one, rather than as many."
   },
@@ -13969,7 +13969,7 @@
     ],
     "answer_text": "Inherent",
     "source_page": 401,
-    "prompt": "Which of these words is closest in meaning to the word immanent?",
+    "prompt": "Which of these words is closest in meaning to the word \"immanent\"?",
     "correctLabel": "E",
     "hint": "Immanent describes a quality that lives inside a thing as part of its nature."
   },
@@ -14015,7 +14015,7 @@
     ],
     "answer_text": "Predecessor",
     "source_page": 401,
-    "prompt": "Which of these words is closest in meaning to the word forerunner?",
+    "prompt": "Which of these words is closest in meaning to the word \"forerunner\"?",
     "correctLabel": "C",
     "hint": "A forerunner is one who goes ahead and prepares the way for those following."
   },
@@ -14061,7 +14061,7 @@
     ],
     "answer_text": "Advanced",
     "source_page": 402,
-    "prompt": "Which of these words is closest in meaning to the word forward?",
+    "prompt": "Which of these words is closest in meaning to the word \"forward\"?",
     "correctLabel": "E",
     "hint": "Forward describes something that has moved on ahead of where it began."
   },
@@ -14107,7 +14107,7 @@
     ],
     "answer_text": "Dolorous",
     "source_page": 402,
-    "prompt": "Which of these words is closest in meaning to the word dollish?",
+    "prompt": "Which of these words is closest in meaning to the word \"dollish\"?",
     "correctLabel": "B"
   },
   {
@@ -14152,7 +14152,7 @@
     ],
     "answer_text": "Decay",
     "source_page": 403,
-    "prompt": "Which of these words is closest in meaning to the word declension?",
+    "prompt": "Which of these words is closest in meaning to the word \"declension\"?",
     "correctLabel": "A",
     "hint": "Declension is a steady sinking down from a former and better state."
   },
@@ -14198,7 +14198,7 @@
     ],
     "answer_text": "Rule",
     "source_page": 403,
-    "prompt": "Which of these words is closest in meaning to the word reign?",
+    "prompt": "Which of these words is closest in meaning to the word \"reign\"?",
     "correctLabel": "C",
     "hint": "A reign is the period during which a monarch holds sovereign power."
   },
@@ -14244,7 +14244,7 @@
     ],
     "answer_text": "Full",
     "source_page": 404,
-    "prompt": "Which of these words is closest in meaning to the word complete?",
+    "prompt": "Which of these words is closest in meaning to the word \"complete\"?",
     "correctLabel": "D",
     "hint": "Complete describes something entire, with no part of it missing."
   },
@@ -14290,7 +14290,7 @@
     ],
     "answer_text": "Requite",
     "source_page": 404,
-    "prompt": "Which of these words is closest in meaning to the word recompense?",
+    "prompt": "Which of these words is closest in meaning to the word \"recompense\"?",
     "correctLabel": "A",
     "hint": "To recompense is to square the account by giving someone their due."
   },
@@ -14336,7 +14336,7 @@
     ],
     "answer_text": "Shamelessness",
     "source_page": 405,
-    "prompt": "Which of these words is closest in meaning to the word profligacy?",
+    "prompt": "Which of these words is closest in meaning to the word \"profligacy\"?",
     "correctLabel": "E",
     "hint": "Profligacy is wanton excess that throws off all decency."
   },
@@ -14382,7 +14382,7 @@
     ],
     "answer_text": "Lightness",
     "source_page": 405,
-    "prompt": "Which of these words is closest in meaning to the word levity?",
+    "prompt": "Which of these words is closest in meaning to the word \"levity\"?",
     "correctLabel": "B",
     "hint": "Levity is treating with a light manner what calls for gravity."
   },
@@ -14428,7 +14428,7 @@
     ],
     "answer_text": "Contract",
     "source_page": 406,
-    "prompt": "Which of these words is closest in meaning to the word shrivel?",
+    "prompt": "Which of these words is closest in meaning to the word \"shrivel\"?",
     "correctLabel": "C",
     "hint": "To shrivel is to shrink and wrinkle up, drawing in on itself."
   },
@@ -14474,7 +14474,7 @@
     ],
     "answer_text": "reapply",
     "source_page": 406,
-    "prompt": "Which of these words is closest in meaning to the word employ?",
+    "prompt": "Which of these words is closest in meaning to the word \"employ\"?",
     "correctLabel": "A"
   },
   {
@@ -14519,7 +14519,7 @@
     ],
     "answer_text": "Denounce",
     "source_page": 407,
-    "prompt": "Which of these words is closest in meaning to the word proscribe?",
+    "prompt": "Which of these words is closest in meaning to the word \"proscribe\"?",
     "correctLabel": "A",
     "hint": "To proscribe something is to condemn it publicly and put it out of bounds."
   },
@@ -14565,7 +14565,7 @@
     ],
     "answer_text": "Projection",
     "source_page": 407,
-    "prompt": "Which of these words is closest in meaning to the word protrusion?",
+    "prompt": "Which of these words is closest in meaning to the word \"protrusion\"?",
     "correctLabel": "A",
     "hint": "A protrusion is a part that juts out past the surface around it."
   },
@@ -14611,7 +14611,7 @@
     ],
     "answer_text": "Meet",
     "source_page": 408,
-    "prompt": "Which of these words is closest in meaning to the word encounter?",
+    "prompt": "Which of these words is closest in meaning to the word \"encounter\"?",
     "correctLabel": "D",
     "hint": "To encounter someone is to come upon them face to face."
   },
@@ -14657,7 +14657,7 @@
     ],
     "answer_text": "Skillful",
     "source_page": 408,
-    "prompt": "Which of these words is closest in meaning to the word ingenious?",
+    "prompt": "Which of these words is closest in meaning to the word \"ingenious\"?",
     "correctLabel": "E",
     "hint": "Ingenious describes cleverness shown in how something is contrived."
   },
@@ -14703,7 +14703,7 @@
     ],
     "answer_text": "Wide",
     "source_page": 409,
-    "prompt": "Which of these words is closest in meaning to the word comprehensive?",
+    "prompt": "Which of these words is closest in meaning to the word \"comprehensive\"?",
     "correctLabel": "D",
     "hint": "Comprehensive describes coverage that takes in a great deal of ground."
   },
@@ -14749,7 +14749,7 @@
     ],
     "answer_text": "Fear",
     "source_page": 409,
-    "prompt": "Which of these words is closest in meaning to the word awe?",
+    "prompt": "Which of these words is closest in meaning to the word \"awe\"?",
     "correctLabel": "C",
     "hint": "Awe is the solemn dread felt before a power far greater than yourself."
   },
@@ -14795,7 +14795,7 @@
     ],
     "answer_text": "Allure",
     "source_page": 410,
-    "prompt": "Which of these words is closest in meaning to the word decoy?",
+    "prompt": "Which of these words is closest in meaning to the word \"decoy\"?",
     "correctLabel": "C",
     "hint": "To decoy is to tempt a creature forward into a trap."
   },
@@ -14841,7 +14841,7 @@
     ],
     "answer_text": "Set",
     "source_page": 410,
-    "prompt": "Which of these words is closest in meaning to the word plant?",
+    "prompt": "Which of these words is closest in meaning to the word \"plant\"?",
     "correctLabel": "A",
     "hint": "To plant a post is to put it firmly in position where it will stay."
   },
@@ -14887,7 +14887,7 @@
     ],
     "answer_text": "Pure",
     "source_page": 410,
-    "prompt": "Which of these words is closest in meaning to the word sheer?",
+    "prompt": "Which of these words is closest in meaning to the word \"sheer\"?",
     "correctLabel": "C",
     "hint": "Sheer describes a quality present in its unmixed and undiluted form."
   },
@@ -14933,7 +14933,7 @@
     ],
     "answer_text": "Preface",
     "source_page": 411,
-    "prompt": "Which of these words is closest in meaning to the word prefix?",
+    "prompt": "Which of these words is closest in meaning to the word \"prefix\"?",
     "correctLabel": "D",
     "hint": "A prefix is something placed in front of the main part."
   },
@@ -14979,7 +14979,7 @@
     ],
     "answer_text": "Kingly",
     "source_page": 411,
-    "prompt": "Which of these words is closest in meaning to the word regal?",
+    "prompt": "Which of these words is closest in meaning to the word \"regal\"?",
     "correctLabel": "B",
     "hint": "Regal describes the bearing and splendor proper to a monarch."
   },
@@ -15025,7 +15025,7 @@
     ],
     "answer_text": "Liberation",
     "source_page": 412,
-    "prompt": "Which of these words is closest in meaning to the word manumission?",
+    "prompt": "Which of these words is closest in meaning to the word \"manumission\"?",
     "correctLabel": "A",
     "hint": "Manumission is the formal release of someone out of bondage."
   },
@@ -15071,7 +15071,7 @@
     ],
     "answer_text": "Penetration",
     "source_page": 412,
-    "prompt": "Which of these words is closest in meaning to the word discrimination?",
+    "prompt": "Which of these words is closest in meaning to the word \"discrimination\"?",
     "correctLabel": "B",
     "hint": "Discrimination is the power of telling fine differences apart."
   },
@@ -15117,7 +15117,7 @@
     ],
     "answer_text": "Polish",
     "source_page": 413,
-    "prompt": "Which of these words is closest in meaning to the word gloss?",
+    "prompt": "Which of these words is closest in meaning to the word \"gloss\"?",
     "correctLabel": "B",
     "hint": "Gloss is the bright sheen a surface takes on when rubbed."
   },
@@ -15163,7 +15163,7 @@
     ],
     "answer_text": "Abrogation",
     "source_page": 413,
-    "prompt": "Which of these words is closest in meaning to the word repeal?",
+    "prompt": "Which of these words is closest in meaning to the word \"repeal\"?",
     "correctLabel": "D",
     "hint": "To repeal a law is to strike it off so it no longer holds."
   },
@@ -15209,7 +15209,7 @@
     ],
     "answer_text": "Related",
     "source_page": 414,
-    "prompt": "Which of these words is closest in meaning to the word akin?",
+    "prompt": "Which of these words is closest in meaning to the word \"akin\"?",
     "correctLabel": "A",
     "hint": "Akin describes things joined by a common origin or nature."
   },
@@ -15255,7 +15255,7 @@
     ],
     "answer_text": "Niggardly",
     "source_page": 414,
-    "prompt": "Which of these words is closest in meaning to the word penurious?",
+    "prompt": "Which of these words is closest in meaning to the word \"penurious\"?",
     "correctLabel": "E",
     "hint": "Penurious describes a person who lets go of as little as they possibly can."
   },
@@ -15301,7 +15301,7 @@
     ],
     "answer_text": "Active",
     "source_page": 415,
-    "prompt": "Which of these words is closest in meaning to the word operative?",
+    "prompt": "Which of these words is closest in meaning to the word \"operative\"?",
     "correctLabel": "E",
     "hint": "Operative describes a rule that is in force and doing its work."
   },
@@ -15347,7 +15347,7 @@
     ],
     "answer_text": "Violation",
     "source_page": 415,
-    "prompt": "Which of these words is closest in meaning to the word infraction?",
+    "prompt": "Which of these words is closest in meaning to the word \"infraction\"?",
     "correctLabel": "B",
     "hint": "An infraction is a breach committed against a rule."
   },
@@ -15393,7 +15393,7 @@
     ],
     "answer_text": "Repeat",
     "source_page": 416,
-    "prompt": "Which of these words is closest in meaning to the word reiterate?",
+    "prompt": "Which of these words is closest in meaning to the word \"reiterate\"?",
     "correctLabel": "B",
     "hint": "To reiterate is to go over the same point a second time."
   },
@@ -15439,7 +15439,7 @@
     ],
     "answer_text": "commendable",
     "source_page": 416,
-    "prompt": "Which of these words is closest in meaning to the word praiseworthy?",
+    "prompt": "Which of these words is closest in meaning to the word \"praiseworthy\"?",
     "correctLabel": "A",
     "hint": "Praiseworthy describes conduct that has earned approval."
   },
@@ -15485,7 +15485,7 @@
     ],
     "answer_text": "Liberate",
     "source_page": 417,
-    "prompt": "Which of these words is closest in meaning to the word deliver?",
+    "prompt": "Which of these words is closest in meaning to the word \"deliver\"?",
     "correctLabel": "B",
     "hint": "To deliver someone is to bring them out from what held them fast."
   },
@@ -15531,7 +15531,7 @@
     ],
     "answer_text": "Shelter",
     "source_page": 417,
-    "prompt": "Which of these words is closest in meaning to the word shade?",
+    "prompt": "Which of these words is closest in meaning to the word \"shade\"?",
     "correctLabel": "D",
     "hint": "Shade is the cover that screens what lies beneath from the sun."
   },
@@ -15577,7 +15577,7 @@
     ],
     "answer_text": "Emboss",
     "source_page": 418,
-    "prompt": "Which of these words is closest in meaning to the word embroider?",
+    "prompt": "Which of these words is closest in meaning to the word \"embroider\"?",
     "correctLabel": "A",
     "hint": "To embroider cloth is to work a raised pattern onto its surface."
   },
@@ -15623,7 +15623,7 @@
     ],
     "answer_text": "Bloody",
     "source_page": 418,
-    "prompt": "Which of these words is closest in meaning to the word sanguinary?",
+    "prompt": "Which of these words is closest in meaning to the word \"sanguinary\"?",
     "correctLabel": "E",
     "hint": "Sanguinary describes an affair in which blood is freely spilled."
   },
@@ -15669,7 +15669,7 @@
     ],
     "answer_text": "Wrinkle",
     "source_page": 419,
-    "prompt": "Which of these words is closest in meaning to the word ruffle?",
+    "prompt": "Which of these words is closest in meaning to the word \"ruffle\"?",
     "correctLabel": "C",
     "hint": "To ruffle a smooth surface is to break it into little folds."
   },
@@ -15715,7 +15715,7 @@
     ],
     "answer_text": "Compound",
     "source_page": 419,
-    "prompt": "Which of these words is closest in meaning to the word composition?",
+    "prompt": "Which of these words is closest in meaning to the word \"composition\"?",
     "correctLabel": "B",
     "hint": "A composition is a single thing that is really several joined."
   },
@@ -15761,7 +15761,7 @@
     ],
     "answer_text": "Decisive",
     "source_page": 420,
-    "prompt": "Which of these words is closest in meaning to the word peremptory?",
+    "prompt": "Which of these words is closest in meaning to the word \"peremptory\"?",
     "correctLabel": "B",
     "hint": "Peremptory describes an order so final that it leaves no room to argue."
   },
@@ -15807,7 +15807,7 @@
     ],
     "answer_text": "Mistreatment",
     "source_page": 420,
-    "prompt": "Which of these words is closest in meaning to the word abuse?",
+    "prompt": "Which of these words is closest in meaning to the word \"abuse\"?",
     "correctLabel": "B",
     "hint": "Abuse is handling a person or thing far worse than they deserve."
   },
@@ -15853,7 +15853,7 @@
     ],
     "answer_text": "Moan",
     "source_page": 421,
-    "prompt": "Which of these words is closest in meaning to the word groan?",
+    "prompt": "Which of these words is closest in meaning to the word \"groan\"?",
     "correctLabel": "E",
     "hint": "A groan is a deep drawn-out sound forced out by pain."
   },
@@ -15899,7 +15899,7 @@
     ],
     "answer_text": "Stick",
     "source_page": 421,
-    "prompt": "Which of these words is closest in meaning to the word adhere?",
+    "prompt": "Which of these words is closest in meaning to the word \"adhere\"?",
     "correctLabel": "E",
     "hint": "To adhere is to cling fast to a surface and not come away."
   },
@@ -15945,7 +15945,7 @@
     ],
     "answer_text": "Fear",
     "source_page": 422,
-    "prompt": "Which of these words is closest in meaning to the word terror?",
+    "prompt": "Which of these words is closest in meaning to the word \"terror\"?",
     "correctLabel": "B",
     "hint": "Terror is dread at its most overwhelming pitch."
   },
@@ -15991,7 +15991,7 @@
     ],
     "answer_text": "Approval",
     "source_page": 422,
-    "prompt": "Which of these words is closest in meaning to the word approbation?",
+    "prompt": "Which of these words is closest in meaning to the word \"approbation\"?",
     "correctLabel": "A",
     "hint": "Approbation is formal consent and a good opinion openly expressed."
   },
@@ -16037,7 +16037,7 @@
     ],
     "answer_text": "Restore",
     "source_page": 423,
-    "prompt": "Which of these words is closest in meaning to the word repair?",
+    "prompt": "Which of these words is closest in meaning to the word \"repair\"?",
     "correctLabel": "E",
     "hint": "To repair something is to make good what had fallen into disrepair."
   },
@@ -16083,7 +16083,7 @@
     ],
     "answer_text": "Settle",
     "source_page": 423,
-    "prompt": "Which of these words is closest in meaning to the word encamp?",
+    "prompt": "Which of these words is closest in meaning to the word \"encamp\"?",
     "correctLabel": "E",
     "hint": "To encamp is to stop in a place and make quarters there."
   },
@@ -16129,7 +16129,7 @@
     ],
     "answer_text": "Weigh",
     "source_page": 424,
-    "prompt": "Which of these words is closest in meaning to the word examine?",
+    "prompt": "Which of these words is closest in meaning to the word \"examine\"?",
     "correctLabel": "C",
     "hint": "To examine a matter is to go over it carefully before judging."
   },
@@ -16175,7 +16175,7 @@
     ],
     "answer_text": "Projection",
     "source_page": 424,
-    "prompt": "Which of these words is closest in meaning to the word protrusion?",
+    "prompt": "Which of these words is closest in meaning to the word \"protrusion\"?",
     "correctLabel": "B",
     "hint": "A protrusion is a part thrust out beyond the surrounding surface."
   },
@@ -16221,7 +16221,7 @@
     ],
     "answer_text": "Obedient",
     "source_page": 424,
-    "prompt": "Which of these words is closest in meaning to the word dutiful?",
+    "prompt": "Which of these words is closest in meaning to the word \"dutiful\"?",
     "correctLabel": "B",
     "hint": "Dutiful describes someone who performs what is required without resisting."
   },
@@ -16267,7 +16267,7 @@
     ],
     "answer_text": "Corrupt",
     "source_page": 425,
-    "prompt": "Which of these words is closest in meaning to the word vicious?",
+    "prompt": "Which of these words is closest in meaning to the word \"vicious\"?",
     "correctLabel": "A",
     "hint": "Vicious describes a character gone bad all the way through."
   },
@@ -16313,7 +16313,7 @@
     ],
     "answer_text": "Abhor",
     "source_page": 425,
-    "prompt": "Which of these words is closest in meaning to the word abominate?",
+    "prompt": "Which of these words is closest in meaning to the word \"abominate\"?",
     "correctLabel": "C",
     "hint": "To abominate is to loathe utterly, to the point of disgust."
   },
@@ -16359,7 +16359,7 @@
     ],
     "answer_text": "Abrupt",
     "source_page": 426,
-    "prompt": "Which of these words is closest in meaning to the word steep?",
+    "prompt": "Which of these words is closest in meaning to the word \"steep\"?",
     "correctLabel": "C",
     "hint": "Steep describes a slope rising so sharply it seems to happen at once."
   },
@@ -16405,7 +16405,7 @@
     ],
     "answer_text": "View",
     "source_page": 426,
-    "prompt": "Which of these words is closest in meaning to the word ken?",
+    "prompt": "Which of these words is closest in meaning to the word \"ken\"?",
     "correctLabel": "D",
     "hint": "Your ken is how far your sight or understanding reaches."
   },
@@ -16451,7 +16451,7 @@
     ],
     "answer_text": "Merciless",
     "source_page": 427,
-    "prompt": "Which of these words is closest in meaning to the word inexorable?",
+    "prompt": "Which of these words is closest in meaning to the word \"inexorable\"?",
     "correctLabel": "A",
     "hint": "Inexorable describes a force that keeps coming whatever is pleaded."
   },
@@ -16497,7 +16497,7 @@
     ],
     "answer_text": "Deep",
     "source_page": 427,
-    "prompt": "Which of these words is closest in meaning to the word bottom?",
+    "prompt": "Which of these words is closest in meaning to the word \"bottom\"?",
     "correctLabel": "A",
     "hint": "The bottom is the lowest reach, far below the surface."
   },
@@ -16543,7 +16543,7 @@
     ],
     "answer_text": "Conquer",
     "source_page": 428,
-    "prompt": "Which of these words is closest in meaning to the word master?",
+    "prompt": "Which of these words is closest in meaning to the word \"master\"?",
     "correctLabel": "A",
     "hint": "To master a fear is to get the better of it and bring it under control."
   },
@@ -16589,7 +16589,7 @@
     ],
     "answer_text": "Boast",
     "source_page": 428,
-    "prompt": "Which of these words is closest in meaning to the word vegetate?",
+    "prompt": "Which of these words is closest in meaning to the word \"vegetate\"?",
     "correctLabel": "B"
   },
   {
@@ -16634,7 +16634,7 @@
     ],
     "answer_text": "Inside",
     "source_page": 429,
-    "prompt": "Which of these words is closest in meaning to the word interior?",
+    "prompt": "Which of these words is closest in meaning to the word \"interior\"?",
     "correctLabel": "A",
     "hint": "The interior is the part that lies within rather than facing out."
   },
@@ -16680,7 +16680,7 @@
     ],
     "answer_text": "Jeer",
     "source_page": 429,
-    "prompt": "Which of these words is closest in meaning to the word mock?",
+    "prompt": "Which of these words is closest in meaning to the word \"mock\"?",
     "correctLabel": "C",
     "hint": "To mock is to hold someone up to open ridicule."
   },
@@ -16726,7 +16726,7 @@
     ],
     "answer_text": "Style",
     "source_page": 430,
-    "prompt": "Which of these words is closest in meaning to the word diction?",
+    "prompt": "Which of these words is closest in meaning to the word \"diction\"?",
     "correctLabel": "B",
     "hint": "Diction is the choice and arrangement of the words a writer uses."
   },
@@ -16772,7 +16772,7 @@
     ],
     "answer_text": "Copious",
     "source_page": 430,
-    "prompt": "Which of these words is closest in meaning to the word profuse?",
+    "prompt": "Which of these words is closest in meaning to the word \"profuse\"?",
     "correctLabel": "C",
     "hint": "Profuse describes something poured out in far more than the ordinary measure."
   },
@@ -16818,7 +16818,7 @@
     ],
     "answer_text": "Strong",
     "source_page": 431,
-    "prompt": "Which of these words is closest in meaning to the word athletic?",
+    "prompt": "Which of these words is closest in meaning to the word \"athletic\"?",
     "correctLabel": "E",
     "hint": "Athletic describes a body built for vigorous physical effort."
   },
@@ -16864,7 +16864,7 @@
     ],
     "answer_text": "Oppose",
     "source_page": 431,
-    "prompt": "Which of these words is closest in meaning to the word confront?",
+    "prompt": "Which of these words is closest in meaning to the word \"confront\"?",
     "correctLabel": "E",
     "hint": "To confront someone is to meet them head on rather than going around."
   },
@@ -16910,7 +16910,7 @@
     ],
     "answer_text": "Reply",
     "source_page": 432,
-    "prompt": "Which of these words is closest in meaning to the word answer?",
+    "prompt": "Which of these words is closest in meaning to the word \"answer\"?",
     "correctLabel": "A",
     "hint": "To answer is to respond to what someone has said or asked."
   },
@@ -16956,7 +16956,7 @@
     ],
     "answer_text": "Attractive",
     "source_page": 432,
-    "prompt": "Which of these words is closest in meaning to the word engaging?",
+    "prompt": "Which of these words is closest in meaning to the word \"engaging\"?",
     "correctLabel": "D",
     "hint": "Engaging describes a manner so pleasant that it holds people's goodwill."
   },
@@ -17002,7 +17002,7 @@
     ],
     "answer_text": "Dominion",
     "source_page": 433,
-    "prompt": "Which of these words is closest in meaning to the word empire?",
+    "prompt": "Which of these words is closest in meaning to the word \"empire\"?",
     "correctLabel": "B",
     "hint": "An empire is the wide territory a sovereign power rules over."
   },
@@ -17048,7 +17048,7 @@
     ],
     "answer_text": "Prefigure",
     "source_page": 433,
-    "prompt": "Which of these words is closest in meaning to the word typify?",
+    "prompt": "Which of these words is closest in meaning to the word \"typify\"?",
     "correctLabel": "B",
     "hint": "To typify is to stand as an early sign of what is to come."
   },
@@ -17094,7 +17094,7 @@
     ],
     "answer_text": "Reverence",
     "source_page": 434,
-    "prompt": "Which of these words is closest in meaning to the word veneration?",
+    "prompt": "Which of these words is closest in meaning to the word \"veneration\"?",
     "correctLabel": "D",
     "hint": "Veneration is honoring something as far above the ordinary."
   },
@@ -17140,7 +17140,7 @@
     ],
     "answer_text": "Alternate",
     "source_page": 434,
-    "prompt": "Which of these words is closest in meaning to the word reciprocal?",
+    "prompt": "Which of these words is closest in meaning to the word \"reciprocal\"?",
     "correctLabel": "C",
     "hint": "Reciprocal describes two parties answering each other turn and turn about."
   },
@@ -17186,7 +17186,7 @@
     ],
     "answer_text": "Wound",
     "source_page": 434,
-    "prompt": "Which of these words is closest in meaning to the word aggrieve?",
+    "prompt": "Which of these words is closest in meaning to the word \"aggrieve\"?",
     "correctLabel": "C",
     "hint": "To aggrieve someone is to inflict an injury they feel and resent."
   },
@@ -17232,7 +17232,7 @@
     ],
     "answer_text": "Deviate",
     "source_page": 435,
-    "prompt": "Which of these words is closest in meaning to the word trend?",
+    "prompt": "Which of these words is closest in meaning to the word \"trend\"?",
     "correctLabel": "D",
     "hint": "To trend is to bend away in a particular direction."
   },
@@ -17278,7 +17278,7 @@
     ],
     "answer_text": "Servile",
     "source_page": 435,
-    "prompt": "Which of these words is closest in meaning to the word sleepy?",
+    "prompt": "Which of these words is closest in meaning to the word \"sleepy\"?",
     "correctLabel": "D"
   },
   {
@@ -17323,7 +17323,7 @@
     ],
     "answer_text": "Undeceive",
     "source_page": 436,
-    "prompt": "Which of these words is closest in meaning to the word disabuse?",
+    "prompt": "Which of these words is closest in meaning to the word \"disabuse\"?",
     "correctLabel": "E",
     "hint": "To disabuse someone is to strip away an error they had been holding."
   },
@@ -17369,7 +17369,7 @@
     ],
     "answer_text": "Timid",
     "source_page": 436,
-    "prompt": "Which of these words is closest in meaning to the word shy?",
+    "prompt": "Which of these words is closest in meaning to the word \"shy\"?",
     "correctLabel": "A",
     "hint": "Shy describes a person who shrinks back rather than pushing forward."
   },
@@ -17415,7 +17415,7 @@
     ],
     "answer_text": "Cunning",
     "source_page": 437,
-    "prompt": "Which of these words is closest in meaning to the word articular?",
+    "prompt": "Which of these words is closest in meaning to the word \"articular\"?",
     "correctLabel": "D"
   },
   {
@@ -17460,7 +17460,7 @@
     ],
     "answer_text": "Strength",
     "source_page": 437,
-    "prompt": "Which of these words is closest in meaning to the word fibre?",
+    "prompt": "Which of these words is closest in meaning to the word \"fibre\"?",
     "correctLabel": "E",
     "hint": "Fibre, said of a person, is the toughness running through their makeup."
   },
@@ -17506,7 +17506,7 @@
     ],
     "answer_text": "Bestow",
     "source_page": 438,
-    "prompt": "Which of these words is closest in meaning to the word give?",
+    "prompt": "Which of these words is closest in meaning to the word \"give\"?",
     "correctLabel": "A",
     "hint": "To give is to hand something over to another as a gift."
   },
@@ -17552,7 +17552,7 @@
     ],
     "answer_text": "Hold",
     "source_page": 438,
-    "prompt": "Which of these words is closest in meaning to the word keep?",
+    "prompt": "Which of these words is closest in meaning to the word \"keep\"?",
     "correctLabel": "C",
     "hint": "To keep something is to retain it rather than letting it go."
   },
@@ -17598,7 +17598,7 @@
     ],
     "answer_text": "Authorized",
     "source_page": 439,
-    "prompt": "Which of these words is closest in meaning to the word accredited?",
+    "prompt": "Which of these words is closest in meaning to the word \"accredited\"?",
     "correctLabel": "A",
     "hint": "Accredited describes someone formally recognized as entitled to act."
   },
@@ -17644,7 +17644,7 @@
     ],
     "answer_text": "Fatuity",
     "source_page": 439,
-    "prompt": "Which of these words is closest in meaning to the word infatuation?",
+    "prompt": "Which of these words is closest in meaning to the word \"infatuation\"?",
     "correctLabel": "D",
     "hint": "Infatuation is a foolish passion that blinds the judgment."
   },
@@ -17690,7 +17690,7 @@
     ],
     "answer_text": "Associate",
     "source_page": 440,
-    "prompt": "Which of these words is closest in meaning to the word companion?",
+    "prompt": "Which of these words is closest in meaning to the word \"companion\"?",
     "correctLabel": "A",
     "hint": "A companion is one who keeps you company as a matter of course."
   },
@@ -17736,7 +17736,7 @@
     ],
     "answer_text": "Lucky",
     "source_page": 440,
-    "prompt": "Which of these words is closest in meaning to the word fortunate?",
+    "prompt": "Which of these words is closest in meaning to the word \"fortunate\"?",
     "correctLabel": "B",
     "hint": "Fortunate describes someone on whom good chance has fallen."
   },
@@ -17782,7 +17782,7 @@
     ],
     "answer_text": "Censure",
     "source_page": 441,
-    "prompt": "Which of these words is closest in meaning to the word stricture?",
+    "prompt": "Which of these words is closest in meaning to the word \"stricture\"?",
     "correctLabel": "A",
     "hint": "A stricture is a sharp adverse judgment delivered openly."
   },
@@ -17828,7 +17828,7 @@
     ],
     "answer_text": "rejoice",
     "source_page": 441,
-    "prompt": "Which of these words is closest in meaning to the word gladden?",
+    "prompt": "Which of these words is closest in meaning to the word \"gladden\"?",
     "correctLabel": "E",
     "hint": "To gladden someone is to fill them with joy."
   },
@@ -17874,7 +17874,7 @@
     ],
     "answer_text": "Greed",
     "source_page": 442,
-    "prompt": "Which of these words is closest in meaning to the word avarice?",
+    "prompt": "Which of these words is closest in meaning to the word \"avarice\"?",
     "correctLabel": "B",
     "hint": "Avarice is a hunger for wealth that no amount will satisfy."
   },
@@ -17920,7 +17920,7 @@
     ],
     "answer_text": "Exceptive",
     "source_page": 442,
-    "prompt": "Which of these words is closest in meaning to the word eclectic?",
+    "prompt": "Which of these words is closest in meaning to the word \"eclectic\"?",
     "correctLabel": "C",
     "hint": "Eclectic describes picking certain items out and leaving the rest behind."
   },
@@ -17966,7 +17966,7 @@
     ],
     "answer_text": "Specify",
     "source_page": 443,
-    "prompt": "Which of these words is closest in meaning to the word enumerate?",
+    "prompt": "Which of these words is closest in meaning to the word \"enumerate\"?",
     "correctLabel": "E",
     "hint": "To enumerate is to set items out one by one instead of speaking in general."
   },
@@ -18012,7 +18012,7 @@
     ],
     "answer_text": "Resistance",
     "source_page": 443,
-    "prompt": "Which of these words is closest in meaning to the word defense?",
+    "prompt": "Which of these words is closest in meaning to the word \"defense\"?",
     "correctLabel": "A",
     "hint": "Defense is the act of holding out against a force pressing upon you."
   },
@@ -18058,7 +18058,7 @@
     ],
     "answer_text": "Racket",
     "source_page": 444,
-    "prompt": "Which of these words is closest in meaning to the word din?",
+    "prompt": "Which of these words is closest in meaning to the word \"din\"?",
     "correctLabel": "B",
     "hint": "A din is a clamor loud enough to drown out everything else."
   },
@@ -18104,7 +18104,7 @@
     ],
     "answer_text": "Plague",
     "source_page": 444,
-    "prompt": "Which of these words is closest in meaning to the word pester?",
+    "prompt": "Which of these words is closest in meaning to the word \"pester\"?",
     "correctLabel": "E",
     "hint": "To pester is to trouble someone over and over until they get no peace."
   },
@@ -18150,7 +18150,7 @@
     ],
     "answer_text": "Percolate",
     "source_page": 444,
-    "prompt": "Which of these words is closest in meaning to the word ooze?",
+    "prompt": "Which of these words is closest in meaning to the word \"ooze\"?",
     "correctLabel": "C",
     "hint": "To ooze is to seep slowly through a porous surface."
   },
@@ -18196,7 +18196,7 @@
     ],
     "answer_text": "Outburst",
     "source_page": 445,
-    "prompt": "Which of these words is closest in meaning to the word outbreak?",
+    "prompt": "Which of these words is closest in meaning to the word \"outbreak\"?",
     "correctLabel": "A",
     "hint": "An outbreak is something pent up that suddenly breaks into the open."
   },
@@ -18242,7 +18242,7 @@
     ],
     "answer_text": "Fusty",
     "source_page": 445,
-    "prompt": "Which of these words is closest in meaning to the word musty?",
+    "prompt": "Which of these words is closest in meaning to the word \"musty\"?",
     "correctLabel": "D",
     "hint": "Musty describes the close stale smell of a place long shut up."
   },
@@ -18288,7 +18288,7 @@
     ],
     "answer_text": "Gauzy",
     "source_page": 446,
-    "prompt": "Which of these words is closest in meaning to the word flimsy?",
+    "prompt": "Which of these words is closest in meaning to the word \"flimsy\"?",
     "correctLabel": "C",
     "hint": "Flimsy describes something so thin and light it gives way at a touch."
   },
@@ -18334,7 +18334,7 @@
     ],
     "answer_text": "Compact",
     "source_page": 446,
-    "prompt": "Which of these words is closest in meaning to the word alliance?",
+    "prompt": "Which of these words is closest in meaning to the word \"alliance\"?",
     "correctLabel": "A",
     "hint": "An alliance binds parties to each other by an agreed undertaking."
   },
@@ -18380,7 +18380,7 @@
     ],
     "answer_text": "Wake",
     "source_page": 447,
-    "prompt": "Which of these words is closest in meaning to the word enliven?",
+    "prompt": "Which of these words is closest in meaning to the word \"enliven\"?",
     "correctLabel": "D",
     "hint": "To enliven is to stir something dormant back into activity."
   },
@@ -18426,7 +18426,7 @@
     ],
     "answer_text": "Announcer",
     "source_page": 447,
-    "prompt": "Which of these words is closest in meaning to the word harbinger?",
+    "prompt": "Which of these words is closest in meaning to the word \"harbinger\"?",
     "correctLabel": "A",
     "hint": "A harbinger goes ahead and gives notice of what is coming."
   },
@@ -18472,7 +18472,7 @@
     ],
     "answer_text": "Naught",
     "source_page": 448,
-    "prompt": "Which of these words is closest in meaning to the word zero?",
+    "prompt": "Which of these words is closest in meaning to the word \"zero\"?",
     "correctLabel": "E",
     "hint": "Zero stands for the absence of any quantity whatever."
   },
@@ -18518,7 +18518,7 @@
     ],
     "answer_text": "Ample",
     "source_page": 448,
-    "prompt": "Which of these words is closest in meaning to the word commodious?",
+    "prompt": "Which of these words is closest in meaning to the word \"commodious\"?",
     "correctLabel": "E",
     "hint": "Commodious describes space generous enough for everything to fit easily."
   },
@@ -18564,7 +18564,7 @@
     ],
     "answer_text": "Sport",
     "source_page": 449,
-    "prompt": "Which of these words is closest in meaning to the word frisk?",
+    "prompt": "Which of these words is closest in meaning to the word \"frisk\"?",
     "correctLabel": "E",
     "hint": "To frisk is to leap about in play and high spirits."
   },
@@ -18610,7 +18610,7 @@
     ],
     "answer_text": "Short",
     "source_page": 449,
-    "prompt": "Which of these words is closest in meaning to the word scant?",
+    "prompt": "Which of these words is closest in meaning to the word \"scant\"?",
     "correctLabel": "D",
     "hint": "Scant describes an amount that falls well below what is wanted."
   },
@@ -18656,7 +18656,7 @@
     ],
     "answer_text": "Refuse",
     "source_page": 450,
-    "prompt": "Which of these words is closest in meaning to the word dregs?",
+    "prompt": "Which of these words is closest in meaning to the word \"dregs\"?",
     "correctLabel": "A",
     "hint": "Dregs are what settles at the bottom once all the worth is gone."
   },
@@ -18702,7 +18702,7 @@
     ],
     "answer_text": "Introduce",
     "source_page": 450,
-    "prompt": "Which of these words is closest in meaning to the word insinuate?",
+    "prompt": "Which of these words is closest in meaning to the word \"insinuate\"?",
     "correctLabel": "A",
     "hint": "To insinuate an idea is to work it in quietly, without anyone noticing."
   },
@@ -18748,7 +18748,7 @@
     ],
     "answer_text": "Becoming",
     "source_page": 451,
-    "prompt": "Which of these words is closest in meaning to the word seemly?",
+    "prompt": "Which of these words is closest in meaning to the word \"seemly\"?",
     "correctLabel": "C",
     "hint": "Seemly describes conduct that sits rightly with the company and the moment."
   },
@@ -18794,7 +18794,7 @@
     ],
     "answer_text": "Institution",
     "source_page": 451,
-    "prompt": "Which of these words is closest in meaning to the word foundation?",
+    "prompt": "Which of these words is closest in meaning to the word \"foundation\"?",
     "correctLabel": "C",
     "hint": "A foundation is a body deliberately set up to carry on into the future."
   },
@@ -18840,7 +18840,7 @@
     ],
     "answer_text": "Loose",
     "source_page": 452,
-    "prompt": "Which of these words is closest in meaning to the word astray?",
+    "prompt": "Which of these words is closest in meaning to the word \"astray\"?",
     "correctLabel": "C",
     "hint": "Astray describes something wandered off from the path it should keep."
   },
@@ -18886,7 +18886,7 @@
     ],
     "answer_text": "Countryman",
     "source_page": 452,
-    "prompt": "Which of these words is closest in meaning to the word peasant?",
+    "prompt": "Which of these words is closest in meaning to the word \"peasant\"?",
     "correctLabel": "A",
     "hint": "A peasant is someone whose whole life is bound to working the land."
   },
@@ -18932,7 +18932,7 @@
     ],
     "answer_text": "Clasp",
     "source_page": 453,
-    "prompt": "Which of these words is closest in meaning to the word embrace?",
+    "prompt": "Which of these words is closest in meaning to the word \"embrace\"?",
     "correctLabel": "E",
     "hint": "To embrace someone is to fold your arms firmly around them."
   },
@@ -18978,7 +18978,7 @@
     ],
     "answer_text": "Leap",
     "source_page": 453,
-    "prompt": "Which of these words is closest in meaning to the word spring?",
+    "prompt": "Which of these words is closest in meaning to the word \"spring\"?",
     "correctLabel": "C",
     "hint": "To spring is to throw yourself upward in one sudden movement."
   },
@@ -19024,7 +19024,7 @@
     ],
     "answer_text": "Restrictive",
     "source_page": 454,
-    "prompt": "Which of these words is closest in meaning to the word binding?",
+    "prompt": "Which of these words is closest in meaning to the word \"binding\"?",
     "correctLabel": "C",
     "hint": "Binding describes terms that hold someone within set limits."
   },
@@ -19070,7 +19070,7 @@
     ],
     "answer_text": "Deluge",
     "source_page": 454,
-    "prompt": "Which of these words is closest in meaning to the word flood?",
+    "prompt": "Which of these words is closest in meaning to the word \"flood\"?",
     "correctLabel": "D",
     "hint": "A flood is water rising far past its bounds and sweeping over everything."
   },
@@ -19116,7 +19116,7 @@
     ],
     "answer_text": "Compensatory",
     "source_page": 455,
-    "prompt": "Which of these words is closest in meaning to the word restorative?",
+    "prompt": "Which of these words is closest in meaning to the word \"restorative\"?",
     "correctLabel": "E",
     "hint": "Restorative describes what makes good a loss and brings back what was taken."
   },
@@ -19162,7 +19162,7 @@
     ],
     "answer_text": "Dissection",
     "source_page": 455,
-    "prompt": "Which of these words is closest in meaning to the word anatomy?",
+    "prompt": "Which of these words is closest in meaning to the word \"anatomy\"?",
     "correctLabel": "C",
     "hint": "Anatomy is the study of a body's structure by taking it apart."
   },
@@ -19208,7 +19208,7 @@
     ],
     "answer_text": "Extravasate",
     "source_page": 455,
-    "prompt": "Which of these words is closest in meaning to the word burst?",
+    "prompt": "Which of these words is closest in meaning to the word \"burst\"?",
     "correctLabel": "C",
     "hint": "To burst is to break bounds suddenly under pressure."
   },
@@ -19254,7 +19254,7 @@
     ],
     "answer_text": "Ravenous",
     "source_page": 456,
-    "prompt": "Which of these words is closest in meaning to the word predaceous?",
+    "prompt": "Which of these words is closest in meaning to the word \"predaceous\"?",
     "correctLabel": "A",
     "hint": "Predaceous describes a creature that lives by hunting and devouring."
   },
@@ -19300,7 +19300,7 @@
     ],
     "answer_text": "Perfume",
     "source_page": 456,
-    "prompt": "Which of these words is closest in meaning to the word redolence?",
+    "prompt": "Which of these words is closest in meaning to the word \"redolence\"?",
     "correctLabel": "A",
     "hint": "Redolence is a sweet scent hanging in the air."
   },
@@ -19346,7 +19346,7 @@
     ],
     "answer_text": "Fanciful",
     "source_page": 457,
-    "prompt": "Which of these words is closest in meaning to the word visionary?",
+    "prompt": "Which of these words is closest in meaning to the word \"visionary\"?",
     "correctLabel": "A",
     "hint": "Visionary describes what exists only in the imagination."
   },
@@ -19392,7 +19392,7 @@
     ],
     "answer_text": "Color",
     "source_page": 457,
-    "prompt": "Which of these words is closest in meaning to the word paint?",
+    "prompt": "Which of these words is closest in meaning to the word \"paint\"?",
     "correctLabel": "D",
     "hint": "To paint is to lay a hue over a surface."
   },
@@ -19438,7 +19438,7 @@
     ],
     "answer_text": "despicable",
     "source_page": 458,
-    "prompt": "Which of these words is closest in meaning to the word contemptible?",
+    "prompt": "Which of these words is closest in meaning to the word \"contemptible\"?",
     "correctLabel": "B",
     "hint": "Contemptible describes conduct so low that it earns nothing but scorn."
   },
@@ -19484,7 +19484,7 @@
     ],
     "answer_text": "Constancy",
     "source_page": 458,
-    "prompt": "Which of these words is closest in meaning to the word perpetuity?",
+    "prompt": "Which of these words is closest in meaning to the word \"perpetuity\"?",
     "correctLabel": "A",
     "hint": "Perpetuity is going on without break or end."
   },
@@ -19530,7 +19530,7 @@
     ],
     "answer_text": "Existent",
     "source_page": 459,
-    "prompt": "Which of these words is closest in meaning to the word extant?",
+    "prompt": "Which of these words is closest in meaning to the word \"extant\"?",
     "correctLabel": "C",
     "hint": "Extant describes what has survived and is still with us."
   },
@@ -19576,7 +19576,7 @@
     ],
     "answer_text": "Lore",
     "source_page": 459,
-    "prompt": "Which of these words is closest in meaning to the word litigious?",
+    "prompt": "Which of these words is closest in meaning to the word \"litigious\"?",
     "correctLabel": "B"
   },
   {
@@ -19621,7 +19621,7 @@
     ],
     "answer_text": "Chide",
     "source_page": 460,
-    "prompt": "Which of these words is closest in meaning to the word scold?",
+    "prompt": "Which of these words is closest in meaning to the word \"scold\"?",
     "correctLabel": "D",
     "hint": "To scold is to rebuke someone sharply for a fault."
   },
@@ -19667,7 +19667,7 @@
     ],
     "answer_text": "Thought",
     "source_page": 460,
-    "prompt": "Which of these words is closest in meaning to the word fancy?",
+    "prompt": "Which of these words is closest in meaning to the word \"fancy\"?",
     "correctLabel": "C",
     "hint": "A fancy is a notion that takes shape in the mind rather than in fact."
   },
@@ -19713,7 +19713,7 @@
     ],
     "answer_text": "Failure",
     "source_page": 461,
-    "prompt": "Which of these words is closest in meaning to the word defalcation?",
+    "prompt": "Which of these words is closest in meaning to the word \"defalcation\"?",
     "correctLabel": "A",
     "hint": "Defalcation is an obligation left unmet and a trust not made good."
   },
@@ -19759,7 +19759,7 @@
     ],
     "answer_text": "Abroad",
     "source_page": 461,
-    "prompt": "Which of these words is closest in meaning to the word agog?",
+    "prompt": "Which of these words is closest in meaning to the word \"agog\"?",
     "correctLabel": "A",
     "hint": "Agog describes being stirred up and all astir with eagerness."
   },
@@ -19805,7 +19805,7 @@
     ],
     "answer_text": "Hateful",
     "source_page": 462,
-    "prompt": "Which of these words is closest in meaning to the word odious?",
+    "prompt": "Which of these words is closest in meaning to the word \"odious\"?",
     "correctLabel": "A",
     "hint": "Odious describes something that provokes strong loathing in anyone who meets it."
   },
@@ -19851,7 +19851,7 @@
     ],
     "answer_text": "Gibe",
     "source_page": 462,
-    "prompt": "Which of these words is closest in meaning to the word sarcasm?",
+    "prompt": "Which of these words is closest in meaning to the word \"sarcasm\"?",
     "correctLabel": "C",
     "hint": "Sarcasm is a remark sharpened deliberately to sting."
   },
@@ -19897,7 +19897,7 @@
     ],
     "answer_text": "Evacuant",
     "source_page": 463,
-    "prompt": "Which of these words is closest in meaning to the word purgative?",
+    "prompt": "Which of these words is closest in meaning to the word \"purgative\"?",
     "correctLabel": "D",
     "hint": "A purgative is a remedy given to clear the system out."
   },
@@ -19943,7 +19943,7 @@
     ],
     "answer_text": "Rarity",
     "source_page": 463,
-    "prompt": "Which of these words is closest in meaning to the word paucity?",
+    "prompt": "Which of these words is closest in meaning to the word \"paucity\"?",
     "correctLabel": "D",
     "hint": "Paucity is a supply far shorter than one would wish."
   },
@@ -19989,7 +19989,7 @@
     ],
     "answer_text": "Tortuous",
     "source_page": 464,
-    "prompt": "Which of these words is closest in meaning to the word ambagious?",
+    "prompt": "Which of these words is closest in meaning to the word \"ambagious\"?",
     "correctLabel": "D",
     "hint": "Ambagious describes a course that winds about instead of going straight."
   },
@@ -20035,7 +20035,7 @@
     ],
     "answer_text": "Summit",
     "source_page": 464,
-    "prompt": "Which of these words is closest in meaning to the word acme?",
+    "prompt": "Which of these words is closest in meaning to the word \"acme\"?",
     "correctLabel": "C",
     "hint": "The acme is the very top, beyond which there is no higher."
   },
@@ -20081,7 +20081,7 @@
     ],
     "answer_text": "Quiet",
     "source_page": 465,
-    "prompt": "Which of these words is closest in meaning to the word still?",
+    "prompt": "Which of these words is closest in meaning to the word \"still\"?",
     "correctLabel": "A",
     "hint": "Still describes a stillness in which nothing stirs or sounds."
   },
@@ -20127,7 +20127,7 @@
     ],
     "answer_text": "Jar",
     "source_page": 465,
-    "prompt": "Which of these words is closest in meaning to the word crash?",
+    "prompt": "Which of these words is closest in meaning to the word \"crash\"?",
     "correctLabel": "E",
     "hint": "A crash is a hard collision that sends a shock through everything near."
   },
@@ -20173,7 +20173,7 @@
     ],
     "answer_text": "Exhaust",
     "source_page": 466,
-    "prompt": "Which of these words is closest in meaning to the word tire?",
+    "prompt": "Which of these words is closest in meaning to the word \"tire\"?",
     "correctLabel": "E",
     "hint": "To tire someone is to wear their strength down."
   },
@@ -20219,7 +20219,7 @@
     ],
     "answer_text": "Brief",
     "source_page": 466,
-    "prompt": "Which of these words is closest in meaning to the word short?",
+    "prompt": "Which of these words is closest in meaning to the word \"short\"?",
     "correctLabel": "E",
     "hint": "Short describes something that does not run on for long."
   },
@@ -20265,7 +20265,7 @@
     ],
     "answer_text": "Swearing",
     "source_page": 467,
-    "prompt": "Which of these words is closest in meaning to the word blasphemy?",
+    "prompt": "Which of these words is closest in meaning to the word \"blasphemy\"?",
     "correctLabel": "D",
     "hint": "Blasphemy is speech that treats sacred things with contempt."
   },
@@ -20311,7 +20311,7 @@
     ],
     "answer_text": "Difference",
     "source_page": 467,
-    "prompt": "Which of these words is closest in meaning to the word variance?",
+    "prompt": "Which of these words is closest in meaning to the word \"variance\"?",
     "correctLabel": "D",
     "hint": "Variance is the gap between two things that do not agree."
   },
@@ -20357,7 +20357,7 @@
     ],
     "answer_text": "Complain",
     "source_page": 468,
-    "prompt": "Which of these words is closest in meaning to the word croak?",
+    "prompt": "Which of these words is closest in meaning to the word \"croak\"?",
     "correctLabel": "A",
     "hint": "To croak is to grumble out a low note of discontent."
   },
@@ -20403,7 +20403,7 @@
     ],
     "answer_text": "Attach",
     "source_page": 468,
-    "prompt": "Which of these words is closest in meaning to the word endear?",
+    "prompt": "Which of these words is closest in meaning to the word \"endear\"?",
     "correctLabel": "D",
     "hint": "To endear someone is to bind others to them by ties of affection."
   },
@@ -20449,7 +20449,7 @@
     ],
     "answer_text": "Insane",
     "source_page": 468,
-    "prompt": "Which of these words is closest in meaning to the word mad?",
+    "prompt": "Which of these words is closest in meaning to the word \"mad\"?",
     "correctLabel": "A",
     "hint": "Mad describes a mind that has lost its ordinary reason."
   },
@@ -20495,7 +20495,7 @@
     ],
     "answer_text": "Edifice",
     "source_page": 469,
-    "prompt": "Which of these words is closest in meaning to the word building?",
+    "prompt": "Which of these words is closest in meaning to the word \"building\"?",
     "correctLabel": "D",
     "hint": "A building is a structure with walls and a roof raised on a site."
   },
@@ -20541,7 +20541,7 @@
     ],
     "answer_text": "Naught",
     "source_page": 469,
-    "prompt": "Which of these words is closest in meaning to the word zero?",
+    "prompt": "Which of these words is closest in meaning to the word \"zero\"?",
     "correctLabel": "B",
     "hint": "Zero marks the point at which there is nothing left to count."
   },
@@ -20587,7 +20587,7 @@
     ],
     "answer_text": "Remuneration",
     "source_page": 470,
-    "prompt": "Which of these words is closest in meaning to the word wages?",
+    "prompt": "Which of these words is closest in meaning to the word \"wages\"?",
     "correctLabel": "A",
     "hint": "Wages are what is handed over in return for labor performed."
   },
@@ -20633,7 +20633,7 @@
     ],
     "answer_text": "Sharply",
     "source_page": 470,
-    "prompt": "Which of these words is closest in meaning to the word acutely?",
+    "prompt": "Which of these words is closest in meaning to the word \"acutely\"?",
     "correctLabel": "B",
     "hint": "Acutely describes feeling something with a keen cutting edge."
   },
@@ -20679,7 +20679,7 @@
     ],
     "answer_text": "Mixture",
     "source_page": 471,
-    "prompt": "Which of these words is closest in meaning to the word compound?",
+    "prompt": "Which of these words is closest in meaning to the word \"compound\"?",
     "correctLabel": "E",
     "hint": "A compound is a single substance made by bringing several others together."
   },
@@ -20725,7 +20725,7 @@
     ],
     "answer_text": "Refutable",
     "source_page": 471,
-    "prompt": "Which of these words is closest in meaning to the word refragable?",
+    "prompt": "Which of these words is closest in meaning to the word \"refragable\"?",
     "correctLabel": "A",
     "hint": "Refragable describes a claim that can be argued down and disproved."
   },
@@ -20771,7 +20771,7 @@
     ],
     "answer_text": "Change",
     "source_page": 472,
-    "prompt": "Which of these words is closest in meaning to the word vicissitude?",
+    "prompt": "Which of these words is closest in meaning to the word \"vicissitude\"?",
     "correctLabel": "D",
     "hint": "A vicissitude is a turn in circumstances from one state to another."
   },
@@ -20817,7 +20817,7 @@
     ],
     "answer_text": "Pretence",
     "source_page": 472,
-    "prompt": "Which of these words is closest in meaning to the word affectation?",
+    "prompt": "Which of these words is closest in meaning to the word \"affectation\"?",
     "correctLabel": "C",
     "hint": "Affectation is a manner put on for display rather than genuinely felt."
   },
@@ -20863,7 +20863,7 @@
     ],
     "answer_text": "Related",
     "source_page": 473,
-    "prompt": "Which of these words is closest in meaning to the word pertinent?",
+    "prompt": "Which of these words is closest in meaning to the word \"pertinent\"?",
     "correctLabel": "A",
     "hint": "Pertinent describes what bears directly on the point at hand."
   },
@@ -20909,7 +20909,7 @@
     ],
     "answer_text": "Probe",
     "source_page": 473,
-    "prompt": "Which of these words is closest in meaning to the word sound?",
+    "prompt": "Which of these words is closest in meaning to the word \"sound\"?",
     "correctLabel": "A",
     "hint": "To sound a depth is to test what lies beneath the surface."
   },
@@ -20955,7 +20955,7 @@
     ],
     "answer_text": "Odd",
     "source_page": 474,
-    "prompt": "Which of these words is closest in meaning to the word queer?",
+    "prompt": "Which of these words is closest in meaning to the word \"queer\"?",
     "correctLabel": "D",
     "hint": "Queer describes what departs from the usual and expected."
   },
@@ -21001,7 +21001,7 @@
     ],
     "answer_text": "Significant",
     "source_page": 474,
-    "prompt": "Which of these words is closest in meaning to the word important?",
+    "prompt": "Which of these words is closest in meaning to the word \"important\"?",
     "correctLabel": "B",
     "hint": "Important describes what matters enough to change how things turn out."
   },
@@ -21047,7 +21047,7 @@
     ],
     "answer_text": "Protection",
     "source_page": 475,
-    "prompt": "Which of these words is closest in meaning to the word tutelage?",
+    "prompt": "Which of these words is closest in meaning to the word \"tutelage\"?",
     "correctLabel": "A",
     "hint": "Tutelage is the guardianship under which someone is kept while learning."
   },
@@ -21093,7 +21093,7 @@
     ],
     "answer_text": "Expostulate",
     "source_page": 475,
-    "prompt": "Which of these words is closest in meaning to the word protest?",
+    "prompt": "Which of these words is closest in meaning to the word \"protest\"?",
     "correctLabel": "A",
     "hint": "To protest is to argue openly against what someone means to do."
   },
@@ -21139,7 +21139,7 @@
     ],
     "answer_text": "Oppose",
     "source_page": 476,
-    "prompt": "Which of these words is closest in meaning to the word confront?",
+    "prompt": "Which of these words is closest in meaning to the word \"confront\"?",
     "correctLabel": "E",
     "hint": "To confront is to stand squarely against someone face to face."
   },
@@ -21185,7 +21185,7 @@
     ],
     "answer_text": "Split",
     "source_page": 476,
-    "prompt": "Which of these words is closest in meaning to the word crack?",
+    "prompt": "Which of these words is closest in meaning to the word \"crack\"?",
     "correctLabel": "E",
     "hint": "To crack is to break along a line of weakness."
   },
@@ -21231,7 +21231,7 @@
     ],
     "answer_text": "Withdraw",
     "source_page": 477,
-    "prompt": "Which of these words is closest in meaning to the word retire?",
+    "prompt": "Which of these words is closest in meaning to the word \"retire\"?",
     "correctLabel": "B",
     "hint": "To retire is to draw back from the position you held."
   },
@@ -21277,7 +21277,7 @@
     ],
     "answer_text": "Becoming",
     "source_page": 477,
-    "prompt": "Which of these words is closest in meaning to the word seemly?",
+    "prompt": "Which of these words is closest in meaning to the word \"seemly\"?",
     "correctLabel": "B",
     "hint": "Seemly describes what befits the occasion and the company present."
   },
@@ -21323,7 +21323,7 @@
     ],
     "answer_text": "Draw",
     "source_page": 478,
-    "prompt": "Which of these words is closest in meaning to the word portray?",
+    "prompt": "Which of these words is closest in meaning to the word \"portray\"?",
     "correctLabel": "A",
     "hint": "To portray something is to set down its likeness for others to see."
   },
@@ -21369,7 +21369,7 @@
     ],
     "answer_text": "Complain",
     "source_page": 478,
-    "prompt": "Which of these words is closest in meaning to the word croak?",
+    "prompt": "Which of these words is closest in meaning to the word \"croak\"?",
     "correctLabel": "B",
     "hint": "To croak is to voice discontent in a low grumbling way."
   },
@@ -21415,7 +21415,7 @@
     ],
     "answer_text": "Previous",
     "source_page": 479,
-    "prompt": "Which of these words is closest in meaning to the word preliminary?",
+    "prompt": "Which of these words is closest in meaning to the word \"preliminary\"?",
     "correctLabel": "B",
     "hint": "Preliminary describes what comes ahead of the main business."
   },
@@ -21461,7 +21461,7 @@
     ],
     "answer_text": "Exalt",
     "source_page": 479,
-    "prompt": "Which of these words is closest in meaning to the word heighten?",
+    "prompt": "Which of these words is closest in meaning to the word \"heighten\"?",
     "correctLabel": "B",
     "hint": "To heighten something is to lift it above where it stood before."
   },
@@ -21507,7 +21507,7 @@
     ],
     "answer_text": "Occurrence",
     "source_page": 480,
-    "prompt": "Which of these words is closest in meaning to the word event?",
+    "prompt": "Which of these words is closest in meaning to the word \"event\"?",
     "correctLabel": "C",
     "hint": "An event is a thing that takes place rather than a thing that exists."
   },
@@ -21553,7 +21553,7 @@
     ],
     "answer_text": "Remarkable",
     "source_page": 480,
-    "prompt": "Which of these words is closest in meaning to the word eventful?",
+    "prompt": "Which of these words is closest in meaning to the word \"eventful\"?",
     "correctLabel": "C",
     "hint": "Eventful describes a stretch of time crowded with things worth noting."
   },
@@ -21599,7 +21599,7 @@
     ],
     "answer_text": "Confirmation",
     "source_page": 481,
-    "prompt": "Which of these words is closest in meaning to the word correspond?",
+    "prompt": "Which of these words is closest in meaning to the word \"correspond\"?",
     "correctLabel": "D"
   },
   {
@@ -21644,7 +21644,7 @@
     ],
     "answer_text": "Invention",
     "source_page": 481,
-    "prompt": "Which of these words is closest in meaning to the word fiction?",
+    "prompt": "Which of these words is closest in meaning to the word \"fiction\"?",
     "correctLabel": "B",
     "hint": "Fiction is a story framed by the imagination rather than drawn from fact."
   },
@@ -21690,7 +21690,7 @@
     ],
     "answer_text": "Support",
     "source_page": 482,
-    "prompt": "Which of these words is closest in meaning to the word sustenance?",
+    "prompt": "Which of these words is closest in meaning to the word \"sustenance\"?",
     "correctLabel": "C",
     "hint": "Sustenance is what keeps a body fed and standing."
   },
@@ -21736,7 +21736,7 @@
     ],
     "answer_text": "Feast",
     "source_page": 482,
-    "prompt": "Which of these words is closest in meaning to the word banquet?",
+    "prompt": "Which of these words is closest in meaning to the word \"banquet\"?",
     "correctLabel": "B",
     "hint": "A banquet is a great spread laid on for a gathering."
   },
@@ -21782,7 +21782,7 @@
     ],
     "answer_text": "Unmitigated",
     "source_page": 483,
-    "prompt": "Which of these words is closest in meaning to the word inexcusable?",
+    "prompt": "Which of these words is closest in meaning to the word \"inexcusable\"?",
     "correctLabel": "A",
     "hint": "Inexcusable describes a fault that stands whole, with nothing to plead for it."
   },
@@ -21828,7 +21828,7 @@
     ],
     "answer_text": "Restraint",
     "source_page": 483,
-    "prompt": "Which of these words is closest in meaning to the word embargo?",
+    "prompt": "Which of these words is closest in meaning to the word \"embargo\"?",
     "correctLabel": "B",
     "hint": "An embargo is an official hold placed on trade or movement."
   },
@@ -21874,7 +21874,7 @@
     ],
     "answer_text": "Pour",
     "source_page": 484,
-    "prompt": "Which of these words is closest in meaning to the word instil?",
+    "prompt": "Which of these words is closest in meaning to the word \"instil\"?",
     "correctLabel": "B",
     "hint": "To instil a quality is to put it in little by little."
   },
@@ -21920,7 +21920,7 @@
     ],
     "answer_text": "Speed",
     "source_page": 484,
-    "prompt": "Which of these words is closest in meaning to the word rush?",
+    "prompt": "Which of these words is closest in meaning to the word \"rush\"?",
     "correctLabel": "D",
     "hint": "To rush is to move at a great pace."
   },
@@ -21966,7 +21966,7 @@
     ],
     "answer_text": "Air-tight",
     "source_page": 485,
-    "prompt": "Which of these words is closest in meaning to the word hermetically?",
+    "prompt": "Which of these words is closest in meaning to the word \"hermetically\"?",
     "correctLabel": "E",
     "hint": "Hermetically describes a seal so complete that nothing can pass it."
   },
@@ -22012,7 +22012,7 @@
     ],
     "answer_text": "Flexible",
     "source_page": 485,
-    "prompt": "Which of these words is closest in meaning to the word pliable?",
+    "prompt": "Which of these words is closest in meaning to the word \"pliable\"?",
     "correctLabel": "E",
     "hint": "Pliable describes something that bends under pressure without snapping."
   },
@@ -22058,7 +22058,7 @@
     ],
     "answer_text": "Indistinctness",
     "source_page": 486,
-    "prompt": "Which of these words is closest in meaning to the word indiscrimination?",
+    "prompt": "Which of these words is closest in meaning to the word \"indiscrimination\"?",
     "correctLabel": "C",
     "hint": "Indiscrimination is a state in which differences are no longer marked off."
   },
@@ -22104,7 +22104,7 @@
     ],
     "answer_text": "Trace",
     "source_page": 486,
-    "prompt": "Which of these words is closest in meaning to the word vestige?",
+    "prompt": "Which of these words is closest in meaning to the word \"vestige\"?",
     "correctLabel": "C",
     "hint": "A vestige is the little that remains to show a thing was once there."
   },
@@ -22150,7 +22150,7 @@
     ],
     "answer_text": "Unbound",
     "source_page": 487,
-    "prompt": "Which of these words is closest in meaning to the word loose?",
+    "prompt": "Which of these words is closest in meaning to the word \"loose\"?",
     "correctLabel": "A",
     "hint": "Loose describes something no longer held fast by any tie."
   },
@@ -22196,7 +22196,7 @@
     ],
     "answer_text": "Taken",
     "source_page": 487,
-    "prompt": "Which of these words is closest in meaning to the word captivated?",
+    "prompt": "Which of these words is closest in meaning to the word \"captivated\"?",
     "correctLabel": "D",
     "hint": "Captivated describes having your attention wholly seized and held."
   },
@@ -22242,7 +22242,7 @@
     ],
     "answer_text": "Invented",
     "source_page": 487,
-    "prompt": "Which of these words is closest in meaning to the word artificial?",
+    "prompt": "Which of these words is closest in meaning to the word \"artificial\"?",
     "correctLabel": "B",
     "hint": "Artificial describes what was produced by design rather than arising on its own."
   },
@@ -22288,7 +22288,7 @@
     ],
     "answer_text": "Hostile",
     "source_page": 488,
-    "prompt": "Which of these words is closest in meaning to the word repugnant?",
+    "prompt": "Which of these words is closest in meaning to the word \"repugnant\"?",
     "correctLabel": "E",
     "hint": "Repugnant describes what one is set flatly against and finds offensive."
   },
@@ -22334,7 +22334,7 @@
     ],
     "answer_text": "Undesirable",
     "source_page": 488,
-    "prompt": "Which of these words is closest in meaning to the word inexpedient?",
+    "prompt": "Which of these words is closest in meaning to the word \"inexpedient\"?",
     "correctLabel": "D",
     "hint": "Inexpedient describes a course that would be better not taken."
   },
@@ -22380,7 +22380,7 @@
     ],
     "answer_text": "Experimental",
     "source_page": 489,
-    "prompt": "Which of these words is closest in meaning to the word empirical?",
+    "prompt": "Which of these words is closest in meaning to the word \"empirical\"?",
     "correctLabel": "D",
     "hint": "Empirical describes knowledge won by trial and observation."
   },
@@ -22426,7 +22426,7 @@
     ],
     "answer_text": "Deviation",
     "source_page": 489,
-    "prompt": "Which of these words is closest in meaning to the word divarication?",
+    "prompt": "Which of these words is closest in meaning to the word \"divarication\"?",
     "correctLabel": "C",
     "hint": "Divarication is a branching apart into separate directions."
   },
@@ -22472,7 +22472,7 @@
     ],
     "answer_text": "Mean",
     "source_page": 490,
-    "prompt": "Which of these words is closest in meaning to the word average?",
+    "prompt": "Which of these words is closest in meaning to the word \"average\"?",
     "correctLabel": "C",
     "hint": "An average is the middle figure struck between the highest and the lowest."
   },
@@ -22518,7 +22518,7 @@
     ],
     "answer_text": "Existing",
     "source_page": 490,
-    "prompt": "Which of these words is closest in meaning to the word substantial?",
+    "prompt": "Which of these words is closest in meaning to the word \"substantial\"?",
     "correctLabel": "D",
     "hint": "Substantial describes what has real being rather than mere appearance."
   },
@@ -22564,7 +22564,7 @@
     ],
     "answer_text": "Facts",
     "source_page": 491,
-    "prompt": "Which of these words is closest in meaning to the word data?",
+    "prompt": "Which of these words is closest in meaning to the word \"data\"?",
     "correctLabel": "A",
     "hint": "Data are the pieces of established information a conclusion rests on."
   },
@@ -22610,7 +22610,7 @@
     ],
     "answer_text": "Scant",
     "source_page": 491,
-    "prompt": "Which of these words is closest in meaning to the word few?",
+    "prompt": "Which of these words is closest in meaning to the word \"few\"?",
     "correctLabel": "C",
     "hint": "Few describes an amount that falls well short of plenty."
   },
@@ -22656,7 +22656,7 @@
     ],
     "answer_text": "Fasten",
     "source_page": 492,
-    "prompt": "Which of these words is closest in meaning to the word attach?",
+    "prompt": "Which of these words is closest in meaning to the word \"attach\"?",
     "correctLabel": "C",
     "hint": "To attach one thing to another is to secure it so it will not come off."
   },
@@ -22702,7 +22702,7 @@
     ],
     "answer_text": "Rhodomontade",
     "source_page": 492,
-    "prompt": "Which of these words is closest in meaning to the word bombast?",
+    "prompt": "Which of these words is closest in meaning to the word \"bombast\"?",
     "correctLabel": "D",
     "hint": "Bombast is language puffed up far beyond what the matter deserves."
   },
@@ -22748,7 +22748,7 @@
     ],
     "answer_text": "Introduce",
     "source_page": 493,
-    "prompt": "Which of these words is closest in meaning to the word interpose?",
+    "prompt": "Which of these words is closest in meaning to the word \"interpose\"?",
     "correctLabel": "C",
     "hint": "To interpose is to place something in between two others."
   },
@@ -22794,7 +22794,7 @@
     ],
     "answer_text": "Train",
     "source_page": 493,
-    "prompt": "Which of these words is closest in meaning to the word procession?",
+    "prompt": "Which of these words is closest in meaning to the word \"procession\"?",
     "correctLabel": "A",
     "hint": "A procession is a long ordered line moving forward as one body."
   },
@@ -22840,7 +22840,7 @@
     ],
     "answer_text": "Tie",
     "source_page": 494,
-    "prompt": "Which of these words is closest in meaning to the word knot?",
+    "prompt": "Which of these words is closest in meaning to the word \"knot\"?",
     "correctLabel": "E",
     "hint": "A knot is cord bound on itself to hold something fast."
   },
@@ -22886,7 +22886,7 @@
     ],
     "answer_text": "Encompass",
     "source_page": 494,
-    "prompt": "Which of these words is closest in meaning to the word compass?",
+    "prompt": "Which of these words is closest in meaning to the word \"compass\"?",
     "correctLabel": "B",
     "hint": "To compass a subject is to reach all the way around it and take it in."
   },
@@ -22932,7 +22932,7 @@
     ],
     "answer_text": "Irreproachable",
     "source_page": 495,
-    "prompt": "Which of these words is closest in meaning to the word irreprovable?",
+    "prompt": "Which of these words is closest in meaning to the word \"irreprovable\"?",
     "correctLabel": "A",
     "hint": "Irreprovable describes conduct that leaves nothing for anyone to fault."
   },
@@ -22978,7 +22978,7 @@
     ],
     "answer_text": "Native",
     "source_page": 495,
-    "prompt": "Which of these words is closest in meaning to the word intrinsic?",
+    "prompt": "Which of these words is closest in meaning to the word \"intrinsic\"?",
     "correctLabel": "A",
     "hint": "Intrinsic describes a quality belonging to a thing in itself, not added on."
   },
@@ -23024,7 +23024,7 @@
     ],
     "answer_text": "Component",
     "source_page": 496,
-    "prompt": "Which of these words is closest in meaning to the word element?",
+    "prompt": "Which of these words is closest in meaning to the word \"element\"?",
     "correctLabel": "C",
     "hint": "An element is a single part out of which a larger whole is built."
   },
@@ -23070,7 +23070,7 @@
     ],
     "answer_text": "Leave",
     "source_page": 496,
-    "prompt": "Which of these words is closest in meaning to the word permission?",
+    "prompt": "Which of these words is closest in meaning to the word \"permission\"?",
     "correctLabel": "A",
     "hint": "Permission is consent given for what would otherwise be barred."
   },
@@ -23116,7 +23116,7 @@
     ],
     "answer_text": "Stop",
     "source_page": 497,
-    "prompt": "Which of these words is closest in meaning to the word stint?",
+    "prompt": "Which of these words is closest in meaning to the word \"stint\"?",
     "correctLabel": "C",
     "hint": "To stint is to check something so that it goes no further."
   },
@@ -23162,7 +23162,7 @@
     ],
     "answer_text": "Robes",
     "source_page": 497,
-    "prompt": "Which of these words is closest in meaning to the word attire?",
+    "prompt": "Which of these words is closest in meaning to the word \"attire\"?",
     "correctLabel": "C",
     "hint": "Attire is the clothing in which someone is arrayed."
   },
@@ -23208,7 +23208,7 @@
     ],
     "answer_text": "Numb",
     "source_page": 498,
-    "prompt": "Which of these words is closest in meaning to the word torpid?",
+    "prompt": "Which of these words is closest in meaning to the word \"torpid\"?",
     "correctLabel": "A",
     "hint": "Torpid describes something so dulled that it neither feels nor stirs."
   },
@@ -23254,7 +23254,7 @@
     ],
     "answer_text": "Rural",
     "source_page": 498,
-    "prompt": "Which of these words is closest in meaning to the word rustic?",
+    "prompt": "Which of these words is closest in meaning to the word \"rustic\"?",
     "correctLabel": "D",
     "hint": "Rustic describes what belongs to the country rather than the town."
   },
@@ -23300,7 +23300,7 @@
     ],
     "answer_text": "Air",
     "source_page": 499,
-    "prompt": "Which of these words is closest in meaning to the word spirit?",
+    "prompt": "Which of these words is closest in meaning to the word \"spirit\"?",
     "correctLabel": "D",
     "hint": "Spirit here means the manner and bearing a person carries about them."
   },
@@ -23346,7 +23346,7 @@
     ],
     "answer_text": "Feast",
     "source_page": 499,
-    "prompt": "Which of these words is closest in meaning to the word regale?",
+    "prompt": "Which of these words is closest in meaning to the word \"regale\"?",
     "correctLabel": "A",
     "hint": "To regale guests is to treat them to a rich and generous spread."
   },
@@ -23392,7 +23392,7 @@
     ],
     "answer_text": "Crush",
     "source_page": 500,
-    "prompt": "Which of these words is closest in meaning to the word repress?",
+    "prompt": "Which of these words is closest in meaning to the word \"repress\"?",
     "correctLabel": "C",
     "hint": "To repress a revolt is to bear down on it until it cannot rise."
   },
@@ -23438,7 +23438,7 @@
     ],
     "answer_text": "Ask",
     "source_page": 500,
-    "prompt": "Which of these words is closest in meaning to the word request?",
+    "prompt": "Which of these words is closest in meaning to the word \"request\"?",
     "correctLabel": "E",
     "hint": "To request is to apply to someone for what you want."
   },
@@ -23484,7 +23484,7 @@
     ],
     "answer_text": "Diffuse",
     "source_page": 501,
-    "prompt": "Which of these words is closest in meaning to the word prolix?",
+    "prompt": "Which of these words is closest in meaning to the word \"prolix\"?",
     "correctLabel": "A",
     "hint": "Prolix describes writing drawn out far past what the matter needs."
   },
@@ -23530,7 +23530,7 @@
     ],
     "answer_text": "Foster",
     "source_page": 501,
-    "prompt": "Which of these words is closest in meaning to the word cherish?",
+    "prompt": "Which of these words is closest in meaning to the word \"cherish\"?",
     "correctLabel": "E",
     "hint": "To cherish something is to hold it dear and tend it with care."
   },
@@ -23576,7 +23576,7 @@
     ],
     "answer_text": "Overturn",
     "source_page": 501,
-    "prompt": "Which of these words is closest in meaning to the word upset?",
+    "prompt": "Which of these words is closest in meaning to the word \"upset\"?",
     "correctLabel": "C",
     "hint": "To upset something is to knock it out of its upright position."
   },
@@ -23622,7 +23622,7 @@
     ],
     "answer_text": "Pale",
     "source_page": 502,
-    "prompt": "Which of these words is closest in meaning to the word warm?",
+    "prompt": "Which of these words is closest in meaning to the word \"warm\"?",
     "correctLabel": "C"
   },
   {
@@ -23667,7 +23667,7 @@
     ],
     "answer_text": "Inclose",
     "source_page": 502,
-    "prompt": "Which of these words is closest in meaning to the word incase?",
+    "prompt": "Which of these words is closest in meaning to the word \"incase\"?",
     "correctLabel": "E",
     "hint": "To incase something is to shut it in on every side."
   },
@@ -23713,7 +23713,7 @@
     ],
     "answer_text": "Rebellious",
     "source_page": 503,
-    "prompt": "Which of these words is closest in meaning to the word insurgent?",
+    "prompt": "Which of these words is closest in meaning to the word \"insurgent\"?",
     "correctLabel": "B",
     "hint": "An insurgent is one rising up against the power set over them."
   },
@@ -23759,7 +23759,7 @@
     ],
     "answer_text": "Ugliness",
     "source_page": 503,
-    "prompt": "Which of these words is closest in meaning to the word deformity?",
+    "prompt": "Which of these words is closest in meaning to the word \"deformity\"?",
     "correctLabel": "E",
     "hint": "Deformity is a shape that offends the eye by departing from what it should be."
   },
@@ -23805,7 +23805,7 @@
     ],
     "answer_text": "Terse",
     "source_page": 504,
-    "prompt": "Which of these words is closest in meaning to the word laconic?",
+    "prompt": "Which of these words is closest in meaning to the word \"laconic\"?",
     "correctLabel": "B",
     "hint": "Laconic describes speech cut down to the fewest words that will do."
   },
@@ -23851,7 +23851,7 @@
     ],
     "answer_text": "Injury",
     "source_page": 504,
-    "prompt": "Which of these words is closest in meaning to the word damage?",
+    "prompt": "Which of these words is closest in meaning to the word \"damage\"?",
     "correctLabel": "C",
     "hint": "Damage is harm inflicted that leaves a thing the worse for it."
   },
@@ -23897,7 +23897,7 @@
     ],
     "answer_text": "Offspring",
     "source_page": 505,
-    "prompt": "Which of these words is closest in meaning to the word progeny?",
+    "prompt": "Which of these words is closest in meaning to the word \"progeny\"?",
     "correctLabel": "C",
     "hint": "Progeny are the children that come after and carry a line forward."
   },
@@ -23943,7 +23943,7 @@
     ],
     "answer_text": "Precedently",
     "source_page": 505,
-    "prompt": "Which of these words is closest in meaning to the word before?",
+    "prompt": "Which of these words is closest in meaning to the word \"before\"?",
     "correctLabel": "B",
     "hint": "Before points to what stands earlier in the order of time."
   },
@@ -23989,7 +23989,7 @@
     ],
     "answer_text": "Emulate",
     "source_page": 506,
-    "prompt": "Which of these words is closest in meaning to the word rival?",
+    "prompt": "Which of these words is closest in meaning to the word \"rival\"?",
     "correctLabel": "B",
     "hint": "To rival someone is to set yourself against them and try to match them."
   },
@@ -24035,7 +24035,7 @@
     ],
     "answer_text": "Please",
     "source_page": 506,
-    "prompt": "Which of these words is closest in meaning to the word gratify?",
+    "prompt": "Which of these words is closest in meaning to the word \"gratify\"?",
     "correctLabel": "E",
     "hint": "To gratify someone is to give them what they wished for."
   },
@@ -24081,7 +24081,7 @@
     ],
     "answer_text": "Trader",
     "source_page": 507,
-    "prompt": "Which of these words is closest in meaning to the word merchant?",
+    "prompt": "Which of these words is closest in meaning to the word \"merchant\"?",
     "correctLabel": "A",
     "hint": "A merchant is one whose business is the buying and selling of goods."
   },
@@ -24127,7 +24127,7 @@
     ],
     "answer_text": "Dilate",
     "source_page": 507,
-    "prompt": "Which of these words is closest in meaning to the word swell?",
+    "prompt": "Which of these words is closest in meaning to the word \"swell\"?",
     "correctLabel": "D",
     "hint": "To swell is to grow larger by expanding outward from within."
   },
@@ -24173,7 +24173,7 @@
     ],
     "answer_text": "Bloody",
     "source_page": 508,
-    "prompt": "Which of these words is closest in meaning to the word sanguinary?",
+    "prompt": "Which of these words is closest in meaning to the word \"sanguinary\"?",
     "correctLabel": "C",
     "hint": "Sanguinary describes fighting in which blood runs freely."
   },
@@ -24219,7 +24219,7 @@
     ],
     "answer_text": "Aware",
     "source_page": 508,
-    "prompt": "Which of these words is closest in meaning to the word cognizant?",
+    "prompt": "Which of these words is closest in meaning to the word \"cognizant\"?",
     "correctLabel": "D",
     "hint": "Cognizant describes holding a thing in your knowledge rather than being ignorant of it."
   },
@@ -24265,7 +24265,7 @@
     ],
     "answer_text": "Sunder",
     "source_page": 509,
-    "prompt": "Which of these words is closest in meaning to the word cleave?",
+    "prompt": "Which of these words is closest in meaning to the word \"cleave\"?",
     "correctLabel": "D",
     "hint": "To cleave is to drive something apart along a division."
   },
@@ -24311,7 +24311,7 @@
     ],
     "answer_text": "Sneer",
     "source_page": 509,
-    "prompt": "Which of these words is closest in meaning to the word scoff?",
+    "prompt": "Which of these words is closest in meaning to the word \"scoff\"?",
     "correctLabel": "B",
     "hint": "To scoff is to show open contempt for something."
   },
@@ -24357,7 +24357,7 @@
     ],
     "answer_text": "Aware",
     "source_page": 510,
-    "prompt": "Which of these words is closest in meaning to the word conscious?",
+    "prompt": "Which of these words is closest in meaning to the word \"conscious\"?",
     "correctLabel": "C",
     "hint": "Conscious describes a mind taking in what passes rather than shut off from it."
   },
@@ -24403,7 +24403,7 @@
     ],
     "answer_text": "Artifice",
     "source_page": 510,
-    "prompt": "Which of these words is closest in meaning to the word device?",
+    "prompt": "Which of these words is closest in meaning to the word \"device\"?",
     "correctLabel": "C",
     "hint": "A device in this sense is a clever stratagem worked out to bring something about."
   },
@@ -24449,7 +24449,7 @@
     ],
     "answer_text": "Ill-tempered",
     "source_page": 511,
-    "prompt": "Which of these words is closest in meaning to the word cross?",
+    "prompt": "Which of these words is closest in meaning to the word \"cross\"?",
     "correctLabel": "A",
     "hint": "Cross describes someone in a short, snappish humor."
   },
@@ -24495,7 +24495,7 @@
     ],
     "answer_text": "Marriage",
     "source_page": 511,
-    "prompt": "Which of these words is closest in meaning to the word wedlock?",
+    "prompt": "Which of these words is closest in meaning to the word \"wedlock\"?",
     "correctLabel": "A",
     "hint": "Wedlock is the bound state entered into by a wedded pair."
   },
@@ -24541,7 +24541,7 @@
     ],
     "answer_text": "Assert",
     "source_page": 512,
-    "prompt": "Which of these words is closest in meaning to the word vindicate?",
+    "prompt": "Which of these words is closest in meaning to the word \"vindicate\"?",
     "correctLabel": "C",
     "hint": "To vindicate a claim is to stand up for it and make it good."
   },
@@ -24587,7 +24587,7 @@
     ],
     "answer_text": "Compute",
     "source_page": 512,
-    "prompt": "Which of these words is closest in meaning to the word reckon?",
+    "prompt": "Which of these words is closest in meaning to the word \"reckon\"?",
     "correctLabel": "A",
     "hint": "To reckon is to work an amount out by counting it through."
   },
@@ -24633,7 +24633,7 @@
     ],
     "answer_text": "Region",
     "source_page": 512,
-    "prompt": "Which of these words is closest in meaning to the word quarter?",
+    "prompt": "Which of these words is closest in meaning to the word \"quarter\"?",
     "correctLabel": "E",
     "hint": "A quarter is a marked-off part of a wider territory."
   },
@@ -24679,7 +24679,7 @@
     ],
     "answer_text": "Ending",
     "source_page": 513,
-    "prompt": "Which of these words is closest in meaning to the word termination?",
+    "prompt": "Which of these words is closest in meaning to the word \"termination\"?",
     "correctLabel": "E",
     "hint": "Termination is the point beyond which a thing does not continue."
   },
@@ -24725,7 +24725,7 @@
     ],
     "answer_text": "Silent",
     "source_page": 513,
-    "prompt": "Which of these words is closest in meaning to the word tacit?",
+    "prompt": "Which of these words is closest in meaning to the word \"tacit\"?",
     "correctLabel": "B",
     "hint": "Tacit describes what holds between people without ever being put into words."
   },
@@ -24771,7 +24771,7 @@
     ],
     "answer_text": "Merry",
     "source_page": 514,
-    "prompt": "Which of these words is closest in meaning to the word jocund?",
+    "prompt": "Which of these words is closest in meaning to the word \"jocund\"?",
     "correctLabel": "C",
     "hint": "Jocund describes a bright glad humor that shows in all one does."
   }

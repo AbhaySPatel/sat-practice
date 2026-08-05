@@ -183,6 +183,22 @@ function renderOptions(question) {
   });
 }
 
+// The target word is quoted in the data; bold it so it cannot be misread as
+// part of the sentence. Built from text nodes rather than an HTML string, so
+// the prompt is never interpreted as markup.
+function renderPrompt(prompt) {
+  questionTitleEl.textContent = '';
+  const match = /^(.*?)("[^"]+")(.*)$/.exec(prompt);
+  if (!match) {
+    questionTitleEl.textContent = prompt;
+    return;
+  }
+  const [, before, quoted, after] = match;
+  const strong = document.createElement('strong');
+  strong.textContent = quoted;
+  questionTitleEl.append(before, strong, after);
+}
+
 function resetHint() {
   if (!hintButton || !hintText) return;
   hintText.textContent = '';
@@ -196,7 +212,7 @@ function loadQuestion(index) {
   const question = questions[index];
   currentQuestionIndex = index;
 
-  questionTitleEl.innerHTML = question.prompt;
+  renderPrompt(question.prompt);
   setStatus('Awaiting answer', 'pending');
   resultText.textContent = 'Click an option to reveal the answer and all explanations.';
 
