@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vocabulary Quiz</title>
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Applied before first paint so a saved dark preference never flashes light.
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark' || saved === 'light') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    } catch (e) { /* storage unavailable; fall back to the OS preference */ }
+  </script>
 </head>
 <body>
   <div class="page">
@@ -13,45 +22,63 @@
         <h1>Vocabulary Quiz</h1>
         <p>Tap an answer to reveal the meaning and why the choice is right or wrong.</p>
       </div>
-      <div class="progress-card">
-        <div class="progress-label" id="questionsAnswered">Questions answered: 0</div>
-        <div class="session-summary">
-          <span id="correctCount">Correct: 0</span>
-          <span id="incorrectCount">Incorrect: 0</span>
-        </div>
-      </div>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+        <span class="theme-toggle-label">Dark</span>
+      </button>
     </div>
 
-    <div class="card">
-      <div class="question-panel">
-        <div class="question-header">
-          <div>
-            <h2 class="question-title">Select the word that best matches the meaning of <strong>"Eloquent"</strong>.</h2>
+    <div class="layout">
+      <div class="card">
+        <div class="question-panel">
+          <div class="question-header">
+            <div>
+              <h2 class="question-title">Select the word that best matches the meaning of <strong>"Eloquent"</strong>.</h2>
+            </div>
+            <button class="btn btn-secondary next-question">Next Question</button>
           </div>
-          <div class="status">Awaiting answer</div>
-        </div>
 
-        <div class="options"></div>
+          <div class="options"></div>
 
-        <div class="control-row">
-          <button class="btn btn-secondary" id="nextButton">Next random question</button>
-        </div>
-
-        <div class="details">
-          <div>
-            <p class="detail-heading">Result</p>
-            <p id="resultText">Click an option to reveal the answer and all explanations.</p>
+          <div class="control-row">
+            <button class="btn btn-secondary next-question">Next Question</button>
           </div>
-          <div>
-            <p class="detail-heading">Why this helps</p>
-            <p>Seeing the meaning and example for every choice helps you understand the correct word and the distractors.</p>
+
+          <div class="details">
+            <div>
+              <p class="detail-heading">Result</p>
+              <p id="resultText">Click an option to reveal the answer and all explanations.</p>
+            </div>
+            <div>
+              <p class="detail-heading">Why this helps</p>
+              <p>Seeing the meaning and example for every choice helps you understand the correct word and the distractors.</p>
+            </div>
           </div>
         </div>
       </div>
+
+      <aside class="card sidebar">
+        <section class="sidebar-section">
+          <h2 class="sidebar-heading">Your session</h2>
+          <div class="progress-card">
+            <div class="progress-label" id="questionsAnswered">Questions answered: 0</div>
+            <div class="session-summary">
+              <span id="correctCount">Correct: 0</span>
+              <span id="incorrectCount">Incorrect: 0</span>
+            </div>
+            <div class="status is-pending">Awaiting answer</div>
+          </div>
+        </section>
+
+        <section class="sidebar-section">
+          <h2 class="sidebar-heading">Hint</h2>
+          <button type="button" class="btn btn-secondary hint-button" id="hintButton">Show hint</button>
+          <p class="hint-text" id="hintText" hidden></p>
+        </section>
+      </aside>
     </div>
   </div>
 
-  <script src="questions-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

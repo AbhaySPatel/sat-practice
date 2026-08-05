@@ -11,7 +11,15 @@ This is a simple vocabulary quiz web app built with plain HTML, CSS, and JavaScr
 
 ## How to use
 
-Open `index.html` in a browser.
+Serve the app over HTTP so the browser can load `questions.json`.
+
+Example:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open `http://localhost:8000`.
 
 ## What it does
 

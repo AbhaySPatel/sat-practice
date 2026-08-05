@@ -1,135 +1,4 @@
-const fallbackQuestions = [
-  {
-    chapter: 1,
-    prompt: 'Which of these words is closest in meaning to the word "rampart"?',
-    kind: '',
-    questionText: '',
-    options: [
-      {
-        label: 'A',
-        text: 'lunchroom',
-        isCorrect: false,
-        explanation: 'A lunchroom is a place to eat, which is unrelated to the meaning of rampart.',
-        insight: 'Similar words: cafeteria, dining hall, canteen.',
-        example: 'Example: The students went to the lunchroom after class.'
-      },
-      {
-        label: 'B',
-        text: 'distribution',
-        isCorrect: false,
-        explanation: 'Distribution refers to handing out or spreading things, not a defensive structure.',
-        insight: 'Similar words: allocation, spreading, delivery.',
-        example: 'Example: The distribution of supplies was carefully planned.'
-      },
-      {
-        label: 'C',
-        text: 'trouble',
-        isCorrect: false,
-        explanation: 'Trouble means difficulty or problems, which does not match rampart.',
-        insight: 'Similar words: difficulty, distress, problem.',
-        example: 'Example: She got into trouble for skipping her homework.'
-      },
-      {
-        label: 'D',
-        text: 'destroy',
-        isCorrect: false,
-        explanation: 'Destroy means to ruin or demolish, not to describe a defensive wall.',
-        insight: 'Similar words: demolish, wreck, ruin.',
-        example: 'Example: They aimed to destroy the old building.'
-      },
-      {
-        label: 'E',
-        text: 'bulwark',
-        isCorrect: true,
-        explanation: 'A bulwark is a defensive wall or barrier, which is the right meaning of rampart.',
-        insight: 'Similar words: fortress wall, rampart, barrier.',
-        example: 'Example: The castle stood behind a strong bulwark of stone.'
-      }
-    ]
-  },
-  {
-    chapter: 8,
-    prompt: 'Choose the best definition for "vivid".',
-    kind: 'Choose the best answer',
-    questionText: 'Pick the answer that most closely matches the meaning of the highlighted word.',
-    options: [
-      {
-        label: 'A',
-        text: 'Clear and powerful in appearance or description',
-        isCorrect: true,
-        explanation: 'This is the right meaning: vivid means bright, strong, or easy to imagine.',
-        insight: 'Similar words: striking, graphic, lively.',
-        example: 'Example: Her memory of the accident remained vivid for years.'
-      },
-      {
-        label: 'B',
-        text: 'Slow and careful in movement',
-        isCorrect: false,
-        explanation: 'This answer describes caution, not brightness or intensity.',
-        insight: 'Similar words: deliberate, measured, steady.',
-        example: 'Example: The dancer moved in a slow and careful way.'
-      },
-      {
-        label: 'C',
-        text: 'Hidden or secret',
-        isCorrect: false,
-        explanation: 'This option refers to secrecy, which is not the same as vividness.',
-        insight: 'Similar words: covert, concealed, private.',
-        example: 'Example: The secret plan remained hidden from everyone.'
-      },
-      {
-        label: 'D',
-        text: 'Old-fashioned or outdated',
-        isCorrect: false,
-        explanation: 'This describes something antiquated, not lively or bright.',
-        insight: 'Similar words: archaic, obsolete, dated.',
-        example: 'Example: The old typewriter looked outdated in the modern office.'
-      }
-    ]
-  },
-  {
-    chapter: 3,
-    prompt: 'Find the best synonym for "reluctant".',
-    kind: 'Choose the best answer',
-    questionText: 'Choose the answer that reflects the correct meaning of the highlighted word.',
-    options: [
-      {
-        label: 'A',
-        text: 'Unwilling or hesitant to do something',
-        isCorrect: true,
-        explanation: 'Reluctant means unwilling or hesitant, so this is the correct answer.',
-        insight: 'Similar words: hesitant, resistant, unwilling.',
-        example: 'Example: She was reluctant to speak in front of the class.'
-      },
-      {
-        label: 'B',
-        text: 'Very eager and excited',
-        isCorrect: false,
-        explanation: 'This describes the opposite feeling, not reluctance.',
-        insight: 'Similar words: enthusiastic, eager, eager.',
-        example: 'Example: He was very eager to start the new project.'
-      },
-      {
-        label: 'C',
-        text: 'Calm and relaxed',
-        isCorrect: false,
-        explanation: 'This answer describes a peaceful state, not hesitation or resistance.',
-        insight: 'Similar words: serene, composed, peaceful.',
-        example: 'Example: The lake was calm and relaxed at dawn.'
-      },
-      {
-        label: 'D',
-        text: 'Extremely happy or cheerful',
-        isCorrect: false,
-        explanation: 'This describes joy, which is unrelated to being unwilling.',
-        insight: 'Similar words: joyful, delighted, ecstatic.',
-        example: 'Example: The children were extremely happy on the last day of school.'
-      }
-    ]
-  }
-];
-
-let questions = fallbackQuestions;
+let questions = [];
 
 const progressLabel = document.querySelector('.progress-label');
 const questionTitleEl = document.querySelector('.question-title');
@@ -137,15 +6,89 @@ const questionsAnsweredEl = document.getElementById('questionsAnswered');
 const optionsContainer = document.querySelector('.options');
 const resultText = document.getElementById('resultText');
 const statusEl = document.querySelector('.status');
-const nextButton = document.getElementById('nextButton');
+
+// Status colors come from theme variables, so set a state class rather than
+// inline styles -- inline styles would survive a theme switch and go unreadable.
+function setStatus(text, state) {
+  if (!statusEl) return;
+  statusEl.textContent = text;
+  statusEl.classList.remove('is-pending', 'is-correct', 'is-incorrect', 'is-error');
+  statusEl.classList.add(`is-${state}`);
+}
 const correctCountEl = document.getElementById('correctCount');
 const incorrectCountEl = document.getElementById('incorrectCount');
+const hintButton = document.getElementById('hintButton');
+const hintText = document.getElementById('hintText');
 
 // sparkle canvas state
 let sparkleCanvas = null;
 let sparkleCtx = null;
+let sparkleImgs = [];       // keeps the Image objects alive while they load
+let readySparkleImgs = [];  // only the ones that decoded, so we mix and match safely
+let sparkleAudio = null;
 let particles = [];
 let sparkleAnimating = false;
+let audioCtx = null;
+
+function getAudioContext() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  return audioCtx;
+}
+
+function playSparkleSound() {
+  // Prefer the provided media audio file; fall back to a synthesized chime.
+  if (sparkleAudio) {
+    try {
+      sparkleAudio.currentTime = 0;
+      sparkleAudio.play().catch(() => {
+        // if playback blocked, fallback to synth
+        synthSparkle();
+      });
+      return;
+    } catch (err) {
+      // continue to fallback
+    }
+  }
+  synthSparkle();
+}
+
+function synthSparkle() {
+  try {
+    const ctx = getAudioContext();
+    const now = ctx.currentTime;
+    const master = ctx.createGain();
+    master.gain.setValueAtTime(0.001, now);
+    master.gain.exponentialRampToValueAtTime(0.12, now + 0.01);
+    master.gain.exponentialRampToValueAtTime(0.0001, now + 0.6);
+    master.connect(ctx.destination);
+
+    const osc = ctx.createOscillator();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(880, now);
+    osc.frequency.exponentialRampToValueAtTime(1760, now + 0.12);
+
+    const mod = ctx.createOscillator();
+    mod.type = 'sine';
+    mod.frequency.setValueAtTime(220, now);
+
+    const modGain = ctx.createGain();
+    modGain.gain.setValueAtTime(30, now);
+
+    mod.connect(modGain);
+    modGain.connect(osc.frequency);
+
+    osc.connect(master);
+
+    mod.start(now);
+    osc.start(now);
+    osc.stop(now + 0.6);
+    mod.stop(now + 0.6);
+  } catch (err) {
+    console.warn('Audio play failed', err);
+  }
+}
 
 let currentQuestionIndex = 0;
 let correctCount = 0;
@@ -158,26 +101,35 @@ function setProgress(index) {
   if (questionsAnsweredEl) questionsAnsweredEl.textContent = `Questions answered: ${answered}`;
 }
 
+// A question is only usable once every option carries its teaching text.
+// The ones left blank have broken answer keys in the source book, so they are
+// held back from the quiz until someone repairs them in questions.json.
+function isReady(q) {
+  const options = q.options || [];
+  return options.length > 0 && options.every(
+    (opt) => opt.explanation && opt.insight && opt.example
+  );
+}
+
 function enrichQuestions(rawQuestions) {
-  return rawQuestions.map((q) => ({
+  return rawQuestions.filter(isReady).map((q) => ({
     chapter: q.chapter || null,
     prompt: q.prompt || '',
     kind: q.kind || '',
     questionText: q.questionText || '',
+    hint: q.hint || '',
     options: (q.options || []).map((opt) => ({
       label: opt.label,
       text: opt.text,
       isCorrect: opt.label === q.correctLabel,
-      explanation: '',
-      insight: '',
-      example: ''
+      explanation: opt.explanation || '',
+      insight: opt.insight || '',
+      example: opt.example || ''
     }))
   }));
 }
 
 function loadQuestionData() {
-  const fallbackRawQuestions = window.questionsData || [];
-
   fetch('questions.json')
     .then((response) => {
       if (!response.ok) throw new Error('Failed to load questions.json');
@@ -185,18 +137,21 @@ function loadQuestionData() {
     })
     .then((rawQuestions) => {
       const loadedQuestions = enrichQuestions(rawQuestions);
+      const withheld = rawQuestions.length - loadedQuestions.length;
+      if (withheld > 0) {
+        console.info(`Loaded ${loadedQuestions.length} questions; withheld ${withheld} awaiting review.`);
+      }
       if (loadedQuestions.length > 0) {
         questions = loadedQuestions;
         loadQuestion(Math.floor(Math.random() * questions.length));
+      } else {
+        resultText.textContent = 'No questions were loaded from questions.json. Please check the file format.';
       }
     })
     .catch((error) => {
-      console.warn('Could not load questions.json; falling back to local questions-data.js.', error);
-      const loadedQuestions = enrichQuestions(fallbackRawQuestions);
-      if (loadedQuestions.length > 0) {
-        questions = loadedQuestions;
-        loadQuestion(Math.floor(Math.random() * questions.length));
-      }
+      console.error('Unable to load questions.json.', error);
+      setStatus('Data load error', 'error');
+      resultText.textContent = 'Unable to load quiz data. Ensure questions.json is available via a web server or GitHub Pages.';
     });
 }
 
@@ -228,17 +183,25 @@ function renderOptions(question) {
   });
 }
 
+function resetHint() {
+  if (!hintButton || !hintText) return;
+  hintText.textContent = '';
+  hintText.hidden = true;
+  // No authored hint means no button at all, rather than an empty panel.
+  const question = questions[currentQuestionIndex];
+  hintButton.hidden = !(question && question.hint);
+}
+
 function loadQuestion(index) {
   const question = questions[index];
   currentQuestionIndex = index;
 
   questionTitleEl.innerHTML = question.prompt;
-  statusEl.textContent = 'Awaiting answer';
-  statusEl.style.background = '#fef3c7';
-  statusEl.style.color = '#92400e';
+  setStatus('Awaiting answer', 'pending');
   resultText.textContent = 'Click an option to reveal the answer and all explanations.';
 
   questionAnswered = false;
+  resetHint();
   renderOptions(question);
   setProgress(index);
 }
@@ -285,22 +248,16 @@ function revealAnswer(selectedOptionIndex) {
 
   // trigger sparkle effect when correct
   if (isCorrect) {
-    const optionEls = [...optionsContainer.querySelectorAll('.option')];
-    const targetEl = optionEls[selectedOptionIndex];
-    if (targetEl) {
-      const rect = targetEl.getBoundingClientRect();
-      const cardRect = document.querySelector('.card').getBoundingClientRect();
-      // position relative to card
-      const x = rect.left + rect.width / 2 - cardRect.left;
-      const y = rect.top + rect.height / 2 - cardRect.top;
-      createSparkles(x, y);
-      showEmojiBurst(x, y);
-    }
+    const optionsRect = optionsContainer.getBoundingClientRect();
+    const cardRect = document.querySelector('.card').getBoundingClientRect();
+    const x = optionsRect.left - cardRect.left;
+    const y = optionsRect.top - cardRect.top;
+    // play sparkle sound and visual burst
+    playSparkleSound();
+    createSparkles(x, y, optionsRect.width, optionsRect.height);
   }
 
-  statusEl.textContent = isCorrect ? 'Correct answer' : 'Incorrect answer';
-  statusEl.style.background = isCorrect ? '#d1fae5' : '#fee2e2';
-  statusEl.style.color = isCorrect ? '#166534' : '#991b1b';
+  setStatus(isCorrect ? 'Correct answer' : 'Incorrect answer', isCorrect ? 'correct' : 'incorrect');
   resultText.innerHTML = isCorrect
     ? '<strong>Correct.</strong> You chose the right meaning.'
     : `<strong>Incorrect.</strong> The correct answer is <em>${question.options.find((opt) => opt.isCorrect).label}: ${question.options.find((opt) => opt.isCorrect).text}</em>.`;
@@ -327,35 +284,89 @@ function initSparkleCanvas() {
   card.appendChild(sparkleCanvas);
   sparkleCtx = sparkleCanvas.getContext('2d');
   resizeSparkleCanvas();
-  window.addEventListener('resize', resizeSparkleCanvas);
+
+  // load user-provided sparkle images from media folder
+  const imgPaths = ['media/sparkling.png', 'media/sparkling2.png'];
+  imgPaths.forEach((p) => {
+    const im = new Image();
+    im.onload = () => { readySparkleImgs.push(im); };
+    im.onerror = () => { console.warn('Sparkle image missing:', p); };
+    im.src = p;
+    sparkleImgs.push(im);
+  });
+
+  // preload audio from media folder if available
+  try {
+    sparkleAudio = new Audio('media/flitterbug.mp3');
+    sparkleAudio.preload = 'auto';
+  } catch (e) {
+    sparkleAudio = null;
+  }
+
+  if (typeof ResizeObserver === 'function') {
+    new ResizeObserver(resizeSparkleCanvas).observe(card);
+  } else {
+    window.addEventListener('resize', resizeSparkleCanvas);
+  }
 }
 
+// The canvas is stretched over the card by CSS (inset: 0), so we only sync the
+// backing store to its laid-out size. The card grows and shrinks as questions
+// and explanations render, so this runs on every card resize, not just window resize.
 function resizeSparkleCanvas() {
-  if (!sparkleCanvas) return;
-  const rect = document.querySelector('.card').getBoundingClientRect();
-  sparkleCanvas.width = Math.max(1, Math.floor(rect.width * devicePixelRatio));
-  sparkleCanvas.height = Math.max(1, Math.floor(rect.height * devicePixelRatio));
-  sparkleCanvas.style.width = rect.width + 'px';
-  sparkleCanvas.style.height = rect.height + 'px';
-  if (sparkleCtx) sparkleCtx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+  if (!sparkleCanvas || !sparkleCtx) return;
+  const width = sparkleCanvas.clientWidth;
+  const height = sparkleCanvas.clientHeight;
+  sparkleCanvas.width = Math.max(1, Math.floor(width * devicePixelRatio));
+  sparkleCanvas.height = Math.max(1, Math.floor(height * devicePixelRatio));
+  sparkleCtx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
 }
 
-function createSparkles(x, y) {
+function canvasSize() {
+  return {
+    width: sparkleCanvas.width / devicePixelRatio,
+    height: sparkleCanvas.height / devicePixelRatio
+  };
+}
+
+// Rendered sparkle diameter is size * SPARKLE_SCALE px.
+const SPARKLE_SCALE = 5.5;
+
+// Particles hold full opacity for the first SPARKLE_HOLD of their life, then
+// ease out over the remainder, so they linger instead of fading from frame one.
+const SPARKLE_HOLD = 0.55;
+const SPARKLE_GRAVITY = 0.026;
+
+function createSparkles(x, y, width = 0, height = 0) {
   if (!sparkleCanvas || !sparkleCtx) return;
-  const colors = ['#f9a8d4', '#f97316', '#f59e0b', '#60a5fa', '#a78bfa', '#34d399'];
-  const count = 18;
+  const count = 32;
+  const minX = x;
+  const maxX = width > 0 ? x + width : x + 1;
+  const minY = y;
+  const maxY = height > 0 ? y + height : y + 1;
+
   for (let i = 0; i < count; i++) {
+    const particleX = minX + Math.random() * (maxX - minX);
+    const particleY = minY + Math.random() * (maxY - minY);
     const angle = Math.random() * Math.PI * 2;
-    const speed = 40 + Math.random() * 140;
+    // slower drift than the old burst: particles now live ~2x longer, so the
+    // original speeds carried them off the card before they finished fading
+    const speed = 4 + Math.random() * 11;
+    const sizeType = Math.random() < 0.6 ? 'small' : 'medium';
+    const size = sizeType === 'small' ? 2 + Math.random() * 2 : 4 + Math.random() * 4;
+    const ttl = 160 + Math.random() * 100;
     particles.push({
-      x: x + (Math.random() - 0.5) * 10,
-      y: y + (Math.random() - 0.5) * 8,
+      x: particleX,
+      y: particleY,
       vx: Math.cos(angle) * speed / 60,
-      vy: Math.sin(angle) * speed / 60 - (20 + Math.random() * 30) / 60,
-      life: 60 + Math.random() * 30,
-      ttl: 60 + Math.random() * 30,
-      size: 2 + Math.random() * 3,
-      color: colors[Math.floor(Math.random() * colors.length)]
+      vy: Math.sin(angle) * speed / 60 - (2 + Math.random() * 7) / 60,
+      life: ttl,
+      ttl: ttl,
+      size: size,
+      rotation: Math.random() * Math.PI * 2,
+      spin: (Math.random() - 0.5) * 0.045,
+      // resolved against the loaded images at draw time so both PNGs get mixed in
+      imgSeed: Math.random()
     });
   }
   if (!sparkleAnimating) {
@@ -364,67 +375,131 @@ function createSparkles(x, y) {
   }
 }
 
+// Full opacity through the hold window, then a smooth ease down to zero.
+function sparkleAlpha(p) {
+  const remaining = Math.max(0, p.life / p.ttl);
+  if (remaining >= 1 - SPARKLE_HOLD) return 1;
+  const t = remaining / (1 - SPARKLE_HOLD); // 1 -> 0 across the fade tail
+  return t * t;
+}
+
+function drawSparkle(p) {
+  if (readySparkleImgs.length === 0) return; // images not loaded yet: draw nothing
+
+  const img = readySparkleImgs[Math.floor(p.imgSeed * readySparkleImgs.length)];
+  const drawSize = Math.max(1, p.size) * SPARKLE_SCALE;
+
+  sparkleCtx.save();
+  sparkleCtx.translate(p.x, p.y);
+  sparkleCtx.rotate(p.rotation || 0);
+  sparkleCtx.globalAlpha = sparkleAlpha(p);
+  sparkleCtx.drawImage(img, -drawSize / 2, -drawSize / 2, drawSize, drawSize);
+  sparkleCtx.restore();
+}
+
 function animateSparkles() {
   if (!sparkleCtx) return;
-  sparkleCtx.clearRect(0, 0, sparkleCanvas.width / devicePixelRatio, sparkleCanvas.height / devicePixelRatio);
+  const { width, height } = canvasSize();
+  sparkleCtx.clearRect(0, 0, width, height);
   for (let i = particles.length - 1; i >= 0; i--) {
     const p = particles[i];
     p.x += p.vx;
     p.y += p.vy;
-    p.vy += 0.12; // gravity
+    p.vy += SPARKLE_GRAVITY;
+    p.rotation += p.spin;
     p.life -= 1;
-    const alpha = Math.max(0, p.life / p.ttl);
-    sparkleCtx.globalAlpha = alpha;
-    sparkleCtx.fillStyle = p.color;
-    sparkleCtx.beginPath();
-    sparkleCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    sparkleCtx.fill();
+    drawSparkle(p);
     if (p.life <= 0) particles.splice(i, 1);
   }
-  sparkleCtx.globalAlpha = 1;
   if (particles.length > 0) {
     requestAnimationFrame(animateSparkles);
   } else {
     sparkleAnimating = false;
-    // clear once more to remove any faint traces
-    sparkleCtx.clearRect(0, 0, sparkleCanvas.width / devicePixelRatio, sparkleCanvas.height / devicePixelRatio);
+    sparkleCtx.clearRect(0, 0, width, height);
   }
 }
 
 // initialize sparkle canvas once
 initSparkleCanvas();
 
-// simple emoji burst fallback for visibility
-function showEmojiBurst(x, y) {
-  const card = document.querySelector('.card');
-  if (!card) return;
-  const burst = document.createElement('div');
-  burst.className = 'emoji-burst';
-  burst.style.left = '0px';
-  burst.style.top = '0px';
-  card.appendChild(burst);
-  const emojis = ['✨','🎉','🥳','👏','💥','🎊'];
-  emojis.forEach((e, i) => {
-    const el = document.createElement('span');
-    el.textContent = e;
-    // small random spread
-    const angle = (i / emojis.length) * Math.PI * 2 + (Math.random() - 0.5);
-    const rx = Math.cos(angle) * (8 + Math.random() * 30);
-    const ry = Math.sin(angle) * (8 + Math.random() * 20) - 10;
-    el.style.left = (x + rx) + 'px';
-    el.style.top = (y + ry) + 'px';
-    el.style.opacity = '1';
-    el.style.fontSize = (16 + Math.random() * 10) + 'px';
-    burst.appendChild(el);
+document.querySelectorAll('.next-question').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    showRandomQuestion();
   });
-  // remove after animation
-  setTimeout(() => { burst.remove(); }, 1000);
-}
-
-nextButton.addEventListener('click', () => {
-  showRandomQuestion();
 });
 
+if (hintButton) {
+  hintButton.addEventListener('click', () => {
+    const question = questions[currentQuestionIndex];
+    if (!question || !question.hint) return;
+    hintText.textContent = question.hint;
+    hintText.hidden = false;
+    hintButton.hidden = true;
+  });
+}
+
+// --- Theme ---
+// No stored choice means we stay on the OS preference, which the stylesheet
+// handles on its own. Choosing a theme pins it and overrides the OS from then on.
+const themeToggle = document.getElementById('themeToggle');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+function storedTheme() {
+  try {
+    const saved = localStorage.getItem('theme');
+    return saved === 'dark' || saved === 'light' ? saved : null;
+  } catch (err) {
+    return null;
+  }
+}
+
+function activeTheme() {
+  return storedTheme() || (prefersDark.matches ? 'dark' : 'light');
+}
+
+function paintToggle() {
+  if (!themeToggle) return;
+  const dark = activeTheme() === 'dark';
+  // The button advertises what clicking it will switch you to.
+  themeToggle.querySelector('.theme-toggle-icon').textContent = dark ? '☀️' : '🌙';
+  themeToggle.querySelector('.theme-toggle-label').textContent = dark ? 'Light' : 'Dark';
+  themeToggle.setAttribute('aria-pressed', String(dark));
+  themeToggle.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const next = activeTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try {
+      localStorage.setItem('theme', next);
+    } catch (err) {
+      // storage unavailable; the choice just will not survive a reload
+    }
+    paintToggle();
+  });
+}
+
+// Follow the OS only while the user has not pinned a theme themselves.
+prefersDark.addEventListener('change', paintToggle);
+
+paintToggle();
+
 updateSessionSummary();
-loadQuestion(0);
 loadQuestionData();
+
+// Global error handlers: surface JS errors to the UI for easier debugging
+window.addEventListener('error', (ev) => {
+  console.error('Unhandled error:', ev.error || ev.message);
+  if (resultText) resultText.textContent = `Error: ${ev.error ? ev.error.message : ev.message}`;
+  if (statusEl) {
+    setStatus('Script error', 'error');
+  }
+});
+window.addEventListener('unhandledrejection', (ev) => {
+  console.error('Unhandled rejection:', ev.reason);
+  if (resultText) resultText.textContent = `Error: ${ev.reason ? ev.reason.message || ev.reason : ev.reason}`;
+  if (statusEl) {
+    setStatus('Script error', 'error');
+  }
+});

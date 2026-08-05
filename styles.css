@@ -1,3 +1,133 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f7fb;
+  --fg: #1a202c;
+  --muted: #4a5568;
+  --body-text: #2d3748;
+  --detail-text: #475569;
+  --heading: #1f2937;
+
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+
+  --panel-bg: #eef4ff;
+  --panel-border: #e0e8ff;
+  --panel-fg: #1e3a8a;
+  --chip-bg: #ffffff;
+  --chip-border: #e6edf9;
+
+  --option-bg: #ffffff;
+  --option-border: #cbd5e1;
+  --option-hover: #667eea;
+  --label-bg: #e2e8f0;
+  --label-fg: #1f2937;
+  --rule: #e2e8f0;
+
+  --btn-bg: #e2e8f0;
+  --btn-fg: #1f2937;
+
+  --correct-border: #22c55e;
+  --correct-bg: #ecfdf5;
+  --incorrect-border: #ef4444;
+  --incorrect-bg: #fef2f2;
+
+  --pending-bg: #fef3c7;
+  --pending-fg: #92400e;
+  --good-bg: #d1fae5;
+  --good-fg: #166534;
+  --bad-bg: #fee2e2;
+  --bad-fg: #991b1b;
+}
+
+/* Dark values live in one place and are applied by two selectors below:
+   the OS preference, and an explicit data-theme set by the toggle. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0f172a;
+    --fg: #e2e8f0;
+    --muted: #94a3b8;
+    --body-text: #cbd5e1;
+    --detail-text: #94a3b8;
+    --heading: #f1f5f9;
+
+    --card-bg: #1e293b;
+    --card-border: #334155;
+    --card-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+
+    --panel-bg: #1e293b;
+    --panel-border: #334155;
+    --panel-fg: #93c5fd;
+    --chip-bg: #0f172a;
+    --chip-border: #334155;
+
+    --option-bg: #1e293b;
+    --option-border: #475569;
+    --option-hover: #818cf8;
+    --label-bg: #334155;
+    --label-fg: #e2e8f0;
+    --rule: #334155;
+
+    --btn-bg: #334155;
+    --btn-fg: #e2e8f0;
+
+    --correct-border: #22c55e;
+    --correct-bg: #052e1b;
+    --incorrect-border: #ef4444;
+    --incorrect-bg: #3f1212;
+
+    --pending-bg: #422006;
+    --pending-fg: #fcd34d;
+    --good-bg: #052e1b;
+    --good-fg: #6ee7b7;
+    --bad-bg: #3f1212;
+    --bad-fg: #fca5a5;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f172a;
+  --fg: #e2e8f0;
+  --muted: #94a3b8;
+  --body-text: #cbd5e1;
+  --detail-text: #94a3b8;
+  --heading: #f1f5f9;
+
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --card-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+
+  --panel-bg: #1e293b;
+  --panel-border: #334155;
+  --panel-fg: #93c5fd;
+  --chip-bg: #0f172a;
+  --chip-border: #334155;
+
+  --option-bg: #1e293b;
+  --option-border: #475569;
+  --option-hover: #818cf8;
+  --label-bg: #334155;
+  --label-fg: #e2e8f0;
+  --rule: #334155;
+
+  --btn-bg: #334155;
+  --btn-fg: #e2e8f0;
+
+  --correct-border: #22c55e;
+  --correct-bg: #052e1b;
+  --incorrect-border: #ef4444;
+  --incorrect-bg: #3f1212;
+
+  --pending-bg: #422006;
+  --pending-fg: #fcd34d;
+  --good-bg: #052e1b;
+  --good-fg: #6ee7b7;
+  --bad-bg: #3f1212;
+  --bad-fg: #fca5a5;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,8 +135,8 @@
 body {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
-  background: #f4f7fb;
-  color: #1a202c;
+  background: var(--bg);
+  color: var(--fg);
   display: flex;
   justify-content: center;
 }
@@ -21,34 +151,6 @@ body {
   display: flex;
   position: relative;
   justify-content: space-between;
-
-/* canvas overlay for sparkle effect */
-.sparkle-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  border-radius: 28px;
-}
-
-/* emoji burst fallback */
-.emoji-burst {
-  position: absolute;
-  pointer-events: none;
-  overflow: visible;
-}
-.emoji-burst span {
-  position: absolute;
-  font-size: 20px;
-  transform-origin: center;
-  animation: emojiRise 900ms cubic-bezier(.2,.8,.2,1);
-}
-@keyframes emojiRise {
-  0% { transform: translateY(0) scale(1); opacity: 1; }
-  60% { transform: translateY(-40px) scale(1.15); opacity: 1; }
-  100% { transform: translateY(-80px) scale(0.9); opacity: 0; }
-}
   align-items: center;
   gap: 24px;
   margin-bottom: 32px;
@@ -60,10 +162,22 @@ body {
 }
 .topbar p {
   margin: 8px 0 0;
-  color: #4a5568;
+  color: var(--muted);
   max-width: 500px;
   font-size: 0.95rem;
 }
+
+.sparkle-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 28px;
+  z-index: 10;
+  background: transparent;
+}
+
 
 .progress-card {
   display: inline-flex;
@@ -72,15 +186,15 @@ body {
   gap: 6px;
   padding: 8px 10px;
   border-radius: 12px;
-  background: #eef4ff;
-  border: 1px solid #e0e8ff;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
 }
 
 .session-summary {
   display: flex;
   gap: 8px;
   flex-wrap: nowrap;
-  color: #1e3a8a;
+  color: var(--panel-fg);
   font-size: 0.82rem;
   font-weight: 700;
   align-items: center;
@@ -89,8 +203,8 @@ body {
 .session-summary span {
   padding: 4px 8px;
   border-radius: 999px;
-  background: #ffffff;
-  border: 1px solid #e6edf9;
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
   font-weight: 600;
   font-size: 0.82rem;
 }
@@ -98,17 +212,18 @@ body {
 .progress-label {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #1e3a8a;
+  color: var(--panel-fg);
 }
 
 /* progress bar removed: use questions answered label instead */
 
 .card {
-  background: white;
+  position: relative;
+  background: var(--card-bg);
   border-radius: 28px;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+  box-shadow: var(--card-shadow);
   overflow: hidden;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--card-border);
   margin: 0 auto;
 }
 
@@ -134,9 +249,60 @@ body {
 
 .question-text {
   margin: 0;
-  color: #2d3748;
+  color: var(--body-text);
   line-height: 1.8;
   font-size: 1rem;
+}
+
+/* Question card takes the remaining width; the sidebar card sits beside it. */
+.layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* Must exclude .sidebar: it is also a .card, and flex:1 would zero out its
+   flex-basis and make both columns the same width. */
+.layout > .card:not(.sidebar) {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar {
+  flex: 0 0 260px;
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.sidebar-heading {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.sidebar .progress-card {
+  align-items: stretch;
+  width: 100%;
+}
+
+.hint-button {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+}
+
+.hint-text {
+  margin: 12px 0 0;
+  color: var(--detail-text);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .options {
@@ -149,24 +315,24 @@ body {
   gap: 8px;
   padding: 16px 18px;
   border-radius: 18px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--option-border);
   cursor: pointer;
   transition: all 0.2s ease;
-  background: white;
+  background: var(--option-bg);
 }
 
 .option:hover {
-  border-color: #667eea;
+  border-color: var(--option-hover);
 }
 
 .option.selected.correct {
-  border-color: #22c55e;
-  background: #ecfdf5;
+  border-color: var(--correct-border);
+  background: var(--correct-bg);
 }
 
 .option.selected.incorrect {
-  border-color: #ef4444;
-  background: #fef2f2;
+  border-color: var(--incorrect-border);
+  background: var(--incorrect-bg);
 }
 
 .option .row {
@@ -182,15 +348,15 @@ body {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: #e2e8f0;
-  color: #1f2937;
+  background: var(--label-bg);
+  color: var(--label-fg);
   font-weight: 700;
   flex-shrink: 0;
 }
 
 .option .text {
   flex: 1;
-  color: #2d3748;
+  color: var(--body-text);
   line-height: 1.6;
 }
 
@@ -206,7 +372,7 @@ body {
 .option .example {
   display: none;
   margin: 0;
-  color: #475569;
+  color: var(--detail-text);
   line-height: 1.45;
 }
 
@@ -228,7 +394,7 @@ body {
 .option .insight {
   margin-top: 4px;
   padding-top: 8px;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid var(--rule);
 }
 
 .option .example {
@@ -238,7 +404,7 @@ body {
 
 .control-row {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 .btn {
@@ -256,15 +422,20 @@ body {
 }
 
 .btn-secondary {
-  background: #e2e8f0;
-  color: #1f2937;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+}
+
+.next-question {
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .status {
   padding: 6px 10px;
   border-radius: 999px;
-  background: #fef3c7;
-  color: #92400e;
+  background: var(--pending-bg);
+  color: var(--pending-fg);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -275,23 +446,67 @@ body {
   white-space: nowrap;
 }
 
+/* Status states are classes, not inline styles, so the theme can restyle them. */
+.status.is-pending {
+  background: var(--pending-bg);
+  color: var(--pending-fg);
+}
+
+.status.is-correct {
+  background: var(--good-bg);
+  color: var(--good-fg);
+}
+
+.status.is-incorrect,
+.status.is-error {
+  background: var(--bad-bg);
+  color: var(--bad-fg);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-self: center;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--option-hover);
+}
+
+.theme-toggle .theme-toggle-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
 .details {
   display: grid;
   gap: 18px;
   padding: 24px 0 0;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid var(--rule);
 }
 
 .detail-heading {
   font-size: 1rem;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--heading);
   margin: 0 0 8px;
 }
 
 .details p {
   margin: 0;
-  color: #475569;
+  color: var(--detail-text);
   line-height: 1.7;
 }
 
@@ -315,5 +530,29 @@ body {
   .topbar p {
     white-space: normal;
     max-width: 100%;
+  }
+
+  .question-header {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  /* Too narrow for two columns: the sidebar drops above the question card. */
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    /* Column direction: flex-basis would size the height, so reset it. */
+    flex: 0 0 auto;
+    width: 100%;
+    position: static;
+    order: -1;
+  }
+
+  /* The topbar stacks on mobile, so the toggle sits on its own row. */
+  .theme-toggle {
+    align-self: flex-end;
+    margin-bottom: 8px;
   }
 }
