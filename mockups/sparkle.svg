@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+  <rect width="100%" height="100%" fill="#f4f7fb"/>
+  <g transform="translate(60,60)">
+    <rect x="0" y="0" rx="20" width="780" height="300" fill="#fff" stroke="#e6edf7"/>
+    <text x="36" y="50" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#0f172a">Sparkle Particles (canvas)</text>
+    <text x="36" y="82" font-family="Inter, sans-serif" font-size="14" fill="#475569">Tiny sparkles radiating near the correct option — delicate effect.</text>
+    <!-- sparkles -->
+    <g fill="#f59e0b">
+      <circle cx="260" cy="150" r="3" />
+      <circle cx="280" cy="140" r="2.4" />
+      <circle cx="300" cy="155" r="2.8" />
+    </g>
+    <g fill="#fff176">
+      <circle cx="320" cy="135" r="2.6" />
+      <circle cx="340" cy="150" r="2.2" />
+    </g>
+    <text x="500" y="170" font-family="Inter, sans-serif" font-size="16" fill="#0f172a">✨ Sparkles</text>
+  </g>
+</svg>

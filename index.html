@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vocabulary Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>Vocabulary Quiz</h1>
+        <p>Tap an answer to reveal the meaning and why the choice is right or wrong.</p>
+      </div>
+      <div class="progress-card">
+        <div class="progress-label" id="questionsAnswered">Questions answered: 0</div>
+        <div class="session-summary">
+          <span id="correctCount">Correct: 0</span>
+          <span id="incorrectCount">Incorrect: 0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="question-panel">
+        <div class="question-header">
+          <div>
+            <h2 class="question-title">Select the word that best matches the meaning of <strong>"Eloquent"</strong>.</h2>
+          </div>
+          <div class="status">Awaiting answer</div>
+        </div>
+
+        <div class="options"></div>
+
+        <div class="control-row">
+          <button class="btn btn-secondary" id="nextButton">Next random question</button>
+        </div>
+
+        <div class="details">
+          <div>
+            <p class="detail-heading">Result</p>
+            <p id="resultText">Click an option to reveal the answer and all explanations.</p>
+          </div>
+          <div>
+            <p class="detail-heading">Why this helps</p>
+            <p>Seeing the meaning and example for every choice helps you understand the correct word and the distractors.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

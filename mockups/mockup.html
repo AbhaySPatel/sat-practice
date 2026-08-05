@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vocabulary Quiz Mockup</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: #f4f7fb;
+      color: #1a202c;
+    }
+    .page {
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 24px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+    .topbar h1 {
+      margin: 0;
+      font-size: 1.9rem;
+      letter-spacing: -0.03em;
+    }
+    .topbar p {
+      margin: 4px 0 0;
+      color: #4a5568;
+    }
+    .card {
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    .hero {
+      display: block;
+      padding: 32px;
+    }
+    .question-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .progress-card {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 20px;
+      background: #eef2ff;
+      border: 1px solid #dbeafe;
+      color: #1e3a8a;
+    }
+    .progress-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+    .progress-track {
+      width: 180px;
+      height: 10px;
+      border-radius: 999px;
+      background: #e2e8f0;
+      overflow: hidden;
+    }
+    .progress-fill {
+      width: 16.6%;
+      height: 100%;
+      border-radius: 999px;
+      background: #4f46e5;
+    }
+    .option .example {
+      margin: 8px 0 0;
+      color: #475569;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .chapter-tag {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #4338ca;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .question-title {
+      margin: 0;
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+    .question-text {
+      margin: 0;
+      font-size: 1.05rem;
+      color: #2d3748;
+      line-height: 1.8;
+    }
+    .options {
+      display: grid;
+      gap: 16px;
+    }
+    .option {
+      display: grid;
+      gap: 12px;
+      padding: 18px 20px;
+      border-radius: 16px;
+      border: 1px solid #cbd5e1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: white;
+    }
+    .option:hover {
+      border-color: #667eea;
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.12);
+    }
+    .option.selected.correct {
+      border-color: #22c55e;
+      background: #ecfdf5;
+    }
+    .option.selected.incorrect {
+      border-color: #ef4444;
+      background: #fef2f2;
+    }
+    .option .row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .option .label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      color: #1f2937;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .option .text {
+      flex: 1;
+      color: #2d3748;
+      line-height: 1.6;
+    }
+    .option .option-result {
+      font-size: 1.2rem;
+      width: 24px;
+      text-align: center;
+      flex-shrink: 0;
+      color: inherit;
+    }
+    .option .explanation,
+    .option .insight,
+    .option .example {
+      display: none;
+      margin: 0;
+      color: #475569;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+    .option.showExplanation .explanation,
+    .option.showExplanation .insight,
+    .option.showExplanation .example {
+      display: block;
+    }
+    .option .insight {
+      margin-top: 8px;
+      padding-top: 10px;
+      border-top: 1px solid #e2e8f0;
+    }
+    .control-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      border: none;
+      border-radius: 14px;
+      padding: 14px 22px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: #4f46e5;
+      color: white;
+    }
+    .btn-secondary {
+      background: #e2e8f0;
+      color: #1f2937;
+    }
+    .status {
+      padding: 14px 18px;
+      border-radius: 16px;
+      background: #fef3c7;
+      color: #92400e;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+    .details {
+      display: grid;
+      gap: 18px;
+      padding: 32px;
+      background: #f8fafc;
+    }
+    .detail-heading {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0 0 8px;
+    }
+    .meaning-list {
+      display: grid;
+      gap: 14px;
+    }
+    .meaning-card {
+      display: grid;
+      gap: 8px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid #e2e8f0;
+    }
+    .meaning-card strong {
+      color: #1e293b;
+      font-size: 0.98rem;
+    }
+    .meaning-card p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.6;
+    }
+    .sidebar {
+      display: grid;
+      gap: 18px;
+      font-size: 0.95rem;
+    }
+    .sidebar-card {
+      padding: 22px;
+      border-radius: 24px;
+      background: #eef2ff;
+      border: 1px solid #dbeafe;
+    }
+    .sidebar-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+    }
+    .sidebar-card p {
+      margin: 0;
+      color: #334155;
+      line-height: 1.7;
+    }
+    .sidebar-card ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: #334155;
+    }
+    .sidebar-card li {
+      margin-bottom: 8px;
+    }
+    .footer-note {
+      padding: 18px 24px;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      color: #475569;
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .footer-note span {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>Vocabulary Quiz</h1>
+        <p>Pick the right answer and review the meaning of every option.</p>
+      </div>
+      <div class="progress-card">
+        <div class="progress-label">Question 5 of 30</div>
+        <div class="progress-track"><div class="progress-fill"></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="hero">
+        <div class="question-panel">
+          <div class="question-header">
+            <div>
+              <p style="margin:0; color:#667eea; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; font-size:0.85rem;">Choose the correct synonym</p>
+              <h2 class="question-title">Select the word that best matches the meaning of <strong>"Eloquent"</strong>.</h2>
+            </div>
+            <div class="status">Awaiting answer</div>
+          </div>
+
+          <p class="question-text">This question is drawn from the vocabulary practice set. Choose the answer that conveys the same meaning as the highlighted word.</p>
+
+          <div class="options" data-correct="A">
+            <div class="option" data-option="A" data-correct="true">
+              <div class="row">
+                <span class="label">A</span>
+                <span class="text">Fluent and persuasive in speaking or writing</span>
+                <span class="option-result"></span>
+              </div>
+              <p class="explanation">This matches the intended meaning of "eloquent": smooth, expressive, and convincing language.</p>
+              <p class="insight"><strong>Word insight:</strong> Related terms: articulate, expressive, persuasive.</p>
+              <p class="example">Example: The politician delivered an eloquent speech that moved the audience.</p>
+            </div>
+            <div class="option" data-option="B" data-correct="false">
+              <div class="row">
+                <span class="label">B</span>
+                <span class="text">Sharp and difficult to understand</span>
+                <span class="option-result"></span>
+              </div>
+              <p class="explanation">This choice is closer to "obscure" or "dense," which does not fit the idea of clear, fluid expression.</p>
+              <p class="insight"><strong>Related idea:</strong> opaque, confusing, abstruse.</p>
+              <p class="example">Example: The professor's lecture felt more obscure than insightful.</p>
+            </div>
+            <div class="option" data-option="C" data-correct="false">
+              <div class="row">
+                <span class="label">C</span>
+                <span class="text">Slow and careful with words</span>
+                <span class="option-result"></span>
+              </div>
+              <p class="explanation">This suggests hesitation, while "eloquent" implies confidence and fluency in speech.</p>
+              <p class="insight"><strong>Related idea:</strong> deliberate, measured, cautious.</p>
+              <p class="example">Example: He spoke in a deliberate way, not in a naturally charming manner.</p>
+            </div>
+            <div class="option" data-option="D" data-correct="false">
+              <div class="row">
+                <span class="label">D</span>
+                <span class="text">Close in meaning to the original phrase</span>
+                <span class="option-result"></span>
+              </div>
+              <p class="explanation">This answer refers to paraphrasing, not to the quality of being expressive or persuasive.</p>
+              <p class="insight"><strong>Related idea:</strong> paraphrase, restate, reword.</p>
+              <p class="example">Example: She restated the sentence without adding any eloquence.</p>
+            </div>
+          </div>
+
+          <div class="control-row">
+            <button class="btn btn-secondary" id="nextButton">Next random question</button>
+          </div>
+
+          <div class="details">
+            <div>
+              <p class="detail-heading">Result</p>
+              <p id="resultText">Click any option to reveal if it is correct.</p>
+            </div>
+            <div>
+              <p class="detail-heading">Why this matters</p>
+              <p>Each option includes a short explanation so you can learn why the answer was right or wrong.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="footer-note">
+        <span>Random question from Chapter 12</span>
+        <span>30 chapters, 30 solutions available</span>
+      </div>
+    </div>
+  </div>
+  <script>
+    const options = document.querySelectorAll('.option');
+    const resultText = document.getElementById('resultText');
+    const nextButton = document.getElementById('nextButton');
+    const status = document.querySelector('.status');
+
+    options.forEach(option => {
+      option.addEventListener('click', () => {
+        const isCorrect = option.dataset.correct === 'true';
+
+            options.forEach(item => {
+          item.classList.remove('selected', 'correct', 'incorrect', 'showExplanation', 'inactive');
+          item.querySelector('.option-result').textContent = '';
+        });
+
+        option.classList.add('selected');
+        option.classList.add(isCorrect ? 'correct' : 'incorrect');
+        const icon = isCorrect ? '✔' : '✖';
+        option.querySelector('.option-result').textContent = icon;
+
+        options.forEach(item => {
+          item.classList.add(item.dataset.correct === 'true' ? 'correct' : 'incorrect');
+          item.querySelector('.option-result').textContent = item.dataset.correct === 'true' ? '✔' : '';
+          item.classList.add('showExplanation');
+        });
+
+        resultText.innerHTML = isCorrect
+          ? '<strong>Correct.</strong> You chose the right meaning.'
+          : '<strong>Incorrect.</strong> The correct answer is <em>A: Fluent and persuasive in speaking or writing</em>.';
+        status.textContent = isCorrect ? 'Correct answer' : 'Incorrect answer';
+        status.style.background = isCorrect ? '#d1fae5' : '#fee2e2';
+        status.style.color = isCorrect ? '#166534' : '#991b1b';
+      });
+    });
+
+    nextButton.addEventListener('click', () => {
+      window.alert('This mockup shows how a random question would appear. In the app, it would load another random question here.');
+    });
+  </script>
+</body>
+</html>
