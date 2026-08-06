@@ -50,7 +50,30 @@
       "Bash(python3 /tmp/claude-1000/-home-shital-abhay-vocabulary/0308ea6b-059f-4a21-a1aa-6075013beb30/scratchpad/hint.py /tmp/claude-1000/-home-shital-abhay-vocabulary/0308ea6b-059f-4a21-a1aa-6075013beb30/scratchpad/hints_09.json)",
       "Bash(python3 /tmp/claude-1000/-home-shital-abhay-vocabulary/0308ea6b-059f-4a21-a1aa-6075013beb30/scratchpad/hint.py /tmp/claude-1000/-home-shital-abhay-vocabulary/0308ea6b-059f-4a21-a1aa-6075013beb30/scratchpad/hints_10.json)",
       "Bash(python3 /tmp/claude-1000/-home-shital-abhay-vocabulary/0308ea6b-059f-4a21-a1aa-6075013beb30/scratchpad/hint.py /tmp/claude-1000/-home-shital-abhay-vocabulary/0308ea6b-059f-4a21-a1aa-6075013beb30/scratchpad/hints_11.json)",
-      "Bash(python3 /tmp/claude-1000/-home-shital-abhay-vocabulary/0308ea6b-059f-4a21-a1aa-6075013beb30/scratchpad/hint.py /tmp/claude-1000/-home-shital-abhay-vocabulary/0308ea6b-059f-4a21-a1aa-6075013beb30/scratchpad/hints_12.json)"
+      "Bash(python3 /tmp/claude-1000/-home-shital-abhay-vocabulary/0308ea6b-059f-4a21-a1aa-6075013beb30/scratchpad/hint.py /tmp/claude-1000/-home-shital-abhay-vocabulary/0308ea6b-059f-4a21-a1aa-6075013beb30/scratchpad/hints_12.json)",
+      "Bash(node --check script.js)",
+      "Bash(node --check adverbs.js)",
+      "Bash(node --check shared.js)",
+      "Bash(pkill -f \"http.server 8765\")",
+      "Bash(git -C /home/shital/abhay/vocabulary status --short)",
+      "Bash(python3 extract_bank.py Boundaries.pdf boundaries bank-cb-boundaries.json)",
+      "Read(//usr/share/dict/**)",
+      "Bash(sed -i \"s|^BOOK_DIR = Path\\('book'\\)|BOOK_DIR = Path\\('book'\\)\\\\nOUT_DIR = Path\\('banks'\\)|\" extract_bank.py)",
+      "Bash(sed -i \"s|    Path\\(out_name\\).write_text\\(|    OUT_DIR.mkdir\\(exist_ok=True\\)\\\\n    Path\\(OUT_DIR / out_name\\).write_text\\(|\" extract_bank.py)",
+      "Bash(sed -i \"s|    print\\(f'Wrote {out_name}'\\)|    print\\(f'Wrote {OUT_DIR / out_name}'\\)|\" extract_bank.py)",
+      "Bash(python3 extract_bank.py \"Boundaries.pdf\" boundaries cb-boundaries.json)",
+      "Bash(python3 extract_bank.py \"Transitions.pdf\" transitions cb-transitions.json)",
+      "Bash(python3 extract_bank.py \"FSS.pdf\" form-structure-sense cb-fss.json)",
+      "Bash(python3 extract_bank.py \"Rhetorical Synthesis.pdf\" rhetorical-synthesis cb-rhetorical-synthesis.json)",
+      "Bash(git mv *)",
+      "Bash(rm -f banks/cb-*.json)",
+      "Bash(python3 extract_bank.py --all)",
+      "Bash(cd /home/shital/abhay/vocabulary *)",
+      "Bash(git rm *)",
+      "Bash(sed -i 's|/\\\\* The two filter rows read as one control group, so tighten the gap. \\\\*/\\\\n||' styles.css)"
+    ],
+    "additionalDirectories": [
+      "/home/shital/abhay/vocabulary/banks"
     ]
   }
 }

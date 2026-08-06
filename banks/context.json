@@ -1,0 +1,842 @@
+[
+  {
+    "id": "ctx-01",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "medium",
+    "passage": "In her survey of postwar jazz criticism, Nakamura identifies an increasingly ___ political stance among writers of the 1960s, in contrast to critics of the previous decade, whose commitments were rarely stated outright.",
+    "signal": "in contrast to",
+    "direction": "reverse",
+    "directionWhy": "\"In contrast to\" splits the sentence into two opposed halves. The 1950s critics kept their politics unstated, so the 1960s writers must be the opposite: open about theirs.",
+    "rule": "When a contrast marker appears, the blank must oppose the description on the other side of it — not match it.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "guarded",
+        "why": "Guarded describes the 1950s critics whose commitments were \"rarely stated outright.\" You have landed on the wrong side of the contrast."
+      },
+      {
+        "label": "B",
+        "text": "courteous",
+        "why": "Politeness is never raised; the sentence is about how openly politics were expressed."
+      },
+      {
+        "label": "C",
+        "text": "explicit",
+        "why": "Correct. It opposes \"rarely stated outright,\" which is what \"in contrast to\" requires."
+      },
+      {
+        "label": "D",
+        "text": "inadvertent",
+        "why": "Nothing suggests the 1960s writers took political stances by accident."
+      }
+    ]
+  },
+  {
+    "id": "ctx-02",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "medium",
+    "passage": "Hedy Lamarr's wartime patent undoubtedly shaped modern wireless technology, but her standing in engineering histories is more ___ than that of Claude Shannon, whose name is attached to an entire field.",
+    "signal": "but",
+    "direction": "reverse",
+    "directionWhy": "\"But\" reverses the sentence. Shannon has a whole field named after him — securely remembered. So Lamarr's standing must be the opposite: shaky.",
+    "rule": "A comparison after a contrast word points away from the thing being compared to, not toward it.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "tenuous",
+        "why": "Correct. Her standing is uncertain, unlike Shannon's, whose name defines a field."
+      },
+      {
+        "label": "B",
+        "text": "secure",
+        "why": "This agrees with Shannon's position, but \"but\" demands a contrast with it."
+      },
+      {
+        "label": "C",
+        "text": "deserved",
+        "why": "The sentence compares how firmly each is remembered, not whether the memory is merited."
+      },
+      {
+        "label": "D",
+        "text": "celebrated",
+        "why": "Another word that matches Shannon rather than contrasting with him."
+      }
+    ]
+  },
+  {
+    "id": "ctx-03",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "medium",
+    "passage": "Most long-term climate records come from a handful of well-funded stations in the Northern Hemisphere, leaving tropical regions badly underrepresented. To ___ this imbalance, researchers have begun installing low-cost sensors across equatorial Africa.",
+    "signal": "To",
+    "direction": "result",
+    "directionWhy": "Installing sensors in the underrepresented region is an action taken against the problem. The blank names what that action does to the imbalance: fixes it.",
+    "rule": "When a problem is stated and an action follows, the blank usually names the repair — not a description or a justification of the problem.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "justify",
+        "why": "To justify the imbalance would defend it. Installing sensors is an attempt to end it."
+      },
+      {
+        "label": "B",
+        "text": "document",
+        "why": "The imbalance is already documented in the first sentence; the researchers are acting on it."
+      },
+      {
+        "label": "C",
+        "text": "anticipate",
+        "why": "The imbalance already exists, so there is nothing left to anticipate."
+      },
+      {
+        "label": "D",
+        "text": "redress",
+        "why": "Correct. Redress means to set right, which is exactly what new equatorial sensors do."
+      }
+    ]
+  },
+  {
+    "id": "ctx-04",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "hard",
+    "passage": "Recent isotope analysis has overturned the long-held claim that the colony's diet was ___ marine resources; in fact, more than half of its protein came from the sea.",
+    "signal": "overturned the long-held claim",
+    "direction": "reverse",
+    "directionWhy": "Two reversals stack here. The claim was overturned, so the claim was wrong. Reality is sea-heavy, so the false claim must have said the opposite.",
+    "rule": "When a claim is overturned, discredited, or undermined, the blank holds what turned out to be FALSE. Work backward from the evidence.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "dependent on",
+        "why": "This matches the evidence, so it would be the true claim — but the sentence says the claim was overturned."
+      },
+      {
+        "label": "B",
+        "text": "unrelated to",
+        "why": "Correct. The discredited claim held that the sea did not matter; the isotopes show it supplied most of the protein."
+      },
+      {
+        "label": "C",
+        "text": "enriched by",
+        "why": "This also agrees with the evidence rather than naming the claim the evidence destroyed."
+      },
+      {
+        "label": "D",
+        "text": "limited by",
+        "why": "This would describe the sea as a constraint, which the evidence does not address either way."
+      }
+    ]
+  },
+  {
+    "id": "ctx-05",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "medium",
+    "passage": "To show that microscopic cracks in turbine blades can be found without dismantling the engine, materials scientist Priya Raman and her team ___ the tendency of stressed metal to emit faint ultrasonic pulses: the team showed those pulses can be detected from outside the housing.",
+    "signal": "To show that",
+    "direction": "result",
+    "directionWhy": "The team turned a known property of metal into a working detection method. The blank names what they did with that property: put it to use.",
+    "rule": "When researchers build a method on top of a known phenomenon, the blank usually means \"made use of\" — not \"questioned\" or \"redefined.\"",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "harnessed",
+        "why": "Correct. They put an existing property of stressed metal to productive use."
+      },
+      {
+        "label": "B",
+        "text": "questioned",
+        "why": "They relied on the tendency being real; questioning it would undercut their own method."
+      },
+      {
+        "label": "C",
+        "text": "redefined",
+        "why": "The property's definition is unchanged. What is new is the use they found for it."
+      },
+      {
+        "label": "D",
+        "text": "simulated",
+        "why": "They measured real pulses from real blades rather than modelling them."
+      }
+    ]
+  },
+  {
+    "id": "ctx-06",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "medium",
+    "passage": "Certain ant colonies begin sealing their nest entrances hours before heavy rain arrives; the behavior is therefore a reliable sign that a storm is ___.",
+    "signal": "hours before",
+    "direction": "result",
+    "directionWhy": "The sealing happens before the rain. So at the moment you observe it, the storm has not arrived yet but is about to.",
+    "rule": "Track the timeline. If the clue happens BEFORE the event, the event is still coming.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "constant",
+        "why": "A storm that never stops would make the warning behavior meaningless."
+      },
+      {
+        "label": "B",
+        "text": "distant",
+        "why": "Hours is short notice; the ants are reacting to something nearly upon them."
+      },
+      {
+        "label": "C",
+        "text": "harmless",
+        "why": "The passage says nothing about how damaging the storm is, only when it arrives."
+      },
+      {
+        "label": "D",
+        "text": "imminent",
+        "why": "Correct. The sealing precedes the rain by hours, so the storm is close but not yet here."
+      }
+    ]
+  },
+  {
+    "id": "ctx-07",
+    "skill": "transitions",
+    "domain": "expression-of-ideas",
+    "difficulty": "medium",
+    "passage": "Iyer's score layers a Carnatic rhythmic cycle beneath the chord changes of a jazz standard. ___ the piece belongs fully to neither tradition.",
+    "signal": "layers a Carnatic rhythmic cycle beneath",
+    "direction": "result",
+    "directionWhy": "Belonging to neither tradition is what happens BECAUSE the two were combined. The second sentence is the consequence of the first, not an objection to it.",
+    "rule": "Before reaching for a contrast word, check whether the second sentence is actually the RESULT of the first. Result is the trap contrast-lovers fall into.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Conversely,",
+        "why": "Conversely signals an opposite case, but the second sentence follows from the first rather than opposing it."
+      },
+      {
+        "label": "B",
+        "text": "In doing so,",
+        "why": "Correct. Belonging to neither tradition is the direct consequence of blending the two."
+      },
+      {
+        "label": "C",
+        "text": "For example,",
+        "why": "The second sentence draws a conclusion; it does not illustrate the first with an instance."
+      },
+      {
+        "label": "D",
+        "text": "Nevertheless,",
+        "why": "Nevertheless implies the second sentence defies the first, when it actually results from it."
+      }
+    ]
+  },
+  {
+    "id": "ctx-08",
+    "skill": "transitions",
+    "domain": "expression-of-ideas",
+    "difficulty": "medium",
+    "passage": "A sea star's arms regrow readily after injury. ___ the animal is often assumed to be immune to lasting harm, when in fact repeated regeneration drains reserves it may never rebuild.",
+    "signal": "regrow readily after injury",
+    "direction": "result",
+    "directionWhy": "The mistaken assumption arises because the arms visibly regrow. The blank connects a cause to the belief it produces.",
+    "rule": "A widely held assumption usually follows FROM the observable fact that inspired it. That is a result relationship, not a contrast.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "However,",
+        "why": "The contrast in this passage comes later, at \"when in fact.\" The blank itself links cause to belief."
+      },
+      {
+        "label": "B",
+        "text": "For instance,",
+        "why": "The assumption is not an example of regrowth; it is a conclusion drawn from it."
+      },
+      {
+        "label": "C",
+        "text": "Hence,",
+        "why": "Correct. Because the arms regrow, people conclude the animal suffers no lasting harm."
+      },
+      {
+        "label": "D",
+        "text": "That being said,",
+        "why": "This signals a qualification, but the sentence is stating a consequence."
+      }
+    ]
+  },
+  {
+    "id": "ctx-09",
+    "skill": "transitions",
+    "domain": "expression-of-ideas",
+    "difficulty": "medium",
+    "passage": "In arid basins the shrub flowers once and dies within a single season. ___ populations rooted in coastal fog belts may flower for a decade or more.",
+    "signal": "In arid basins",
+    "direction": "reverse",
+    "directionWhy": "Two habitats, two opposite lifespans. One season against ten years is a contrast between parallel cases.",
+    "rule": "Two comparable situations with opposite outcomes call for a contrast word — not a time word and not a cause word.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Subsequently,",
+        "why": "Subsequently orders events in time, but these are two places compared, not two moments."
+      },
+      {
+        "label": "B",
+        "text": "Similarly,",
+        "why": "One season and ten years are opposites, so the two cases do not match."
+      },
+      {
+        "label": "C",
+        "text": "Consequently,",
+        "why": "Fog-belt longevity is not caused by what happens in arid basins."
+      },
+      {
+        "label": "D",
+        "text": "Conversely,",
+        "why": "Correct. Same plant, opposite habitats, opposite lifespans — a textbook contrast."
+      }
+    ]
+  },
+  {
+    "id": "ctx-10",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "easy",
+    "passage": "Historians describe the period as one of ___ growth: three new universities, a doubled port capacity, and a population that rose by half in fifteen years.",
+    "signal": "growth:",
+    "direction": "define",
+    "directionWhy": "Everything after the colon spells out the blank. Three universities, doubled capacity, and half again the population in fifteen years is a large, fast change.",
+    "rule": "A colon means the rest of the sentence defines the blank. Read the evidence first, then pick the word that sums it up.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "sporadic",
+        "why": "The listed changes are simultaneous and sustained, not scattered."
+      },
+      {
+        "label": "B",
+        "text": "rapid",
+        "why": "Correct. All of it happened inside fifteen years, which the list is there to demonstrate."
+      },
+      {
+        "label": "C",
+        "text": "contested",
+        "why": "Nobody in the passage disputes the growth; the colon simply measures it."
+      },
+      {
+        "label": "D",
+        "text": "modest",
+        "why": "The figures after the colon are large, which rules out modest."
+      }
+    ]
+  },
+  {
+    "id": "ctx-11",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "medium",
+    "passage": "Kelp forests provide what ecologists call ___ habitat: structure built by a living organism rather than by rock or sediment.",
+    "signal": "habitat:",
+    "direction": "define",
+    "directionWhy": "The colon defines the term. Structure made by a living thing is what the blank must name.",
+    "rule": "When a technical term is followed by a colon, the definition is handed to you. Match the word to that definition.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "transient",
+        "why": "Nothing after the colon concerns how long the habitat lasts."
+      },
+      {
+        "label": "B",
+        "text": "marginal",
+        "why": "The definition is about what builds the structure, not how peripheral it is."
+      },
+      {
+        "label": "C",
+        "text": "biogenic",
+        "why": "Correct. Biogenic means produced by living organisms, exactly what the colon defines."
+      },
+      {
+        "label": "D",
+        "text": "degraded",
+        "why": "The definition describes how the habitat forms, not its condition."
+      }
+    ]
+  },
+  {
+    "id": "ctx-12",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "medium",
+    "passage": "Though the novel was dismissed as ___ when it first appeared, it is now assigned in survey courses across the country.",
+    "signal": "Though",
+    "direction": "reverse",
+    "directionWhy": "\"Though\" reverses the sentence. It is now standard reading, so the original dismissal must have said the opposite of valuable.",
+    "rule": "\"Though\" and \"although\" guarantee the two halves disagree. Read the second half, then flip it.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "derivative",
+        "why": "Correct. A book dismissed as unoriginal, yet now taught everywhere — the contrast holds."
+      },
+      {
+        "label": "B",
+        "text": "groundbreaking",
+        "why": "This is praise, and the sentence says the novel was dismissed."
+      },
+      {
+        "label": "C",
+        "text": "lengthy",
+        "why": "Length would not contrast with being widely assigned; long novels are taught all the time."
+      },
+      {
+        "label": "D",
+        "text": "essential",
+        "why": "Another positive word, which cannot follow \"dismissed as.\""
+      }
+    ]
+  },
+  {
+    "id": "ctx-13",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "medium",
+    "passage": "The vault's humidity control failed for six weeks in 1987. The damage to the paper archive was ___, and conservators are still repairing bindings nearly forty years later.",
+    "signal": "still repairing bindings nearly forty years later",
+    "direction": "result",
+    "directionWhy": "Work still underway after forty years measures the size of the damage. The blank has to match that scale.",
+    "rule": "When a sentence supplies a consequence, size the blank to fit it.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "negligible",
+        "why": "Forty years of repair work is the opposite of negligible."
+      },
+      {
+        "label": "B",
+        "text": "extensive",
+        "why": "Correct. Decades of ongoing conservation shows how far the damage reached."
+      },
+      {
+        "label": "C",
+        "text": "immediate",
+        "why": "Immediate describes when the damage appeared, not how much there was."
+      },
+      {
+        "label": "D",
+        "text": "reversible",
+        "why": "That repairs continue after forty years suggests the damage has not been undone."
+      }
+    ]
+  },
+  {
+    "id": "ctx-14",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "medium",
+    "passage": "Despite a reputation for ___, the giant Pacific octopus will often inspect a diver's camera for several minutes before withdrawing.",
+    "signal": "Despite",
+    "direction": "reverse",
+    "directionWhy": "\"Despite\" flips the sentence. The octopus approaches and lingers, so its reputation must be for doing the opposite.",
+    "rule": "\"Despite\" means the behavior described contradicts the reputation named in the blank.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "curiosity",
+        "why": "Inspecting a camera IS curiosity, so there would be nothing for \"despite\" to contradict."
+      },
+      {
+        "label": "B",
+        "text": "aggression",
+        "why": "Inspecting a camera is not the opposite of aggression; a hostile octopus might also approach."
+      },
+      {
+        "label": "C",
+        "text": "reclusiveness",
+        "why": "Correct. A creature reputed to hide instead approaches — the contrast \"despite\" requires."
+      },
+      {
+        "label": "D",
+        "text": "intelligence",
+        "why": "Careful inspection would confirm intelligence rather than contradict it."
+      }
+    ]
+  },
+  {
+    "id": "ctx-15",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "medium",
+    "passage": "Because the manuscript was copied by four scribes working two decades apart, its spelling is wildly ___.",
+    "signal": "Because",
+    "direction": "result",
+    "directionWhy": "\"Because\" makes the first half the cause. Four hands across twenty years produces variation, not uniformity.",
+    "rule": "\"Because\" means the blank states the effect. Ask what the stated cause would actually produce.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "inconsistent",
+        "why": "Correct. Multiple hands over a long span produce uneven spelling."
+      },
+      {
+        "label": "B",
+        "text": "consistent",
+        "why": "Four different scribes over twenty years is precisely what destroys consistency."
+      },
+      {
+        "label": "C",
+        "text": "archaic",
+        "why": "The spelling may well be old, but that is not caused by having four scribes."
+      },
+      {
+        "label": "D",
+        "text": "legible",
+        "why": "Legibility is about handwriting clarity, which the sentence never raises."
+      }
+    ]
+  },
+  {
+    "id": "ctx-16",
+    "skill": "transitions",
+    "domain": "expression-of-ideas",
+    "difficulty": "medium",
+    "passage": "The proposed rail line would cost roughly three times the original estimate. ___ it would cut directly through two protected wetlands.",
+    "signal": "three times the original estimate",
+    "direction": "agree",
+    "directionWhy": "Both sentences are objections to the same project. The second piles on rather than pushing back.",
+    "rule": "Two complaints in a row take an adding word. A contrast word would wrongly suggest the second softens the first.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Nevertheless,",
+        "why": "Nevertheless implies the second point offsets the first, but both are objections."
+      },
+      {
+        "label": "B",
+        "text": "In other words,",
+        "why": "Wetland damage is a new objection, not a restatement of the cost."
+      },
+      {
+        "label": "C",
+        "text": "Consequently,",
+        "why": "The route through the wetlands is not caused by the budget overrun."
+      },
+      {
+        "label": "D",
+        "text": "Moreover,",
+        "why": "Correct. It adds a second strike against the proposal."
+      }
+    ]
+  },
+  {
+    "id": "ctx-17",
+    "skill": "transitions",
+    "domain": "expression-of-ideas",
+    "difficulty": "easy",
+    "passage": "A few desert plants meet their entire water requirement from fog. ___ the Namib's welwitschia absorbs moisture through pores on its two enormous leaves.",
+    "signal": "A few desert plants",
+    "direction": "agree",
+    "directionWhy": "A general claim followed by one named species. The second sentence illustrates the first.",
+    "rule": "General statement, then a named case: that is an example relationship.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "However,",
+        "why": "The welwitschia supports the claim rather than complicating it."
+      },
+      {
+        "label": "B",
+        "text": "Therefore,",
+        "why": "The welwitschia's existence is not caused by the general claim."
+      },
+      {
+        "label": "C",
+        "text": "For instance,",
+        "why": "Correct. One species is offered as an example of the general pattern."
+      },
+      {
+        "label": "D",
+        "text": "Instead,",
+        "why": "Instead signals a substitution, but nothing is being replaced."
+      }
+    ]
+  },
+  {
+    "id": "ctx-18",
+    "skill": "transitions",
+    "domain": "expression-of-ideas",
+    "difficulty": "hard",
+    "passage": "The treaty's enforcement clause was never once invoked in eighty years. ___ it existed on paper and nowhere else.",
+    "signal": "never once invoked in eighty years",
+    "direction": "agree",
+    "directionWhy": "The second sentence says the same thing more sharply. It restates rather than adds, contrasts, or concludes.",
+    "rule": "When the second sentence repeats the first in blunter language, you need a restatement word.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Nonetheless,",
+        "why": "Nothing is being contradicted; the second sentence agrees with the first."
+      },
+      {
+        "label": "B",
+        "text": "In other words,",
+        "why": "Correct. Existing only on paper is a restatement of never being invoked."
+      },
+      {
+        "label": "C",
+        "text": "Meanwhile,",
+        "why": "Meanwhile marks parallel events in time, but there is only one situation here."
+      },
+      {
+        "label": "D",
+        "text": "Subsequently,",
+        "why": "No sequence of events is described, only one fact expressed twice."
+      }
+    ]
+  },
+  {
+    "id": "ctx-19",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "medium",
+    "passage": "The lecture was advertised as an introduction, yet the speaker's opening remarks assumed a ___ familiarity with tensor calculus.",
+    "signal": "yet",
+    "direction": "reverse",
+    "directionWhy": "\"Yet\" reverses. An introduction assumes no background, so what actually happened must be the opposite.",
+    "rule": "\"Yet\" works exactly like \"but.\" The blank has to defy what the first half led you to expect.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "passing",
+        "why": "A passing familiarity is what an introduction would assume, so there is no contrast."
+      },
+      {
+        "label": "B",
+        "text": "growing",
+        "why": "Growing describes change over time, which the sentence does not track."
+      },
+      {
+        "label": "C",
+        "text": "renewed",
+        "why": "Renewed implies prior study that lapsed, an idea the sentence never introduces."
+      },
+      {
+        "label": "D",
+        "text": "thorough",
+        "why": "Correct. Demanding deep knowledge contradicts the billing as an introduction."
+      }
+    ]
+  },
+  {
+    "id": "ctx-20",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "hard",
+    "passage": "Far from being the ___ ritual that earlier scholars assumed, the ceremony turns up in records spanning four centuries and six widely separated communities.",
+    "signal": "Far from being",
+    "direction": "reverse",
+    "directionWhy": "\"Far from being\" negates the blank. The evidence shows wide spread, so the rejected assumption must have claimed the opposite.",
+    "rule": "\"Far from being\" flips the blank. Whatever the evidence shows, the blank holds its opposite.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "localized",
+        "why": "Correct. Scholars thought it belonged to one place; the records show six communities over four centuries."
+      },
+      {
+        "label": "B",
+        "text": "widespread",
+        "why": "This matches the evidence, but \"far from being\" needs the belief the evidence overturned."
+      },
+      {
+        "label": "C",
+        "text": "sacred",
+        "why": "Whether the ceremony was religious is never in question."
+      },
+      {
+        "label": "D",
+        "text": "documented",
+        "why": "The records prove it was documented, so this cannot be the discarded assumption."
+      }
+    ]
+  },
+  {
+    "id": "ctx-21",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "medium",
+    "passage": "Routine antibiotic use in livestock accelerated the spread of resistant bacteria; the practice is now ___ regulated across the European Union.",
+    "signal": "accelerated the spread of resistant bacteria",
+    "direction": "result",
+    "directionWhy": "A recognized public-health harm leads to a crackdown. The blank describes the strength of the response.",
+    "rule": "When harm is established first, the regulation that follows is the response to it. Match the strength of the response to the seriousness of the harm.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "tightly",
+        "why": "Correct. Serious documented harm produces strict regulation."
+      },
+      {
+        "label": "B",
+        "text": "loosely",
+        "why": "A recognized driver of antibiotic resistance would not draw a relaxed response."
+      },
+      {
+        "label": "C",
+        "text": "rarely",
+        "why": "Rarely regulated contradicts the statement that the practice is now regulated."
+      },
+      {
+        "label": "D",
+        "text": "inconsistently",
+        "why": "\"Across the European Union\" suggests uniform rules, not patchy ones."
+      }
+    ]
+  },
+  {
+    "id": "ctx-22",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "hard",
+    "passage": "Although her public lectures were models of ___, Curie's private correspondence is halting, heavily crossed out, and frequently abandoned mid-sentence.",
+    "signal": "Although",
+    "direction": "reverse",
+    "directionWhy": "\"Although\" reverses. The letters are hesitant and unfinished, so the lectures must have been the opposite: smooth and assured.",
+    "rule": "Read the concrete half first. Here the letters are described in detail, so build the blank as their opposite.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "hesitation",
+        "why": "This matches the letters, but \"although\" requires the lectures to differ from them."
+      },
+      {
+        "label": "B",
+        "text": "brevity",
+        "why": "Length is never mentioned; the contrast is about ease of expression."
+      },
+      {
+        "label": "C",
+        "text": "controversy",
+        "why": "Nothing suggests her lectures provoked dispute."
+      },
+      {
+        "label": "D",
+        "text": "fluency",
+        "why": "Correct. Polished, flowing lectures stand against halting, crossed-out private writing."
+      }
+    ]
+  },
+  {
+    "id": "ctx-23",
+    "skill": "words-in-context",
+    "domain": "craft-structure",
+    "difficulty": "medium",
+    "passage": "Rosalind Franklin's X-ray diffraction images were ___ enough that Watson grasped the helical structure the moment he saw one.",
+    "signal": "the moment he saw one",
+    "direction": "agree",
+    "directionWhy": "Instant recognition means the images showed the structure plainly. The blank agrees with the outcome.",
+    "rule": "Not every sentence turns. When the second half confirms the first, pick the word that matches it.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "ambiguous",
+        "why": "Ambiguous images would not produce recognition at a glance."
+      },
+      {
+        "label": "B",
+        "text": "distinct",
+        "why": "Correct. The clarity of the images is what made immediate recognition possible."
+      },
+      {
+        "label": "C",
+        "text": "unremarkable",
+        "why": "An unremarkable image would not have revealed a landmark structure instantly."
+      },
+      {
+        "label": "D",
+        "text": "preliminary",
+        "why": "Preliminary describes what stage the work was at, not how clearly it showed the helix."
+      }
+    ]
+  },
+  {
+    "id": "ctx-24",
+    "skill": "transitions",
+    "domain": "expression-of-ideas",
+    "difficulty": "hard",
+    "passage": "Peer review was intended to catch errors before publication rather than to detect deliberate fraud. ___ the system's repeated failure to spot fabricated data is less a malfunction than a mismatch of expectations.",
+    "signal": "intended to catch errors before publication rather than to detect deliberate fraud",
+    "direction": "result",
+    "directionWhy": "If the system was never built to catch fraud, then its failure to catch fraud follows logically. The second sentence is the conclusion.",
+    "rule": "When the first sentence establishes a premise and the second draws the conclusion, you need a result word, however much the sentence sounds like a defense.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Even so,",
+        "why": "This signals the second sentence resists the first, but it follows directly from it."
+      },
+      {
+        "label": "B",
+        "text": "By contrast,",
+        "why": "No two situations are being set against each other; one point leads to the next."
+      },
+      {
+        "label": "C",
+        "text": "Accordingly,",
+        "why": "Correct. Given what peer review was designed for, the conclusion follows logically."
+      },
+      {
+        "label": "D",
+        "text": "Similarly,",
+        "why": "Similarly needs two parallel cases, and only one system is under discussion."
+      }
+    ]
+  }
+]

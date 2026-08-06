@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "manner-01",
+    "type": "manner",
+    "headword": "decisively",
+    "pronunciation": "/dɪˈsaɪ.sɪv.li/",
+    "from": "decisive",
+    "intensity": 4,
+    "register": "formal",
+    "synonyms": ["resolutely", "firmly"],
+    "antonym": "tentatively",
+    "sentence": "Although the committee had deliberated for hours, it acted ___ once the deadline was announced.",
+    "hint": "\"Although\" flips the direction of the sentence — the blank must undo the slowness, not echo it.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "reluctantly",
+        "gloss": "unwillingly, with hesitation",
+        "explanation": "\"Although\" sets up a contrast with the long deliberation, so the blank needs speed and resolve, not more hesitation.",
+        "insight": "Reluctantly repeats the delay instead of reversing it.",
+        "example": "She reluctantly agreed to rewrite the essay a third time."
+      },
+      {
+        "label": "B",
+        "text": "decisively",
+        "gloss": "quickly and with firm resolve",
+        "explanation": "Correct. The contrast with hours of deliberation calls for firm, prompt action, which is exactly what decisively conveys.",
+        "insight": "It carries resolve as well as speed — the choice was settled, not merely rushed.",
+        "example": "The board moved decisively to replace the failing supplier."
+      },
+      {
+        "label": "C",
+        "text": "ostensibly",
+        "gloss": "apparently, but perhaps not really",
+        "explanation": "Ostensibly comments on appearance versus reality, a contrast this sentence never raises.",
+        "insight": "A hedging adverb needs a gap between what is claimed and what is true.",
+        "example": "He was ostensibly studying, though the television stayed on."
+      },
+      {
+        "label": "D",
+        "text": "tediously",
+        "gloss": "in a slow, boring way",
+        "explanation": "Tediously describes the long deliberation, not the action that followed the deadline.",
+        "insight": "Right feeling, wrong half of the sentence.",
+        "example": "The clerk tediously read every line of the contract aloud."
+      }
+    ]
+  },
+  {
+    "id": "manner-02",
+    "type": "manner",
+    "headword": "meticulously",
+    "pronunciation": "/məˈtɪk.jə.ləs.li/",
+    "from": "meticulous",
+    "intensity": 4,
+    "register": "formal",
+    "synonyms": ["scrupulously", "painstakingly"],
+    "antonym": "carelessly",
+    "sentence": "The restorer worked ___, testing each pigment against a hidden corner before touching the canvas itself.",
+    "hint": "The second half of the sentence describes the method — match the adverb to that level of care.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "impulsively",
+        "gloss": "on sudden urges, without thinking",
+        "explanation": "Testing pigments on a hidden corner first is the opposite of acting on impulse.",
+        "insight": "The detail after the comma always defines the blank in a manner question.",
+        "example": "He impulsively bought a ticket for the next train out."
+      },
+      {
+        "label": "B",
+        "text": "brusquely",
+        "gloss": "abruptly, to the point of rudeness",
+        "explanation": "Brusquely describes how someone speaks or deals with people, not how carefully they handle materials.",
+        "insight": "Brusqueness is a social manner; this sentence is about technique.",
+        "example": "She brusquely cut off the question and moved to the next slide."
+      },
+      {
+        "label": "C",
+        "text": "meticulously",
+        "gloss": "with extreme attention to detail",
+        "explanation": "Correct. Trialing every pigment in an unseen spot before committing is textbook meticulous work.",
+        "insight": "Meticulous is care shown through procedure, not just intention.",
+        "example": "The budget was meticulously reconciled down to the last cent."
+      },
+      {
+        "label": "D",
+        "text": "listlessly",
+        "gloss": "without energy or interest",
+        "explanation": "A listless worker would skip the extra testing step, not add it.",
+        "insight": "Listlessly describes low energy, which nothing in the sentence supports.",
+        "example": "He stirred his soup listlessly and said nothing."
+      }
+    ]
+  },
+  {
+    "id": "manner-03",
+    "type": "manner",
+    "headword": "candidly",
+    "pronunciation": "/ˈkæn.dɪd.li/",
+    "from": "candid",
+    "intensity": 3,
+    "register": "neutral",
+    "synonyms": ["frankly", "openly"],
+    "antonym": "evasively",
+    "sentence": "Asked whether the launch would slip, the engineer answered ___, admitting that two systems remained untested.",
+    "hint": "What follows the comma tells you whether the answer hid something or revealed it.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "candidly",
+        "gloss": "honestly and without evasion",
+        "explanation": "Correct. Volunteering that two systems are untested is an unflattering truth freely given, which is what candidly means.",
+        "insight": "Candid implies the honesty cost the speaker something.",
+        "example": "She spoke candidly about why the first company failed."
+      },
+      {
+        "label": "B",
+        "text": "evasively",
+        "gloss": "avoiding a direct answer",
+        "explanation": "An evasive answer would dodge the question, but this engineer supplies the damaging specifics.",
+        "insight": "The admission after the comma rules out any dodging.",
+        "example": "He answered evasively, changing the subject to the weather."
+      },
+      {
+        "label": "C",
+        "text": "curtly",
+        "gloss": "briefly, to the point of rudeness",
+        "explanation": "Curtly describes shortness of speech; the engineer elaborates rather than clips the reply.",
+        "insight": "Curt is about length and tone, not honesty.",
+        "example": "\"No,\" he said curtly, and closed the folder."
+      },
+      {
+        "label": "D",
+        "text": "jubilantly",
+        "gloss": "with great joy",
+        "explanation": "Nothing about untested systems and a slipping launch invites celebration.",
+        "insight": "Check the emotional charge of the adverb against the news being delivered.",
+        "example": "The crowd cheered jubilantly as the last runner crossed."
+      }
+    ]
+  },
+  {
+    "id": "manner-04",
+    "type": "manner",
+    "headword": "grudgingly",
+    "pronunciation": "/ˈɡrʌdʒ.ɪŋ.li/",
+    "from": "grudging",
+    "intensity": 3,
+    "register": "neutral",
+    "synonyms": ["reluctantly", "resentfully"],
+    "antonym": "graciously",
+    "sentence": "The landlord returned the deposit ___, insisting to the very end that the scuff marks were the tenant's fault.",
+    "hint": "He did the right thing — but the second clause tells you how he felt about it.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "graciously",
+        "gloss": "with warmth and good will",
+        "explanation": "Someone still arguing about whose fault the damage was is not being gracious.",
+        "insight": "The word \"insisting\" carries resentment, which graciously contradicts.",
+        "example": "She graciously thanked each volunteer by name."
+      },
+      {
+        "label": "B",
+        "text": "promptly",
+        "gloss": "without delay",
+        "explanation": "Promptly answers \"how soon,\" but the sentence is telling you about attitude, not timing.",
+        "insight": "The clause after the comma is emotional, so the blank must be too.",
+        "example": "The refund was processed promptly the next morning."
+      },
+      {
+        "label": "C",
+        "text": "absentmindedly",
+        "gloss": "without paying attention",
+        "explanation": "He is paying close attention — closely enough to keep relitigating the scuff marks.",
+        "insight": "Absentminded implies forgetfulness, the opposite of insisting on a point.",
+        "example": "He absentmindedly poured salt into his coffee."
+      },
+      {
+        "label": "D",
+        "text": "grudgingly",
+        "gloss": "unwillingly, with lingering resentment",
+        "explanation": "Correct. He complies but resents it, and keeps saying so — the exact shape of grudging behavior.",
+        "insight": "Grudgingly always pairs an action with the resentment behind it.",
+        "example": "The critic grudgingly admitted the sequel was better than the original."
+      }
+    ]
+  },
+  {
+    "id": "manner-05",
+    "type": "manner",
+    "headword": "deftly",
+    "pronunciation": "/ˈdeft.li/",
+    "from": "deft",
+    "intensity": 4,
+    "register": "neutral",
+    "synonyms": ["adroitly", "nimbly"],
+    "antonym": "clumsily",
+    "sentence": "The interpreter moved ___ between the two languages, never once making the delegates wait for a phrase.",
+    "hint": "\"Never once making them wait\" is praise — the blank has to be positive and about skill.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "clumsily",
+        "gloss": "awkwardly, without skill",
+        "explanation": "A clumsy interpreter would produce exactly the pauses the sentence says never happened.",
+        "insight": "\"Never once\" is a clue that the performance was flawless.",
+        "example": "He clumsily knocked the microphone off the podium."
+      },
+      {
+        "label": "B",
+        "text": "deftly",
+        "gloss": "with quick, skillful ease",
+        "explanation": "Correct. Deft describes skill that looks effortless and never stalls, which is what the second clause praises.",
+        "insight": "Deftly implies both speed and precision; either alone is not enough.",
+        "example": "She deftly steered the discussion away from the lawsuit."
+      },
+      {
+        "label": "C",
+        "text": "tediously",
+        "gloss": "slowly and boringly",
+        "explanation": "Tedious work drags, but the delegates never waited at all.",
+        "insight": "Tediously is about the listener's boredom, not the speaker's skill.",
+        "example": "The witness tediously recounted every stop on the drive."
+      },
+      {
+        "label": "D",
+        "text": "hesitantly",
+        "gloss": "with pauses and uncertainty",
+        "explanation": "Hesitation would create the delay that the sentence explicitly rules out.",
+        "insight": "Watch for negations like \"never once\" — they eliminate whole families of adverbs.",
+        "example": "She hesitantly raised her hand, unsure of the answer."
+      }
+    ]
+  },
+  {
+    "id": "degree-01",
+    "type": "degree",
+    "headword": "marginally",
+    "pronunciation": "/ˈmɑːr.dʒɪ.nəl.i/",
+    "from": "marginal",
+    "intensity": 1,
+    "register": "neutral",
+    "synonyms": ["slightly", "negligibly"],
+    "antonym": "substantially",
+    "sentence": "The new filter improved air quality only ___; residents reported no difference they could actually detect.",
+    "hint": "\"Only\" plus \"no difference they could detect\" pins the size of the change.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "marginally",
+        "gloss": "by a very small amount",
+        "explanation": "Correct. The improvement was real but so small that nobody noticed it — precisely a marginal change.",
+        "insight": "\"Only\" before a degree adverb almost always signals the low end of the scale.",
+        "example": "Sales rose marginally, by less than one percent."
+      },
+      {
+        "label": "B",
+        "text": "drastically",
+        "gloss": "to an extreme degree",
+        "explanation": "A drastic improvement would be impossible to miss, yet residents detected nothing.",
+        "insight": "The evidence clause overrides how good the change sounds.",
+        "example": "Costs fell drastically after the factory automated."
+      },
+      {
+        "label": "C",
+        "text": "appreciably",
+        "gloss": "enough to be noticed",
+        "explanation": "Appreciably means noticeably, and the sentence states outright that nobody noticed.",
+        "insight": "Appreciably is defined by perceptibility — the exact thing being denied here.",
+        "example": "The medication appreciably reduced her symptoms within a week."
+      },
+      {
+        "label": "D",
+        "text": "overwhelmingly",
+        "gloss": "to a dominating degree",
+        "explanation": "Overwhelmingly is the strongest option available and contradicts the whole second clause.",
+        "insight": "When four choices differ only in strength, let the evidence clause pick the rung.",
+        "example": "The proposal passed overwhelmingly, ninety votes to four."
+      }
+    ]
+  },
+  {
+    "id": "degree-02",
+    "type": "degree",
+    "headword": "substantially",
+    "pronunciation": "/səbˈstæn.ʃəl.i/",
+    "from": "substantial",
+    "intensity": 4,
+    "register": "formal",
+    "synonyms": ["considerably", "markedly"],
+    "antonym": "negligibly",
+    "sentence": "Enrollment fell ___ after the tuition increase, dropping by nearly a third in a single year.",
+    "hint": "The figure after the comma tells you exactly how big the fall was.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "negligibly",
+        "gloss": "so slightly it hardly counts",
+        "explanation": "A third of the student body is far too large to be called negligible.",
+        "insight": "Whenever a number is supplied, size the adverb to the number.",
+        "example": "The delay affected the schedule negligibly."
+      },
+      {
+        "label": "B",
+        "text": "moderately",
+        "gloss": "to a middling degree",
+        "explanation": "Moderate suggests a middling change, but a one-third drop in one year is severe.",
+        "insight": "Moderately is the safe-sounding trap; the data usually rules it out.",
+        "example": "Prices rose moderately over the decade."
+      },
+      {
+        "label": "C",
+        "text": "substantially",
+        "gloss": "by a large, significant amount",
+        "explanation": "Correct. Losing nearly a third of enrollment in a year is a large, consequential decline.",
+        "insight": "Substantially implies the size matters, not just that it is measurable.",
+        "example": "The bridge repairs substantially reduced commute times."
+      },
+      {
+        "label": "D",
+        "text": "marginally",
+        "gloss": "by a very small amount",
+        "explanation": "Marginally sits at the opposite end of the scale from a one-third drop.",
+        "insight": "Compare each degree adverb against the stated magnitude before choosing.",
+        "example": "Attendance dipped marginally in the rain."
+      }
+    ]
+  },
+  {
+    "id": "degree-03",
+    "type": "degree",
+    "headword": "utterly",
+    "pronunciation": "/ˈʌt.ər.li/",
+    "from": "utter",
+    "intensity": 5,
+    "register": "neutral",
+    "synonyms": ["completely", "entirely"],
+    "antonym": "partially",
+    "sentence": "The forecast turned out to be ___ wrong: not a single drop of the predicted rain ever fell.",
+    "hint": "\"Not a single drop\" leaves no room for partial credit.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "somewhat",
+        "gloss": "to a small degree",
+        "explanation": "Somewhat allows for partial accuracy, but zero rain out of a rainy forecast is total failure.",
+        "insight": "Absolute evidence demands an absolute adverb.",
+        "example": "The room was somewhat colder than she expected."
+      },
+      {
+        "label": "B",
+        "text": "largely",
+        "gloss": "mostly, but not entirely",
+        "explanation": "Largely leaves a remainder that was correct, and here nothing was.",
+        "insight": "\"Not a single\" is the strongest possible negation — it excludes \"mostly.\"",
+        "example": "The report was largely accurate, apart from two dates."
+      },
+      {
+        "label": "C",
+        "text": "partially",
+        "gloss": "in part only",
+        "explanation": "Partially wrong implies partially right, which the colon clause rules out completely.",
+        "insight": "Everything after a colon is evidence for the blank before it.",
+        "example": "The theory was only partially confirmed by the data."
+      },
+      {
+        "label": "D",
+        "text": "utterly",
+        "gloss": "completely, without exception",
+        "explanation": "Correct. Utterly marks the absolute end of the scale, matching a forecast with no truth in it at all.",
+        "insight": "Utterly usually attaches to negative or extreme adjectives — utterly wrong, utterly exhausted.",
+        "example": "She was utterly exhausted after the double shift."
+      }
+    ]
+  },
+  {
+    "id": "degree-04",
+    "type": "degree",
+    "headword": "scarcely",
+    "pronunciation": "/ˈskers.li/",
+    "from": "scarce",
+    "intensity": 1,
+    "register": "formal",
+    "synonyms": ["barely", "hardly"],
+    "antonym": "plainly",
+    "sentence": "The transmission was ___ audible over the static, and the crew caught only every third word.",
+    "hint": "How much of the message got through? The second clause counts it for you.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "plainly",
+        "gloss": "clearly and easily",
+        "explanation": "If the signal were plainly audible, the crew would not be losing two words out of every three.",
+        "insight": "Test the blank against the number in the following clause.",
+        "example": "His footsteps were plainly audible in the empty hall."
+      },
+      {
+        "label": "B",
+        "text": "scarcely",
+        "gloss": "only just, almost not at all",
+        "explanation": "Correct. Catching one word in three means the transmission barely crossed the threshold of being heard.",
+        "insight": "Scarcely means the thing only just happened — one notch above not happening.",
+        "example": "He had scarcely sat down when the phone rang."
+      },
+      {
+        "label": "C",
+        "text": "thoroughly",
+        "gloss": "completely, in every part",
+        "explanation": "Thoroughly audible would mean every word came through intact.",
+        "insight": "Thoroughly belongs to the top of the degree scale.",
+        "example": "The kitchen was thoroughly cleaned before the inspection."
+      },
+      {
+        "label": "D",
+        "text": "resoundingly",
+        "gloss": "loudly and unmistakably",
+        "explanation": "Resoundingly is the loudest option and directly contradicts a signal buried in static.",
+        "insight": "Resoundingly usually modifies victories and rejections, not faint radio signals.",
+        "example": "The measure was resoundingly defeated."
+      }
+    ]
+  },
+  {
+    "id": "degree-05",
+    "type": "degree",
+    "headword": "inordinately",
+    "pronunciation": "/ɪnˈɔːr.dɪ.nət.li/",
+    "from": "inordinate",
+    "intensity": 4,
+    "register": "formal",
+    "synonyms": ["excessively", "disproportionately"],
+    "antonym": "reasonably",
+    "sentence": "The review board spent an ___ long time on a single footnote while leaving the central argument undiscussed.",
+    "hint": "The contrast is between what got attention and what deserved it.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "appropriately",
+        "gloss": "in a fitting amount",
+        "explanation": "Ignoring the central argument shows the time was badly allocated, not fitting.",
+        "insight": "\"While leaving...undiscussed\" is a judgment against the board.",
+        "example": "The funds were appropriately divided among the three schools."
+      },
+      {
+        "label": "B",
+        "text": "briefly",
+        "gloss": "for a short time",
+        "explanation": "Briefly cannot modify \"long\" — the two words cancel each other out.",
+        "insight": "Read the blank together with the adjective it modifies, not just the sentence.",
+        "example": "He spoke briefly and then took questions."
+      },
+      {
+        "label": "C",
+        "text": "inordinately",
+        "gloss": "excessively, out of all proportion",
+        "explanation": "Correct. Inordinate means beyond reasonable proportion, which is exactly the imbalance the sentence describes.",
+        "insight": "Inordinately implies a comparison — too much relative to what was warranted.",
+        "example": "He was inordinately proud of a very ordinary putt."
+      },
+      {
+        "label": "D",
+        "text": "marginally",
+        "gloss": "by a small amount",
+        "explanation": "Marginally long would be a mild overrun, not a lapse worth criticizing.",
+        "insight": "The severity of the criticism sets the strength of the adverb.",
+        "example": "The flight was only marginally delayed."
+      }
+    ]
+  },
+  {
+    "id": "frequency-01",
+    "type": "frequency",
+    "headword": "sporadically",
+    "pronunciation": "/spəˈræd.ɪ.kəl.i/",
+    "from": "sporadic",
+    "intensity": 2,
+    "register": "formal",
+    "synonyms": ["intermittently", "occasionally"],
+    "antonym": "continually",
+    "sentence": "Funding arrived ___ — twice in one spring, then not again for three years.",
+    "hint": "The dash introduces the pattern. Is it regular or scattered?",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "sporadically",
+        "gloss": "at scattered, irregular intervals",
+        "explanation": "Correct. Two payments close together and then a three-year gap is the definition of an irregular, scattered pattern.",
+        "insight": "Sporadic stresses the unpredictability, not merely the rarity.",
+        "example": "Sporadically the old projector flickered back to life."
+      },
+      {
+        "label": "B",
+        "text": "relentlessly",
+        "gloss": "without pause",
+        "explanation": "Relentlessly means an unbroken stream, and the three-year gap breaks it.",
+        "insight": "A stated gap eliminates every continuous adverb.",
+        "example": "The rain fell relentlessly for three days."
+      },
+      {
+        "label": "C",
+        "text": "punctually",
+        "gloss": "exactly on schedule",
+        "explanation": "Punctually implies a schedule was kept, but this funding follows no schedule at all.",
+        "insight": "Punctually is about timeliness against a plan, not frequency.",
+        "example": "The train left punctually at 6:04."
+      },
+      {
+        "label": "D",
+        "text": "habitually",
+        "gloss": "by settled habit, predictably",
+        "explanation": "Habitually implies regular repetition, which is precisely what sporadic denies.",
+        "insight": "Habitual and sporadic are frequency opposites — both common SAT choices.",
+        "example": "He habitually arrives ten minutes early."
+      }
+    ]
+  },
+  {
+    "id": "frequency-02",
+    "type": "frequency",
+    "headword": "invariably",
+    "pronunciation": "/ɪnˈver.i.ə.bli/",
+    "from": "invariable",
+    "intensity": 5,
+    "register": "formal",
+    "synonyms": ["always", "unfailingly"],
+    "antonym": "occasionally",
+    "sentence": "No matter which route she tried, the 7:15 train ___ arrived late.",
+    "hint": "\"No matter which\" means the outcome never changed.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "occasionally",
+        "gloss": "now and then",
+        "explanation": "Occasionally allows for on-time days, but the opening clause says nothing she tried made a difference.",
+        "insight": "\"No matter which\" rules out any exception.",
+        "example": "She occasionally works from the branch office."
+      },
+      {
+        "label": "B",
+        "text": "seldom",
+        "gloss": "rarely",
+        "explanation": "Seldom would make lateness the exception, reversing the complaint the sentence is making.",
+        "insight": "Check whether the sentence complains or reassures — that sets the direction.",
+        "example": "He seldom answers the phone before noon."
+      },
+      {
+        "label": "C",
+        "text": "sporadically",
+        "gloss": "at irregular intervals",
+        "explanation": "Sporadic lateness would be unpredictable, but here it is perfectly predictable.",
+        "insight": "Irregularity and inevitability are different ideas; the stem asks for inevitability.",
+        "example": "The heater cut out sporadically all winter."
+      },
+      {
+        "label": "D",
+        "text": "invariably",
+        "gloss": "every single time, without exception",
+        "explanation": "Correct. Invariably marks an outcome that never varies, matching \"no matter which route she tried.\"",
+        "insight": "Invariably is stronger than usually — it admits no counterexample.",
+        "example": "The two arguments invariably end the same way."
+      }
+    ]
+  },
+  {
+    "id": "frequency-03",
+    "type": "frequency",
+    "headword": "seldom",
+    "pronunciation": "/ˈsel.dəm/",
+    "from": "—",
+    "intensity": 1,
+    "register": "neutral",
+    "synonyms": ["rarely", "infrequently"],
+    "antonym": "routinely",
+    "sentence": "Though famous for his correspondence, the novelist ___ answered a letter within a month; most waited a year.",
+    "hint": "\"Though\" warns you the reputation and the reality disagree.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "routinely",
+        "gloss": "as a matter of course",
+        "explanation": "Routinely answering within a month cannot square with most letters waiting a year.",
+        "insight": "The semicolon clause is the evidence; it beats the reputation in the first clause.",
+        "example": "The lab routinely calibrates its instruments each Monday."
+      },
+      {
+        "label": "B",
+        "text": "promptly",
+        "gloss": "without delay",
+        "explanation": "Promptly measures speed, but the sentence needs a word for how often it happened.",
+        "insight": "\"Within a month\" already supplies the speed; the blank must supply frequency.",
+        "example": "She promptly returned the call."
+      },
+      {
+        "label": "C",
+        "text": "seldom",
+        "gloss": "on rare occasions",
+        "explanation": "Correct. If most letters waited a year, a reply inside a month was a rare event.",
+        "insight": "Seldom quantifies how often, which is what \"most waited a year\" measures.",
+        "example": "He seldom leaves the city in August."
+      },
+      {
+        "label": "D",
+        "text": "invariably",
+        "gloss": "every time",
+        "explanation": "Invariably would mean every letter got a fast reply, contradicting the second clause outright.",
+        "insight": "Watch for \"though\" — it means the second half will undercut the first.",
+        "example": "The pattern invariably repeats in the third year."
+      }
+    ]
+  },
+  {
+    "id": "frequency-04",
+    "type": "frequency",
+    "headword": "perennially",
+    "pronunciation": "/pəˈren.i.əl.i/",
+    "from": "perennial",
+    "intensity": 4,
+    "register": "formal",
+    "synonyms": ["continually", "recurrently"],
+    "antonym": "briefly",
+    "sentence": "The question of how to fund the repairs returns ___, appearing on the council's agenda every single spring.",
+    "hint": "\"Every single spring\" describes a cycle, not a one-off.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "abruptly",
+        "gloss": "suddenly and without warning",
+        "explanation": "Something that shows up every spring is the least surprising item on the agenda.",
+        "insight": "A stated cycle removes all element of surprise.",
+        "example": "The music stopped abruptly halfway through."
+      },
+      {
+        "label": "B",
+        "text": "perennially",
+        "gloss": "year after year, recurring endlessly",
+        "explanation": "Correct. Perennially describes something that comes back season after season, exactly matching \"every single spring.\"",
+        "insight": "Perennial carries the seasonal image from the plants of the same name.",
+        "example": "Parking is a perennially contested issue in the neighborhood."
+      },
+      {
+        "label": "C",
+        "text": "briefly",
+        "gloss": "for a short time",
+        "explanation": "Briefly measures how long the question stays, not how often it returns.",
+        "insight": "The verb is \"returns\" — the blank must describe recurrence.",
+        "example": "The sun appeared briefly between the clouds."
+      },
+      {
+        "label": "D",
+        "text": "unexpectedly",
+        "gloss": "against expectation",
+        "explanation": "An annual fixture is expected by definition.",
+        "insight": "Same trap as abruptly: predictability defeats both.",
+        "example": "The guest speaker unexpectedly withdrew."
+      }
+    ]
+  },
+  {
+    "id": "frequency-05",
+    "type": "frequency",
+    "headword": "intermittently",
+    "pronunciation": "/ˌɪn.tərˈmɪt.ənt.li/",
+    "from": "intermittent",
+    "intensity": 2,
+    "register": "formal",
+    "synonyms": ["sporadically", "fitfully"],
+    "antonym": "continuously",
+    "sentence": "The generator ran ___ through the storm, cutting out whenever the wind gusted hard.",
+    "hint": "Did it run the whole time, or stop and start?",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "intermittently",
+        "gloss": "starting and stopping at intervals",
+        "explanation": "Correct. Cutting out with each gust and resuming afterward is the stop-start pattern intermittently names.",
+        "insight": "Intermittent stresses the pauses; sporadic stresses the irregularity. Here the pauses are the point.",
+        "example": "The fever returned intermittently for a week."
+      },
+      {
+        "label": "B",
+        "text": "continuously",
+        "gloss": "without any break",
+        "explanation": "Continuous operation means no interruptions, and this generator was interrupted repeatedly.",
+        "insight": "Any \"cutting out\" clause eliminates continuously.",
+        "example": "The pump ran continuously for forty hours."
+      },
+      {
+        "label": "C",
+        "text": "permanently",
+        "gloss": "lastingly, for good",
+        "explanation": "Permanently describes a state that does not end, not a pattern within one storm.",
+        "insight": "Permanently answers \"for how long, forever?\" not \"how often?\"",
+        "example": "The road was permanently closed after the slide."
+      },
+      {
+        "label": "D",
+        "text": "steadily",
+        "gloss": "at an even, unbroken rate",
+        "explanation": "Steadily implies consistency, which the gusts kept breaking.",
+        "insight": "Steadily is the quiet trap here — it sounds mechanical but means unbroken.",
+        "example": "The temperature climbed steadily all afternoon."
+      }
+    ]
+  },
+  {
+    "id": "time-01",
+    "type": "time",
+    "headword": "belatedly",
+    "pronunciation": "/bɪˈleɪ.tɪd.li/",
+    "from": "belated",
+    "intensity": 3,
+    "register": "formal",
+    "synonyms": ["tardily", "late"],
+    "antonym": "promptly",
+    "sentence": "The company ___ acknowledged the flaw, months after customers had first reported it.",
+    "hint": "Compare when the company acted with when the customers spoke up.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "promptly",
+        "gloss": "right away",
+        "explanation": "Months of silence is the opposite of a prompt response.",
+        "insight": "The comparison clause after the comma dates the action for you.",
+        "example": "The airline promptly refunded the fare."
+      },
+      {
+        "label": "B",
+        "text": "preemptively",
+        "gloss": "before the problem arises",
+        "explanation": "Preemptive action comes before the complaints, not months after them.",
+        "insight": "Preemptively requires the company to move first — here it moved last.",
+        "example": "They preemptively recalled the batch before any injuries."
+      },
+      {
+        "label": "C",
+        "text": "belatedly",
+        "gloss": "later than it should have been",
+        "explanation": "Correct. Belatedly carries both the lateness and the implication that the delay was a failing.",
+        "insight": "Belatedly is late with a note of criticism; \"late\" alone is neutral.",
+        "example": "He belatedly sent a birthday card in March."
+      },
+      {
+        "label": "D",
+        "text": "immediately",
+        "gloss": "at once",
+        "explanation": "Immediately contradicts the months-long gap stated in the same sentence.",
+        "insight": "Never choose a timing adverb that fights the sentence's own timeline.",
+        "example": "She immediately recognized the handwriting."
+      }
+    ]
+  },
+  {
+    "id": "time-02",
+    "type": "time",
+    "headword": "subsequently",
+    "pronunciation": "/ˈsʌb.sɪ.kwənt.li/",
+    "from": "subsequent",
+    "intensity": 3,
+    "register": "formal",
+    "synonyms": ["afterward", "later"],
+    "antonym": "previously",
+    "sentence": "The bill passed the lower house in March and was ___ blocked by the senate in June.",
+    "hint": "March, then June — the blank just needs to point in the right direction.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "previously",
+        "gloss": "at an earlier time",
+        "explanation": "June comes after March, so the blocking cannot be previous to the passage.",
+        "insight": "Two dates in a sentence usually decide a sequence adverb outright.",
+        "example": "She had previously worked at the same firm."
+      },
+      {
+        "label": "B",
+        "text": "subsequently",
+        "gloss": "after that, following on",
+        "explanation": "Correct. Subsequently marks the second event in a sequence, which is exactly what June is here.",
+        "insight": "Subsequently is neutral about cause; it only orders events in time.",
+        "example": "He resigned in April and subsequently moved abroad."
+      },
+      {
+        "label": "C",
+        "text": "simultaneously",
+        "gloss": "at the same time",
+        "explanation": "March and June are three months apart, so nothing here is simultaneous.",
+        "insight": "Simultaneously needs two events sharing one moment.",
+        "example": "Both alarms went off simultaneously."
+      },
+      {
+        "label": "D",
+        "text": "initially",
+        "gloss": "at the beginning",
+        "explanation": "Initially would mark the first event, and the passage in March already holds that slot.",
+        "insight": "Only one event in a sequence can be the initial one.",
+        "example": "Initially the plan called for two floors, not four."
+      }
+    ]
+  },
+  {
+    "id": "time-03",
+    "type": "time",
+    "headword": "imminently",
+    "pronunciation": "/ˈɪm.ɪ.nənt.li/",
+    "from": "imminent",
+    "intensity": 4,
+    "register": "formal",
+    "synonyms": ["shortly", "impendingly"],
+    "antonym": "eventually",
+    "sentence": "The crew was told the squall would arrive ___; they had perhaps an hour to secure the deck.",
+    "hint": "One hour of warning — how soon is that, on the scale of arrivals?",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "eventually",
+        "gloss": "at some unspecified later point",
+        "explanation": "Eventually is vague and distant, but the crew has a single hour.",
+        "insight": "A stated countdown always beats a vague timing adverb.",
+        "example": "The paperwork eventually reached the right desk."
+      },
+      {
+        "label": "B",
+        "text": "belatedly",
+        "gloss": "later than it should have",
+        "explanation": "Belatedly judges something as overdue, and a storm cannot be overdue in this sense.",
+        "insight": "Belatedly needs an expected time it missed; storms have no appointment.",
+        "example": "The apology arrived belatedly, a week after the incident."
+      },
+      {
+        "label": "C",
+        "text": "periodically",
+        "gloss": "at repeated intervals",
+        "explanation": "Periodically describes repetition, but this is one approaching squall.",
+        "insight": "A single event cannot be modified by a frequency adverb.",
+        "example": "The tanks are periodically drained and inspected."
+      },
+      {
+        "label": "D",
+        "text": "imminently",
+        "gloss": "very soon, about to happen",
+        "explanation": "Correct. Imminently means an event is on the verge of occurring, which one hour of warning makes it.",
+        "insight": "Imminent usually attaches to threats — storms, deadlines, collapse.",
+        "example": "Officials warned that a breach was imminently possible."
+      }
+    ]
+  },
+  {
+    "id": "time-04",
+    "type": "time",
+    "headword": "concurrently",
+    "pronunciation": "/kənˈkɜːr.ənt.li/",
+    "from": "concurrent",
+    "intensity": 3,
+    "register": "formal",
+    "synonyms": ["simultaneously", "in parallel"],
+    "antonym": "consecutively",
+    "sentence": "The two trials ran ___, so a patient enrolled in one could not also be counted in the other.",
+    "hint": "Why would enrolling in one block the other? Because of when they happened.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "concurrently",
+        "gloss": "at the same time as each other",
+        "explanation": "Correct. The overlap is what creates the conflict — a patient cannot be in two places during the same period.",
+        "insight": "The \"so\" clause states the consequence; work backward to find the cause.",
+        "example": "He served the two sentences concurrently."
+      },
+      {
+        "label": "B",
+        "text": "consecutively",
+        "gloss": "one after the other",
+        "explanation": "If the trials ran one after the other, a patient could finish the first and join the second.",
+        "insight": "Consecutive and concurrent are the classic pair; only one creates a conflict.",
+        "example": "The team won four consecutively before losing."
+      },
+      {
+        "label": "C",
+        "text": "retroactively",
+        "gloss": "applying to an earlier period",
+        "explanation": "Retroactively describes how a rule reaches backward in time, not when two studies ran.",
+        "insight": "Retroactive belongs to policies and payments, not schedules.",
+        "example": "The raise was applied retroactively to January."
+      },
+      {
+        "label": "D",
+        "text": "sporadically",
+        "gloss": "at scattered intervals",
+        "explanation": "Sporadic scheduling would still allow a patient to join both at different times.",
+        "insight": "Only true overlap produces the exclusion the sentence describes.",
+        "example": "The site was excavated sporadically over two decades."
+      }
+    ]
+  },
+  {
+    "id": "time-05",
+    "type": "time",
+    "headword": "hitherto",
+    "pronunciation": "/ˌhɪð.ərˈtuː/",
+    "from": "—",
+    "intensity": 3,
+    "register": "formal",
+    "synonyms": ["previously", "until now"],
+    "antonym": "henceforth",
+    "sentence": "The archive's newly opened letters revealed a ___ unknown correspondence between the two rivals.",
+    "hint": "Unknown when? Up until the letters turned up.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "henceforth",
+        "gloss": "from this point onward",
+        "explanation": "Henceforth points forward, but the correspondence was unknown before the discovery, not after.",
+        "insight": "Hitherto and henceforth face opposite directions in time.",
+        "example": "Henceforth all requests must be submitted in writing."
+      },
+      {
+        "label": "B",
+        "text": "hitherto",
+        "gloss": "up until this moment",
+        "explanation": "Correct. Hitherto marks a state that held right up to the present discovery and no longer holds.",
+        "insight": "\"Hitherto unknown\" is a fixed academic phrase worth memorizing whole.",
+        "example": "The dig produced a hitherto unrecorded burial style."
+      },
+      {
+        "label": "C",
+        "text": "presently",
+        "gloss": "soon, or currently",
+        "explanation": "Presently describes the current or near moment, but the ignorance being described is over.",
+        "insight": "Presently is ambiguous even to native speakers; the SAT rarely makes it the answer.",
+        "example": "The director will see you presently."
+      },
+      {
+        "label": "D",
+        "text": "imminently",
+        "gloss": "about to happen",
+        "explanation": "Imminently looks ahead to an event, while this blank looks back at a past state.",
+        "insight": "Direction in time is the whole question in sequence items.",
+        "example": "A decision is imminently expected."
+      }
+    ]
+  },
+  {
+    "id": "focus-01",
+    "type": "focus",
+    "headword": "ostensibly",
+    "pronunciation": "/ɒˈsten.sə.bli/",
+    "from": "ostensible",
+    "intensity": 3,
+    "register": "formal",
+    "synonyms": ["apparently", "supposedly"],
+    "antonym": "genuinely",
+    "sentence": "The fund was ___ created for scholarships, though most of the money went to the new stadium.",
+    "hint": "\"Though\" tells you the stated purpose and the real one came apart.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "ostensibly",
+        "gloss": "so it was claimed, but not really",
+        "explanation": "Correct. Ostensibly flags a stated purpose that the facts then contradict, which is exactly the gap the sentence opens.",
+        "insight": "Ostensibly almost always sets up a \"but\" or \"though\" later in the sentence.",
+        "example": "He called ostensibly to check in, but he wanted a favor."
+      },
+      {
+        "label": "B",
+        "text": "genuinely",
+        "gloss": "sincerely, in truth",
+        "explanation": "Genuinely would affirm the scholarship purpose, which the second clause demolishes.",
+        "insight": "The contrast word decides whether the first clause is true or merely claimed.",
+        "example": "She was genuinely surprised by the award."
+      },
+      {
+        "label": "C",
+        "text": "undeniably",
+        "gloss": "beyond dispute",
+        "explanation": "Undeniably asserts certainty, yet the sentence is quietly disputing the stated purpose.",
+        "insight": "Never pick a certainty adverb when the sentence undercuts itself.",
+        "example": "The results were undeniably better than last year's."
+      },
+      {
+        "label": "D",
+        "text": "exclusively",
+        "gloss": "for one purpose only",
+        "explanation": "Exclusively would rule out the stadium spending that actually occurred.",
+        "insight": "Limiting adverbs make a stronger claim than the evidence supports here.",
+        "example": "The lane is reserved exclusively for buses."
+      }
+    ]
+  },
+  {
+    "id": "focus-02",
+    "type": "focus",
+    "headword": "solely",
+    "pronunciation": "/ˈsoʊl.li/",
+    "from": "sole",
+    "intensity": 5,
+    "register": "neutral",
+    "synonyms": ["exclusively", "only"],
+    "antonym": "partly",
+    "sentence": "The prize is judged ___ on the strength of the writing; neither reputation nor sales are considered.",
+    "hint": "The semicolon clause names everything that does not count.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "partly",
+        "gloss": "in part, among other things",
+        "explanation": "Partly implies other criteria also count, but the sentence names two and excludes both.",
+        "insight": "\"Neither...nor\" closes the door on additional factors.",
+        "example": "The delay was partly due to weather."
+      },
+      {
+        "label": "B",
+        "text": "largely",
+        "gloss": "mainly, though not entirely",
+        "explanation": "Largely leaves room for secondary criteria, and the sentence leaves none.",
+        "insight": "Largely is the near-miss trap: right direction, insufficient strength.",
+        "example": "The audience was largely made up of students."
+      },
+      {
+        "label": "C",
+        "text": "occasionally",
+        "gloss": "sometimes",
+        "explanation": "Occasionally is a frequency word, but the blank must limit the criteria, not the timing.",
+        "insight": "Ask what kind of adverb the sentence needs before comparing meanings.",
+        "example": "The committee occasionally meets by video."
+      },
+      {
+        "label": "D",
+        "text": "solely",
+        "gloss": "on one basis and nothing else",
+        "explanation": "Correct. Solely restricts the judgment to a single criterion, which the semicolon clause then confirms by ruling out the others.",
+        "insight": "Solely is absolute — it admits no second factor at all.",
+        "example": "Admission is based solely on the entrance exam."
+      }
+    ]
+  },
+  {
+    "id": "focus-03",
+    "type": "focus",
+    "headword": "arguably",
+    "pronunciation": "/ˈɑːr.ɡju.ə.bli/",
+    "from": "arguable",
+    "intensity": 2,
+    "register": "neutral",
+    "synonyms": ["conceivably", "plausibly"],
+    "antonym": "indisputably",
+    "sentence": "She is ___ the finest cellist of her generation, though a handful of critics would name her teacher instead.",
+    "hint": "Some critics disagree — so how firmly can the claim be made?",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "indisputably",
+        "gloss": "beyond any argument",
+        "explanation": "Critics are disputing it in the very next clause, so the claim is anything but indisputable.",
+        "insight": "\"Though\" plus dissenting critics forces a hedged adverb.",
+        "example": "He is indisputably the fastest runner on the team."
+      },
+      {
+        "label": "B",
+        "text": "certainly",
+        "gloss": "without doubt",
+        "explanation": "Certainly overstates a claim the sentence immediately qualifies.",
+        "insight": "Certainty adverbs and concession clauses cannot share a sentence.",
+        "example": "That is certainly the cheaper option."
+      },
+      {
+        "label": "C",
+        "text": "arguably",
+        "gloss": "defensibly, though others may disagree",
+        "explanation": "Correct. Arguably makes a strong claim while acknowledging that a reasonable case exists on the other side — exactly what the critics provide.",
+        "insight": "Arguably is a hedge that still commits; it is not the same as \"maybe.\"",
+        "example": "This is arguably the best translation available."
+      },
+      {
+        "label": "D",
+        "text": "demonstrably",
+        "gloss": "provably, by evidence",
+        "explanation": "Demonstrably claims the point can be proved, but artistic ranking is precisely what the critics contest.",
+        "insight": "Demonstrably needs objective evidence; matters of taste rarely qualify.",
+        "example": "The new engine is demonstrably more efficient."
+      }
+    ]
+  },
+  {
+    "id": "focus-04",
+    "type": "focus",
+    "headword": "notably",
+    "pronunciation": "/ˈnoʊ.tə.bli/",
+    "from": "notable",
+    "intensity": 3,
+    "register": "formal",
+    "synonyms": ["particularly", "especially"],
+    "antonym": "uniformly",
+    "sentence": "Several delegates abstained from the vote — ___ the three whose provinces stood to lose the most.",
+    "hint": "The dash singles out part of a larger group. Which adverb does that job?",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "uniformly",
+        "gloss": "in the same way across the board",
+        "explanation": "Uniformly would flatten the group, but the dash is picking out three delegates in particular.",
+        "insight": "A dash before a subset signals a focusing adverb, not a generalizing one.",
+        "example": "The rule was applied uniformly to all applicants."
+      },
+      {
+        "label": "B",
+        "text": "notably",
+        "gloss": "in particular, worth singling out",
+        "explanation": "Correct. Notably highlights the most significant members of a group just named, which is exactly what follows the dash.",
+        "insight": "Notably means \"here is the part you should notice,\" not merely \"famously.\"",
+        "example": "Several cities cut fares, notably the three largest."
+      },
+      {
+        "label": "C",
+        "text": "allegedly",
+        "gloss": "as claimed but unproven",
+        "explanation": "Allegedly casts doubt on a claim, and nothing about the abstentions is in doubt.",
+        "insight": "Allegedly needs an accusation; a recorded vote is a fact.",
+        "example": "The files were allegedly deleted overnight."
+      },
+      {
+        "label": "D",
+        "text": "coincidentally",
+        "gloss": "by chance, unrelatedly",
+        "explanation": "The sentence implies the abstentions were driven by self-interest, which is the opposite of coincidence.",
+        "insight": "\"Stood to lose the most\" supplies a motive, ruling out chance.",
+        "example": "Coincidentally, both applicants shared a birthday."
+      }
+    ]
+  },
+  {
+    "id": "focus-05",
+    "type": "focus",
+    "headword": "merely",
+    "pronunciation": "/ˈmɪr.li/",
+    "from": "mere",
+    "intensity": 2,
+    "register": "neutral",
+    "synonyms": ["only", "simply"],
+    "antonym": "exhaustively",
+    "sentence": "The published report was ___ a summary; anyone who wanted the underlying figures had to request the appendix separately.",
+    "hint": "The second clause tells you what the report left out.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "merely",
+        "gloss": "no more than, and nothing further",
+        "explanation": "Correct. Merely limits the report to a summary and implies the limitation matters, which the appendix clause confirms.",
+        "insight": "Merely adds a note of insufficiency that \"only\" alone does not carry.",
+        "example": "It was merely a draft, not the final text."
+      },
+      {
+        "label": "B",
+        "text": "thoroughly",
+        "gloss": "completely, in full detail",
+        "explanation": "A thorough report would include the figures rather than banish them to a separate appendix.",
+        "insight": "The withheld data is the evidence that the report fell short.",
+        "example": "The claim was thoroughly investigated."
+      },
+      {
+        "label": "C",
+        "text": "definitively",
+        "gloss": "conclusively, settling the matter",
+        "explanation": "Definitively claims finality, but a summary that omits the data settles nothing.",
+        "insight": "Definitively is about authority; merely is about scope.",
+        "example": "The test definitively ruled out the second cause."
+      },
+      {
+        "label": "D",
+        "text": "exhaustively",
+        "gloss": "covering every possible detail",
+        "explanation": "Exhaustively is the strongest completeness claim available and contradicts the word \"summary\" itself.",
+        "insight": "The noun after the blank often eliminates half the options on its own.",
+        "example": "She exhaustively catalogued every entry in the ledger."
+      }
+    ]
+  },
+  {
+    "id": "transitional-01",
+    "type": "transitional",
+    "headword": "nevertheless",
+    "pronunciation": "/ˌnev.ər.ðəˈles/",
+    "from": "—",
+    "intensity": 4,
+    "register": "formal",
+    "synonyms": ["nonetheless", "even so"],
+    "antonym": "consequently",
+    "sentence": "The evidence was entirely circumstantial; ___, the jury returned a conviction after only two hours.",
+    "hint": "Weak evidence normally means acquittal. What happened instead?",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "nevertheless",
+        "gloss": "in spite of that",
+        "explanation": "Correct. The second clause defies what the first would predict, and nevertheless is the standard marker of that reversal.",
+        "insight": "Transitional items are decided by direction: does clause two agree with clause one, or fight it?",
+        "example": "The road was flooded; nevertheless, the bus ran on time."
+      },
+      {
+        "label": "B",
+        "text": "consequently",
+        "gloss": "as a direct result",
+        "explanation": "Consequently claims the weak evidence caused the conviction, which reverses the logic.",
+        "insight": "Cause-and-effect connectors need the two clauses to point the same way.",
+        "example": "The bridge was closed; consequently, traffic doubled downtown."
+      },
+      {
+        "label": "C",
+        "text": "similarly",
+        "gloss": "in the same way",
+        "explanation": "Similarly signals a parallel, but a swift conviction is not parallel to weak evidence.",
+        "insight": "Similarly needs two comparable things, not a setup and a surprise.",
+        "example": "Sales fell in Ohio; similarly, they dropped in Indiana."
+      },
+      {
+        "label": "D",
+        "text": "likewise",
+        "gloss": "in the same manner, also",
+        "explanation": "Likewise adds a matching case, and the sentence supplies a contrast instead.",
+        "insight": "Likewise and similarly are near-twins; if one is wrong, so is the other.",
+        "example": "She declined the offer; her brother likewise refused."
+      }
+    ]
+  },
+  {
+    "id": "transitional-02",
+    "type": "transitional",
+    "headword": "consequently",
+    "pronunciation": "/ˈkɒn.sɪ.kwənt.li/",
+    "from": "consequent",
+    "intensity": 4,
+    "register": "formal",
+    "synonyms": ["therefore", "accordingly"],
+    "antonym": "nonetheless",
+    "sentence": "The inspection found corroded support cables; ___, the span was closed to traffic that same afternoon.",
+    "hint": "Does the closure follow naturally from the finding, or contradict it?",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "nonetheless",
+        "gloss": "in spite of that",
+        "explanation": "Nonetheless would mean the bridge closed despite the corrosion, when the corrosion is plainly the reason.",
+        "insight": "If clause two is the natural result of clause one, a contrast word is wrong.",
+        "example": "He was exhausted; nonetheless, he finished the shift."
+      },
+      {
+        "label": "B",
+        "text": "conversely",
+        "gloss": "the other way round",
+        "explanation": "Conversely introduces an opposite case, but there is no opposing situation here.",
+        "insight": "Conversely needs two comparable scenarios pointing in opposite directions.",
+        "example": "City sales rose; conversely, rural sales fell."
+      },
+      {
+        "label": "C",
+        "text": "consequently",
+        "gloss": "as a direct result of that",
+        "explanation": "Correct. Corroded cables cause the closure, and consequently is the plainest marker of cause leading to effect.",
+        "insight": "Consequently is slightly more formal than \"so\" and always states a result.",
+        "example": "The supplier defaulted; consequently, production stopped."
+      },
+      {
+        "label": "D",
+        "text": "meanwhile",
+        "gloss": "at the same time, elsewhere",
+        "explanation": "Meanwhile marks parallel events, not one event causing another.",
+        "insight": "Meanwhile answers \"what else was happening,\" not \"what followed from this.\"",
+        "example": "The jury deliberated; meanwhile, reporters waited outside."
+      }
+    ]
+  },
+  {
+    "id": "transitional-03",
+    "type": "transitional",
+    "headword": "conversely",
+    "pronunciation": "/ˈkɒn.vɜːrs.li/",
+    "from": "converse",
+    "intensity": 4,
+    "register": "formal",
+    "synonyms": ["on the other hand", "by contrast"],
+    "antonym": "likewise",
+    "sentence": "In cold regions the beetle produces a single generation each year; ___, in the tropics it may produce five.",
+    "hint": "Two regions, two opposite outcomes.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "likewise",
+        "gloss": "in the same way",
+        "explanation": "One generation versus five is a contrast, not a match.",
+        "insight": "Compare the two numbers before choosing — they settle the direction.",
+        "example": "The first sample failed; likewise, the second."
+      },
+      {
+        "label": "B",
+        "text": "conversely",
+        "gloss": "in the opposite case",
+        "explanation": "Correct. Conversely pairs two parallel situations whose outcomes run opposite to each other, which cold and tropical regions do here.",
+        "insight": "Conversely needs symmetry: same variable, opposite values.",
+        "example": "Heavy users pay less per unit; conversely, light users pay more."
+      },
+      {
+        "label": "C",
+        "text": "therefore",
+        "gloss": "for that reason",
+        "explanation": "Tropical abundance is not caused by cold-region scarcity; the two are simply compared.",
+        "insight": "Comparison is not causation, however tempting \"therefore\" sounds.",
+        "example": "The data were incomplete; therefore, the study was repeated."
+      },
+      {
+        "label": "D",
+        "text": "accordingly",
+        "gloss": "as a fitting response",
+        "explanation": "Accordingly signals an action taken in light of something, but no one is acting here.",
+        "insight": "Accordingly usually needs a deliberate agent responding to the first clause.",
+        "example": "The forecast worsened; accordingly, the launch was postponed."
+      }
+    ]
+  },
+  {
+    "id": "transitional-04",
+    "type": "transitional",
+    "headword": "moreover",
+    "pronunciation": "/mɔːrˈoʊ.vər/",
+    "from": "—",
+    "intensity": 3,
+    "register": "formal",
+    "synonyms": ["furthermore", "in addition"],
+    "antonym": "however",
+    "sentence": "The proposal would cost twice the original estimate; ___, it would take three years longer than promised.",
+    "hint": "Is the second problem another strike against the proposal, or a point in its favor?",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "moreover",
+        "gloss": "and beyond that, additionally",
+        "explanation": "Correct. Both clauses are objections, so the connector must add a second complaint to the first.",
+        "insight": "Moreover stacks evidence in the same direction and often adds emphasis to the second item.",
+        "example": "The site is remote; moreover, it floods every spring."
+      },
+      {
+        "label": "B",
+        "text": "however",
+        "gloss": "in contrast",
+        "explanation": "However would require the second clause to soften the first, but it makes the case worse.",
+        "insight": "Two negatives in a row never take a contrast connector.",
+        "example": "The plan is expensive; however, it is the only one that works."
+      },
+      {
+        "label": "C",
+        "text": "otherwise",
+        "gloss": "if not, in other respects",
+        "explanation": "Otherwise sets up an alternative condition, and no condition is being posed here.",
+        "insight": "Otherwise usually follows an implied \"unless\" or \"if not.\"",
+        "example": "Submit the form today; otherwise the seat is released."
+      },
+      {
+        "label": "D",
+        "text": "instead",
+        "gloss": "in place of that",
+        "explanation": "Instead swaps one thing for another, but the delay does not replace the cost overrun — it joins it.",
+        "insight": "Instead requires a substitution; moreover requires an addition.",
+        "example": "He skipped the ceremony and went home instead."
+      }
+    ]
+  },
+  {
+    "id": "transitional-05",
+    "type": "transitional",
+    "headword": "meanwhile",
+    "pronunciation": "/ˈmiːn.waɪl/",
+    "from": "—",
+    "intensity": 2,
+    "register": "neutral",
+    "synonyms": ["in the meantime", "at the same time"],
+    "antonym": "consequently",
+    "sentence": "The board debated the merger for six months; ___, the company's best engineers quietly left for competitors.",
+    "hint": "The departures happened during the debate, not because of the debate being concluded.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "therefore",
+        "gloss": "for that reason",
+        "explanation": "Therefore claims the debate caused the departures, but the sentence stresses that the two overlapped in time.",
+        "insight": "\"Quietly\" and the six-month span both point to simultaneity, not causation.",
+        "example": "The road was icy; therefore, the race was cancelled."
+      },
+      {
+        "label": "B",
+        "text": "consequently",
+        "gloss": "as a direct result",
+        "explanation": "Same problem as therefore: it asserts a causal link the sentence does not make.",
+        "insight": "Two connectors with the same function are usually both wrong.",
+        "example": "Rates rose; consequently, borrowing slowed."
+      },
+      {
+        "label": "C",
+        "text": "similarly",
+        "gloss": "in the same way",
+        "explanation": "Debating and resigning are not parallel actions, so there is nothing to compare.",
+        "insight": "Similarly needs two events of the same kind.",
+        "example": "The east wing was renovated; similarly, the west wing was updated."
+      },
+      {
+        "label": "D",
+        "text": "meanwhile",
+        "gloss": "during that same period",
+        "explanation": "Correct. Meanwhile places the resignations inside the six months of debate, sharpening the irony without claiming cause.",
+        "insight": "Meanwhile is the go-to connector when two things unfold in parallel.",
+        "example": "The committee drafted rules; meanwhile, the deadline passed."
+      }
+    ]
+  }
+]

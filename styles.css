@@ -175,7 +175,9 @@ body {
 .topbar p {
   margin: 8px 0 0;
   color: var(--muted);
-  max-width: 500px;
+  /* Wide enough to keep the subtitle on one line on a desktop; it still wraps
+     on narrow screens, where the topbar stacks anyway. */
+  max-width: 640px;
   font-size: 0.95rem;
 }
 
@@ -533,6 +535,419 @@ body {
   line-height: 1.7;
 }
 
+/* ---------- Control bar ---------- */
+/* Everything that scopes the question set lives on one line, so the question
+   itself stays near the top of the page. */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  padding: 12px 16px;
+  margin-bottom: 22px;
+  border-radius: 16px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+}
+
+.control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.control select {
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+  cursor: pointer;
+  max-width: 260px;
+}
+
+.control select:hover {
+  border-color: var(--accent-border);
+}
+
+/* Pushed to its own end of the bar so the readout never crowds the controls. */
+.set-readout {
+  flex: 1 1 100%;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.set-readout.is-warning {
+  color: var(--pending-fg);
+}
+
+/* ---------- Sentence-completion question ---------- */
+
+/* Type badge above the question title. */
+.q-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.q-meta .tag {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.cloze {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: var(--body-text);
+}
+
+/* Passages with no blank run much longer -- up to a full paragraph -- so they
+   need reading-size type rather than the roomy cloze setting. */
+.cloze.is-prose {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+/* min-width keeps the sentence from reflowing when the blank gets filled. */
+.cloze .blank {
+  display: inline-block;
+  min-width: 130px;
+  border-bottom: 2px dashed var(--accent);
+  text-align: center;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.cloze .blank.filled {
+  border-bottom-style: solid;
+}
+
+/* The adverb itself carries the weight; the gloss sits beside it in muted text. */
+.option .adverb {
+  flex-shrink: 0;
+  min-width: 130px;
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--fg);
+}
+
+.option .gloss {
+  flex: 1;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Sidebar: adverb card and streak ---------- */
+
+.adverb-card {
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+}
+
+.adverb-card .headword {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.adverb-card .pron {
+  margin: 2px 0 10px;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.adverb-card dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 10px;
+  font-size: 0.84rem;
+}
+
+.adverb-card dt {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.adverb-card dd {
+  margin: 0;
+  color: var(--body-text);
+}
+
+.meter-inline {
+  display: inline-flex;
+  gap: 3px;
+  vertical-align: middle;
+}
+
+.meter-inline i {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rule);
+}
+
+.meter-inline i.on {
+  background: var(--accent);
+}
+
+/* ---------- Practice engine ---------- */
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.switch input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/* ---------- Two-step direction drill ---------- */
+
+.direction-step {
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px dashed var(--accent-border);
+  background: var(--accent-soft);
+}
+
+.direction-prompt {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.direction-choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.direction-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--option-border);
+  background: var(--option-bg);
+  color: var(--fg);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.direction-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.direction-btn strong {
+  font-size: 0.95rem;
+}
+
+.direction-btn span {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.direction-btn:disabled {
+  cursor: default;
+}
+
+/* Only the picked button gets a fill; the right answer is outlined so he can
+   see both what he chose and what was correct. */
+.direction-btn.correct {
+  border-color: var(--correct-border);
+}
+
+.direction-btn.incorrect.selected {
+  border-color: var(--incorrect-border);
+  background: var(--incorrect-bg);
+}
+
+.direction-btn.correct.selected {
+  background: var(--correct-bg);
+}
+
+.direction-feedback {
+  margin: 14px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--body-text);
+}
+
+/* The word he read past. Marked only after answering. */
+.cloze .signal {
+  padding: 1px 4px;
+  border-radius: 5px;
+  background: var(--pending-bg);
+  color: var(--pending-fg);
+  font-weight: 700;
+}
+
+.direction-score {
+  margin: 10px 0 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Answer choices here are punctuation-sensitive, so they need a face where a
+   comma and a semicolon cannot be mistaken for each other. */
+.option .choice {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.98rem;
+  color: var(--fg);
+}
+
+/* The rule is the teaching unit for grammar questions: state it once, plainly,
+   after the answer is revealed. */
+.rule-box {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--fg);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.tag-warn {
+  background: var(--pending-bg) !important;
+  border-color: var(--pending-fg) !important;
+  color: var(--pending-fg) !important;
+}
+
+.queue-total {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  color: var(--body-text);
+}
+
+.queue-total strong {
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.skill-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.85rem;
+  color: var(--body-text);
+}
+
+.skill-row:last-child {
+  border-bottom: none;
+}
+
+.link-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* How much of each bank has been attempted at least once. */
+.coverage-bar {
+  height: 4px;
+  margin: 0 0 10px;
+  border-radius: 2px;
+  background: var(--rule);
+  overflow: hidden;
+}
+
+.coverage-bar i {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+
+.queue-empty,
+.queue-note {
+  margin: 10px 0 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.reset-queue {
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 14px;
+  font-size: 0.82rem;
+}
+
+/* Recent answers, oldest on the left. Empty slots stay neutral. */
+.streak {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.streak i {
+  display: block;
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--rule);
+}
+
+.streak i.hit {
+  background: var(--correct-border);
+}
+
+.streak i.miss {
+  background: var(--incorrect-border);
+}
+
 @media (max-width: 780px) {
   body {
     display: block;
@@ -577,5 +992,28 @@ body {
   .theme-toggle {
     align-self: flex-end;
     margin-bottom: 8px;
+  }
+
+  /* Adverb plus gloss will not fit one line on a phone, so the gloss wraps
+     under the word rather than squeezing both. */
+  .option .row {
+    flex-wrap: wrap;
+  }
+
+  .option .adverb {
+    min-width: 0;
+  }
+
+  .option .gloss {
+    flex-basis: 100%;
+    padding-left: 54px; /* clears the label bubble so the gloss lines up */
+  }
+
+  .cloze {
+    font-size: 1.05rem;
+  }
+
+  .cloze .blank {
+    min-width: 90px;
   }
 }

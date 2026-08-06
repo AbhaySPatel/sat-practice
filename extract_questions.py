@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 
 PDF_PATH = Path('book/9000 Clues 4500 Words - The Ultimate Word Power Hack for the SAT, ACT, GMAT, and GRE Vocabulary.pdf')
-OUTPUT_PATH = Path('questions.json')
+OUTPUT_PATH = Path('banks/questions.json')
 START_PAGE = 249  # zero-based page index for PDF page 250
 
 re_solution_header = re.compile(r'^Solutions:\s*Chapter\s*(\d+)', re.I)

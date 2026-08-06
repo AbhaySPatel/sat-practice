@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vocabulary Quiz</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>SAT Reading &amp; Writing Practice</title>
+  <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
+       cannot serve a stale stylesheet against new markup. -->
+  <link rel="stylesheet" href="styles.css?v=11" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -19,8 +21,8 @@
   <div class="page">
     <div class="topbar">
       <div>
-        <h1>Vocabulary Quiz</h1>
-        <p>Tap an answer to reveal the meaning and why the choice is right or wrong.</p>
+        <h1>SAT Reading &amp; Writing</h1>
+        <p>Official College Board questions, grouped by score-report skill.</p>
       </div>
       <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false">
         <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
@@ -28,17 +30,56 @@
       </button>
     </div>
 
+    <!-- One compact bar. The skill list is built from the loaded banks and
+         grouped by domain inside the dropdown, so the four score-report
+         headings survive without costing four rows of screen. -->
+    <div class="controls">
+      <label class="control">
+        <span>Skill</span>
+        <select id="skillSelect"></select>
+      </label>
+      <label class="control">
+        <span>Difficulty</span>
+        <select id="difficultySelect">
+          <option value="all">Any</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </label>
+      <label class="switch">
+        <input type="checkbox" id="wrongOnlyToggle" />
+        <span>Wrong answers only</span>
+      </label>
+      <button type="button" class="link-btn" id="restartSequence">Restart</button>
+      <p class="set-readout" id="emptyState" hidden></p>
+    </div>
+
     <div class="layout">
       <div class="card">
         <div class="question-panel">
           <div class="question-header">
             <div>
-              <h2 class="question-title">Select the word that best matches the meaning of <strong>"Eloquent"</strong>.</h2>
+              <p class="q-meta"></p>
+              <h2 class="question-title">Loading…</h2>
             </div>
             <button class="btn btn-secondary next-question">Next Question</button>
           </div>
 
+          <p class="cloze"></p>
+
+          <!-- Shown automatically for any question tagged with a relationship;
+               there is no switch because committing to the direction first is
+               how these are meant to be worked. -->
+          <div class="direction-step" id="directionStep" hidden>
+            <p class="direction-prompt">Before you look at the choices — which way does this sentence turn?</p>
+            <div class="direction-choices" id="directionChoices"></div>
+            <p class="direction-feedback" id="directionFeedback" hidden></p>
+          </div>
+
           <div class="options"></div>
+
+          <p class="rule-box" id="ruleBox" hidden></p>
 
           <div class="control-row">
             <button class="btn btn-secondary next-question">Next Question</button>
@@ -47,11 +88,12 @@
           <div class="details">
             <div>
               <p class="detail-heading">Result</p>
-              <p id="resultText">Click an option to reveal the answer and all explanations.</p>
+              <p id="resultText">Read the whole passage, then choose. The explanation appears once you answer.</p>
             </div>
             <div>
-              <p class="detail-heading">Why this helps</p>
-              <p>Seeing the meaning and example for every choice helps you understand the correct word and the distractors.</p>
+              <p class="detail-heading">How to work these</p>
+              <p><strong>Meaning and transitions:</strong> find the signal word — <em>although, but, despite, in contrast, because, overturned</em> — and decide which way the sentence turns before you read a single choice. Predict your own answer, then look.</p>
+              <p><strong>Grammar:</strong> read each half on its own and ask <em>can this stand alone?</em> Two complete sentences need a period, a semicolon, or a comma plus <em>and / but / or / nor / for / so / yet</em>. A comma alone is never enough.</p>
             </div>
           </div>
         </div>
@@ -59,26 +101,41 @@
 
       <aside class="card sidebar">
         <section class="sidebar-section">
-          <h2 class="sidebar-heading">Your session</h2>
+          <h2 class="sidebar-heading">This session</h2>
           <div class="progress-card">
-            <div class="progress-label" id="questionsAnswered">Questions answered: 0</div>
+            <div class="progress-label" id="questionsAnswered">Answered this session: 0</div>
             <div class="session-summary">
               <span id="correctCount">Correct: 0</span>
               <span id="incorrectCount">Incorrect: 0</span>
             </div>
             <div class="status is-pending">Awaiting answer</div>
           </div>
+          <div class="streak" id="streakStrip" aria-label="Recent answers"></div>
+          <p class="direction-score" id="directionScore" hidden></p>
         </section>
 
         <section class="sidebar-section">
-          <h2 class="sidebar-heading">Hint</h2>
-          <button type="button" class="btn btn-secondary hint-button" id="hintButton">Show Hint</button>
-          <p class="hint-text" id="hintText" hidden></p>
+          <h2 class="sidebar-heading">All time</h2>
+          <p class="queue-total">
+            <strong id="queueCount">0</strong> lifetime accuracy
+          </p>
+          <p class="queue-note" id="lifetimeStats">No questions answered yet</p>
+        </section>
+
+        <section class="sidebar-section">
+          <h2 class="sidebar-heading">Coverage</h2>
+          <div id="skillStats"></div>
+          <p class="queue-note">
+            Questions run in bank order and pick up where you stopped last time.
+            Every 10th is replaced by a repeat of something you got wrong.
+          </p>
+          <button type="button" class="btn btn-secondary reset-queue" id="resetProgress">Erase all progress</button>
         </section>
       </aside>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="shared.js?v=11"></script>
+  <script src="app.js?v=11"></script>
 </body>
 </html>

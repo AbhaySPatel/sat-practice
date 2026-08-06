@@ -1,0 +1,11 @@
+# Source PDFs. These are ~100 MB of College Board and publisher material that
+# the app never loads at runtime -- only extract_bank.py reads them, and only
+# when regenerating banks/. Committing them would bloat the repo permanently
+# and redistribute copyrighted content.
+book/*.pdf
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~

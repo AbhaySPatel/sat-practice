@@ -1,0 +1,452 @@
+[
+  {
+    "id": "bnd-01",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "A comma cannot join two complete sentences. Use a period, a semicolon, or a comma plus a coordinating conjunction (and, but, or, nor, for, so, yet).",
+    "passage": "The Antikythera mechanism was recovered from a Mediterranean shipwreck in ___ corroded bronze device is now understood to be an ancient astronomical calculator.",
+    "correctLabel": "C",
+    "options": [
+      { "label": "A", "text": "1901, the", "why": "Comma splice. Both halves are complete sentences, and a comma alone cannot join them." },
+      { "label": "B", "text": "1901 the", "why": "Run-on. Two complete sentences fused with no punctuation at all." },
+      { "label": "C", "text": "1901. The", "why": "Correct. A period cleanly separates two complete sentences." },
+      { "label": "D", "text": "1901; and the", "why": "A semicolon already does the work of joining; adding \"and\" after it is not conventional." }
+    ]
+  },
+  {
+    "id": "bnd-02",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "Comma + coordinating conjunction joins two complete sentences. The comma goes BEFORE the conjunction, not after it.",
+    "passage": "Coral reefs cover less than one percent of the ocean ___ they support roughly a quarter of all known marine species.",
+    "correctLabel": "A",
+    "options": [
+      { "label": "A", "text": "floor, yet", "why": "Correct. A comma before the coordinating conjunction \"yet\" properly joins two complete sentences." },
+      { "label": "B", "text": "floor yet", "why": "Missing the required comma before the coordinating conjunction." },
+      { "label": "C", "text": "floor, they", "why": "Comma splice. Without a conjunction, a comma cannot join two complete sentences." },
+      { "label": "D", "text": "floor; yet,", "why": "The comma after \"yet\" is not conventional, and the semicolon makes the conjunction redundant." }
+    ]
+  },
+  {
+    "id": "bnd-03",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "Test both halves separately. If each can stand alone as a sentence, a comma is not enough to join them.",
+    "passage": "Ada Lovelace never saw the Analytical Engine ___ notes on the machine describe a general-purpose computer more than a century before one was built.",
+    "correctLabel": "C",
+    "options": [
+      { "label": "A", "text": "built, her", "why": "Comma splice. \"Ada Lovelace never saw the Analytical Engine built\" and \"her notes...describe\" are both complete." },
+      { "label": "B", "text": "built her", "why": "Run-on, and it misleads the reader into attaching \"her notes\" to \"built.\"" },
+      { "label": "C", "text": "built. Her", "why": "Correct. Two complete sentences, properly separated." },
+      { "label": "D", "text": "built; and her", "why": "A semicolon followed by a coordinating conjunction is redundant punctuation." }
+    ]
+  },
+  {
+    "id": "bnd-04",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "A semicolon joins two closely related complete sentences with no conjunction.",
+    "passage": "Mycorrhizal fungi thread through forest soil in vast ___ trees use these networks to trade sugars for minerals drawn from the ground.",
+    "correctLabel": "B",
+    "options": [
+      { "label": "A", "text": "networks,", "why": "Comma splice between two complete sentences." },
+      { "label": "B", "text": "networks;", "why": "Correct. A semicolon links two complete, closely related sentences." },
+      { "label": "C", "text": "networks", "why": "Run-on. The two sentences are fused with no punctuation." },
+      { "label": "D", "text": "networks and,", "why": "The comma is on the wrong side of the conjunction." }
+    ]
+  },
+  {
+    "id": "bnd-05",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "When a coordinating conjunction joins two complete sentences, put a comma before it.",
+    "passage": "The 1900 Galveston hurricane remains the deadliest natural disaster in United States ___ the city rebuilt itself behind a seventeen-foot seawall.",
+    "correctLabel": "A",
+    "options": [
+      { "label": "A", "text": "history, but", "why": "Correct. Comma before \"but\" joins two complete sentences." },
+      { "label": "B", "text": "history but", "why": "The comma before the coordinating conjunction is required here." },
+      { "label": "C", "text": "history,", "why": "Comma splice with no conjunction to license it." },
+      { "label": "D", "text": "history; but,", "why": "Semicolon plus conjunction is redundant, and the trailing comma is wrong." }
+    ]
+  },
+  {
+    "id": "bnd-06",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "easy",
+    "rule": "Two complete sentences need a period, semicolon, or comma-plus-conjunction — a comma alone is never enough.",
+    "passage": "Bioluminescence has evolved independently dozens of ___ appears in bacteria, fungi, deep-sea fish, and fireflies alike.",
+    "correctLabel": "C",
+    "options": [
+      { "label": "A", "text": "times, it", "why": "Comma splice." },
+      { "label": "B", "text": "times it", "why": "Run-on." },
+      { "label": "C", "text": "times. It", "why": "Correct. A period separates the two complete sentences." },
+      { "label": "D", "text": "times, it's", "why": "Still a comma splice, and \"it's\" (it is) does not fit the verb that follows." }
+    ]
+  },
+  {
+    "id": "bnd-07",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "hard",
+    "rule": "Words like however, therefore, moreover, and nevertheless are NOT conjunctions. They cannot join two sentences with only a comma.",
+    "passage": "Early photographs required exposures lasting several ___ portraits from the 1840s show subjects braced against hidden iron stands.",
+    "correctLabel": "D",
+    "options": [
+      { "label": "A", "text": "minutes, therefore", "why": "\"Therefore\" is a conjunctive adverb, not a conjunction; a comma before it still leaves a splice." },
+      { "label": "B", "text": "minutes therefore", "why": "Run-on, with no punctuation marking the sentence boundary." },
+      { "label": "C", "text": "minutes, therefore,", "why": "Commas on both sides still leave two complete sentences joined by a comma." },
+      { "label": "D", "text": "minutes; therefore,", "why": "Correct. A semicolon marks the boundary, and \"therefore\" takes a comma after it." }
+    ]
+  },
+  {
+    "id": "bnd-08",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "hard",
+    "rule": "However + comma at the start of a sentence is fine. However squeezed between two complete sentences with commas is a splice.",
+    "passage": "Most volcanic islands sink slowly back beneath the ___ some are lifted again by shifts in the surrounding seafloor.",
+    "correctLabel": "B",
+    "options": [
+      { "label": "A", "text": "waves, however", "why": "Comma splice. \"However\" cannot join two complete sentences." },
+      { "label": "B", "text": "waves. However,", "why": "Correct. A period ends the first sentence; \"However,\" opens the second." },
+      { "label": "C", "text": "waves however,", "why": "Run-on, with no punctuation at the boundary." },
+      { "label": "D", "text": "waves, however,", "why": "Two commas around \"however\" still leave a comma splice between complete sentences." }
+    ]
+  },
+  {
+    "id": "bnd-09",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "If the second half is NOT a complete sentence, a period or semicolon would create a fragment.",
+    "passage": "Archaeologists working at Çatalhöyük uncovered houses entered through the ___ of ladders reaching down from the flat clay rooftops.",
+    "correctLabel": "A",
+    "options": [
+      { "label": "A", "text": "roof by means", "why": "Correct. \"By means of ladders...\" is a phrase, not a sentence, so no boundary punctuation belongs here." },
+      { "label": "B", "text": "roof. By means", "why": "Creates a fragment: \"By means of ladders reaching down...\" has no subject or verb." },
+      { "label": "C", "text": "roof; by means", "why": "A semicolon requires a complete sentence on both sides; the second half is a phrase." },
+      { "label": "D", "text": "roof, by means,", "why": "The second comma cuts the phrase in half for no reason." }
+    ]
+  },
+  {
+    "id": "bnd-10",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "A dependent clause opening with although, because, when, or while is not a sentence. Attach it with a comma; never end it with a period.",
+    "passage": "Although the Voyager probes carry gold-plated records of Earth's ___ expects them to be found for millions of years.",
+    "correctLabel": "A",
+    "options": [
+      { "label": "A", "text": "sounds, no one", "why": "Correct. A comma attaches the introductory dependent clause to the main clause that follows." },
+      { "label": "B", "text": "sounds. No one", "why": "Creates a fragment: \"Although the Voyager probes carry...\" cannot stand alone as a sentence." },
+      { "label": "C", "text": "sounds; no one", "why": "A semicolon requires a complete sentence on both sides, and the first half is dependent." },
+      { "label": "D", "text": "sounds no one", "why": "The introductory dependent clause needs a comma to mark where it ends." }
+    ]
+  },
+  {
+    "id": "bnd-11",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "A colon must follow a complete sentence. What comes after it explains or lists.",
+    "passage": "The research team catalogued three distinct behaviors in the sea ___ tool use, den building, and cooperative hunting.",
+    "correctLabel": "A",
+    "options": [
+      { "label": "A", "text": "otters:", "why": "Correct. A complete sentence precedes the colon, and a list follows it." },
+      { "label": "B", "text": "otters,", "why": "A comma cannot introduce a list that follows a complete sentence this way." },
+      { "label": "C", "text": "otters", "why": "No punctuation leaves the list running into the sentence." },
+      { "label": "D", "text": "otters;", "why": "A semicolon needs a complete sentence after it, and a three-item list is not one." }
+    ]
+  },
+  {
+    "id": "bnd-12",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "hard",
+    "rule": "Check what sits BEFORE the colon. If it is not a complete sentence, the colon is wrong.",
+    "passage": "The instruments the orchestra brought on tour ___ two harps, a celesta, and a set of tubular bells.",
+    "correctLabel": "D",
+    "options": [
+      { "label": "A", "text": "were:", "why": "\"The instruments the orchestra brought on tour were\" is not a complete sentence; a colon cannot follow it." },
+      { "label": "B", "text": "included:", "why": "Same problem — the words before the colon do not form a complete sentence on their own." },
+      { "label": "C", "text": "were;", "why": "A semicolon requires complete sentences on both sides." },
+      { "label": "D", "text": "included", "why": "Correct. No punctuation is needed between the verb and its objects." }
+    ]
+  },
+  {
+    "id": "bnd-13",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "A colon can introduce a single word or phrase that explains what came before, not just a list.",
+    "passage": "After a decade of testing, the engineers traced every failure to one overlooked ___ vibration from the cooling pumps.",
+    "correctLabel": "C",
+    "options": [
+      { "label": "A", "text": "cause;", "why": "A semicolon needs a complete sentence after it; \"vibration from the cooling pumps\" is a phrase." },
+      { "label": "B", "text": "cause", "why": "Some punctuation is needed to mark that what follows explains \"one overlooked cause.\"" },
+      { "label": "C", "text": "cause:", "why": "Correct. A complete sentence precedes the colon, and the phrase after it names the cause." },
+      { "label": "D", "text": "cause, which was being", "why": "Wordy and creates an awkward, ungrammatical continuation." }
+    ]
+  },
+  {
+    "id": "bnd-14",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "hard",
+    "rule": "When a supplementary word like 'however' sits before a colon, the comma goes after 'however' and the colon comes last.",
+    "passage": "Dozens of pigments were available to Renaissance painters. Only a handful appear in Vermeer's surviving ___ lead white, ultramarine, madder lake, and bone black.",
+    "correctLabel": "A",
+    "options": [
+      { "label": "A", "text": "canvases, however:", "why": "Correct. The comma sets off \"however,\" and the colon introduces the list that follows the complete sentence." },
+      { "label": "B", "text": "canvases, however,", "why": "A comma cannot introduce a list after a complete sentence." },
+      { "label": "C", "text": "canvases, however;", "why": "A semicolon cannot introduce a list; it needs a complete sentence after it." },
+      { "label": "D", "text": "canvases; however,", "why": "Placing the semicolon first wrongly implies a complete sentence follows, but a list does." }
+    ]
+  },
+  {
+    "id": "bnd-15",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "When the second complete sentence explains the first, a colon is stronger than a comma — and a comma alone is simply wrong.",
+    "passage": "When it comes to their diets, goats are notoriously ___ they will strip the bark from a tree and move on to the fence posts.",
+    "correctLabel": "D",
+    "options": [
+      { "label": "A", "text": "indiscriminate and", "why": "Joining two long complete sentences with \"and\" requires a comma before it, and \"and\" hides the explaining relationship." },
+      { "label": "B", "text": "indiscriminate,", "why": "Comma splice between two complete sentences." },
+      { "label": "C", "text": "indiscriminate", "why": "Run-on. The two complete sentences are fused." },
+      { "label": "D", "text": "indiscriminate:", "why": "Correct. A complete sentence precedes the colon, and what follows explains what \"indiscriminate\" means here." }
+    ]
+  },
+  {
+    "id": "bnd-16",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "A colon after a complete sentence can introduce a quotation or a claim.",
+    "passage": "Rachel Carson opened Silent Spring with a device borrowed from ___ a fable about a town where the birds had stopped singing.",
+    "correctLabel": "B",
+    "options": [
+      { "label": "A", "text": "fiction;", "why": "A semicolon needs a complete sentence after it, not a noun phrase." },
+      { "label": "B", "text": "fiction:", "why": "Correct. A complete sentence precedes the colon, and the phrase after it identifies the device." },
+      { "label": "C", "text": "fiction", "why": "Without punctuation the appositive runs into the main clause." },
+      { "label": "D", "text": "fiction, being", "why": "\"Being\" creates an awkward dangling construction." }
+    ]
+  },
+  {
+    "id": "bnd-17",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "Extra information dropped into the middle of a sentence needs punctuation on BOTH sides — two commas, two dashes, or two parentheses.",
+    "passage": "Julia Alvarez's 1994 novel In the Time of the Butterflies, a fictionalized account of the lives of the Mirabal ___ can serve as a starting point for readers exploring Dominican American literature.",
+    "correctLabel": "C",
+    "options": [
+      { "label": "A", "text": "sisters, and", "why": "A conjunction cannot close a supplementary element; the comma after \"Butterflies\" needs a matching comma alone." },
+      { "label": "B", "text": "sisters and", "why": "Leaves the supplementary element unclosed and adds a conjunction with nothing to join." },
+      { "label": "C", "text": "sisters,", "why": "Correct. This comma pairs with the one after \"Butterflies\" to enclose the supplementary description." },
+      { "label": "D", "text": "sisters", "why": "The supplementary element is opened with a comma but never closed." }
+    ]
+  },
+  {
+    "id": "bnd-18",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "Match your punctuation: if a supplementary element opens with a dash, it must close with a dash, not a comma.",
+    "passage": "The blue whale's heart — an organ roughly the size of a golf ___ beats as few as two times per minute during a deep dive.",
+    "correctLabel": "A",
+    "options": [
+      { "label": "A", "text": "cart —", "why": "Correct. A dash opened the supplementary element, so a dash must close it." },
+      { "label": "B", "text": "cart,", "why": "Mismatched punctuation: you cannot open with a dash and close with a comma." },
+      { "label": "C", "text": "cart", "why": "The supplementary element is never closed." },
+      { "label": "D", "text": "cart;", "why": "A semicolon cannot close a supplementary element." }
+    ]
+  },
+  {
+    "id": "bnd-19",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "Test by deletion: if the sentence still works with the element removed, it is supplementary and needs paired punctuation.",
+    "passage": "Hedy ___ better known to audiences as a film actor, co-patented a frequency-hopping system that anticipated modern wireless communication.",
+    "correctLabel": "B",
+    "options": [
+      { "label": "A", "text": "Lamarr", "why": "The supplementary phrase needs an opening comma to match the one before \"co-patented.\"" },
+      { "label": "B", "text": "Lamarr,", "why": "Correct. This comma pairs with the one after \"actor\" to enclose the description." },
+      { "label": "C", "text": "Lamarr;", "why": "A semicolon requires a complete sentence on each side." },
+      { "label": "D", "text": "Lamarr —", "why": "A dash cannot pair with the comma that closes the element." }
+    ]
+  },
+  {
+    "id": "bnd-20",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "hard",
+    "rule": "No comma between a subject and its verb, however long the subject is.",
+    "passage": "The long-running dispute over who first reached the summit of the ___ unresolved to this day.",
+    "correctLabel": "D",
+    "options": [
+      { "label": "A", "text": "mountain, remains", "why": "A comma cannot separate the subject (\"The long-running dispute...\") from its verb (\"remains\")." },
+      { "label": "B", "text": "mountain; remains", "why": "A semicolon needs a complete sentence on both sides; \"remains unresolved\" has no subject." },
+      { "label": "C", "text": "mountain: remains", "why": "A colon cannot separate a subject from its verb." },
+      { "label": "D", "text": "mountain remains", "why": "Correct. Subject and verb stay together with no punctuation between them." }
+    ]
+  },
+  {
+    "id": "bnd-21",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "hard",
+    "rule": "An essential clause — one the sentence needs to identify what it is talking about — takes NO commas.",
+    "passage": "The only recording ___ survived the studio fire was a rehearsal tape someone had taken home the night before.",
+    "correctLabel": "A",
+    "options": [
+      { "label": "A", "text": "that", "why": "Correct. The clause identifies which recording, so it is essential and takes no commas." },
+      { "label": "B", "text": ", that", "why": "Essential clauses are not set off by commas." },
+      { "label": "C", "text": ", which", "why": "A comma plus \"which\" marks the clause as optional, but the sentence needs it to identify the recording." },
+      { "label": "D", "text": ", that,", "why": "Commas on both sides wrongly mark an essential clause as supplementary." }
+    ]
+  },
+  {
+    "id": "bnd-22",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "hard",
+    "rule": "A non-essential clause adds optional detail and IS set off by commas — usually with 'which,' not 'that.'",
+    "passage": "The Svalbard Global Seed ___ holds more than a million seed samples, is carved into a mountainside inside the Arctic Circle.",
+    "correctLabel": "C",
+    "options": [
+      { "label": "A", "text": "Vault that", "why": "The vault is already fully identified by name, so the clause is supplementary and needs a comma." },
+      { "label": "B", "text": "Vault which", "why": "Right pronoun, but the opening comma is missing to pair with the one after \"samples.\"" },
+      { "label": "C", "text": "Vault, which", "why": "Correct. The comma pairs with the one after \"samples\" to enclose the non-essential clause." },
+      { "label": "D", "text": "Vault, that", "why": "\"That\" is not used to introduce a comma-set-off, non-essential clause." }
+    ]
+  },
+  {
+    "id": "bnd-23",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "A modifying phrase at the start of a sentence must be followed by the thing it describes.",
+    "passage": "Woven from recycled yarn and hand tufted using a technique passed down by the artist's Turkish grandmother, ___ so lush that visitors are tempted to reach out and touch them.",
+    "correctLabel": "A",
+    "options": [
+      { "label": "A", "text": "the topological tapestries of Argentine textile artist Alexandra Kehayoglou are", "why": "Correct. The tapestries are what was woven and tufted, so they must come first after the modifier." },
+      { "label": "B", "text": "the Argentine textile artist Alexandra Kehayoglou creates topological tapestries that are", "why": "Dangling modifier: this says Kehayoglou herself was woven from recycled yarn." },
+      { "label": "C", "text": "when she creates her topological tapestries, Alexandra Kehayoglou makes them", "why": "Still places Kehayoglou in the modifier's path, so she reads as the thing that was woven." },
+      { "label": "D", "text": "Alexandra Kehayoglou is an Argentine textile artist whose topological tapestries are", "why": "Kehayoglou lands directly after the modifier, so the sentence claims she was hand tufted." }
+    ]
+  },
+  {
+    "id": "bnd-24",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "Find the real subject. Words sitting between the subject and the verb do not change whether the verb is singular or plural.",
+    "passage": "Such quotidian objects, depicted in exquisite detail by Vermeer, a painter celebrated for his naturalism, ___ the daily minutiae of a seventeenth-century Dutch household.",
+    "correctLabel": "D",
+    "options": [
+      { "label": "A", "text": "was revealing", "why": "Singular verb with the plural subject \"objects.\"" },
+      { "label": "B", "text": "has revealed", "why": "Singular verb; the subject is \"objects,\" not \"Vermeer\" or \"a painter.\"" },
+      { "label": "C", "text": "reveals", "why": "Singular verb with a plural subject." },
+      { "label": "D", "text": "reveal", "why": "Correct. The plural subject \"Such quotidian objects\" takes the plural verb \"reveal.\"" }
+    ]
+  },
+  {
+    "id": "bnd-25",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "When list items already contain commas, separate the items with semicolons.",
+    "passage": "The expedition's three field stations were located in Tromsø, ___ and Nuuk, Greenland.",
+    "correctLabel": "B",
+    "options": [
+      { "label": "A", "text": "Norway, Reykjavík, Iceland,", "why": "With commas inside the items, plain commas between them make the list unreadable." },
+      { "label": "B", "text": "Norway; Reykjavík, Iceland;", "why": "Correct. Semicolons separate items that already contain internal commas." },
+      { "label": "C", "text": "Norway: Reykjavík, Iceland:", "why": "Colons do not separate items within a list." },
+      { "label": "D", "text": "Norway Reykjavík, Iceland", "why": "Without punctuation between items, the city names run together." }
+    ]
+  },
+  {
+    "id": "bnd-26",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "Do not put a comma between the last adjective and the noun it describes.",
+    "passage": "The museum's newest acquisition is a small, weathered, ___ carved from a single piece of walrus ivory.",
+    "correctLabel": "C",
+    "options": [
+      { "label": "A", "text": "unsigned, figure,", "why": "The comma after \"unsigned\" wrongly separates the final adjective from its noun." },
+      { "label": "B", "text": "unsigned figure,", "why": "The trailing comma cuts the noun off from the phrase describing it." },
+      { "label": "C", "text": "unsigned figure", "why": "Correct. No comma between the final adjective and the noun, and none before the modifying phrase." },
+      { "label": "D", "text": "unsigned, figure", "why": "A comma cannot sit between an adjective and the noun it modifies." }
+    ]
+  },
+  {
+    "id": "bnd-27",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "hard",
+    "rule": "A complete sentence plus a fragment still needs correct punctuation — but a period would strand the fragment.",
+    "passage": "Peregrine falcons have been recorded diving at more than two hundred miles per ___ a speed that would tear the wings off most birds.",
+    "correctLabel": "B",
+    "options": [
+      { "label": "A", "text": "hour. A", "why": "Creates a fragment: \"A speed that would tear the wings off most birds\" has no main verb." },
+      { "label": "B", "text": "hour, a", "why": "Correct. The comma attaches an appositive phrase describing the speed just mentioned." },
+      { "label": "C", "text": "hour; a", "why": "A semicolon requires a complete sentence after it, and this is a phrase." },
+      { "label": "D", "text": "hour a", "why": "Without punctuation, the appositive runs into the main clause." }
+    ]
+  },
+  {
+    "id": "bnd-28",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "Close a supplementary element with the same mark that opened it: parenthesis with parenthesis, dash with dash, comma with comma.",
+    "passage": "The nautilus (a shelled relative of the octopus and ___ has changed remarkably little in roughly five hundred million years.",
+    "correctLabel": "B",
+    "options": [
+      { "label": "A", "text": "squid,", "why": "Mismatched punctuation: the element opened with a parenthesis, so a comma cannot close it." },
+      { "label": "B", "text": "squid)", "why": "Correct. The closing parenthesis matches the opening one." },
+      { "label": "C", "text": "squid", "why": "The parenthesis is opened but never closed." },
+      { "label": "D", "text": "squid);", "why": "The parenthesis closes correctly, but the semicolon then cuts the subject off from its verb." }
+    ]
+  },
+  {
+    "id": "bnd-29",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "hard",
+    "rule": "Two complete sentences, no conjunction, closely related in meaning — that is exactly what a semicolon is for.",
+    "passage": "The manuscript had been catalogued incorrectly for over a ___ a graduate student found it while searching for something else entirely.",
+    "correctLabel": "C",
+    "options": [
+      { "label": "A", "text": "century,", "why": "Comma splice between two complete sentences." },
+      { "label": "B", "text": "century, and so", "why": "Wordy, and \"and so\" claims a causal link the sentence does not establish." },
+      { "label": "C", "text": "century;", "why": "Correct. A semicolon joins two closely related complete sentences." },
+      { "label": "D", "text": "century:", "why": "A colon signals that what follows explains what came before, but this is a separate event, not an explanation." }
+    ]
+  },
+  {
+    "id": "bnd-30",
+    "skill": "boundaries",
+    "domain": "standard-english",
+    "difficulty": "medium",
+    "rule": "Read the whole sentence before deciding. The punctuation already present tells you what the blank must supply.",
+    "passage": "Jamaican British artist Willard Wigan is known for his remarkable ___ so small that they are best viewed through a microscope, Wigan's sculptures are made from materials such as spiderweb strands.",
+    "correctLabel": "C",
+    "options": [
+      { "label": "A", "text": "microsculptures creations", "why": "Run-on. Two complete sentences are fused with no punctuation." },
+      { "label": "B", "text": "microsculptures, creations", "why": "Comma splice between two complete sentences." },
+      { "label": "C", "text": "microsculptures. Creations", "why": "Correct. A period marks the boundary, and \"Creations...microscope\" then modifies \"Wigan's sculptures.\"" },
+      { "label": "D", "text": "microsculptures and creations", "why": "Without a comma, \"and\" cannot join these two complete sentences." }
+    ]
+  }
+]
