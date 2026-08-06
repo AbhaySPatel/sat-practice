@@ -3,6 +3,7 @@
 # when regenerating banks/. Committing them would bloat the repo permanently
 # and redistribute copyrighted content.
 book/*.pdf
+.claude/
 
 # OS and editor noise
 .DS_Store

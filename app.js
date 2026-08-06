@@ -578,21 +578,26 @@ function cursorValue() {
   return store.cursor[cursorKey()] || 0;
 }
 
-// Serve the question at the cursor, then step past it. Wrapping past the end
-// simply starts another pass through the same sequence. servedIndex holds the
-// pre-increment position so the readout describes the question on screen
-// rather than the one queued up behind it.
+// The cursor holds the place of the question on screen, not the one queued up
+// behind it, so re-serving it is a no-op. Only an explicit ask for the next
+// question steps it forward -- otherwise a page refresh would consume a
+// position and walk the readout forward on its own. Wrapping past the end
+// simply starts another pass through the same sequence.
 let servedIndex = 0;
 
-function takeNextInSequence() {
+function takeNextInSequence(advance) {
   const key = cursorKey();
-  const at = cursorValue();
+  const at = advance ? cursorValue() + 1 : cursorValue();
   servedIndex = at;
-  store.cursor[key] = at + 1;
+  store.cursor[key] = at;
   return pool[at % pool.length];
 }
 
-function nextQuestion() {
+// Pass {advance: false} to re-show the saved position rather than move past it:
+// page load and filter changes restore where he left off, while the Next button
+// is the only thing that actually consumes a question.
+function nextQuestion(options) {
+  const advance = !options || options.advance !== false;
   applyFilters();
 
   if (pool.length === 0) {
@@ -608,13 +613,16 @@ function nextQuestion() {
     ? []
     : pool.filter((q) => isWrongEver(q.id) && (!current || q.id !== current.id));
 
-  if (store.sinceReview >= FRESH_PER_REVIEW && reviewable.length > 0) {
+  // A review repeat is drawn at random and never persisted, so it cannot be
+  // restored on reload -- only splice one in when actually moving forward, which
+  // also keeps a refresh showing the same question every time.
+  if (advance && store.sinceReview >= FRESH_PER_REVIEW && reviewable.length > 0) {
     current = reviewable[Math.floor(Math.random() * reviewable.length)];
     store.sinceReview = 0;
     servingReview = true;
   } else {
-    current = takeNextInSequence();
-    store.sinceReview += 1;
+    current = takeNextInSequence(advance);
+    if (advance) store.sinceReview += 1;
     servingReview = false;
   }
 
@@ -700,7 +708,9 @@ function loadBanks() {
 
     buildSkillSelect();
     updateSummary();
-    nextQuestion();
+    // Restore the saved position instead of stepping past it, so reloading the
+    // page shows the question he was on rather than skipping one.
+    nextQuestion({ advance: false });
   });
 }
 
@@ -748,7 +758,7 @@ function setupControls() {
       skillFilter = skillSelect.value;
       rememberFilters();
       current = null;
-      nextQuestion();
+      nextQuestion({ advance: false });
     });
   }
 
@@ -758,7 +768,7 @@ function setupControls() {
       difficultyFilter = difficultySelect.value;
       rememberFilters();
       current = null;
-      nextQuestion();
+      nextQuestion({ advance: false });
     });
   }
 
@@ -767,13 +777,15 @@ function setupControls() {
     wrongOnlyToggle.addEventListener('change', () => {
       wrongOnly = wrongOnlyToggle.checked;
       current = null;
-      nextQuestion();
+      nextQuestion({ advance: false });
     });
   }
 }
 
+// Wrapped rather than passed directly: the listener would hand nextQuestion a
+// click event, which has no business being read as its options argument.
 document.querySelectorAll('.next-question').forEach((btn) => {
-  btn.addEventListener('click', nextQuestion);
+  btn.addEventListener('click', () => nextQuestion());
 });
 
 // Jump back to the top of the current sequence without losing any history.
@@ -783,7 +795,7 @@ if (restartBtn) {
     store.cursor[cursorKey()] = 0;
     saveStore();
     current = null;
-    nextQuestion();
+    nextQuestion({ advance: false });
   });
 }
 
@@ -796,7 +808,7 @@ if (resetBtn) {
     rememberFilters();
     current = null;
     updateSummary();
-    nextQuestion();
+    nextQuestion({ advance: false });
   });
 }
 

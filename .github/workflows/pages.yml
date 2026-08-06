@@ -33,3 +33,9 @@ jobs:
 
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # Pages has been taking well over the 10-minute default to dispatch
+          # and finish; deployments were completing server-side minutes AFTER
+          # the action aborted and cancelled its own deployment record. Wait
+          # long enough to observe the real outcome instead of a false failure.
+          timeout: 1800000
