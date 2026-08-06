@@ -78,6 +78,9 @@ let bank = [];        // every loaded question, in bank order
 let pool = [];        // the subset the current filter draws from, same order
 let current = null;
 let answered = false;
+// Index of the choice he has marked but not yet submitted, or null. Grading is
+// behind the Submit button so he can weigh two options and change his mind.
+let pendingIndex = null;
 let servingReview = false; // is the question on screen a spliced-in repeat?
 let skillFilter = 'all';   // 'all' or any key of SKILL_LABELS
 let difficultyFilter = 'all'; // 'all' | 'easy' | 'medium' | 'hard'
@@ -108,12 +111,17 @@ const lifetimeEl = document.getElementById('lifetimeStats');
 const skillSelect = document.getElementById('skillSelect');
 const difficultySelect = document.getElementById('difficultySelect');
 const skillStatsEl = document.getElementById('skillStats');
-const emptyStateEl = document.getElementById('emptyState');
+// One readout per pager -- there is a copy above and below the question -- so
+// this is a list rather than a single element by id.
+const readoutEls = document.querySelectorAll('.set-readout');
 const directionStep = document.getElementById('directionStep');
 const directionChoices = document.getElementById('directionChoices');
 const directionFeedback = document.getElementById('directionFeedback');
 const directionScoreEl = document.getElementById('directionScore');
 const wrongOnlyToggle = document.getElementById('wrongOnlyToggle');
+const questionCard = document.getElementById('questionCard');
+const submitBtn = document.getElementById('submitAnswer');
+const submitRow = document.getElementById('submitRow');
 
 // --- Persistence -----------------------------------------------------------
 // Everything the learner does is kept, not just his mistakes:
@@ -341,9 +349,31 @@ function renderOptions(question) {
     why.textContent = option.why;
 
     optionEl.append(row, why);
-    optionEl.addEventListener('click', () => reveal(index));
+    optionEl.addEventListener('click', () => selectOption(index));
     optionsContainer.append(optionEl);
   });
+}
+
+// Marks a choice without grading it. Re-clicking a different option just moves
+// the mark, so nothing is committed until Submit.
+function selectOption(index) {
+  if (answered) return;
+  // The choices stay locked until he has called the relationship.
+  if (current.direction && !directionAnswered) return;
+
+  pendingIndex = index;
+  optionsContainer.querySelectorAll('.option').forEach((optionEl, i) => {
+    optionEl.classList.toggle('pending', i === index);
+  });
+  updateSubmitState();
+}
+
+function updateSubmitState() {
+  if (!submitBtn) return;
+  // Nothing to submit while the choices are still hidden behind the direction
+  // step, and nothing left to submit once the question has been graded.
+  if (submitRow) submitRow.hidden = optionsContainer.hidden || answered;
+  submitBtn.disabled = answered || pendingIndex === null;
 }
 
 // Step one of the two-step drill: commit to the relationship, with the word
@@ -395,8 +425,9 @@ function answerDirection(picked) {
   directionFeedback.append(strong, current.directionWhy);
   directionFeedback.hidden = false;
 
-  // Now the words are safe to show.
+  // Now the words are safe to show, and with them the button that grades them.
   optionsContainer.hidden = false;
+  updateSubmitState();
   updateSummary();
 }
 
@@ -490,6 +521,7 @@ function updateSummary() {
 function loadQuestion(question) {
   current = question;
   answered = false;
+  pendingIndex = null;
   directionAnswered = false;
   directionCorrect = null;
 
@@ -499,13 +531,16 @@ function loadQuestion(question) {
   renderPassage(question, false);
   renderOptions(question);
   renderDirectionStep(question);
+  // After renderDirectionStep: it decides whether the choices start hidden, and
+  // the submit row follows them.
+  updateSubmitState();
 
   ruleBox.hidden = true;
   ruleBox.textContent = '';
   setStatus('Awaiting answer', 'pending');
   resultText.textContent = question.direction
     ? 'First decide which way the sentence turns. The choices unlock once you commit.'
-    : 'Read the whole passage, then choose. The explanation appears once you answer.';
+    : 'Read the whole passage, then pick a choice and submit it. The explanation appears once you do.';
 }
 
 function reveal(selectedIndex) {
@@ -519,7 +554,8 @@ function reveal(selectedIndex) {
 
   optionEls.forEach((optionEl, index) => {
     const optionCorrect = current.options[index].label === current.correctLabel;
-    optionEl.classList.remove('selected');
+    // 'pending' was the pre-submit mark; from here the styling is right/wrong.
+    optionEl.classList.remove('selected', 'pending');
     optionEl.classList.add('showExplanation', optionCorrect ? 'correct' : 'incorrect');
     optionEl.querySelector('.option-result').textContent = optionCorrect ? '✔' : '';
   });
@@ -539,6 +575,7 @@ function reveal(selectedIndex) {
     renderSetSummary();
     renderMeta(current); // refresh the seen/right/wrong tag with this attempt
   }
+  updateSubmitState(); // retires the submit row now that this one is graded
 
   if (isCorrect) window.Sparkle.burstOver(optionsContainer);
 
@@ -610,6 +647,9 @@ function nextQuestion(options) {
     setEmptyState(wrongOnly
       ? 'Nothing wrong yet in this set. Untick "Wrong answers only", or widen the skill or difficulty.'
       : 'No questions match these filters.', true);
+    // Neither direction leads anywhere in an empty set; the warning takes the
+    // readout's place in the pager and both controls go inert.
+    setPagerState({ atStart: true, empty: true });
     return;
   }
 
@@ -636,9 +676,13 @@ function nextQuestion(options) {
   renderSetSummary();
   loadQuestion(current);
 
-  const pageEl = document.querySelector('.page');
-  if (pageEl && pageEl.scrollIntoView) {
-    pageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Land on the question, not the top of the page. The bottom pager is a normal
+  // place to click Next from, and scrolling past the title and filter bar every
+  // time would just mean scrolling back down to read. scroll-margin-top on the
+  // card keeps its top edge from sitting flush against the viewport.
+  const anchor = questionCard || document.querySelector('.page');
+  if (anchor && anchor.scrollIntoView) {
+    anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
   } else {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -665,18 +709,26 @@ function renderSetSummary() {
 
   // Nothing precedes the first question of the sequence. Stepping back off a
   // review repeat is allowed -- it lands on the question the repeat interrupted.
-  const atStart = servedIndex === 0 && !servingReview;
+  setPagerState({ atStart: servedIndex === 0 && !servingReview, empty: false });
+}
+
+function setPagerState({ atStart, empty }) {
   document.querySelectorAll('.prev-question').forEach((btn) => {
-    btn.disabled = atStart;
+    btn.disabled = empty || atStart;
+  });
+  document.querySelectorAll('.next-question').forEach((btn) => {
+    btn.disabled = empty;
   });
 }
 
 // Doubles as the set-size readout, so a plain count must not look like a warning.
+// Never hidden: it is the middle cell of the pager, and collapsing it would drag
+// Prev and Next together every time the text was empty.
 function setEmptyState(message, isWarning) {
-  if (!emptyStateEl) return;
-  emptyStateEl.textContent = message || '';
-  emptyStateEl.hidden = !message;
-  emptyStateEl.classList.toggle('is-warning', Boolean(isWarning));
+  readoutEls.forEach((el) => {
+    el.textContent = message || '';
+    el.classList.toggle('is-warning', Boolean(isWarning));
+  });
 }
 
 // A question is only usable once the blank, the answer key, the rule, and
@@ -806,6 +858,13 @@ document.querySelectorAll('.next-question').forEach((btn) => {
 document.querySelectorAll('.prev-question').forEach((btn) => {
   btn.addEventListener('click', () => nextQuestion({ step: -1 }));
 });
+
+if (submitBtn) {
+  submitBtn.addEventListener('click', () => {
+    if (pendingIndex === null) return;
+    reveal(pendingIndex);
+  });
+}
 
 // Jump back to the top of the current sequence without losing any history.
 const restartBtn = document.getElementById('restartSequence');

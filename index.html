@@ -6,7 +6,7 @@
   <title>SAT Reading &amp; Writing Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=12" />
+  <link rel="stylesheet" href="styles.css?v=19" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -52,22 +52,26 @@
         <span>Wrong answers only</span>
       </label>
       <button type="button" class="link-btn" id="restartSequence">Restart</button>
-      <p class="set-readout" id="emptyState" hidden></p>
     </div>
 
     <div class="layout">
-      <div class="card">
+      <!-- id is the scroll anchor: advancing lands here rather than the page top. -->
+      <div class="card" id="questionCard">
         <div class="question-panel">
+          <!-- The pager rides the badge line rather than taking a row of its own:
+               that line is mostly empty, and the title below keeps full width to
+               wrap in. A second copy sits at the foot of the card, right-aligned
+               to match. Only this readout is aria-live, so it announces once. -->
           <div class="question-header">
-            <div>
-              <p class="q-meta"></p>
-              <h2 class="question-title">Loading…</h2>
-            </div>
-            <div class="q-nav">
+            <p class="q-meta"></p>
+            <div class="pager">
               <button class="btn btn-small prev-question">← Prev</button>
-              <button class="btn btn-secondary next-question">Next Question</button>
+              <p class="set-readout" aria-live="polite"></p>
+              <button class="btn btn-small next-question">Next →</button>
             </div>
           </div>
+
+          <h2 class="question-title">Loading…</h2>
 
           <p class="cloze"></p>
 
@@ -82,17 +86,25 @@
 
           <div class="options"></div>
 
+          <!-- Grading sits behind a button on purpose: clicking a choice only
+               marks it, so two options can be weighed and the mark moved before
+               anything is committed. Hidden once the question has been graded. -->
+          <div class="submit-row" id="submitRow">
+            <button type="button" class="btn submit-answer" id="submitAnswer" disabled>Submit answer</button>
+          </div>
+
           <p class="rule-box" id="ruleBox" hidden></p>
 
-          <div class="control-row">
+          <div class="pager pager-bottom">
             <button class="btn btn-small prev-question">← Prev</button>
-            <button class="btn btn-secondary next-question">Next Question</button>
+            <p class="set-readout"></p>
+            <button class="btn btn-small next-question">Next →</button>
           </div>
 
           <div class="details">
             <div>
               <p class="detail-heading">Result</p>
-              <p id="resultText">Read the whole passage, then choose. The explanation appears once you answer.</p>
+              <p id="resultText">Read the whole passage, then pick a choice and submit it. The explanation appears once you do.</p>
             </div>
             <div>
               <p class="detail-heading">How to work these</p>
@@ -140,6 +152,6 @@
   </div>
 
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=12"></script>
+  <script src="app.js?v=17"></script>
 </body>
 </html>
