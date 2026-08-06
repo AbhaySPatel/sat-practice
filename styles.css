@@ -428,6 +428,16 @@ body {
 .control-row {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Prev sits beside Next in the header without breaking its space-between. */
+.q-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .btn {
@@ -454,6 +464,40 @@ body {
   flex-shrink: 0;
   background: var(--accent);
   color: var(--accent-fg);
+}
+
+/* Deliberately quieter and smaller than Next: going forward is the main move,
+   stepping back is the occasional correction. */
+.btn-small {
+  padding: 9px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 11px;
+}
+
+.prev-question {
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--btn-bg);
+}
+
+.prev-question:hover:not(:disabled) {
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+}
+
+/* At the first question there is nowhere to go back to; keep the button in
+   place rather than reflowing the row, but make it plainly inert. */
+.prev-question:disabled {
+  opacity: 0.35;
+  cursor: default;
+  transform: none;
+}
+
+.prev-question:disabled:hover {
+  transform: none;
 }
 
 .status {

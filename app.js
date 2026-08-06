@@ -585,19 +585,25 @@ function cursorValue() {
 // simply starts another pass through the same sequence.
 let servedIndex = 0;
 
-function takeNextInSequence(advance) {
+// Clamped at zero: stepping back from the very first question has nowhere to go,
+// and a negative index would fall off the end of the pool rather than wrap.
+function takeNextInSequence(step) {
   const key = cursorKey();
-  const at = advance ? cursorValue() + 1 : cursorValue();
+  const at = Math.max(0, cursorValue() + step);
   servedIndex = at;
   store.cursor[key] = at;
   return pool[at % pool.length];
 }
 
-// Pass {advance: false} to re-show the saved position rather than move past it:
-// page load and filter changes restore where he left off, while the Next button
-// is the only thing that actually consumes a question.
+// options.step moves the cursor: 1 for the next question, -1 for the previous
+// one, 0 to re-serve what is already on screen. Page load and filter changes
+// pass 0 so they restore his place instead of consuming a question.
 function nextQuestion(options) {
-  const advance = !options || options.advance !== false;
+  const requested = options && typeof options.step === 'number' ? options.step : 1;
+  // Serving a repeat leaves the cursor where it was, so it still points at the
+  // question the repeat interrupted. Stepping back off a repeat therefore means
+  // re-serving the cursor; decrementing it would skip that question entirely.
+  const step = requested < 0 && servingReview ? 0 : requested;
   applyFilters();
 
   if (pool.length === 0) {
@@ -614,15 +620,15 @@ function nextQuestion(options) {
     : pool.filter((q) => isWrongEver(q.id) && (!current || q.id !== current.id));
 
   // A review repeat is drawn at random and never persisted, so it cannot be
-  // restored on reload -- only splice one in when actually moving forward, which
-  // also keeps a refresh showing the same question every time.
-  if (advance && store.sinceReview >= FRESH_PER_REVIEW && reviewable.length > 0) {
+  // restored on reload or stepped back to -- only splice one in when moving
+  // forward, which also keeps a refresh showing the same question every time.
+  if (step > 0 && store.sinceReview >= FRESH_PER_REVIEW && reviewable.length > 0) {
     current = reviewable[Math.floor(Math.random() * reviewable.length)];
     store.sinceReview = 0;
     servingReview = true;
   } else {
-    current = takeNextInSequence(advance);
-    if (advance) store.sinceReview += 1;
+    current = takeNextInSequence(step);
+    if (step > 0) store.sinceReview += 1;
     servingReview = false;
   }
 
@@ -656,6 +662,13 @@ function renderSetSummary() {
     wrong > 0 ? `${wrong} to revisit` : null
   ].filter(Boolean);
   setEmptyState(parts.join(' · '));
+
+  // Nothing precedes the first question of the sequence. Stepping back off a
+  // review repeat is allowed -- it lands on the question the repeat interrupted.
+  const atStart = servedIndex === 0 && !servingReview;
+  document.querySelectorAll('.prev-question').forEach((btn) => {
+    btn.disabled = atStart;
+  });
 }
 
 // Doubles as the set-size readout, so a plain count must not look like a warning.
@@ -710,7 +723,7 @@ function loadBanks() {
     updateSummary();
     // Restore the saved position instead of stepping past it, so reloading the
     // page shows the question he was on rather than skipping one.
-    nextQuestion({ advance: false });
+    nextQuestion({ step: 0 });
   });
 }
 
@@ -758,7 +771,7 @@ function setupControls() {
       skillFilter = skillSelect.value;
       rememberFilters();
       current = null;
-      nextQuestion({ advance: false });
+      nextQuestion({ step: 0 });
     });
   }
 
@@ -768,7 +781,7 @@ function setupControls() {
       difficultyFilter = difficultySelect.value;
       rememberFilters();
       current = null;
-      nextQuestion({ advance: false });
+      nextQuestion({ step: 0 });
     });
   }
 
@@ -777,7 +790,7 @@ function setupControls() {
     wrongOnlyToggle.addEventListener('change', () => {
       wrongOnly = wrongOnlyToggle.checked;
       current = null;
-      nextQuestion({ advance: false });
+      nextQuestion({ step: 0 });
     });
   }
 }
@@ -788,6 +801,12 @@ document.querySelectorAll('.next-question').forEach((btn) => {
   btn.addEventListener('click', () => nextQuestion());
 });
 
+// Step back through the same sequence. Going back does not undo an answer --
+// per-question history is cumulative, so revisiting one just shows it again.
+document.querySelectorAll('.prev-question').forEach((btn) => {
+  btn.addEventListener('click', () => nextQuestion({ step: -1 }));
+});
+
 // Jump back to the top of the current sequence without losing any history.
 const restartBtn = document.getElementById('restartSequence');
 if (restartBtn) {
@@ -795,7 +814,7 @@ if (restartBtn) {
     store.cursor[cursorKey()] = 0;
     saveStore();
     current = null;
-    nextQuestion({ advance: false });
+    nextQuestion({ step: 0 });
   });
 }
 
@@ -808,7 +827,7 @@ if (resetBtn) {
     rememberFilters();
     current = null;
     updateSummary();
-    nextQuestion({ advance: false });
+    nextQuestion({ step: 0 });
   });
 }
 
