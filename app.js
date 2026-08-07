@@ -26,23 +26,19 @@ const BANKS = [
 // Ten fresh questions, then one repeat drawn from those he has gotten wrong.
 const FRESH_PER_REVIEW = 10;
 
-// Today's focus set. Only these skills reach the app at all -- they are the only
-// entries in the dropdown, the only thing the set counts draw from, and the only
-// rows in Coverage. Nothing else is available to wander into.
+// Optional focus set. When it holds skills, only those reach the app at all --
+// the only entries in the dropdown, the only thing the set counts draw from, and
+// the only rows in Coverage, so there is nothing else to wander into. EMPTY, as
+// now, means every skill is available.
 //
-// Edit this list to change the day's plan. An EMPTY array turns focus mode off
-// and restores all ten skills.
+// The set worth reaching for is drawn from Practice 5 (6 Aug 2026, R&W 550 /
+// Math 770). Of his 20 wrong answers: words in context 6, boundaries 4,
+// transitions 3 -- 13 of 20 between them. The first and third fail the same way,
+// picking an option that suits the topic without checking which way the sentence
+// turns, which is exactly what the direction drill is for:
 //
-// Chosen from Practice 5 (6 Aug 2026, R&W 550 / Math 770). Of his 20 wrong
-// answers: words in context 6, boundaries 4, transitions 3 -- 13 of 20 between
-// them. The first and third fail the same way, picking an option that suits the
-// topic without checking which way the sentence turns, which is exactly what the
-// direction drill is for.
-const FOCUS_SKILLS = [
-  'words-in-context',
-  'transitions',
-  'boundaries'
-];
+//   const FOCUS_SKILLS = ['words-in-context', 'transitions', 'boundaries'];
+const FOCUS_SKILLS = [];
 
 // The two-step drill. He loses points by picking a word that fits the topic
 // without checking which way the sentence turns, so when this is on the app
@@ -117,7 +113,6 @@ const titleEl = document.querySelector('.question-title');
 const metaEl = document.querySelector('.q-meta');
 const passageEl = document.querySelector('.cloze');
 const optionsContainer = document.querySelector('.options');
-const resultText = document.getElementById('resultText');
 const ruleBox = document.getElementById('ruleBox');
 const statusEl = document.querySelector('.status');
 const answeredEl = document.getElementById('questionsAnswered');
@@ -556,9 +551,6 @@ function loadQuestion(question) {
   ruleBox.hidden = true;
   ruleBox.textContent = '';
   setStatus('Awaiting answer', 'pending');
-  resultText.textContent = question.direction
-    ? 'First decide which way the sentence turns. The choices unlock once you commit.'
-    : 'Read the whole passage, then pick a choice and submit it. The explanation appears once you do.';
 }
 
 function reveal(selectedIndex) {
@@ -604,14 +596,10 @@ function reveal(selectedIndex) {
   ruleBox.textContent = current.rule;
   ruleBox.hidden = false;
 
+  // No prose summary any more: the correct choice carries a tick and its own
+  // explanation, the rule box states the convention, and the sidebar pill says
+  // whether he got it. Repeating all that in a paragraph earned no space.
   setStatus(isCorrect ? 'Correct answer' : 'Incorrect answer', isCorrect ? 'correct' : 'incorrect');
-  const answer = current.options.find((o) => o.label === current.correctLabel);
-  resultText.textContent = '';
-  const strong = document.createElement('strong');
-  strong.textContent = isCorrect ? 'Correct.' : 'Incorrect.';
-  resultText.append(strong, isCorrect
-    ? ' Read the rule below and move on.'
-    : ` The answer is ${answer.label}: "${answer.text}". This one will come back as a review repeat.`);
 }
 
 // Bank order is preserved, so the sequence a learner walks is stable between
@@ -659,6 +647,9 @@ function nextQuestion(options) {
   // question the repeat interrupted. Stepping back off a repeat therefore means
   // re-serving the cursor; decrementing it would skip that question entirely.
   const step = requested < 0 && servingReview ? 0 : requested;
+  // options.scroll false leaves the page exactly where it is: the top pager is
+  // already beside the question, so moving the page under him buys nothing.
+  const scroll = !options || options.scroll !== false;
   applyFilters();
 
   if (pool.length === 0) {
@@ -694,10 +685,11 @@ function nextQuestion(options) {
   renderSetSummary();
   loadQuestion(current);
 
-  // Land on the question, not the top of the page. The bottom pager is a normal
-  // place to click Next from, and scrolling past the title and filter bar every
-  // time would just mean scrolling back down to read. scroll-margin-top on the
-  // card keeps its top edge from sitting flush against the viewport.
+  // Only move the page when he asked from somewhere other than the top of the
+  // card. Land on the question rather than the page top -- scrolling past the
+  // title and filter bar would just mean scrolling back down to read, and
+  // scroll-margin-top keeps the card's top edge off the viewport edge.
+  if (!scroll) return;
   const anchor = questionCard || document.querySelector('.page');
   if (anchor && anchor.scrollIntoView) {
     anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -794,7 +786,10 @@ function loadBanks() {
     }
     if (bank.length === 0) {
       setStatus('Data load error', 'error');
-      resultText.textContent = 'No questions loaded. Ensure the bank files are served over HTTP.';
+      // The pager readout is the only prose left on the card, so failures have
+      // to surface there or they would show up as a blank question.
+      setEmptyState('No questions loaded. Ensure the bank files are served over HTTP.', true);
+      setPagerState({ atStart: true, empty: true });
       return;
     }
 
@@ -802,7 +797,7 @@ function loadBanks() {
     updateSummary();
     // Restore the saved position instead of stepping past it, so reloading the
     // page shows the question he was on rather than skipping one.
-    nextQuestion({ step: 0 });
+    nextQuestion({ step: 0, scroll: false });
   });
 }
 
@@ -855,7 +850,7 @@ function setupControls() {
       skillFilter = skillSelect.value;
       rememberFilters();
       current = null;
-      nextQuestion({ step: 0 });
+      nextQuestion({ step: 0, scroll: false });
     });
   }
 
@@ -865,7 +860,7 @@ function setupControls() {
       difficultyFilter = difficultySelect.value;
       rememberFilters();
       current = null;
-      nextQuestion({ step: 0 });
+      nextQuestion({ step: 0, scroll: false });
     });
   }
 
@@ -874,22 +869,29 @@ function setupControls() {
     wrongOnlyToggle.addEventListener('change', () => {
       wrongOnly = wrongOnlyToggle.checked;
       current = null;
-      nextQuestion({ step: 0 });
+      nextQuestion({ step: 0, scroll: false });
     });
   }
 }
 
-// Wrapped rather than passed directly: the listener would hand nextQuestion a
-// click event, which has no business being read as its options argument.
-document.querySelectorAll('.next-question').forEach((btn) => {
-  btn.addEventListener('click', () => nextQuestion());
-});
+// Both pagers move the sequence; only the one at the foot of the card scrolls.
+// Clicking the top pager means he is already looking at the question, so the page
+// stays put -- while from the bottom, the next question would otherwise open
+// somewhere above the viewport.
+//
+// Wrapped in an arrow rather than passed directly: a listener would hand
+// nextQuestion the click event, which has no business being read as its options.
+function wirePager(selector, step) {
+  document.querySelectorAll(selector).forEach((btn) => {
+    const scroll = Boolean(btn.closest('.pager-bottom'));
+    btn.addEventListener('click', () => nextQuestion({ step, scroll }));
+  });
+}
 
-// Step back through the same sequence. Going back does not undo an answer --
-// per-question history is cumulative, so revisiting one just shows it again.
-document.querySelectorAll('.prev-question').forEach((btn) => {
-  btn.addEventListener('click', () => nextQuestion({ step: -1 }));
-});
+wirePager('.next-question', 1);
+// Going back does not undo an answer -- per-question history is cumulative, so
+// revisiting a question just shows it again with its counts intact.
+wirePager('.prev-question', -1);
 
 if (submitBtn) {
   submitBtn.addEventListener('click', () => {
@@ -905,7 +907,7 @@ if (restartBtn) {
     store.cursor[cursorKey()] = 0;
     saveStore();
     current = null;
-    nextQuestion({ step: 0 });
+    nextQuestion({ step: 0, scroll: false });
   });
 }
 
@@ -918,7 +920,7 @@ if (resetBtn) {
     rememberFilters();
     current = null;
     updateSummary();
-    nextQuestion({ step: 0 });
+    nextQuestion({ step: 0, scroll: false });
   });
 }
 
@@ -929,11 +931,11 @@ loadBanks();
 
 window.addEventListener('error', (ev) => {
   console.error('Unhandled error:', ev.error || ev.message);
-  if (resultText) resultText.textContent = `Error: ${ev.error ? ev.error.message : ev.message}`;
+  setEmptyState(`Error: ${ev.error ? ev.error.message : ev.message}`, true);
   setStatus('Script error', 'error');
 });
 window.addEventListener('unhandledrejection', (ev) => {
   console.error('Unhandled rejection:', ev.reason);
-  if (resultText) resultText.textContent = `Error: ${ev.reason ? ev.reason.message || ev.reason : ev.reason}`;
+  setEmptyState(`Error: ${ev.reason ? ev.reason.message || ev.reason : ev.reason}`, true);
   setStatus('Script error', 'error');
 });

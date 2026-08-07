@@ -611,26 +611,8 @@ body {
   line-height: 1;
 }
 
-.details {
-  display: grid;
-  gap: 14px;
-  padding: 18px 0 0;
-  border-top: 1px solid var(--rule);
-}
 
-.detail-heading {
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--heading);
-  margin: 0 0 6px;
-}
 
-.details p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--detail-text);
-  line-height: 1.55;
-}
 
 /* ---------- Control bar ---------- */
 /* Everything that scopes the question set lives on one line, so the question
