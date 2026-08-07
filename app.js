@@ -128,6 +128,23 @@ const WEIGHT_FLOOR_ACCURACY = 0.4;
 // feel reachable and rare enough that the burst still means something.
 const CELEBRATE_RUN = 5;
 
+// --- Peeking at the meanings ------------------------------------------------
+// Showing what the four choices mean turns a question he cannot read into one he
+// can reason about, so it earns something -- but less, and less again the more he
+// leans on it in a day. An escalating cost rather than a hard cap: a cap would
+// block him on the one question where he genuinely needs the help, whereas this
+// only makes habitual peeking unprofitable.
+const PEEK_RATES = [
+  { upTo: 3, pay: 0.5 },
+  { upTo: 8, pay: 0.35 },
+  { upTo: Infinity, pay: 0.2 }
+];
+
+function peekRateToday() {
+  const used = dayStats().peeks || 0;
+  return (PEEK_RATES.find((r) => used < r.upTo) || PEEK_RATES[PEEK_RATES.length - 1]).pay;
+}
+
 // The mark inside the ring on the top-bar tile, by share of the day's target.
 // Five states rather than a bare number, so the tile reads at a glance from
 // across the room rather than needing to be read.
@@ -302,6 +319,9 @@ const wordsHeadingEl = document.getElementById('wordsHeading');
 const wordsListEl = document.getElementById('wordsList');
 const sourceRowEl = document.getElementById('sourceRow');
 const sourceLinkEl = document.getElementById('sourceLink');
+const peekRowEl = document.getElementById('peekRow');
+const peekBtnEl = document.getElementById('peekBtn');
+const peekNoteEl = document.getElementById('peekNote');
 const streakValueEl = document.getElementById('streakValue');
 const bestValueEl = document.getElementById('bestValue');
 
@@ -360,7 +380,9 @@ function prettyDay(d) {
 
 function dayStats(key) {
   const d = store.days[key || dayKey()];
-  return d ? { points: 0, ...d } : { answered: 0, correct: 0, points: 0 };
+  return d
+    ? { points: 0, peeks: 0, ...d }
+    : { answered: 0, correct: 0, points: 0, peeks: 0 };
 }
 
 // Best points total on any day before today -- the number to beat.
@@ -642,6 +664,9 @@ function questionPoints(question) {
   const base = POINTS_BY_DIFFICULTY[question.difficulty] || POINTS_BY_DIFFICULTY.medium;
   let points = base * skillWeight(question.skill);
   if (servingReview) points *= REVIEW_BONUS;
+  // The rate is fixed at the moment he peeks, so peeking again later on another
+  // question cannot retroactively devalue this one.
+  if (peekPay !== null && current && question.id === current.id) points *= peekPay;
   return Math.max(1, Math.round(points));
 }
 
@@ -854,6 +879,53 @@ function renderOptions(question) {
 // Indices he has ruled out on the question currently on screen. Not persisted:
 // elimination is working-out, and it belongs to this attempt only.
 const crossedOut = new Set();
+
+// The rate this question pays after peeking, or null if he has not peeked. Held
+// per question rather than recomputed, so the figure on the badge is the one he
+// agreed to when he pressed the button.
+let peekPay = null;
+
+// Does this question have meanings worth revealing? Words in Context only: on the
+// Vocabulary drill the options ARE the meanings, so showing them would simply
+// hand over the answer, and no other skill has glosses at all.
+function canPeek(question) {
+  if (!question || question.skill !== 'words-in-context') return false;
+  return question.options.some((o) => glossFor(question.id, o.label));
+}
+
+function renderPeek() {
+  if (!peekRowEl || !peekBtnEl) return;
+
+  const show = !answered && peekPay === null && canPeek(current);
+  peekRowEl.hidden = !show;
+  if (!show) return;
+
+  const rate = Math.round(peekRateToday() * 100);
+  const used = dayStats().peeks || 0;
+  peekBtnEl.textContent = 'Show meanings';
+  if (peekNoteEl) {
+    peekNoteEl.textContent = used === 0
+      ? `pays ${rate}% of the points`
+      : `pays ${rate}% — ${used} used today`;
+  }
+}
+
+function revealMeanings() {
+  if (answered || peekPay === null && !canPeek(current)) return;
+
+  // Fix the rate before the count moves, so he is charged what the button said.
+  peekPay = peekRateToday();
+
+  const key = dayKey();
+  const day = store.days[key] || { answered: 0, correct: 0, points: 0, peeks: 0 };
+  day.peeks = (day.peeks || 0) + 1;
+  store.days[key] = day;
+  saveStore();
+
+  optionsContainer.classList.add('is-peeked');
+  renderPeek();
+  renderMeta(current); // the badge now shows the reduced figure
+}
 
 // Rule a choice in or out. A crossed choice cannot be selected, so ruling one out
 // and then submitting it is impossible -- to pick it he has to un-cross it first,
@@ -1292,6 +1364,8 @@ function loadQuestion(question) {
   pendingIndex = null;
   lastAward = null; // fresh question, nothing earned on it yet
   crossedOut.clear(); // eliminations belong to the question he was on
+  peekPay = null;     // and so does any peek
+  optionsContainer.classList.remove('is-peeked');
   directionAnswered = false;
   directionCorrect = null;
 
@@ -1304,6 +1378,7 @@ function loadQuestion(question) {
   // After renderDirectionStep: it decides whether the choices start hidden, and
   // the submit row follows them.
   updateSubmitState();
+  renderPeek();
 
   ruleBox.hidden = true;
   ruleBox.textContent = '';
@@ -1384,6 +1459,7 @@ function reveal(selectedIndex) {
     celebrate({ isCorrect, wasWrongBefore, bestBefore });
   }
   updateSubmitState(); // retires the submit row now that this one is graded
+  renderPeek();        // nothing left to reveal
 
   // Re-render with the signal phrase marked, now that giving it away costs nothing.
   renderPassage(current, true);
@@ -2088,6 +2164,10 @@ if (progressDialog) {
   progressDialog.addEventListener('click', (ev) => {
     if (ev.target === progressDialog) progressDialog.close();
   });
+}
+
+if (peekBtnEl) {
+  peekBtnEl.addEventListener('click', revealMeanings);
 }
 
 if (sourceLinkEl && sourceRowEl) {

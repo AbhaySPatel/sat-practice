@@ -6,7 +6,7 @@
   <title>SAT Reading &amp; Writing Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=53" />
+  <link rel="stylesheet" href="styles.css?v=54" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -110,6 +110,17 @@
           </div>
 
           <div class="options"></div>
+
+          <!-- Words in Context only. Reveals what the four choices mean before he
+               answers, for a share of the points -- without it, a question whose
+               words he does not know is a blind guess, and he learns nothing from
+               it. The share falls the more he leans on it in a day. -->
+          <div class="peek-row" id="peekRow" hidden>
+            <button type="button" class="btn btn-small peek-btn" id="peekBtn">
+              Show meanings
+            </button>
+            <span class="peek-note" id="peekNote"></span>
+          </div>
 
           <!-- Grading sits behind a button on purpose: clicking a choice only
                marks it, so two options can be weighed and the mark moved before
@@ -227,6 +238,6 @@
   </dialog>
 
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=59"></script>
+  <script src="app.js?v=60"></script>
 </body>
 </html>

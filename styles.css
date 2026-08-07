@@ -1144,6 +1144,12 @@ body {
   font-size: 0.86rem;
 }
 
+/* Revealed early by the peek button, at a cost. Specificity has to beat
+   ".option .gloss { display: none }", hence the container in the selector. */
+.options.is-peeked .option .gloss {
+  display: block;
+}
+
 .option.showExplanation .gloss,
 .option.showExplanation .explanation,
 .option.showExplanation .insight,
@@ -1188,6 +1194,31 @@ body {
    the card edge -- .question-panel is a flex column, hence align-self. */
 .pager-bottom {
   align-self: flex-end;
+}
+
+.peek-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Deliberately quiet: help is available, not encouraged. */
+.peek-btn {
+  background: transparent;
+  color: var(--muted);
+  border: 1px dashed var(--btn-bg);
+}
+
+.peek-btn:hover {
+  border-style: solid;
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+.peek-note {
+  font-size: 0.78rem;
+  color: var(--muted);
 }
 
 .submit-row {
