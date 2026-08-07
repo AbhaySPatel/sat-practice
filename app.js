@@ -811,7 +811,22 @@ function renderOptions(question) {
     const mark = document.createElement('span');
     mark.className = 'option-result';
 
-    row.append(label, text, mark);
+    // Bluebook's answer eliminator. Ruling choices out is how these are actually
+    // worked -- especially punctuation and vocabulary, where two are obviously
+    // wrong and the marks are won by separating the last two.
+    const cross = document.createElement('button');
+    cross.type = 'button';
+    cross.className = 'option-cross';
+    cross.textContent = option.label;
+    cross.setAttribute('aria-label', `Cross out choice ${option.label}`);
+    cross.setAttribute('aria-pressed', 'false');
+    cross.addEventListener('click', (ev) => {
+      // Without this the click also lands on the option and selects it.
+      ev.stopPropagation();
+      toggleCrossed(index);
+    });
+
+    row.append(label, text, mark, cross);
 
     optionEl.append(row);
 
@@ -836,10 +851,41 @@ function renderOptions(question) {
   });
 }
 
+// Indices he has ruled out on the question currently on screen. Not persisted:
+// elimination is working-out, and it belongs to this attempt only.
+const crossedOut = new Set();
+
+// Rule a choice in or out. A crossed choice cannot be selected, so ruling one out
+// and then submitting it is impossible -- to pick it he has to un-cross it first,
+// which is the deliberate second thought the tool is for.
+function toggleCrossed(index) {
+  if (answered) return;
+  const optionEl = optionsContainer.children[index];
+  if (!optionEl) return;
+
+  const nowCrossed = !crossedOut.has(index);
+  if (nowCrossed) {
+    crossedOut.add(index);
+    // Crossing out the choice he had marked also un-marks it.
+    if (pendingIndex === index) {
+      pendingIndex = null;
+      optionEl.classList.remove('pending');
+    }
+  } else {
+    crossedOut.delete(index);
+  }
+
+  optionEl.classList.toggle('is-crossed', nowCrossed);
+  const btn = optionEl.querySelector('.option-cross');
+  if (btn) btn.setAttribute('aria-pressed', String(nowCrossed));
+  updateSubmitState();
+}
+
 // Marks a choice without grading it. Re-clicking a different option just moves
 // the mark, so nothing is committed until Submit.
 function selectOption(index) {
   if (answered) return;
+  if (crossedOut.has(index)) return; // ruled out; un-cross it to pick it
   // The choices stay locked until he has called the relationship.
   if (current.direction && !directionAnswered) return;
 
@@ -1245,6 +1291,7 @@ function loadQuestion(question) {
   answered = false;
   pendingIndex = null;
   lastAward = null; // fresh question, nothing earned on it yet
+  crossedOut.clear(); // eliminations belong to the question he was on
   directionAnswered = false;
   directionCorrect = null;
 
