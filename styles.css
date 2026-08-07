@@ -141,6 +141,15 @@
   box-sizing: border-box;
 }
 
+/* The hidden attribute is display:none from the UA stylesheet, and ANY author
+   rule that sets display beats it regardless of specificity. Three elements are
+   toggled with .hidden from JS and also carry a display of their own --
+   .submit-row, .day-done and .options -- so without this they never actually
+   hide. Keep this rule above the components it guards. */
+[hidden] {
+  display: none !important;
+}
+
 body {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
@@ -201,29 +210,29 @@ body {
 }
 
 
-.progress-card {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-  padding: 8px 10px;
-  border-radius: 12px;
-  background: var(--panel-bg);
-  border: 1px solid var(--panel-border);
-}
 
 .session-summary {
   display: flex;
-  gap: 8px;
-  flex-wrap: nowrap;
+  gap: 6px;
+  flex-wrap: wrap;
   color: var(--panel-fg);
   font-size: 0.82rem;
   font-weight: 700;
   align-items: center;
 }
 
+.session-summary .chip-right {
+  color: var(--good-fg);
+  border-color: var(--correct-border);
+}
+
+.session-summary .chip-wrong {
+  color: var(--bad-fg);
+  border-color: var(--incorrect-border);
+}
+
 .session-summary span {
-  padding: 4px 8px;
+  padding: 3px 9px;
   border-radius: 999px;
   background: var(--chip-bg);
   border: 1px solid var(--chip-border);
@@ -231,10 +240,241 @@ body {
   font-size: 0.82rem;
 }
 
-.progress-label {
-  font-size: 0.85rem;
+
+/* ---------- The day's target ---------- */
+
+.daily {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.daily-head {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.daily-count {
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--panel-fg);
+  color: var(--fg);
+  letter-spacing: -0.02em;
+  /* The count changes every answer; tabular figures stop it jittering. */
+  font-variant-numeric: tabular-nums;
+}
+
+.daily-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.daily-track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--btn-bg);
+  overflow: hidden;
+}
+
+.daily-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  transition: width 0.35s ease;
+}
+
+/* Green rather than accent once the day is done, so a full bar reads as
+   finished instead of merely long. */
+.daily-fill.is-done {
+  background: var(--correct-border);
+}
+
+/* Banner at the top of the card the moment the target is met. */
+.day-done {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--correct-border);
+  background: var(--correct-bg);
+}
+
+.day-done-title {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.day-done-detail {
+  margin: 2px 0 0;
+  font-size: 0.84rem;
+  color: var(--body-text);
+}
+
+.day-done-go {
+  flex-shrink: 0;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--btn-bg);
+}
+
+.day-done-go:hover {
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .daily-fill { transition: none; }
+}
+
+
+
+
+.points-note {
+  margin: 0 0 12px;
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.points-note.is-record {
+  color: var(--good-fg);
+  font-weight: 700;
+}
+
+/* The per-question worth, sitting with the skill and difficulty badges. Accent
+   fill rather than the outlined look of the others, because it is the one badge
+   that changes question to question. */
+.q-meta .tag-points {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-fg);
+  font-variant-numeric: tabular-nums;
+}
+
+.q-meta .tag-points.is-earned {
+  background: var(--correct-border);
+  border-color: var(--correct-border);
+  color: var(--card-bg);
+}
+
+.q-meta .tag-points.is-missed {
+  background: transparent;
+  border-color: var(--option-border);
+  color: var(--muted);
+}
+
+/* ---------- Projected section score ---------- */
+
+.projection {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Coloured only against the anchor, so the number carries direction as well as
+   magnitude -- above Practice 5 or below it. */
+.projection.is-up { color: var(--good-fg); }
+.projection.is-down { color: var(--pending-fg); }
+
+.projection-note {
+  margin: 6px 0 12px;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+
+
+.streak-days {
+  margin: 10px 0 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.streak-days.is-live {
+  color: var(--fg);
+  font-weight: 700;
+}
+
+.heat-labels,
+.heat {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.heat-labels {
+  margin-bottom: 3px;
+}
+
+.heat {
+  margin-bottom: 14px;
+}
+
+.heat-labels span {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--muted);
+}
+
+.heat-cell {
+  /* Square, and sized by the column rather than fixed, so the grid fits the
+     sidebar whatever the runway length turns out to be. */
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: var(--btn-bg);
+  /* Holds the day's points. 26px of cell leaves room for three digits at 8px. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  overflow: hidden;
+}
+
+/* Contrast follows the fill: dark text on the pale end, light on the strong. */
+.heat-cell.heat-1 { color: var(--fg); }
+.heat-cell.heat-2,
+.heat-cell.heat-3,
+.heat-cell.heat-4 { color: var(--card-bg); }
+
+/* Four steps from a third of the target to the whole of it. */
+.heat-cell.heat-0 { background: var(--btn-bg); }
+.heat-cell.heat-1 { background: color-mix(in srgb, var(--accent) 30%, var(--btn-bg)); }
+.heat-cell.heat-2 { background: color-mix(in srgb, var(--accent) 55%, var(--btn-bg)); }
+.heat-cell.heat-3 { background: color-mix(in srgb, var(--accent) 78%, var(--btn-bg)); }
+.heat-cell.heat-4 { background: var(--correct-border); }
+
+/* Days not yet reached: drawn so the runway is visible, but hollow -- an empty
+   future square must not read like a missed day. */
+.heat-cell.is-future {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--rule);
+}
+
+.heat-cell.is-today {
+  box-shadow: inset 0 0 0 1.5px var(--fg);
+}
+
+/* Test day outranks everything else in the grid. */
+.heat-cell.is-exam {
+  background: var(--incorrect-border);
+  box-shadow: inset 0 0 0 1px var(--incorrect-border);
 }
 
 /* progress bar removed: use questions answered label instead */
@@ -318,10 +558,6 @@ body {
   color: var(--accent);
 }
 
-.sidebar .progress-card {
-  align-items: stretch;
-  width: 100%;
-}
 
 .hint-button {
   width: 100%;
@@ -552,37 +788,10 @@ body {
   transform: none;
 }
 
-.status {
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: var(--pending-bg);
-  color: var(--pending-fg);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  font-size: 0.88rem;
-  font-weight: 700;
-  min-width: 0;
-  white-space: nowrap;
-}
 
 /* Status states are classes, not inline styles, so the theme can restyle them. */
-.status.is-pending {
-  background: var(--pending-bg);
-  color: var(--pending-fg);
-}
 
-.status.is-correct {
-  background: var(--good-bg);
-  color: var(--good-fg);
-}
 
-.status.is-incorrect,
-.status.is-error {
-  background: var(--bad-bg);
-  color: var(--bad-fg);
-}
 
 .theme-toggle {
   display: inline-flex;
@@ -950,6 +1159,28 @@ body {
 .queue-total strong {
   font-size: 1.3rem;
   color: var(--accent);
+}
+
+.skill-pay {
+  flex-shrink: 0;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Strength, not coverage. Colour says how solid, the multiplier beside it says
+   what it pays -- together they answer "what should I work on". */
+.coverage-bar i.is-weak { background: var(--incorrect-border); }
+.coverage-bar i.is-middling { background: var(--pending-fg); }
+.coverage-bar i.is-strong { background: var(--correct-border); }
+
+/* Too few answers to rate. Hatched rather than empty, because an empty bar
+   would read as nought per cent right. */
+.coverage-bar.is-untested {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--btn-bg) 0 3px,
+    transparent 3px 6px
+  );
 }
 
 .skill-row {

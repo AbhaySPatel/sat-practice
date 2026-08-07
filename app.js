@@ -26,6 +26,96 @@ const BANKS = [
 // Ten fresh questions, then one repeat drawn from those he has gotten wrong.
 const FRESH_PER_REVIEW = 10;
 
+// The day's goal, in points rather than questions, so hitting it means working
+// the skills that pay -- 500 lands at roughly 24 weak-skill answers or 31 mixed
+// ones at his current accuracy. The point is that the day ENDS: an open sequence
+// of 1667 questions can only ever be interrupted, never finished.
+const DAILY_POINTS_TARGET = 500;
+
+// A floor under a bad day. Points only come from correct answers, so at poor
+// accuracy the target could recede all afternoon; reaching this many answers
+// closes the day whatever the score.
+const DAILY_QUESTION_CAP = 40;
+
+// Test dates. These mark the red squares in the runway grid and set where it
+// ends, so the runway on screen is the real one. Add or replace as sittings are
+// booked; keys are local YYYY-MM-DD to match dayKey().
+const EXAMS = [
+  { key: '2026-08-22', label: 'Aug 22' },
+  { key: '2026-09-12', label: 'Sept 12' }
+];
+
+// How much history to show before the current week. The grid runs from here to
+// the week of the final exam, so it reads as a runway rather than a scrapbook:
+// enough past to see whether the habit is holding, all the future that matters.
+const HEATMAP_LOOKBACK_WEEKS = 2;
+
+// --- Score projection ------------------------------------------------------
+// A digital-SAT Reading and Writing section is 54 questions scaled to 200-800.
+const RW_QUESTIONS = 54;
+const POINTS_PER_QUESTION = 600 / RW_QUESTIONS;
+
+// Anchored on his own result rather than a published conversion table: Practice
+// 5 (6 Aug 2026) was 20 wrong of 54, so 34 right, scored 550. That keeps the
+// projection honest about what it is -- a rough read calibrated to one real
+// sitting, not a prediction.
+const SCORE_ANCHOR = { accuracy: 34 / RW_QUESTIONS, score: 550 };
+
+// Judge on recent form over a section's worth of answers, not lifetime totals:
+// review repeats mean a question he once failed gets counted again once he has
+// learned it, which flatters a lifetime average indefinitely.
+const RECENT_MAX = 200;
+const MIN_FOR_PROJECTION = 20;
+
+// --- Points ----------------------------------------------------------------
+// Every question is worth base × skill weight, so the weak skills pay more and
+// the score he is chasing pulls him toward the work that actually moves it.
+//
+//   points = POINTS_BY_DIFFICULTY[difficulty] × skillWeight(skill)
+//            × REVIEW_BONUS if it is a spliced-in repeat
+//            × REPEAT_CREDIT if he has already beaten this exact question
+//
+// Harder questions pay more because they are worth more on the test too.
+const POINTS_BY_DIFFICULTY = { easy: 10, medium: 15, hard: 20 };
+
+// Redeeming a question he previously got wrong is the single most valuable thing
+// he can do, so repeats pay a premium.
+const REVIEW_BONUS = 1.5;
+
+// ...but a question he has ALREADY beaten pays a fraction, or the cheapest way
+// to a big number would be answering the same easy question forever.
+const REPEAT_CREDIT = 0.25;
+
+// Weakness from Practice 5, scaled 1.0 (never missed) to 3.0 (missed most).
+// Used until there is enough live evidence in this app to judge a skill on its
+// own, at which point skillWeight() takes over and the weights become dynamic.
+const BASELINE_ERRORS = {
+  'words-in-context': 6,
+  boundaries: 4,
+  transitions: 3,
+  'form-structure-sense': 2,
+  inferences: 2,
+  'text-structure-purpose': 1,
+  'command-of-evidence': 1,
+  'rhetorical-synthesis': 1,
+  'central-ideas-details': 0,
+  'cross-text-connections': 0
+};
+const WORST_BASELINE = 6;
+
+// How many recent answers in a skill before his live accuracy outranks the
+// Practice 5 baseline. Five is enough to show a trend without whipsawing.
+const SKILL_FORM_MIN = 5;
+const WEIGHT_MIN = 1;
+const WEIGHT_MAX = 3;
+
+// Accuracy at or below this counts as fully weak; at 100% a skill pays base only.
+const WEIGHT_FLOOR_ACCURACY = 0.4;
+
+// Every Nth consecutive correct answer is worth marking. Five is often enough to
+// feel reachable and rare enough that the burst still means something.
+const CELEBRATE_RUN = 5;
+
 // Optional focus set. When it holds skills, only those reach the app at all --
 // the only entries in the dropdown, the only thing the set counts draw from, and
 // the only rows in Coverage, so there is nothing else to wander into. EMPTY, as
@@ -101,11 +191,12 @@ let difficultyFilter = 'all'; // 'all' | 'easy' | 'medium' | 'hard'
 let wrongOnly = false;     // restrict to questions he has gotten wrong
 let directionAnswered = false;
 let directionCorrect = null;
-let sessionCorrect = 0;
-let sessionIncorrect = 0;
 let sessionStreak = [];
 let directionHits = 0;
 let directionTotal = 0;
+// Points earned on the question currently on screen, or null before it is
+// graded. Drives the "+45 earned" chip without recomputing a stale weight.
+let lastAward = null;
 
 const STREAK_LENGTH = 8;
 
@@ -114,12 +205,9 @@ const metaEl = document.querySelector('.q-meta');
 const passageEl = document.querySelector('.cloze');
 const optionsContainer = document.querySelector('.options');
 const ruleBox = document.getElementById('ruleBox');
-const statusEl = document.querySelector('.status');
-const answeredEl = document.getElementById('questionsAnswered');
 const correctCountEl = document.getElementById('correctCount');
 const incorrectCountEl = document.getElementById('incorrectCount');
 const streakEl = document.getElementById('streakStrip');
-const queueCountEl = document.getElementById('queueCount');
 const lifetimeEl = document.getElementById('lifetimeStats');
 const skillSelect = document.getElementById('skillSelect');
 const difficultySelect = document.getElementById('difficultySelect');
@@ -135,6 +223,21 @@ const wrongOnlyToggle = document.getElementById('wrongOnlyToggle');
 const questionCard = document.getElementById('questionCard');
 const submitBtn = document.getElementById('submitAnswer');
 const submitRow = document.getElementById('submitRow');
+const dailyCountEl = document.getElementById('dailyCount');
+const dailyNoteEl = document.getElementById('dailyNote');
+const dailyFillEl = document.getElementById('dailyFill');
+const dayDoneEl = document.getElementById('dayDone');
+const dayDoneDetailEl = document.getElementById('dayDoneDetail');
+const dayDoneGoBtn = document.getElementById('dayDoneGo');
+const streakDaysEl = document.getElementById('streakDays');
+const heatmapEl = document.getElementById('heatmap');
+const projectionEl = document.getElementById('projection');
+const projectionNoteEl = document.getElementById('projectionNote');
+const pointsNoteEl = document.getElementById('pointsNote');
+
+// Dismissed per session, not persisted: reopening the app on a finished day
+// should say so again, but "keep going" must stay dismissed while he carries on.
+let dayBannerDismissed = false;
 
 // --- Persistence -----------------------------------------------------------
 // Everything the learner does is kept, not just his mistakes:
@@ -152,9 +255,89 @@ function emptyStore() {
     version: 2,
     progress: {},
     cursor: {},
+    // days['2026-08-07'] = { answered, correct }. One row per calendar day he
+    // works, which is what the daily target reads and what the streak and the
+    // day-to-day comparison will read later.
+    days: {},
+    // Rolling log of outcomes, oldest first: { s: skill, ok: 0|1 }. Capped at
+    // RECENT_MAX. This is what the projection reads, so it reflects current form
+    // rather than everything he has ever attempted.
+    recent: [],
     sinceReview: 0,
     filters: { skill: 'all', difficulty: 'all' }
   };
+}
+
+// Local date, deliberately not toISOString(): that is UTC, so east of Greenwich
+// an evening session would be filed under tomorrow. A 9pm answer in Mumbai
+// belongs to today.
+function dayKey(when) {
+  const d = when || new Date();
+  const pad = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+}
+
+// "Fri 7 Aug" -- for tooltips, where an ISO key reads like a database row.
+function prettyDay(d) {
+  return d.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' });
+}
+
+function dayStats(key) {
+  const d = store.days[key || dayKey()];
+  return d ? { points: 0, ...d } : { answered: 0, correct: 0, points: 0 };
+}
+
+// Best points total on any day before today -- the number to beat.
+function bestDayBefore() {
+  const today = dayKey();
+  let best = { key: null, points: 0 };
+  Object.entries(store.days).forEach(([key, day]) => {
+    if (key >= today) return;
+    if ((day.points || 0) > best.points) best = { key, points: day.points || 0 };
+  });
+  return best;
+}
+
+// Consecutive days worked, counting back from today. If today is still empty we
+// start from yesterday: at 9am an untouched day should not read as a broken
+// streak, only a day that has fully passed should break it.
+function dayStreak() {
+  const cursor = new Date();
+  if (!store.days[dayKey(cursor)]) cursor.setDate(cursor.getDate() - 1);
+
+  let run = 0;
+  while (store.days[dayKey(cursor)]) {
+    run += 1;
+    cursor.setDate(cursor.getDate() - 1);
+  }
+  return run;
+}
+
+function parseDayKey(key) {
+  const [y, m, d] = key.split('-').map(Number);
+  return new Date(y, m - 1, d); // local midnight, matching dayKey()
+}
+
+function startOfToday() {
+  const d = new Date();
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+
+function daysBetween(from, to) {
+  return Math.round((to - from) / 86400000);
+}
+
+
+// Shade by how much of the target the day reached, not by raw count, so the
+// scale means the same thing if the target ever changes.
+function heatLevel(points) {
+  if (points <= 0) return 0;
+  const share = points / DAILY_POINTS_TARGET;
+  if (share >= 1) return 4;
+  if (share >= 0.66) return 3;
+  if (share >= 0.33) return 2;
+  return 1;
 }
 
 function loadStore() {
@@ -211,16 +394,87 @@ function statsFor(id) {
   return store.progress[id] || { seen: 0, correct: 0, wrong: 0 };
 }
 
-function recordAnswer(question, isCorrect) {
+function recordAnswer(question, isCorrect, pointsGained) {
   const entry = store.progress[question.id] ||
     { seen: 0, correct: 0, wrong: 0, skill: question.skill };
   entry.seen += 1;
   if (isCorrect) entry.correct += 1;
   else entry.wrong += 1;
   entry.skill = question.skill;
-  entry.last = new Date().toISOString().slice(0, 10);
+  entry.last = dayKey();
   store.progress[question.id] = entry;
+
+  // Tally the day alongside the question, so the daily target counts answers
+  // rather than questions-ever-seen and survives a reload mid-set.
+  const key = dayKey();
+  const day = store.days[key] || { answered: 0, correct: 0, points: 0 };
+  day.answered += 1;
+  if (isCorrect) day.correct += 1;
+  day.points = (day.points || 0) + (pointsGained || 0);
+  store.days[key] = day;
+
+  // Rolling form, oldest trimmed off the front.
+  const recent = store.recent || [];
+  recent.push({ s: question.skill, ok: isCorrect ? 1 : 0 });
+  if (recent.length > RECENT_MAX) recent.splice(0, recent.length - RECENT_MAX);
+  store.recent = recent;
+
   saveStore();
+}
+
+// Recent accuracy within one skill, from the same rolling log.
+function skillForm(skill) {
+  const list = (store.recent || []).filter((r) => r.s === skill);
+  if (list.length === 0) return { n: 0, accuracy: 0 };
+  const ok = list.reduce((n, r) => n + (r.ok ? 1 : 0), 0);
+  return { n: list.length, accuracy: ok / list.length };
+}
+
+// How much a skill pays, 1.0 to 3.0. Live accuracy once there is enough of it,
+// otherwise the Practice 5 baseline -- so the weighting is right from the first
+// question and then becomes his own as he works.
+function skillWeight(skill) {
+  const form = skillForm(skill);
+
+  if (form.n >= SKILL_FORM_MIN) {
+    const acc = Math.max(WEIGHT_FLOOR_ACCURACY, Math.min(1, form.accuracy));
+    const badness = (1 - acc) / (1 - WEIGHT_FLOOR_ACCURACY); // 0 = perfect, 1 = floor
+    return round1(WEIGHT_MIN + badness * (WEIGHT_MAX - WEIGHT_MIN));
+  }
+
+  const errors = BASELINE_ERRORS[skill] || 0;
+  return round1(WEIGHT_MIN + (errors / WORST_BASELINE) * (WEIGHT_MAX - WEIGHT_MIN));
+}
+
+function round1(n) {
+  return Math.round(n * 10) / 10;
+}
+
+// What this question pays if answered correctly right now.
+function questionPoints(question) {
+  const base = POINTS_BY_DIFFICULTY[question.difficulty] || POINTS_BY_DIFFICULTY.medium;
+  let points = base * skillWeight(question.skill);
+  if (servingReview) points *= REVIEW_BONUS;
+  // Already beaten once, so this is revision rather than progress.
+  if (statsFor(question.id).correct > 0) points *= REPEAT_CREDIT;
+  return Math.max(1, Math.round(points));
+}
+
+// Accuracy over the last `window` answers, default one R&W section's worth.
+function recentForm(window) {
+  const list = (store.recent || []).slice(-(window || RW_QUESTIONS));
+  if (list.length === 0) return { n: 0, ok: 0, accuracy: 0 };
+  const ok = list.reduce((n, r) => n + (r.ok ? 1 : 0), 0);
+  return { n: list.length, ok, accuracy: ok / list.length };
+}
+
+// Shift off the anchor by however many questions his accuracy differs by, at
+// roughly 11 points a question. Rounded to 10 because a projection precise to
+// the point would be pretending.
+function projectedScore(accuracy) {
+  const raw = SCORE_ANCHOR.score +
+    (accuracy - SCORE_ANCHOR.accuracy) * RW_QUESTIONS * POINTS_PER_QUESTION;
+  return Math.min(800, Math.max(200, Math.round(raw / 10) * 10));
 }
 
 // Anything he has ever gotten wrong stays eligible for review, however many
@@ -232,12 +486,6 @@ function isWrongEver(id) {
 
 // --- Rendering -------------------------------------------------------------
 
-function setStatus(text, state) {
-  if (!statusEl) return;
-  statusEl.textContent = text;
-  statusEl.classList.remove('is-pending', 'is-correct', 'is-incorrect', 'is-error');
-  statusEl.classList.add(`is-${state}`);
-}
 
 // Built from text nodes rather than innerHTML so authored passages are never
 // interpreted as markup.
@@ -324,6 +572,25 @@ function renderMeta(question) {
     tag.textContent = 'Review';
     metaEl.append(tag);
   }
+
+  // What this one pays. Shown before answering so the weighting is visible while
+  // it can still motivate, then replaced by what he actually earned.
+  const worth = document.createElement('span');
+  if (lastAward === null) {
+    worth.className = 'tag tag-points';
+    worth.textContent = `${questionPoints(question)} pts`;
+    worth.title = `${POINTS_BY_DIFFICULTY[question.difficulty] || 15} base`
+      + ` × ${skillWeight(question.skill)} for ${SKILL_LABELS[question.skill] || question.skill}`
+      + (servingReview ? ` × ${REVIEW_BONUS} review` : '')
+      + (statsFor(question.id).correct > 0 ? ` × ${REPEAT_CREDIT} already beaten` : '');
+  } else if (lastAward > 0) {
+    worth.className = 'tag tag-points is-earned';
+    worth.textContent = `+${lastAward} pts`;
+  } else {
+    worth.className = 'tag tag-points is-missed';
+    worth.textContent = 'no points';
+  }
+  metaEl.append(worth);
 }
 
 function renderOptions(question) {
@@ -459,65 +726,88 @@ function renderStreak() {
 
 // Lifetime coverage per skill: how much of each bank he has worked through and
 // how much of it is still wrong. This is the all-time picture, not the session.
+// How strong he is in each skill, weakest first, with what that skill pays. This
+// is the list he picks from, so it ranks by where the work is worth doing rather
+// than alphabetically, and shows accuracy rather than coverage: 0/211 never
+// visibly moves, while "3 of 8 right" moves within one sitting.
 function renderSkillStats() {
   if (!skillStatsEl) return;
   skillStatsEl.textContent = '';
 
-  const bySkill = {};
-  bank.forEach((q) => {
-    const row = bySkill[q.skill] || { total: 0, seen: 0, wrong: 0 };
-    const stats = statsFor(q.id);
-    row.total += 1;
-    if (stats.seen > 0) row.seen += 1;
-    if (stats.wrong > 0) row.wrong += 1;
-    bySkill[q.skill] = row;
-  });
+  const skills = [...new Set(bank.map((q) => q.skill))].map((skill) => ({
+    skill,
+    form: skillForm(skill),
+    weight: skillWeight(skill)
+  }));
 
-  Object.keys(bySkill).sort().forEach((skill) => {
-    const { total, seen, wrong } = bySkill[skill];
+  // Weakest first. Untested skills sort by their Practice 5 weight, which is
+  // what skillWeight() falls back to, so they land where they deserve.
+  skills.sort((a, b) => b.weight - a.weight);
+
+  skills.forEach(({ skill, form, weight }) => {
     const row = document.createElement('div');
     row.className = 'skill-row';
 
     const name = document.createElement('span');
     name.textContent = SKILL_LABELS[skill] || skill;
 
-    const count = document.createElement('strong');
-    count.textContent = `${seen}/${total}`;
-    if (wrong > 0) count.title = `${wrong} still wrong`;
+    const pay = document.createElement('strong');
+    pay.className = 'skill-pay';
+    pay.textContent = `${weight}×`;
+    pay.title = `Pays ${weight}× — ${weight >= 2.5 ? 'his weakest work'
+      : weight >= 1.7 ? 'still costing him marks' : 'close to solid'}`;
 
-    row.append(name, count);
+    row.append(name, pay);
     skillStatsEl.append(row);
 
-    // Coverage bar: filled portion is what he has attempted at least once.
     const bar = document.createElement('div');
     bar.className = 'coverage-bar';
     const fill = document.createElement('i');
-    fill.style.width = `${total ? (seen / total) * 100 : 0}%`;
+
+    if (form.n < SKILL_FORM_MIN) {
+      // Not enough answers to call it. An empty bar would read as 0% right.
+      bar.classList.add('is-untested');
+      fill.style.width = '0%';
+      bar.title = form.n === 0
+        ? 'Not tried yet'
+        : `${form.n} of ${SKILL_FORM_MIN} answers needed to rate this`;
+    } else {
+      const pct = Math.round(form.accuracy * 100);
+      fill.style.width = `${pct}%`;
+      fill.className = pct >= 75 ? 'is-strong' : pct >= 50 ? 'is-middling' : 'is-weak';
+      bar.title = `${pct}% right over ${form.n} answers`;
+    }
+
     bar.append(fill);
     skillStatsEl.append(bar);
   });
 }
 
 function updateSummary() {
-  const total = sessionCorrect + sessionIncorrect;
-  if (answeredEl) answeredEl.textContent = `Answered this session: ${total}`;
-  correctCountEl.textContent = `Correct: ${sessionCorrect}`;
-  incorrectCountEl.textContent = `Incorrect: ${sessionIncorrect}`;
+  // Today rather than this session: reloading the page must not reset the
+  // numbers he is judging the day by.
+  const today = dayStats();
+  const wrong = today.answered - today.correct;
+  // aria-label spells out what the tick and cross mean; the glyph alone would
+  // be read as punctuation or skipped entirely.
+  if (correctCountEl) {
+    correctCountEl.textContent = `✓ ${today.correct}`;
+    correctCountEl.setAttribute('aria-label', `${today.correct} right today`);
+  }
+  if (incorrectCountEl) {
+    incorrectCountEl.textContent = `✗ ${wrong}`;
+    incorrectCountEl.setAttribute('aria-label', `${wrong} wrong today`);
+  }
 
-  // Lifetime totals across every session, which is what the every-two-days
-  // rhythm actually needs to see.
+  renderProjection();
+
   const all = Object.values(store.progress);
   const attempts = all.reduce((n, e) => n + e.seen, 0);
   const rights = all.reduce((n, e) => n + e.correct, 0);
-  if (queueCountEl) {
-    queueCountEl.textContent = attempts === 0
-      ? '0'
-      : `${Math.round((rights / attempts) * 100)}%`;
-  }
   if (lifetimeEl) {
     lifetimeEl.textContent = attempts === 0
       ? 'No questions answered yet'
-      : `${attempts} answers over ${all.length} questions · ${rights} right`;
+      : `All time: ${attempts} answers over ${all.length} questions · ${rights} right`;
   }
   // Only meaningful once a direction-tagged question has actually been worked.
   if (directionScoreEl) {
@@ -525,8 +815,176 @@ function updateSummary() {
     directionScoreEl.textContent =
       `Direction called right: ${directionHits} of ${directionTotal}`;
   }
+  // Rebuilt each answer: the multipliers in the option labels move as his
+  // accuracy does, and a stale rate is worse than none.
+  if (bank.length > 0) buildSkillSelect();
+  renderDaily();
+  renderDayStreak();
+  renderHeatmap();
   renderStreak();
   renderSkillStats();
+}
+
+// Projected R&W score from recent form, against his real Practice 5 result. Held
+// back until MIN_FOR_PROJECTION answers, because a projection off four questions
+// would swing 200 points and teach him to distrust the number.
+function renderProjection() {
+  if (!projectionEl) return;
+  const form = recentForm();
+
+  if (form.n < MIN_FOR_PROJECTION) {
+    projectionEl.textContent = '—';
+    projectionEl.classList.remove('is-up', 'is-down');
+    if (projectionNoteEl) {
+      // Says what it is counting. "11 more answers" read as "11 wrong" to the
+      // first person who saw it -- right and wrong both count toward the sample.
+      projectionNoteEl.textContent =
+        `Projection needs ${MIN_FOR_PROJECTION} answers, right or wrong — ${form.n} so far`;
+    }
+    return;
+  }
+
+  const score = projectedScore(form.accuracy);
+  const delta = score - SCORE_ANCHOR.score;
+  projectionEl.textContent = `~${score}`;
+  projectionEl.classList.toggle('is-up', delta > 0);
+  projectionEl.classList.toggle('is-down', delta < 0);
+
+  if (projectionNoteEl) {
+    const move = delta === 0
+      ? 'level with Practice 5'
+      : `${delta > 0 ? '+' : ''}${delta} on Practice 5's 550`;
+    projectionNoteEl.textContent =
+      `Reading & Writing · last ${form.n} answers ${Math.round(form.accuracy * 100)}% · ${move}`;
+  }
+}
+
+function renderDayStreak() {
+  if (!streakDaysEl) return;
+  const run = dayStreak();
+  const today = dayStats().answered > 0;
+
+  if (run === 0) {
+    streakDaysEl.textContent = 'No streak yet — today starts one.';
+  } else if (run === 1) {
+    streakDaysEl.textContent = today ? 'Practised today.' : 'Practised yesterday.';
+  } else {
+    streakDaysEl.textContent = `${run} days in a row` + (today ? '' : ' — today keeps it going.');
+  }
+  streakDaysEl.classList.toggle('is-live', run > 1);
+}
+
+// A 7-wide grid running from a little history through to the week of the last
+// exam. Columns are Monday to Sunday, so the same weekday always lands in the
+// same column and a weekends-only pattern shows up as a stripe.
+function renderHeatmap() {
+  if (!heatmapEl) return;
+  heatmapEl.textContent = '';
+
+  const today = startOfToday();
+  const mondayFrom = (d) => {
+    const m = new Date(d);
+    m.setDate(m.getDate() - ((m.getDay() + 6) % 7));
+    return m;
+  };
+
+  const start = mondayFrom(today);
+  start.setDate(start.getDate() - HEATMAP_LOOKBACK_WEEKS * 7);
+
+  // Run to the Sunday of the final exam's week, or just this week once they pass.
+  const last = EXAMS.map((e) => parseDayKey(e.key)).sort((a, b) => b - a)[0];
+  const end = mondayFrom(last && last > today ? last : today);
+  end.setDate(end.getDate() + 6);
+
+  const examByKey = {};
+  EXAMS.forEach((e) => { examByKey[e.key] = e; });
+
+  for (let i = 0; i <= daysBetween(start, end); i++) {
+    const day = new Date(start);
+    day.setDate(day.getDate() + i);
+    const key = dayKey(day);
+    const exam = examByKey[key];
+
+    const cell = document.createElement('i');
+    cell.className = 'heat-cell';
+
+    if (exam) {
+      // Test day is the point of the whole grid, so it outranks any shading.
+      cell.classList.add('is-exam');
+      cell.title = `${prettyDay(day)} — SAT test day`;
+    } else if (day > today) {
+      cell.classList.add('is-future');
+      const away = daysBetween(today, day);
+      cell.title = `${prettyDay(day)} — ${away === 1 ? 'tomorrow' : `in ${away} days`}`;
+    } else {
+      const stats = dayStats(key);
+      cell.classList.add(`heat-${heatLevel(stats.points)}`);
+      // Points in the square itself, not just on hover -- a blank cell for a
+      // worked day makes him hover to find out what he did.
+      if (stats.points > 0) cell.textContent = stats.points;
+      cell.title = stats.answered === 0
+        ? `${prettyDay(day)} — nothing done`
+        : `${prettyDay(day)} — ${stats.points} points · ${stats.answered} answered,`
+          + ` ${stats.correct} right`;
+      if (daysBetween(today, day) === 0) cell.classList.add('is-today');
+    }
+    heatmapEl.append(cell);
+  }
+}
+
+
+// The day's target: how far through, and whether it is done. Called from
+// updateSummary, so it refreshes on every answer and on load.
+// Met on points, or on the question cap so a low-accuracy day still ends.
+function dayGoalMet(today) {
+  const d = today || dayStats();
+  return d.points >= DAILY_POINTS_TARGET || d.answered >= DAILY_QUESTION_CAP;
+}
+
+function renderDaily() {
+  const today = dayStats();
+  const done = dayGoalMet(today);
+  const shown = Math.min(today.points, DAILY_POINTS_TARGET);
+
+  if (dailyCountEl) {
+    dailyCountEl.textContent = done
+      ? `${today.points} points`
+      : `${today.points} of ${DAILY_POINTS_TARGET}`;
+  }
+  if (dailyNoteEl) dailyNoteEl.textContent = done ? 'daily target met' : 'daily target';
+  if (dailyFillEl) {
+    dailyFillEl.style.width = `${Math.round((shown / DAILY_POINTS_TARGET) * 100)}%`;
+    dailyFillEl.classList.toggle('is-done', done);
+  }
+
+  // The day to beat. Once he passes his best the wording flips from a target to
+  // a record, which is the whole point of showing it.
+  if (pointsNoteEl) {
+    const best = bestDayBefore();
+    if (best.points === 0) {
+      // Nothing to compare against yet, so say nothing rather than narrate.
+      pointsNoteEl.textContent = today.points > 0
+        ? ''
+        : 'Weak skills pay up to 3× — the badge on each question shows what it is worth.';
+      pointsNoteEl.classList.remove('is-record');
+    } else if (today.points > best.points) {
+      pointsNoteEl.textContent = `Best day yet — past ${best.points} on ${best.key}.`;
+      pointsNoteEl.classList.add('is-record');
+    } else {
+      pointsNoteEl.textContent =
+        `${best.points - today.points} to beat your best (${best.points} on ${best.key}).`;
+      pointsNoteEl.classList.remove('is-record');
+    }
+  }
+
+  if (dayDoneEl) {
+    dayDoneEl.hidden = !done || dayBannerDismissed;
+    if (done && dayDoneDetailEl) {
+      const pct = Math.round((today.correct / today.answered) * 100);
+      dayDoneDetailEl.textContent =
+        `${today.points} points · ${today.answered} questions, ${today.correct} right (${pct}%).`;
+    }
+  }
 }
 
 // --- Question flow ---------------------------------------------------------
@@ -535,6 +993,7 @@ function loadQuestion(question) {
   current = question;
   answered = false;
   pendingIndex = null;
+  lastAward = null; // fresh question, nothing earned on it yet
   directionAnswered = false;
   directionCorrect = null;
 
@@ -550,7 +1009,38 @@ function loadQuestion(question) {
 
   ruleBox.hidden = true;
   ruleBox.textContent = '';
-  setStatus('Awaiting answer', 'pending');
+}
+
+// The sparkle and chime used to fire on every correct answer, which is how a
+// reward stops being one: by the tenth in a session it is wallpaper. These are
+// the four moments that are actually worth marking. An ordinary correct answer
+// gets the tick and nothing else.
+function celebrate({ isCorrect, wasWrongBefore, bestBefore }) {
+  const today = dayStats();
+
+  // Trailing run of correct answers, this session.
+  let run = 0;
+  for (let i = sessionStreak.length - 1; i >= 0 && sessionStreak[i]; i--) run += 1;
+
+  let target = null;
+
+  if (dayGoalMet(today) && !dayGoalMet({ points: today.points - lastAward,
+                                         answered: today.answered - 1 })) {
+    // Crossed the target on THIS answer. Points arrive in lumps of 10 to 90, so
+    // an equality test would miss the moment entirely.
+    target = dayDoneEl;
+  } else if (bestBefore > 0 && today.points > bestBefore && today.points - lastAward <= bestBefore) {
+    // Crossed his best today, on this answer rather than three answers ago.
+    target = dailyCountEl;
+  } else if (isCorrect && wasWrongBefore) {
+    // Redeeming a question he had previously failed -- the whole point of the
+    // review repeats, and the clearest evidence that something has stuck.
+    target = optionsContainer;
+  } else if (isCorrect && run > 0 && run % CELEBRATE_RUN === 0) {
+    target = optionsContainer;
+  }
+
+  if (target) window.Sparkle.burstOver(target);
 }
 
 function reveal(selectedIndex) {
@@ -576,18 +1066,23 @@ function reveal(selectedIndex) {
   // Only the first answer on a question counts, so re-reading explanations
   // never inflates the tally.
   if (!answered) {
-    if (isCorrect) sessionCorrect += 1;
-    else sessionIncorrect += 1;
-    recordAnswer(current, isCorrect);
+    // Both read BEFORE recordAnswer, which moves the numbers they compare
+    // against: the correct count questionPoints() checks, and the previous
+    // best day.
+    const wasWrongBefore = statsFor(current.id).wrong > 0;
+    const bestBefore = bestDayBefore().points;
+
+    lastAward = isCorrect ? questionPoints(current) : 0;
+    recordAnswer(current, isCorrect, lastAward);
     sessionStreak.push(isCorrect);
     answered = true;
     updateSummary();
     renderSetSummary();
     renderMeta(current); // refresh the seen/right/wrong tag with this attempt
+
+    celebrate({ isCorrect, wasWrongBefore, bestBefore });
   }
   updateSubmitState(); // retires the submit row now that this one is graded
-
-  if (isCorrect) window.Sparkle.burstOver(optionsContainer);
 
   // Re-render with the signal phrase marked, now that giving it away costs nothing.
   renderPassage(current, true);
@@ -599,7 +1094,6 @@ function reveal(selectedIndex) {
   // No prose summary any more: the correct choice carries a tick and its own
   // explanation, the rule box states the convention, and the sidebar pill says
   // whether he got it. Repeating all that in a paragraph earned no space.
-  setStatus(isCorrect ? 'Correct answer' : 'Incorrect answer', isCorrect ? 'correct' : 'incorrect');
 }
 
 // Bank order is preserved, so the sequence a learner walks is stable between
@@ -785,7 +1279,6 @@ function loadBanks() {
       console.info(`Focus mode: ${FOCUS_SKILLS.join(', ')} — ${bank.length} of ${everything} questions in play.`);
     }
     if (bank.length === 0) {
-      setStatus('Data load error', 'error');
       // The pager readout is the only prose left on the card, so failures have
       // to surface there or they would show up as a blank question.
       setEmptyState('No questions loaded. Ensure the bank files are served over HTTP.', true);
@@ -811,10 +1304,14 @@ function buildSkillSelect() {
   const counts = {};
   bank.forEach((q) => { counts[q.skill] = (counts[q.skill] || 0) + 1; });
 
-  const option = (value, label, count) => {
+  // The multiplier belongs here, at the moment he chooses. Shown only on the
+  // individual skills -- "all skills" has no single rate.
+  const option = (value, label, count, weight) => {
     const el = document.createElement('option');
     el.value = value;
-    el.textContent = `${label} (${count})`;
+    el.textContent = weight
+      ? `${label} (${count}) · ${weight}×`
+      : `${label} (${count})`;
     return el;
   };
 
@@ -830,7 +1327,9 @@ function buildSkillSelect() {
     if (skills.length === 0) return;
     const group = document.createElement('optgroup');
     group.label = DOMAIN_LABELS[domain] || domain;
-    skills.forEach((s) => group.append(option(s, SKILL_LABELS[s] || s, counts[s])));
+    skills.forEach((s) => group.append(
+      option(s, SKILL_LABELS[s] || s, counts[s], skillWeight(s))
+    ));
     skillSelect.append(group);
   });
 
@@ -893,6 +1392,13 @@ wirePager('.next-question', 1);
 // revisiting a question just shows it again with its counts intact.
 wirePager('.prev-question', -1);
 
+if (dayDoneGoBtn) {
+  dayDoneGoBtn.addEventListener('click', () => {
+    dayBannerDismissed = true;
+    if (dayDoneEl) dayDoneEl.hidden = true;
+  });
+}
+
 if (submitBtn) {
   submitBtn.addEventListener('click', () => {
     if (pendingIndex === null) return;
@@ -932,10 +1438,8 @@ loadBanks();
 window.addEventListener('error', (ev) => {
   console.error('Unhandled error:', ev.error || ev.message);
   setEmptyState(`Error: ${ev.error ? ev.error.message : ev.message}`, true);
-  setStatus('Script error', 'error');
 });
 window.addEventListener('unhandledrejection', (ev) => {
   console.error('Unhandled rejection:', ev.reason);
   setEmptyState(`Error: ${ev.reason ? ev.reason.message || ev.reason : ev.reason}`, true);
-  setStatus('Script error', 'error');
 });

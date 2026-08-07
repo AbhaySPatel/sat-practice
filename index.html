@@ -6,7 +6,7 @@
   <title>SAT Reading &amp; Writing Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=20" />
+  <link rel="stylesheet" href="styles.css?v=31" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -58,6 +58,17 @@
       <!-- id is the scroll anchor: advancing lands here rather than the page top. -->
       <div class="card" id="questionCard">
         <div class="question-panel">
+          <!-- Shown the moment the day's target is met. "Keep going" dismisses it
+               for the rest of the session, so the target is a finish line rather
+               than a wall -- he can always carry on, he just knows he's done. -->
+          <div class="day-done" id="dayDone" hidden>
+            <div>
+              <p class="day-done-title">Daily set complete</p>
+              <p class="day-done-detail" id="dayDoneDetail"></p>
+            </div>
+            <button type="button" class="btn btn-small day-done-go" id="dayDoneGo">Keep going</button>
+          </div>
+
           <!-- The pager rides the badge line rather than taking a row of its own:
                that line is mostly empty, and the title below keeps full width to
                wrap in. A second copy sits at the foot of the card, right-aligned
@@ -106,33 +117,57 @@
 
       <aside class="card sidebar">
         <section class="sidebar-section">
-          <h2 class="sidebar-heading">This session</h2>
-          <div class="progress-card">
-            <div class="progress-label" id="questionsAnswered">Answered this session: 0</div>
-            <div class="session-summary">
-              <span id="correctCount">Correct: 0</span>
-              <span id="incorrectCount">Incorrect: 0</span>
+          <h2 class="sidebar-heading">Today</h2>
+          <!-- The target is points, not questions, so reaching it means having
+               worked the skills that pay rather than whatever came next. -->
+          <div class="daily">
+            <div class="daily-head">
+              <span class="daily-count" id="dailyCount">0 of 500</span>
+              <span class="daily-note" id="dailyNote">daily target</span>
             </div>
-            <div class="status is-pending">Awaiting answer</div>
+            <div class="daily-track">
+              <div class="daily-fill" id="dailyFill"></div>
+            </div>
+            <!-- Today's right and wrong, not the session's: a page reload should
+                 not reset the numbers he is judging the day by. -->
+            <!-- Icons rather than words, and no "answered" chip: right plus
+                 wrong IS answered, so a third number said nothing new. -->
+            <div class="session-summary">
+              <span class="chip-right" id="correctCount">✓ 0</span>
+              <span class="chip-wrong" id="incorrectCount">✗ 0</span>
+            </div>
           </div>
+
+          <p class="points-note" id="pointsNote"></p>
+
+          <!-- Days practised in a row, then the runway: a little history, then
+               every day between now and the last sitting. The grid is aria-hidden
+               because the streak sentence already says it in words; a screen
+               reader gains nothing from fifty unlabelled squares. -->
+          <p class="streak-days" id="streakDays"></p>
+          <div class="heat-labels" aria-hidden="true">
+            <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+          </div>
+          <div class="heat" id="heatmap" aria-hidden="true"></div>
+        </section>
+
+        <section class="sidebar-section">
+          <h2 class="sidebar-heading">Where you stand</h2>
+          <!-- Projected section score, from recent form. The headline number,
+               because it is the one he is actually trying to move. -->
+          <p class="projection" id="projection">—</p>
+          <p class="projection-note" id="projectionNote"></p>
           <div class="streak" id="streakStrip" aria-label="Recent answers"></div>
+          <p class="queue-note" id="lifetimeStats">No questions answered yet</p>
           <p class="direction-score" id="directionScore" hidden></p>
         </section>
 
         <section class="sidebar-section">
-          <h2 class="sidebar-heading">All time</h2>
-          <p class="queue-total">
-            <strong id="queueCount">0</strong> lifetime accuracy
-          </p>
-          <p class="queue-note" id="lifetimeStats">No questions answered yet</p>
-        </section>
-
-        <section class="sidebar-section">
-          <h2 class="sidebar-heading">Coverage</h2>
+          <h2 class="sidebar-heading">Skill strength</h2>
           <div id="skillStats"></div>
           <p class="queue-note">
-            Questions run in bank order and pick up where you stopped last time.
-            Every 10th is replaced by a repeat of something you got wrong.
+            Weakest first. The multiplier is what each answer pays — pick a skill
+            from the dropdown above to work on it.
           </p>
           <button type="button" class="btn btn-secondary reset-queue" id="resetProgress">Erase all progress</button>
         </section>
@@ -141,6 +176,6 @@
   </div>
 
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=22"></script>
+  <script src="app.js?v=34"></script>
 </body>
 </html>
