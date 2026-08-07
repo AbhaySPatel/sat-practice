@@ -241,35 +241,9 @@ body {
 }
 
 
-/* ---------- The day's target ---------- */
 
-.daily {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 12px;
-}
 
-.daily-head {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  flex-wrap: wrap;
-}
 
-.daily-count {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--fg);
-  letter-spacing: -0.02em;
-  /* The count changes every answer; tabular figures stop it jittering. */
-  font-variant-numeric: tabular-nums;
-}
-
-.daily-note {
-  font-size: 0.78rem;
-  color: var(--muted);
-}
 
 .daily-track {
   height: 6px;
@@ -336,17 +310,7 @@ body {
 
 
 
-.points-note {
-  margin: 0 0 12px;
-  font-size: 0.74rem;
-  line-height: 1.45;
-  color: var(--muted);
-}
 
-.points-note.is-record {
-  color: var(--good-fg);
-  font-weight: 700;
-}
 
 /* The per-question worth, sitting with the skill and difficulty badges. Accent
    fill rather than the outlined look of the others, because it is the one badge
@@ -370,48 +334,21 @@ body {
   color: var(--muted);
 }
 
-/* ---------- Projected section score ---------- */
-
-.projection {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--fg);
-  font-variant-numeric: tabular-nums;
-}
-
-/* Coloured only against the anchor, so the number carries direction as well as
-   magnitude -- above Practice 5 or below it. */
-.projection.is-up { color: var(--good-fg); }
-.projection.is-down { color: var(--pending-fg); }
-
-.projection-note {
-  margin: 6px 0 12px;
-  font-size: 0.76rem;
-  line-height: 1.45;
-  color: var(--muted);
-}
 
 
 
-.streak-days {
-  margin: 10px 0 8px;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
 
-.streak-days.is-live {
-  color: var(--fg);
-  font-weight: 700;
-}
+
+
 
 .heat-labels,
 .heat {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 3px;
+  gap: 4px;
+  /* Capped hard: the runway is eight rows deep, so full-width cells would make
+     the calendar the tallest thing in the panel by a distance. */
+  max-width: 252px;
 }
 
 .heat-labels {
@@ -435,11 +372,11 @@ body {
   aspect-ratio: 1;
   border-radius: 3px;
   background: var(--btn-bg);
-  /* Holds the day's points. 26px of cell leaves room for three digits at 8px. */
+  /* Holds the day's points -- ~43px of cell inside the capped grid. */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   font-weight: 700;
   font-style: normal;
   line-height: 1;
@@ -460,21 +397,22 @@ body {
 .heat-cell.heat-3 { background: color-mix(in srgb, var(--accent) 78%, var(--btn-bg)); }
 .heat-cell.heat-4 { background: var(--correct-border); }
 
-/* Days not yet reached: drawn so the runway is visible, but hollow -- an empty
-   future square must not read like a missed day. */
+/* Days not yet reached: a dot, not an outlined box. Forty empty squares with
+   borders read as a spreadsheet; dots read as space still to fill. */
 .heat-cell.is-future {
-  background: transparent;
-  box-shadow: inset 0 0 0 1px var(--rule);
+  background: radial-gradient(circle, var(--rule) 0 1.5px, transparent 1.6px);
+  box-shadow: none;
 }
 
 .heat-cell.is-today {
-  box-shadow: inset 0 0 0 1.5px var(--fg);
+  box-shadow: inset 0 0 0 1.5px var(--accent);
 }
 
-/* Test day outranks everything else in the grid. */
+/* Test day: a ring rather than a solid block, so two red squares do not shout
+   over the fortnight of work leading up to them. */
 .heat-cell.is-exam {
-  background: var(--incorrect-border);
-  box-shadow: inset 0 0 0 1px var(--incorrect-border);
+  background: color-mix(in srgb, var(--incorrect-border) 22%, transparent);
+  box-shadow: inset 0 0 0 1.5px var(--incorrect-border);
 }
 
 /* progress bar removed: use questions answered label instead */
@@ -532,30 +470,417 @@ body {
   gap: 24px;
 }
 
-/* Must exclude .sidebar: it is also a .card, and flex:1 would zero out its
-   flex-basis and make both columns the same width. */
-.layout > .card:not(.sidebar) {
+/* Only the question card lives here now; progress moved into a dialog. */
+.layout > .card {
   flex: 1;
   min-width: 0;
 }
 
-.sidebar {
-  flex: 0 0 260px;
-  position: sticky;
-  top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+.panel-heading {
+  margin: 0 0 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
-.sidebar-heading {
-  margin: 0 0 12px;
-  font-size: 0.85rem;
+/* ---------- Top bar tools ---------- */
+
+.topbar-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* The tile that stays on screen while he works, and the way into the panel.
+   No separate button: the tile IS the control. */
+.target-tile {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 12px 6px 7px;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  background: var(--card-bg);
+  color: var(--fg);
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.target-tile:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.target-tile:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Conic gradient rather than an SVG arc: one custom property to animate, and it
+   inherits the theme's colours for free. */
+.target-ring {
+  position: relative;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(
+    var(--accent) calc(var(--pct, 0) * 1%),
+    var(--btn-bg) 0
+  );
+  transition: background 0.4s ease;
+}
+
+.target-ring.is-done {
+  background: conic-gradient(var(--correct-border) 100%, var(--correct-border) 0);
+}
+
+/* One extra outer ring per whole target beyond the first, so overshooting keeps
+   showing on the tile instead of the ring simply sitting full. */
+.target-ring[data-laps="1"] {
+  box-shadow:
+    0 0 0 2px var(--card-bg),
+    0 0 0 3.5px var(--correct-border);
+}
+
+.target-ring[data-laps="2"] {
+  box-shadow:
+    0 0 0 2px var(--card-bg),
+    0 0 0 3.5px var(--correct-border),
+    0 0 0 5.5px var(--card-bg),
+    0 0 0 7px var(--correct-border);
+}
+
+.target-ring[data-laps="3"] {
+  box-shadow:
+    0 0 0 2px var(--card-bg),
+    0 0 0 3.5px var(--correct-border),
+    0 0 0 5.5px var(--card-bg),
+    0 0 0 7px var(--correct-border),
+    0 0 0 9px var(--card-bg),
+    0 0 0 10.5px var(--correct-border);
+}
+
+/* The rings need somewhere to sit once there are two or three of them. */
+.target-ring[data-laps="1"] { margin: 0 3px; }
+.target-ring[data-laps="2"] { margin: 0 6px; }
+.target-ring[data-laps="3"] { margin: 0 10px; }
+
+/* The inner disc, which also carries the stage mark. */
+.target-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  display: grid;
+  place-items: center;
+  font-size: 0.78rem;
+  line-height: 1;
+}
+
+/* The mark dances only once the target is beaten. While he is still working
+   toward it the tile stays still -- a permanently moving thing in the top bar
+   is the distraction the sidebar was removed to avoid. It gets livelier with
+   each extra target. */
+.target-ring.is-done .target-icon {
+  animation: icon-dance 1.7s ease-in-out infinite;
+}
+
+.target-ring.is-done[data-laps="2"] .target-icon { animation-duration: 1.15s; }
+.target-ring.is-done[data-laps="3"] .target-icon { animation-duration: 0.8s; }
+
+@keyframes icon-dance {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  20% { transform: translateY(-2px) rotate(-9deg); }
+  45% { transform: translateY(0) rotate(0deg) scale(1.06); }
+  70% { transform: translateY(-2px) rotate(9deg); }
+}
+
+/* A one-off jump the moment a new stage is reached, over the top of the idle
+   dance, so passing a milestone is felt and not merely displayed. */
+.target-icon.is-promoted {
+  animation: icon-pop 0.6s cubic-bezier(0.2, 1.4, 0.3, 1);
+}
+
+@keyframes icon-pop {
+  0% { transform: scale(0.5) rotate(-20deg); }
+  55% { transform: scale(1.45) rotate(10deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .target-ring.is-done .target-icon,
+  .target-icon.is-promoted {
+    animation: none;
+  }
+}
+
+.target-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.target-num {
+  font-size: 0.86rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.target-num.is-done {
+  color: var(--good-fg);
+}
+
+.target-lbl {
+  font-size: 0.64rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .target-ring { transition: none; }
+  .target-tile:hover { transform: none; }
+}
+
+/* ---------- Progress dialog ---------- */
+
+.progress-dialog {
+  width: min(94vw, 820px);
+  max-height: 92vh;
+  padding: 0;
+  margin: auto;
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  background: var(--card-bg);
+  color: var(--fg);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.progress-dialog::backdrop {
+  background: rgba(8, 12, 24, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+/* Rises into place. Keyframes rather than a transition, because a dialog opens
+   out of display:none and transitions cannot animate across that. */
+.progress-dialog[open] {
+  animation: dialog-in 0.2s cubic-bezier(0.2, 0.9, 0.25, 1);
+}
+
+.progress-dialog[open]::backdrop {
+  animation: backdrop-in 0.2s ease;
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+}
+
+@keyframes backdrop-in {
+  from { opacity: 0; }
+}
+
+/* Header stays put while the body scrolls under it. */
+.progress-head {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--card-bg);
+}
+
+.progress-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* One line of live state, so the panel says something before it is read. */
+.progress-sub {
+  margin: 3px 0 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* Icon only, circular, hard right. */
+.dialog-close {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.2s ease;
+}
+
+.dialog-close:hover {
+  background: var(--btn-bg);
+  color: var(--fg);
+  transform: rotate(90deg);
+}
+
+.dialog-close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.progress-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px 20px;
+  overflow-y: auto;
+  max-height: calc(92vh - 84px);
+}
+
+/* Four figures across the top: the day, the score, the habit, the record. */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 11px 13px;
+  border-radius: 13px;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+}
+
+.tile-k {
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tile-v {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.tile-v.is-accent { color: var(--accent); }
+
+/* Direction on the projected score: above his Practice 5 result or below it. */
+.tile-v.is-up { color: var(--good-fg); }
+.tile-v.is-down { color: var(--pending-fg); }
+
+.tile-n {
+  font-size: 0.7rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+/* Beat his best, or kept a streak alive -- both worth more than muted grey. */
+.tile-n.is-record,
+.tile-n.is-live {
+  color: var(--good-fg);
+  font-weight: 700;
+}
+
+/* The bar and the chips only appear in the Today tile, so they need spacing of
+   their own rather than the tile's tight default gap. */
+.tile .daily-track { margin-top: 7px; }
+.tile .session-summary { margin-top: 7px; }
+
+/* Calendar beside the skill list. */
+.panel-grid {
+  display: grid;
+  grid-template-columns: 252px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+
+/* Ten skills in two columns, which is what keeps the dialog off the scrollbar. */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px 20px;
+  margin-bottom: 12px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 0;
+  font-size: 0.78rem;
+}
+
+.skill-name {
+  flex: 1;
+  min-width: 0;
+  /* Ellipsis rather than wrapping: a two-line row would break the grid rhythm. */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.skill-bar {
+  flex: 0 0 54px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--btn-bg);
+  overflow: hidden;
+}
+
+.skill-bar i {
+  display: block;
+  height: 100%;
+}
+
+@media (max-width: 720px) {
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .panel-grid { grid-template-columns: minmax(0, 1fr); }
+  .skills-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-dialog[open],
+  .progress-dialog[open]::backdrop {
+    animation: none;
+  }
+  .dialog-close:hover {
+    transform: none;
+  }
 }
 
 
@@ -1169,13 +1494,13 @@ body {
 
 /* Strength, not coverage. Colour says how solid, the multiplier beside it says
    what it pays -- together they answer "what should I work on". */
-.coverage-bar i.is-weak { background: var(--incorrect-border); }
-.coverage-bar i.is-middling { background: var(--pending-fg); }
-.coverage-bar i.is-strong { background: var(--correct-border); }
+.skill-bar i.is-weak { background: var(--incorrect-border); }
+.skill-bar i.is-middling { background: var(--pending-fg); }
+.skill-bar i.is-strong { background: var(--correct-border); }
 
 /* Too few answers to rate. Hatched rather than empty, because an empty bar
    would read as nought per cent right. */
-.coverage-bar.is-untested {
+.skill-bar.is-untested {
   background: repeating-linear-gradient(
     -45deg,
     var(--btn-bg) 0 3px,
@@ -1183,19 +1508,7 @@ body {
   );
 }
 
-.skill-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 6px 0;
-  border-bottom: 1px solid var(--rule);
-  font-size: 0.85rem;
-  color: var(--body-text);
-}
 
-.skill-row:last-child {
-  border-bottom: none;
-}
 
 .link-btn {
   border: none;
@@ -1209,20 +1522,7 @@ body {
   cursor: pointer;
 }
 
-/* How much of each bank has been attempted at least once. */
-.coverage-bar {
-  height: 4px;
-  margin: 0 0 10px;
-  border-radius: 2px;
-  background: var(--rule);
-  overflow: hidden;
-}
 
-.coverage-bar i {
-  display: block;
-  height: 100%;
-  background: var(--accent);
-}
 
 .queue-empty,
 .queue-note {
@@ -1232,12 +1532,6 @@ body {
   color: var(--muted);
 }
 
-.reset-queue {
-  width: 100%;
-  margin-top: 12px;
-  padding: 8px 14px;
-  font-size: 0.82rem;
-}
 
 /* Recent answers, oldest on the left. Empty slots stay neutral. */
 .streak {
@@ -1290,22 +1584,11 @@ body {
     flex-wrap: wrap;
   }
 
-  /* Too narrow for two columns: the sidebar drops above the question card. */
-  .layout {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    /* Column direction: flex-basis would size the height, so reset it. */
-    flex: 0 0 auto;
-    width: 100%;
-    position: static;
-    order: -1;
-  }
-
-  /* The topbar stacks on mobile, so the toggle sits on its own row. */
-  .theme-toggle {
+  /* The topbar stacks on mobile, so the tools sit on their own row. */
+  .topbar-tools {
     align-self: flex-end;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     margin-bottom: 8px;
   }
 

@@ -6,7 +6,7 @@
   <title>SAT Reading &amp; Writing Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=31" />
+  <link rel="stylesheet" href="styles.css?v=44" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -24,10 +24,24 @@
         <h1>SAT Reading &amp; Writing</h1>
         <p>Official College Board questions, grouped by score-report skill.</p>
       </div>
-      <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false">
-        <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
-        <span class="theme-toggle-label">Dark</span>
-      </button>
+      <!-- The only progress kept on screen while he works, and the way into the
+           rest of it: the ring fills with the day's points and the mark inside
+           changes as it does, so one glance says how the day is going. -->
+      <div class="topbar-tools">
+        <button type="button" class="target-tile" id="openProgress" aria-label="Open progress">
+          <span class="target-ring" id="targetRing">
+            <span class="target-icon" id="targetIcon" aria-hidden="true">💤</span>
+          </span>
+          <span class="target-text">
+            <span class="target-num" id="targetMini">0 / 500</span>
+            <span class="target-lbl" id="targetLbl">points today</span>
+          </span>
+        </button>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+          <span class="theme-toggle-label">Dark</span>
+        </button>
+      </div>
     </div>
 
     <!-- One compact bar. The skill list is built from the loaded banks and
@@ -115,67 +129,87 @@
         </div>
       </div>
 
-      <aside class="card sidebar">
-        <section class="sidebar-section">
-          <h2 class="sidebar-heading">Today</h2>
-          <!-- The target is points, not questions, so reaching it means having
-               worked the skills that pay rather than whatever came next. -->
-          <div class="daily">
-            <div class="daily-head">
-              <span class="daily-count" id="dailyCount">0 of 500</span>
-              <span class="daily-note" id="dailyNote">daily target</span>
-            </div>
-            <div class="daily-track">
-              <div class="daily-fill" id="dailyFill"></div>
-            </div>
-            <!-- Today's right and wrong, not the session's: a page reload should
-                 not reset the numbers he is judging the day by. -->
-            <!-- Icons rather than words, and no "answered" chip: right plus
-                 wrong IS answered, so a third number said nothing new. -->
-            <div class="session-summary">
-              <span class="chip-right" id="correctCount">✓ 0</span>
-              <span class="chip-wrong" id="incorrectCount">✗ 0</span>
-            </div>
+    </div>
+  </div>
+
+
+  <!-- Progress lives here rather than beside the question: a wall of numbers
+       moving in his peripheral vision while he reads a passage was the problem.
+       Native <dialog> brings the backdrop, Esc and focus handling with it. -->
+  <dialog class="progress-dialog" id="progressDialog" aria-labelledby="progressTitle">
+    <div class="progress-head">
+      <div>
+        <h2 class="progress-title" id="progressTitle">Progress</h2>
+        <p class="progress-sub" id="progressSub"></p>
+      </div>
+      <button type="button" class="dialog-close" id="closeProgress" aria-label="Close progress">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="progress-body">
+      <!-- Four tiles: the day, the score, the habit, the record. Every figure on
+           screen at once, so there is nothing to navigate. -->
+      <div class="tiles">
+        <div class="tile">
+          <div class="tile-k">Today</div>
+          <div class="tile-v is-accent" id="dailyCount">0</div>
+          <div class="tile-n" id="dailyNote">of 500 points</div>
+          <div class="daily-track">
+            <div class="daily-fill" id="dailyFill"></div>
           </div>
+          <!-- Right plus wrong IS answered, so a third count said nothing new. -->
+          <div class="session-summary">
+            <span class="chip-right" id="correctCount">✓ 0</span>
+            <span class="chip-wrong" id="incorrectCount">✗ 0</span>
+          </div>
+        </div>
 
-          <p class="points-note" id="pointsNote"></p>
+        <div class="tile">
+          <div class="tile-k">Projected</div>
+          <div class="tile-v" id="projection">—</div>
+          <div class="tile-n" id="projectionNote"></div>
+        </div>
 
-          <!-- Days practised in a row, then the runway: a little history, then
-               every day between now and the last sitting. The grid is aria-hidden
-               because the streak sentence already says it in words; a screen
-               reader gains nothing from fifty unlabelled squares. -->
-          <p class="streak-days" id="streakDays"></p>
+        <div class="tile">
+          <div class="tile-k">Streak</div>
+          <div class="tile-v" id="streakValue">0</div>
+          <div class="tile-n" id="streakDays">days in a row</div>
+        </div>
+
+        <div class="tile">
+          <div class="tile-k">Best day</div>
+          <div class="tile-v" id="bestValue">—</div>
+          <div class="tile-n" id="pointsNote"></div>
+        </div>
+      </div>
+
+      <div class="panel-grid">
+        <section>
+          <h3 class="panel-heading">Run-in to the SAT</h3>
+          <!-- The grid is aria-hidden: the streak tile says it in words already,
+               and a screen reader gains nothing from fifty unlabelled squares. -->
           <div class="heat-labels" aria-hidden="true">
             <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
           </div>
           <div class="heat" id="heatmap" aria-hidden="true"></div>
         </section>
 
-        <section class="sidebar-section">
-          <h2 class="sidebar-heading">Where you stand</h2>
-          <!-- Projected section score, from recent form. The headline number,
-               because it is the one he is actually trying to move. -->
-          <p class="projection" id="projection">—</p>
-          <p class="projection-note" id="projectionNote"></p>
+        <section>
+          <h3 class="panel-heading">Skill strength · weakest first</h3>
+          <div class="skills-grid" id="skillStats"></div>
+          <p class="queue-note">
+            The multiplier is what each answer pays. Pick a skill from the dropdown
+            to work on it.
+          </p>
           <div class="streak" id="streakStrip" aria-label="Recent answers"></div>
           <p class="queue-note" id="lifetimeStats">No questions answered yet</p>
           <p class="direction-score" id="directionScore" hidden></p>
         </section>
-
-        <section class="sidebar-section">
-          <h2 class="sidebar-heading">Skill strength</h2>
-          <div id="skillStats"></div>
-          <p class="queue-note">
-            Weakest first. The multiplier is what each answer pays — pick a skill
-            from the dropdown above to work on it.
-          </p>
-          <button type="button" class="btn btn-secondary reset-queue" id="resetProgress">Erase all progress</button>
-        </section>
-      </aside>
+      </div>
     </div>
-  </div>
+  </dialog>
 
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=35"></script>
+  <script src="app.js?v=42"></script>
 </body>
 </html>

@@ -82,9 +82,13 @@ const POINTS_BY_DIFFICULTY = { easy: 10, medium: 15, hard: 20 };
 // he can do, so repeats pay a premium.
 const REVIEW_BONUS = 1.5;
 
-// ...but a question he has ALREADY beaten pays a fraction, or the cheapest way
-// to a big number would be answering the same easy question forever.
-const REPEAT_CREDIT = 0.25;
+// A question he has already answered correctly pays NOTHING, and is left out of
+// the rolling form log. A fraction was not enough: `answered` resets on every
+// question load, so Prev-Next-Submit could be repeated without limit -- at a
+// quarter of 60 points that is a 500-point day in about 31 clicks and no
+// reading. Going back to re-read an explanation stays free; it just earns
+// nothing and cannot flatter the projection.
+const ALREADY_BEATEN_PAYS = 0;
 
 // Weakness from Practice 5, scaled 1.0 (never missed) to 3.0 (missed most).
 // Used until there is enough live evidence in this app to judge a skill on its
@@ -115,6 +119,28 @@ const WEIGHT_FLOOR_ACCURACY = 0.4;
 // Every Nth consecutive correct answer is worth marking. Five is often enough to
 // feel reachable and rare enough that the burst still means something.
 const CELEBRATE_RUN = 5;
+
+// The mark inside the ring on the top-bar tile, by share of the day's target.
+// Five states rather than a bare number, so the tile reads at a glance from
+// across the room rather than needing to be read.
+// The stages continue well past 100%: stopping at the target would mean the tile
+// goes dead exactly when he is doing his best work. Each rung is a real multiple
+// of the day's 500, and every completed multiple also adds an outer ring.
+const TARGET_STAGES = [
+  { upTo: 0, icon: '💤', label: 'not started' },
+  { upTo: 33, icon: '🌱', label: 'under way' },
+  { upTo: 66, icon: '⚡', label: 'halfway' },
+  { upTo: 99, icon: '🔥', label: 'nearly there' },
+  { upTo: 149, icon: '🏆', label: 'target met' },
+  { upTo: 199, icon: '💎', label: 'target and a half' },
+  { upTo: 299, icon: '🚀', label: 'double target' },
+  { upTo: 399, icon: '👑', label: 'triple target' },
+  { upTo: Infinity, icon: '🌟', label: 'four times over' }
+];
+
+// Outer rings for whole targets beyond the first, capped so the tile cannot grow
+// without limit.
+const MAX_LAPS = 3;
 
 // Optional focus set. When it holds skills, only those reach the app at all --
 // the only entries in the dropdown, the only thing the set counts draw from, and
@@ -197,6 +223,9 @@ let directionTotal = 0;
 // Points earned on the question currently on screen, or null before it is
 // graded. Drives the "+45 earned" chip without recomputing a stale weight.
 let lastAward = null;
+// Which stage mark the tile is showing, so a change can be animated once
+// rather than on every repaint.
+let lastStageIcon = null;
 
 const STREAK_LENGTH = 8;
 
@@ -234,6 +263,14 @@ const heatmapEl = document.getElementById('heatmap');
 const projectionEl = document.getElementById('projection');
 const projectionNoteEl = document.getElementById('projectionNote');
 const pointsNoteEl = document.getElementById('pointsNote');
+const targetMiniEl = document.getElementById('targetMini');
+const targetLblEl = document.getElementById('targetLbl');
+const targetRingEl = document.getElementById('targetRing');
+const targetIconEl = document.getElementById('targetIcon');
+const progressDialog = document.getElementById('progressDialog');
+const progressSubEl = document.getElementById('progressSub');
+const streakValueEl = document.getElementById('streakValue');
+const bestValueEl = document.getElementById('bestValue');
 
 // Dismissed per session, not persisted: reopening the app on a finished day
 // should say so again, but "keep going" must stay dismissed while he carries on.
@@ -396,6 +433,10 @@ function statsFor(id) {
 }
 
 function recordAnswer(question, isCorrect, pointsGained) {
+  // Read before the counts move: a question already beaten is revision, and
+  // revision must not reach the day's tally or the form log.
+  const revision = alreadyBeaten(question.id);
+
   const entry = store.progress[question.id] ||
     { seen: 0, correct: 0, wrong: 0, skill: question.skill };
   entry.seen += 1;
@@ -406,19 +447,24 @@ function recordAnswer(question, isCorrect, pointsGained) {
   store.progress[question.id] = entry;
 
   // Tally the day alongside the question, so the daily target counts answers
-  // rather than questions-ever-seen and survives a reload mid-set.
-  const key = dayKey();
-  const day = store.days[key] || { answered: 0, correct: 0, points: 0 };
-  day.answered += 1;
-  if (isCorrect) day.correct += 1;
-  day.points = (day.points || 0) + (pointsGained || 0);
-  store.days[key] = day;
+  // rather than questions-ever-seen and survives a reload mid-set. Revision is
+  // excluded: it would push the answered count toward the question cap and so
+  // close the day on work that earned nothing.
+  if (!revision) {
+    const key = dayKey();
+    const day = store.days[key] || { answered: 0, correct: 0, points: 0 };
+    day.answered += 1;
+    if (isCorrect) day.correct += 1;
+    day.points = (day.points || 0) + (pointsGained || 0);
+    store.days[key] = day;
 
-  // Rolling form, oldest trimmed off the front.
-  const recent = store.recent || [];
-  recent.push({ s: question.skill, ok: isCorrect ? 1 : 0 });
-  if (recent.length > RECENT_MAX) recent.splice(0, recent.length - RECENT_MAX);
-  store.recent = recent;
+    // Rolling form, oldest trimmed off the front. Re-answering something he has
+    // already learned would lift this average without him improving.
+    const recent = store.recent || [];
+    recent.push({ s: question.skill, ok: isCorrect ? 1 : 0 });
+    if (recent.length > RECENT_MAX) recent.splice(0, recent.length - RECENT_MAX);
+    store.recent = recent;
+  }
 
   saveStore();
 }
@@ -506,12 +552,17 @@ function round1(n) {
 }
 
 // What this question pays if answered correctly right now.
+// Has he ever got this one right before? If so it is revision, not progress.
+function alreadyBeaten(id) {
+  return statsFor(id).correct > 0;
+}
+
 function questionPoints(question) {
+  if (alreadyBeaten(question.id)) return ALREADY_BEATEN_PAYS;
+
   const base = POINTS_BY_DIFFICULTY[question.difficulty] || POINTS_BY_DIFFICULTY.medium;
   let points = base * skillWeight(question.skill);
   if (servingReview) points *= REVIEW_BONUS;
-  // Already beaten once, so this is revision rather than progress.
-  if (statsFor(question.id).correct > 0) points *= REPEAT_CREDIT;
   return Math.max(1, Math.round(points));
 }
 
@@ -631,13 +682,17 @@ function renderMeta(question) {
   // What this one pays. Shown before answering so the weighting is visible while
   // it can still motivate, then replaced by what he actually earned.
   const worth = document.createElement('span');
-  if (lastAward === null) {
+  if (lastAward === null && alreadyBeaten(question.id)) {
+    // Nothing on offer, so say why rather than showing a bare zero.
+    worth.className = 'tag tag-points is-missed';
+    worth.textContent = 'revision';
+    worth.title = 'Already answered correctly — no points, and it will not move your projection.';
+  } else if (lastAward === null) {
     worth.className = 'tag tag-points';
     worth.textContent = `${questionPoints(question)} pts`;
     worth.title = `${POINTS_BY_DIFFICULTY[question.difficulty] || 15} base`
       + ` × ${skillWeight(question.skill)} for ${SKILL_LABELS[question.skill] || question.skill}`
-      + (servingReview ? ` × ${REVIEW_BONUS} review` : '')
-      + (statsFor(question.id).correct > 0 ? ` × ${REPEAT_CREDIT} already beaten` : '');
+      + (servingReview ? ` × ${REVIEW_BONUS} review` : '');
   } else if (lastAward > 0) {
     worth.className = 'tag tag-points is-earned';
     worth.textContent = `+${lastAward} pts`;
@@ -799,11 +854,14 @@ function renderSkillStats() {
   // what skillWeight() falls back to, so they land where they deserve.
   skills.sort((a, b) => b.weight - a.weight);
 
+  // One element per skill -- name, rate and bar on a single line -- so the list
+  // can be laid out in two columns without a row landing beside its own bar.
   skills.forEach(({ skill, form, weight }) => {
-    const row = document.createElement('div');
-    row.className = 'skill-row';
+    const item = document.createElement('div');
+    item.className = 'skill-item';
 
     const name = document.createElement('span');
+    name.className = 'skill-name';
     name.textContent = SKILL_LABELS[skill] || skill;
 
     const pay = document.createElement('strong');
@@ -812,29 +870,26 @@ function renderSkillStats() {
     pay.title = `Pays ${weight}× — ${weight >= 2.5 ? 'his weakest work'
       : weight >= 1.7 ? 'still costing him marks' : 'close to solid'}`;
 
-    row.append(name, pay);
-    skillStatsEl.append(row);
-
-    const bar = document.createElement('div');
-    bar.className = 'coverage-bar';
+    const bar = document.createElement('span');
+    bar.className = 'skill-bar';
     const fill = document.createElement('i');
 
     if (form.n < SKILL_FORM_MIN) {
       // Not enough answers to call it. An empty bar would read as 0% right.
       bar.classList.add('is-untested');
-      fill.style.width = '0%';
-      bar.title = form.n === 0
-        ? 'Not tried yet'
-        : `${form.n} of ${SKILL_FORM_MIN} answers needed to rate this`;
+      item.title = form.n === 0
+        ? `${name.textContent} — not tried yet`
+        : `${name.textContent} — ${form.n} of ${SKILL_FORM_MIN} answers needed to rate it`;
     } else {
       const pct = Math.round(form.accuracy * 100);
       fill.style.width = `${pct}%`;
       fill.className = pct >= 75 ? 'is-strong' : pct >= 50 ? 'is-middling' : 'is-weak';
-      bar.title = `${pct}% right over ${form.n} answers`;
+      item.title = `${name.textContent} — ${pct}% right over ${form.n} answers`;
+      bar.append(fill);
     }
 
-    bar.append(fill);
-    skillStatsEl.append(bar);
+    item.append(name, pay, bar);
+    skillStatsEl.append(item);
   });
 }
 
@@ -893,8 +948,9 @@ function renderProjection() {
     if (projectionNoteEl) {
       // Says what it is counting. "11 more answers" read as "11 wrong" to the
       // first person who saw it -- right and wrong both count toward the sample.
-      projectionNoteEl.textContent =
-        `Projection needs ${MIN_FOR_PROJECTION} answers, right or wrong — ${form.n} so far`;
+      projectionNoteEl.textContent = `${form.n} of ${MIN_FOR_PROJECTION} answers`;
+      projectionNoteEl.title =
+        `A projection needs ${MIN_FOR_PROJECTION} answers, right or wrong`;
     }
     return;
   }
@@ -908,28 +964,32 @@ function renderProjection() {
   if (projectionNoteEl) {
     const move = delta === 0
       ? 'level with Practice 5'
-      : `${delta > 0 ? '+' : ''}${delta} on Practice 5's 550`;
+      : `${delta > 0 ? '+' : ''}${delta} on Practice 5`;
     const basis = form.lifetime
       ? `all ${form.n} answers so far`
       : `last ${form.n} answers`;
-    projectionNoteEl.textContent =
-      `Reading & Writing · ${basis} ${Math.round(form.accuracy * 100)}% · ${move}`;
+    projectionNoteEl.textContent = move;
+    projectionNoteEl.title =
+      `Reading & Writing · ${basis} at ${Math.round(form.accuracy * 100)}%`;
   }
 }
 
 function renderDayStreak() {
-  if (!streakDaysEl) return;
   const run = dayStreak();
-  const today = dayStats().answered > 0;
+  const workedToday = dayStats().answered > 0;
+
+  if (streakValueEl) streakValueEl.textContent = run;
+  if (!streakDaysEl) return;
 
   if (run === 0) {
-    streakDaysEl.textContent = 'No streak yet — today starts one.';
-  } else if (run === 1) {
-    streakDaysEl.textContent = today ? 'Practised today.' : 'Practised yesterday.';
+    streakDaysEl.textContent = 'today starts one';
+  } else if (workedToday) {
+    streakDaysEl.textContent = run === 1 ? 'day, started today' : 'days in a row';
   } else {
-    streakDaysEl.textContent = `${run} days in a row` + (today ? '' : ' — today keeps it going.');
+    // The streak still counts yesterday, but it is today's to lose.
+    streakDaysEl.textContent = run === 1 ? 'day — today keeps it' : 'days — today keeps it';
   }
-  streakDaysEl.classList.toggle('is-live', run > 1);
+  streakDaysEl.classList.toggle('is-live', run > 1 && workedToday);
 }
 
 // A 7-wide grid running from a little history through to the week of the last
@@ -1005,12 +1065,54 @@ function renderDaily() {
   const done = dayGoalMet(today);
   const shown = Math.min(today.points, DAILY_POINTS_TARGET);
 
-  if (dailyCountEl) {
-    dailyCountEl.textContent = done
-      ? `${today.points} points`
-      : `${today.points} of ${DAILY_POINTS_TARGET}`;
+  // The tile carries the number; its caption carries the target.
+  if (dailyCountEl) dailyCountEl.textContent = today.points;
+  if (dailyNoteEl) {
+    dailyNoteEl.textContent = done
+      ? 'target met'
+      : `of ${DAILY_POINTS_TARGET} points`;
   }
-  if (dailyNoteEl) dailyNoteEl.textContent = done ? 'daily target met' : 'daily target';
+  // The tile: number, filling ring, and the stage mark inside it. pct is left
+  // uncapped so the stage can climb past the target; only the fill is clamped.
+  const pct = Math.round((today.points / DAILY_POINTS_TARGET) * 100);
+  const stage = TARGET_STAGES.find((s) => pct <= s.upTo) || TARGET_STAGES[0];
+  const laps = Math.min(MAX_LAPS, Math.floor(today.points / DAILY_POINTS_TARGET));
+
+  if (targetMiniEl) {
+    // Past the target, "1120 / 500" reads like a mistake; the count alone does not.
+    targetMiniEl.textContent = pct >= 100
+      ? `${today.points} pts`
+      : `${today.points} / ${DAILY_POINTS_TARGET}`;
+    targetMiniEl.classList.toggle('is-done', done);
+  }
+  if (targetLblEl) targetLblEl.textContent = pct >= 100 ? stage.label : 'points today';
+  if (targetRingEl) {
+    targetRingEl.style.setProperty('--pct', Math.min(100, pct));
+    targetRingEl.classList.toggle('is-done', done);
+    targetRingEl.dataset.laps = String(laps);
+  }
+  if (targetIconEl) {
+    // Only jump when the mark actually changes; updateSummary runs on every
+    // answer and re-triggering the pop each time would make it noise.
+    if (lastStageIcon !== null && lastStageIcon !== stage.icon) {
+      targetIconEl.classList.remove('is-promoted');
+      void targetIconEl.offsetWidth; // reflow, so the animation can restart
+      targetIconEl.classList.add('is-promoted');
+      setTimeout(() => targetIconEl.classList.remove('is-promoted'), 650);
+    }
+    lastStageIcon = stage.icon;
+    targetIconEl.textContent = stage.icon;
+    // The glyph is aria-hidden, so the words go on the tile itself.
+    targetIconEl.closest('.target-tile')?.setAttribute(
+      'title', `${today.points} of ${DAILY_POINTS_TARGET} points today — ${stage.label}. Click for progress.`
+    );
+  }
+  if (progressSubEl) {
+    const run = dayStreak();
+    progressSubEl.textContent = done
+      ? `Today's target met · ${run} day${run === 1 ? '' : 's'} in a row`
+      : `${DAILY_POINTS_TARGET - today.points} points to today's target`;
+  }
   if (dailyFillEl) {
     dailyFillEl.style.width = `${Math.round((shown / DAILY_POINTS_TARGET) * 100)}%`;
     dailyFillEl.classList.toggle('is-done', done);
@@ -1018,20 +1120,17 @@ function renderDaily() {
 
   // The day to beat. Once he passes his best the wording flips from a target to
   // a record, which is the whole point of showing it.
+  const best = bestDayBefore();
+  if (bestValueEl) bestValueEl.textContent = best.points > 0 ? best.points : '—';
   if (pointsNoteEl) {
-    const best = bestDayBefore();
     if (best.points === 0) {
-      // Nothing to compare against yet, so say nothing rather than narrate.
-      pointsNoteEl.textContent = today.points > 0
-        ? ''
-        : 'Weak skills pay up to 3× — the badge on each question shows what it is worth.';
+      pointsNoteEl.textContent = 'no earlier day yet';
       pointsNoteEl.classList.remove('is-record');
     } else if (today.points > best.points) {
-      pointsNoteEl.textContent = `Best day yet — past ${best.points} on ${best.key}.`;
+      pointsNoteEl.textContent = 'beaten today';
       pointsNoteEl.classList.add('is-record');
     } else {
-      pointsNoteEl.textContent =
-        `${best.points - today.points} to beat your best (${best.points} on ${best.key}).`;
+      pointsNoteEl.textContent = `${best.points - today.points} to beat · ${prettyDay(parseDayKey(best.key))}`;
       pointsNoteEl.classList.remove('is-record');
     }
   }
@@ -1090,7 +1189,9 @@ function celebrate({ isCorrect, wasWrongBefore, bestBefore }) {
     target = dayDoneEl;
   } else if (bestBefore > 0 && today.points > bestBefore && today.points - lastAward <= bestBefore) {
     // Crossed his best today, on this answer rather than three answers ago.
-    target = dailyCountEl;
+    // dailyCount now lives in the dialog, and Sparkle positions relative to
+    // the question card, so mark it over the choices instead.
+    target = optionsContainer;
   } else if (isCorrect && wasWrongBefore) {
     // Redeeming a question he had previously failed -- the whole point of the
     // review repeats, and the clearest evidence that something has stuck.
@@ -1452,6 +1553,26 @@ wirePager('.next-question', 1);
 // revisiting a question just shows it again with its counts intact.
 wirePager('.prev-question', -1);
 
+const openProgressBtn = document.getElementById('openProgress');
+const closeProgressBtn = document.getElementById('closeProgress');
+
+if (openProgressBtn && progressDialog) {
+  openProgressBtn.addEventListener('click', () => {
+    updateSummary(); // repaint before it is seen, not while it is hidden
+    progressDialog.showModal();
+  });
+}
+if (closeProgressBtn && progressDialog) {
+  closeProgressBtn.addEventListener('click', () => progressDialog.close());
+}
+// Clicking the backdrop closes it. The dialog fills its own box, so a click
+// landing on the dialog element itself came from outside the content.
+if (progressDialog) {
+  progressDialog.addEventListener('click', (ev) => {
+    if (ev.target === progressDialog) progressDialog.close();
+  });
+}
+
 if (dayDoneGoBtn) {
   dayDoneGoBtn.addEventListener('click', () => {
     dayBannerDismissed = true;
@@ -1477,18 +1598,19 @@ if (restartBtn) {
   });
 }
 
-const resetBtn = document.getElementById('resetProgress');
-if (resetBtn) {
-  resetBtn.addEventListener('click', () => {
-    if (!confirm('Erase all progress? Every answer, count and saved position will be lost.')) return;
-    store = emptyStore();
-    // Wiping progress should not also silently change which set is on screen.
-    rememberFilters();
-    current = null;
-    updateSummary();
-    nextQuestion({ step: 0, scroll: false });
-  });
-}
+// Deliberately NOT a button. One mis-click would destroy every count, every
+// wrong-answer record and his place in each sequence, with nothing to restore
+// from -- so this lives in the console only: run eraseProgress() by hand.
+window.eraseProgress = function eraseProgress() {
+  if (!confirm('Erase all progress? Every answer, count and saved position will be lost.')) return;
+  store = emptyStore();
+  // Wiping progress should not also silently change which set is on screen.
+  rememberFilters();
+  current = null;
+  updateSummary();
+  nextQuestion({ step: 0, scroll: false });
+  console.info('Progress erased.');
+};
 
 window.Sparkle.init();
 setupControls();
