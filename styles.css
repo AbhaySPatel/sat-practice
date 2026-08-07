@@ -322,6 +322,78 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+/* ---------- Words met ---------- */
+
+.source-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.source-link {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+}
+
+.source-link:hover {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+.words-block {
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+
+/* Scrolls inside its own box, so a long list never makes the dialog scroll. */
+.words-list {
+  max-height: 116px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 26px;
+  padding-right: 6px;
+}
+
+.word-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 0.85rem;
+  border-bottom: 1px solid transparent;
+}
+
+.word-term {
+  flex: 0 0 auto;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.word-gloss {
+  min-width: 0;
+  color: var(--muted);
+  /* One line each: the list is for recognition, and the sentence is on hover. */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Met in a question he got wrong -- the ones worth coming back to. */
+.word-row.is-missed .word-term {
+  color: var(--bad-fg);
+}
+
+.word-row.is-missed {
+  border-bottom-color: var(--incorrect-border);
+}
+
+@media (max-width: 720px) {
+  .words-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .q-meta .tag-points.is-earned {
   background: var(--correct-border);
   border-color: var(--correct-border);
@@ -982,6 +1054,7 @@ body {
   flex-shrink: 0;
 }
 
+.option .gloss,
 .option .explanation,
 .option .insight,
 .option .example {
@@ -1000,10 +1073,23 @@ body {
   font-size: 0.86rem;
 }
 
+.option.showExplanation .gloss,
 .option.showExplanation .explanation,
 .option.showExplanation .insight,
 .option.showExplanation .example {
   display: block;
+}
+
+/* The word's meaning, above College Board's argument about it. Set apart from the
+   rationale because it is the part he needs first and will re-read. */
+.option .gloss {
+  margin: 2px 0 0;
+  padding-left: 10px;
+  border-left: 2px solid var(--accent-border);
+  color: var(--fg);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .option .insight {

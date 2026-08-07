@@ -8,6 +8,12 @@
 // Per-question history persists, so nothing worked through is ever lost.
 // Theme and sparkle come from shared.js.
 
+// Cache-buster for the JSON data. index.html versions styles.css and app.js in
+// its markup, but the banks are fetched from here, so nothing was busting them --
+// a browser could serve a months-old vocab.json against new code, which is
+// exactly what happened. Bump this whenever a file under banks/ changes.
+const DATA_VERSION = '2026-08-07a';
+
 // Official College Board banks only. banks/context.json is deliberately absent
 // -- see the note in the README about Words in Context and the direction drill.
 const BANKS = [
@@ -95,6 +101,8 @@ const ALREADY_BEATEN_PAYS = 0;
 // own, at which point skillWeight() takes over and the weights become dynamic.
 const BASELINE_ERRORS = {
   'words-in-context': 6,
+  // Drills the same weakness, so it starts priced the same.
+  vocabulary: 6,
   boundaries: 4,
   transitions: 3,
   'form-structure-sense': 2,
@@ -167,6 +175,7 @@ const DIRECTIONS = [
 ];
 
 const SKILL_LABELS = {
+  vocabulary: 'Vocabulary',
   'words-in-context': 'Words in Context',
   transitions: 'Transitions',
   boundaries: 'Boundaries',
@@ -183,7 +192,10 @@ const DOMAIN_LABELS = {
   'information-ideas': 'Information and Ideas',
   'craft-structure': 'Craft and Structure',
   'expression-of-ideas': 'Expression of Ideas',
-  'standard-english': 'Standard English Conventions'
+  'standard-english': 'Standard English Conventions',
+  // Not an SAT domain. The four above are the real score-report headings, and
+  // putting our own drill among them would imply College Board tests it.
+  extra: 'Word practice (not an SAT domain)'
 };
 
 // Same order the Bluebook score report uses, so the nav is recognisable. Within
@@ -192,15 +204,28 @@ const DOMAIN_ORDER = [
   'craft-structure',
   'expression-of-ideas',
   'standard-english',
-  'information-ideas'
+  'information-ideas',
+  // Last, so the score-report order above stays untouched.
+  'extra'
 ];
 
 const SKILLS_BY_DOMAIN = {
   'craft-structure': ['words-in-context', 'text-structure-purpose', 'cross-text-connections'],
   'expression-of-ideas': ['transitions', 'rhetorical-synthesis'],
   'standard-english': ['boundaries', 'form-structure-sense'],
-  'information-ideas': ['inferences', 'central-ideas-details', 'command-of-evidence']
+  'information-ideas': ['inferences', 'central-ideas-details', 'command-of-evidence'],
+  extra: ['vocabulary']
 };
+
+// Word meanings for the Words in Context options, keyed by question id then
+// option label. Built by extract_vocab.py from College Board's own rationale
+// text. Optional: if the file is missing the app runs exactly as before.
+const VOCAB_FILE = 'banks/vocab.json';
+let vocabByQuestion = {};
+let vocabQuestions = [];
+// word (lowercased) -> its drill question id, so a Words in Context question can
+// send him straight to the word he just tripped over.
+let vocabDrillByWord = {};
 
 const STORE_KEY = 'sat-practice-v2';
 
@@ -226,6 +251,10 @@ let lastAward = null;
 // Which stage mark the tile is showing, so a change can be animated once
 // rather than on every repaint.
 let lastStageIcon = null;
+// Where a jump came from, so the trip works both ways: { id, word, at }. `at` is
+// the question he was sent to, which is what decides whether the return link is
+// relevant to whatever is now on screen.
+let returnTo = null;
 
 const STREAK_LENGTH = 8;
 
@@ -269,6 +298,10 @@ const targetRingEl = document.getElementById('targetRing');
 const targetIconEl = document.getElementById('targetIcon');
 const progressDialog = document.getElementById('progressDialog');
 const progressSubEl = document.getElementById('progressSub');
+const wordsHeadingEl = document.getElementById('wordsHeading');
+const wordsListEl = document.getElementById('wordsList');
+const sourceRowEl = document.getElementById('sourceRow');
+const sourceLinkEl = document.getElementById('sourceLink');
 const streakValueEl = document.getElementById('streakValue');
 const bestValueEl = document.getElementById('bestValue');
 
@@ -300,6 +333,12 @@ function emptyStore() {
     // RECENT_MAX. This is what the projection reads, so it reflects current form
     // rather than everything he has ever attempted.
     recent: [],
+    // due[questionId] = the answer count at which a vocabulary word is owed
+    // another showing. `served` is that count: answers, not questions-in-bank.
+    due: {},
+    served: 0,
+    // vocab[questionId] = { run } -- consecutive right answers on that word.
+    vocab: {},
     sinceReview: 0,
     filters: { skill: 'all', difficulty: 'all' }
   };
@@ -433,9 +472,9 @@ function statsFor(id) {
 }
 
 function recordAnswer(question, isCorrect, pointsGained) {
-  // Read before the counts move: a question already beaten is revision, and
-  // revision must not reach the day's tally or the form log.
-  const revision = alreadyBeaten(question.id);
+  // Read before the counts move: revision must not reach the day's tally or the
+  // form log.
+  const revision = isRevision(question);
 
   const entry = store.progress[question.id] ||
     { seen: 0, correct: 0, wrong: 0, skill: question.skill };
@@ -465,6 +504,14 @@ function recordAnswer(question, isCorrect, pointsGained) {
     if (recent.length > RECENT_MAX) recent.splice(0, recent.length - RECENT_MAX);
     store.recent = recent;
   }
+
+  // OUTSIDE the revision guard, deliberately. The clock and the word's schedule
+  // must advance on every answer: with these inside, a vocabulary word answered
+  // right once became permanent "revision", so scheduleVocab stopped running, its
+  // due time froze in the past, and it came back every few questions for ever
+  // while its run never reached mastery. That is the "seen 6x and counting" bug.
+  store.served = (store.served || 0) + 1;
+  scheduleVocab(question, isCorrect);
 
   saveStore();
 }
@@ -574,8 +621,23 @@ function alreadyBeaten(id) {
   return statsFor(id).correct > 0;
 }
 
+// Revision earns nothing and is kept out of the day's tally. For a real SAT
+// question that means any re-answer, since one pass is the work.
+//
+// Vocabulary is the opposite case: coming back to a word IS the work, so a word
+// that is due counts fully. Only one answered ahead of its schedule is revision,
+// which is what stops Prev-Next-Submit farming -- answering again immediately
+// pushes `due` into the future, so the second answer pays nothing.
+function isRevision(question) {
+  if (question.skill === VOCAB_SKILL) {
+    const due = (store.due || {})[question.id];
+    return !(due === undefined || due <= (store.served || 0));
+  }
+  return alreadyBeaten(question.id);
+}
+
 function questionPoints(question) {
-  if (alreadyBeaten(question.id)) return ALREADY_BEATEN_PAYS;
+  if (isRevision(question)) return ALREADY_BEATEN_PAYS;
 
   const base = POINTS_BY_DIFFICULTY[question.difficulty] || POINTS_BY_DIFFICULTY.medium;
   let points = base * skillWeight(question.skill);
@@ -699,7 +761,7 @@ function renderMeta(question) {
   // What this one pays. Shown before answering so the weighting is visible while
   // it can still motivate, then replaced by what he actually earned.
   const worth = document.createElement('span');
-  if (lastAward === null && alreadyBeaten(question.id)) {
+  if (lastAward === null && isRevision(question)) {
     // Nothing on offer, so say why rather than showing a bare zero.
     worth.className = 'tag tag-points is-missed';
     worth.textContent = 'revision';
@@ -751,11 +813,24 @@ function renderOptions(question) {
 
     row.append(label, text, mark);
 
+    optionEl.append(row);
+
+    // A one-line meaning under the word, from banks/vocab.json. Words in Context
+    // is his weakest skill and the reason is usually that he does not know the
+    // option words, so the gloss is what turns a guess into a read. Revealed with
+    // the explanation, not before -- earlier it would hand him the answer.
+    const gloss = glossFor(question.id, option.label);
+    if (gloss) {
+      const g = document.createElement('p');
+      g.className = 'gloss';
+      g.textContent = gloss;
+      optionEl.append(g);
+    }
+
     const why = document.createElement('p');
     why.className = 'explanation';
     why.textContent = option.why;
-
-    optionEl.append(row, why);
+    optionEl.append(why);
     optionEl.addEventListener('click', () => selectOption(index));
     optionsContainer.append(optionEl);
   });
@@ -884,8 +959,8 @@ function renderSkillStats() {
     const pay = document.createElement('strong');
     pay.className = 'skill-pay';
     pay.textContent = `${weight}×`;
-    pay.title = `Pays ${weight}× — ${weight >= 2.5 ? 'his weakest work'
-      : weight >= 1.7 ? 'still costing him marks' : 'close to solid'}`;
+    pay.title = `Pays ${weight}× — ${weight >= 2.5 ? 'your weakest skill'
+      : weight >= 1.7 ? 'still costing you marks' : 'close to solid'}`;
 
     const bar = document.createElement('span');
     bar.className = 'skill-bar';
@@ -950,6 +1025,7 @@ function updateSummary() {
   renderHeatmap();
   renderStreak();
   renderSkillStats();
+  renderWords();
 }
 
 // Projected R&W score from recent form, against his real Practice 5 result. Held
@@ -1184,6 +1260,7 @@ function loadQuestion(question) {
 
   ruleBox.hidden = true;
   ruleBox.textContent = '';
+  renderSourceLink();
 }
 
 // The sparkle and chime used to fire on every correct answer, which is how a
@@ -1268,6 +1345,8 @@ function reveal(selectedIndex) {
   ruleBox.textContent = current.rule;
   ruleBox.hidden = false;
 
+  renderSourceLink();
+
   // No prose summary any more: the correct choice carries a tick and its own
   // explanation, the rule box states the convention, and the sidebar pill says
   // whether he got it. Repeating all that in a paragraph earned no space.
@@ -1275,11 +1354,89 @@ function reveal(selectedIndex) {
 
 // Bank order is preserved, so the sequence a learner walks is stable between
 // sessions and the saved cursor keeps pointing at the same place.
+// A word retires after this many CONSECUTIVE right answers -- see vocabRun below
+// for why consecutive rather than a lifetime tally. A miss resets the run, so a
+// word he keeps missing keeps coming back.
+//
+// Only vocabulary retires. Real SAT questions stay available however well he does
+// on them, because re-reading a College Board rationale is worth doing.
+const VOCAB_MASTERED_BY = 2;
+
+// How soon a word comes back. Wrong -> a few questions later, and again, and
+// again until he gets it; right but not yet mastered -> a longer wait, so it is
+// checked once more rather than drilled. Counted in answers, not minutes: the app
+// has no idea how long he sat there.
+const VOCAB_REVISIT_AFTER_WRONG = 3;
+const VOCAB_REVISIT_AFTER_RIGHT = 12;
+
+// At least this many fresh words between repeats. Without it the drill jams: a
+// repeat does not advance the cursor, so three missed words are enough to fill
+// every slot forever and he never meets a new word again. Two fresh to one repeat
+// keeps missed words frequent without letting them crowd everything else out.
+const VOCAB_FRESH_BETWEEN_REPEATS = 2;
+
+// The word most overdue, from whatever is in the current pool. Restricted to the
+// pool so drilling Boundaries never yanks him sideways into a word.
+function nextDueVocab() {
+  const served = store.served || 0;
+  const due = store.due || {};
+  let best = null;
+
+  pool.forEach((q) => {
+    if (q.skill !== VOCAB_SKILL) return;
+    if (current && q.id === current.id) return; // never twice in a row
+    const at = due[q.id];
+    if (at === undefined || at > served) return;
+    if (!best || due[q.id] < due[best.id]) best = q;
+  });
+  return best;
+}
+
+// Called after a vocabulary answer to book its next appearance.
+function scheduleVocab(question, isCorrect) {
+  if (question.skill !== VOCAB_SKILL) return;
+  store.due = store.due || {};
+  store.vocab = store.vocab || {};
+
+  // The run of consecutive rights, which is what decides retirement.
+  const entry = store.vocab[question.id] || { run: 0 };
+  entry.run = isCorrect ? vocabRun(question.id) + 1 : 0;
+  store.vocab[question.id] = entry;
+
+  if (isCorrect && vocabMastered(question.id)) {
+    // Beaten for good; applyFilters will drop it from the pool.
+    delete store.due[question.id];
+    return;
+  }
+  store.due[question.id] = (store.served || 0)
+    + (isCorrect ? VOCAB_REVISIT_AFTER_RIGHT : VOCAB_REVISIT_AFTER_WRONG);
+}
+
+// The run of consecutive right answers on a word. Consecutive, not a lifetime
+// tally: "correct >= wrong + 2" made every miss demand another hit, so a word
+// missed three times needed five right answers to clear. That is a debt, not
+// learning. A miss resets the run to nought.
+function vocabRun(id) {
+  const v = store.vocab && store.vocab[id];
+  if (v && typeof v.run === 'number') return v.run;
+  // No run recorded yet, so fall back to his existing history: a clean record
+  // counts as a run, and a word he ever missed starts from nought.
+  const s = statsFor(id);
+  return s.wrong === 0 ? s.correct : 0;
+}
+
+function vocabMastered(id) {
+  return vocabRun(id) >= VOCAB_MASTERED_BY;
+}
+
 function applyFilters() {
   pool = bank.filter((q) =>
     (skillFilter === 'all' || q.skill === skillFilter) &&
     (difficultyFilter === 'all' || q.difficulty === difficultyFilter)
   );
+  // Words he has beaten drop out, so the drill is always the ones still costing
+  // him something rather than a march through all 952.
+  pool = pool.filter((q) => q.skill !== VOCAB_SKILL || !vocabMastered(q.id));
   if (wrongOnly) pool = pool.filter((q) => isWrongEver(q.id));
 }
 
@@ -1342,7 +1499,18 @@ function nextQuestion(options) {
   // A review repeat is drawn at random and never persisted, so it cannot be
   // restored on reload or stepped back to -- only splice one in when moving
   // forward, which also keeps a refresh showing the same question every time.
-  if (step > 0 && store.sinceReview >= FRESH_PER_REVIEW && reviewable.length > 0) {
+  // An overdue word outranks the periodic repeat: missed words have to come back
+  // more often than every tenth question. But only after a couple of fresh words,
+  // or repeats fill every slot and he never meets a new word again -- a repeat
+  // leaves the cursor where it is, so it costs a fresh word its turn.
+  const due = step > 0 && store.sinceReview >= VOCAB_FRESH_BETWEEN_REPEATS
+    ? nextDueVocab()
+    : null;
+  if (due) {
+    current = due;
+    servingReview = true;
+    store.sinceReview = 0; // it counts as this cycle's repeat
+  } else if (step > 0 && store.sinceReview >= FRESH_PER_REVIEW && reviewable.length > 0) {
     current = reviewable[Math.floor(Math.random() * reviewable.length)];
     store.sinceReview = 0;
     servingReview = true;
@@ -1428,19 +1596,295 @@ function isReady(q) {
   );
 }
 
+// Every word he has actually met, gathered from the questions he has worked.
+// Derived rather than stored: store.progress already records which questions he
+// has seen and which he got wrong, and vocab.json maps question to words, so
+// there is nothing extra to keep or migrate.
+function wordsMet() {
+  const byWord = new Map();
+
+  Object.entries(store.progress).forEach(([id, entry]) => {
+    if (!entry.seen) return;
+    const q = vocabByQuestion[id];
+    if (!q) return;
+
+    q.words.forEach((w) => {
+      if (!w.gloss) return;
+      const key = w.word.toLowerCase();
+      const prev = byWord.get(key);
+      // A word met in a question he failed outranks the same word met in one he
+      // passed -- one sighting being wrong is enough to keep it on the list.
+      const missed = entry.wrong > 0;
+      if (!prev) {
+        byWord.set(key, { word: w.word, gloss: w.gloss, sentence: q.sentence, missed });
+      } else if (missed) {
+        prev.missed = true;
+      }
+    });
+  });
+
+  return [...byWord.values()].sort((a, b) => {
+    if (a.missed !== b.missed) return a.missed ? -1 : 1;
+    return a.word.toLowerCase().localeCompare(b.word.toLowerCase());
+  });
+}
+
+function renderWords() {
+  if (!wordsListEl) return;
+  const words = wordsMet();
+  const missed = words.filter((w) => w.missed).length;
+
+  if (wordsHeadingEl) {
+    wordsHeadingEl.textContent = words.length === 0
+      ? 'Words met'
+      : `Words met · ${words.length}` + (missed ? ` · ${missed} to revise` : '');
+  }
+
+  wordsListEl.textContent = '';
+  if (words.length === 0) {
+    const empty = document.createElement('p');
+    empty.className = 'queue-note';
+    empty.textContent =
+      'Words from Words in Context questions collect here as you work them.';
+    wordsListEl.append(empty);
+    return;
+  }
+
+  words.forEach((w) => {
+    const row = document.createElement('div');
+    row.className = w.missed ? 'word-row is-missed' : 'word-row';
+    // The sentence it appeared in, on hover: seeing the word at work is the
+    // whole skill, and a definition on its own is what he can already look up.
+    if (w.sentence) row.title = w.sentence;
+
+    const term = document.createElement('span');
+    term.className = 'word-term';
+    term.textContent = w.word;
+
+    const gloss = document.createElement('span');
+    gloss.className = 'word-gloss';
+    gloss.textContent = w.gloss;
+
+    row.append(term, gloss);
+    wordsListEl.append(row);
+  });
+}
+
+// --- Vocabulary drill ------------------------------------------------------
+// The wordlist becomes questions rather than a list to scroll: 137 rows in a box
+// teaches nothing, whereas picking the right meaning out of four is both how the
+// test asks it and how the word actually gets learned. Synthesised into `bank`,
+// so points, review repeats, the daily target and the Prev/Next pager all apply
+// with no new machinery.
+
+const VOCAB_SKILL = 'vocabulary';
+const VOCAB_CHOICES = 4;
+
+// Deterministic, so a word is the SAME question every time he meets it. A
+// reshuffled question is a different question, and his per-word history would
+// stop meaning anything.
+function hashString(s) {
+  let h = 2166136261;
+  for (let i = 0; i < s.length; i += 1) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+
+function buildVocabQuestions(words) {
+  const pool = words.filter((w) => w.word && w.gloss);
+  if (pool.length < VOCAB_CHOICES) return [];
+
+  return pool.map((w, index) => {
+    const seed = hashString(w.word);
+
+    // Three wrong meanings, drawn from other words in the list. Stepping by a
+    // prime keeps them spread out rather than clustered around the alphabet.
+    const wrong = [];
+    for (let step = 1; wrong.length < VOCAB_CHOICES - 1 && step <= pool.length; step += 1) {
+      const cand = pool[(index + (seed % 89) + step * 37) % pool.length];
+      if (cand.word === w.word || !cand.gloss) continue;
+      if (cand.gloss === w.gloss) continue; // two identical choices is a broken question
+      if (wrong.some((x) => x.gloss === cand.gloss)) continue;
+      wrong.push(cand);
+    }
+    if (wrong.length < VOCAB_CHOICES - 1) return null;
+
+    const answerAt = seed % VOCAB_CHOICES;
+    const options = [];
+    let taken = 0;
+    for (let i = 0; i < VOCAB_CHOICES; i += 1) {
+      const label = String.fromCharCode(65 + i);
+      if (i === answerAt) {
+        options.push({
+          label,
+          text: w.gloss,
+          why: `Correct. "${w.word}" means ${w.gloss}.`
+        });
+      } else {
+        const d = wrong[taken];
+        taken += 1;
+        options.push({
+          label,
+          text: d.gloss,
+          why: `That is the meaning of "${d.word}", not "${w.word}".`
+        });
+      }
+    }
+
+    return {
+      // Keyed by word, so his history follows the word rather than its position.
+      id: `vocab-${w.word.toLowerCase().replace(/[^a-z]+/g, '-')}`,
+      source: 'Built from College Board Words in Context options',
+      skill: VOCAB_SKILL,
+      domain: 'extra',
+      difficulty: w.difficulty || 'medium',
+      hasBlank: false,
+      // No ___, so the card renders it as prose rather than a cloze.
+      passage: 'Which of these is closest in meaning?',
+      question: w.word,
+      correctLabel: String.fromCharCode(65 + answerAt),
+      // Only claim a sentence when one genuinely holds the word: that means it
+      // was the correct answer in a question whose passage had a blank. Where the
+      // passage had no blank the options are synonyms for a word already in the
+      // text, so no sentence contains this one -- the link covers it instead.
+      rule: w.sentence
+        ? `Seen in: ${w.sentence}`
+        : 'This word was one of the four choices in a Words in Context question.',
+      // Lets the drill hand him back to the question the word came from.
+      sourceId: w.sourceId || (w.from && w.from[0]) || null,
+      options
+    };
+  }).filter(Boolean);
+}
+
+// Jump straight to a question by id, switching whatever filters are in the way.
+// Used by the vocabulary drill to hand him back to the question a word came from,
+// so a word is never just a word: he can see it doing its job in the real thing.
+// One row serving both directions. Forward only after he has answered, because
+// before that it is part of the explanation and would give the word away; back is
+// available at once, since he may want to read the question and return without
+// answering it.
+// The word worth drilling from a Words in Context question: the one he PICKED if
+// he got it wrong, otherwise the right answer. Choosing wrongly is the strongest
+// evidence he does not know that word.
+function drillTargetFor(question) {
+  if (!question || question.skill !== 'words-in-context') return null;
+
+  const chosen = pendingIndex === null ? null : question.options[pendingIndex];
+  const correct = question.options.find((o) => o.label === question.correctLabel);
+  const pick = chosen && chosen.label !== question.correctLabel ? chosen : correct;
+  if (!pick || !pick.text) return null;
+
+  const key = pick.text.trim().replace(/\.$/, '').toLowerCase();
+  const id = vocabDrillByWord[key];
+  return id ? { id, word: pick.text.trim().replace(/\.$/, '') } : null;
+}
+
+function renderSourceLink() {
+  if (!sourceRowEl || !sourceLinkEl) return;
+
+  if (answered && current && current.skill === VOCAB_SKILL && current.sourceId
+      && bank.some((q) => q.id === current.sourceId)) {
+    sourceRowEl.hidden = false;
+    sourceRowEl.dataset.target = current.sourceId;
+    sourceLinkEl.textContent = 'See this word in its question →';
+    return;
+  }
+
+  // Forward the other way: from a real question to the drill for its word.
+  const drill = answered ? drillTargetFor(current) : null;
+  if (drill) {
+    sourceRowEl.hidden = false;
+    sourceRowEl.dataset.target = drill.id;
+    sourceLinkEl.textContent = `Drill “${drill.word}” →`;
+    return;
+  }
+
+  if (returnTo && current && current.id === returnTo.at
+      && bank.some((q) => q.id === returnTo.id)) {
+    sourceRowEl.hidden = false;
+    sourceRowEl.dataset.target = returnTo.id;
+    sourceLinkEl.textContent = `← Back to “${returnTo.word}”`;
+    return;
+  }
+
+  sourceRowEl.hidden = true;
+}
+
+function jumpToQuestion(id) {
+  const target = bank.find((q) => q.id === id);
+  if (!target) return false;
+
+  // Widen the filters only as far as needed to make the question reachable.
+  skillFilter = target.skill;
+  difficultyFilter = 'all';
+  wrongOnly = false;
+  if (skillSelect) skillSelect.value = skillFilter;
+  if (difficultySelect) difficultySelect.value = difficultyFilter;
+  if (wrongOnlyToggle) wrongOnlyToggle.checked = false;
+  rememberFilters();
+
+  applyFilters();
+  const at = pool.findIndex((q) => q.id === id);
+  if (at < 0) return false;
+
+  // Park the cursor on it, then re-serve without stepping.
+  store.cursor[cursorKey()] = at;
+  saveStore();
+  current = null;
+  nextQuestion({ step: 0, scroll: true });
+  return true;
+}
+
+function glossFor(questionId, label) {
+  const q = vocabByQuestion[questionId];
+  if (!q) return null;
+  const hit = q.words.find((w) => w.label === label);
+  return hit && hit.gloss ? hit.gloss : null;
+}
+
+// Fetched alongside the banks and deliberately not awaited by them: a missing or
+// broken vocab file must not stop questions loading.
+function loadVocab() {
+  return fetch(`${VOCAB_FILE}?v=${DATA_VERSION}`)
+    .then((r) => (r.ok ? r.json() : null))
+    .then((data) => {
+      if (!data || !Array.isArray(data.questions)) return;
+      data.questions.forEach((q) => {
+        if (q.id) vocabByQuestion[q.id] = q;
+      });
+      vocabQuestions = buildVocabQuestions(data.words || []);
+      vocabDrillByWord = {};
+      vocabQuestions.forEach((q) => { vocabDrillByWord[q.question.toLowerCase()] = q.id; });
+      const glossed = data.questions.reduce(
+        (n, q) => n + q.words.filter((w) => w.gloss).length, 0);
+      console.info(`Vocab: ${data.questions.length} questions, ${glossed} glossed words, `
+        + `${vocabQuestions.length} drill questions built.`);
+    })
+    .catch((err) => console.warn('No vocab glosses loaded.', err));
+}
+
 function loadBanks() {
-  Promise.all(BANKS.map((b) =>
-    fetch(b.file)
-      .then((r) => {
-        if (!r.ok) throw new Error(`Failed to load ${b.file}`);
-        return r.json();
-      })
-      .catch((err) => {
-        console.error(err);
-        return [];
-      })
-  )).then((results) => {
-    const raw = results.flat();
+  // The vocab fetch is waited on so the first question already has its glosses,
+  // but loadVocab() swallows its own errors and always resolves -- a missing
+  // vocab file must never stop questions appearing.
+  Promise.all([
+    Promise.all(BANKS.map((b) =>
+      fetch(`${b.file}?v=${DATA_VERSION}`)
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${b.file}`);
+          return r.json();
+        })
+        .catch((err) => {
+          console.error(err);
+          return [];
+        })
+    )),
+    loadVocab()
+  ]).then(([results]) => {
+    const raw = results.flat().concat(vocabQuestions);
     bank = raw.filter(isReady);
     const withheld = raw.length - bank.length;
     if (withheld > 0) {
@@ -1479,8 +1923,16 @@ function buildSkillSelect() {
   if (!skillSelect) return;
   skillSelect.textContent = '';
 
+  // Counts what is still AVAILABLE, not what exists: retired vocabulary words are
+  // gone from the pool, so a fixed 952 in the dropdown would be a lie he watches
+  // never move.
   const counts = {};
-  bank.forEach((q) => { counts[q.skill] = (counts[q.skill] || 0) + 1; });
+  let available = 0;
+  bank.forEach((q) => {
+    if (q.skill === VOCAB_SKILL && vocabMastered(q.id)) return;
+    counts[q.skill] = (counts[q.skill] || 0) + 1;
+    available += 1;
+  });
 
   // The multiplier belongs here, at the moment he chooses. Shown only on the
   // individual skills -- "all skills" has no single rate.
@@ -1497,7 +1949,7 @@ function buildSkillSelect() {
   skillSelect.append(option(
     'all',
     FOCUS_SKILLS.length > 0 ? "Today's focus" : 'All skills',
-    bank.length
+    available
   ));
 
   DOMAIN_ORDER.forEach((domain) => {
@@ -1576,6 +2028,7 @@ const closeProgressBtn = document.getElementById('closeProgress');
 if (openProgressBtn && progressDialog) {
   openProgressBtn.addEventListener('click', () => {
     updateSummary(); // repaint before it is seen, not while it is hidden
+    renderWords();
     progressDialog.showModal();
   });
 }
@@ -1587,6 +2040,25 @@ if (closeProgressBtn && progressDialog) {
 if (progressDialog) {
   progressDialog.addEventListener('click', (ev) => {
     if (ev.target === progressDialog) progressDialog.close();
+  });
+}
+
+if (sourceLinkEl && sourceRowEl) {
+  sourceLinkEl.addEventListener('click', () => {
+    const id = sourceRowEl.dataset.target;
+    if (!id) return;
+    // Going out from a drill word: remember it so he can come straight back.
+    // Going back: the round trip is finished, so forget it.
+    // Remember where he came from so the return link works, whichever way round
+    // the trip was. Following a return link finishes it, so it clears.
+    const goingBack = returnTo && current && current.id === returnTo.at
+      && id === returnTo.id;
+    returnTo = goingBack ? null : {
+      id: current.id,
+      word: current.skill === VOCAB_SKILL ? current.question : `question ${current.id.slice(-6)}`,
+      at: id
+    };
+    jumpToQuestion(id);
   });
 }
 

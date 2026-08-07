@@ -6,7 +6,7 @@
   <title>SAT Reading &amp; Writing Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=48" />
+  <link rel="stylesheet" href="styles.css?v=52" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -120,6 +120,14 @@
 
           <p class="rule-box" id="ruleBox" hidden></p>
 
+          <!-- Vocabulary drill only: hands him back to the question the word came
+               from, so a word is never just a word on a card. -->
+          <div class="source-row" id="sourceRow" hidden>
+            <button type="button" class="btn btn-small source-link" id="sourceLink">
+              See this word in its question →
+            </button>
+          </div>
+
           <div class="pager pager-bottom">
             <button class="btn btn-small prev-question">← Prev</button>
             <p class="set-readout"></p>
@@ -206,10 +214,19 @@
           <p class="direction-score" id="directionScore" hidden></p>
         </section>
       </div>
+
+      <!-- Vocabulary he has actually met, gathered from the questions he has
+           worked. Words from questions he got wrong come first, because those are
+           the ones that cost him marks. The list scrolls inside its own box so the
+           dialog itself never does. -->
+      <section class="words-block">
+        <h3 class="panel-heading" id="wordsHeading">Words met</h3>
+        <div class="words-list" id="wordsList"></div>
+      </section>
     </div>
   </dialog>
 
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=44"></script>
+  <script src="app.js?v=58"></script>
 </body>
 </html>
