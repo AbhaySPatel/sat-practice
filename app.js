@@ -26,6 +26,24 @@ const BANKS = [
 // Ten fresh questions, then one repeat drawn from those he has gotten wrong.
 const FRESH_PER_REVIEW = 10;
 
+// Today's focus set. Only these skills reach the app at all -- they are the only
+// entries in the dropdown, the only thing the set counts draw from, and the only
+// rows in Coverage. Nothing else is available to wander into.
+//
+// Edit this list to change the day's plan. An EMPTY array turns focus mode off
+// and restores all ten skills.
+//
+// Chosen from Practice 5 (6 Aug 2026, R&W 550 / Math 770). Of his 20 wrong
+// answers: words in context 6, boundaries 4, transitions 3 -- 13 of 20 between
+// them. The first and third fail the same way, picking an option that suits the
+// topic without checking which way the sentence turns, which is exactly what the
+// direction drill is for.
+const FOCUS_SKILLS = [
+  'words-in-context',
+  'transitions',
+  'boundaries'
+];
+
 // The two-step drill. He loses points by picking a word that fits the topic
 // without checking which way the sentence turns, so when this is on the app
 // makes him commit to the relationship BEFORE it shows him any words.
@@ -765,6 +783,15 @@ function loadBanks() {
     if (withheld > 0) {
       console.info(`Loaded ${bank.length} questions; withheld ${withheld} awaiting review.`);
     }
+
+    // Narrow to the focus set here, before anything reads `bank`: the dropdown,
+    // the per-skill counts, Coverage, the review-repeat pool and the "all skills"
+    // option are all derived from it, so they narrow together.
+    if (FOCUS_SKILLS.length > 0) {
+      const everything = bank.length;
+      bank = bank.filter((q) => FOCUS_SKILLS.includes(q.skill));
+      console.info(`Focus mode: ${FOCUS_SKILLS.join(', ')} — ${bank.length} of ${everything} questions in play.`);
+    }
     if (bank.length === 0) {
       setStatus('Data load error', 'error');
       resultText.textContent = 'No questions loaded. Ensure the bank files are served over HTTP.';
@@ -796,7 +823,12 @@ function buildSkillSelect() {
     return el;
   };
 
-  skillSelect.append(option('all', 'All skills', bank.length));
+  // Named for what it actually holds, so a short list never looks like a bug.
+  skillSelect.append(option(
+    'all',
+    FOCUS_SKILLS.length > 0 ? "Today's focus" : 'All skills',
+    bank.length
+  ));
 
   DOMAIN_ORDER.forEach((domain) => {
     const skills = SKILLS_BY_DOMAIN[domain].filter((s) => counts[s]);
