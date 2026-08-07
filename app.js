@@ -48,7 +48,7 @@ const EXAMS = [
 // How much history to show before the current week. The grid runs from here to
 // the week of the final exam, so it reads as a runway rather than a scrapbook:
 // enough past to see whether the habit is holding, all the future that matters.
-const HEATMAP_LOOKBACK_WEEKS = 2;
+const HEATMAP_LOOKBACK_WEEKS = 1;
 
 // --- Score projection ------------------------------------------------------
 // A digital-SAT Reading and Writing section is 54 questions scaled to 200-800.
@@ -509,18 +509,35 @@ function formForProjection() {
 // approximately: it holds each question's most recent day, which undercounts a
 // question answered across several days. Flagged as estimated in the tooltip.
 function backfillDays() {
+  const today = dayKey();
+
+  // Repair: an earlier version of this function filled TODAY as well, and
+  // credited every attempt a question had ever had to the single day in
+  // progress[].last. The result was today's tile showing lifetime totals.
+  if (store.days[today] && store.days[today].estimated) {
+    delete store.days[today];
+    store.backfilledDays = false;
+  }
+
   if (store.backfilledDays) return;
   store.backfilledDays = true;
 
   const rebuilt = {};
   Object.values(store.progress).forEach((e) => {
-    if (!e.last) return;
+    // Today belongs to the live log, which is exact. Estimating it as well would
+    // double-count everything he does from here on.
+    if (!e.last || e.last >= today) return;
+
     const d = rebuilt[e.last] || { answered: 0, correct: 0, points: 0, estimated: true };
-    d.answered += e.seen || 0;
-    d.correct += e.correct || 0;
+    // ONE answer per question, not e.seen: `last` records a single day, so
+    // crediting every attempt to it inflates that day by the whole history.
+    d.answered += 1;
+    if ((e.correct || 0) > 0) d.correct += 1;
     // Medium base at the skill's baseline weight: difficulty was never stored
     // per attempt, so this is the best estimate available.
-    d.points += Math.round((e.correct || 0) * POINTS_BY_DIFFICULTY.medium * skillWeight(e.skill));
+    if ((e.correct || 0) > 0) {
+      d.points += Math.round(POINTS_BY_DIFFICULTY.medium * skillWeight(e.skill));
+    }
     rebuilt[e.last] = d;
   });
 
