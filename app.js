@@ -293,6 +293,7 @@ function bestDayBefore() {
   let best = { key: null, points: 0 };
   Object.entries(store.days).forEach(([key, day]) => {
     if (key >= today) return;
+    if (day.estimated) return; // estimated, so not a real record to chase
     if ((day.points || 0) > best.points) best = { key, points: day.points || 0 };
   });
   return best;
@@ -422,12 +423,66 @@ function recordAnswer(question, isCorrect, pointsGained) {
   saveStore();
 }
 
-// Recent accuracy within one skill, from the same rolling log.
+// Accuracy within one skill. Prefers the rolling log, but falls back to
+// everything he has ever done in that skill -- the log only started when points
+// did, so without this fallback months of work read as "not rated yet".
 function skillForm(skill) {
   const list = (store.recent || []).filter((r) => r.s === skill);
-  if (list.length === 0) return { n: 0, accuracy: 0 };
-  const ok = list.reduce((n, r) => n + (r.ok ? 1 : 0), 0);
-  return { n: list.length, accuracy: ok / list.length };
+  if (list.length >= SKILL_FORM_MIN) {
+    const ok = list.reduce((n, r) => n + (r.ok ? 1 : 0), 0);
+    return { n: list.length, accuracy: ok / list.length };
+  }
+
+  let seen = 0;
+  let correct = 0;
+  Object.values(store.progress).forEach((e) => {
+    if (e.skill !== skill) return;
+    seen += e.seen || 0;
+    correct += e.correct || 0;
+  });
+  if (seen === 0) return { n: 0, accuracy: 0 };
+  return { n: seen, accuracy: correct / seen, lifetime: true };
+}
+
+// Same idea for the projection: recent form if there is enough of it, otherwise
+// his whole record, so the headline number is not blank for someone who has
+// answered hundreds of questions.
+function formForProjection() {
+  const recent = recentForm();
+  if (recent.n >= MIN_FOR_PROJECTION) return recent;
+
+  const all = Object.values(store.progress);
+  const seen = all.reduce((n, e) => n + (e.seen || 0), 0);
+  const correct = all.reduce((n, e) => n + (e.correct || 0), 0);
+  if (seen < MIN_FOR_PROJECTION) return recent;
+  return { n: seen, ok: correct, accuracy: correct / seen, lifetime: true };
+}
+
+// One-time rebuild of the day history. progress[].last is the only record of
+// WHEN earlier work happened, so days before the rolling log can be recovered
+// approximately: it holds each question's most recent day, which undercounts a
+// question answered across several days. Flagged as estimated in the tooltip.
+function backfillDays() {
+  if (store.backfilledDays) return;
+  store.backfilledDays = true;
+
+  const rebuilt = {};
+  Object.values(store.progress).forEach((e) => {
+    if (!e.last) return;
+    const d = rebuilt[e.last] || { answered: 0, correct: 0, points: 0, estimated: true };
+    d.answered += e.seen || 0;
+    d.correct += e.correct || 0;
+    // Medium base at the skill's baseline weight: difficulty was never stored
+    // per attempt, so this is the best estimate available.
+    d.points += Math.round((e.correct || 0) * POINTS_BY_DIFFICULTY.medium * skillWeight(e.skill));
+    rebuilt[e.last] = d;
+  });
+
+  // Never overwrite a real record -- only fill days the log knows nothing about.
+  Object.entries(rebuilt).forEach(([key, day]) => {
+    if (!store.days[key]) store.days[key] = day;
+  });
+  saveStore();
 }
 
 // How much a skill pays, 1.0 to 3.0. Live accuracy once there is enough of it,
@@ -830,7 +885,7 @@ function updateSummary() {
 // would swing 200 points and teach him to distrust the number.
 function renderProjection() {
   if (!projectionEl) return;
-  const form = recentForm();
+  const form = formForProjection();
 
   if (form.n < MIN_FOR_PROJECTION) {
     projectionEl.textContent = '—';
@@ -854,8 +909,11 @@ function renderProjection() {
     const move = delta === 0
       ? 'level with Practice 5'
       : `${delta > 0 ? '+' : ''}${delta} on Practice 5's 550`;
+    const basis = form.lifetime
+      ? `all ${form.n} answers so far`
+      : `last ${form.n} answers`;
     projectionNoteEl.textContent =
-      `Reading & Writing · last ${form.n} answers ${Math.round(form.accuracy * 100)}% · ${move}`;
+      `Reading & Writing · ${basis} ${Math.round(form.accuracy * 100)}% · ${move}`;
   }
 }
 
@@ -925,7 +983,8 @@ function renderHeatmap() {
       cell.title = stats.answered === 0
         ? `${prettyDay(day)} — nothing done`
         : `${prettyDay(day)} — ${stats.points} points · ${stats.answered} answered,`
-          + ` ${stats.correct} right`;
+          + ` ${stats.correct} right`
+          + (stats.estimated ? ' (estimated from earlier sessions)' : '');
       if (daysBetween(today, day) === 0) cell.classList.add('is-today');
     }
     heatmapEl.append(cell);
@@ -1286,6 +1345,7 @@ function loadBanks() {
       return;
     }
 
+    backfillDays();
     buildSkillSelect();
     updateSummary();
     // Restore the saved position instead of stepping past it, so reloading the
