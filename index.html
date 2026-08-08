@@ -6,7 +6,7 @@
   <title>SAT Reading &amp; Writing Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=54" />
+  <link rel="stylesheet" href="styles.css?v=55" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -94,6 +94,14 @@
               <p class="set-readout" aria-live="polite"></p>
               <button class="btn btn-small next-question">Next →</button>
             </div>
+          </div>
+
+          <!-- Shown only for questions the extraction broke. They ask about an
+               underlined portion that no longer exists on screen, so the only way
+               to work them is with the source PDF open alongside. -->
+          <div class="pdf-notice" id="pdfNotice" hidden>
+            <p class="pdf-notice-title">Read this one from the PDF</p>
+            <p class="pdf-notice-detail" id="pdfNoticeDetail"></p>
           </div>
 
           <h2 class="question-title">Loading…</h2>
@@ -238,6 +246,6 @@
   </dialog>
 
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=60"></script>
+  <script src="app.js?v=63"></script>
 </body>
 </html>

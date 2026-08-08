@@ -12,7 +12,7 @@
 // its markup, but the banks are fetched from here, so nothing was busting them --
 // a browser could serve a months-old vocab.json against new code, which is
 // exactly what happened. Bump this whenever a file under banks/ changes.
-const DATA_VERSION = '2026-08-07a';
+const DATA_VERSION = '2026-08-07b';
 
 // Official College Board banks only. banks/context.json is deliberately absent
 // -- see the note in the README about Words in Context and the direction drill.
@@ -193,6 +193,7 @@ const DIRECTIONS = [
 
 const SKILL_LABELS = {
   vocabulary: 'Vocabulary',
+  defective: 'Needs the PDF',
   'words-in-context': 'Words in Context',
   transitions: 'Transitions',
   boundaries: 'Boundaries',
@@ -210,9 +211,10 @@ const DOMAIN_LABELS = {
   'craft-structure': 'Craft and Structure',
   'expression-of-ideas': 'Expression of Ideas',
   'standard-english': 'Standard English Conventions',
-  // Not an SAT domain. The four above are the real score-report headings, and
-  // putting our own drill among them would imply College Board tests it.
-  extra: 'Word practice (not an SAT domain)'
+  // Not an SAT domain. The four above are the real score-report headings, so
+  // anything of our own goes here rather than among them -- the vocabulary drill,
+  // and the questions that need the PDF.
+  extra: 'Extras — not score-report skills'
 };
 
 // Same order the Bluebook score report uses, so the nav is recognisable. Within
@@ -231,7 +233,7 @@ const SKILLS_BY_DOMAIN = {
   'expression-of-ideas': ['transitions', 'rhetorical-synthesis'],
   'standard-english': ['boundaries', 'form-structure-sense'],
   'information-ideas': ['inferences', 'central-ideas-details', 'command-of-evidence'],
-  extra: ['vocabulary']
+  extra: ['vocabulary', 'defective']
 };
 
 // Word meanings for the Words in Context options, keyed by question id then
@@ -239,6 +241,15 @@ const SKILLS_BY_DOMAIN = {
 // text. Optional: if the file is missing the app runs exactly as before.
 const VOCAB_FILE = 'banks/vocab.json';
 let vocabByQuestion = {};
+
+// Questions the PDF extraction broke -- they ask about an underlined portion that
+// no longer exists, so nothing on screen says which words were meant. Built by
+// find_defective.py, which also records where to read each one in the source PDF.
+// They are retagged to their own skill so they cannot turn up unannounced inside
+// a real practice set.
+const DEFECTIVE_FILE = 'banks/defective.json';
+const DEFECTIVE_SKILL = 'defective';
+let defectiveById = {};
 let vocabQuestions = [];
 // word (lowercased) -> its drill question id, so a Words in Context question can
 // send him straight to the word he just tripped over.
@@ -322,6 +333,8 @@ const sourceLinkEl = document.getElementById('sourceLink');
 const peekRowEl = document.getElementById('peekRow');
 const peekBtnEl = document.getElementById('peekBtn');
 const peekNoteEl = document.getElementById('peekNote');
+const pdfNoticeEl = document.getElementById('pdfNotice');
+const pdfNoticeDetailEl = document.getElementById('pdfNoticeDetail');
 const streakValueEl = document.getElementById('streakValue');
 const bestValueEl = document.getElementById('bestValue');
 
@@ -893,6 +906,21 @@ function canPeek(question) {
   return question.options.some((o) => glossFor(question.id, o.label));
 }
 
+// Where to read a broken question properly. The underline lives only in the PDF,
+// so the page reference is the whole point of keeping these at all.
+function renderPdfNotice(question) {
+  if (!pdfNoticeEl) return;
+  const broken = question && question.skill === DEFECTIVE_SKILL;
+  pdfNoticeEl.hidden = !broken;
+  if (!broken || !pdfNoticeDetailEl) return;
+
+  const skill = SKILL_LABELS[question.realSkill] || question.realSkill || 'this skill';
+  pdfNoticeDetailEl.textContent = question.pdf
+    ? `${skill} · ${question.pdf}, page ${question.page}. `
+      + 'The underlined portion was lost when the PDF was extracted, so it is not shown below.'
+    : `${skill}. The underlined portion was lost when the PDF was extracted.`;
+}
+
 function renderPeek() {
   if (!peekRowEl || !peekBtnEl) return;
 
@@ -1379,6 +1407,7 @@ function loadQuestion(question) {
   // the submit row follows them.
   updateSubmitState();
   renderPeek();
+  renderPdfNotice(question);
 
   ruleBox.hidden = true;
   ruleBox.textContent = '';
@@ -1968,6 +1997,20 @@ function glossFor(questionId, label) {
   return hit && hit.gloss ? hit.gloss : null;
 }
 
+// Same contract as loadVocab: swallows its own errors and always resolves, so a
+// missing file just means nothing is retagged.
+function loadDefective() {
+  return fetch(`${DEFECTIVE_FILE}?v=${DATA_VERSION}`)
+    .then((r) => (r.ok ? r.json() : null))
+    .then((data) => {
+      if (!data || !data.questions) return;
+      defectiveById = data.questions;
+      console.info(`Defective: ${Object.keys(defectiveById).length} questions `
+        + 'retagged — they need the PDF.');
+    })
+    .catch((err) => console.warn('No defective list loaded.', err));
+}
+
 // Fetched alongside the banks and deliberately not awaited by them: a missing or
 // broken vocab file must not stop questions loading.
 function loadVocab() {
@@ -2005,10 +2048,26 @@ function loadBanks() {
           return [];
         })
     )),
-    loadVocab()
+    loadVocab(),
+    loadDefective()
   ]).then(([results]) => {
     const raw = results.flat().concat(vocabQuestions);
     bank = raw.filter(isReady);
+
+    // Retag before anything reads `bank`: the skill filter, the dropdown counts
+    // and the review pool all derive from it, so a defective question must never
+    // appear inside the skill it was originally tagged with.
+    let retagged = 0;
+    bank.forEach((q) => {
+      const d = defectiveById[q.id];
+      if (!d) return;
+      q.realSkill = q.skill;
+      q.skill = DEFECTIVE_SKILL;
+      q.pdf = d.pdf;
+      q.page = d.page;
+      retagged += 1;
+    });
+    if (retagged > 0) console.info(`${retagged} questions moved to "Needs the PDF".`);
     const withheld = raw.length - bank.length;
     if (withheld > 0) {
       console.info(`Loaded ${bank.length} questions; withheld ${withheld} awaiting review.`);

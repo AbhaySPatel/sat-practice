@@ -1196,6 +1196,29 @@ body {
   align-self: flex-end;
 }
 
+/* A broken question, and where to read it instead. Amber rather than red: it is
+   a caveat about the data, not a mistake he made. */
+.pdf-notice {
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--pending-fg);
+  background: var(--pending-bg);
+}
+
+.pdf-notice-title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--pending-fg);
+}
+
+.pdf-notice-detail {
+  margin: 3px 0 0;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--fg);
+}
+
 .peek-row {
   display: flex;
   align-items: center;
