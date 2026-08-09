@@ -933,7 +933,7 @@ function renderOptions(question) {
     // is his weakest skill and the reason is usually that he does not know the
     // option words, so the gloss is what turns a guess into a read. Revealed with
     // the explanation, not before -- earlier it would hand him the answer.
-    const gloss = glossFor(question.id, option.label);
+    const gloss = glossFor(question, option.label);
     if (gloss) {
       const g = document.createElement('p');
       g.className = 'gloss';
@@ -963,8 +963,13 @@ let peekPay = null;
 // Vocabulary drill the options ARE the meanings, so showing them would simply
 // hand over the answer, and no other skill has glosses at all.
 function canPeek(question) {
-  if (!question || question.skill !== 'words-in-context') return false;
-  return question.options.some((o) => glossFor(question.id, o.label));
+  if (!question) return false;
+  // A missed-in-test question is grouped by where it came from, not by what it
+  // tests, so ask what it actually tests -- otherwise the four Words in Context
+  // questions he got wrong on the real test are the only ones without the help.
+  const tests = question.skill === MISSED_SKILL ? question.realSkill : question.skill;
+  if (tests !== 'words-in-context') return false;
+  return question.options.some((o) => glossFor(question, o.label));
 }
 
 // Where to read a broken question properly. The underline lives only in the PDF,
@@ -2017,7 +2022,12 @@ function buildVocabQuestions(words) {
 // he got it wrong, otherwise the right answer. Choosing wrongly is the strongest
 // evidence he does not know that word.
 function drillTargetFor(question) {
-  if (!question || question.skill !== 'words-in-context') return null;
+  if (!question) return null;
+  // Same reasoning as canPeek: ask what the question tests, not which set it is
+  // filed under, or the ones he missed on a real test would be the only Words in
+  // Context questions with no way through to the word.
+  const tests = question.skill === MISSED_SKILL ? question.realSkill : question.skill;
+  if (tests !== 'words-in-context') return null;
 
   const chosen = pendingIndex === null ? null : question.options[pendingIndex];
   const correct = question.options.find((o) => o.label === question.correctLabel);
@@ -2085,8 +2095,16 @@ function jumpToQuestion(id) {
   return true;
 }
 
-function glossFor(questionId, label) {
-  const q = vocabByQuestion[questionId];
+function glossFor(question, label) {
+  if (!question) return null;
+
+  // A question may carry its own meanings. The missed-in-test set does, because
+  // banks/vocab.json is indexed by College Board's question ids and those
+  // questions have ids of their own -- so nothing there would ever match them.
+  const own = (question.options || []).find((o) => o.label === label);
+  if (own && own.gloss) return own.gloss;
+
+  const q = vocabByQuestion[question.id];
   if (!q) return null;
   const hit = q.words.find((w) => w.label === label);
   return hit && hit.gloss ? hit.gloss : null;

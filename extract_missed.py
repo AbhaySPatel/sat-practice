@@ -34,6 +34,51 @@ OUT = Path('banks/missed-in-test.json')
 SKILL = 'missed-in-test'
 DOMAIN = 'extra'
 
+# Words in Context questions carry a one-line meaning per option, so the "Show
+# meanings" peek works on them exactly as it does in the ordinary bank. These
+# questions are not in banks/vocab.json -- that is indexed by College Board's own
+# question ids and these have their own -- so the glosses are stored on the
+# options themselves. Same extraction as extract_vocab.py, reused rather than
+# reimplemented: College Board defines the word inside its rationale for the
+# choice ("In this context, 'ameliorate' means to help remedy or improve").
+from extract_vocab import clean, find_gloss, load_manual  # noqa: E402
+
+# The practice-test rationales use typographic quotes where the question-bank
+# export uses straight ones, and extract_vocab's patterns are written for
+# straight. Normalising here rather than loosening those patterns leaves the
+# 952-word build exactly as it is.
+QUOTES = str.maketrans({'“': '"', '”': '"', '‘': "'", '’': "'"})
+
+# Shapes these rationales use that the question-bank ones do not. Tried only
+# after extract_vocab's own patterns have failed.
+EXTRA_PATTERNS = [
+    # "word" in this context would mean X
+    r'"{w}"\s+(?:in|as used in) this context\s+(?:would mean|means)\s+(?P<d>[^.;]+)',
+    # in this context "word" would mean X
+    r'in this context[, ]+"{w}"\s+(?:would mean|means|could mean)\s+(?P<d>[^.;]+)',
+    # "word," or X,   -- the aside, with the comma inside the closing quote
+    r'"{w},?"[,]?\s+or\s+(?P<d>[^.;]+?)(?=,|\.|;)',
+]
+
+VOCAB_INDEX = Path('banks/vocab.json')
+
+# Option text is sometimes an article plus the word ("a tenuous"). The gloss is
+# for the word.
+ARTICLE = re.compile(r'^(?:a|an|the)\s+', re.I)
+
+
+def option_word(text):
+    return ARTICLE.sub('', (text or '').strip().rstrip('.')).strip()
+
+
+def load_word_index():
+    """word -> gloss, from the 952-word list already built for the drill."""
+    if not VOCAB_INDEX.exists():
+        return {}
+    data = json.loads(VOCAB_INDEX.read_text(encoding='utf-8'))
+    return {w['word'].lower(): w['gloss']
+            for w in data.get('words', []) if w.get('word') and w.get('gloss')}
+
 TESTS = [
     {
         'key': 'pt5',
@@ -354,10 +399,49 @@ def classify(prompt, rationale):
 
 # --- Assembly ---------------------------------------------------------------
 
+def rationale_gloss(word, why):
+    """The meaning College Board gives this word while arguing for or against
+    the choice, or None."""
+    text = (why or '').translate(QUOTES)
+    hit = find_gloss(word, text)
+    if hit:
+        return hit
+    esc = re.escape(word)
+    for pattern in EXTRA_PATTERNS:
+        m = re.search(pattern.format(w=esc), text, re.I)
+        if not m:
+            continue
+        d = clean(m.group('d'))
+        if d and word.lower() not in d.lower():
+            return d
+    return None
+
+
+def gloss_options(opts, per_option, manual, word_index):
+    """Attach a one-line meaning to each option, best source first: College
+    Board's own rationale for that choice, then the hand-written list, then the
+    952-word index built from the rest of the bank."""
+    found = 0
+    for o in opts:
+        word = option_word(o['text'])
+        if not word:
+            continue
+        key = word.lower()
+        gloss = (rationale_gloss(word, per_option.get(o['label'], ''))
+                 or manual.get(key)
+                 or word_index.get(key))
+        if gloss:
+            o['gloss'] = gloss
+            found += 1
+    return found
+
+
 def build(test):
     import fitz
     doc = fitz.open(test['questions_pdf'])
     answers = read_answers(test['answers_pdf'], test['per_module'])
+    manual = load_manual()
+    word_index = load_word_index()
 
     rows, problems = [], []
     for module, pages in test['modules'].items():
@@ -419,6 +503,14 @@ def build(test):
                     for lab in 'ABCD'
                 ],
             }
+            if skill == 'words-in-context':
+                got = gloss_options(row['options'], per_option, manual, word_index)
+                if got < len(row['options']):
+                    problems.append(
+                        f'{test["key"]} M{module} Q{num}: {len(row["options"]) - got}'
+                        ' option(s) without a gloss — add them to '
+                        'banks/vocab-glosses.json')
+
             if underline:
                 row['underline'] = underline
             # A question built on a graph or table cannot be worked from text
