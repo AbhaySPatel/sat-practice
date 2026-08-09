@@ -1410,8 +1410,15 @@ body {
   max-width: 260px;
 }
 
-.control select:hover {
+.control select:hover:not(:disabled) {
   border-color: var(--accent-border);
+}
+
+/* Turned off while "Wrong answers only" is on, because that pool covers every
+   skill. Faded rather than hidden so the control stays where he expects it. */
+.control select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* Natural width between the two buttons. nowrap so "Position 14 of 61 · 0

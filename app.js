@@ -1662,9 +1662,14 @@ function vocabMastered(id) {
   return vocabRun(id) >= VOCAB_MASTERED_BY;
 }
 
+// "Wrong answers only" deliberately ignores the skill dropdown. The questions he
+// has missed are few and spread thinly across ten skills, so filtering them by
+// skill as well leaves one or two per skill and turns his own mistakes into
+// something he has to hunt for. This is the one view that should cut across
+// skills. Difficulty still applies -- that narrowing is still useful here.
 function applyFilters() {
   pool = bank.filter((q) =>
-    (skillFilter === 'all' || q.skill === skillFilter) &&
+    (wrongOnly || skillFilter === 'all' || q.skill === skillFilter) &&
     (difficultyFilter === 'all' || q.difficulty === difficultyFilter)
   );
   // Words he has beaten drop out, so the drill is always the ones still costing
@@ -1673,9 +1678,13 @@ function applyFilters() {
   if (wrongOnly) pool = pool.filter((q) => isWrongEver(q.id));
 }
 
-// Each filter combination keeps its own place in the sequence.
+// Each filter combination keeps its own place in the sequence. Wrong-only pins
+// the skill part to 'all' because that pool is the same whatever the dropdown
+// says -- without this the one list would keep a separate place per skill and
+// jump about as he changed a dropdown that is not even being applied.
 function cursorKey() {
-  return `${skillFilter}|${difficultyFilter}|${wrongOnly ? 'wrong' : 'all'}`;
+  const skill = wrongOnly ? 'all' : skillFilter;
+  return `${skill}|${difficultyFilter}|${wrongOnly ? 'wrong' : 'all'}`;
 }
 
 function cursorValue() {
@@ -1714,8 +1723,13 @@ function nextQuestion(options) {
   applyFilters();
 
   if (pool.length === 0) {
+    // Skill is not part of this pool any more, so suggesting he widen it would
+    // send him to a control that is disabled and would change nothing.
     setEmptyState(wrongOnly
-      ? 'Nothing wrong yet in this set. Untick "Wrong answers only", or widen the skill or difficulty.'
+      ? (difficultyFilter === 'all'
+        ? 'Nothing wrong yet. Untick "Wrong answers only" to keep practising.'
+        : 'Nothing wrong yet at this difficulty. Set Difficulty to Any, or untick '
+          + '"Wrong answers only".')
       : 'No questions match these filters.', true);
     // Neither direction leads anywhere in an empty set; the warning takes the
     // readout's place in the pager and both controls go inert.
@@ -2054,7 +2068,7 @@ function jumpToQuestion(id) {
   skillFilter = target.skill;
   difficultyFilter = 'all';
   wrongOnly = false;
-  if (skillSelect) skillSelect.value = skillFilter;
+  syncSkillSelect();
   if (difficultySelect) difficultySelect.value = difficultyFilter;
   if (wrongOnlyToggle) wrongOnlyToggle.checked = false;
   rememberFilters();
@@ -2252,6 +2266,24 @@ function buildSkillSelect() {
     skillSelect.value = 'all';
     rememberFilters();
   }
+
+  syncSkillSelect();
+}
+
+// The dropdown must never claim to be filtering something it is not. While
+// wrong-only is on the skill filter is ignored, so the select reads "All skills"
+// and is disabled rather than sitting there naming a skill it is not applying.
+//
+// `skillFilter` itself is deliberately left untouched: unticking restores his
+// choice with no bookkeeping, and his saved filters are never overwritten by a
+// state he only turned on to review.
+function syncSkillSelect() {
+  if (!skillSelect) return;
+  skillSelect.disabled = wrongOnly;
+  skillSelect.value = wrongOnly ? 'all' : skillFilter;
+  skillSelect.title = wrongOnly
+    ? 'Wrong answers only covers every skill, so the skill filter does not apply.'
+    : '';
 }
 
 function setupControls() {
@@ -2278,6 +2310,7 @@ function setupControls() {
     wrongOnlyToggle.checked = wrongOnly;
     wrongOnlyToggle.addEventListener('change', () => {
       wrongOnly = wrongOnlyToggle.checked;
+      syncSkillSelect();
       current = null;
       nextQuestion({ step: 0, scroll: false });
     });
