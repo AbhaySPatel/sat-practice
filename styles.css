@@ -1219,6 +1219,14 @@ body {
   color: var(--fg);
 }
 
+/* The portion a question calls "underlined". Given a little breathing room from
+   the text so it reads as a mark on the passage rather than a link. */
+.cloze u.referenced {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
 .peek-row {
   display: flex;
   align-items: center;

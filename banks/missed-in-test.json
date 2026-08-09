@@ -1,0 +1,829 @@
+[
+  {
+    "id": "missed-pt5-m1-q4",
+    "source": "College Board Practice Test 5, Module 1, Question 4",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 1,
+    "number": 4,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "To demonstrate that the integrity of underground metal pipes can be assessed without unearthing the pipes, engineer Aroba Saleem and colleagues ___ the tendency of some metals’ internal magnetic fields to alter under stress: the team showed that such alterations can be measured from a distance and can reveal concentrations of stress in the pipes.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "rule": "Most logically completes the text’s discussion of using magnetism to detect stress in buried metal pipes.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "hypothesized",
+        "why": "Choice A is incorrect because in this context, “hypothesized” would mean made a tentative assumption to be evaluated in a study or experiment. Although Saleem and colleagues may have had one or more hypotheses for these experiments, the text presents the information about the tendency of some metals’ magnetic fields to change under stress as a known fact that the researchers made productive use of, not as a hypothesis to be evaluated. The text after the colon indicates that the researchers were not evaluating whether such changes occur but whether those changes can be measured at a distance."
+      },
+      {
+        "label": "B",
+        "text": "discounted",
+        "why": "Choice B is incorrect because in this context, “discounted” would mean downplayed or ignored, but the text does not suggest that Saleem and colleagues minimized or ignored the tendency of the magnetic fields of some metals to change under stress. Rather, the text indicates that this tendency is the basis for Saleem and colleagues’ method of assessing the pipes’ integrity."
+      },
+      {
+        "label": "C",
+        "text": "redefined",
+        "why": "Choice C is incorrect because nothing in the text indicates that Saleem and colleagues “redefined,” or reevaluated or reformulated, the tendency of some metals’ magnetic fields to change under stress. Instead, the text indicates that the researchers made use of that tendency to demonstrate that it is possible to evaluate the integrity of underground pipes without unearthing them."
+      },
+      {
+        "label": "D",
+        "text": "exploited",
+        "why": "Choice D is the best answer because it most logically completes the text’s discussion of using magnetism to detect stress in buried metal pipes. In this context, “exploited” means made productive use of. The text indicates that the magnetic fields of some metals change under stress and that Saleem and colleagues showed that it is possible to measure those changes from a distance, thereby demonstrating that the integrity of underground metal pipes can be evaluated without having to unearth them. This context thus indicates that Saleem and colleagues made productive use of, or exploited, this tendency of the metals’ magnetic fields. SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 4 SAT PRACTICE TEST #5 ANSWER EXPLANATIONS"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m1-q5",
+    "source": "College Board Practice Test 5, Module 1, Question 5",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 1,
+    "number": 5,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Despite the generalizations about human behavior they have produced, many studies of behavioral psychology have used highly unrepresentative subject pools: students at the colleges and universities where the researchers are employed. To ___ this situation, it is necessary to actively recruit subjects from diverse backgrounds and locations.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "rule": "Most logically completes the text’s discussion of behavioral psychology studies.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "sanction",
+        "why": "Choice A is incorrect. In this context, “sanction” could have two meanings: to give official approval for something or to enact a penalty, neither of which makes sense in this context. The text describes a situation known to be problematic in behavioral psychology studies and then presents a potential remedy to that situation; the text does not suggest that the situation is officially approved or results in any type of penalty."
+      },
+      {
+        "label": "B",
+        "text": "ameliorate",
+        "why": "Choice B is the best answer because it most logically completes the text’s discussion of behavioral psychology studies. In this context, “ameliorate” means to help remedy or improve. The text states that many behavioral psychology studies are flawed because the subjects used are “highly unrepresentative.” It is then suggested that researchers should recruit subjects from “diverse backgrounds and locations” in order to help address the issue of unrepresentative subject pools. Thus, this context conveys that recruitment efforts focused on diversity would help ameliorate the problems outlined in the text."
+      },
+      {
+        "label": "C",
+        "text": "rationalize",
+        "why": "Choice C is incorrect because rather than “rationalize,” or explain or justify, a situation, the text presents a situation and its potential remedy."
+      },
+      {
+        "label": "D",
+        "text": "postulate",
+        "why": "Choice D is incorrect because the text is not attempting to “postulate,” or suggest a claim or theory, related to the situation described in the text but is rather presenting a potential remedy for the situation."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m1-q8",
+    "source": "College Board Practice Test 5, Module 1, Question 8",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 1,
+    "number": 8,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Chile’s Atacama Desert is one of the driest places on Earth. Mary Beth Wilhelm and other astrobiologists search for life, or its remains, in this harsh place because the desert closely mirrors the extreme environment on Mars. The algae and bacteria found in Atacama’s driest regions may offer clues about Martian life. By studying how these and other microorganisms survive such extreme conditions on Earth, Wilhelm’s team hopes to determine whether similar life might have existed on Mars and to develop the best tools to look for evidence of it.",
+    "question": "Which choice best describes the function of the underlined sentence in the text as a whole?",
+    "rule": "Most accurately describes how the underlined sentence functions in the text as a whole.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "To contrast the conditions in the Atacama Desert with those on Mars",
+        "why": "Choice A is incorrect because to contrast two things means to show the differences between them, and the phrase “closely mirrors” in the underlined sentence indicates that the extreme environment in the Atacama Desert is similar to, not different from, that on Mars. This similarity is why, according to the underlined sentence, astrobiologists conduct research in Atacama."
+      },
+      {
+        "label": "B",
+        "text": "To explain why many life-forms cannot survive in the Atacama Desert",
+        "why": "Choice B is incorrect because the underlined sentence doesn’t address forms of life that are unable to survive the harsh environment of the Atacama Desert. Instead, the SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 6 SAT PRACTICE TEST #5 ANSWER EXPLANATIONS underlined sentence explains why astrobiologists study life, or its remains, in this environment."
+      },
+      {
+        "label": "C",
+        "text": "To indicate why astrobiologists choose to conduct research in the Atacama Desert",
+        "why": "Choice C is the best answer because it most accurately describes how the underlined sentence functions in the text as a whole. The first sentence describes a unique location on Earth, the Atacama Desert. The next sentence, which is the underlined sentence, states that the reason why astrobiologists study life, or its remains, in this unique location is that Atacama is a harsh environment that closely resembles the extreme environment of Mars. The remainder of the text explains that the researchers hope their work in Atacama will support inquiry into life on Mars. Thus, the underlined portion functions mainly to indicate why astrobiologists choose to conduct research in the Atacama Desert."
+      },
+      {
+        "label": "D",
+        "text": "To describe certain limitations to conducting scientific study in the Atacama Desert",
+        "why": "Choice D is incorrect because the underlined sentence doesn’t suggest that the scientific research in the Atacama Desert is limited in any way; instead, the sentence explains that the similarity between the environments of Atacama and Mars is the reason why astrobiologists search for life, or its remains, in Atacama."
+      }
+    ],
+    "underline": "Mary Beth Wilhelm and other astrobiologists search for life, or its remains, in this harsh place because the desert closely mirrors the extreme environment on Mars."
+  },
+  {
+    "id": "missed-pt5-m1-q10",
+    "source": "College Board Practice Test 5, Module 1, Question 10",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 1,
+    "number": 10,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Changes to vegetation cover and other human activities influence carbon and nitrogen levels in soil, though how deep these effects extend is unclear. Hypothesizing that differences in land use lead to differences in carbon and nitrogen levels that are not restricted to the topsoil layer (0–30 cm deep), Chukwuebuka Okolo and colleagues sampled soils across multiple land-use types (e.g., grazing land, cropland, forest) within each of several Ethiopian locations. They found, though, that across land-use types, carbon and nitrogen decreased to comparably low levels beyond depths of 30 cm.",
+    "question": "Which choice best describes the overall structure of the text?",
+    "rule": "Most accurately describes the overall structure of the text.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "It describes a phenomenon that scientists do not fully understand, explains a research team’s hypothesis about that phenomenon, and then describes a finding that led the team to refine the hypothesis.",
+        "why": "Choice A is incorrect. Although the text introduces a phenomenon (the fact that human activities influence carbon and nitrogen levels in the soil) that isn’t fully understood by scientists and explains a research team’s hypothesis about the phenomenon, the text doesn’t describe how the team refined their hypothesis when a research finding contradicted it."
+      },
+      {
+        "label": "B",
+        "text": "It introduces an unresolved scientific question, presents a research team’s hypothesis pertaining to that question, and then describes an observation made by the team that conflicts with that hypothesis.",
+        "why": "Choice B is the best answer because it most accurately describes the overall structure of the text. The text begins by explaining that human activities influence carbon and nitrogen levels in soil, but how deeply these effects are seen in the soil remains an unresolved question. Next, the text summarizes Okolo and colleagues’ hypothesis regarding this question—which is that the different effects on carbon and nitrogen levels associated with different types of land use would also be observed below the topsoil layer—and then briefly explains the methods they used to test this hypothesis. Finally, the text states that the researchers found that at depths below the topsoil layer, carbon and nitrogen decreased to similarly low levels across all land-use types, a finding that conflicts with the team’s hypothesis presented earlier in the text. Thus, the text introduces an unresolved scientific question, presents a research team’s hypothesis pertaining to that question, and then describes an observation that the team made that conflicted with their hypothesis."
+      },
+      {
+        "label": "C",
+        "text": "It discusses a process that scientists are somewhat unclear about, introduces competing hypotheses about that process, and then explains how a research team concluded that one of those hypotheses is likely correct.",
+        "why": "Choice C is incorrect because the text doesn’t discuss a process at all; rather, it poses an unsolved scientific question and presents a hypothesis that Okolo and colleagues tested to answer that question. Moreover, the text only describes one hypothesis; it doesn’t mention any competing hypotheses, nor does it suggest that Okolo’s team was able to determine which hypothesis was correct."
+      },
+      {
+        "label": "D",
+        "text": "It explains a hypothesis that has been the subject of scientific debate, discusses how a research team tested that hypothesis, and then presents data the team collected that validate the hypothesis.",
+        "why": "Choice D is incorrect because the text doesn’t begin by presenting a hypothesis that is under scientific debate; rather, it presents a question that scientists have been unable to answer and then introduces a hypothesis formulated by Okolo and colleagues. While the text does explain how Okolo’s team tested their hypothesis, the text goes on to say that their data conflicted with their hypothesis, not that the data validated, or supported, their hypothesis."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m1-q16",
+    "source": "College Board Practice Test 5, Module 1, Question 16",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 1,
+    "number": 16,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "The population of the coral Lophelia pertusa declined significantly around 9,000 years ago in the Alboran Sea and around 11,000 years ago near the Mauritanian coast. Using the ratio of manganese to calcium, which inversely correlates with ocean oxygenation levels, marine scientist Rodrigo da Costa Portilho-Ramos and colleagues evaluated whether oxygenation played a role in the declines of L. pertusa. The researchers concluded that oxygenation may have been important in the Alboran Sea but not near the Mauritanian coast, since ___",
+    "question": "Which choice most effectively uses data from the graph to complete the statement?",
+    "rule": "Effectively uses data from the graph to complete the statement about Rodrigo da Costa Portilho-Ramos and colleagues’ conclusion.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "a substantial increase in oxygenation in the Alboran Sea corresponded with the local decline in L. pertusa, but the opposite relationship between oxygenation and L. pertusa was found near the Mauritanian coast.",
+        "why": "Choice A is incorrect because it asserts the opposite of what the graph indicates regarding oxygenation in the Alboran Sea, and it misrepresents what the graph indicates about oxygenation near the Mauritanian coast. The graph indicates that at the time of the decline in L. pertusa (approximately 9,000 years ago), the samples from the Alboran Sea contained a ratio of manganese to calcium that was increasing. According to the text, this ratio inversely correlates with ocean oxygenation levels, so if the ratio was increasing, oxygenation was decreasing, not substantially increasing. Furthermore, the graph shows that the ratio of manganese to calcium remained relatively stable in coral samples from the Mauritanian coast during the period studied, which suggests that there was no discernible relationship between oxygenation and the coral’s population decline in that location, not that there was a substantial decrease in oxygenation corresponding to the coral’s decline."
+      },
+      {
+        "label": "B",
+        "text": "L. pertusa declined in the Alboran Sea during a period of substantial local decline in oxygenation, but L. pertusa declined near the Mauritanian coast during a period of little local change in oxygenation.",
+        "why": "Choice B is the best answer because it effectively uses data from the graph to complete the statement about Rodrigo da Costa Portilho-Ramos and colleagues’ conclusion. The graph shows the ratio of manganese to calcium in L. pertusa coral samples from the Alboran Sea and the Mauritanian coast. The graph reflects time in approximate years before present: in other words, the greater the number in years noted on the graph’s horizontal axis, the farther that moment is in the past. The text indicates that the researchers tested the samples to determine whether oxygenation played a role in the decline of L. pertusa. The text goes on to note that a change in the ratio of manganese to calcium would signal an inverse, or opposite, change in oxygenation. According to the graph, the ratio of manganese to calcium in samples from the Alboran Sea increased from about 30 micromoles per mole 10,000 years ago to about 80 micromoles per mole 8,000 years ago, which means that oxygenation decreased between 10,000 and 8,000 years ago. Meanwhile, there was almost no discernible change in the ratio of manganese to calcium in samples from the Mauritanian coast between 12,000 and 10,000 years ago. According to the text, the population of L. pertusa declined significantly around 9,000 years ago in the Alboran Sea and around 11,000 years ago near the Mauritanian coast. Thus, the increase in the ratio of manganese to calcium around 9,000 years ago in the Alboran Sea coincides with the decline in the L. pertusa population, suggesting an association between the decrease in oxygenation and the decline in population of the coral. No such relationship is suggested around 11,000 years ago near the Mauritanian coast. So, oxygenation likely played a role in the L. pertusa decline in the Alboran Sea but not in the coral’s decline near the Mauritanian coast."
+      },
+      {
+        "label": "C",
+        "text": "oxygenation in the Alboran Sea was higher before the decline in L. pertusa than after the decline, whereas oxygenation near the Mauritanian coast was relatively low both before and after the decline in L. pertusa.",
+        "why": "Choice C is incorrect. Although the graph suggests that the level of oxygenation in the Alboran Sea was higher before the decline in L. pertusa than after—because the ratio of manganese to calcium inversely correlates with ocean oxygenation levels and this ratio was lower before the decline than after—the graph doesn’t support the claim that oxygenation near the Mauritanian coast was consistently low before and after the coral’s decline there. Rather, the graph indicates that relative to coral samples from the Alboran Sea, the ratio of manganese to calcium in samples from near the Mauritanian coast was consistently low, which suggests that oxygenation levels were relatively high both before and after the decline of L. pertusa."
+      },
+      {
+        "label": "D",
+        "text": "oxygenation in the Alboran Sea tended to be substantially higher than oxygenation near the Mauritanian coast during the period studied.",
+        "why": "Choice D is incorrect because it states the opposite of what the graph indicates: the graph SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 11 SAT PRACTICE TEST #5 ANSWER EXPLANATIONS shows that throughout the period studied, the ratio of manganese to calcium was higher in coral samples from the Alboran Sea than it was in samples from near the Mauritanian coast. Since the text indicates that the ratio of manganese to calcium inversely correlates with ocean oxygenation levels, oxygenation in the Alboran Sea was therefore lower than, not higher than, oxygenation near the Mauritanian coast during the period studied. Moreover, even if choice D did accurately represent the graph, it wouldn’t effectively complete the statement since a comparison of the ocean oxygenation levels at the two locations is not relevant to the claim that a decline in oxygenation levels was associated with the decline of L. pertusa in the Alboran Sea but not near the Mauritanian coast."
+      }
+    ],
+    "figure": true,
+    "pdf": "sat-practice-test-5-digital.pdf",
+    "page": 10
+  },
+  {
+    "id": "missed-pt5-m1-q19",
+    "source": "College Board Practice Test 5, Module 1, Question 19",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "inferences",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 1,
+    "number": 19,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Some ethicists hold that the moral goodness of an individual’s actions depends solely on whether the actions themselves are good, irrespective of the context in which they are carried out. Philosopher L. Sebastian Purcell has shown that surviving works of Aztec (Nahua) philosophy express a very different view. Purcell reveals that these works posit an ethical system in which an individual’s actions are judged in light of how well they accord with the individual’s role in society and how well they contribute to the community. To the extent that these works are representative of Aztec thought, Purcell’s analysis suggests that ___",
+    "question": "Which choice most logically completes the text?",
+    "rule": "Most logically completes the text’s discussion about Aztec (Nahua) ethics.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "the Aztecs would have disputed the idea that the morality of an individual’s actions can be assessed by appealing to standards of behavior that are independent of the individual’s social circumstances.",
+        "why": "Choice A is the best answer because it most logically completes the text’s discussion about Aztec (Nahua) ethics. The text indicates that, according to Purcell’s interpretation of available Aztec philosophical works, the Aztec ethical system views an individual’s actions in relation to that individual’s societal role and how the actions affect the community. The text contrasts this view with another held by some ethicists, namely that actions are morally good or bad regardless of the context in which they occur. Thus, Purcell’s analysis suggests that the Aztecs would have asserted that the morality of an individual’s actions are rooted in that person’s position in the community and the actions’ effects and therefore cannot be determined in the absence of that context."
+      },
+      {
+        "label": "B",
+        "text": "the Aztecs would not have accepted the notion that the morality of an individual’s actions can be fairly evaluated by people who do not live in the same society as that individual.",
+        "why": "Choice B is incorrect. Although the text indicates that morally judging an action according to Aztec ethics requires an understanding of the action’s effects and the individual’s social circumstances, it does not specify that only members of that society can acquire this information."
+      },
+      {
+        "label": "C",
+        "text": "actions by members of Aztec society who contributed a great deal to their community could be judged as morally good even if those actions were inconsistent with behaviors the Aztecs regarded as good in all contexts.",
+        "why": "Choice C is incorrect because it implies that the Aztecs considered some actions good or bad regardless of the surrounding context, which contradicts the text’s claim that the Aztecs believed that the morality of an individual’s action is dependent on the action’s effects on the community and the person’s specific circumstances."
+      },
+      {
+        "label": "D",
+        "text": "similar actions performed by people in different social roles in Aztec society would have been regarded as morally equivalent unless those actions led to different outcomes for the community.",
+        "why": "Choice D is incorrect. Although the text indicates that in Aztec ethics the morality of an action depends in part on how it affects the community, this is only one of the two factors—the other being the person’s societal role—that need to be considered. Therefore, it is possible that two actions with the same effect on the community could be considered morally distinct if they are performed by individuals in different social roles."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m1-q24",
+    "source": "College Board Practice Test 5, Module 1, Question 24",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "form-structure-sense",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 1,
+    "number": 24,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "In the music video for the song “We Didn’t Start the Fire” by Billy Joel, the singer lists 118 political and cultural references. Such iconic references, cited in rapid and frenetic procession by the musician, who is seated impassively at a dinner table, ___ key moments and personalities of the twentieth century.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is subject-verb agreement.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "represents",
+        "why": "Choice A is incorrect because the singular verb “represents” doesn’t agree in number with the plural subject “references.”"
+      },
+      {
+        "label": "B",
+        "text": "has represented",
+        "why": "Choice B is incorrect because the singular verb “has represented” doesn’t agree in number with the plural subject “references.”"
+      },
+      {
+        "label": "C",
+        "text": "was representing",
+        "why": "Choice C is incorrect because the singular verb “was representing” doesn’t agree in number with the plural subject “references.”"
+      },
+      {
+        "label": "D",
+        "text": "represent",
+        "why": "Choice D is the best answer. The convention being tested is subject-verb agreement. The plural verb “represent” agrees in number with the plural subject “references.”"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m1-q25",
+    "source": "College Board Practice Test 5, Module 1, Question 25",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "boundaries",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 1,
+    "number": 25,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Long attributed to Jacques-Louis David, the preeminent Neoclassical painter of his day, the 1801 painting Marie Joséphine Charlotte du Val d’Ognes gained fresh attention in the 1990s when art historians discovered that the painting—which depicts a solitary young woman sketching—was actually the work of little-known French portrait ___ Marie-Denise Villers (1774–1821).",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the use of punctuation between titles and proper nouns.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "artist—",
+        "why": "Choice A is incorrect because no punctuation is needed."
+      },
+      {
+        "label": "B",
+        "text": "artist",
+        "why": "Choice B is the best answer. The convention being tested is the use of punctuation between titles and proper nouns. No punctuation is needed to set off the proper noun “Marie-Denise Villers” from the title that describes Villers, “little- known French portrait artist.”"
+      },
+      {
+        "label": "C",
+        "text": "artist:",
+        "why": "Choice C is incorrect because no punctuation is needed."
+      },
+      {
+        "label": "D",
+        "text": "artist,",
+        "why": "Choice D is incorrect because no punctuation is needed."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m1-q29",
+    "source": "College Board Practice Test 5, Module 1, Question 29",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "transitions",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 1,
+    "number": 29,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "According to Duverger’s law, countries with single-ballot majoritarian elections for single-member districts tend to polarize into two-party systems, wherein dueling political parties consistently dominate the political system. ___ countries with proportional-representation electoral systems tend to support multi-partyism, under which power gets distributed among many political parties.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "rule": "“Conversely” logically signals that the information in this sentence—that countries with proportional-representation electoral systems tend toward multi-partyism—contrasts with the previous information about countries with single-ballot majoritarian elections, which tend to have two-party systems.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Subsequently,",
+        "why": "Choice A is incorrect because “subsequently” illogically signals that the information in this sentence about countries with proportional-representation electoral systems occurs later in a chronological sequence of events than the information in the previous sentence. Instead, it contrasts with the previous information."
+      },
+      {
+        "label": "B",
+        "text": "Conversely,",
+        "why": "Choice B is the best answer. “Conversely” logically signals that the information in this sentence—that countries with proportional-representation electoral systems tend toward multi-partyism—contrasts with the previous information about countries with single-ballot majoritarian elections, which tend to have two-party systems."
+      },
+      {
+        "label": "C",
+        "text": "For instance,",
+        "why": "Choice C is incorrect because “for instance” illogically signals that the information in this sentence about countries with proportional-representation electoral systems is an example supporting the previous statement about SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 16 SAT PRACTICE TEST #5 ANSWER EXPLANATIONS countries with single-ballot majoritarian elections. Instead, it contrasts with the previous statement."
+      },
+      {
+        "label": "D",
+        "text": "In other words,",
+        "why": "Choice D is incorrect because “in other words” illogically signals that the information in this sentence about countries with proportional- representation electoral systems is a paraphrase or restatement of the previous information about countries with single-ballot majoritarian elections. Instead, it contrasts with the previous information."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m1-q30",
+    "source": "College Board Practice Test 5, Module 1, Question 30",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "transitions",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 1,
+    "number": 30,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "A turtle shell appears external to the animal, protecting its body like armor. ___ the shell is often incorrectly assumed to be an exoskeleton, a rigid outer casing like that of a crustacean or an insect, when in fact it is an endoskeleton, a part of the turtle’s internal bone structure, more akin to a spine or a pair of ribs.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "rule": "“Hence” logically signals that the information in this sentence about turtle shells—that people incorrectly assume they are exoskeletons—is a consequence of the shells appearing external to the animal.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "That being said,",
+        "why": "Choice A is incorrect because “that being said” illogically signals that this sentence qualifies or contrasts with the previous information about turtle shells appearing external to the animal. Instead, it presents a consequence of that information."
+      },
+      {
+        "label": "B",
+        "text": "However,",
+        "why": "Choice B is incorrect because “however” illogically signals that this sentence contrasts with the previous information about turtle shells appearing external to the animal. Instead, it presents a consequence of that information."
+      },
+      {
+        "label": "C",
+        "text": "For instance,",
+        "why": "Choice C is incorrect because “for instance” illogically signals that this sentence provides an example supporting the previous information about turtle shells appearing external to the animal. Instead, it presents a consequence of that information."
+      },
+      {
+        "label": "D",
+        "text": "Hence,",
+        "why": "Choice D is the best answer. “Hence” logically signals that the information in this sentence about turtle shells—that people incorrectly assume they are exoskeletons—is a consequence of the shells appearing external to the animal."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m1-q33",
+    "source": "College Board Practice Test 5, Module 1, Question 33",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "rhetorical-synthesis",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 1,
+    "number": 33,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "While researching a topic, a student has taken the following notes: • The US Fish and Wildlife Service (FWS) keeps a list of all at-risk species. • Species on the list are classified as either endangered or threatened. • A species that is in danger of extinction throughout most or all of its range is classified as endangered. • A species that is likely to soon become endangered is classified as threatened. • The California red-legged frog (Rana draytonii) is likely to soon become endangered, according to the FWS. The student wants to indicate the California red-legged frog’s FWS classification category.",
+    "question": "Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "rule": "The sentence effectively indicates the California red-legged frog’s FWS classification category, noting that the FWS classifies the frog as threatened, a classification given to species that are likely to soon become endangered.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Species on the FWS list, which includes the California red-legged frog (Rana draytonii), are classified as either endangered or threatened.",
+        "why": "Choice A is incorrect. The sentence specifies the classification categories of the FWS list; it doesn’t indicate the classification category of the California red-legged frog."
+      },
+      {
+        "label": "B",
+        "text": "The California red-legged frog (Rana draytonii) appears on the FWS list of at-risk species.",
+        "why": "Choice B is incorrect. While the sentence does note that the California red-legged frog is among the species classified by the FWS, it doesn’t indicate what classification category the California red-legged frog occupies."
+      },
+      {
+        "label": "C",
+        "text": "According to the FWS, the California red-legged frog is in the endangered category, in danger of extinction throughout most or all of its range.",
+        "why": "Choice C is incorrect. While the sentence does appear to indicate the California red-legged frog’s FWS classification category, the sentence is factually incorrect and therefore ineffective; the frog’s classification category is threatened, not endangered."
+      },
+      {
+        "label": "D",
+        "text": "Likely to soon become endangered, the California red-legged frog is classified as threatened by the FWS. STOP If you finish before time is called, you may check your work on this module only. Do not turn to any other module in the test.",
+        "why": "Choice D is the best answer. The sentence effectively indicates the California red-legged frog’s FWS classification category, noting that the FWS classifies the frog as threatened, a classification given to species that are likely to soon become endangered."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m2-q4",
+    "source": "College Board Practice Test 5, Module 2, Question 4",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 2,
+    "number": 4,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "The War of 1812 has ___ place in historical memory in Britain, partly because it is overshadowed by the much larger concurrent conflict against Napoleonic France and partly because it essentially maintained the geopolitical status quo for Britain: the country neither gained nor lost significant territory or position as a result of its participation in the war.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "rule": "Most logically completes the text’s discussion of the significance of the War of 1812 in British historical memory.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "a tenuous",
+        "why": "Choice A is the best answer because it most logically completes the text’s discussion of the significance of the War of 1812 in British historical memory. In this context, “tenuous” means vulnerable or uncertain. The text indicates that the War of 1812 was both smaller, and less prominent, than the conflict with France, and resulted in no significant geopolitical changes. These details imply that the War of 1812 is less likely than other British historical events to be remembered, giving the War of 1812 a tenuous place in British historical memory. 20 SAT PRACTICE TEST #5 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2"
+      },
+      {
+        "label": "B",
+        "text": "an enduring",
+        "why": "Choice B is incorrect because in this context “enduring” would mean lasting or durable, but the text describes the War of 1812 as being overshadowed by, and smaller than, the simultaneous conflict with France. This seems to conflict with the notion that the War of 1812 has an enduring place in British historical memory."
+      },
+      {
+        "label": "C",
+        "text": "a contentious",
+        "why": "Choice C is incorrect because in this context “contentious” would mean likely to cause disagreement, and while there likely are contentious issues related to the War of 1812, nothing in the text discusses or implies any such disagreement."
+      },
+      {
+        "label": "D",
+        "text": "a conspicuous",
+        "why": "Choice D is incorrect because in this context “conspicuous” would mean obvious, but the text describes the War of 1812 as being overshadowed by, and smaller than, the simultaneous conflict with France. Rather than suggesting that the War of 1812 has a conspicuous place in British historical memory, these descriptions suggest that its place is not particularly obvious."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m2-q5",
+    "source": "College Board Practice Test 5, Module 2, Question 5",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 2,
+    "number": 5,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Claims about the original significance of Minoan bull-leaping rituals—depicted in paintings and sculptures from the second millennium BCE—are difficult to successfully ___. We know so little about the people archaeologists call the Minoans that assertions about what bull-leaping meant to them will almost inevitably rely on significant speculation and guesswork.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "rule": "Most logically completes the text’s discussion of Minoan bull-leaping rituals.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "imagine",
+        "why": "Choice A is incorrect because “imagine” in this context would mean form a mental image of something. Although it’s possible to imagine what Minoan bull-leaping rituals might have looked like, the focus of the text isn’t on how the rituals looked but rather on claims about them, which the text suggests are difficult to support because very little is known about the Minoans."
+      },
+      {
+        "label": "B",
+        "text": "summarize",
+        "why": "Choice B is incorrect because “summarize” in this context would mean recap or outline, neither of which makes sense. The text indicates that claims about the significance of Minoan bull-leaping rituals will inevitably rely on speculation and guesswork because very little is known about the Minoans. This suggests that claims about the Minoan rituals are difficult to support in the face of argument, not that they’re difficult to recap or outline."
+      },
+      {
+        "label": "C",
+        "text": "defend",
+        "why": "Choice C is the best answer because it most logically completes the text’s discussion of Minoan bull-leaping rituals. In this context, “defend” means support in the face of argument. The overall focus of the text is on the difficulty of determining what bull-leaping rituals meant to the Minoans, about whom, the text indicates, we know very little. The text states that because of this scarcity of information, assertions about the meaning of the rituals, which took place a very long time ago (in the second millennium BCE), are highly likely to be based on speculation and guesswork. This context suggests that claims about the meaning of the rituals are difficult to successfully support, or defend."
+      },
+      {
+        "label": "D",
+        "text": "adjust",
+        "why": "Choice D is incorrect because “adjust” in this context would mean modify or correct. Although a claim about a ritual’s meaning could be modified or corrected based on newly discovered evidence, the text doesn’t focus on any specific claims made about the significance of Minoan bull-leaping rituals. Rather, the text focuses on the feasibility of making valid claims about the rituals in general, suggesting that the scarcity of information about the Minoans makes it difficult to support any claims about the rituals."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m2-q7",
+    "source": "College Board Practice Test 5, Module 2, Question 7",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 2,
+    "number": 7,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Several studies have found negligible electoral consequences for governments that impose fiscal austerity measures, yet some European governments recently suffered electorally due to their austerity programs. Evelyne Huebscher and colleagues attribute this incongruity to governments’ tendency—not followed in the recent European cases—to implement austerity programs strategically to avoid electoral costs (e.g., setting spending cuts to take effect only after the next election), which has obscured the inherent political risks of austerity measures in the election data scholars have examined.",
+    "question": "Which choice best describes the function of the underlined sentence in the text as a whole?",
+    "rule": "Best describes how the underlined sentence functions in the text as a whole.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "It explains a discrepancy between what has been observed in study settings and what has been observed in real-world settings that the text goes on to assert is attributable to the studies not using real-world data.",
+        "why": "Choice A is incorrect because the underlined sentence doesn’t indicate that the discrepancy described in the text is between observations made in study settings and observations made in real-world settings. Rather, the underlined sentence indicates that the outcome of recent events is contrary to what would be expected based on the findings of several studies. Additionally, there is nothing in the text to suggest that the studies mentioned did not use real- world data; instead, the text indicates that the data used was generated under potentially different circumstances than the recent events."
+      },
+      {
+        "label": "B",
+        "text": "It identifies a conflict between research findings and recent events that the text goes on to suggest is a consequence of a complicating factor in the data used to generate those findings.",
+        "why": "Choice B is the best answer because it best describes how the underlined sentence functions in the text as a whole. The underlined sentence explains that contrary to what several studies would suggest, recent European governments suffered electorally after the launch of fiscal austerity programs. The text goes on to indicate that the researchers generated their findings from data that didn’t reveal the true political risk of austerity measures because the data were based on cases in which governments had set austerity programs to take effect after the next election, a practice the European governments that recently suffered electorally didn’t adhere to, thus introducing a complicating factor resulting in a conflict between the research findings and recent events."
+      },
+      {
+        "label": "C",
+        "text": "It presents a long-standing divergence in research findings that the text goes on to say is due to different groups of researchers using data that derive from different electoral circumstances.",
+        "why": "Choice C is incorrect because the underlined sentence doesn’t present a long-standing divergence in research findings but rather a discrepancy between past research findings and recent events that the text goes on to attribute to researchers’ use of data that didn’t reveal the true political risk of austerity measures."
+      },
+      {
+        "label": "D",
+        "text": "It describes a recent exception to a general pattern in research findings that the text goes on to explain is a result of researchers underestimating the significance of inconsistencies in the data they’ve analyzed.",
+        "why": "Choice D is incorrect because while the underlined sentence notes that there have been some recent exceptions to a general pattern observed in several research studies, it does not go on to attribute this exception to the researchers underestimating inconsistencies in the data. Rather, the text goes on to attribute this to a 22 SAT PRACTICE TEST #5 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2 circumstance (fiscal austerity measures being implemented before an election rather than after) which adds a complicating factor into the data not accounted for in past studies."
+      }
+    ],
+    "underline": "Several studies have found negligible electoral consequences for governments that impose fiscal austerity measures, yet some European governments recently suffered electorally due to their austerity programs."
+  },
+  {
+    "id": "missed-pt5-m2-q13",
+    "source": "College Board Practice Test 5, Module 2, Question 13",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 2,
+    "number": 13,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Fish whose DNA has been modified to include genetic material from other species are known as transgenic. Some transgenic fish have genes from jellyfish that result in fluorescence (that is, they glow in the dark). Although these fish were initially engineered for research purposes in the 1990s, they were sold as pets in the 2000s and can now be found in the wild in creeks in Brazil. A student in a biology seminar who is writing a paper on these fish asserts that their escape from Brazilian fish farms into the wild may have significant negative long-term ecological effects.",
+    "question": "Which quotation from a researcher would best support the student’s assertion?",
+    "rule": "This quotation would best support the student’s assertion that the escape of transgenic fish from Brazilian fish farms into the wild may have significant negative long-term ecological effects.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "“In one site in the wild where transgenic fish were observed, females outnumbered males, while in another the numbers of females and males were equivalent.”",
+        "why": "Choice A is incorrect because this quotation doesn’t mention any negative effects of the introduction of fluorescent transgenic fish into the wild. The quotation merely compares the ratio of females to males at two sites in the wild where transgenic fish have been observed."
+      },
+      {
+        "label": "B",
+        "text": "“Though some presence of transgenic fish in the wild has been recorded, there are insufficient studies of the impact of those fish on the ecosystems into which they are introduced.”",
+        "why": "Choice B is incorrect because this quotation doesn’t support the idea that the escape of fluorescent transgenic fish from Brazilian fish farms may have significant negative long-term ecological effects. Rather, the quotation suggests that more research is needed to understand the effects."
+      },
+      {
+        "label": "C",
+        "text": "“The ecosystems into which transgenic fish are known to have been introduced may represent a subset of the ecosystems into which the fish have actually been introduced.”",
+        "why": "Choice C is incorrect because this quotation supports the idea that transgenic fish may be present in more ecosystems than has been observed; it doesn’t address whether the presence of fluorescent transgenic fish affects these ecosystems."
+      },
+      {
+        "label": "D",
+        "text": "“Through interbreeding, transgenic fish might introduce the trait of fluorescence into wild fish populations, making those populations more vulnerable to predators.”",
+        "why": "Choice D is the best answer because this quotation would best support the student’s assertion that the escape of transgenic fish from Brazilian fish farms into the wild may have significant negative long-term ecological effects. The text explains that transgenic fish have DNA that includes genetic material from other species, that some transgenic fish have genes from jellyfish that make them glow in the dark, and that glow- in-the-dark transgenic fish can now be found in the wild in Brazilian creeks. The quotation indicates why the escape of these fish may have negative long-term ecological effects: glow-in-the-dark transgenic fish might introduce fluorescence into wild fish populations by breeding with wild fish, causing wild fish to glow in the dark and thereby allowing predators to prey on them much more easily."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m2-q15",
+    "source": "College Board Practice Test 5, Module 2, Question 15",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 2,
+    "number": 15,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "“Poetry” is a 1919 poem by Marianne Moore. The poem highlights an ambivalence toward poetry as the speaker acknowledges its merits while also expressing a sense of displeasure, writing ___",
+    "question": "Which quotation from “Poetry” most effectively illustrates the claim?",
+    "rule": "Most effectively uses a quotation from “Poetry” to illustrate the claim that the poem highlights an ambivalence, or a conflicted attitude, toward poetry.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "“nor is it valid / to discriminate against ‘business documents and / school-books’; all these phenomena are important.”",
+        "why": "Choice A is incorrect because it doesn’t mention poetry or show ambivalence."
+      },
+      {
+        "label": "B",
+        "text": "“One must make a distinction / however: when dragged into prominence by half poets, the result is not / poetry”",
+        "why": "Choice B is incorrect. Although the idea of “half poets” may seem to relate to ambivalence, the speaker mentions only negative attitudes toward certain works and the quotation therefore lacks a contrasting positive or neutral attitude that would be needed to indicate ambivalence."
+      },
+      {
+        "label": "C",
+        "text": "“when [poems] become so derivative as to become unintelligible, the / same thing may be said for all of us—that we / do not admire what / we cannot understand.”",
+        "why": "Choice C is incorrect because the speaker mentions only negative attitudes toward certain works and the quotation therefore lacks a contrasting positive or neutral attitude that would be needed to indicate ambivalence. 27 SAT PRACTICE TEST #5 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2"
+      },
+      {
+        "label": "D",
+        "text": "“Reading [poetry], however, with a perfect contempt for it, one discovers that there is in / it after all, a place for the genuine.”",
+        "why": "Choice D is the best answer because it most effectively uses a quotation from “Poetry” to illustrate the claim that the poem highlights an ambivalence, or a conflicted attitude, toward poetry. In the quotation, the speaker suggests that one might read poetry with “contempt,” or disdain, for it, but even with this negative attitude one will find “a place for the genuine.” Because the quotation expresses conflicting attitudes toward poetry, it effectively illustrates the speaker’s ambivalence in discussing the merits and displeasure of reading poetry."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m2-q16",
+    "source": "College Board Practice Test 5, Module 2, Question 16",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 2,
+    "number": 16,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Simulated Change in Annual Aquifer Input and Irrigation Output if Precipitation Concentration Increases as Climate Models Predict Baseline concentration of annual precipitation % change in water entering aquifers % change in surface water used for irrigation % change in groundwater used for irrigation Precipitation is currently somewhat concentrated Precipitation is currently evenly distributed Some climate models for the western United States predict that while total annual precipitation may remain unchanged from the present level, precipitation will become concentrated into fewer but more intense rain and snow events. University of Texas climate scientist Geeta Persad and her colleagues simulated how the amount of water entering aquifers and the amount being used for irrigation purposes would change if this were to occur. Persad and her colleagues concluded that concentration of precipitation into fewer events would result in a higher number of dry days, triggering more irrigation, but that this change in irrigation output is highly sensitive to the baseline concentration of precipitation that currently exists in an area.",
+    "question": "Which choice best describes data from the table that support Persad and her colleagues’ conclusion?",
+    "rule": "Describes data from the table that support Persad and her colleagues’ conclusion.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "If baseline precipitation is somewhat concentrated, the amount of water being used for irrigation will increase 0.4% for surface water and 0.9% for groundwater, whereas the amount of water entering aquifers will increase 11.0% if baseline precipitation is evenly distributed.",
+        "why": "Choice A is incorrect because it compares changes in the amount of water being used for irrigation to changes in the amount of water entering aquifers. Persad and her colleagues’ conclusion doesn’t focus on changes to the amount of water entering aquifers; rather, the researchers’ conclusion focuses on changes to irrigation output relative to how concentrated or spread out the annual precipitation in an area is."
+      },
+      {
+        "label": "B",
+        "text": "If baseline precipitation is somewhat concentrated, water use for irrigation will increase only slightly, whereas it will increase 9.0% for surface water and 7.9% for groundwater if baseline precipitation is evenly distributed.",
+        "why": "Choice B is the best answer because it describes data from the table that support Persad and her colleagues’ conclusion. The text explains that, according to some climate models, precipitation in the western United States will become concentrated into fewer, more intense rain and snow events. According to the text, Persad and her colleagues concluded that more irrigation will consequently be needed but that the change in irrigation output will be highly sensitive to, or greatly affected by, the baseline concentration of precipitation in an area. This conclusion is supported by data from the researchers’ simulations of changes in annual irrigation output in two different scenarios—one in which an area’s annual precipitation is already somewhat concentrated and one in which its annual precipitation is evenly distributed. The table shows that if baseline precipitation is somewhat concentrated, water use for irrigation will increase only slightly, whereas if baseline precipitation is evenly distributed, water use for irrigation will increase much more—9.0% for surface water and 7.9% for groundwater. This difference illustrates the researchers’ conclusion that the amount of additional water needed for irrigation will vary greatly depending on how concentrated or spread out the annual precipitation in an area already is."
+      },
+      {
+        "label": "C",
+        "text": "If baseline precipitation is somewhat concentrated, the amount of water entering aquifers will increase 4.9%, while the amount being used for irrigation will increase 0.4% for surface water and 0.9% for groundwater.",
+        "why": "Choice C is incorrect because it supports only part of Persad and her colleagues’ conclusion. According to the text, the researchers concluded that the concentration of precipitation into fewer events will trigger more irrigation but that this change in irrigation output will be highly sensitive to an area’s baseline concentration of annual precipitation. The data in this choice support the idea that more irrigation will be needed, but to support the rest of the researchers’ conclusion, additional data from the table are required to show that the increases in water use for irrigation will vary depending on how concentrated or spread out the annual precipitation in an area already is."
+      },
+      {
+        "label": "D",
+        "text": "If baseline precipitation is somewhat concentrated, water use for irrigation will decline by a small amount, whereas it will increase 11.0% for surface water and 9.0% for groundwater if baseline precipitation is evenly distributed.",
+        "why": "Choice D is incorrect because data in the table indicate no declines in water use for irrigation, showing only increases in the form of positive values."
+      }
+    ],
+    "figure": true,
+    "pdf": "sat-practice-test-5-digital.pdf",
+    "page": 26
+  },
+  {
+    "id": "missed-pt5-m2-q18",
+    "source": "College Board Practice Test 5, Module 2, Question 18",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "form-structure-sense",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 2,
+    "number": 18,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "How did whales, once no bigger than seals, evolve to become the largest animals on Earth? Brazilian biologist Mariana Nery believes the answer might be found in whales’ DNA. In January 2023, Nery and her colleagues ___ a study showing changes over time in four whale genes associated with body size.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the use of verb forms within a sentence.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "published",
+        "why": "Choice A is the best answer. The convention being tested is the use of verb forms within a sentence. A main clause requires a finite (tensed) verb to perform the action of the subject (in this case, Nery and her colleagues), and this choice supplies the finite past tense verb “published” to indicate that these biologists shared their findings about changes in whale genes associated with body size."
+      },
+      {
+        "label": "B",
+        "text": "publishing",
+        "why": "Choice B is incorrect because it results in an ungrammatical sentence. The nonfinite participle “publishing” doesn’t supply the main clause with a finite verb."
+      },
+      {
+        "label": "C",
+        "text": "having published",
+        "why": "Choice C is incorrect because it results in an ungrammatical sentence. The nonfinite participle “having published” doesn’t supply the main clause with a finite verb."
+      },
+      {
+        "label": "D",
+        "text": "to publish",
+        "why": "Choice D is incorrect because it results in an ungrammatical sentence. The nonfinite to-infinitive “to publish” doesn’t supply the main clause with a finite verb."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m2-q24",
+    "source": "College Board Practice Test 5, Module 2, Question 24",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "form-structure-sense",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 2,
+    "number": 24,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "In her 1983 book The Managed Heart: Commercialization of Human Feeling, sociologist Arlie Russell Hochschild first explored at length her conception of a “sociology of emotions”—the idea that the various cultural and ideological frameworks a person has internalized (class, gender, political affiliation, etc.) ___ each emotional reaction that person has within a situation.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is subject-verb agreement.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "underlies",
+        "why": "Choice A is incorrect because the singular verb “underlies” doesn’t agree in number with the plural subject “frameworks.”"
+      },
+      {
+        "label": "B",
+        "text": "is underlying",
+        "why": "Choice B is incorrect because the singular verb “is underlying” doesn’t agree in number with the plural subject “frameworks.”"
+      },
+      {
+        "label": "C",
+        "text": "underlie",
+        "why": "Choice C is the best answer. The convention being tested is subject-verb agreement. The plural verb “underlie” agrees in number with the plural subject “frameworks.”"
+      },
+      {
+        "label": "D",
+        "text": "has been underlying",
+        "why": "Choice D is incorrect because the singular verb “has been underlying” doesn’t agree in number with the plural subject “frameworks.”"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m2-q25",
+    "source": "College Board Practice Test 5, Module 2, Question 25",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "form-structure-sense",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 2,
+    "number": 25,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "American abstract artist Richard ___ his installations to make passersby keenly aware of how one’s movements are affected by the physical features of one’s environment, assembles large-scale steel plates into sculptures that dominate the outdoor spaces they occupy.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the use of verb forms within a sentence.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Serra is intending",
+        "why": "Choice A is incorrect because it results in an ungrammatical sentence. The finite present continuous tense verb “is intending” can’t be used in this way in conjunction with the finite present tense verb “assembles,” which already functions as the main verb in the sentence."
+      },
+      {
+        "label": "B",
+        "text": "Serra, intends",
+        "why": "Choice B is incorrect because it results in an ungrammatical sentence. The finite present tense verb “intends” can’t be used in this way to supplement the noun phrase “American abstract artist Richard Serra.”"
+      },
+      {
+        "label": "C",
+        "text": "Serra, intending",
+        "why": "Choice C is the best answer. The convention being tested is the use of verb forms within a sentence. This choice pairs the comma after “Serra” with the comma after “environment” and uses the nonfinite present participle “intending” to correctly form a supplementary phrase describing the reaction Serra intends his sculptures to provoke. This supplementary phrase appears between the noun phrase that it modifies (“American abstract artist Richard Serra”) and the finite present tense verb (“assembles”), which functions as the sentence’s main verb and describes what Serra does."
+      },
+      {
+        "label": "D",
+        "text": "Serra intends",
+        "why": "Choice D is incorrect because it results in an ungrammatical sentence. The finite present tense verb “intends” can’t be used in this way in conjunction with the finite present tense verb “assembles,” which already functions as the main verb in the sentence."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt5-m2-q29",
+    "source": "College Board Practice Test 5, Module 2, Question 29",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "transitions",
+    "test": "Practice Test 5",
+    "taken": "2026-08-09",
+    "module": 2,
+    "number": 29,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "In retrospect, one of the lessons of the 2003 Human Genome Project is that a gene is affected by many factors, not the least of which is its interactions with the protein products of other genes. ___ rather than just focusing on the human genome, efforts to better understand gene mutations related to disease have begun to consider the human proteome, the complete set of proteins expressed by human genes.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "rule": "“Accordingly” logically signals that this sentence states a result or consequence of the previous information about the 2003 Human Genome Project.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "In other words,",
+        "why": "Choice A is incorrect because “in other words” illogically signals that the information in this sentence is a paraphrase or restatement of the previous information about the 2003 Human Genome Project. Instead, this sentence states a result or consequence of that information."
+      },
+      {
+        "label": "B",
+        "text": "That said,",
+        "why": "Choice B is incorrect because “that said” illogically signals that the information in this sentence qualifies or contrasts with the previous information about the 2003 Human Genome Project. Instead, this sentence states a result or consequence of that information."
+      },
+      {
+        "label": "C",
+        "text": "For example,",
+        "why": "Choice C is incorrect because “for example” illogically signals that this sentence provides an example supporting the previous information about the 2003 Human Genome Project. Instead, this sentence states a result or consequence of that information."
+      },
+      {
+        "label": "D",
+        "text": "Accordingly,",
+        "why": "Choice D is the best answer. “Accordingly” logically signals that this sentence states a result or consequence of the previous information about the 2003 Human Genome Project. Taking into account an important lesson of the 2003 project (that a gene is affected by interactions with the protein products of other genes), research has begun to consider the human proteome instead of just the genome. 32 SAT PRACTICE TEST #5 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2"
+      }
+    ]
+  }
+]

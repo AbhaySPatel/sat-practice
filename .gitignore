@@ -5,6 +5,9 @@
 book/*.pdf
 .claude/
 
+# Byte-code from the extract_*.py scripts
+__pycache__/
+
 # OS and editor noise
 .DS_Store
 Thumbs.db

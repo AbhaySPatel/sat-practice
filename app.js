@@ -12,7 +12,7 @@
 // its markup, but the banks are fetched from here, so nothing was busting them --
 // a browser could serve a months-old vocab.json against new code, which is
 // exactly what happened. Bump this whenever a file under banks/ changes.
-const DATA_VERSION = '2026-08-07b';
+const DATA_VERSION = '2026-08-09a';
 
 // Official College Board banks only. banks/context.json is deliberately absent
 // -- see the note in the README about Words in Context and the direction drill.
@@ -111,7 +111,12 @@ const BASELINE_ERRORS = {
   'command-of-evidence': 1,
   'rhetorical-synthesis': 1,
   'central-ideas-details': 0,
-  'cross-text-connections': 0
+  'cross-text-connections': 0,
+  // Top weight from the start. Every question in this set is one he actually got
+  // wrong on a timed practice test, which makes it the most valuable thing in the
+  // app to beat -- and, once he has answered a few, skillWeight() takes over and
+  // prices it on his live accuracy like any other skill.
+  'missed-in-test': 6
 };
 const WORST_BASELINE = 6;
 
@@ -194,6 +199,7 @@ const DIRECTIONS = [
 const SKILL_LABELS = {
   vocabulary: 'Vocabulary',
   defective: 'Needs the PDF',
+  'missed-in-test': 'Missed in a test',
   'words-in-context': 'Words in Context',
   transitions: 'Transitions',
   boundaries: 'Boundaries',
@@ -233,7 +239,8 @@ const SKILLS_BY_DOMAIN = {
   'expression-of-ideas': ['transitions', 'rhetorical-synthesis'],
   'standard-english': ['boundaries', 'form-structure-sense'],
   'information-ideas': ['inferences', 'central-ideas-details', 'command-of-evidence'],
-  extra: ['vocabulary', 'defective']
+  // First in the group: it is the set with the most to teach him.
+  extra: ['missed-in-test', 'vocabulary', 'defective']
 };
 
 // Word meanings for the Words in Context options, keyed by question id then
@@ -249,6 +256,20 @@ let vocabByQuestion = {};
 // a real practice set.
 const DEFECTIVE_FILE = 'banks/defective.json';
 const DEFECTIVE_SKILL = 'defective';
+
+// Questions he got wrong on a real, timed practice test. They keep their own
+// skill so they never turn up unannounced inside ordinary practice -- this is a
+// set he chooses to revise -- while `realSkill` on each one records what it
+// actually tests. Built by extract_missed.py; grows after every practice test.
+//
+// Loaded separately from BANKS rather than as an eleventh entry, so it can be
+// appended AFTER the vocabulary drill in bank order. That ordering is not
+// cosmetic: `pool` is `bank` filtered in place, and the saved cursor is an index
+// into it, so anything inserted ahead of an existing question moves the place he
+// had been holding. Appending at the end leaves every existing index untouched.
+const MISSED_FILE = 'banks/missed-in-test.json';
+const MISSED_SKILL = 'missed-in-test';
+let missedQuestions = [];
 let defectiveById = {};
 let vocabQuestions = [];
 // word (lowercased) -> its drill question id, so a Words in Context question can
@@ -335,6 +356,7 @@ const peekBtnEl = document.getElementById('peekBtn');
 const peekNoteEl = document.getElementById('peekNote');
 const pdfNoticeEl = document.getElementById('pdfNotice');
 const pdfNoticeDetailEl = document.getElementById('pdfNoticeDetail');
+const pdfNoticeTitleEl = document.getElementById('pdfNoticeTitle');
 const streakValueEl = document.getElementById('streakValue');
 const bestValueEl = document.getElementById('bestValue');
 
@@ -732,9 +754,37 @@ function appendText(parent, text, signal) {
   parent.append(text.slice(0, at), mark, text.slice(at + signal.length));
 }
 
+// Some questions ask about "the underlined portion", which is worthless unless
+// something is actually underlined. The practice-test PDFs mark that portion up
+// for screen readers, so extract_missed.py can recover it and store it verbatim;
+// this puts the underline back. Built as a real element rather than markup in
+// the passage, so passages are still never interpreted as HTML.
+function appendUnderlined(parent, text, portion, signal) {
+  const at = portion ? text.indexOf(portion) : -1;
+  if (at === -1) {
+    appendText(parent, text, signal);
+    return;
+  }
+  const u = document.createElement('u');
+  u.className = 'referenced';
+  appendText(u, portion, signal);
+  appendText(parent, text.slice(0, at), signal);
+  parent.append(u);
+  appendText(parent, text.slice(at + portion.length), signal);
+}
+
 function renderPassage(question, showSignal) {
   passageEl.textContent = '';
   const signal = showSignal ? question.signal : null;
+  const underline = question.underline || null;
+
+  // An underlined question never also has a blank -- it asks about the sentence
+  // as written -- so this can return before the cloze handling below.
+  if (underline && question.passage.includes(underline)) {
+    passageEl.classList.add('is-prose');
+    appendUnderlined(passageEl, question.passage, underline, signal);
+    return;
+  }
 
   // Two thirds of the bank fills a blank; the rest asks about the passage as a
   // whole (main idea, structure, which quotation supports a claim). Those have
@@ -769,10 +819,21 @@ function fillBlank(text) {
 
 function renderMeta(question) {
   metaEl.textContent = '';
-  [
-    SKILL_LABELS[question.skill] || question.skill,
-    question.difficulty
-  ].forEach((label) => {
+
+  const labels = [SKILL_LABELS[question.skill] || question.skill];
+  if (question.skill === MISSED_SKILL) {
+    // Difficulty here is ours, not College Board's -- every one of these is
+    // tagged hard because he missed it -- so it would say nothing. What it
+    // actually tests, and which test it came from, both say something.
+    labels.push(SKILL_LABELS[question.realSkill] || question.realSkill);
+    if (question.test) {
+      labels.push(`${question.test} · Module ${question.module} Q${question.number}`);
+    }
+  } else {
+    labels.push(question.difficulty);
+  }
+
+  labels.filter(Boolean).forEach((label) => {
     const tag = document.createElement('span');
     tag.className = 'tag';
     tag.textContent = label;
@@ -910,13 +971,33 @@ function canPeek(question) {
 // so the page reference is the whole point of keeping these at all.
 function renderPdfNotice(question) {
   if (!pdfNoticeEl) return;
-  const broken = question && question.skill === DEFECTIVE_SKILL;
-  pdfNoticeEl.hidden = !broken;
-  if (!broken || !pdfNoticeDetailEl) return;
+
+  // Two different reasons to need the PDF: the underline was lost in extraction,
+  // or the question is built on a chart that is not text at all.
+  const broken = !!question && question.skill === DEFECTIVE_SKILL;
+  const figure = !!question && !!question.figure;
+  pdfNoticeEl.hidden = !(broken || figure);
+  if (pdfNoticeEl.hidden || !pdfNoticeDetailEl) return;
+
+  const where = question.pdf ? `${question.pdf}, page ${question.page}` : '';
+
+  if (pdfNoticeTitleEl) {
+    pdfNoticeTitleEl.textContent = figure
+      ? 'You need the figure for this one'
+      : 'Read this one from the PDF';
+  }
+
+  if (figure) {
+    pdfNoticeDetailEl.textContent = where
+      ? `This one is answered from a graph or table${where ? ` — ${where}` : ''}. `
+        + 'The passage and choices are below; the figure is only in the PDF.'
+      : 'This one is answered from a graph or table, which is only in the PDF.';
+    return;
+  }
 
   const skill = SKILL_LABELS[question.realSkill] || question.realSkill || 'this skill';
-  pdfNoticeDetailEl.textContent = question.pdf
-    ? `${skill} · ${question.pdf}, page ${question.page}. `
+  pdfNoticeDetailEl.textContent = where
+    ? `${skill} · ${where}. `
       + 'The underlined portion was lost when the PDF was extracted, so it is not shown below.'
     : `${skill}. The underlined portion was lost when the PDF was extracted.`;
 }
@@ -2011,6 +2092,21 @@ function loadDefective() {
     .catch((err) => console.warn('No defective list loaded.', err));
 }
 
+// Same contract again: swallows its own errors and always resolves, so a missing
+// file just means the revision set is absent and everything else runs as before.
+function loadMissed() {
+  return fetch(`${MISSED_FILE}?v=${DATA_VERSION}`)
+    .then((r) => (r.ok ? r.json() : null))
+    .then((data) => {
+      if (!Array.isArray(data)) return;
+      missedQuestions = data;
+      const tests = new Set(data.map((q) => q.test).filter(Boolean));
+      console.info(`Missed in a test: ${data.length} questions from `
+        + `${tests.size} test(s).`);
+    })
+    .catch((err) => console.warn('No missed-in-test set loaded.', err));
+}
+
 // Fetched alongside the banks and deliberately not awaited by them: a missing or
 // broken vocab file must not stop questions loading.
 function loadVocab() {
@@ -2049,9 +2145,12 @@ function loadBanks() {
         })
     )),
     loadVocab(),
-    loadDefective()
+    loadDefective(),
+    loadMissed()
   ]).then(([results]) => {
-    const raw = results.flat().concat(vocabQuestions);
+    // Order matters and is append-only: the saved cursor is an index into this,
+    // so new questions go on the end and every existing index keeps its meaning.
+    const raw = results.flat().concat(vocabQuestions, missedQuestions);
     bank = raw.filter(isReady);
 
     // Retag before anything reads `bank`: the skill filter, the dropdown counts
