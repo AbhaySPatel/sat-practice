@@ -72,6 +72,13 @@
         <input type="checkbox" id="wrongOnlyToggle" />
         <span>Wrong answers only</span>
       </label>
+      <!-- On by default: the useful set is what he has still to get right, not
+           the whole bank. Nothing is deleted -- the counts stay in his history
+           and unticking brings every one of them straight back. -->
+      <label class="switch" title="Hides questions answered correctly first time and never missed since. Nothing is deleted — untick to practise them again.">
+        <input type="checkbox" id="hideAcedToggle" checked />
+        <span>Hide first-time correct</span>
+      </label>
       <button type="button" class="link-btn" id="restartSequence">Restart</button>
     </div>
 

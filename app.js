@@ -292,6 +292,10 @@ let difficultyFilter = 'all'; // 'all' | 'easy' | 'medium' | 'hard'
 // only -- every other bank is a question bank, not a sitting of a test.
 let testFilter = 'all';
 let wrongOnly = false;     // restrict to questions he has gotten wrong
+// Drop the ones he got right first time, so the set is what he has left to do.
+// On by default; nothing is deleted, so unticking restores them all.
+let hideAced = true;
+let clearedCount = 0;      // how many the line above set aside, for the readout
 let directionAnswered = false;
 let directionCorrect = null;
 let sessionStreak = [];
@@ -323,6 +327,7 @@ const skillSelect = document.getElementById('skillSelect');
 const difficultySelect = document.getElementById('difficultySelect');
 const testSelect = document.getElementById('testSelect');
 const testControl = document.getElementById('testControl');
+const hideAcedToggle = document.getElementById('hideAcedToggle');
 const skillStatsEl = document.getElementById('skillStats');
 // One readout per pager -- there is a copy above and below the question -- so
 // this is a list rather than a single element by id.
@@ -400,7 +405,7 @@ function emptyStore() {
     // vocab[questionId] = { run } -- consecutive right answers on that word.
     vocab: {},
     sinceReview: 0,
-    filters: { skill: 'all', difficulty: 'all' }
+    filters: { skill: 'all', difficulty: 'all', test: 'all', hideAced: true }
   };
 }
 
@@ -524,10 +529,15 @@ let store = loadStore();
 skillFilter = (store.filters && store.filters.skill) || 'all';
 difficultyFilter = (store.filters && store.filters.difficulty) || 'all';
 testFilter = (store.filters && store.filters.test) || 'all';
+// Absent means never turned off, which is the default state -- so this reads the
+// stored value only to honour an explicit untick, and `|| true` would not do:
+// stored `false` has to survive a reload.
+hideAced = !(store.filters && store.filters.hideAced === false);
 
 function rememberFilters() {
   store.filters = {
-    skill: skillFilter, difficulty: difficultyFilter, test: testFilter
+    skill: skillFilter, difficulty: difficultyFilter, test: testFilter,
+    hideAced: hideAced
   };
   saveStore();
 }
@@ -735,6 +745,22 @@ function projectedScore(accuracy) {
 // visible rather than silently retired.
 function isWrongEver(id) {
   return statsFor(id).wrong > 0;
+}
+
+// Answered, and never once missed. The progress entry keeps totals rather than a
+// list of attempts, so which attempt was the wrong one is not recorded -- but a
+// question with no wrong answers against it can only have been right first time,
+// and one he got right first and then missed is exactly what he should still see.
+function acedFirstTime(id) {
+  const stats = statsFor(id);
+  return stats.seen > 0 && stats.wrong === 0;
+}
+
+// Is a question retired from the pool by "Hide first-time correct"? The vocabulary
+// drill is exempt: it retires words on its own schedule, needing VOCAB_MASTERED_BY
+// correct answers in a row, and one right answer is not that.
+function isAced(question) {
+  return hideAced && question.skill !== VOCAB_SKILL && acedFirstTime(question.id);
 }
 
 // --- Rendering -------------------------------------------------------------
@@ -1701,6 +1727,16 @@ function applyFilters() {
   // Words he has beaten drop out, so the drill is always the ones still costing
   // him something rather than a march through all 952.
   pool = pool.filter((q) => q.skill !== VOCAB_SKILL || !vocabMastered(q.id));
+  // Same idea one level up, and for the same reason: what is left to do is more
+  // use to him than the whole bank. A no-op under wrong-only, which already keeps
+  // only questions he has missed.
+  const beforeAced = pool.length;
+  pool = pool.filter((q) => !isAced(q));
+  // Kept so the readout can show what was set aside. Questions dropping out of a
+  // count with no explanation reads like losing them. Zero under wrong-only: a
+  // question he has never missed is not part of that set to begin with, so
+  // counting it as cleared *from* it would be reporting on the wrong pool.
+  clearedCount = wrongOnly ? 0 : beforeAced - pool.length;
   if (wrongOnly) pool = pool.filter((q) => isWrongEver(q.id));
 }
 
@@ -1712,10 +1748,15 @@ function applyFilters() {
 // The test is appended only while it is actually being applied, so every key he
 // has already built up -- they are saved, and each holds a real position -- means
 // exactly what it did before this filter existed.
+//
+// `hideAced` is marked on the key when it is ON, not off: every key he had
+// before it existed was built against the full set, which is what unticking
+// gives back, so those keep their meaning too.
 function cursorKey() {
   const skill = wrongOnly ? 'all' : skillFilter;
   const test = testFilterApplies() ? `|${testFilter}` : '';
-  return `${skill}|${difficultyFilter}|${wrongOnly ? 'wrong' : 'all'}${test}`;
+  const left = hideAced ? '|todo' : '';
+  return `${skill}|${difficultyFilter}|${wrongOnly ? 'wrong' : 'all'}${test}${left}`;
 }
 
 function cursorValue() {
@@ -1756,12 +1797,19 @@ function nextQuestion(options) {
   if (pool.length === 0) {
     // Skill is not part of this pool any more, so suggesting he widen it would
     // send him to a control that is disabled and would change nothing.
-    setEmptyState(wrongOnly
+    // Clearing a whole set is the good ending, not a dead end, so it gets its own
+    // message -- and names the tick that brings the questions back, because
+    // otherwise an empty screen looks like they are gone.
+    const cleared = !wrongOnly && hideAced && clearedCount > 0
+      ? `Nothing left here — you have got all ${clearedCount} right first time. `
+        + 'Untick "Hide first-time correct" to work through them again.'
+      : null;
+    setEmptyState(cleared || (wrongOnly
       ? (difficultyFilter === 'all'
         ? 'Nothing wrong yet. Untick "Wrong answers only" to keep practising.'
         : 'Nothing wrong yet at this difficulty. Set Difficulty to Any, or untick '
           + '"Wrong answers only".')
-      : 'No questions match these filters.', true);
+      : 'No questions match these filters.'), true);
     // Neither direction leads anywhere in an empty set; the warning takes the
     // readout's place in the pager and both controls go inert.
     setPagerState({ atStart: true, empty: true });
@@ -1830,7 +1878,10 @@ function renderSetSummary() {
     servingReview ? 'Review repeat' : `Position ${position} of ${total}`,
     pass > 1 && !servingReview ? `pass ${pass}` : null,
     `${seen} answered`,
-    wrong > 0 ? `${wrong} to revisit` : null
+    wrong > 0 ? `${wrong} to revisit` : null,
+    // Says where the missing ones went, and it is the number he asked the filter
+    // for: how much of this set he has already put behind him.
+    clearedCount > 0 ? `${clearedCount} cleared` : null
   ].filter(Boolean);
   setEmptyState(parts.join(' · '));
 
@@ -2107,6 +2158,13 @@ function jumpToQuestion(id) {
   difficultyFilter = 'all';
   testFilter = 'all';
   wrongOnly = false;
+  // Only when it would otherwise be out of reach. The tick is his default, so a
+  // jump to a question that is in the pool regardless leaves it alone.
+  if (isAced(target)) {
+    hideAced = false;
+    if (hideAcedToggle) hideAcedToggle.checked = false;
+    if (bank.length > 0) buildSkillSelect();
+  }
   syncSkillSelect();
   syncTestSelect();
   if (difficultySelect) difficultySelect.value = difficultyFilter;
@@ -2269,11 +2327,14 @@ function buildSkillSelect() {
 
   // Counts what is still AVAILABLE, not what exists: retired vocabulary words are
   // gone from the pool, so a fixed 952 in the dropdown would be a lie he watches
-  // never move.
+  // never move. Questions retired by "Hide first-time correct" go the same way --
+  // these numbers are the answer to "how much have I got left here?", so they have
+  // to fall as he clears them.
   const counts = {};
   let available = 0;
   bank.forEach((q) => {
     if (q.skill === VOCAB_SKILL && vocabMastered(q.id)) return;
+    if (isAced(q)) return;
     counts[q.skill] = (counts[q.skill] || 0) + 1;
     available += 1;
   });
@@ -2327,7 +2388,7 @@ function buildTestSelect() {
   if (!testSelect) return;
   testSelect.textContent = '';
 
-  const missed = bank.filter((q) => q.skill === MISSED_SKILL && q.test);
+  const missed = bank.filter((q) => q.skill === MISSED_SKILL && q.test && !isAced(q));
   // Newest first by the date he sat it, falling back to the label so tests
   // without a date still order predictably rather than by bank position.
   const taken = {};
@@ -2420,6 +2481,19 @@ function setupControls() {
     difficultySelect.addEventListener('change', () => {
       difficultyFilter = difficultySelect.value;
       rememberFilters();
+      current = null;
+      nextQuestion({ step: 0, scroll: false });
+    });
+  }
+
+  if (hideAcedToggle) {
+    hideAcedToggle.checked = hideAced;
+    hideAcedToggle.addEventListener('change', () => {
+      hideAced = hideAcedToggle.checked;
+      rememberFilters();
+      // The per-skill counts are what he reads to see how much is left, so they
+      // have to change with the tick, not on the next answer.
+      if (bank.length > 0) buildSkillSelect();
       current = null;
       nextQuestion({ step: 0, scroll: false });
     });
