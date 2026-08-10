@@ -288,6 +288,9 @@ let pendingIndex = null;
 let servingReview = false; // is the question on screen a spliced-in repeat?
 let skillFilter = 'all';   // 'all' or any key of SKILL_LABELS
 let difficultyFilter = 'all'; // 'all' | 'easy' | 'medium' | 'hard'
+// 'all' or a `test` label from the missed-in-test set. Applies to that one skill
+// only -- every other bank is a question bank, not a sitting of a test.
+let testFilter = 'all';
 let wrongOnly = false;     // restrict to questions he has gotten wrong
 let directionAnswered = false;
 let directionCorrect = null;
@@ -318,6 +321,8 @@ const streakEl = document.getElementById('streakStrip');
 const lifetimeEl = document.getElementById('lifetimeStats');
 const skillSelect = document.getElementById('skillSelect');
 const difficultySelect = document.getElementById('difficultySelect');
+const testSelect = document.getElementById('testSelect');
+const testControl = document.getElementById('testControl');
 const skillStatsEl = document.getElementById('skillStats');
 // One readout per pager -- there is a copy above and below the question -- so
 // this is a list rather than a single element by id.
@@ -518,9 +523,12 @@ let store = loadStore();
 // set on the days he has nothing outstanding.
 skillFilter = (store.filters && store.filters.skill) || 'all';
 difficultyFilter = (store.filters && store.filters.difficulty) || 'all';
+testFilter = (store.filters && store.filters.test) || 'all';
 
 function rememberFilters() {
-  store.filters = { skill: skillFilter, difficulty: difficultyFilter };
+  store.filters = {
+    skill: skillFilter, difficulty: difficultyFilter, test: testFilter
+  };
   saveStore();
 }
 
@@ -827,7 +835,12 @@ function renderMeta(question) {
     // actually tests, and which test it came from, both say something.
     labels.push(SKILL_LABELS[question.realSkill] || question.realSkill);
     if (question.test) {
-      labels.push(`${question.test} · Module ${question.module} Q${question.number}`);
+      // Bluebook's review screen does not say which module a question came from,
+      // so those carry a number only.
+      const where = question.module
+        ? `Module ${question.module} Q${question.number}`
+        : `Q${question.number}`;
+      labels.push(`${question.test} · ${where}`);
     }
   } else {
     labels.push(question.difficulty);
@@ -1672,10 +1685,18 @@ function vocabMastered(id) {
 // skill as well leaves one or two per skill and turns his own mistakes into
 // something he has to hunt for. This is the one view that should cut across
 // skills. Difficulty still applies -- that narrowing is still useful here.
+// True only in the one view where a test is a meaningful thing to narrow to:
+// "Missed in a test" chosen outright. Wrong-only cuts across every skill, so the
+// set it draws from is not one test's worth of questions either.
+function testFilterApplies() {
+  return testFilter !== 'all' && !wrongOnly && skillFilter === MISSED_SKILL;
+}
+
 function applyFilters() {
   pool = bank.filter((q) =>
     (wrongOnly || skillFilter === 'all' || q.skill === skillFilter) &&
-    (difficultyFilter === 'all' || q.difficulty === difficultyFilter)
+    (difficultyFilter === 'all' || q.difficulty === difficultyFilter) &&
+    (!testFilterApplies() || q.test === testFilter)
   );
   // Words he has beaten drop out, so the drill is always the ones still costing
   // him something rather than a march through all 952.
@@ -1687,9 +1708,14 @@ function applyFilters() {
 // the skill part to 'all' because that pool is the same whatever the dropdown
 // says -- without this the one list would keep a separate place per skill and
 // jump about as he changed a dropdown that is not even being applied.
+//
+// The test is appended only while it is actually being applied, so every key he
+// has already built up -- they are saved, and each holds a real position -- means
+// exactly what it did before this filter existed.
 function cursorKey() {
   const skill = wrongOnly ? 'all' : skillFilter;
-  return `${skill}|${difficultyFilter}|${wrongOnly ? 'wrong' : 'all'}`;
+  const test = testFilterApplies() ? `|${testFilter}` : '';
+  return `${skill}|${difficultyFilter}|${wrongOnly ? 'wrong' : 'all'}${test}`;
 }
 
 function cursorValue() {
@@ -2074,12 +2100,17 @@ function jumpToQuestion(id) {
   const target = bank.find((q) => q.id === id);
   if (!target) return false;
 
-  // Widen the filters only as far as needed to make the question reachable.
+  // Widen the filters only as far as needed to make the question reachable. The
+  // test goes too: a link into a Practice 5 question is unreachable while the set
+  // is narrowed to Practice 6, and it is the same question either way.
   skillFilter = target.skill;
   difficultyFilter = 'all';
+  testFilter = 'all';
   wrongOnly = false;
   syncSkillSelect();
+  syncTestSelect();
   if (difficultySelect) difficultySelect.value = difficultyFilter;
+  if (testSelect) testSelect.value = testFilter;
   if (wrongOnlyToggle) wrongOnlyToggle.checked = false;
   rememberFilters();
 
@@ -2286,6 +2317,66 @@ function buildSkillSelect() {
   }
 
   syncSkillSelect();
+  buildTestSelect();
+}
+
+// The tests he has sat, newest first -- the one just taken is the one he wants.
+// Built from the set itself, so it grows when a test is added and the control
+// disappears entirely if the file is missing.
+function buildTestSelect() {
+  if (!testSelect) return;
+  testSelect.textContent = '';
+
+  const missed = bank.filter((q) => q.skill === MISSED_SKILL && q.test);
+  // Newest first by the date he sat it, falling back to the label so tests
+  // without a date still order predictably rather than by bank position.
+  const taken = {};
+  const counts = {};
+  missed.forEach((q) => {
+    counts[q.test] = (counts[q.test] || 0) + 1;
+    taken[q.test] = q.taken || '';
+  });
+  const labels = Object.keys(counts).sort((a, b) =>
+    (taken[b] || '').localeCompare(taken[a] || '') || a.localeCompare(b));
+
+  // With nothing to choose between, the control is hidden below -- so the choice
+  // has to go too, or a saved one would sit there narrowing the set with no
+  // control on screen to say so.
+  if (labels.length < 2 && testFilter !== 'all') {
+    testFilter = 'all';
+    rememberFilters();
+  }
+
+  const option = (value, label, count) => {
+    const el = document.createElement('option');
+    el.value = value;
+    el.textContent = `${label} (${count})`;
+    return el;
+  };
+
+  testSelect.append(option('all', 'Every test', missed.length));
+  labels.forEach((label) => testSelect.append(option(label, label, counts[label])));
+
+  // A saved test can outlive the file that named it.
+  testSelect.value = testFilter;
+  if (testSelect.value !== testFilter) {
+    testFilter = 'all';
+    testSelect.value = 'all';
+    rememberFilters();
+  }
+
+  syncTestSelect();
+}
+
+// Shown exactly when it applies. Narrowing to one sitting of a test means nothing
+// against a question bank, so outside "Missed in a test" the control is not there
+// to be wondered about -- and `testFilter` is left alone, so returning to that
+// skill brings his choice back with it.
+function syncTestSelect() {
+  if (!testControl) return;
+  const relevant = !wrongOnly && skillFilter === MISSED_SKILL
+    && testSelect && testSelect.options.length > 2;
+  testControl.hidden = !relevant;
 }
 
 // The dropdown must never claim to be filtering something it is not. While
@@ -2308,6 +2399,16 @@ function setupControls() {
   if (skillSelect) {
     skillSelect.addEventListener('change', () => {
       skillFilter = skillSelect.value;
+      syncTestSelect();
+      rememberFilters();
+      current = null;
+      nextQuestion({ step: 0, scroll: false });
+    });
+  }
+
+  if (testSelect) {
+    testSelect.addEventListener('change', () => {
+      testFilter = testSelect.value;
       rememberFilters();
       current = null;
       nextQuestion({ step: 0, scroll: false });
@@ -2329,6 +2430,7 @@ function setupControls() {
     wrongOnlyToggle.addEventListener('change', () => {
       wrongOnly = wrongOnlyToggle.checked;
       syncSkillSelect();
+      syncTestSelect();
       current = null;
       nextQuestion({ step: 0, scroll: false });
     });

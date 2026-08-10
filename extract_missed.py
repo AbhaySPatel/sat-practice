@@ -17,9 +17,17 @@ and -- for Standard English Conventions, where the prompt is identical across
 Boundaries and Form/Structure/Sense -- from the rationale, which names the rule
 outright ("The convention being tested is subject-verb agreement").
 
-To add a test: append to TESTS below with the pages each module spans and the
-question numbers he missed, then re-run. Existing entries are rebuilt from
-scratch each time, so this is safe to run repeatedly.
+A Bluebook practice test is adaptive and College Board publishes no PDF for it,
+so there is nothing to parse: those questions are copied out of Bluebook's own
+review screen into tests/missed-bluebook.json and read from there. Everything
+after the reading is shared with the PDF route -- same skill classifier, same
+rule line, same option glossing -- so a typed-in question is indistinguishable
+in the app from an extracted one.
+
+To add a paper test: append to TESTS below with the pages each module spans and
+the question numbers he missed, then re-run. For a Bluebook test, add to
+tests/missed-bluebook.json. Existing entries are rebuilt from scratch each time,
+so this is safe to run repeatedly.
 
 Run:  python3 extract_missed.py
 """
@@ -31,6 +39,10 @@ from pathlib import Path
 from collections import Counter
 
 OUT = Path('banks/missed-in-test.json')
+# Typed-in questions from the Bluebook tests. An input file rather than rows
+# pasted into OUT, because OUT is rewritten from scratch on every run: anything
+# hand-added there would vanish the next time a paper test was added.
+BLUEBOOK = Path('tests/missed-bluebook.json')
 SKILL = 'missed-in-test'
 DOMAIN = 'extra'
 
@@ -366,6 +378,22 @@ def make_rule(best_rationale):
 
 # --- Which skill ------------------------------------------------------------
 
+# Which of College Board's four Reading and Writing domains each skill belongs to.
+# Only used to check the classifier against the domain Bluebook itself reports for
+# a question, which is why it is not in the banks' own vocabulary of domain names.
+SKILL_DOMAIN = {
+    'words-in-context': 'Craft and Structure',
+    'text-structure-purpose': 'Craft and Structure',
+    'cross-text-connections': 'Craft and Structure',
+    'central-ideas-details': 'Information and Ideas',
+    'command-of-evidence': 'Information and Ideas',
+    'inferences': 'Information and Ideas',
+    'boundaries': 'Standard English Conventions',
+    'form-structure-sense': 'Standard English Conventions',
+    'transitions': 'Expression of Ideas',
+    'rhetorical-synthesis': 'Expression of Ideas',
+}
+
 # Checked in order. Conventions first, because Boundaries and Form/Structure &
 # Sense share one prompt word for word and only the rationale tells them apart.
 def classify(prompt, rationale):
@@ -386,6 +414,10 @@ def classify(prompt, rationale):
         (r'function of the underlined|overall structure|main purpose of the text',
          'text-structure-purpose'),
         (r'quotation .*(?:illustrate|support)|would best support|'
+         # "Which finding, if true, would most directly support the hypothesis" --
+         # the same skill as the quotation and data questions, asked about a
+         # hypothetical result rather than about something already in the text.
+         r'if true, would most \w+ly (?:support|weaken|undermine)|'
          r'data from the (?:graph|table)|Based on the (?:data|table|graph)|'
          r'most effectively uses data', 'command-of-evidence'),
         (r'most logically completes the text', 'inferences'),
@@ -525,6 +557,115 @@ def build(test):
     return rows, problems
 
 
+def build_bluebook():
+    """The same rows, from tests/missed-bluebook.json instead of a pair of PDFs.
+
+    The typed-in entry carries only what Bluebook's review screen shows: the
+    passage, the prompt, the four options, and the one rationale blob covering all
+    four choices. The correct letter, the per-option `why`, the rule line and the
+    skill are all derived from that blob by the same functions the PDF route uses.
+    """
+    if not BLUEBOOK.exists():
+        return [], []
+
+    manual = load_manual()
+    word_index = load_word_index()
+    rows, problems = [], []
+
+    for test in json.loads(BLUEBOOK.read_text(encoding='utf-8')):
+        for q in test['questions']:
+            where = f'{test["key"]} Q{q["number"]}'
+            passage = re.sub(r'\s+', ' ', q['passage']).strip()
+            prompt = re.sub(r'\s+', ' ', q['question']).strip()
+            rationale = re.sub(r'\s+', ' ', q['rationale']).strip()
+            options = q['options']
+            correct, per_option = split_rationale(rationale)
+
+            if sorted(options) != list('ABCD'):
+                problems.append(f'{where}: options {sorted(options)}')
+            if not correct:
+                problems.append(f'{where}: no "Choice X is the best answer" in the rationale')
+            elif sorted(per_option) != list('ABCD'):
+                problems.append(f'{where}: rationales {sorted(per_option)}')
+
+            # `realSkill` can be set by hand when the prompt is one the classifier
+            # does not know; otherwise it is inferred exactly as for a paper test.
+            skill = q.get('realSkill') or classify(prompt, rationale)
+            if not skill:
+                problems.append(f'{where}: skill not recognised -- set "realSkill" by hand')
+            # Bluebook names the domain above each question, and every skill sits in
+            # exactly one domain, so the copied-down `domainBand` checks the
+            # classifier for free. A paper test has nothing to check against.
+            band = (q.get('domainBand') or '').split(',')[0].strip()
+            if skill and band and SKILL_DOMAIN.get(skill) != band:
+                problems.append(f'{where}: classified {skill}, but Bluebook '
+                                f'files it under {band}')
+
+            # Bluebook underlines the portion on screen but copies as plain text,
+            # so which words were underlined is recovered by hand from the
+            # rationale. If it does not match the passage character for character
+            # the app silently renders the question with nothing underlined, which
+            # for these prompts makes it unanswerable -- hence the check.
+            underline = q.get('underline')
+            if underline and underline not in passage:
+                problems.append(f'{where}: underlined portion is not in the passage verbatim')
+
+            row = {
+                'id': f'missed-{test["key"]}-m{q["module"]}-q{q["number"]}',
+                'source': f'College Board {test["label"]}, '
+                          f'Module {q["module"]}, Question {q["number"]}',
+                'skill': SKILL,
+                'domain': DOMAIN,
+                'realSkill': skill,
+                'test': test['label'],
+                'taken': test['taken'],
+                # Bluebook numbers questions within a module, so the same number
+                # turns up twice on one test. Which module a question came from is
+                # nowhere on its review screen, but the score summary's list of
+                # incorrect answers runs through module 1 and then module 2, each
+                # in ascending order, so a number that goes down marks the join.
+                'module': q['module'],
+                'number': q['number'],
+                # Unlike a paper test, Bluebook does report difficulty: the
+                # Knowledge and Skills page prints one level per domain, above the
+                # questions from it. That is College Board's own figure, so it is
+                # used as given rather than being called hard by fiat -- it decides
+                # what the question is worth and which Difficulty filter it answers
+                # to. `domainBand` in the input file records the block it was read
+                # from. Falls back to hard for an entry typed without one.
+                'difficulty': q.get('difficulty', 'hard'),
+                'hasBlank': '___' in passage,
+                'passage': passage,
+                'question': prompt,
+                'rule': make_rule(per_option.get(correct, rationale)) if correct else '',
+                'correctLabel': correct,
+                'options': [
+                    {'label': lab, 'text': options.get(lab, ''),
+                     'why': per_option.get(lab, '')}
+                    for lab in 'ABCD'
+                ],
+            }
+            # Which distractor took him in. The paper tests' worksheet does not
+            # record this; Bluebook's review screen does, and it is the most
+            # diagnostic thing about the miss.
+            if q.get('chose'):
+                row['chose'] = q['chose']
+            if underline:
+                row['underline'] = underline
+            # A "most nearly mean" question is the one Words in Context shape whose
+            # options are already definitions -- the word under test is in the
+            # passage, not in the choices -- so there is nothing to gloss.
+            if skill == 'words-in-context' and 'most nearly mean' not in prompt:
+                got = gloss_options(row['options'], per_option, manual, word_index)
+                if got < len(row['options']):
+                    problems.append(
+                        f'{where}: {len(row["options"]) - got} option(s) without a '
+                        'gloss — add them to banks/vocab-glosses.json')
+            rows.append(row)
+
+    return rows, problems
+
+
 def main():
     try:
         import fitz  # noqa: F401
@@ -540,6 +681,21 @@ def main():
         all_rows += rows
         all_problems += problems
         print(f'{test["label"]}: {len(rows)} questions')
+
+    # Appended after the PDF tests, and in the order the file lists them. The app
+    # holds his place as an index into the bank, so anything inserted ahead of an
+    # existing question would move it -- see the note by MISSED_FILE in app.js.
+    rows, problems = build_bluebook()
+    all_rows += rows
+    all_problems += problems
+    if rows:
+        print(f'{BLUEBOOK}: {len(rows)} questions')
+
+    # Progress is stored against the id, so two questions sharing one would share
+    # his history and each overwrite the other's.
+    dupes = [i for i, n in Counter(r['id'] for r in all_rows).items() if n > 1]
+    for i in dupes:
+        all_problems.append(f'{i}: duplicate id -- check the "module" on each')
 
     OUT.write_text(json.dumps(all_rows, indent=2, ensure_ascii=False) + '\n',
                    encoding='utf-8')

@@ -1,0 +1,268 @@
+[
+  {
+    "key": "p6",
+    "label": "Practice 6",
+    "taken": "2026-08-10",
+    "questions": [
+      {
+        "number": 6,
+        "module": 1,
+        "chose": "A",
+        "domainBand": "Craft and Structure, 4 out of 7",
+        "difficulty": "medium",
+        "passage": "The people of medieval Europe have traditionally been seen as uninterested in cleanliness and hygiene, but modern research has shown that this is largely a myth. According to historian Eleanor Janega, most medieval towns in Europe had at least one public bathhouse, which often offered both full-immersion baths and—more affordably—steam baths. While such amenities were available mainly to town dwellers, regular bathing in rivers and streams or daily sponge baths at home were common practices throughout medieval Europe.",
+        "underline": "While such amenities were available mainly to town dwellers",
+        "question": "Which choice best describes the function of the underlined portion?",
+        "options": {
+          "A": "It asserts that in medieval Europe steam baths were more popular in rural areas than in urban ones.",
+          "B": "It describes a limitation of earlier historians’ studies of medieval European bathing habits.",
+          "C": "It concedes that not all people in medieval Europe had access to public bathhouses.",
+          "D": "It explains why Janega decided to study the popularity of public bathhouses in medieval Europe."
+        },
+        "rationale": "Choice C is the best answer because it most effectively describes the function of the underlined portion. The text discusses the long-standing misconception that people in medieval Europe were uninterested in cleanliness and hygiene. As evidence that this idea is false, the text cites historian Eleanor Janega’s assertion that in medieval Europe, towns usually had at least one bathhouse, where people could take immersion baths or steam baths for a fee. The underlined portion then notes that mainly town dwellers had access to these bathhouses. The remainder of the text explains that those who lacked such access were nonetheless able to bathe in outdoor waterways or take sponge baths at home. Therefore, the underlined portion concedes that some people in medieval Europe lacked access to public bathhouses. Choice A is incorrect. The underlined portion establishes that amenities such as steam baths were mainly available to town dwellers, which suggests in turn that steam baths were largely unavailable to people in rural areas. Thus, the distinction made by the underlined portion is not between the popularity of steam baths in towns versus their lack of popularity in rural areas but instead between their presence in towns and absence in rural areas. Choice B is incorrect. Although the text does explain that recent historians have disproved the idea that medieval Europeans rarely bathed, it doesn’t attribute that misconception to earlier historians of medieval Europe or suggest that their research was subject to limitations. Moreover, the underlined portion addresses a limitation of life in medieval Europe, not of historical research. Choice D is incorrect because the underlined portion doesn’t address why historian Eleanor Janega decided to study the popularity of public bathhouses in medieval Europe—nor does any portion of the text. The text mentions Janega in passing, but it doesn’t go into detail about why she decided to study the popularity of public bathhouses in medieval Europe."
+      },
+      {
+        "number": 8,
+        "module": 1,
+        "chose": "C",
+        "domainBand": "Craft and Structure, 4 out of 7",
+        "difficulty": "medium",
+        "passage": "Text 1 An excavation in Chiquihuite Cave in central Mexico has upended the belief that approximately 13,000 years ago, a group known as the Clovis people were the first human inhabitants of North America. More than 200 crude stone tools were found embedded in a layer of earth that is up to 33,150 years old, revealing that humans occupied the cave thousands of years before the Clovis people reached the continent. Text 2 The objects uncovered in Chiquihuite Cave are intriguing, but it is premature to characterize them as tools. The stone pieces are so roughly shaped that they may have simply fractured from rocks during natural geological activity in the cave. Moreover, their unearthing has thus far not been accompanied by discoveries of other signs of human activity or even traces of human DNA from surfaces.",
+        "underline": "revealing that humans occupied the cave thousands of years before the Clovis people reached the continent.",
+        "question": "Based on the texts, how would the author of Text 2 most likely respond to the underlined claim in Text 1?",
+        "options": {
+          "A": "By suggesting that it draws a plausible connection between two groups of people but will need to be confirmed with further study",
+          "B": "By asserting that it rests on an assumption about the stone pieces that is not sufficiently supported by available evidence",
+          "C": "By acknowledging that it will most likely be proved correct when the stone pieces undergo more detailed analysis",
+          "D": "By pointing out that it fails to account for evidence that the Clovis people were active on the continent as early as is commonly thought"
+        },
+        "rationale": "Choice B is the best answer because it reflects how the author of Text 2 would most likely respond to the underlined claim about the Clovis people in Text 1. Text 1 explains that the idea that the Clovis people were the first human inhabitants of North America has been overturned by the unearthing of stone tools in Chiquihuite Cave in Mexico. The tools were found in a layer of earth that is over 33,000 years old—much older than the Clovis people’s arrival 13,000 years ago. The text ends with the claim that the tools reveal that humans lived in the cave long before the Clovis people reached the continent. Text 2, on the other hand, disputes the idea that the stone pieces are definitely tools. Text 2 states that the pieces are so roughly shaped that they may have simply naturally broken off from rocks and, moreover, that no other signs of human activity have been found in the cave. In other words, Text 2 argues that there is no proof yet that humans made the pieces as tools or were even present in the cave. Therefore, the author of Text 2 would most likely say that the claim that humans occupied Chiquihuite Cave long before the Clovis people reached North America rests on an assumption about the stone pieces—that they are human-made tools—that is not sufficiently supported by available evidence. Choice A is incorrect because Text 1 doesn’t claim that human inhabitants of Chiquihuite Cave and the Clovis people had any connection; the author of Text 1 focuses only on the timing of each group’s presence in North America. Further, the author of Text 2 makes no mention of the Clovis people and indicates that it isn’t clear yet that any human group did inhabit Chiquihuite Cave. Choice C is incorrect because nothing in Text 2 suggests that the author believes the stone pieces probably are human-made tools and will be confirmed as such by further analysis; instead, the author of Text 2 emphasizes the current lack of evidence of human activity in the cave. Choice D is incorrect because Text 2 focuses on the issue of characterizing the stone pieces as tools made by humans, not on the timing of any particular group’s activity in North America; further, Text 1 seems to support the common belief that the Clovis people reached North America 13,000 years ago and challenges only the idea that they were the continent’s first inhabitants. Therefore, there’s no reason to think the author of Text 2 would say that the author of Text 1 overlooks evidence that the Clovis people were active as early as is commonly thought."
+      },
+      {
+        "number": 13,
+        "module": 1,
+        "chose": "A",
+        "domainBand": "Information and Ideas, 6 out of 7",
+        "difficulty": "hard",
+        "passage": "As media consumption has become increasingly multiplatform and socially mediated, active news acquisition has diminished in favor of an attitude known as “news finds me” (NFM), in which people passively rely on their social networks and ambient media environments for information about current events. Homero Gil de Zúñiga and Trevor Diehl examined data on a representative group of adults in the United States to determine participants’ strength of NFM attitude, political knowledge, and political interest. Although no major election took place sufficiently near the study for Gil de Zúñiga and Diehl to identify causality between NFM and voting behavior, they did posit that NFM may reduce voting probability through an indirect effect.",
+        "question": "Which finding, if true, would most directly support the idea advanced by Gil de Zúñiga and Diehl?",
+        "options": {
+          "A": "NFM attitude tends to increase in strength as major elections approach, and people are significantly more likely to vote in major elections than in minor elections.",
+          "B": "NFM attitude has a strong negative effect on political knowledge and interest, and there is known to be a strong positive correlation between political knowledge and interest and the likelihood of voting.",
+          "C": "Political interest is known to have a strong positive effect on likelihood of voting but shows only a weak positive effect on political knowledge, and NFM attitude shows little correlation with either political knowledge or political interest.",
+          "D": "The likelihood of voting increases as political knowledge increases, and the relationship between NFM attitude and political knowledge tends to strengthen as the size of people’s social networks increases."
+        },
+        "rationale": "Choice B is the best answer because it presents a finding that, if true, would most directly support the idea advanced by Homero Gil de Zúñiga and Trevor Diehl that NFM (\"news finds me\") attitude may reduce voting probability through an indirect effect. The text describes NFM as an attitude that has lowered people’s interest in actively acquiring news and introduces Gil de Zúñiga and Diehl’s study on the effects of NFM on people in the United States’ political knowledge and interest. The text goes on to say that despite the fact that the study didn’t occur near a major election, Gil de Zúñiga and Diehl still conclude that NFM may reduce voting probability. If the likelihood, or probability, that a person will vote is linked to that person’s level of political knowledge and interest, that would suggest that negatively affecting a person’s level of political knowledge and interest would also negatively affect how likely that person is to vote. Thus, if NFM attitude has a negative effect on political knowledge and interest, then it would also likely reduce voting probability. Choice A is incorrect because the finding that NFM attitude increases as major elections approach wouldn’t address the effect of NFM on the likelihood of voting, which is the idea advanced by Gil de Zúñiga and Diehl. Moreover, although the text mentions that there were no major elections that occurred near the time of the study, it doesn’t discern between major and minor elections when discussing voting probability. Choice C is incorrect because finding that NFM attitude shows little correlation with either political knowledge or political interest would undermine, not support, Gil de Zúñiga and Diehl’s idea that NFM may reduce voting probability because it suggests that NFM has no effect on political knowledge or political interest. Choice D is incorrect. Although Gil de Zúñiga and Diehl’s idea would be supported by the finding that the likelihood of voting increases as political knowledge increases, nothing in the text suggests that the researchers’ idea hinges on the size of people’s social networks."
+      },
+      {
+        "number": 18,
+        "module": 1,
+        "chose": "D",
+        "domainBand": "Standard English Conventions, 6 out of 7",
+        "difficulty": "hard",
+        "passage": "Technologies such as microphones and inkjet printers are made using piezoelectric materials, which generate an internal electric field when pressure is applied to them. The toxic nature of some of these materials recently led a team from the University of Sheffield to investigate how ___",
+        "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+        "options": {
+          "A": "could their use be better regulated?",
+          "B": "their use could be better regulated.",
+          "C": "their use could be better regulated?",
+          "D": "could their use be better regulated."
+        },
+        "rationale": "Choice B is the best answer. The convention being tested is end-of-sentence punctuation. This choice correctly uses a period to punctuate a declarative sentence that asks an indirect question (\"The toxic nature of some of these materials recently led a team from the University of Sheffield to investigate how their use could be better regulated\"). Choice A is incorrect because the structure requires a period and a declarative clause at the end of the sentence that states what the team investigated, not an interrogative clause that asks a direct question, such as \"how could their use be better regulated?\" Choice C is incorrect because it’s unconventional to use a question mark in this way to punctuate a declarative sentence. Choice D is incorrect because the structure requires a declarative clause at the end of the sentence that states what the team investigated, not an interrogative clause that asks a direct question, such as \"how could their use be better regulated?\""
+      },
+      {
+        "number": 23,
+        "module": 1,
+        "chose": "A",
+        "domainBand": "Expression of Ideas, 5 out of 7",
+        "difficulty": "medium",
+        "passage": "In the early 1970s, Albert Popa took up graffiti art, spraying his work onto what was at the time an unconventional surface: concrete. ___ Albert’s son David has chosen an unusual canvas for his new art project, Fractured. In this remarkable work, the artist draws charcoal faces onto fragmented ice floes in Finland, creating the visual effect of a face slowly fracturing.",
+        "question": "Which choice completes the text with the most logical transition?",
+        "options": {
+          "A": "However,",
+          "B": "Indeed,",
+          "C": "Second,",
+          "D": "Likewise,"
+        },
+        "rationale": "Choice D is the best answer. \"Likewise\" logically signals that the information about Albert’s son David is similar to the previous information about Albert Popa. Both artists have used unconventional surfaces for their work: Albert used concrete, and David is using ice floes. Choice A is incorrect because \"however\" illogically signals that the information about David contrasts with the previous information about Albert Popa. Instead, it is similar to the previous information about Albert Popa. Choice B is incorrect because \"indeed\" illogically signals that the information about David emphasizes or strengthens the previous point about Albert Popa. Instead, it is similar to the previous information; it highlights a similarity between father and son. Choice C is incorrect because \"second\" illogically signals that the information about David is a second point or reason separate from the previous information about Albert Popa. Instead, it is similar to the previous information; it highlights a similarity between father and son."
+      },
+      {
+        "number": 2,
+        "module": 2,
+        "chose": "A",
+        "domainBand": "Craft and Structure, 4 out of 7",
+        "difficulty": "medium",
+        "passage": "In 1891, design artist William Morris cofounded the Kelmscott Press, which printed editions of books using preindustrial methods. Historians argue that Morris’s repudiation of industrialization is ___ the Kelmscott editions’ use of handmade materials and intricate ornamentation reminiscent of medieval manuscripts: these meticulously handcrafted elements exemplify the artistry involved.",
+        "question": "Which choice completes the text with the most logical and precise word or phrase?",
+        "options": {
+          "A": "insensible to",
+          "B": "manifest in",
+          "C": "scrutinized by",
+          "D": "complicated by"
+        },
+        "rationale": "Choice B is the best answer because it most logically completes the text’s discussion of the Kelmscott Press’s books. In this context, \"manifest in\" means evident or apparent from. The text states that the Kelmscott Press, which was cofounded by William Morris, produced its books using preindustrial methods. The text notes the similarity between those methods, which include the use of handmade materials and intricate ornamentation, and methods used in the creation of medieval manuscripts. This context suggests that Morris’s repudiation of industrialization is apparent from, or manifest in, the methods and materials his company employed. Choice A is incorrect because there is nothing in the text to suggest that Morris’s repudiation of industrialization is \"insensible to,\" or unaware of or lacking perception of, the use of handmade materials and intricate ornamentation in the production of the Kelmscott editions. Instead, the text suggests that the methods and materials used to produce the Kelmscott editions are evidence of Morris’s repudiation of industrialization. Choice C is incorrect because it would not make sense to say that Morris’s repudiation of industrialization was \"scrutinized by,\" or examined closely by, the Kelmscott editions’ use of handmade materials and intricate ornamentation. Although creating the Kelmscott editions may have involved examining the books closely, the text does not mention this aspect of Morris’s work, and in any case, the action of using certain materials to create those editions cannot scrutinize Morris’s attitude toward industrialization. Choice D is incorrect because the text gives no indication that Morris’s repudiation of industrialization is \"complicated by,\" or made more complex or difficult by, the Kelmscott Press’s use of preindustrial methods and handcrafted elements to produce books. Instead, the text presents those methods as exemplifying Morris’s repudiation of industrialization."
+      },
+      {
+        "number": 3,
+        "module": 2,
+        "chose": "D",
+        "domainBand": "Craft and Structure, 4 out of 7",
+        "difficulty": "medium",
+        "passage": "___ the long-standing trend of overemphasizing teenagers and young adults in research on social media use, scholars have recently begun to expand their focus to include the fastest-growing cohort of social media users: senior citizens.",
+        "question": "Which choice completes the text with the most logical and precise word or phrase?",
+        "options": {
+          "A": "Exacerbating",
+          "B": "Redressing",
+          "C": "Epitomizing",
+          "D": "Precluding"
+        },
+        "rationale": "Choice B is the best answer because it most logically completes the text’s discussion about research into social media use. In context, \"redressing\" means remedying or compensating for. The text indicates that there is a long-standing trend of overemphasizing teenagers and young adults in studies of social media use. It goes on to say that scholars have recently broadened the kinds of social media users they study by including senior citizens. This suggests that scholars are redressing the long-standing trend of overemphasis on younger users by studying older users as well. Choice A is incorrect because \"exacerbating\" means making worse or aggravating, which would not make logical sense in context. Expanding the focus of studies of social media use to include senior citizens would not make the long-standing trend of overemphasizing teenagers and young adults in studies of social media use worse; instead, it would help to remedy this trend. Choice C is incorrect because \"epitomizing\" means illustrating or providing an example, which would not make logical sense in context. Expanding the groups of social media users that scholars study to include senior citizens would not provide an example of the long-standing trend of overemphasizing teenagers and young people in research on social media use. Choice D is incorrect because \"precluding\" means making impossible in advance or preventing, which would not make logical sense in context. The text indicates that there is a long-standing trend of overemphasizing teenagers and young adults in social media research. Expanding the focus of social media research to include senior citizens, as the text indicates scholars have begun to do, could help to rectify the trend, but it could not prevent the trend or make the trend impossible in advance, since the trend started long before scholars started expanding their focus."
+      },
+      {
+        "number": 4,
+        "module": 2,
+        "chose": "A",
+        "domainBand": "Craft and Structure, 4 out of 7",
+        "difficulty": "medium",
+        "passage": "The following text is adapted from James Baldwin’s 1956 novel Giovanni’s Room. The narrator is riding in a taxi down a street lined with food vendors and shoppers in Paris, France. The multitude of Paris seems to be dressed in blue every day but Sunday, when, for the most part, they put on an unbelievably festive black. Here they were now, in blue, disputing, every inch, our passage, with their wagons, handtrucks, their bursting baskets carried at an angle steeply self-confident on the back.",
+        "question": "As used in the text, what does the word “disputing” most nearly mean?",
+        "options": {
+          "A": "Arguing about",
+          "B": "Disapproving of",
+          "C": "Asserting possession of",
+          "D": "Providing resistance to"
+        },
+        "rationale": "Choice D is the best answer because as used in the text, \"disputing\" most nearly means providing resistance to. The narrator is in a taxi as it drives down a street lined with so many food vendors and shoppers that the narrator describes them as \"the multitude of Paris,\" meaning an immense group of people. The street is essentially a large open-air market, and there are so many people pushing small wagons of goods and carrying shopping baskets that \"every inch\" of the taxi’s progress is impeded. In other words, the people are providing resistance to the taxi’s attempt to drive down the street. Choice A is incorrect. Although in some contexts, \"disputing\" can mean arguing, the narrator doesn’t portray the shoppers and vendors as arguing with the driver of the taxi or, indeed, arguing at all. Choice B is incorrect. Although in some contexts, \"disputing\" can mean expressing disapproval, the narrator doesn’t suggest that the shoppers and vendors necessarily disapprove of the taxi’s attempt to drive down the street. Instead, their combined presence along the street has the effect of impeding the taxi’s progress. Choice C is incorrect because, as the narrator explains, both the multitude of people and the taxi are using a public space (a street) at the same time. The narrator doesn’t go so far as to suggest that the people feel that they, and not the taxi, possess exclusive access to the street."
+      },
+      {
+        "number": 5,
+        "module": 2,
+        "chose": "B",
+        "domainBand": "Craft and Structure, 4 out of 7",
+        "difficulty": "medium",
+        "passage": "On painter William H. Johnson’s return to the United States in 1938 after a decade in Europe, his style underwent an abrupt transformation. Turning away from landscapes painted in an expressionist style—a style that often involves using fluid, distorted shapes and thick, textured brushstrokes to express the artist’s subjective experience of reality—Johnson began painting portraits of Black Americans in a bold new way. Evocative of African sculpture and American and Scandinavian folk art, these portraits feature flat, deliberately oversimplified figures in a vibrant but limited color palette.",
+        "underline": "Turning away from landscapes painted in an expressionist style—a style that often involves using fluid, distorted shapes and thick, textured brushstrokes to express the artist’s subjective experience of reality—Johnson began painting portraits of Black Americans in a bold new way.",
+        "question": "Which choice best describes the function of the underlined sentence in the text as a whole?",
+        "options": {
+          "A": "It elaborates on the previous sentence’s statement about a transitional moment in Johnson’s artistic career.",
+          "B": "It provides information about Johnson’s travels in support of a claim about his artistic influences, which is advanced in the following sentence.",
+          "C": "It recounts a moment in Johnson’s personal life that enabled the success of his subsequent career, which is summarized in the following sentence.",
+          "D": "It presents evidence that calls into question the previous sentence’s characterization of Johnson’s artistic development."
+        },
+        "rationale": "Choice A is the best answer because it most accurately describes the function of the underlined sentence in the text as a whole. The first sentence of the text indicates that Johnson returned to the US in 1938 at which time his painting style suddenly changed. The second sentence is underlined and gives more detail about this stylistic change, noting that his earlier work consisted largely of landscapes in an expressionist style and his new works were highly stylized portraits of Black Americans. In other words, the function of the underlined sentence is to elaborate on a transitional moment in Johnson’s painting career. Choice B is incorrect. Although the text does mention that Johnson spent a decade in Europe, it does not discuss what other travel Johnson might have done. Furthermore, although the text mentions African, American, and Scandinavian artistic elements in Johnson’s work, it does not indicate that he traveled to different locations to learn about these practices. Choice C is incorrect because the text does not focus on Johnson’s personal life nor does it address how successful his career was in general. Choice D is incorrect because, rather than call it into question, the underlined sentence continues the discussion of Johnson’s career by adding further relevant detail of Johnson’s artistic transformation."
+      },
+      {
+        "number": 8,
+        "module": 2,
+        "chose": "B",
+        "domainBand": "Information and Ideas, 6 out of 7",
+        "difficulty": "hard",
+        "passage": "Elizabeth Asiedu has identified a negative correlation between the share of developing countries’ economies derived from natural-resource extraction and those countries’ receipts of foreign investment. This may appear counterintuitive—resource extraction requires initial investments (in extractive technology, for instance) at scales best met by multinational corporations—but Asiedu notes that natural-resource industries’ boom-bust cycle can destabilize local currencies and increase developing countries’ vulnerability to external shocks, creating levels of uncertainty to which foreign investors are typically averse.",
+        "question": "Which choice best states the main idea of the text?",
+        "options": {
+          "A": "Although it may seem surprising that foreign investment declines in developing countries as natural-resource extraction makes up a larger share of those countries’ economies, that decline happens because resource extraction requires initial investments too large for foreign investors to supply.",
+          "B": "Although developing countries tend to become less dependent on foreign investment as natural-resource industries make up a larger share of their economies, this change may not occur if the boom-bust cycle of those industries destabilizes local currencies or increases countries’ vulnerability to external shocks.",
+          "C": "Although one might expect that foreign investment would increase as natural-resource extraction makes up a larger share of developing countries’ economies, the opposite happens because heavy reliance on natural resources can lead to unattractive conditions for investors.",
+          "D": "Although foreign investors tend to avoid initial investments in natural-resource industries in developing countries, foreign investment may increase significantly as those industries stabilize and the risks associated with them decline."
+        },
+        "rationale": "Choice C is the best answer because it accurately states the main idea of the text. According to the text, contrary to what some might expect, foreign investment is typically lower in developing countries whose economies are more dependent on natural-resource extraction. The text explains that high reliance on natural-resource extraction can subject a developing country to economic shocks that can destabilize the local currency and introduce economic uncertainty that tends to keep investors away. In other words, although we may think otherwise, foreign investors are less willing to invest in projects in developing countries whose economies are heavily dependent on natural-resource extraction because those economies tend to exhibit instability that investors want to avoid. Choice A is incorrect. The text does indicate that foreign investment is typically lower in developing countries whose economies are more dependent on natural-resource extraction; the text further indicates that natural-resource extraction requires substantial initial investments (to acquire things like required technologies) for which there are fewer investors willing to participate at this stage than one might think. But the text does not implicate the cost of these initial investments as a reason why foreign investment is less widely available than some might think. Choice B is incorrect. The text indicates that greater dependence on natural-resource extraction makes a developing country less appealing to foreign investors because of associated economic instability. Rather than arguing that the goal of developing countries is to become less dependent on foreign investment, as the phrasing of choice B suggests, the text focuses only on why foreign investors become less involved with such countries, which suggests that more investment would be preferable. Choice D is incorrect. Although the text indicates that natural-resource extraction requires substantial initial investments (to acquire things like required technologies) and that there are fewer likely investors willing to participate at this stage than one might think, the text does not address what investors are likely to do over time as the industry stabilizes itself."
+      },
+      {
+        "number": 12,
+        "module": 2,
+        "chose": "C",
+        "domainBand": "Information and Ideas, 6 out of 7",
+        "difficulty": "hard",
+        "passage": "Under normal atmospheric pressure at Earth’s surface, water molecules form a tetrahedral network stabilized by hydrogen bonds between adjacent molecules. Extreme high pressure, such as can be found in deep ocean waters, destabilizes these bonds and compresses water’s structure, allowing water molecules within organisms to permeate proteins and impede crucial biological functions; yet deep-sea organisms known as piezophiles have adapted to extreme pressure. Studies have found a positive correlation between the depths that various piezophiles inhabit and concentrations of a compound called trimethylamine N-oxide (TMAO) in their muscle tissues, which has led a team of researchers to hypothesize that TMAO reduces water’s compressibility.",
+        "question": "Which finding, if true, would most directly support the researchers’ hypothesis?",
+        "options": {
+          "A": "Water molecules are found to be impervious to TMAO even when the water molecules’ tetrahedral configuration has been distorted by high pressure.",
+          "B": "Examination of TMAO’s molecular structure shows that TMAO molecules retain their shape even as pressure increases.",
+          "C": "A positive correlation is found between concentrations of TMAO and the rate at which water’s molecular structure compresses as pressure increases.",
+          "D": "Analysis of water’s molecular structure under high pressure reveals that hydrogen bonds are more stable when TMAO is present than when it is not."
+        },
+        "rationale": "Choice D is the best answer because it presents a finding that, if true, would support the researchers’ hypothesis that TMAO reduces water’s compressibility. The text explains that at great depths in the ocean, extreme pressure compresses the molecular structure of water by destabilizing the hydrogen bonds between adjacent molecules, thereby allowing water to penetrate proteins and harm the associated organisms. However, deep-sea organisms called piezophiles have adapted to live at these depths and previous studies show a positive correlation between the depth at which a piezophile species lives and the species’ level of the compound TMAO. Because this hypothesis links TMAO levels with reduced compressibility of water’s tetrahedral molecular structure, a finding that TMAO helps maintain the hydrogen bonds between water molecules under high pressure would strongly support that hypothesis. Choice A is incorrect. Although the researchers’ hypothesis suggests a relationship between TMAO and water molecules’ tetrahedral molecular structure, that relationship involves TMAO helping maintain water’s tetrahedral molecular structure under high pressure; as presented in the text, the hypothesis doesn’t contend that water molecules are impervious to, or incapable of being penetrated by, TMAO. Choice B is incorrect because the text discusses how the molecular structure of water, not TMAO, is compressed under extreme pressure and never addresses how TMAO might be affected by such pressure. Choice C is incorrect because the researchers’ hypothesis holds that water under extreme pressure is more resistant, not less, to being compressed when TMAO concentrations are higher. Moreover, the positive correlation mentioned in the text is between TMAO concentrations and the depths at which piezophiles live, not between concentrations of TMAO and the rate at which water’s molecular structure compresses as pressure increases."
+      },
+      {
+        "number": 14,
+        "module": 2,
+        "chose": "C",
+        "domainBand": "Information and Ideas, 6 out of 7",
+        "difficulty": "hard",
+        "passage": "In a 2013 study, Agness Gidna, José Yravedra, and Manuel Domínguez-Rodrigo compared the feeding behaviors of wild lions in Tanzania’s Tarangire National Park with those of captive lions in Spain’s Cabárceno Reserve. The researchers noted that previous studies focused on other carnivores have shown that providing animals with food at regular intervals, as is common in captive settings, may inadvertently facilitate the development of novel stereotypic (i.e., purposelessly repetitive) behaviors by reducing the need for a high degree of cognitive engagement with the environment; the researchers were therefore not altogether surprised to find that ___",
+        "question": "Which choice most logically completes the text?",
+        "options": {
+          "A": "bones from carcasses provided to captive lions showed signs of extensive gnawing beyond the point of nutrient extraction, whereas bones from prey hunted by wild lions did not.",
+          "B": "during feeding episodes, captive male lions showed much more aggression than did wild male lions, whereas female captive and wild lions showed similar levels of aggression.",
+          "C": "when caretakers placed food in boxes that were cognitively demanding to open, captive lions showed repeated behaviors similar to those that wild lions show when stalking prey.",
+          "D": "captive lions showed a stereotypic behavior of pacing in their enclosures as feeding times approached, whereas wild lions showed a stereotypic behavior of pacing before embarking on a hunt."
+        },
+        "rationale": "Choice A is the best answer because it most logically completes the text’s discussion of the research on feeding behaviors of wild and captive lions. The text indicates that Gidna, Yravedra, and Domínguez-Rodrigo compared the behaviors of wild lions in a national park with those of captive lions in a reserve. The text also establishes that the researchers were familiar with earlier studies showing that regularly offering food to captive animals reduces the need for cognitive engagement with the environment and can lead the animals to develop novel stereotypic behaviors, or new behaviors that are repetitive without a clear purpose. It follows, then, that the researchers weren’t surprised to find that unlike the wild lions, the captive lions continued gnawing on the bones of provided carcasses even when the bones no longer provided nutrients, because this would be an example of captive animals developing a new and purposelessly repetitive behavior. Choice B is incorrect because the text suggests that the researchers’ findings were consistent with earlier findings that animals may develop novel stereotypic behaviors in captivity, and there’s no reason to think that displaying aggression during feeding is a purposelessly repetitive behavior or that it was newly developed by lions in captivity, especially if the researchers found that wild lions also showed aggression during feeding. Choice C is incorrect because the text suggests that the researchers’ findings were consistent with previous findings that novel stereotypic behaviors can develop when captive animals lack cognitive engagement with their environments. It therefore isn’t logical to conclude that the researchers weren’t surprised to find that captive lions engaged in repetitive behaviors in an environment with a cognitively demanding feeding system, especially if those behaviors were similar to those seen in wild lions, because that finding wouldn’t be an example of a new behavior developing in captivity as a result of low cognitive engagement. Choice D is incorrect because the text suggests that the researchers’ findings were consistent with earlier findings that animals may develop new purposelessly repetitive behaviors in captivity. It isn’t logical to conclude that the researchers weren’t surprised to find that both captive and wild lions engage in stereotypic pacing before a feeding activity, since that finding would be an example of a repetitive behavior shared by wild and captive animals rather than one that newly developed in captivity."
+      },
+      {
+        "number": 16,
+        "module": 2,
+        "chose": "D",
+        "domainBand": "Standard English Conventions, 6 out of 7",
+        "difficulty": "hard",
+        "passage": "Consider the mechanics of the pinhole camera: light passes through a small hole, resulting in a focused projected image. A ray diagram reveals how this ___ the hole’s small size restricts light to a single ray, all light passing through the hole can only arrive at a single destination, eliminating diffraction and ensuring a clear image.",
+        "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+        "options": {
+          "A": "works because",
+          "B": "works. Because",
+          "C": "works, it’s because",
+          "D": "works: it’s because"
+        },
+        "rationale": "Choice B is the best answer. The convention being tested is punctuation use between sentences. In this choice, the period is used to correctly mark the boundary between one sentence (\"A ray...works\") and another (\"Because...image\"). Choice A is incorrect because it results in a run-on sentence. The two sentences (\"A ray…works\" and \"Because…image\") are fused without punctuation and/or a conjunction. Choice C is incorrect because it results in a comma splice. A comma can’t be used in this way to mark the boundary between sentences. Choice D is incorrect because it results in a comma splice. Since the contraction \"it’s\" creates a main clause, the comma after \"single ray\" can’t be used in this way to mark the boundary between two main clauses (\"it’s...ray\" and \"all light…image\")."
+      },
+      {
+        "number": 23,
+        "module": 2,
+        "chose": "D",
+        "domainBand": "Expression of Ideas, 5 out of 7",
+        "difficulty": "medium",
+        "passage": "In hindsight, given the ideas about the natural world circulating among British scientists in the 1800s, the theory of natural selection was an obvious next step. It may not have been a coincidence, ___ that Charles Darwin and Alfred Wallace arrived at the concept independently. Indeed, contrary to the popular myth of the lone genius, theirs is not the first paradigm-shifting theory to have emerged from multiple scholars working in parallel.",
+        "question": "Which choice completes the text with the most logical transition?",
+        "options": {
+          "A": "however,",
+          "B": "then,",
+          "C": "moreover,",
+          "D": "for example,"
+        },
+        "rationale": "Choice B is the best answer. \"Then\" signals that this sentence’s claim about Darwin and Wallace follows logically from the previous information. In other words, both scientists independently arriving at the theory of natural selection was, arguably, an expected outcome of the circumstances mentioned in the previous sentence. Choice A is incorrect because \"however\" illogically signals that the claim in this sentence contrasts with the previous information about the ideas circulating among British scientists in the 1800s. Instead, this claim follows logically from that information. Choice C is incorrect because \"moreover\" illogically signals that the claim in this sentence merely adds to the previous information about the ideas circulating among British scientists in the 1800s. Instead, this claim follows logically from that information. Choice D is incorrect because \"for example\" illogically signals that this sentence provides an example supporting the previous information about the ideas circulating among British scientists in the 1800s. Instead, it presents a claim that follows logically from that information."
+      },
+      {
+        "number": 24,
+        "module": 2,
+        "chose": "C",
+        "domainBand": "Expression of Ideas, 5 out of 7",
+        "difficulty": "medium",
+        "passage": "In a recent study, researchers examined the sleeping and waking habits of a group of dairy cows to determine if the cows’ patterns of activity suggested that the animals were diurnal, nocturnal, or crepuscular. ___ the researchers studied whether the cows were most active in the daytime (diurnal), nighttime (nocturnal), or at dawn and dusk (crepuscular).",
+        "question": "Which choice completes the text with the most logical transition?",
+        "options": {
+          "A": "Afterward,",
+          "B": "In other words,",
+          "C": "Additionally,",
+          "D": "However,"
+        },
+        "rationale": "Choice B is the best answer. \"In other words\" logically signals that this sentence is a paraphrase of the previous description of the researchers’ study. It summarizes what the researchers examined and clarifies several terms used in the previous sentence (diurnal, nocturnal, and crepuscular). Choice A is incorrect because \"afterward\" illogically signals that the information in this sentence occurs later in a chronological sequence of events than the previous information about the researchers’ study. Instead, this sentence is a paraphrase of that information. Choice C is incorrect because \"additionally\" illogically signals that this sentence provides a separate point in addition to the previous information about the researchers’ study. Instead, this sentence is a paraphrase of that information. Choice D is incorrect because \"however\" illogically signals that the information in this sentence contrasts with the previous information about the researchers’ study. Instead, this sentence is a paraphrase of that information."
+      },
+      {
+        "number": 27,
+        "module": 2,
+        "chose": "A",
+        "domainBand": "Expression of Ideas, 5 out of 7",
+        "difficulty": "medium",
+        "passage": "While researching a topic, a student has taken the following notes: The ancient Arab dhow was a sailing vessel distinguishable by its triangular sails and stitched hull construction. Dhows were used primarily for trade along the coasts of Arab, South Asian, and East African countries. Contemporary shipbuilders in Oman use a mix of modern and traditional materials to build replicas of ancient dhows. Most of the materials used are traditional. Replica hulls are stitched together using the same traditional coconut palm fiber rope used on the hulls of ancient dhows. The student wants to make a generalization about the materials used in dhow replicas.",
+        "question": "Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+        "options": {
+          "A": "A traditional material that was used to stitch together the hulls of ancient dhows, coconut palm fiber rope is still used by shipbuilders.",
+          "B": "The ancient Arab dhow was a sailing vessel used primarily for trade and distinguishable by its triangular sails.",
+          "C": "Although most materials used in dhow replicas are traditional, some modern materials are used.",
+          "D": "Contemporary shipbuilders in Oman build replicas of the dhow, which was an ancient sailing vessel with a stitched hull construction."
+        },
+        "rationale": "Choice C is the best answer. The sentence makes a generalization about the materials used in dhow replicas, noting that while some modern materials are used, most of the materials are traditional. Choice A is incorrect. The sentence provides an example of a traditional material used in ancient dhows; it doesn’t indicate that the material is used in dhow replicas or make any other generalization about materials used in those replicas. Choice B is incorrect. The sentence explains what an ancient dhow was; it doesn’t make a generalization about materials used to make dhow replicas. Choice D is incorrect. The sentence introduces the construction of dhow replicas to an audience unfamiliar with the vessel; it doesn’t make a generalization about the materials used in those replicas."
+      }
+    ]
+  }
+]

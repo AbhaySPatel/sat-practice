@@ -61,6 +61,13 @@
           <option value="hard">Hard</option>
         </select>
       </label>
+      <!-- Only ever means anything inside "Missed in a test", so it appears with
+           that skill and is absent otherwise rather than sitting there greyed
+           out in every other view. Options are built from the set itself. -->
+      <label class="control" id="testControl" hidden>
+        <span>Test</span>
+        <select id="testSelect"></select>
+      </label>
       <label class="switch">
         <input type="checkbox" id="wrongOnlyToggle" />
         <span>Wrong answers only</span>
