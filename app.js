@@ -961,10 +961,20 @@ function renderMeta(question) {
   metaEl.textContent = '';
   timerEl = null;
 
-  const labels = [SKILL_LABELS[question.skill] || question.skill];
+  // Only what the dropdowns are not already saying. Narrowing to one skill and
+  // then labelling every question with it spends the badge line restating a
+  // choice that is on screen two inches above. Wrong-only ignores the skill
+  // dropdown, so there the skill is news again and goes back on the line.
+  const skillIsChosen = !wrongOnly && skillFilter === question.skill;
+  const difficultyIsChosen = difficultyFilter === question.difficulty;
+
+  const labels = [];
+  if (!skillIsChosen) labels.push(SKILL_LABELS[question.skill] || question.skill);
 
   // A question grouped by where it came from still has to say what it tests, or
-  // the badge line names a set and teaches nothing.
+  // the badge line names a set and teaches nothing. Kept even when the skill
+  // above is dropped: choosing "Missed in a test" says nothing about which skill
+  // any one of them is testing.
   const tests = skillTested(question);
   if (tests && tests !== question.skill) {
     labels.push(SKILL_LABELS[tests] || tests);
@@ -982,7 +992,7 @@ function renderMeta(question) {
         : `Q${question.number}`;
       labels.push(`${question.test} · ${where}`);
     }
-  } else {
+  } else if (!difficultyIsChosen) {
     labels.push(question.difficulty);
   }
 
@@ -993,17 +1003,25 @@ function renderMeta(question) {
     metaEl.append(tag);
   });
 
-  // Show this question's own history, so a repeat is never a surprise and he
-  // can see whether he has beaten it before.
+  // Held back until the question is graded. Told up front that he has seen this
+  // one before, he stops reading it and starts trying to dredge up which letter
+  // he picked last time -- which is the one thing this drill is not for. The
+  // history is worth having, so it is not deleted: it appears with the answer,
+  // where "beaten it before" is context rather than a shortcut past the work.
   const stats = statsFor(question.id);
-  if (stats.seen > 0) {
+  if (answered && stats.seen > 0) {
     const tag = document.createElement('span');
     tag.className = stats.wrong > 0 ? 'tag tag-warn' : 'tag';
     tag.textContent = `Seen ${stats.seen}× · ${stats.correct} right / ${stats.wrong} wrong`;
     metaEl.append(tag);
   }
 
-  if (servingReview) {
+  // Held back for the same reason as the history above, and it gives away more:
+  // a repeat is spliced in precisely because he got it wrong, so the badge
+  // announces "you have failed this one" before he has read a word of it. It
+  // still has to appear once graded -- the review bonus is in the points, and an
+  // unexplained multiplier is worse than none.
+  if (answered && servingReview) {
     const tag = document.createElement('span');
     tag.className = 'tag tag-warn';
     tag.textContent = 'Review';
@@ -2001,8 +2019,12 @@ function nextQuestion(options) {
   }
 
   saveStore();
-  renderSetSummary();
+  // After, not before: loading is what clears `answered`, and the readout now
+  // reads that flag to decide whether it may say "Review repeat" yet. Called
+  // first it would still be holding the previous question's answered state and
+  // label a fresh repeat before he has looked at it.
   loadQuestion(current);
+  renderSetSummary();
 
   // Only move the page when he asked from somewhere other than the top of the
   // card. Land on the question rather than the page top -- scrolling past the
@@ -2028,9 +2050,14 @@ function renderSetSummary() {
 
   // "Position" rather than "seen": skipping with Next advances the place in the
   // sequence without answering anything, so the two numbers legitimately differ.
+  //
+  // "Review repeat" waits for the answer too, or the badge line hiding it is
+  // wasted breath -- the readout is the next thing on the page. Until then a
+  // repeat reads as the place it interrupted, which is where he still is.
+  const showReview = answered && servingReview;
   const parts = [
-    servingReview ? 'Review repeat' : `Position ${position} of ${total}`,
-    pass > 1 && !servingReview ? `pass ${pass}` : null,
+    showReview ? 'Review repeat' : `Position ${position} of ${total}`,
+    pass > 1 && !showReview ? `pass ${pass}` : null,
     `${seen} answered`,
     wrong > 0 ? `${wrong} to revisit` : null,
     // Says where the missing ones went, and it is the number he asked the filter
