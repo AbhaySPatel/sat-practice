@@ -12,7 +12,7 @@
 // its markup, but the banks are fetched from here, so nothing was busting them --
 // a browser could serve a months-old vocab.json against new code, which is
 // exactly what happened. Bump this whenever a file under banks/ changes.
-const DATA_VERSION = '2026-08-09a';
+const DATA_VERSION = '2026-08-10a';
 
 // Official College Board banks only. banks/context.json is deliberately absent
 // -- see the note in the README about Words in Context and the direction drill.
@@ -200,6 +200,7 @@ const SKILL_LABELS = {
   vocabulary: 'Vocabulary',
   defective: 'Needs the PDF',
   'missed-in-test': 'Missed in a test',
+  'educator-bank': 'Educator question bank',
   'words-in-context': 'Words in Context',
   transitions: 'Transitions',
   boundaries: 'Boundaries',
@@ -240,7 +241,7 @@ const SKILLS_BY_DOMAIN = {
   'standard-english': ['boundaries', 'form-structure-sense'],
   'information-ideas': ['inferences', 'central-ideas-details', 'command-of-evidence'],
   // First in the group: it is the set with the most to teach him.
-  extra: ['missed-in-test', 'vocabulary', 'defective']
+  extra: ['missed-in-test', 'educator-bank', 'vocabulary', 'defective']
 };
 
 // Word meanings for the Words in Context options, keyed by question id then
@@ -270,6 +271,27 @@ const DEFECTIVE_SKILL = 'defective';
 const MISSED_FILE = 'banks/missed-in-test.json';
 const MISSED_SKILL = 'missed-in-test';
 let missedQuestions = [];
+
+// The 171 questions the first extraction pass left behind -- 138 of them because
+// the answer lives in a graph or table, which is not text and never survived the
+// PDF. 136 are Command of Evidence, the skill the 9 Aug test showed collapsing,
+// so the app was thinnest exactly where he needs the most work. Built by
+// extract_educator.py, which records the page to open for the figure.
+//
+// Loaded and appended last, for the same reason as MISSED_FILE: bank order is
+// what the saved cursor indexes.
+const EDU_FILE = 'banks/educator-question-bank.json';
+const EDU_SKILL = 'educator-bank';
+let eduQuestions = [];
+
+// What a question actually tests, as opposed to which set it is filed under.
+// Both the missed-in-test and educator sets are grouped by where they came from,
+// so anything reasoning about skill -- the peek, the drill link, the badge line --
+// has to ask this rather than read `skill` directly.
+function skillTested(question) {
+  if (!question) return null;
+  return question.realSkill || question.skill;
+}
 let defectiveById = {};
 let vocabQuestions = [];
 // word (lowercased) -> its drill question id, so a Words in Context question can
@@ -715,7 +737,12 @@ function questionPoints(question) {
   if (isRevision(question)) return ALREADY_BEATEN_PAYS;
 
   const base = POINTS_BY_DIFFICULTY[question.difficulty] || POINTS_BY_DIFFICULTY.medium;
-  let points = base * skillWeight(question.skill);
+  // These are ordinary bank questions that only ever sat outside the app because
+  // they need a figure, so they pay what their own skill pays. The missed-in-test
+  // set is different on purpose: it keeps its own top weight, because getting a
+  // question wrong on a timed test is what makes it worth the most.
+  const priced = question.skill === EDU_SKILL ? skillTested(question) : question.skill;
+  let points = base * skillWeight(priced);
   if (servingReview) points *= REVIEW_BONUS;
   // The rate is fixed at the moment he peeks, so peeking again later on another
   // question cannot retroactively devalue this one.
@@ -855,11 +882,18 @@ function renderMeta(question) {
   metaEl.textContent = '';
 
   const labels = [SKILL_LABELS[question.skill] || question.skill];
+
+  // A question grouped by where it came from still has to say what it tests, or
+  // the badge line names a set and teaches nothing.
+  const tests = skillTested(question);
+  if (tests && tests !== question.skill) {
+    labels.push(SKILL_LABELS[tests] || tests);
+  }
+
   if (question.skill === MISSED_SKILL) {
     // Difficulty here is ours, not College Board's -- every one of these is
-    // tagged hard because he missed it -- so it would say nothing. What it
-    // actually tests, and which test it came from, both say something.
-    labels.push(SKILL_LABELS[question.realSkill] || question.realSkill);
+    // tagged hard because he missed it -- so it would say nothing. Which test it
+    // came from does.
     if (question.test) {
       // Bluebook's review screen does not say which module a question came from,
       // so those carry a number only.
@@ -1006,8 +1040,7 @@ function canPeek(question) {
   // A missed-in-test question is grouped by where it came from, not by what it
   // tests, so ask what it actually tests -- otherwise the four Words in Context
   // questions he got wrong on the real test are the only ones without the help.
-  const tests = question.skill === MISSED_SKILL ? question.realSkill : question.skill;
-  if (tests !== 'words-in-context') return false;
+  if (skillTested(question) !== 'words-in-context') return false;
   return question.options.some((o) => glossFor(question, o.label));
 }
 
@@ -1816,6 +1849,30 @@ function nextQuestion(options) {
     return;
   }
 
+  // The cursor is an index, and a question can leave the pool between one serve
+  // and the next -- answered right first time under "Hide first-time correct",
+  // or a vocabulary word mastered. Everything behind it then shifts down a slot,
+  // so the question that was next now sits at the index the cursor is already
+  // on, and stepping forward from there vaults clean over it.
+  //
+  // Re-anchoring on what is actually on screen fixes that in both directions: if
+  // it is still in the pool, pin the cursor to where it now sits, which also
+  // heals any drift left by an earlier removal; if it has gone, its old index
+  // already holds the next question, so there is nothing to step over.
+  //
+  // Skipped while serving a review repeat -- the cursor deliberately stays on
+  // the question the repeat interrupted, so `current` is not what it points at.
+  //
+  // The two places that park the cursor deliberately, Restart and
+  // jumpToQuestion, both null `current` before calling in. That is what keeps
+  // this from overwriting the position they just set, so it has to stay that way.
+  let move = step;
+  if (current && !servingReview) {
+    const at = pool.findIndex((q) => q.id === current.id);
+    if (at >= 0) store.cursor[cursorKey()] = at;
+    else if (move > 0) move -= 1;
+  }
+
   // Splice in a repeat every FRESH_PER_REVIEW fresh questions. Reviews are
   // drawn at random from everything he has gotten wrong within this filter.
   const reviewable = wrongOnly
@@ -1841,7 +1898,9 @@ function nextQuestion(options) {
     store.sinceReview = 0;
     servingReview = true;
   } else {
-    current = takeNextInSequence(step);
+    current = takeNextInSequence(move);
+    // Counted on what he asked for, not on the adjusted move: a question that
+    // slid into place is still a fresh question served.
     if (step > 0) store.sinceReview += 1;
     servingReview = false;
   }
@@ -2103,8 +2162,7 @@ function drillTargetFor(question) {
   // Same reasoning as canPeek: ask what the question tests, not which set it is
   // filed under, or the ones he missed on a real test would be the only Words in
   // Context questions with no way through to the word.
-  const tests = question.skill === MISSED_SKILL ? question.realSkill : question.skill;
-  if (tests !== 'words-in-context') return null;
+  if (skillTested(question) !== 'words-in-context') return null;
 
   const chosen = pendingIndex === null ? null : question.options[pendingIndex];
   const correct = question.options.find((o) => o.label === question.correctLabel);
@@ -2213,6 +2271,21 @@ function loadDefective() {
     .catch((err) => console.warn('No defective list loaded.', err));
 }
 
+// Same contract again. Appended after everything else, so the 171 questions it
+// adds take only new indices and leave every existing one where it was.
+function loadEducator() {
+  return fetch(`${EDU_FILE}?v=${DATA_VERSION}`)
+    .then((r) => (r.ok ? r.json() : null))
+    .then((data) => {
+      if (!Array.isArray(data)) return;
+      eduQuestions = data;
+      const figures = data.filter((q) => q.figure).length;
+      console.info(`Educator question bank: ${data.length} questions, `
+        + `${figures} needing the figure from the PDF.`);
+    })
+    .catch((err) => console.warn('No question-bank extras loaded.', err));
+}
+
 // Same contract again: swallows its own errors and always resolves, so a missing
 // file just means the revision set is absent and everything else runs as before.
 function loadMissed() {
@@ -2267,11 +2340,12 @@ function loadBanks() {
     )),
     loadVocab(),
     loadDefective(),
-    loadMissed()
+    loadMissed(),
+    loadEducator()
   ]).then(([results]) => {
     // Order matters and is append-only: the saved cursor is an index into this,
     // so new questions go on the end and every existing index keeps its meaning.
-    const raw = results.flat().concat(vocabQuestions, missedQuestions);
+    const raw = results.flat().concat(vocabQuestions, missedQuestions, eduQuestions);
     bank = raw.filter(isReady);
 
     // Retag before anything reads `bank`: the skill filter, the dropdown counts
