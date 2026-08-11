@@ -1492,5 +1492,526 @@
       }
     ],
     "chose": "A"
+  },
+  {
+    "id": "missed-pt6-m1-q5",
+    "source": "College Board Practice Test 6, Module 1, Question 5",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice Test 6",
+    "taken": "2026-08-11",
+    "module": 1,
+    "number": 5,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "While recent scholarship has undermined claims that the works of twelfth-century Islamic philosopher Ibn Rushd were ___ other Muslim philosophers of his time, it is indisputable that his location in the Muslim-ruled area of what is now Spain meant that his works were primarily available thousands of miles west of the era’s center of Islamic thought.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "rule": "Most logically completes the text’s discussion of the twelfth-century Islamic philosopher Ibn Rushd.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "controversial among",
+        "why": "Choice A is incorrect because the issue under consideration in the text is whether other Muslim philosophers of Ibn Rushd’s time had access to his works, not whether his works were “controversial among,” or causing dispute among, other philosophers.",
+        "gloss": "causing dispute among"
+      },
+      {
+        "label": "B",
+        "text": "antagonistic toward",
+        "why": "Choice B is incorrect. The text implies that other Muslim philosophers of Ibn Rushd’s era were aware of his works, not that they were “antagonistic toward,” or hostile toward, them. There is no suggestion that Ibn Rushd’s writings elicited hostility from his contemporaries.",
+        "gloss": "hostile toward"
+      },
+      {
+        "label": "C",
+        "text": "imitated by",
+        "why": "Choice C is incorrect because in this context, “imitated by” would mean followed as a model by. Although the text implies that Ibn Rushd’s works were at least somewhat available in regions that were at the center of Islamic thought during the period, it doesn’t specifically address in what ways his works influenced contemporary Muslim philosophers. Thus, the text doesn’t support the idea that other philosophers modeled their own works after Ibn Rushd’s works. SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 5 SAT PRACTICE TEST #6 ANSWER EXPLANATIONS",
+        "gloss": "followed as a model by"
+      },
+      {
+        "label": "D",
+        "text": "inconsequential to",
+        "why": "Choice D is the best answer because it most logically completes the text’s discussion of the twelfth-century Islamic philosopher Ibn Rushd. As used in this context, “inconsequential to” means not significant to. According to the text, Ibn Rushd’s works were primarily available in Spain, where he lived, far from central areas of the Muslim world, a fact that could support the conclusion that his influence on Muslim contemporaries was limited. The text implies, however, that recent scholarship has shown that his works still had an impact on other Muslim philosophers of his time. This context supports the idea that his works weren’t inconsequential to Islamic thought in this period.",
+        "gloss": "of no significance to"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt6-m1-q6",
+    "source": "College Board Practice Test 6, Module 1, Question 6",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice Test 6",
+    "taken": "2026-08-11",
+    "module": 1,
+    "number": 6,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "On painter William H. Johnson’s return to the United States in 1938 after a decade in Europe, his style underwent an abrupt transformation. Turning away from landscapes painted in an expressionist style—a style that often involves using fluid, distorted shapes and thick, textured brushstrokes to express the artist's subjective experience of reality—Johnson began painting portraits of Black Americans in a bold new way. Evocative of African sculpture and American and Scandinavian folk art, these portraits feature flat, deliberately oversimplified figures in a vibrant but limited color palette.",
+    "question": "Which choice best describes the function of the underlined sentence in the text as a whole?",
+    "rule": "Most accurately describes the function of the underlined sentence in the text as a whole.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "It elaborates on the previous sentence’s statement about a transitional moment in Johnson’s artistic career.",
+        "why": "Choice A is the best answer because it most accurately describes the function of the underlined sentence in the text as a whole. The first sentence of the text indicates that Johnson returned to the US in 1938 at which time his painting style suddenly changed. The second sentence is underlined and gives more detail about this stylistic change, noting that his earlier work consisted largely of landscapes in an expressionist style and his new works were highly stylized portraits of Black Americans. In other words, the function of the underlined sentence is to elaborate on a transitional moment in Johnson’s painting career."
+      },
+      {
+        "label": "B",
+        "text": "It provides information about Johnson’s travels in support of a claim about his artistic influences, which is advanced in the following sentence.",
+        "why": "Choice B is incorrect. Although the text does mention that Johnson spent a decade in Europe, it does not discuss what other travel Johnson might have done. Furthermore, although the text mentions African, American, and Scandinavian artistic elements in Johnson’s work, it does not indicate that he traveled to different locations to learn about these practices."
+      },
+      {
+        "label": "C",
+        "text": "It recounts a moment in Johnson’s personal life that enabled the success of his subsequent career, which is summarized in the following sentence.",
+        "why": "Choice C is incorrect because the text does not focus on Johnson’s personal life nor does it address how successful his career was in general."
+      },
+      {
+        "label": "D",
+        "text": "It presents evidence that calls into question the previous sentence’s characterization of Johnson’s artistic development.",
+        "why": "Choice D is incorrect because, rather than call it into question, the underlined sentence continues the discussion of Johnson’s career by adding further relevant detail of Johnson’s artistic transformation."
+      }
+    ],
+    "underline": "Turning away from landscapes painted in an expressionist style—a style that often involves using fluid, distorted shapes and thick, textured brushstrokes to express the artist's subjective experience of reality—Johnson began painting portraits of Black Americans in a bold new way."
+  },
+  {
+    "id": "missed-pt6-m1-q8",
+    "source": "College Board Practice Test 6, Module 1, Question 8",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice Test 6",
+    "taken": "2026-08-11",
+    "module": 1,
+    "number": 8,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "The following text is adapted from Herman Melville’s 1855 novel Israel Potter. Israel is a young man wandering through New England during the late eighteenth century. He hired himself out for three months; at the end of that time to receive for his wages two hundred acres of land lying in New Hampshire. [...] His employer proving false to the contract in the matter of the land, and there being no law in the country to force him to fulfil it, Israel—who, however brave-hearted, and even much of a dare-devil upon a pinch, seems nevertheless to haveevinced, throughout many parts of his career, a singular patience and mildness —was obliged to look round for other means of livelihood than clearing out a farm for himself in the wilderness.",
+    "question": "Which choice best describes the function of the underlined portion in the text as a whole?",
+    "rule": "Best describes the function of the underlined portion in the text as a whole.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "It implies that Israel treasures a particular characteristic of his personality when that characteristic should usually be regarded as a flaw.",
+        "why": "Choice A is incorrect because although the underlined portion describes aspects of Israel’s personality, it does not address how he feels about his own personality."
+      },
+      {
+        "label": "B",
+        "text": "It suggests that if not for a certain aspect of his character, Israel might not have been as easily thwarted in his ambition to establish a farm.",
+        "why": "Choice B is the best answer because it best describes the function of the underlined portion in the text as a whole. The text describes the failed attempt of Israel Potter to establish a farm in New England during the late eighteenth century: according to his contract, he was to receive two hundred acres in exchange for three months’ work, but his employer then refused to fulfill the bargain and Israel had no recourse to law to obtain the land he was owed. Israel was therefore forced to find another means of supporting himself. To explain why Israel was particularly susceptible to his employer’s dishonesty, the underlined portion states that though Israel was “brave-hearted, and even much of a dare-devil upon a pinch,” he also possessed “a singular patience and mildness.” In other words, Israel could be courageous in certain circumstances, but he was usually meek and disinclined to argument, from which it is reasonable to infer that Israel was often taken advantage of. Thus, the underlined portion suggests that if not for a certain aspect of his character, Israel might not have been as easily thwarted in his ambition to establish a farm."
+      },
+      {
+        "label": "C",
+        "text": "It shows why Israel would not have been able to undertake the enormous amount of labor necessary to run a farm even if he had owned the necessary property.",
+        "why": "Choice C is incorrect because the underlined portion addresses Israel’s occasional courage and frequent meekness but does not address whether he would have the skills and resolve necessary to operate a farm if he owned sufficient property."
+      },
+      {
+        "label": "D",
+        "text": "It explains why, when the situation requires it, Israel is able to undertake courageous acts that others would generally avoid.",
+        "why": "Choice D is incorrect. Though the underlined portion does indicate that Israel could be courageous in certain circumstances, it does not say that he undertook acts of courage that others avoided, but rather that he was habitually meek. Even if the underlined portion did say that Israel was more courageous than most, this would not explain why he found himself under the circumstances described in the text—that is, as a consequence of his meek nature, cheated of the property to which he had a right."
+      }
+    ],
+    "underline": "who, however brave-hearted, and even much of a dare-devil upon a pinch, seems nevertheless to haveevinced, throughout many parts of his career, a singular patience and mildness"
+  },
+  {
+    "id": "missed-pt6-m1-q13",
+    "source": "College Board Practice Test 6, Module 1, Question 13",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice Test 6",
+    "taken": "2026-08-11",
+    "module": 1,
+    "number": 13,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "The 2021 exhibition This Is the Day at Arkansas’s Crystal Bridges Museum of American Art featured works dealing with expressions of faith and spirituality in the Black community. The museum’s 2022 exhibition The Dirty South, meanwhile, focused on Black culture in the American South from 1920 to 2020, with a particular focus on the intersections between visual arts and music. Together, these exhibitions don’t merely highlight the diversity of the Black experience in the US; they also showcase the diverse media through which artists have depicted and engaged with that experience.",
+    "question": "Which statement about the exhibitions, if true, would most directly support the underlined claim?",
+    "rule": "Presents a statement that, if true, would support the claim that the two exhibitions This Is the Day and The Dirty South showcase the diverse media artists have used to represent the Black experience in the US. The text describes the thematic focus of the two exhibitions: religious and spiritual expressions in the Black community and the connections between visual arts and music in Black culture in the American South between 1920 and 2020.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Between them, This Is the Day and The Dirty South included drawings, paintings, photographs, sculptures, textiles, videos, costumes, and music.",
+        "why": "Choice A is the best answer because it presents a statement that, if true, would support the claim that the two exhibitions This Is the Day and The Dirty South showcase the diverse media artists have used to represent the Black experience in the US. The text describes the thematic focus of the two exhibitions: religious and spiritual expressions in the Black community and the connections between visual arts and music in Black culture in the American South between 1920 and 2020. If these exhibits included works created with many different materials and means of artistic expression (such as paint, textiles, sculptural stone, and musical forms), they would display how artists have portrayed and responded to the Black experience in the US as well as the variety of media that these artists have used to do so. SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 9 SAT PRACTICE TEST #6 ANSWER EXPLANATIONS"
+      },
+      {
+        "label": "B",
+        "text": "This Is the Day included works by fewer than two dozen artists, whereas The Dirty South included works by more than 80 artists.",
+        "why": "Choice B is incorrect because it focuses on the number of artists whose works were included in the exhibitions, not on the means of expression that these artists have used. Therefore, the statement wouldn’t address the claim that the exhibits showcased the different media artists have used to represent the Black experience in the US."
+      },
+      {
+        "label": "C",
+        "text": "This Is the Day exclusively included works in the permanent collection of the museum, whereas The Dirty South included works from multiple sources outside the museum.",
+        "why": "Choice C is incorrect because it focuses on how the works that were included in the exhibitions were sourced, not on the means of expression the artists whose works were featured have used. Therefore, the statement wouldn’t address the claim that the exhibits showcased the different media artists have used to represent the Black experience in the US."
+      },
+      {
+        "label": "D",
+        "text": "Between them, This Is the Day and The Dirty South included works depicting more than 300 years of Black experience in the United States.",
+        "why": "Choice D is incorrect. Although the statement focuses on similarities in the themes of the two exhibitions—that is, they both concern the Black experience in the US—it doesn’t mention the media that artists whose works were featured in the exhibitions have used to portray and respond to this experience."
+      }
+    ],
+    "underline": "they also showcase the diverse media through which artists have depicted and engaged with that experience."
+  },
+  {
+    "id": "missed-pt6-m1-q15",
+    "source": "College Board Practice Test 6, Module 1, Question 15",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice Test 6",
+    "taken": "2026-08-11",
+    "module": 1,
+    "number": 15,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "It may seem that the optimal strategy for an animal pursuing prey or escaping predators is to move at maximal speed, but the energy expense of exploiting full speed capacity can disfavor such a strategy even in escape contexts, as evidenced by the fact that ___",
+    "question": "Which choice most effectively uses data from the graph to complete the text?",
+    "rule": "Describes data from the graph that complete the text’s discussion of lizard species’ use of maximal speed when escaping predators.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "most lizard species use about the same percentage of their maximal speed when escaping predation as they do when pursuing prey.",
+        "why": "Choice A is incorrect because the data in the graph isn’t organized in such a way that a comparison of the percentage of maximal speed used when escaping predation with the percentage used when pursuing prey is possible at the level of individual species."
+      },
+      {
+        "label": "B",
+        "text": "multiple lizard species move at an average of less than 90% of their maximal speed while escaping predation.",
+        "why": "Choice B is the best answer because it describes data from the graph that complete the text’s discussion of lizard species’ use of maximal speed when escaping predators. According to the text, moving at maximal speed (the highest speed possible) requires so much energy that it is not always an effective strategy for animals, even when they are escaping predators. The graph displays data on the average percent of maximal speed used by lizard species while either escaping predators or pursuing prey. The graph categorizes the data for both pursuing and escaping by the number of species using 30%–39% of maximal speed, 40%–49% of maximal speed, 50%–59% of maximal speed, 60%–69% of maximal speed, 70%–79% of maximal speed, 80%–89% of maximal speed, and 90%–100% of maximal speed, respectively. In the graph, there is at least one species in each of the following percent categories for maximal speed while escaping predators: 50%– 59%, 60%–69%, 70%–79%, and 80%–89%. Thus, the data in the graph show that multiple lizard species move at an average of less than 90% of their maximal speed while escaping predation."
+      },
+      {
+        "label": "C",
+        "text": "more lizard species use, on average, 90%–100% of their maximal speed while escaping predation than use any other percentage of their maximal speed.",
+        "why": "Choice C is incorrect. It is true that in the graph, the percent category with the largest number of species using maximal speed while escaping predators is 90%–100% (8 species total). However, these data don’t complete the text, which is concerned instead with how animals are discouraged from using maximal speed even when escaping predators because of the amount of energy required to use it."
+      },
+      {
+        "label": "D",
+        "text": "at least 4 lizard species use, on average, less than 100% of their maximal speed while pursuing prey.",
+        "why": "Choice D is incorrect because these data from the graph pertain to maximal speed while pursuing prey and therefore don’t complete the text’s discussion of lizard species’ use of maximal speed when escaping predators. SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 11 SAT PRACTICE TEST #6 ANSWER EXPLANATIONS"
+      }
+    ],
+    "figure": true,
+    "pdf": "sat-practice-test-6-digital.pdf",
+    "page": 11
+  },
+  {
+    "id": "missed-pt6-m1-q16",
+    "source": "College Board Practice Test 6, Module 1, Question 16",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice Test 6",
+    "taken": "2026-08-11",
+    "module": 1,
+    "number": 16,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Under normal atmospheric pressure at Earth’s surface, water molecules form a tetrahedral network stabilized by hydrogen bonds between adjacent molecules. Extreme high pressure, such as can be found in deep ocean waters, destabilizes these bonds and compresses water’s structure, allowing water molecules within organisms to permeate proteins and impede crucial biological functions; yet deep-sea organisms known as piezophiles have adapted to extreme pressure. Studies have found a positive correlation between the depths that various piezophiles inhabit and concentrations of a compound called trimethylamine N-oxide (TMAO) in their muscle tissues, which has led a team of researchers to hypothesize that TMAO reduces water’s compressibility.",
+    "question": "Which finding, if true, would most directly support the researchers’ hypothesis?",
+    "rule": "Presents a finding that, if true, would support the researchers’ hypothesis that TMAO reduces water’s compressibility.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Water molecules are found to be impervious to TMAO even when the water molecules’ tetrahedral configuration has been distorted by high pressure.",
+        "why": "Choice A is incorrect. Although the researchers’ hypothesis suggests a relationship between TMAO and water molecules’ tetrahedral molecular structure, that relationship involves TMAO helping maintain water’s tetrahedral molecular structure under high pressure; as presented in the text, the hypothesis doesn’t contend that water molecules are impervious to, or incapable of being penetrated by, TMAO."
+      },
+      {
+        "label": "B",
+        "text": "Examination of TMAO’s molecular structure shows that TMAO molecules retain their shape even as pressure increases.",
+        "why": "Choice B is incorrect because the text discusses how the molecular structure of water, not TMAO, is compressed under extreme pressure and never addresses how TMAO might be affected by such pressure."
+      },
+      {
+        "label": "C",
+        "text": "A positive correlation is found between concentrations of TMAO and the rate at which water’s molecular structure compresses as pressure increases.",
+        "why": "Choice C is incorrect because the researchers’ hypothesis holds that water under extreme pressure is more resistant, not less, to being compressed when TMAO concentrations are higher. Moreover, the positive correlation mentioned in the text is between TMAO concentrations and the depths at which piezophiles live, not between concentrations of TMAO and the rate at which water’s molecular structure compresses as pressure increases."
+      },
+      {
+        "label": "D",
+        "text": "Analysis of water’s molecular structure under high pressure reveals that hydrogen bonds are more stable when TMAO is present than when it is not.",
+        "why": "Choice D is the best answer because it presents a finding that, if true, would support the researchers’ hypothesis that TMAO reduces water’s compressibility. The text explains that at great depths in the ocean, extreme pressure compresses the molecular structure of water by destabilizing the hydrogen bonds between adjacent molecules, thereby allowing water to penetrate proteins and harm the associated organisms. However, deep-sea organisms called piezophiles have adapted to live at these depths and previous studies show a positive correlation between the depth at which a piezophile species lives and the species’ level of the compound TMAO. Because this hypothesis links TMAO levels with reduced compressibility of water’s tetrahedral molecular structure, a finding that TMAO helps maintain the hydrogen bonds between water molecules under high pressure would strongly support that hypothesis."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt6-m1-q18",
+    "source": "College Board Practice Test 6, Module 1, Question 18",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "inferences",
+    "test": "Practice Test 6",
+    "taken": "2026-08-11",
+    "module": 1,
+    "number": 18,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Consumer psychologists have theorized that the likelihood that people who identify as ethical consumers—meaning that they strive to purchase goods and services with positive or neutral social and ecological effects—will purchase a given product positively correlates with their perception of that product’s effects. In a recent study of the attitudes of self-identified ethical consumers toward purchasing a specific mobile phone coming to market, researchers found that, on average, study participants in their twenties rated the phone’s social and ecological effects much less positively than did participants in other age groups. All other things being equal, if consumer psychologists’ theory is correct, this finding suggests that ___",
+    "question": "Which choice most logically completes the text?",
+    "rule": "Most logically completes the text’s discussion of a study involving ethical consumers.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "the phone is less appealing to ethical consumers in their twenties than other similar phones on the market are.",
+        "why": "Choice A is incorrect because the text mentions only the mobile phone used in the study and therefore provides no basis to compare participants’ attitudes toward that phone with their attitudes toward any other phone."
+      },
+      {
+        "label": "B",
+        "text": "ethical consumers in their twenties are less likely to purchase the phone than ethical consumers in other age groups are.",
+        "why": "Choice B is the best answer because it most logically completes the text’s discussion of a study involving ethical consumers. According to the text, ethical consumers are people who strive to purchase goods and services with positive or neutral effects on society and the environment. The text explains that consumer psychologists believe these consumers are more likely to purchase a product if its effects correspond better to their values. The text then introduces a study of ethical consumers’ attitudes toward a specific mobile phone, indicating that participants in their twenties had a less positive attitude toward the phone’s effects on society and the environment than participants in other age groups did. The text indicates that readers should assume there are no other differences between the participants in their twenties and those in other age groups. If the consumer psychologists’ theory is correct, as the text proposes, then the study’s finding suggests that ethical consumers in their twenties are less likely to purchase the phone than ethical consumers in other age groups are."
+      },
+      {
+        "label": "C",
+        "text": "there is not a meaningful difference in the likelihood of purchasing the phone among ethical consumers in different age groups.",
+        "why": "Choice C is incorrect because the study’s finding suggests the contrary. The text indicates that study participants in their twenties had a less positive attitude toward the phone’s social and environmental effects than study participants in other age groups did. If the consumer psychologists’ theory is true, as the text proposes, then the study’s finding suggests that ethical consumers in their twenties are meaningfully less likely to purchase the phone than ethical consumers in other age groups are."
+      },
+      {
+        "label": "D",
+        "text": "ethical consumers in their twenties are more likely than ethical consumers in other age groups to consider a phone’s social and ecological effects when deciding whether to purchase that phone.",
+        "why": "Choice D is incorrect because there’s nothing in the text to suggest that ethical consumers in their twenties are more likely than ethical consumers in other age groups to consider a phone’s social and ecological effects when deciding whether to purchase it. Rather, the text’s discussion of people who identify as ethical consumers suggests that they all consider the social and ecological effects of products, regardless of age. SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 13 SAT PRACTICE TEST #6 ANSWER EXPLANATIONS"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt6-m1-q30",
+    "source": "College Board Practice Test 6, Module 1, Question 30",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "transitions",
+    "test": "Practice Test 6",
+    "taken": "2026-08-11",
+    "module": 1,
+    "number": 30,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "In hindsight, given the ideas about the natural world circulating among British scientists in the 1800s, the theory of natural selection was an obvious next step. It may not have been a coincidence, ___ that Charles Darwin and Alfred Wallace arrived at the concept independently. Indeed, contrary to the popular myth of the lone genius, theirs is not the first paradigm-shifting theory to have emerged from multiple scholars working in parallel.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "rule": "“Then” signals that this sentence’s claim about Darwin and Wallace follows logically from the previous information.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "however,",
+        "why": "Choice A is incorrect because “however” illogically signals that the claim in this sentence contrasts with the previous information about the ideas circulating among British scientists in the 1800s. Instead, this claim follows logically from that information."
+      },
+      {
+        "label": "B",
+        "text": "then,",
+        "why": "Choice B is the best answer. “Then” signals that this sentence’s claim about Darwin and Wallace follows logically from the previous information. In other words, both scientists independently arriving at the theory of natural selection was, arguably, an expected outcome of the circumstances mentioned in the previous sentence."
+      },
+      {
+        "label": "C",
+        "text": "moreover,",
+        "why": "Choice C is incorrect because “moreover” illogically signals that the claim in this sentence merely adds to the previous information about the ideas circulating among British scientists in the 1800s. Instead, this claim follows logically from that information."
+      },
+      {
+        "label": "D",
+        "text": "for example,",
+        "why": "Choice D is incorrect because “for example” illogically signals that this sentence provides an example supporting the previous information about the ideas circulating among British scientists in the 1800s. Instead, it presents a claim that follows logically from that information."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt6-m2-q5",
+    "source": "College Board Practice Test 6, Module 2, Question 5",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice Test 6",
+    "taken": "2026-08-11",
+    "module": 2,
+    "number": 5,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Mary Engle Pennington, a chemist who helped advance home refrigeration, undoubtedly made a substantial impact on society, but her place in our historical memory is perhaps more ___ than that of Stephanie Kwolek, who invented the incredibly strong material known as Kevlar, an accomplishment for which she will long be remembered.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "rule": "Most logically completes the text’s discussion of Mary Engle Pennington and Stephanie Kwolek.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "permanent",
+        "why": "Choice A is incorrect because the text establishes a contrast between Pennington and Kwolek in terms of their “place in our historical memory” for their achievements, and the statement that Kwolek “will be long remembered” while Pennington’s memorability may be more “permanent,” or enduring, wouldn’t supply a contrast; it would instead suggest that both people will remain memorable.",
+        "gloss": "enduring"
+      },
+      {
+        "label": "B",
+        "text": "tentative",
+        "why": "Choice B is the best answer because it most logically completes the text’s discussion of Mary Engle Pennington and Stephanie Kwolek. In this context, “tentative” means unsettled or not definite. The text indicates a contrast between Pennington and Kwolek in terms of their memorability (“place in our historical memory”) and states that Kwolek “will long be remembered” for her invention of Kevlar material. This context suggests that although Pennington had an impact on society, she may be less likely than Kwolek to be remembered for a very long time—in other words, that her memorability may be more tentative, or less definite, than Kwolek’s.",
+        "gloss": "unsettled or not definite"
+      },
+      {
+        "label": "C",
+        "text": "warranted",
+        "why": "Choice C is incorrect because the text establishes a contrast between Pennington and Kwolek in terms of their memorability, suggesting that Pennington is less likely than Kwolek to be “long remembered,” but doesn’t 21 SAT PRACTICE TEST #6 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2 address how “warranted,” or based on good reason, each person’s “place in our historical memory” is. In fact, the text suggests that both Pennington and Kwolek had significant achievements, even if one may be more memorable.",
+        "gloss": "based on good reason"
+      },
+      {
+        "label": "D",
+        "text": "prominent",
+        "why": "Choice D is incorrect because the text establishes a contrast between Pennington and Kwolek in terms of their “place in our historical memory” for their achievements, and the statement that Kwolek “will be long remembered” while Pennington’s memorability may be more “prominent,” or widely known, wouldn’t supply a contrast; it would instead suggest that both people are very memorable.",
+        "gloss": "widely known"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt6-m2-q11",
+    "source": "College Board Practice Test 6, Module 2, Question 11",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "inferences",
+    "test": "Practice Test 6",
+    "taken": "2026-08-11",
+    "module": 2,
+    "number": 11,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "To understand how temperature change affects microorganism-mediated cycling of soil nutrients in alpine ecosystems, Eva Kaštovská et al. collected plant-soil cores in the Tatra Mountains at elevations around 2,100 meters and transplanted them to elevations of 1,700–1,800 meters, where the mean air temperature was warmer by 2°C. Microorganism-mediated nutrient cycling was accelerated in the transplanted cores; crucially, microorganism community composition was unchanged, allowing Kaštovská et al. to attribute the acceleration to temperature-induced increases in microorganism activity.",
+    "question": "It can most reasonably be inferred from the text that the finding about the microorganism community composition was important for which reason?",
+    "rule": "Accurately describes why the finding about the microorganism community composition was important.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "It provided preliminary evidence that microorganism-mediated nutrient cycling was accelerated in the transplanted cores.",
+        "why": "Choice A is incorrect. Although the text says microorganism-mediated cycling of soil nutrients increased in the transplanted cores, this is unrelated to what’s important about the finding that the microorganism composition didn’t change— that it allowed the team to attribute the change in activity solely to the change in temperature."
+      },
+      {
+        "label": "B",
+        "text": "It suggested that temperature-induced changes in microorganism activity may be occurring at increasingly high elevations.",
+        "why": "Choice B is incorrect. Although the text compares activity in one core at two different elevations, the text doesn’t address changes in activity at various elevations over time."
+      },
+      {
+        "label": "C",
+        "text": "It ruled out a potential alternative explanation for the acceleration in microorganism-mediated nutrient cycling.",
+        "why": "Choice C is the best answer because it accurately describes why the finding about the microorganism community composition was important. The text describes an experiment by Eva Kaštovská and her team in which they collected plant-soil cores at one elevation and transplanted them to sites at a lower elevation, where the mean air temperature was warmer. Kaštovská and her team observed that microorganism-mediated nutrient cycling was accelerated in the transplanted cores and that “crucially, microorganism community composition was unchanged,” which allowed the team to attribute the acceleration to changes in microorganism activity brought about by the difference in temperature. This strongly implies that the team wouldn’t have been able to make that attribution otherwise, meaning that a change in microorganism composition represented another possible explanation for the acceleration that had to be ruled out."
+      },
+      {
+        "label": "D",
+        "text": "It clarified that microorganism activity levels in the plant-soil cores varied depending on which microorganisms comprised the community.",
+        "why": "Choice D is incorrect. Although different microorganisms likely exhibit different levels of activity, the text indicates that there was no change in microorganism composition, and there is nothing in the text about different microorganisms having different activity levels. 25 SAT PRACTICE TEST #6 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt6-m2-q12",
+    "source": "College Board Practice Test 6, Module 2, Question 12",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "central-ideas-details",
+    "test": "Practice Test 6",
+    "taken": "2026-08-11",
+    "module": 2,
+    "number": 12,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Some astronomers searching for extraterrestrial life have proposed that atmospheric NH3 (ammonia) can serve as a biosignature gas—an indication that a planet harbors life. Jingcheng Huang, Sara Seager, and colleagues evaluated this possibility, finding that on rocky planets, atmospheric NH3 likely couldn’t reach detectably high levels in the absence of biological activity. But the team also found that on so-called mini-Neptunes—gas planets smaller than Neptune but with atmospheres similar to Neptune’s—atmospheric pressure and temperature can be high enough to produce atmospheric NH3.",
+    "question": "Based on the text, Huang, Seager, and colleagues would most likely agree with which statement about atmospheric NH3?",
+    "rule": "States a conclusion the researchers likely agree with, given the details in the text.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Its presence is more likely to indicate that a planet is a mini-Neptune than that the planet is a rocky planet that could support life.",
+        "why": "Choice A is incorrect because the text indicates that biological activity likely accounts for detectable levels of NH₃ in the atmospheres of rocky planets but mini-Neptune planets can have detectable levels of NH₃ in their atmospheres in the absence of biological activity. Therefore, both rocky planets and mini- Neptune planets can have detectable levels of atmospheric NH₃."
+      },
+      {
+        "label": "B",
+        "text": "Its absence from a planet that’s not a mini-Neptune indicates that the planet probably doesn’t have life.",
+        "why": "Choice B is incorrect because the text states that for NH₃ to reach detectable levels in the atmospheres of rocky planets likely means they harbor biological activity, meaning that rocky planets with detectable NH₃ usually harbor biological activity. However, that does not entail that every rocky planet with biological activity will have detectable levels of NH₃ in their atmospheres."
+      },
+      {
+        "label": "C",
+        "text": "It should be treated as a biosignature gas if detected in the atmosphere of a rocky planet but not if detected in the atmosphere of a mini-Neptune.",
+        "why": "Choice C is the best answer because it states a conclusion the researchers likely agree with, given the details in the text. The text explains that a biosignature gas is a gas that can be used as an indicator that a planet harbors some form of life and some astronomers have proposed that NH₃ could serve as a biosignature gas. The researchers evaluating this claim found that the atmosphere of rocky planets would be unlikely to reach “detectably high levels” of NH₃ without biological activity, which would support the proposal of NH₃ serving as a biosignature gas. However, the text also states that mini-Neptune planets can produce NH₃ in the absence of biological activity. Thus, the text is structured to lead to the conclusion that detectable levels of NH₃ in the atmospheres of rocky planets could constitute a biosignature, but that is not the case for detectable levels of the gas in the atmospheres of mini-Neptune planets."
+      },
+      {
+        "label": "D",
+        "text": "It doesn’t reliably reach high enough concentrations in the atmospheres of rocky planets or mini-Neptunes to be treated as a biosignature gas.",
+        "why": "Choice D is incorrect because the text claims only that some astronomers have proposed using NH₃ as a biosignature gas without mentioning a minimum concentration of atmospheric NH₃ that must be met for it to function as a biosignature gas."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt6-m2-q24",
+    "source": "College Board Practice Test 6, Module 2, Question 24",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "boundaries",
+    "test": "Practice Test 6",
+    "taken": "2026-08-11",
+    "module": 2,
+    "number": 24,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Latin America is known to have dozens, if not hundreds, of popular dance forms. Only five of these dances are included in international ballroom dance ___ rumba, samba, cha-cha-cha, paso doble, and jive—the last of which is grouped with the other Latin dances despite not having Latin roots.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the punctuation of supplementary elements within a sentence.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "competitions, however:",
+        "why": "Choice A is the best answer. The convention being tested is the punctuation of supplementary elements within a sentence. This choice correctly uses a comma to separate the supplementary adverb “however” from the preceding main clause (“only...competitions”), and it uses a colon to introduce the list of dances that follows (“rumba…jive”). Further, placing the colon after “however” rather than before indicates that the information in the preceding main clause (only... competitions) is contrary to what might be assumed from the information in the previous sentence (Latin America has many more dance forms)."
+      },
+      {
+        "label": "B",
+        "text": "competitions, however,",
+        "why": "Choice B is incorrect. The comma after “however” can’t be used in this way to introduce a series (“rumba...jive”)."
+      },
+      {
+        "label": "C",
+        "text": "competitions, however;",
+        "why": "Choice C is incorrect because it isn’t 31 SAT PRACTICE TEST #6 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2 conventional to use a semicolon in this way to introduce a series of items, such as the list of dances."
+      },
+      {
+        "label": "D",
+        "text": "competitions; however,",
+        "why": "Choice D is incorrect because placing the semicolon after “competitions” illogically indicates that the following list of five Latin American dances (“rumba...jive”) is contrary to the information in the previous clause (only five Latin American dances are included in international ballroom dance competitions)."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt6-m2-q28",
+    "source": "College Board Practice Test 6, Module 2, Question 28",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "transitions",
+    "test": "Practice Test 6",
+    "taken": "2026-08-11",
+    "module": 2,
+    "number": 28,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "The liquid metals in Earth’s core circulate constantly, and this circulation generates electrical currents that flow between Earth’s North and South magnetic poles. These electrical currents, ___ create a barrier around Earth that protects us from radiation and charged particles coming from space.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "rule": "“In turn” logically signals that the information in the sentence—that the electrical currents create a protective barrier around Earth— is a result or consequence of the previous information about the circulation of liquid metals generating electrical currents that flow between Earth’s magnetic poles.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "in turn,",
+        "why": "Choice A is the best answer. “In turn” logically signals that the information in the sentence—that the electrical currents create a protective barrier around Earth— is a result or consequence of the previous information about the circulation of liquid metals generating electrical currents that flow between Earth’s magnetic poles."
+      },
+      {
+        "label": "B",
+        "text": "likewise,",
+        "why": "Choice B is incorrect because “likewise” illogically signals that the information in the sentence is similar to the previous information about the circulation of liquid metals generating electrical currents that flow between Earth’s magnetic poles. Instead, the new information about the electrical currents is a direct result or consequence of the previous information."
+      },
+      {
+        "label": "C",
+        "text": "nevertheless,",
+        "why": "Choice C is incorrect because “nevertheless” illogically signals that the information in the sentence is true despite the previous information about the circulation of liquid metals generating electrical currents that flow between Earth’s magnetic poles. Instead, the new information about the electrical currents is a direct result or consequence of the previous information."
+      },
+      {
+        "label": "D",
+        "text": "in reality,",
+        "why": "Choice D is incorrect because “in reality” illogically signals that the information in the sentence contradicts the previous information about the circulation of liquid metals generating electrical currents that flow between Earth’s magnetic poles. Instead, the new information about the electrical currents is a direct result or consequence of the previous information."
+      }
+    ]
   }
 ]

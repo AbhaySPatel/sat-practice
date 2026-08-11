@@ -91,10 +91,17 @@ def load_word_index():
     return {w['word'].lower(): w['gloss']
             for w in data.get('words', []) if w.get('word') and w.get('gloss')}
 
+# `order` is what keeps the output append-only. The rows are emitted in ascending
+# order, not in the order the sources happen to be read, because the app holds his
+# place in the revision set as an INDEX into this file: anything inserted ahead of
+# a question he has already met moves it out from under him. So a new test gets the
+# next number, whichever route it came in by, and nothing already here shifts.
+# Bluebook tests carry the same field -- see tests/missed-bluebook.json.
 TESTS = [
     {
         'key': 'pt5',
         'label': 'Practice Test 5',
+        'order': 1,
         'taken': '2026-08-09',
         'questions_pdf': Path('book/sat-practice-test-5-digital.pdf'),
         'answers_pdf': Path('book/sat-practice-test-5-answers-digital.pdf'),
@@ -106,6 +113,26 @@ TESTS = [
         'missed': {
             1: [4, 5, 8, 10, 16, 19, 24, 25, 29, 30, 33],
             2: [4, 5, 7, 13, 15, 16, 18, 24, 25, 29],
+        },
+    },
+    {
+        'key': 'pt6',
+        'label': 'Practice Test 6',
+        # Third in, so it emits after the Bluebook set even though it is read first.
+        'order': 3,
+        'taken': '2026-08-11',
+        'questions_pdf': Path('book/sat-practice-test-6-digital.pdf'),
+        'answers_pdf': Path('book/sat-practice-test-6-answers-digital.pdf'),
+        # Same layout as Test 5. Page 30 holds no questions; harmless in the range.
+        'modules': {1: range(3, 17), 2: range(17, 31)},
+        'per_module': 33,
+        # He did not mark this worksheet at all -- tests/Test 6 on 11-Aug.jpeg holds
+        # only his own answers, all 66 of them. These are the questions where that
+        # answer differs from the official key in
+        # book/scoring-sat-practice-test-6-digital.pdf. R&W raw 53/66.
+        'missed': {
+            1: [5, 6, 8, 13, 15, 16, 18, 30],
+            2: [5, 11, 12, 24, 28],
         },
     },
 ]
@@ -282,6 +309,9 @@ PROMPT_START = re.compile(
     r'What (?:does|is|makes|choice)|'
     r'As used in the text|'
     r'According to the text|'
+    # The one opener that does not begin with a question word: "It can most
+    # reasonably be inferred from the text that ... for which reason?"
+    r'It can most reasonably be inferred|'
     r'Based on the (?:text|texts|data|table|graph))')
 
 
@@ -420,9 +450,19 @@ def classify(prompt, rationale):
          r'if true, would most \w+ly (?:support|weaken|undermine)|'
          r'data from the (?:graph|table)|Based on the (?:data|table|graph)|'
          r'most effectively uses data', 'command-of-evidence'),
-        (r'most logically completes the text', 'inferences'),
-        (r'main idea of the text|According to the text', 'central-ideas-details'),
-        (r'Text 1 and Text 2|author of Text 2', 'cross-text-connections'),
+        (r'most logically completes the text|most reasonably be inferred', 'inferences'),
+        # Ahead of Central Ideas and Details, and matching either text on its own:
+        # "both Sykes in Text 1 and the scholars in Text 2 would most likely agree"
+        # names no pair literally, and the agree-with-a-statement prompt below would
+        # otherwise claim it. Still behind Words in Context and the rest, so "As used
+        # in Text 1" stays where it belongs.
+        (r'\bTexts? [12]\b|\bboth texts\b', 'cross-text-connections'),
+        # "would most likely agree with which statement" is Central Ideas and Details
+        # when it is one text -- that is how College Board files it in the question
+        # bank, where the 11 cross-text uses and the 2 single-text ones split exactly
+        # on whether a numbered Text is named.
+        (r'main idea of the text|According to the text|'
+         r'would most likely agree with which statement', 'central-ideas-details'),
     ):
         if re.search(pattern, prompt, re.I):
             return skill
@@ -573,6 +613,7 @@ def build_bluebook():
     rows, problems = [], []
 
     for test in json.loads(BLUEBOOK.read_text(encoding='utf-8')):
+        order = test.get('order', 0)
         for q in test['questions']:
             where = f'{test["key"]} Q{q["number"]}'
             passage = re.sub(r'\s+', ' ', q['passage']).strip()
@@ -661,7 +702,7 @@ def build_bluebook():
                     problems.append(
                         f'{where}: {len(row["options"]) - got} option(s) without a '
                         'gloss — add them to banks/vocab-glosses.json')
-            rows.append(row)
+            rows.append((order, row))
 
     return rows, problems
 
@@ -678,18 +719,21 @@ def main():
             if not test[key].exists():
                 sys.exit(f'{test[key]} not found -- run from the repo root.')
         rows, problems = build(test)
-        all_rows += rows
+        all_rows += [(test.get('order', 0), r) for r in rows]
         all_problems += problems
         print(f'{test["label"]}: {len(rows)} questions')
 
-    # Appended after the PDF tests, and in the order the file lists them. The app
-    # holds his place as an index into the bank, so anything inserted ahead of an
-    # existing question would move it -- see the note by MISSED_FILE in app.js.
     rows, problems = build_bluebook()
     all_rows += rows
     all_problems += problems
     if rows:
         print(f'{BLUEBOOK}: {len(rows)} questions')
+
+    # The one place file order is decided. Sorted by `order` and otherwise stable,
+    # so a test added today lands after everything already here and no existing
+    # index moves -- see the note above TESTS, and by MISSED_FILE in app.js.
+    all_rows.sort(key=lambda pair: pair[0])
+    all_rows = [r for _, r in all_rows]
 
     # Progress is stored against the id, so two questions sharing one would share
     # his history and each overwrite the other's.
@@ -705,6 +749,21 @@ def main():
     for skill, n in by_skill.most_common():
         print(f'  {n:3}  {skill}')
     print(f'  {sum(1 for r in all_rows if r.get("underline"))} carry an underlined portion')
+
+    # The paper and Bluebook tests are built from one item pool, so the same question
+    # can turn up on both -- and a question he missed twice, on two sittings, is the
+    # most telling thing in the whole set. Reported rather than deduplicated: both
+    # rows are a true record of a separate attempt, and losing one would hide that it
+    # happened twice.
+    by_text = {}
+    for r in all_rows:
+        by_text.setdefault(re.sub(r'\W+', '', r['passage'].lower())[:120], []).append(r)
+    twice = [rows for rows in by_text.values() if len(rows) > 1]
+    if twice:
+        print(f'\n  {len(twice)} question(s) missed on more than one test:')
+        for rows in twice:
+            where = ', '.join(f'{r["test"]} M{r["module"]}Q{r["number"]}' for r in rows)
+            print(f'    {rows[0]["realSkill"]:<24} {where}')
 
     if all_problems:
         print(f'\n  {len(all_problems)} need a look:')
