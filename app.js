@@ -244,6 +244,10 @@ const SKILLS_BY_DOMAIN = {
   extra: ['missed-in-test', 'educator-bank', 'vocabulary', 'defective']
 };
 
+// The ones that are not score-report skills, as a set, so the "all skills" total
+// in the dropdown can leave them out without repeating the list.
+const EXTRA_SKILLS = new Set(SKILLS_BY_DOMAIN.extra);
+
 // Word meanings for the Words in Context options, keyed by question id then
 // option label. Built by extract_vocab.py from College Board's own rationale
 // text. Optional: if the file is missing the app runs exactly as before.
@@ -878,8 +882,84 @@ function fillBlank(text) {
   blank.classList.add('filled');
 }
 
+// --- How long this question is taking -------------------------------------
+
+// The real thing being paced against. Reading and Writing gives 64 minutes for 54
+// questions, so a question that runs past this is one he would be borrowing time
+// for on the day -- which is worth seeing while he is still on it, not afterwards.
+const PACE_SECONDS = Math.round((64 * 60) / 54); // 71
+
+// Time is banked in stretches rather than read off one start stamp, so the clock
+// can stop: at the moment he answers, and whenever the tab is not in front of him.
+// A wall clock would file the walk to the kitchen as thinking time and make the
+// one number he is meant to trust the one he cannot.
+let timeBanked = 0;   // seconds from stretches already closed
+let timeSince = 0;    // Date.now() when the open stretch began; 0 when stopped
+let timerTicker = null;
+// Rebuilt with the rest of the badge line on every renderMeta, so it is looked up
+// again rather than held: the element this points at is replaced, not mutated.
+let timerEl = null;
+
+function questionSeconds() {
+  return timeBanked + (timeSince ? (Date.now() - timeSince) / 1000 : 0);
+}
+
+function formatSeconds(total) {
+  const s = Math.floor(total);
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+}
+
+function paintTimer() {
+  if (!timerEl) return;
+  const seconds = questionSeconds();
+  timerEl.textContent = formatSeconds(seconds);
+  // Past the budget it stops being neutral information and starts being the point.
+  timerEl.classList.toggle('is-slow', seconds > PACE_SECONDS);
+  timerEl.title = timeSince
+    ? `Time on this question. ${PACE_SECONDS}s is the pace for Reading and Writing`
+      + ' — 64 minutes for 54 questions.'
+    : `Took ${formatSeconds(seconds)}. The pace to hold is ${PACE_SECONDS}s per question.`;
+}
+
+// Called on every serve. Restarts from nothing: a re-served question is a fresh
+// attempt at it as far as the clock is concerned.
+function startQuestionTimer() {
+  timeBanked = 0;
+  timeSince = document.hidden ? 0 : Date.now();
+  if (timerTicker) clearInterval(timerTicker);
+  timerTicker = setInterval(paintTimer, 1000);
+  paintTimer();
+}
+
+// Closes the open stretch and leaves the total on screen. `timerTicker` is cleared
+// as well, so an answered question does not keep painting the same number.
+function stopQuestionTimer() {
+  timeBanked = questionSeconds();
+  timeSince = 0;
+  if (timerTicker) {
+    clearInterval(timerTicker);
+    timerTicker = null;
+  }
+  paintTimer();
+}
+
+// Only while the question is unanswered -- `timerTicker` is the flag for that,
+// since stopQuestionTimer clears it -- so returning to the tab long after
+// answering does not restart a clock that has already had its say.
+document.addEventListener('visibilitychange', () => {
+  if (!timerTicker) return;
+  if (document.hidden) {
+    timeBanked = questionSeconds();
+    timeSince = 0;
+  } else if (!timeSince) {
+    timeSince = Date.now();
+  }
+  paintTimer();
+});
+
 function renderMeta(question) {
   metaEl.textContent = '';
+  timerEl = null;
 
   const labels = [SKILL_LABELS[question.skill] || question.skill];
 
@@ -952,6 +1032,13 @@ function renderMeta(question) {
     worth.textContent = 'no points';
   }
   metaEl.append(worth);
+
+  // Last on the line, so the one thing on it that moves is not sitting between
+  // two that do not.
+  timerEl = document.createElement('span');
+  timerEl.className = 'tag tag-timer';
+  metaEl.append(timerEl);
+  paintTimer();
 }
 
 function renderOptions(question) {
@@ -1555,6 +1642,8 @@ function loadQuestion(question) {
   directionAnswered = false;
   directionCorrect = null;
 
+  // Before renderMeta, which paints the badge the clock lives in.
+  startQuestionTimer();
   renderMeta(question);
   titleEl.textContent = question.question ||
     'Which choice completes the text so that it conforms to the conventions of Standard English?';
@@ -1634,6 +1723,10 @@ function reveal(selectedIndex) {
     // best day.
     const wasWrongBefore = statsFor(current.id).wrong > 0;
     const bestBefore = bestDayBefore().points;
+
+    // Stopped before anything is recorded or re-rendered, so the total is the time
+    // up to committing to an answer and not the time spent reading why it was wrong.
+    stopQuestionTimer();
 
     lastAward = isCorrect ? questionPoints(current) : 0;
     recordAnswer(current, isCorrect, lastAward);
@@ -1846,6 +1939,8 @@ function nextQuestion(options) {
     // Neither direction leads anywhere in an empty set; the warning takes the
     // readout's place in the pager and both controls go inert.
     setPagerState({ atStart: true, empty: true });
+    // No question is being served, so nothing should still be timing one.
+    stopQuestionTimer();
     return;
   }
 
@@ -2404,13 +2499,18 @@ function buildSkillSelect() {
   // never move. Questions retired by "Hide first-time correct" go the same way --
   // these numbers are the answer to "how much have I got left here?", so they have
   // to fall as he clears them.
+  //
+  // The "all skills" total counts the score-report skills only. The Extras group
+  // says in its own heading that it is not made of skills, and it is far the
+  // biggest thing in the bank -- counted in, it swamps the number and "all
+  // skills" stops answering the question it is there to answer.
   const counts = {};
   let available = 0;
   bank.forEach((q) => {
     if (q.skill === VOCAB_SKILL && vocabMastered(q.id)) return;
     if (isAced(q)) return;
     counts[q.skill] = (counts[q.skill] || 0) + 1;
-    available += 1;
+    if (!EXTRA_SKILLS.has(q.skill)) available += 1;
   });
 
   // The multiplier belongs here, at the moment he chooses. Shown only on the

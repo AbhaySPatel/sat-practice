@@ -406,6 +406,52 @@ body {
   color: var(--muted);
 }
 
+/* The clock. Outlined and muted rather than filled: it ticks once a second, and a
+   coloured badge doing that beside the question is a thing to watch instead of the
+   question. tabular-nums so the line does not shuffle as the digits change, and a
+   min-width so it does not jump a pixel wider going from 0:59 to 1:00. */
+.q-meta .tag-timer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 64px;
+  background: transparent;
+  border-color: var(--option-border);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* A clock face ahead of the digits, drawn as a mask rather than an image so it
+   takes the badge's own colour -- including the amber it turns past the pace -- and
+   as a mask rather than a character because Unicode's clock glyphs render as
+   full-colour emoji on most platforms, which would fight everything around them.
+   One hand straight up and one to the lower right: two hands at different angles
+   is what reads as a clock at 11px, where a symmetrical 12:00 reads as a cross. */
+.q-meta .tag-timer::before {
+  --clock: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7.4V12l3.4 2'/%3E%3C/svg%3E");
+  content: "";
+  flex: none;
+  width: 0.92em;
+  height: 0.92em;
+  background-color: currentColor;
+  -webkit-mask: var(--clock) center / contain no-repeat;
+  mask: var(--clock) center / contain no-repeat;
+}
+
+/* Without a mask, that rule is a filled box painting a solid square where the
+   clock should be. No icon is the better failure. */
+@supports not ((mask: none) or (-webkit-mask: none)) {
+  .q-meta .tag-timer::before { display: none; }
+}
+
+/* Past the pace budget. This one is meant to catch his eye. */
+.q-meta .tag-timer.is-slow {
+  background: var(--pending-bg);
+  border-color: var(--pending-fg);
+  color: var(--pending-fg);
+}
+
 
 
 
