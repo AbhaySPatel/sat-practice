@@ -322,6 +322,7 @@ let wrongOnly = false;     // restrict to questions he has gotten wrong
 // On by default; nothing is deleted, so unticking restores them all.
 let hideAced = true;
 let clearedCount = 0;      // how many the line above set aside, for the readout
+let missedCount = 0;       // and how many "Wrong answers only" is holding back
 let directionAnswered = false;
 let directionCorrect = null;
 let sessionStreak = [];
@@ -792,6 +793,20 @@ function acedFirstTime(id) {
 // correct answers in a row, and one right answer is not that.
 function isAced(question) {
   return hideAced && question.skill !== VOCAB_SKILL && acedFirstTime(question.id);
+}
+
+// Is a question held back for the "Wrong answers only" view? Questions he has
+// missed do not belong in the ordinary sequence: met one at a time, weeks apart
+// and surrounded by fresh ones, a mistake is just an interruption. Gathered
+// behind the tick they are a set he can work through as a set, which is the only
+// way the pattern in them is visible.
+//
+// Vocabulary is exempt, as it is above and for the same reason: a word he missed
+// is precisely the word the drill has to bring back, and it retires words itself
+// once he has answered them right VOCAB_MASTERED_BY times running. Pulling missed
+// words out here would leave the drill nothing to teach him.
+function isMissed(question) {
+  return !wrongOnly && question.skill !== VOCAB_SKILL && isWrongEver(question.id);
 }
 
 // --- Rendering -------------------------------------------------------------
@@ -1881,6 +1896,15 @@ function applyFilters() {
   // question he has never missed is not part of that set to begin with, so
   // counting it as cleared *from* it would be reporting on the wrong pool.
   clearedCount = wrongOnly ? 0 : beforeAced - pool.length;
+
+  // The ones he has missed come out of the ordinary sequence and wait behind the
+  // tick. Counted, for the same reason as above: they have to be visibly set
+  // aside rather than appear to have been lost, and the number is the whole
+  // argument for going and looking at them.
+  const beforeMissed = pool.length;
+  pool = pool.filter((q) => !isMissed(q));
+  missedCount = beforeMissed - pool.length;
+
   if (wrongOnly) pool = pool.filter((q) => isWrongEver(q.id));
 }
 
@@ -1944,11 +1968,20 @@ function nextQuestion(options) {
     // Clearing a whole set is the good ending, not a dead end, so it gets its own
     // message -- and names the tick that brings the questions back, because
     // otherwise an empty screen looks like they are gone.
+    //
+    // The missed ones go first when there are any: an empty set with questions
+    // waiting behind a tick is not an ending, and that tick is the one thing on
+    // the page that would give him something to do.
+    const waiting = !wrongOnly && missedCount > 0
+      ? `Nothing fresh left here — but ${missedCount} you got wrong `
+        + `${missedCount === 1 ? 'is' : 'are'} waiting. `
+        + 'Tick "Wrong answers only" to work through them.'
+      : null;
     const cleared = !wrongOnly && hideAced && clearedCount > 0
       ? `Nothing left here — you have got all ${clearedCount} right first time. `
         + 'Untick "Hide first-time correct" to work through them again.'
       : null;
-    setEmptyState(cleared || (wrongOnly
+    setEmptyState(waiting || cleared || (wrongOnly
       ? (difficultyFilter === 'all'
         ? 'Nothing wrong yet. Untick "Wrong answers only" to keep practising.'
         : 'Nothing wrong yet at this difficulty. Set Difficulty to Any, or untick '
@@ -1987,7 +2020,10 @@ function nextQuestion(options) {
   }
 
   // Splice in a repeat every FRESH_PER_REVIEW fresh questions. Reviews are
-  // drawn at random from everything he has gotten wrong within this filter.
+  // drawn at random from everything he has gotten wrong within this filter --
+  // which, now that missed questions wait behind the tick, means the vocabulary
+  // words alone. Those are the one kind that has to keep coming back on its own,
+  // so the splice is left in place rather than deleted.
   const reviewable = wrongOnly
     ? []
     : pool.filter((q) => isWrongEver(q.id) && (!current || q.id !== current.id));
@@ -2044,7 +2080,12 @@ function nextQuestion(options) {
 function renderSetSummary() {
   const total = pool.length;
   const seen = pool.filter((q) => statsFor(q.id).seen > 0).length;
-  const wrong = pool.filter((q) => isWrongEver(q.id)).length;
+  // Under wrong-only the pool IS the missed set, so it counts itself. Otherwise
+  // the missed ones are no longer in the pool to be counted -- the number worth
+  // showing is the one waiting behind the tick.
+  const wrong = wrongOnly
+    ? pool.filter((q) => isWrongEver(q.id)).length
+    : missedCount;
   const pass = Math.floor(servedIndex / total) + 1;
   const position = (servedIndex % total) + 1;
 
@@ -2337,19 +2378,24 @@ function jumpToQuestion(id) {
   skillFilter = target.skill;
   difficultyFilter = 'all';
   testFilter = 'all';
+  // A question he has missed lives behind "Wrong answers only" now, so a link to
+  // one is followable only with the tick on -- and a link to any other kind is
+  // followable only with it off. Cleared first because isMissed reads the flag:
+  // asked while it is still on, it answers "nothing is being held back".
   wrongOnly = false;
+  wrongOnly = isMissed(target);
   // Only when it would otherwise be out of reach. The tick is his default, so a
   // jump to a question that is in the pool regardless leaves it alone.
   if (isAced(target)) {
     hideAced = false;
     if (hideAcedToggle) hideAcedToggle.checked = false;
-    if (bank.length > 0) buildSkillSelect();
   }
+  if (bank.length > 0) buildSkillSelect();
   syncSkillSelect();
   syncTestSelect();
   if (difficultySelect) difficultySelect.value = difficultyFilter;
   if (testSelect) testSelect.value = testFilter;
-  if (wrongOnlyToggle) wrongOnlyToggle.checked = false;
+  if (wrongOnlyToggle) wrongOnlyToggle.checked = wrongOnly;
   rememberFilters();
 
   applyFilters();
@@ -2531,11 +2577,18 @@ function buildSkillSelect() {
   // says in its own heading that it is not made of skills, and it is far the
   // biggest thing in the bank -- counted in, it swamps the number and "all
   // skills" stops answering the question it is there to answer.
+  // `present` is every skill the bank still holds, counted separately so that a
+  // skill whose last few questions are all sitting behind "Wrong answers only"
+  // shows (0) rather than vanishing from the list. A skill that disappears reads
+  // as a bug, and it takes the only honest place to show the zero with it.
   const counts = {};
+  const present = {};
   let available = 0;
   bank.forEach((q) => {
     if (q.skill === VOCAB_SKILL && vocabMastered(q.id)) return;
+    present[q.skill] = true;
     if (isAced(q)) return;
+    if (isMissed(q)) return;
     counts[q.skill] = (counts[q.skill] || 0) + 1;
     if (!EXTRA_SKILLS.has(q.skill)) available += 1;
   });
@@ -2559,12 +2612,12 @@ function buildSkillSelect() {
   ));
 
   DOMAIN_ORDER.forEach((domain) => {
-    const skills = SKILLS_BY_DOMAIN[domain].filter((s) => counts[s]);
+    const skills = SKILLS_BY_DOMAIN[domain].filter((s) => present[s]);
     if (skills.length === 0) return;
     const group = document.createElement('optgroup');
     group.label = DOMAIN_LABELS[domain] || domain;
     skills.forEach((s) => group.append(
-      option(s, SKILL_LABELS[s] || s, counts[s], skillWeight(s))
+      option(s, SKILL_LABELS[s] || s, counts[s] || 0, skillWeight(s))
     ));
     skillSelect.append(group);
   });
@@ -2704,6 +2757,11 @@ function setupControls() {
     wrongOnlyToggle.checked = wrongOnly;
     wrongOnlyToggle.addEventListener('change', () => {
       wrongOnly = wrongOnlyToggle.checked;
+      // Same reason as the tick above: the per-skill counts mean "what this tick
+      // will actually serve you", and ticking it is what moves the missed
+      // questions from one side of that line to the other. buildSkillSelect ends
+      // by syncing both selects, so it stands in for the two calls that were here.
+      if (bank.length > 0) buildSkillSelect();
       syncSkillSelect();
       syncTestSelect();
       current = null;
