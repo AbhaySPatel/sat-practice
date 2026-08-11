@@ -978,9 +978,9 @@ function renderMeta(question) {
 
   // Only what the dropdowns are not already saying. Narrowing to one skill and
   // then labelling every question with it spends the badge line restating a
-  // choice that is on screen two inches above. Wrong-only ignores the skill
-  // dropdown, so there the skill is news again and goes back on the line.
-  const skillIsChosen = !wrongOnly && skillFilter === question.skill;
+  // choice that is on screen two inches above. Both dropdowns apply in every
+  // view now, wrong-only included, so this holds wherever he is.
+  const skillIsChosen = skillFilter === question.skill;
   const difficultyIsChosen = difficultyFilter === question.difficulty;
 
   const labels = [];
@@ -1865,21 +1865,20 @@ function vocabMastered(id) {
   return vocabRun(id) >= VOCAB_MASTERED_BY;
 }
 
-// "Wrong answers only" deliberately ignores the skill dropdown. The questions he
-// has missed are few and spread thinly across ten skills, so filtering them by
-// skill as well leaves one or two per skill and turns his own mistakes into
-// something he has to hunt for. This is the one view that should cut across
-// skills. Difficulty still applies -- that narrowing is still useful here.
-// True only in the one view where a test is a meaningful thing to narrow to:
-// "Missed in a test" chosen outright. Wrong-only cuts across every skill, so the
-// set it draws from is not one test's worth of questions either.
+// "Wrong answers only" used to ignore the skill dropdown: while missed questions
+// were also spliced back into the ordinary sequence the set behind the tick was
+// small, and cutting it by skill left one or two per skill -- his own mistakes
+// turned into something he had to hunt for. Now that the tick is the only place
+// they live, that set is the size of every mistake he has ever made, and every
+// control that narrows it earns its place. All three apply here exactly as they
+// do everywhere else.
 function testFilterApplies() {
-  return testFilter !== 'all' && !wrongOnly && skillFilter === MISSED_SKILL;
+  return testFilter !== 'all' && skillFilter === MISSED_SKILL;
 }
 
 function applyFilters() {
   pool = bank.filter((q) =>
-    (wrongOnly || skillFilter === 'all' || q.skill === skillFilter) &&
+    (skillFilter === 'all' || q.skill === skillFilter) &&
     (difficultyFilter === 'all' || q.difficulty === difficultyFilter) &&
     (!testFilterApplies() || q.test === testFilter)
   );
@@ -1908,10 +1907,11 @@ function applyFilters() {
   if (wrongOnly) pool = pool.filter((q) => isWrongEver(q.id));
 }
 
-// Each filter combination keeps its own place in the sequence. Wrong-only pins
-// the skill part to 'all' because that pool is the same whatever the dropdown
-// says -- without this the one list would keep a separate place per skill and
-// jump about as he changed a dropdown that is not even being applied.
+// Each filter combination keeps its own place in the sequence. Wrong-only used to
+// pin the skill part to 'all', because the pool behind the tick was the same
+// whatever the dropdown said; now the dropdown applies there too, so the skill
+// goes on the key like any other. The keys that pinning produced are still valid
+// -- they are the wrong-only, all-skills keys, which is what they always meant.
 //
 // The test is appended only while it is actually being applied, so every key he
 // has already built up -- they are saved, and each holds a real position -- means
@@ -1921,10 +1921,9 @@ function applyFilters() {
 // before it existed was built against the full set, which is what unticking
 // gives back, so those keep their meaning too.
 function cursorKey() {
-  const skill = wrongOnly ? 'all' : skillFilter;
   const test = testFilterApplies() ? `|${testFilter}` : '';
   const left = hideAced ? '|todo' : '';
-  return `${skill}|${difficultyFilter}|${wrongOnly ? 'wrong' : 'all'}${test}${left}`;
+  return `${skillFilter}|${difficultyFilter}|${wrongOnly ? 'wrong' : 'all'}${test}${left}`;
 }
 
 function cursorValue() {
@@ -1981,10 +1980,18 @@ function nextQuestion(options) {
       ? `Nothing left here — you have got all ${clearedCount} right first time. `
         + 'Untick "Hide first-time correct" to work through them again.'
       : null;
+    // Both dropdowns narrow this view now, so an empty one is far more often a
+    // corner of the missed set he has cleared than proof he has never slipped --
+    // and the message has to name whichever control is doing the narrowing before
+    // it suggests the tick, or he unticks and loses his place in the set.
+    const narrowed = [
+      skillFilter !== 'all' ? 'skill' : null,
+      difficultyFilter !== 'all' ? 'difficulty' : null
+    ].filter(Boolean);
     setEmptyState(waiting || cleared || (wrongOnly
-      ? (difficultyFilter === 'all'
+      ? (narrowed.length === 0
         ? 'Nothing wrong yet. Untick "Wrong answers only" to keep practising.'
-        : 'Nothing wrong yet at this difficulty. Set Difficulty to Any, or untick '
+        : `Nothing wrong here. Widen the ${narrowed.join(' or ')}, or untick `
           + '"Wrong answers only".')
       : 'No questions match these filters.'), true);
     // Neither direction leads anywhere in an empty set; the warning takes the
@@ -2080,12 +2087,10 @@ function nextQuestion(options) {
 function renderSetSummary() {
   const total = pool.length;
   const seen = pool.filter((q) => statsFor(q.id).seen > 0).length;
-  // Under wrong-only the pool IS the missed set, so it counts itself. Otherwise
-  // the missed ones are no longer in the pool to be counted -- the number worth
-  // showing is the one waiting behind the tick.
-  const wrong = wrongOnly
-    ? pool.filter((q) => isWrongEver(q.id)).length
-    : missedCount;
+  // Only outside the tick. Under it the pool IS the missed set, so "N to revisit"
+  // would repeat the total two words to its left; the number is news exactly when
+  // the questions it counts are somewhere he is not.
+  const wrong = wrongOnly ? 0 : missedCount;
   const pass = Math.floor(servedIndex / total) + 1;
   const position = (servedIndex % total) + 1;
 
@@ -2577,18 +2582,22 @@ function buildSkillSelect() {
   // says in its own heading that it is not made of skills, and it is far the
   // biggest thing in the bank -- counted in, it swamps the number and "all
   // skills" stops answering the question it is there to answer.
+  // Under "Wrong answers only" the question the counts answer is a different one
+  // -- not "how much is left here" but "where are my mistakes" -- so they count
+  // the missed set instead. Reading the same number in both views would make the
+  // dropdown useless in exactly the view he opened it to narrow.
+  //
   // `present` is every skill the bank still holds, counted separately so that a
-  // skill whose last few questions are all sitting behind "Wrong answers only"
-  // shows (0) rather than vanishing from the list. A skill that disappears reads
-  // as a bug, and it takes the only honest place to show the zero with it.
+  // skill with nothing to show in the current view reads (0) rather than
+  // vanishing from the list. A skill that disappears reads as a bug, and it takes
+  // the only honest place to show the zero with it.
   const counts = {};
   const present = {};
   let available = 0;
   bank.forEach((q) => {
     if (q.skill === VOCAB_SKILL && vocabMastered(q.id)) return;
     present[q.skill] = true;
-    if (isAced(q)) return;
-    if (isMissed(q)) return;
+    if (wrongOnly ? !isWrongEver(q.id) : isAced(q) || isMissed(q)) return;
     counts[q.skill] = (counts[q.skill] || 0) + 1;
     if (!EXTRA_SKILLS.has(q.skill)) available += 1;
   });
@@ -2642,14 +2651,25 @@ function buildTestSelect() {
   if (!testSelect) return;
   testSelect.textContent = '';
 
-  const missed = bank.filter((q) => q.skill === MISSED_SKILL && q.test && !isAced(q));
+  // Counted against the view he is in, like the skill counts: under wrong-only a
+  // test's number is how many of that sitting he has since missed here too, and
+  // outside it, the ones still to do. Either way it is what picking that test
+  // would give him -- and, as with the skills, a sitting he has finished shows
+  // (0) rather than dropping out of a list whose length decides whether the
+  // control is on screen at all.
+  const sat = bank.filter((q) => q.skill === MISSED_SKILL && q.test);
+  const available = (q) => (wrongOnly ? isWrongEver(q.id) : !isAced(q) && !isMissed(q));
   // Newest first by the date he sat it, falling back to the label so tests
   // without a date still order predictably rather than by bank position.
   const taken = {};
   const counts = {};
-  missed.forEach((q) => {
-    counts[q.test] = (counts[q.test] || 0) + 1;
+  let total = 0;
+  sat.forEach((q) => {
     taken[q.test] = q.taken || '';
+    counts[q.test] = counts[q.test] || 0;
+    if (!available(q)) return;
+    counts[q.test] += 1;
+    total += 1;
   });
   const labels = Object.keys(counts).sort((a, b) =>
     (taken[b] || '').localeCompare(taken[a] || '') || a.localeCompare(b));
@@ -2669,7 +2689,7 @@ function buildTestSelect() {
     return el;
   };
 
-  testSelect.append(option('all', 'Every test', missed.length));
+  testSelect.append(option('all', 'Every test', total));
   labels.forEach((label) => testSelect.append(option(label, label, counts[label])));
 
   // A saved test can outlive the file that named it.
@@ -2689,25 +2709,18 @@ function buildTestSelect() {
 // skill brings his choice back with it.
 function syncTestSelect() {
   if (!testControl) return;
-  const relevant = !wrongOnly && skillFilter === MISSED_SKILL
+  const relevant = skillFilter === MISSED_SKILL
     && testSelect && testSelect.options.length > 2;
   testControl.hidden = !relevant;
 }
 
-// The dropdown must never claim to be filtering something it is not. While
-// wrong-only is on the skill filter is ignored, so the select reads "All skills"
-// and is disabled rather than sitting there naming a skill it is not applying.
-//
-// `skillFilter` itself is deliberately left untouched: unticking restores his
-// choice with no bookkeeping, and his saved filters are never overwritten by a
-// state he only turned on to review.
+// The dropdown must never claim to be filtering something it is not -- which is
+// why it was disabled under wrong-only, back when that view ignored it. It no
+// longer does, so there is nothing to disable and nothing to explain away: the
+// select names the skill it is applying, in that view as in every other.
 function syncSkillSelect() {
   if (!skillSelect) return;
-  skillSelect.disabled = wrongOnly;
-  skillSelect.value = wrongOnly ? 'all' : skillFilter;
-  skillSelect.title = wrongOnly
-    ? 'Wrong answers only covers every skill, so the skill filter does not apply.'
-    : '';
+  skillSelect.value = skillFilter;
 }
 
 function setupControls() {
@@ -2757,13 +2770,13 @@ function setupControls() {
     wrongOnlyToggle.checked = wrongOnly;
     wrongOnlyToggle.addEventListener('change', () => {
       wrongOnly = wrongOnlyToggle.checked;
-      // Same reason as the tick above: the per-skill counts mean "what this tick
-      // will actually serve you", and ticking it is what moves the missed
-      // questions from one side of that line to the other. buildSkillSelect ends
-      // by syncing both selects, so it stands in for the two calls that were here.
+      // Same reason as the tick above: the counts in both dropdowns mean "what
+      // this tick will actually serve you", and the two views count different
+      // things, so they have to be rebuilt rather than left reading the other
+      // one's numbers. buildSkillSelect ends by syncing both selects, so it
+      // stands in for the two calls that used to be here.
       if (bank.length > 0) buildSkillSelect();
-      syncSkillSelect();
-      syncTestSelect();
+      else syncSkillSelect();
       current = null;
       nextQuestion({ step: 0, scroll: false });
     });
