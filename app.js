@@ -12,7 +12,7 @@
 // its markup, but the banks are fetched from here, so nothing was busting them --
 // a browser could serve a months-old vocab.json against new code, which is
 // exactly what happened. Bump this whenever a file under banks/ changes.
-const DATA_VERSION = '2026-08-10a';
+const DATA_VERSION = '2026-08-12a';
 
 // Official College Board banks only. banks/context.json is deliberately absent
 // -- see the note in the README about Words in Context and the direction drill.
@@ -56,16 +56,53 @@ const EXAMS = [
 // enough past to see whether the habit is holding, all the future that matters.
 const HEATMAP_LOOKBACK_WEEKS = 1;
 
-// --- Score projection ------------------------------------------------------
-// A digital-SAT Reading and Writing section is 54 questions scaled to 200-800.
-const RW_QUESTIONS = 54;
-const POINTS_PER_QUESTION = 600 / RW_QUESTIONS;
+// --- Sections --------------------------------------------------------------
+// The SAT scores Reading and Writing and Maths separately, 200-800 each, and
+// only their sum is the 400-1600 figure. So the app keeps them apart all the way
+// down: separate pool, separate dropdown, separate cursor, separate projection.
+// Blending them would produce a number matching no real result.
+//
+// Both sections project a 200-800 score, each anchored on one of his own sittings
+// rather than a published conversion table -- which keeps the number honest about
+// what it is: a rough read off a real test, not a prediction.
+//
+//   rw    Practice 5, 6 Aug 2026 (Bluebook): 20 wrong of 54, so 34 right → 550.
+//   math  Paper Test 6, 11 Aug 2026: 52 right of 54 → 780-800, midpoint 790.
+//         Chosen because it is the one maths sitting where both the raw count and
+//         the score are recorded; the Bluebook 760 has no raw count against it.
+//
+// Read the maths delta knowing what it is measured against: an anchor at 96%
+// accuracy is a demanding baseline, and the bank skews harder than a real section
+// -- so practice below that reads as "down on Practice 6" even on a good day. That
+// is not a miscalibration, it is the anchor doing its job. `readout: 'accuracy'`
+// is still supported for a section given no anchor at all.
+const SECTIONS = {
+  rw: {
+    label: 'Reading & Writing', short: 'R&W', questions: 54,
+    readout: 'score', anchorLabel: 'Practice 5',
+    anchor: { accuracy: 34 / 54, score: 550 }
+  },
+  math: {
+    label: 'Math', short: 'Math', questions: 44,
+    readout: 'score', anchorLabel: 'Practice 6',
+    anchor: { accuracy: 52 / 54, score: 790 }
+  }
+};
+const SECTION_ORDER = ['rw', 'math'];
+const DEFAULT_SECTION = 'rw';
 
-// Anchored on his own result rather than a published conversion table: Practice
-// 5 (6 Aug 2026) was 20 wrong of 54, so 34 right, scored 550. That keeps the
-// projection honest about what it is -- a rough read calibrated to one real
-// sitting, not a prediction.
-const SCORE_ANCHOR = { accuracy: 34 / RW_QUESTIONS, score: 550 };
+// Every question in every Reading and Writing bank predates sections and carries
+// no tag, so the absence of one means Reading and Writing -- which is what all of
+// them are. Only the maths banks mark themselves.
+function sectionOf(question) {
+  return question && question.section === 'math' ? 'math' : 'rw';
+}
+
+// --- Score projection ------------------------------------------------------
+// A digital-SAT section is scaled to 200-800, so 600 scaled points ride on its
+// questions however many there are. That constant is now the whole conversion --
+// see projectedScore -- and the old RW_QUESTIONS / POINTS_PER_QUESTION pair it
+// replaced only ever multiplied back out to it.
 
 // Judge on recent form over a section's worth of answers, not lifetime totals:
 // review repeats mean a question he once failed gets counted again once he has
@@ -320,6 +357,9 @@ let testFilter = 'all';
 let wrongOnly = false;     // restrict to questions he has gotten wrong
 // Drop the ones he got right first time, so the set is what he has left to do.
 // On by default; nothing is deleted, so unticking restores them all.
+// Which SAT section is on screen. Everything that could mix the two keys off
+// this: the pool, the skill dropdown, the cursor and the projection.
+let section = DEFAULT_SECTION;
 let hideAced = true;
 let clearedCount = 0;      // how many the line above set aside, for the readout
 let missedCount = 0;       // and how many "Wrong answers only" is holding back
@@ -344,6 +384,7 @@ const STREAK_LENGTH = 8;
 const titleEl = document.querySelector('.question-title');
 const metaEl = document.querySelector('.q-meta');
 const passageEl = document.querySelector('.cloze');
+const mathStemEl = document.getElementById('mathStem');
 const optionsContainer = document.querySelector('.options');
 const ruleBox = document.getElementById('ruleBox');
 const correctCountEl = document.getElementById('correctCount');
@@ -370,6 +411,14 @@ const submitRow = document.getElementById('submitRow');
 const dailyCountEl = document.getElementById('dailyCount');
 const dailyNoteEl = document.getElementById('dailyNote');
 const dailyFillEl = document.getElementById('dailyFill');
+const daySplitEl = document.getElementById('daySplit');
+const splitRwPtsEl = document.getElementById('splitRwPts');
+const splitMathPtsEl = document.getElementById('splitMathPts');
+const splitRestEl = document.getElementById('splitRest');
+const splitRestPtsEl = document.getElementById('splitRestPts');
+const scoreSplitEl = document.getElementById('scoreSplit');
+const splitRwScoreEl = document.getElementById('splitRwScore');
+const splitMathScoreEl = document.getElementById('splitMathScore');
 const dayDoneEl = document.getElementById('dayDone');
 const dayDoneDetailEl = document.getElementById('dayDoneDetail');
 const dayDoneGoBtn = document.getElementById('dayDoneGo');
@@ -597,12 +646,29 @@ function recordAnswer(question, isCorrect, pointsGained) {
     day.answered += 1;
     if (isCorrect) day.correct += 1;
     day.points = (day.points || 0) + (pointsGained || 0);
+
+    // Split alongside the total, not instead of it. The ring, the daily target,
+    // the heatmap and the best-day record are all about the habit rather than the
+    // subject, so they keep reading `day.points` and are untouched by this. Days
+    // recorded before the split existed simply have no `bySection`, which reads
+    // as "we do not know", not as zero -- see renderDaily.
+    const sec = sectionOf(question);
+    const split = day.bySection || (day.bySection = {});
+    const bucket = split[sec] || (split[sec] = { answered: 0, correct: 0, points: 0 });
+    bucket.answered += 1;
+    if (isCorrect) bucket.correct += 1;
+    bucket.points += (pointsGained || 0);
+
     store.days[key] = day;
 
     // Rolling form, oldest trimmed off the front. Re-answering something he has
     // already learned would lift this average without him improving.
     const recent = store.recent || [];
-    recent.push({ s: question.skill, ok: isCorrect ? 1 : 0 });
+    // `sec` is tagged from here on so the two projections stay separate. Rows
+    // saved before sections existed carry none, and are read as Reading and
+    // Writing below, which is what every one of them was.
+    recent.push({ s: question.skill, ok: isCorrect ? 1 : 0,
+                  sec: sectionOf(question) });
     if (recent.length > RECENT_MAX) recent.splice(0, recent.length - RECENT_MAX);
     store.recent = recent;
   }
@@ -642,13 +708,20 @@ function skillForm(skill) {
 // Same idea for the projection: recent form if there is enough of it, otherwise
 // his whole record, so the headline number is not blank for someone who has
 // answered hundreds of questions.
-function formForProjection() {
-  const recent = recentForm();
+function formForProjection(sec) {
+  const which = sec || section;
+  const recent = recentForm(null, which);
   if (recent.n >= MIN_FOR_PROJECTION) return recent;
 
-  const all = Object.values(store.progress);
-  const seen = all.reduce((n, e) => n + (e.seen || 0), 0);
-  const correct = all.reduce((n, e) => n + (e.correct || 0), 0);
+  // The fallback has to be filtered by section too, and progress entries predate
+  // sections so they carry no tag -- but every maths id begins `math-` and no
+  // Reading id does, so the key itself says which section an entry belongs to.
+  // Without this the maths projection would open by reporting Reading accuracy.
+  const mine = Object.entries(store.progress)
+    .filter(([id]) => (id.startsWith('math-') ? 'math' : 'rw') === which)
+    .map(([, e]) => e);
+  const seen = mine.reduce((n, e) => n + (e.seen || 0), 0);
+  const correct = mine.reduce((n, e) => n + (e.correct || 0), 0);
   if (seen < MIN_FOR_PROJECTION) return recent;
   return { n: seen, ok: correct, accuracy: correct / seen, lifetime: true };
 }
@@ -755,9 +828,14 @@ function questionPoints(question) {
   return Math.max(1, Math.round(points));
 }
 
-// Accuracy over the last `window` answers, default one R&W section's worth.
-function recentForm(window) {
-  const list = (store.recent || []).slice(-(window || RW_QUESTIONS));
+// Accuracy over the last `window` answers within one section, default that
+// section's own length. Filtered before slicing, not after: taking the last 54
+// rows and then dropping the maths ones would leave a handful of Reading answers
+// standing in for a section's worth of form.
+function recentForm(window, sec) {
+  const which = sec || section;
+  const all = (store.recent || []).filter((r) => (r.sec || 'rw') === which);
+  const list = all.slice(-(window || SECTIONS[which].questions));
   if (list.length === 0) return { n: 0, ok: 0, accuracy: 0 };
   const ok = list.reduce((n, r) => n + (r.ok ? 1 : 0), 0);
   return { n: list.length, ok, accuracy: ok / list.length };
@@ -766,9 +844,17 @@ function recentForm(window) {
 // Shift off the anchor by however many questions his accuracy differs by, at
 // roughly 11 points a question. Rounded to 10 because a projection precise to
 // the point would be pretending.
-function projectedScore(accuracy) {
-  const raw = SCORE_ANCHOR.score +
-    (accuracy - SCORE_ANCHOR.accuracy) * RW_QUESTIONS * POINTS_PER_QUESTION;
+function projectedScore(accuracy, sec) {
+  // Only the sections that carry an anchor can be projected; Maths deliberately
+  // has none, and falling back to Reading's would read maths accuracy through a
+  // Reading conversion, which is the exact mistake sections exist to prevent.
+  const cfg = SECTIONS[sec || section];
+  if (!cfg || !cfg.anchor) return null;
+  // 600 scaled points spread across that section's questions, so a maths
+  // question moves the maths score further than a Reading one moves Reading --
+  // there are fewer of them carrying the same range.
+  const raw = cfg.anchor.score +
+    (accuracy - cfg.anchor.accuracy) * 600;
   return Math.min(800, Math.max(200, Math.round(raw / 10) * 10));
 }
 
@@ -853,7 +939,37 @@ function appendUnderlined(parent, text, portion, signal) {
   appendText(parent, text.slice(at + portion.length), signal);
 }
 
+// The ONE place this app puts markup on the page rather than text nodes, and the
+// only content it does it for: `banks/math-*.json`.
+//
+// Everywhere else builds text nodes on purpose, so an authored passage can never
+// be read as HTML. Maths cannot work that way -- an equation is MathML, a graph is
+// SVG, and both are structure, not characters. What makes this safe is where the
+// markup comes from: extract_math.py rewrites every field through a tag-and-
+// attribute whitelist, drops every `on*` handler, and allows a url() only when it
+// points inside the same document. Nothing here is user input and nothing is
+// fetched at render time.
+//
+// So the rule for anyone editing this: content reaching setMarkup must have come
+// through that sanitiser. Do not point it at anything else.
+function setMarkup(el, markup) {
+  el.innerHTML = markup || '';
+}
+
+function renderMathStem(question) {
+  passageEl.textContent = '';
+  passageEl.hidden = true;
+  if (!mathStemEl) return;
+  mathStemEl.hidden = false;
+  setMarkup(mathStemEl, question.questionHtml);
+}
+
 function renderPassage(question, showSignal) {
+  passageEl.hidden = false;
+  if (mathStemEl) {
+    mathStemEl.hidden = true;
+    mathStemEl.textContent = '';
+  }
   passageEl.textContent = '';
   const signal = showSignal ? question.signal : null;
   const underline = question.underline || null;
@@ -1023,8 +1139,12 @@ function renderMeta(question) {
   // he picked last time -- which is the one thing this drill is not for. The
   // history is worth having, so it is not deleted: it appears with the answer,
   // where "beaten it before" is context rather than a shortcut past the work.
+  // `> 1`, not `> 0`: recordAnswer has already counted this attempt by the time
+  // the badge is repainted, so a question he is meeting for the very first time
+  // would announce "Seen 1× · 1 right" -- which says nothing, and says it in the
+  // language of a repeat. The chip is only news when there was a previous visit.
   const stats = statsFor(question.id);
-  if (answered && stats.seen > 0) {
+  if (answered && stats.seen > 1) {
     const tag = document.createElement('span');
     tag.className = stats.wrong > 0 ? 'tag tag-warn' : 'tag';
     tag.textContent = `Seen ${stats.seen}× · ${stats.correct} right / ${stats.wrong} wrong`;
@@ -1074,10 +1194,136 @@ function renderMeta(question) {
   paintTimer();
 }
 
+// --- Student-produced response ---------------------------------------------
+// A quarter of the maths bank has no choices: he types a value. That changes what
+// "correct" means, because one answer has several right spellings -- College Board
+// lists `['.1764', '.1765', '3/17']` for a single question, all three accepted, and
+// `3/2` and `1.5` for another. Comparing strings would mark two thirds of a
+// correct answer wrong, so the comparison is numeric.
+// What he typed on the question currently on screen. Not persisted: like the
+// crossed-out choices, it belongs to this attempt.
+let entryValue = '';
+
+function isEntry(question) {
+  return !!question && question.format === 'spr';
+}
+
+// "3/17" -> 0.17647..., "-2.5" -> -2.5, "" -> null. Mixed numbers and anything
+// with a letter in it come back null and fall through to a string comparison,
+// which is the safe direction: a value we cannot read is never silently accepted.
+function numericValue(text) {
+  const s = String(text == null ? '' : text).trim().replace(/[\s,$%]/g, '');
+  if (!s) return null;
+  const frac = /^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/.exec(s);
+  if (frac) {
+    const d = parseFloat(frac[2]);
+    return d === 0 ? null : parseFloat(frac[1]) / d;
+  }
+  if (!/^-?(?:\d+\.?\d*|\.\d+)$/.test(s)) return null;
+  const n = parseFloat(s);
+  return Number.isFinite(n) ? n : null;
+}
+
+// Right if it matches any accepted form. The tolerance is relative to the shortest
+// accepted answer's precision: College Board's own list gives `.1764` AND `.1765`
+// for 3/17, which is to say they accept a value truncated OR rounded at four
+// decimals -- so a comparison tighter than that would reject an answer they mark
+// correct.
+function entryIsCorrect(question, typed) {
+  const accepted = question.answers || [];
+  const clean = String(typed || '').trim();
+  if (!clean) return false;
+
+  // An exact match on what they wrote always counts, whatever it looks like.
+  if (accepted.some((a) => String(a).trim().toLowerCase() === clean.toLowerCase())) {
+    return true;
+  }
+
+  const mine = numericValue(clean);
+  if (mine === null) return false;
+  return accepted.some((a) => {
+    const theirs = numericValue(a);
+    if (theirs === null) return false;
+    if (theirs === mine) return true;
+    // Scaled by magnitude so this works for 403 and for 0.1764 alike.
+    const tol = Math.max(Math.abs(theirs), 1) * 1e-4;
+    return Math.abs(theirs - mine) <= tol;
+  });
+}
+
+function renderEntry(question) {
+  const wrap = document.createElement('div');
+  wrap.className = 'entry';
+
+  const label = document.createElement('label');
+  label.className = 'entry-label';
+  label.setAttribute('for', 'entryInput');
+  label.textContent = 'Your answer';
+
+  const input = document.createElement('input');
+  input.className = 'entry-input';
+  input.id = 'entryInput';
+  input.type = 'text';
+  // Not type="number": fractions are an accepted form and a number input will not
+  // hold "3/17". inputmode still brings up a numeric keypad on a phone.
+  input.inputMode = 'text';
+  input.autocomplete = 'off';
+  input.spellcheck = false;
+  input.placeholder = 'e.g. 403, 3/17, -2.5';
+  input.disabled = answered;
+  if (answered && entryValue) input.value = entryValue;
+  input.addEventListener('input', () => {
+    entryValue = input.value;
+    updateSubmitState();
+  });
+  // Enter submits, because reaching for the mouse after typing a number is a
+  // pointless interruption on the one question type that has a keyboard focus.
+  input.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Enter' && !answered && entryValue.trim()) {
+      ev.preventDefault();
+      submitEntry();
+    }
+  });
+
+  wrap.append(label, input);
+
+  const mark = document.createElement('p');
+  mark.className = 'entry-result';
+  mark.id = 'entryResult';
+  mark.hidden = !answered;
+  wrap.append(mark);
+
+  optionsContainer.append(wrap);
+  if (answered) paintEntryResult(question);
+}
+
+function paintEntryResult(question) {
+  const mark = document.getElementById('entryResult');
+  if (!mark) return;
+  const ok = entryIsCorrect(question, entryValue);
+  mark.hidden = false;
+  mark.className = `entry-result ${ok ? 'is-right' : 'is-wrong'}`;
+  // Every accepted form is shown, not just the first -- being told the answer is
+  // "3/17" when he wrote ".1765" and was right would teach him the wrong lesson.
+  const forms = (question.answers || []).join('  or  ');
+  mark.textContent = ok
+    ? `✔ Correct — ${forms}`
+    : `✖ Not quite. Accepted: ${forms}`;
+}
+
 function renderOptions(question) {
   optionsContainer.textContent = '';
+  optionsContainer.classList.toggle('is-entry', isEntry(question));
 
-  question.options.forEach((option, index) => {
+  // 450 of the maths questions are student-produced-response: no choices at all,
+  // he types the value. That is not a variant of a multiple-choice question, so it
+  // gets its own renderer rather than four fake options.
+  if (isEntry(question)) {
+    renderEntry(question);
+    return;
+  }
+
+  (question.options || []).forEach((option, index) => {
     const isCorrect = option.label === question.correctLabel;
 
     const optionEl = document.createElement('div');
@@ -1092,13 +1338,21 @@ function renderOptions(question) {
     label.textContent = option.label;
 
     const text = document.createElement('span');
-    // Monospace only where punctuation IS the question -- at prose sizes a
-    // comma and a semicolon are hard to tell apart. Everywhere else, and
-    // especially for full-sentence choices, proportional type reads better.
-    const punctuationMatters =
-      question.skill === 'boundaries' || question.skill === 'form-structure-sense';
-    text.className = punctuationMatters ? 'text choice' : 'text';
-    text.textContent = option.text;
+    if (option.textHtml) {
+      // A maths choice is usually an equation, so it is markup like the stem --
+      // and never monospaced: the whole point of MathML is that it is already set
+      // properly. Same whitelist guarantee as setMarkup describes.
+      text.className = 'text';
+      setMarkup(text, option.textHtml);
+    } else {
+      // Monospace only where punctuation IS the question -- at prose sizes a
+      // comma and a semicolon are hard to tell apart. Everywhere else, and
+      // especially for full-sentence choices, proportional type reads better.
+      const punctuationMatters =
+        question.skill === 'boundaries' || question.skill === 'form-structure-sense';
+      text.className = punctuationMatters ? 'text choice' : 'text';
+      text.textContent = option.text;
+    }
 
     const mark = document.createElement('span');
     mark.className = 'option-result';
@@ -1172,7 +1426,10 @@ function renderPdfNotice(question) {
   // Two different reasons to need the PDF: the underline was lost in extraction,
   // or the question is built on a chart that is not text at all.
   const broken = !!question && question.skill === DEFECTIVE_SKILL;
-  const figure = !!question && !!question.figure;
+  // A maths `figure` is inline SVG that is already on the page, so the notice
+  // would be sending him to a PDF for a graph he is looking at. The flag is kept
+  // on those questions for styling and for finding them, not as a warning.
+  const figure = !!question && !!question.figure && sectionOf(question) !== 'math';
   pdfNoticeEl.hidden = !(broken || figure);
   if (pdfNoticeEl.hidden || !pdfNoticeDetailEl) return;
 
@@ -1279,7 +1536,11 @@ function updateSubmitState() {
   // Nothing to submit while the choices are still hidden behind the direction
   // step, and nothing left to submit once the question has been graded.
   if (submitRow) submitRow.hidden = optionsContainer.hidden || answered;
-  submitBtn.disabled = answered || pendingIndex === null;
+  // On an entry question there is no choice to have selected, so what enables the
+  // button is having typed something. Whitespace does not count.
+  submitBtn.disabled = answered || (isEntry(current)
+    ? entryValue.trim() === ''
+    : pendingIndex === null);
 }
 
 // Step one of the two-step drill: commit to the relationship, with the word
@@ -1452,11 +1713,15 @@ function updateSummary() {
   renderWords();
 }
 
-// Projected R&W score from recent form, against his real Practice 5 result. Held
-// back until MIN_FOR_PROJECTION answers, because a projection off four questions
-// would swing 200 points and teach him to distrust the number.
+// The headline figure for whichever section is on screen. Reading and Writing
+// gets a projected score against his real Practice 5 result; Maths gets plain
+// accuracy, because a projected maths score would not move -- see SECTIONS.
+// Either way it is held back until MIN_FOR_PROJECTION answers: a reading off four
+// questions would swing 200 points and teach him to distrust the number.
 function renderProjection() {
+  renderScoreSplit();
   if (!projectionEl) return;
+  const cfg = SECTIONS[section];
   const form = formForProjection();
 
   if (form.n < MIN_FOR_PROJECTION) {
@@ -1466,29 +1731,75 @@ function renderProjection() {
       // Says what it is counting. "11 more answers" read as "11 wrong" to the
       // first person who saw it -- right and wrong both count toward the sample.
       projectionNoteEl.textContent = `${form.n} of ${MIN_FOR_PROJECTION} answers`;
-      projectionNoteEl.title =
-        `A projection needs ${MIN_FOR_PROJECTION} answers, right or wrong`;
+      projectionNoteEl.title = `${cfg.label} · this needs `
+        + `${MIN_FOR_PROJECTION} answers, right or wrong`;
+    }
+    return;
+  }
+
+  const basis = form.lifetime
+    ? `all ${form.n} answers so far`
+    : `last ${form.n} answers`;
+  const pct = Math.round(form.accuracy * 100);
+
+  if (cfg.readout === 'accuracy') {
+    // No arrow: there is nothing to compare against, because this section has no
+    // anchor. Colouring it up or down off a threshold we invented would be
+    // inventing a target for the one section that does not need one.
+    projectionEl.textContent = `${pct}%`;
+    projectionEl.classList.remove('is-up', 'is-down');
+    if (projectionNoteEl) {
+      projectionNoteEl.textContent = `${form.ok} of ${form.n} right`;
+      projectionNoteEl.title = `${cfg.label} · ${basis}. No projected score here:`
+        + ' he is already near the ceiling, so it would not move.';
     }
     return;
   }
 
   const score = projectedScore(form.accuracy);
-  const delta = score - SCORE_ANCHOR.score;
+  const delta = score - cfg.anchor.score;
   projectionEl.textContent = `~${score}`;
   projectionEl.classList.toggle('is-up', delta > 0);
   projectionEl.classList.toggle('is-down', delta < 0);
 
   if (projectionNoteEl) {
-    const move = delta === 0
-      ? 'level with Practice 5'
-      : `${delta > 0 ? '+' : ''}${delta} on Practice 5`;
-    const basis = form.lifetime
-      ? `all ${form.n} answers so far`
-      : `last ${form.n} answers`;
-    projectionNoteEl.textContent = move;
-    projectionNoteEl.title =
-      `Reading & Writing · ${basis} at ${Math.round(form.accuracy * 100)}%`;
+    // Named per section: the two are anchored on different sittings, so "on
+    // Practice 5" under a maths figure would be pointing at the wrong test.
+    const against = cfg.anchorLabel || 'his last sitting';
+    projectionNoteEl.textContent = delta === 0
+      ? `level with ${against}`
+      : `${delta > 0 ? '+' : ''}${delta} on ${against}`;
+    projectionNoteEl.title = `${cfg.label} · ${basis} at ${pct}%`;
   }
+}
+
+// Both sections' projections side by side, so the dialog answers "where am I"
+// without him switching section to find the other half. Each is held to the same
+// MIN_FOR_PROJECTION bar as the headline, and a section he has not worked enough
+// of shows a dash rather than a number built on four answers.
+function renderScoreSplit() {
+  if (!scoreSplitEl) return;
+  const parts = { rw: splitRwScoreEl, math: splitMathScoreEl };
+  let anyReady = false;
+
+  SECTION_ORDER.forEach((sec) => {
+    const el = parts[sec];
+    if (!el) return;
+    const cfg = SECTIONS[sec];
+    const form = formForProjection(sec);
+    const ready = form.n >= MIN_FOR_PROJECTION && cfg.anchor;
+    if (ready) anyReady = true;
+    const score = ready ? projectedScore(form.accuracy, sec) : null;
+    el.textContent = score === null ? '—' : `~${score}`;
+    el.title = score === null
+      ? `${cfg.label}: ${form.n} of ${MIN_FOR_PROJECTION} answers needed`
+      : `${cfg.label}: ${form.n} answers at ${Math.round(form.accuracy * 100)}%`
+        + `, against ${cfg.anchorLabel}`;
+  });
+
+  // Nothing to compare while neither section has enough answers -- the headline
+  // above is already saying "not yet" and a row of two dashes only repeats it.
+  scoreSplitEl.hidden = !anyReady;
 }
 
 function renderDayStreak() {
@@ -1577,6 +1888,49 @@ function dayGoalMet(today) {
   return d.points >= DAILY_POINTS_TARGET || d.answered >= DAILY_QUESTION_CAP;
 }
 
+// Where the day's points came from. Shown only once there are points to split, so
+// it never sits there reading "0 R&W · 0 Math".
+//
+// A day recorded before the split existed has no `bySection` at all, and that is
+// not the same as zero. Rather than credit the whole total to Reading and invent a
+// figure, the row stays hidden and the tile shows the total alone -- which is the
+// only thing that day actually knows.
+function renderDaySplit(today) {
+  if (!daySplitEl) return;
+  const split = today.bySection;
+  const rw = (split && split.rw && split.rw.points) || 0;
+  const math = (split && split.math && split.math.points) || 0;
+
+  // The parts MUST reconcile with the total above them, and on the day this
+  // feature arrived they cannot: everything answered earlier is in `day.points`
+  // and in no bucket, so the row read "60 R&W · 0 Math" under a total of 140.
+  // The remainder is shown rather than hidden or quietly folded into Reading --
+  // it is real work, it is genuinely unattributed, and a figure that does not add
+  // up is worse than one that admits what it does not know. It disappears by
+  // itself once a day is recorded entirely under the split.
+  const unattributed = Math.max(0, (today.points || 0) - rw - math);
+
+  daySplitEl.hidden = !split || (rw === 0 && math === 0);
+  if (daySplitEl.hidden) return;
+  if (splitRwPtsEl) splitRwPtsEl.textContent = rw;
+  if (splitMathPtsEl) splitMathPtsEl.textContent = math;
+  if (splitRestEl) {
+    splitRestEl.hidden = unattributed === 0;
+    if (splitRestPtsEl) splitRestPtsEl.textContent = unattributed;
+  }
+
+  // The counts behind the points, on hover, so the split says how much work each
+  // figure came from and not just what it scored.
+  const detail = (label, b) => `${label}: ${(b && b.points) || 0} pts from `
+    + `${(b && b.answered) || 0} answered, ${(b && b.correct) || 0} right`;
+  daySplitEl.title = `${detail('Reading & Writing', split.rw)}\n`
+    + `${detail('Math', split.math)}`
+    + (unattributed
+      ? `\nEarlier today: ${unattributed} pts, answered before the split was `
+        + 'recorded, so the section is not known.'
+      : '');
+}
+
 function renderDaily() {
   const today = dayStats();
   const done = dayGoalMet(today);
@@ -1584,6 +1938,7 @@ function renderDaily() {
 
   // The tile carries the number; its caption carries the target.
   if (dailyCountEl) dailyCountEl.textContent = today.points;
+  renderDaySplit(today);
   if (dailyNoteEl) {
     dailyNoteEl.textContent = done
       ? 'target met'
@@ -1671,6 +2026,7 @@ function loadQuestion(question) {
   lastAward = null; // fresh question, nothing earned on it yet
   crossedOut.clear(); // eliminations belong to the question he was on
   peekPay = null;     // and so does any peek
+  entryValue = '';    // and so does anything typed into an entry question
   optionsContainer.classList.remove('is-peeked');
   directionAnswered = false;
   directionCorrect = null;
@@ -1678,9 +2034,19 @@ function loadQuestion(question) {
   // Before renderMeta, which paints the badge the clock lives in.
   startQuestionTimer();
   renderMeta(question);
-  titleEl.textContent = question.question ||
-    'Which choice completes the text so that it conforms to the conventions of Standard English?';
-  renderPassage(question, false);
+  if (sectionOf(question) === 'math') {
+    // A maths stem is one block carrying everything -- a displayed equation, the
+    // sentence asking the question, sometimes a graph -- so it goes in the passage
+    // slot whole and the title stands down rather than repeating a fragment of it.
+    titleEl.textContent = '';
+    titleEl.hidden = true;
+    renderMathStem(question);
+  } else {
+    titleEl.hidden = false;
+    titleEl.textContent = question.question ||
+      'Which choice completes the text so that it conforms to the conventions of Standard English?';
+    renderPassage(question, false);
+  }
   renderOptions(question);
   renderDirectionStep(question);
   // After renderDirectionStep: it decides whether the choices start hidden, and
@@ -1691,6 +2057,7 @@ function loadQuestion(question) {
 
   ruleBox.hidden = true;
   ruleBox.textContent = '';
+  ruleBox.classList.remove('is-math');
   renderSourceLink();
 }
 
@@ -1726,6 +2093,51 @@ function celebrate({ isCorrect, wasWrongBefore, bestBefore }) {
   }
 
   if (target) window.Sparkle.burstOver(target);
+}
+
+// The worked explanation. A maths rationale is markup -- it is half equations --
+// so it goes through setMarkup; everywhere else it is a plain sentence.
+function showRule(question) {
+  if (question.ruleHtml) {
+    ruleBox.classList.add('is-math');
+    setMarkup(ruleBox, question.ruleHtml);
+  } else {
+    ruleBox.classList.remove('is-math');
+    ruleBox.textContent = question.rule || '';
+  }
+  ruleBox.hidden = false;
+}
+
+// Grading an entry question. Deliberately mirrors the bookkeeping in reveal()
+// rather than sharing it: the two differ only in how correctness is decided and
+// what gets repainted, and the ordering below -- read the before-values, stop the
+// clock, record once -- is what keeps a second submit from counting twice.
+function submitEntry() {
+  if (!current || !isEntry(current) || answered) return;
+
+  const isCorrect = entryIsCorrect(current, entryValue);
+
+  const wasWrongBefore = statsFor(current.id).wrong > 0;
+  const bestBefore = bestDayBefore().points;
+  stopQuestionTimer();
+
+  lastAward = isCorrect ? questionPoints(current) : 0;
+  recordAnswer(current, isCorrect, lastAward);
+  sessionStreak.push(isCorrect);
+  answered = true;
+
+  const input = document.querySelector('.entry-input');
+  if (input) input.disabled = true;
+  paintEntryResult(current);
+
+  updateSummary();
+  renderSetSummary();
+  renderMeta(current);
+  celebrate({ isCorrect, wasWrongBefore, bestBefore });
+
+  updateSubmitState();
+  showRule(current);
+  renderSourceLink();
 }
 
 function reveal(selectedIndex) {
@@ -1774,12 +2186,16 @@ function reveal(selectedIndex) {
   updateSubmitState(); // retires the submit row now that this one is graded
   renderPeek();        // nothing left to reveal
 
-  // Re-render with the signal phrase marked, now that giving it away costs nothing.
-  renderPassage(current, true);
-  fillBlank(selected.text);
-
-  ruleBox.textContent = current.rule;
-  ruleBox.hidden = false;
+  if (sectionOf(current) === 'math') {
+    // No signal phrase to mark and no blank to fill -- re-rendering the passage
+    // here would throw away the stem's MathML and leave an empty question.
+    showRule(current);
+  } else {
+    // Re-render with the signal phrase marked, now that giving it away costs nothing.
+    renderPassage(current, true);
+    fillBlank(selected.text);
+    showRule(current);
+  }
 
   renderSourceLink();
 
@@ -1878,6 +2294,9 @@ function testFilterApplies() {
 
 function applyFilters() {
   pool = bank.filter((q) =>
+    // First and unconditionally: the two sections are scored separately and
+    // never share a pool, so nothing below can reach across them.
+    sectionOf(q) === section &&
     (skillFilter === 'all' || q.skill === skillFilter) &&
     (difficultyFilter === 'all' || q.difficulty === difficultyFilter) &&
     (!testFilterApplies() || q.test === testFilter)
@@ -1923,7 +2342,12 @@ function applyFilters() {
 function cursorKey() {
   const test = testFilterApplies() ? `|${testFilter}` : '';
   const left = hideAced ? '|todo' : '';
-  return `${skillFilter}|${difficultyFilter}|${wrongOnly ? 'wrong' : 'all'}${test}${left}`;
+  // Reading and Writing keys carry no section part, so every key he has already
+  // built up -- they are saved, and each holds a real position -- still means what
+  // it did. Only maths adds one.
+  const sec = section === DEFAULT_SECTION ? '' : `${section}|`;
+  return `${sec}${skillFilter}|${difficultyFilter}`
+    + `|${wrongOnly ? 'wrong' : 'all'}${test}${left}`;
 }
 
 function cursorValue() {
@@ -2139,6 +2563,18 @@ function setEmptyState(message, isWarning) {
 // A question is only usable once the blank, the answer key, the rule, and
 // every option's reasoning are present.
 function isReady(q) {
+  // Maths is a different shape and has its own gate. There is no passage (the
+  // stem carries everything), the student-response questions have no options at
+  // all, and extract_math.py has already held back the ones with no answer key --
+  // so the checks below would reject the entire section. What matters here is
+  // that it can be rendered and marked.
+  if (sectionOf(q) === 'math') {
+    if (!q.questionHtml) return false;
+    return q.format === 'spr'
+      ? Array.isArray(q.answers) && q.answers.length > 0
+      : (q.options || []).some((o) => o.label === q.correctLabel);
+  }
+
   const options = q.options || [];
   const blanks = typeof q.passage === 'string' ? q.passage.split('___').length - 1 : -1;
   return (
@@ -2495,6 +2931,57 @@ function loadVocab() {
     .catch((err) => console.warn('No vocab glosses loaded.', err));
 }
 
+// One file per Math domain, ~33 MB together: matplotlib figures carrying a glyph
+// outline per character of every axis label, and a bitmap per expression on the
+// older items. So none of it is fetched until he asks for the Maths section, and
+// a Reading session never pays for it.
+//
+// All four load together rather than one domain at a time. The saved cursor is an
+// index into the filtered pool, so a pool that grew halfway through a session
+// would silently move his place in it -- one download, then `bank` is stable.
+const MATH_DOMAINS = ['algebra', 'advanced-math',
+                      'problem-solving-data', 'geometry-trigonometry'];
+let mathLoaded = false;
+let mathLoading = null;
+
+function loadMathBanks() {
+  if (mathLoaded) return Promise.resolve(true);
+  if (mathLoading) return mathLoading;
+
+  setEmptyState('Loading the maths questions — about 33 MB, once per session.');
+  mathLoading = Promise.all(MATH_DOMAINS.map((slug) =>
+    fetch(`banks/math-${slug}.json?v=${DATA_VERSION}`)
+      .then((r) => {
+        if (!r.ok) throw new Error(`Failed to load banks/math-${slug}.json`);
+        return r.json();
+      })
+      .catch((err) => {
+        console.error(err);
+        return [];
+      })
+  )).then((results) => {
+    const raw = results.flat();
+    const ready = raw.filter(isReady);
+    // Appended, never spliced in: every cursor already saved is an index into a
+    // Reading pool, and those pools are unchanged by questions added at the end.
+    bank = bank.concat(ready);
+    mathLoaded = true;
+    mathLoading = null;
+    const withheld = raw.length - ready.length;
+    console.info(`Math: ${ready.length} questions loaded`
+      + (withheld ? `, ${withheld} withheld as unrenderable or unmarkable.` : '.'));
+    buildSkillSelect();
+    return ready.length > 0;
+  }).catch((err) => {
+    mathLoading = null;
+    console.error(err);
+    setEmptyState('Could not load the maths questions. Check they are served '
+      + 'over HTTP from banks/.', true);
+    return false;
+  });
+  return mathLoading;
+}
+
 function loadBanks() {
   // The vocab fetch is waited on so the first question already has its glosses,
   // but loadVocab() swallows its own errors and always resolves -- a missing
@@ -2565,9 +3052,53 @@ function loadBanks() {
   });
 }
 
+// How the dropdown is grouped, for whichever section is on screen.
+//
+// Reading and Writing uses the hand-written registries above: the order is the
+// Bluebook score report's, weakest-skill-first inside a domain, and the Extras
+// group is ours -- none of that is derivable from the questions.
+//
+// Maths reads its structure out of the bank instead. Every row carries its own
+// `domain`/`domainLabel` and `skill`/`skillLabel` straight from College Board, so
+// hand-copying nineteen skill names here would only create a second place for
+// them to disagree. Domains are ordered as the score report prints them; skills
+// alphabetically within a domain, since nothing yet says which he is weakest at.
+const MATH_DOMAIN_ORDER = ['algebra', 'advanced-math',
+                           'problem-solving-data', 'geometry-trigonometry'];
+
+function sectionTaxonomy() {
+  if (section !== 'math') {
+    return {
+      order: DOMAIN_ORDER,
+      domainLabels: DOMAIN_LABELS,
+      skills: SKILLS_BY_DOMAIN,
+      skillLabels: SKILL_LABELS
+    };
+  }
+
+  const domainLabels = {};
+  const skillLabels = {};
+  const skills = {};
+  bank.forEach((q) => {
+    if (sectionOf(q) !== 'math') return;
+    domainLabels[q.domain] = q.domainLabel || q.domain;
+    skillLabels[q.skill] = q.skillLabel || q.skill;
+    (skills[q.domain] = skills[q.domain] || new Set()).add(q.skill);
+  });
+  Object.keys(skills).forEach((d) => {
+    skills[d] = [...skills[d]].sort((a, b) =>
+      (skillLabels[a] || a).localeCompare(skillLabels[b] || b));
+  });
+  // Any domain the bank turns out to hold that the order above does not name
+  // still gets shown, on the end, rather than silently dropping its questions.
+  const order = MATH_DOMAIN_ORDER.filter((d) => skills[d])
+    .concat(Object.keys(skills).filter((d) => !MATH_DOMAIN_ORDER.includes(d)));
+  return { order, domainLabels, skills, skillLabels };
+}
+
 // The skill list is generated from whatever the banks actually contain, with an
-// optgroup per Reading and Writing domain so the score-report structure is
-// still visible without spending four rows of the page on it.
+// optgroup per domain so the score-report structure is still visible without
+// spending four rows of the page on it.
 function buildSkillSelect() {
   if (!skillSelect) return;
   skillSelect.textContent = '';
@@ -2591,10 +3122,14 @@ function buildSkillSelect() {
   // skill with nothing to show in the current view reads (0) rather than
   // vanishing from the list. A skill that disappears reads as a bug, and it takes
   // the only honest place to show the zero with it.
+  const tax = sectionTaxonomy();
   const counts = {};
   const present = {};
   let available = 0;
   bank.forEach((q) => {
+    // Only the section on screen. Counting across both would put maths totals on
+    // a Reading dropdown, and the pool the numbers describe is section-scoped.
+    if (sectionOf(q) !== section) return;
     if (q.skill === VOCAB_SKILL && vocabMastered(q.id)) return;
     present[q.skill] = true;
     if (wrongOnly ? !isWrongEver(q.id) : isAced(q) || isMissed(q)) return;
@@ -2616,17 +3151,18 @@ function buildSkillSelect() {
   // Named for what it actually holds, so a short list never looks like a bug.
   skillSelect.append(option(
     'all',
-    FOCUS_SKILLS.length > 0 ? "Today's focus" : 'All skills',
+    FOCUS_SKILLS.length > 0 ? "Today's focus"
+      : (section === 'math' ? 'All maths skills' : 'All skills'),
     available
   ));
 
-  DOMAIN_ORDER.forEach((domain) => {
-    const skills = SKILLS_BY_DOMAIN[domain].filter((s) => present[s]);
+  tax.order.forEach((domain) => {
+    const skills = (tax.skills[domain] || []).filter((s) => present[s]);
     if (skills.length === 0) return;
     const group = document.createElement('optgroup');
-    group.label = DOMAIN_LABELS[domain] || domain;
+    group.label = tax.domainLabels[domain] || domain;
     skills.forEach((s) => group.append(
-      option(s, SKILL_LABELS[s] || s, counts[s] || 0, skillWeight(s))
+      option(s, tax.skillLabels[s] || s, counts[s] || 0, skillWeight(s))
     ));
     skillSelect.append(group);
   });
@@ -2853,8 +3389,56 @@ if (dayDoneGoBtn) {
   });
 }
 
+// Switching section swaps the pool, the skill list and the headline figure at
+// once. The maths banks are fetched on the first press and not before, so a
+// Reading session never downloads 33 MB it will not open.
+function setSection(next) {
+  if (!SECTIONS[next] || next === section) return;
+
+  const go = () => {
+    section = next;
+    // His filters are per-section from here: a maths skill means nothing in
+    // Reading, so the dropdown resets rather than carrying a dead value across.
+    skillFilter = 'all';
+    testFilter = 'all';
+    wrongOnly = false;
+    if (wrongOnlyToggle) wrongOnlyToggle.checked = false;
+    rememberFilters();
+    saveStore();
+
+    document.querySelectorAll('.section-btn').forEach((btn) => {
+      const on = btn.dataset.section === section;
+      btn.classList.toggle('is-on', on);
+      btn.setAttribute('aria-pressed', String(on));
+    });
+
+    buildSkillSelect();
+    updateSummary();
+    // `current` cleared so the cursor of the section he is arriving at is honoured
+    // rather than overwritten with the position of the question he was just on.
+    current = null;
+    nextQuestion({ step: 0, scroll: false });
+  };
+
+  if (next === 'math' && !mathLoaded) {
+    loadMathBanks().then((ok) => { if (ok) go(); });
+    return;
+  }
+  go();
+}
+
+document.querySelectorAll('.section-btn').forEach((btn) => {
+  btn.addEventListener('click', () => setSection(btn.dataset.section));
+});
+
 if (submitBtn) {
   submitBtn.addEventListener('click', () => {
+    // One button, two kinds of question: an entry question has no selected index
+    // to reveal, so the guard below would swallow every submit on 450 of them.
+    if (isEntry(current)) {
+      submitEntry();
+      return;
+    }
     if (pendingIndex === null) return;
     reveal(pendingIndex);
   });

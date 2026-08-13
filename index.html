@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SAT Reading &amp; Writing Practice</title>
+  <title>SAT Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=57" />
+  <link rel="stylesheet" href="styles.css?v=61" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -21,8 +21,13 @@
   <div class="page">
     <div class="topbar">
       <div>
-        <h1>SAT Reading &amp; Writing</h1>
-        <p>Official College Board questions, grouped by score-report skill.</p>
+        <!-- Names the app, not the section. The section switch is immediately
+             below and already says which half he is in, so a heading that
+             rewrote itself was both redundant and the thing still claiming this
+             app is Reading-and-Writing only. -->
+        <h1>SAT Practice</h1>
+        <p>Official College Board questions — Reading and Writing, and Maths —
+           grouped by score-report skill.</p>
       </div>
       <!-- The only progress kept on screen while he works, and the way into the
            rest of it: the ring fills with the day's points and the mark inside
@@ -48,6 +53,16 @@
          grouped by domain inside the dropdown, so the four score-report
          headings survive without costing four rows of screen. -->
     <div class="controls">
+      <!-- The SAT scores these separately, 200-800 each, so they are two modes
+           rather than two filters: switching swaps the pool, the skill list and
+           the headline figure together. Maths is ~33 MB of MathML and figures and
+           is not fetched until this is pressed. -->
+      <div class="section-switch" role="group" aria-label="Section">
+        <button type="button" class="section-btn is-on" data-section="rw"
+                aria-pressed="true">Reading &amp; Writing</button>
+        <button type="button" class="section-btn" data-section="math"
+                aria-pressed="false">Math</button>
+      </div>
       <label class="control">
         <span>Skill</span>
         <select id="skillSelect"></select>
@@ -126,6 +141,12 @@
           <h2 class="question-title">Loading…</h2>
 
           <p class="cloze"></p>
+
+          <!-- Maths stems are multi-paragraph and can hold a figure, and a <p>
+               cannot contain a <p> -- dropped into .cloze above, the parser would
+               unnest them and the stem would come apart. Its own block, shown
+               instead of the title and cloze for that section. -->
+          <div class="math-stem" id="mathStem" hidden></div>
 
           <!-- Shown automatically for any question tagged with a relationship;
                there is no switch because committing to the direction first is
@@ -208,12 +229,36 @@
             <span class="chip-right" id="correctCount">✓ 0</span>
             <span class="chip-wrong" id="incorrectCount">✗ 0</span>
           </div>
+
+          <!-- Where the day's points came from. The two sections are scored
+               separately by the SAT, so one total answers "did I work today" but
+               not "did I work on the thing I am weakest at". Hidden until there
+               are points to split. -->
+          <div class="day-split" id="daySplit" hidden>
+            <span class="split-part"><b id="splitRwPts">0</b> R&amp;W</span>
+            <span class="split-part"><b id="splitMathPts">0</b> Math</span>
+            <!-- Only on a day that straddles the arrival of the split: points
+                 answered before it existed belong to no section. Shown so the
+                 parts always reconcile with the total above. -->
+            <span class="split-part is-rest" id="splitRest" hidden>
+              <b id="splitRestPts">0</b> earlier
+            </span>
+          </div>
         </div>
 
         <div class="tile">
           <div class="tile-k">Projected</div>
           <div class="tile-v" id="projection">—</div>
           <div class="tile-n" id="projectionNote"></div>
+          <!-- Both sections at once, the way the points split does: the big number
+               follows whichever section he is working, but a progress dialog is
+               read to see where he stands overall, and switching section to find
+               the other figure would defeat that. The SAT scores them separately,
+               so there is no combined total here on purpose. -->
+          <div class="day-split" id="scoreSplit" hidden>
+            <span class="split-part"><b id="splitRwScore">—</b> R&amp;W</span>
+            <span class="split-part"><b id="splitMathScore">—</b> Math</span>
+          </div>
         </div>
 
         <div class="tile">
@@ -265,6 +310,6 @@
   </dialog>
 
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=67"></script>
+  <script src="app.js?v=72"></script>
 </body>
 </html>

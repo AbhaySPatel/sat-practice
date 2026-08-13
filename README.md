@@ -1,8 +1,13 @@
-# SAT Reading & Writing Practice
+# SAT Practice
 
 A single-page drill app built on the official College Board SAT Suite question
-banks. Questions are served in order, progress persists between sessions, and
-anything answered wrong comes back.
+banks, covering both sections: Reading and Writing, and Maths. Questions are
+served in order, progress persists between sessions, and anything answered wrong
+comes back.
+
+The SAT scores the two sections separately, 200-800 each, so the app keeps them
+apart -- separate pool, skill list, cursor and projected score. Switching section
+is what loads the Maths banks; a Reading session never downloads them.
 
 ## Running it
 

@@ -1888,3 +1888,147 @@ body {
     min-width: 90px;
   }
 }
+
+/* --- Sections and maths -------------------------------------------------- */
+
+/* Two modes, not two filters, so it reads as a segmented control rather than
+   another dropdown in the row of dropdowns. */
+.section-switch {
+  display: inline-flex;
+  padding: 3px;
+  gap: 3px;
+  border-radius: 999px;
+  background: var(--btn-bg);
+  border: 1px solid var(--card-border);
+}
+.section-btn {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.section-btn:hover { color: var(--fg); }
+.section-btn.is-on {
+  background: var(--card-bg);
+  color: var(--accent);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+}
+.section-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* The stem of a maths question is a block of prose, equations and sometimes a
+   graph, so it needs paragraph rhythm rather than the cloze line's treatment. */
+.math-stem { display: block; }
+.math-stem p { margin: 0 0 12px; }
+.math-stem p:last-child { margin-bottom: 0; }
+.math-stem svg,
+#ruleBox.is-math svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 6px auto 14px;
+}
+/* Paired with the ink rule below: extract_math.py rewrites every white fill in a
+   figure to this, so matplotlib's tick-label patches take the card colour instead
+   of sitting on the dark theme as white blocks. */
+.math-stem,
+#ruleBox.is-math { --figure-paper: var(--card-bg); }
+
+/* MathML sets itself; it only needs to be a touch larger than the prose it sits
+   in, the way a printed equation is. */
+math { font-size: 1.06em; }
+
+/* Wide equations and tables scroll inside their own box rather than pushing the
+   card sideways. */
+.math-stem > p,
+#ruleBox.is-math > p { overflow-x: auto; }
+.math-stem table,
+#ruleBox.is-math table { border-collapse: collapse; margin: 8px 0; }
+.math-stem td, .math-stem th,
+#ruleBox.is-math td, #ruleBox.is-math th {
+  border: 1px solid var(--rule);
+  padding: 5px 11px;
+  text-align: left;
+}
+
+/* The older disclosed items carry their maths as bitmaps reduced to alpha masks,
+   so the shape is painted in the text colour like everything else -- no filter,
+   and correct in both themes. See mask_images in extract_math.py. */
+[data-math-mask] {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+/* --- Student-produced response ------------------------------------------ */
+/* A quarter of the maths bank has no choices at all. */
+.entry { display: grid; gap: 8px; max-width: 340px; }
+.entry-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.entry-input {
+  font: inherit;
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--option-border);
+  background: var(--option-bg);
+  color: var(--fg);
+}
+.entry-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.entry-input:disabled { opacity: 0.75; }
+.entry-result {
+  margin: 0;
+  padding: 11px 15px;
+  border-radius: 14px;
+  font-weight: 600;
+}
+.entry-result.is-right {
+  background: var(--good-bg);
+  color: var(--good-fg);
+  border: 1px solid var(--correct-border);
+}
+.entry-result.is-wrong {
+  background: var(--bad-bg);
+  color: var(--bad-fg);
+  border: 1px solid var(--incorrect-border);
+}
+
+/* Where the day's points came from. Quieter than the ✓/✗ chips above it: those
+   are the day's result, this is only its composition. */
+.day-split {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.day-split .split-part { white-space: nowrap; }
+.day-split b {
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--fg);
+}
+/* The unattributed remainder, quieter than the two real sections: it is
+   bookkeeping, not a result, and it goes away on its own. */
+.day-split .is-rest { opacity: 0.72; font-style: italic; }
+.day-split .is-rest b { font-weight: 600; color: var(--muted); }

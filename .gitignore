@@ -3,6 +3,12 @@
 # when regenerating banks/. Committing them would bloat the repo permanently
 # and redistribute copyrighted content.
 book/*.pdf
+
+# Raw API responses cached by fetch_math.py -- 1,876 files of College Board's
+# own JSON, regenerable by re-running it. Same reasoning as the PDFs above:
+# source material the app never loads, only extract_math.py reads.
+book/math-api/
+
 .claude/
 
 # Byte-code from the extract_*.py scripts
