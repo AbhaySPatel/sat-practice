@@ -78,12 +78,12 @@ const HEATMAP_LOOKBACK_WEEKS = 1;
 // is still supported for a section given no anchor at all.
 const SECTIONS = {
   rw: {
-    label: 'Reading & Writing', short: 'R&W', questions: 54,
+    label: 'Reading & Writing', short: 'R&W', questions: 54, minutes: 64,
     readout: 'score', anchorLabel: 'Practice 5',
     anchor: { accuracy: 34 / 54, score: 550 }
   },
   math: {
-    label: 'Math', short: 'Math', questions: 44,
+    label: 'Math', short: 'Math', questions: 44, minutes: 70,
     readout: 'score', anchorLabel: 'Practice 6',
     anchor: { accuracy: 52 / 54, score: 790 }
   }
@@ -1044,10 +1044,19 @@ function fillBlank(text) {
 
 // --- How long this question is taking -------------------------------------
 
-// The real thing being paced against. Reading and Writing gives 64 minutes for 54
-// questions, so a question that runs past this is one he would be borrowing time
-// for on the day -- which is worth seeing while he is still on it, not afterwards.
-const PACE_SECONDS = Math.round((64 * 60) / 54); // 71
+// The real thing being paced against: a question that runs past this is one he
+// would be borrowing time for on the day, which is worth seeing while he is still
+// on it rather than afterwards.
+//
+// Per section, because the two are not the same test. Reading and Writing gives 64
+// minutes for 54 questions -- 71 seconds each. Maths gives 70 for 44, which is 95.
+// Hard-coding the Reading figure flagged every maths question as slow 24 seconds
+// early, and it will matter more than cosmetically if pace is ever used to decide
+// what stays in rotation.
+function paceSeconds(sec) {
+  const cfg = SECTIONS[sec || section] || SECTIONS.rw;
+  return Math.round((cfg.minutes * 60) / cfg.questions);
+}
 
 // Time is banked in stretches rather than read off one start stamp, so the clock
 // can stop: at the moment he answers, and whenever the tab is not in front of him.
@@ -1073,12 +1082,17 @@ function paintTimer() {
   if (!timerEl) return;
   const seconds = questionSeconds();
   timerEl.textContent = formatSeconds(seconds);
+  const cfg = SECTIONS[section];
+  const pace = paceSeconds();
   // Past the budget it stops being neutral information and starts being the point.
-  timerEl.classList.toggle('is-slow', seconds > PACE_SECONDS);
+  timerEl.classList.toggle('is-slow', seconds > pace);
+  // The tooltip shows the arithmetic, so the number is checkable rather than
+  // asserted -- and it now names the right section's test.
   timerEl.title = timeSince
-    ? `Time on this question. ${PACE_SECONDS}s is the pace for Reading and Writing`
-      + ' — 64 minutes for 54 questions.'
-    : `Took ${formatSeconds(seconds)}. The pace to hold is ${PACE_SECONDS}s per question.`;
+    ? `Time on this question. ${pace}s is the pace for ${cfg.label}`
+      + ` — ${cfg.minutes} minutes for ${cfg.questions} questions.`
+    : `Took ${formatSeconds(seconds)}. The pace to hold is ${pace}s per question`
+      + ` (${cfg.label}).`;
 }
 
 // Called on every serve. Restarts from nothing: a re-served question is a fresh
