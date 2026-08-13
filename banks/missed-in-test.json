@@ -921,7 +921,7 @@
     ],
     "chose": "C",
     "underline": "revealing that humans occupied the cave thousands of years before the Clovis people reached the continent.",
-    "passageHtml": "<p><span role=\"heading\"><strong>Text 1</strong></span></p>\n<p>An excavation in Chiquihuite Cave in central Mexico has upended the belief that approximately 13,000 years ago, a group known as the Clovis people were the first human inhabitants of North America. More than 200 crude stone tools were found embedded in a layer of earth that is up to 33,150 years old, <span role=\"region\" aria-label=\"Referenced Content\"><u>revealing that humans occupied the cave thousands of years before the Clovis people reached the continent.</u></span></p>\n<p> </p>\n<p><span role=\"heading\"><strong>Text 2</strong></span></p>\n<p>The objects uncovered in Chiquihuite Cave are intriguing, but it is premature to characterize them as tools. The stone pieces are so roughly shaped that they may have simply fractured from rocks during natural geological activity in the cave. Moreover, their unearthing has thus far not been accompanied by discoveries of other signs of human activity or even traces of human DNA from surfaces.</p>"
+    "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>An excavation in Chiquihuite Cave in central Mexico has upended the belief that approximately 13,000 years ago, a group known as the Clovis people were the first human inhabitants of North America. More than 200 crude stone tools were found embedded in a layer of earth that is up to 33,150 years old, <span role=\"region\" aria-label=\"Referenced Content\"><u>revealing that humans occupied the cave thousands of years before the Clovis people reached the continent.</u></span></p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>The objects uncovered in Chiquihuite Cave are intriguing, but it is premature to characterize them as tools. The stone pieces are so roughly shaped that they may have simply fractured from rocks during natural geological activity in the cave. Moreover, their unearthing has thus far not been accompanied by discoveries of other signs of human activity or even traces of human DNA from surfaces.</p>"
   },
   {
     "id": "missed-p6-m1-q13",
@@ -2011,6 +2011,1284 @@
         "label": "D",
         "text": "in reality,",
         "why": "Choice D is incorrect because “in reality” illogically signals that the information in the sentence contradicts the previous information about the circulation of liquid metals generating electrical currents that flow between Earth’s magnetic poles. Instead, the new information about the electrical currents is a direct result or consequence of the previous information."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt7-m1-q3",
+    "source": "College Board Practice Test 7, Module 1, Question 3",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice Test 7",
+    "taken": "2026-08-12",
+    "module": 1,
+    "number": 3,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "At the turn of the twentieth century, Black residents of Richmond, Virginia, had few formal options for banking and other financial services. To ___ this situation, Maggie Lena Walker chartered the St. Luke Penny Savings Bank in 1903. The bank went on to provide home loans and savings opportunities to thousands of Black families over the following decades.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "rule": "Most logically completes the text’s discussion of how Maggie Lena Walker addressed the lack of financial services available to Black residents in Richmond, Virginia, at the turn of the twentieth century.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "prolong",
+        "why": "Choice A is incorrect because in this context, “prolong” would mean to lengthen something in time. The text indicates that at the turn of the twentieth century, Black residents in Richmond, Virginia, were faced with a lack of formal banking options. The text then states that Walker founded a new bank that provided these residents with financial services. Therefore, instead of prolonging the situation, she took steps to rectify, or correct, it.",
+        "gloss": "to lengthen something in time"
+      },
+      {
+        "label": "B",
+        "text": "rectify",
+        "why": "Choice B is the best answer because it most logically completes the text’s discussion of how Maggie Lena Walker addressed the lack of financial services available to Black residents in Richmond, Virginia, at the turn of the twentieth century. In this context, “rectify” means to correct or remedy something undesirable. The text indicates that by chartering the St. Luke Penny Savings Bank in 1903, Walker took action to provide local Black residents with greater access to financial services like home loans and savings opportunities. This context supports the idea that she aimed to rectify the undesirable situation affecting these residents.",
+        "gloss": "to correct or remedy something undesirable"
+      },
+      {
+        "label": "C",
+        "text": "retain",
+        "why": "Choice C is incorrect because in this context, “retain” would mean to continue to have or to keep something. According to the text, at the turn of the twentieth century, Black residents in Richmond, Virginia, had few formal banking options, and Walker chartered a new institution to provide these residents with expanded financial services; therefore, she took steps to rectify, not retain, the situation.",
+        "gloss": "to continue to have or to keep something"
+      },
+      {
+        "label": "D",
+        "text": "highlight",
+        "why": "Choice D is incorrect because in this context, “highlight” would mean to emphasize or call attention to something, but the text indicates that Walker took concrete steps beyond merely drawing attention to the situation Black residents were facing in Richmond, Virginia, at the turn of the twentieth century. According to the text, Walker worked to rectify, or correct, the lack of formal banking options that were available to these residents by establishing a bank that provided them with home loans and savings opportunities. SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 4 SAT PRACTICE TEST #7 ANSWER EXPLANATIONS",
+        "gloss": "to emphasize or call attention to something"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt7-m1-q5",
+    "source": "College Board Practice Test 7, Module 1, Question 5",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice Test 7",
+    "taken": "2026-08-12",
+    "module": 1,
+    "number": 5,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Diadromous fish migrate between freshwater and marine biomes during their life cycle. The migration’s obligate nature is why diadromous fish can be ___ those that are merely euryhaline (able to tolerate high salinity): the euryhaline blackchin tilapia can survive high salinity, but its life cycle does not involve relocation to a different biome, as does that of the diadromous wild salmon.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "rule": "Most logically completes the text’s discussion of diadromous fish.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "demarcated from",
+        "why": "Choice A is the best answer because it most logically completes the text’s discussion of diadromous fish. In this context, “demarcated from” means separate or set apart from. The text indicates that diadromous fish differ from euryhaline fish in that diadromous fish “migrate between freshwater and marine biomes during their life,” whereas euryhaline fish do not relocate to a different biome because they can tolerate higher salinity environments. Therefore, this context suggests that because of differences between their migration patterns, diadromous fish are distinct and can be demarcated from euryhaline fish.",
+        "gloss": "separate or set apart from"
+      },
+      {
+        "label": "B",
+        "text": "reconstituted as",
+        "why": "Choice B is incorrect. Although the text states that diadromous fish migrate and relocate, the text does not suggest that diadromous fish would be “reconstituted as,” or formed again as, anything new. Only their environments change and not the fish themselves.",
+        "gloss": "formed again as"
+      },
+      {
+        "label": "C",
+        "text": "conflated with",
+        "why": "Choice C is incorrect because the text does not suggest that diadromous fish can be “conflated with,” or combined with, euryhaline fish. Instead, the text distinguishes the two types of fish by pointing out their SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 5 SAT PRACTICE TEST #7 ANSWER EXPLANATIONS differences with regard to migration and tolerance for salinity.",
+        "gloss": "combined"
+      },
+      {
+        "label": "D",
+        "text": "derived from",
+        "why": "Choice D is incorrect because the text indicates that based on migration habits and tolerance for salinity, diadromous fish are different from euryhaline fish; so it would not make logical sense to say that diadromous fish would be “derived from,” or be an extension of or result from, euryhaline fish.",
+        "gloss": "be an extension of or result from"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt7-m1-q6",
+    "source": "College Board Practice Test 7, Module 1, Question 6",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice Test 7",
+    "taken": "2026-08-12",
+    "module": 1,
+    "number": 6,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "The following text is from Joan Didion’s memoir The Year of Magical Thinking. In the text, the author discusses her home life. [I]n California we heated our houses by building fires. We built fires even on summer evenings, because the fog came in. Start referenced C ontent:Fires said we were home, we had draw n the circle, we were safe through the night. End referenced Content Fires said we were home, we had drawn the circle, we were safe through the night.",
+    "question": "Which choice best describes the function of the underlined portion in the text as a whole?",
+    "rule": "Most accurately describes how the underlined portion functions in the text as a whole.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "It illustrates that a fire provides comfort beyond physical warmth.",
+        "why": "Choice A is the best answer because it most accurately describes how the underlined portion functions in the text as a whole. The first two sentences of the text establish that in California, houses were heated by building fires year-round. The underlined portion then indicates that the fires didn’t merely provide physical warmth: they also represented being “home” and feeling protected. The underlined portion thus illustrates that a fire provides comfort beyond physical warmth."
+      },
+      {
+        "label": "B",
+        "text": "It summarizes the information that came before it in the text.",
+        "why": "Choice B is incorrect because the underlined portion doesn’t summarize information that came before it. Whereas the previous two sentences describe fires’ ability to provide physical warmth to homes, the underlined portion focuses on the psychological comfort the fires offered."
+      },
+      {
+        "label": "C",
+        "text": "It explains that the house remains cold even in summer.",
+        "why": "Choice C is incorrect. Although the text’s second sentence mentions that fires were built in the summer because fog came in, which may have cooled the house, this detail isn’t the focus of the underlined portion. Instead, the underlined portion indicates that fires were built for reasons beyond physical warmth: to create a sense of being home and safe."
+      },
+      {
+        "label": "D",
+        "text": "It suggests that the author feels comfortable in her home with or without a fire.",
+        "why": "Choice D is incorrect because the underlined portion focuses on the emotional significance the author places on having a fire going inside the home. There is no indication that the author feels equally comfortable without a fire present."
+      }
+    ],
+    "underline": "Fires said we were home, we had drawn the circle, we were safe through the night.",
+    "passageHtml": "<p>The following text is from Joan Didion’s memoir <em>The Year of Magical Thinking</em>. In the text, the author discusses her home life.</p>\n\n<p><span>[I]n</span> California we heated our houses by building fires. We built fires even on summer evenings, because the fog came in. <span role=\"region\" aria-label=\"Referenced Content\">Fires said we were home, we had drawn the circle, we were safe through the night.</span></p>\n\n<p style=\"text-align:right\"><span>©2005 by Joan Didion</span></p>"
+  },
+  {
+    "id": "missed-pt7-m1-q8",
+    "source": "College Board Practice Test 7, Module 1, Question 8",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice Test 7",
+    "taken": "2026-08-12",
+    "module": 1,
+    "number": 8,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "The following text is from H.D.’s 1916 poem “Mid-Day.” In the poem, the speaker is on a path in an outdoor setting. A slight wind shakes the seed-pods— my thoughts are spent as the black seeds. My thoughts tear me, I dread their fever. I am scattered in its whirl. I am scattered like the hot shrivelled seeds.",
+    "question": "Which choice best describes the function of the underlined portion in the text as a whole?",
+    "rule": "Best describes the function of the underlined portion in the text as a whole.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "It illustrates a change in the natural environment that the speaker implies is responsible for the growing misgivings described in the text.",
+        "why": "Choice A is incorrect because the text does not indicate that the seedpods are the cause of the speaker’s state of mind; thus, they could not be responsible for any misgivings the speaker has."
+      },
+      {
+        "label": "B",
+        "text": "It establishes an example of consistency in the natural landscape that the speaker then contrasts with the unpredictability of human emotions.",
+        "why": "Choice B is incorrect because the text does not contrast the natural landscape with the speaker’s state of mind or describe the wind shaking the seedpods as consistent; rather, the text suggests that the state of the natural world and the speaker’s state of mind are similar in that both are unsettled."
+      },
+      {
+        "label": "C",
+        "text": "It presents an observation of an occurrence in the natural world that the speaker then expands on to convey a sense of a turbulent interior state.",
+        "why": "Choice C is the best answer because it best describes the function of the underlined portion in the text as a whole. In the text, the speaker mentions the occurrence in nature of seedpods being shaken by a slight wind. The speaker then goes on to compare the black seeds to thoughts, using language that indicates that the speaker’s state of mind is unsettled (e.g., “my thoughts are spent”; “My thoughts tear me, I dread their fever”). The text concludes with a comparison between the speaker’s “scattered” state of mind and the “hot shrivelled seeds.” Thus, the underlined portion of the text presents an observation of an occurrence in the natural world that the speaker then expands on to convey a sense of a turbulent interior state."
+      },
+      {
+        "label": "D",
+        "text": "It evokes the ordinariness of an event in nature to suggest that the critical self-evaluation the speaker engages in is a common pursuit.",
+        "why": "Choice D is incorrect because there is no indication in the text that the speaker regularly engages in critical self-evaluation, only that in this particular instance the speaker’s state of mind is turbulent."
+      }
+    ],
+    "underline": "A slight wind shakes the seed-pods",
+    "passageHtml": "<p>The following text is from <span>H.D.’s</span> 1916 poem “Mid-Day.” In the poem, the speaker is on a path in an outdoor setting.</p>\n\n<p><span role=\"region\" aria-label=\"Referenced Content\">A slight wind shakes the seed-pods</span>—</p>\n<p>my thoughts are spent</p>\n<p>as the black seeds.</p>\n<p>My thoughts tear me,</p>\n<p>I dread their fever.</p>\n<p>I am scattered in its whirl.</p>\n<p>I am scattered like</p>\n<p>the hot shrivelled seeds.</p>"
+  },
+  {
+    "id": "missed-pt7-m1-q13",
+    "source": "College Board Practice Test 7, Module 1, Question 13",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice Test 7",
+    "taken": "2026-08-12",
+    "module": 1,
+    "number": 13,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "A student in a political science course is writing a paper on Aristotle’s The Politics, in which Aristotle offers his opinion on political instability and gives advice on how constitutions can be preserved. Aristotle observes that different forms of government can fall in different ways—for example, oligarchies might grant power to military leaders during wartime who refuse to relinquish that power during peacetime—but some methods of preserving order apply across all forms of government. The student claims that in particular Aristotle asserts that in a healthy state obedience to law must be as close to absolute as possible and that even minor infractions should not be ignored.",
+    "question": "Which quotation from a philosopher’s analysis of The Politics would best support the student’s claim?",
+    "rule": "Presents the quotation that best supports the student’s claim that in The Politics, Aristotle gives advice on preserving constitutions—preventing governments from falling and maintaining order—and specifically asserts that in a healthy state, laws must be followed as strictly as possible and infractions should not be overlooked even if they are minor.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "“When constructing his argument regarding the characteristics of a well-functioning government, Aristotle asserts that ‘Transgression creeps in unperceived and at last ruins the state,’ illustrating this idea with a comparison to frequent small expenditures slowly and almost imperceptibly chipping away at a fortune until it is ultimately depleted.”",
+        "why": "Choice A is the best answer because it presents the quotation that best supports the student’s claim that in The Politics, Aristotle gives advice on preserving constitutions—preventing governments from falling and maintaining order—and specifically asserts that in a healthy state, laws must be followed as strictly as possible and infractions should not be overlooked even if they are minor. The philosopher states that when Aristotle builds his argument about the characteristics of a well-functioning government, Aristotle asserts that transgression, or violation of law, will ruin the state if it “creeps in unperceived,” or goes unnoticed. The philosopher then adds that Aristotle illustrates this point by comparing the situation to one in which small but frequent expenses diminish a fortune almost unnoticeably until, eventually, the fortune is entirely gone. In other words, the philosopher indicates that Aristotle makes the point that total obedience to law preserves a healthy state while even small violations, if ignored, will undermine the health of the state."
+      },
+      {
+        "label": "B",
+        "text": "“When Aristotle writes on the necessity of avoiding corruption in government, he proposes that ‘every state should be so administered and so regulated by law that its magistrates cannot possibly make money.’ In particular, he thinks oligarchies are particularly susceptible to corruption through bribery.”",
+        "why": "Choice B is incorrect because the philosopher addresses Aristotle’s observation about corruption within the government (in particular, preventing the possibility that members of the government can take bribes), and although corruption can involve infractions, the observation is about a subset of people within the state and isn’t directly connected to the importance of upholding total obedience to the law throughout the state."
+      },
+      {
+        "label": "C",
+        "text": "“When Aristotle considers the health of constitutions, he states that ‘Constitutions are preserved when their destroyers are at a distance, and sometimes also because they are near, for the fear of them makes the government keep in hand the constitution.’ He holds that rulers who wish to see constitutions preserved must continually remind the populace of the dangers that would result from a constitutional collapse.”",
+        "why": "Choice C is incorrect because the philosopher discusses Aristotle’s point about those who would intentionally destroy a constitution altogether and the need for rulers to remind the populace that it would be dangerous for a constitution to collapse, but neither idea is directly connected to the importance of upholding total obedience to the law."
+      },
+      {
+        "label": "D",
+        "text": "“When contrasting different forms of government, Aristotle holds that ‘oligarchies may last, not from any inherent stability in such forms of government, but because the rulers are on good terms both with the unenfranchised and with the governing classes.’ That is, oligarchic leaders who wish to hold on to power will introduce members of disenfranchised classes into government in a participatory role.”",
+        "why": "Choice D is incorrect because the philosopher explains that Aristotle makes the point that SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 9 SAT PRACTICE TEST #7 ANSWER EXPLANATIONS oligarchic leaders may retain power by having members of disenfranchised classes participate in government alongside governing classes, and this point doesn’t address the importance of ensuring obedience to the law and addressing even minor violations."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt7-m1-q18",
+    "source": "College Board Practice Test 7, Module 1, Question 18",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "inferences",
+    "test": "Practice Test 7",
+    "taken": "2026-08-12",
+    "module": 1,
+    "number": 18,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "To address the susceptibility of materials used in components of high-performance machinery, such as aircraft engines, to creep (deformation that is induced by persistent mechanical stress and that often occurs at elevated temperatures), materials researchers have developed silicon carbide (SiC) fibers for producing aerospace composites. Testing the thermomechanical properties of several commercially available SiC fibers, Ramakrishna T. Bhatt et al. found that in comparison with two polymer-derived SiC fibers, a nitrogen-treated SiC fiber exhibited a lower minimum creep rate, a measure of the rate at which a stress-exposed material deforms at a constant temperature and uniaxial load. The finding suggests that ___",
+    "question": "Which choice most logically completes the text?",
+    "rule": "Most logically completes the text’s discussion of silicon carbide (SiC) fibers and creep, or deformation related to ongoing mechanical stress and elevated temperatures.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "unlike the two polymer-derived SiC fibers, the nitrogen-treated SiC fiber can substantially inhibit creep, provided that temperatures and loads are consistent.",
+        "why": "Choice A is incorrect because it overstates the implications of the study’s findings, which have to do with the rate of a material’s deformation under stress, not the absolute degree of deformation. The text states that Bhatt et al. observed that a nitrogen-treated SiC fiber had a lower minimum creep rate than two polymer-derived SiC fibers did, meaning only that it deformed more slowly over time under constant stress, not that it underwent less deformation overall."
+      },
+      {
+        "label": "B",
+        "text": "the two polymer-derived SiC fibers likely hold similar potential for reducing the creep resistance of materials exposed to stress and elevated temperatures, thus prolonging the life span of aerospace machinery.",
+        "why": "Choice B is incorrect because the text doesn’t establish any similarity between the two polymer-derived SiC fibers other than that both had a higher creep rate than the nitrogen-treated SiC fiber did in Bhatt et al.’s study. Moreover, reducing a material’s resistance to creep would mean that the material becomes more susceptible to deformation with exposure to stress and elevated temperatures, which would be expected to shorten rather than prolong the lifespan of machinery made with that material."
+      },
+      {
+        "label": "C",
+        "text": "composites based on the two polymer-derived SiC fibers have chemical properties that may improve the mechanical and thermal stability of aerospace equipment to a greater extent than do composites based on the nitrogen-treated SiC fiber.",
+        "why": "Choice C is incorrect because the text suggests that the stability of aerospace equipment may be better improved by composites containing nitrogen-treated SiC fiber than by composites containing the two polymer-derived SiC fibers, not the other way around. The text indicates that Bhatt et al. observed that the nitrogen-treated SiC fiber had a lower minimum creep rate than the other two fibers did, meaning that it was slower to degrade under exposure to mechanical stress and elevated temperatures—suggesting that it may remain stable for longer periods."
+      },
+      {
+        "label": "D",
+        "text": "aerospace composites containing the nitrogen-treated SiC fiber may have the ability to withstand mechanical stress for a longer period of time than can aerospace composites containing either of the two polymer-derived SiC fibers.",
+        "why": "Choice D is the best answer because it most logically completes the text’s discussion of silicon carbide (SiC) fibers and creep, or deformation related to ongoing mechanical stress and elevated temperatures. The text states that Bhatt et al. found that a nitrogen-treated SiC fiber had a lower minimum creep rate than two polymer-derived SiC fibers did. Because having a lower creep rate means that the material is slower to deform with exposure to stress, as the text explains, this finding suggests that aerospace composites made with the nitrogen-treated SiC SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 12 SAT PRACTICE TEST #7 ANSWER EXPLANATIONS fiber may be able to withstand mechanical stress for a longer period than those made with the other two polymer-derived SiC fibers can."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt7-m1-q33",
+    "source": "College Board Practice Test 7, Module 1, Question 33",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "rhetorical-synthesis",
+    "test": "Practice Test 7",
+    "taken": "2026-08-12",
+    "module": 1,
+    "number": 33,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "While researching a topic, a student has taken the following notes: • Researchers in a 2021 study wanted to determine the rate at which 17 languages conveyed both information and syllables. • They calculated the bits of information conveyed per second (the IR, or information rate). • The IR was found to be approximately consistent across the 17 languages (an average of 39 bits per second). • They calculated the number of syllables spoken per second (the SR, or syllable rate). • Spanish had the second-fastest SR (7.7 syllables per second). • Vietnamese had the sixteenth-fastest SR (5.3 syllables per second). The student wants to present an overview of the study’s findings.",
+    "question": "Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "rule": "The sentence presents an overview of the study’s findings, noting that, for some of the languages (the examples of Spanish and Vietnamese are given in the notes), the number of syllables spoken per second varied, while the amount of information conveyed per second remained roughly constant across all 17 languages.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "The 2021 study determined the information rate (IR) of 17 languages in bits of information conveyed per second.",
+        "why": "Choice A is incorrect. While the sentence describes one of the metrics the study assessed, it doesn’t present any of the study’s findings."
+      },
+      {
+        "label": "B",
+        "text": "Researchers found that information was conveyed more quickly in Spanish, at 7.7 syllables per second, than in Vietnamese, at 5.3 syllables per second.",
+        "why": "Choice B is incorrect. While the sentence compares specific findings about two of the languages studied, it doesn’t provide an overview of the study’s findings across all 17 languages."
+      },
+      {
+        "label": "C",
+        "text": "Vietnamese had the sixteenth-fastest syllable rate, lower than that of Spanish, which had the second-fastest; however, Spanish had the lower information rate of the two.",
+        "why": "Choice C is incorrect. The sentence compares specific findings about two of the languages studied; it doesn’t provide an overview of the study’s findings across all 17 languages. It also misrepresents the information from the notes about Spanish’s information rate."
+      },
+      {
+        "label": "D",
+        "text": "Though some of the languages differed in number of syllables spoken per second, all 17 conveyed information at roughly the same rate.",
+        "why": "Choice D is the best answer. The sentence presents an overview of the study’s findings, noting that, for some of the languages (the examples of Spanish and Vietnamese are given in the notes), the number of syllables spoken per second varied, while the amount of information conveyed per second remained roughly constant across all 17 languages."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt7-m2-q3",
+    "source": "College Board Practice Test 7, Module 2, Question 3",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice Test 7",
+    "taken": "2026-08-12",
+    "module": 2,
+    "number": 3,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "In the 1990s, conservationists began planting more than 500,000 native trees in the habitat of the Azores bullfinch to boost the bird’s numbers. This approach was apparently ___: the Azores bullfinch’s population size increased from as few as 100 birds at the end of the 1980s to around 1,300 in 2023.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "rule": "Most logically completes the text’s discussion of the conservationists’ efforts to increase Azores bullfinch’s numbers.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "amusing",
+        "why": "Choice A is incorrect because the text gives no indication that the conservationists’ approach of planting native trees to increase Azores bullfinch’s numbers was “amusing,” or comical or entertaining. Instead, the approach was seriously undertaken and ultimately accomplished.",
+        "gloss": "comical or entertaining"
+      },
+      {
+        "label": "B",
+        "text": "costly",
+        "why": "Choice B is incorrect because the text doesn’t address how much it cost to achieve the goal of planting native trees to increase Azores bullfinch’s numbers. The text indicates that the approach was beneficial and successful rather than “costly,” or expensive or harmful.",
+        "gloss": "expensive or harmful"
+      },
+      {
+        "label": "C",
+        "text": "successful",
+        "why": "Choice C is the best answer because it most logically completes the text’s discussion of the conservationists’ efforts to increase Azores bullfinch’s numbers. In this context, “successful” means accomplishing a goal or purpose. According to the text, conservationists planted more than 500,000 native trees in an Azores bullfinch habitat in order to boost the bird’s population size. The text then indicates that the population size did indeed grow as a result of the planted trees. Thus, in this context, the conservationists’ approach of planting native trees was successful because it achieved the goal of increasing the bird’s population size.",
+        "gloss": "accomplishing a goal or purpose"
+      },
+      {
+        "label": "D",
+        "text": "disastrous",
+        "why": "Choice D is incorrect. According to the text, the conservationists’ approach of planting native trees to increase Azores bullfinch’s numbers was beneficial and successful rather than “disastrous,” or damaging or unsuccessful.",
+        "gloss": "damaging or unsuccessful"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt7-m2-q8",
+    "source": "College Board Practice Test 7, Module 2, Question 8",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice Test 7",
+    "taken": "2026-08-12",
+    "module": 2,
+    "number": 8,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "The Bayeux Tapestry, from eleventh-century France, depicts 75 scenes over 250 feet of fabric. It was likely produced by workers embroidering in sections and then joining the resulting panels together. It’s plausible that the workshop that produced the tapestry had never produced one so large, and some researchers claim that a close examination of the joins—the places where the panels are stitched together—suggests that the workers developed and refined their joining process over the course of production. For example, t he first join the workers completed exhibits a clear misalignment of the borders of the two panels, whereas the later joins are virtually invisible.",
+    "question": "Which choice best describes the function of the underlined sentence in the text as a whole?",
+    "rule": "Most accurately describes the function of the underlined sentence in the text as a whole.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "It identifies the people and events depicted in the Bayeux Tapestry.",
+        "why": "Choice A is incorrect because the example given in the last sentence of the text has to do with how the panels of the Bayeux Tapestry were joined by the workers, not with what is depicted in those panels; the text never identifies any people or places depicted in the tapestry."
+      },
+      {
+        "label": "B",
+        "text": "It supports an argument about the workers who produced the Bayeux Tapestry.",
+        "why": "Choice B is the best answer because it most accurately describes the function of the underlined sentence in the text as a whole. The text discusses the Bayeux Tapestry, making the point that the workers who produced the huge tapestry in the eleventh century might not have ever produced a tapestry so large before. The text goes on to suggest that because of this lack of previous experience, the workers developed and refined the process of joining the tapestry’s panels over time as they worked. The last sentence of the text then provides an example of an observation that suggests the workers’ process changed: clear misalignment of the borders of the two panels the workers joined first and virtually invisible joins completed later. Thus, the underlined sentence serves to support an argument about the workers who produced the tapestry."
+      },
+      {
+        "label": "C",
+        "text": "It compares the Bayeux Tapestry with other tapestries from eleventh-century France.",
+        "why": "Choice C is incorrect because the last sentence compares how early panels in the Bayeux Tapestry were joined with how later panels in the same tapestry were joined; it doesn’t make any comparison between the Bayeux Tapestry and other tapestries from the same time in France."
+      },
+      {
+        "label": "D",
+        "text": "It describes how researchers determined where the Bayeux Tapestry was produced.",
+        "why": "Choice D is incorrect because the last sentence doesn’t address the location where the Bayeux Tapestry was created; the first sentence of the text presents it as a given that the tapestry was created in France, but nothing in the text indicates how that origin was determined."
+      }
+    ],
+    "underline": "For example, t he first join the workers completed exhibits a clear misalignment of the borders of the two panels, whereas the later joins are virtually invisible.",
+    "passageHtml": "<p>The Bayeux Tapestry, from eleventh-century France, depicts 75 scenes over 250 feet of fabric. It was likely produced by workers embroidering in sections and then joining the resulting panels together. It’s plausible that the workshop that produced the tapestry had never produced one so large, and some researchers claim that a close examination of the joins—the places where the panels are stitched together—suggests that the workers developed and refined their joining process over the course of production. <span role=\"region\" aria-label=\"Referenced Content\">For example, the first join the workers completed exhibits a clear misalignment of the borders of the two panels, whereas the later joins are virtually invisible.</span>  </p>"
+  },
+  {
+    "id": "missed-pt7-m2-q11",
+    "source": "College Board Practice Test 7, Module 2, Question 11",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "central-ideas-details",
+    "test": "Practice Test 7",
+    "taken": "2026-08-12",
+    "module": 2,
+    "number": 11,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Conservationists worldwide are working to protect ecosystems from habitat destruction and biodiversity loss, and in many cases, initiatives that rely on natural features or processes can help address such challenges. In response to a rapidly dwindling population of blueback salmon, the Quinault Indian Nation (a tribe in Washington State) partnered with the conservation organization Wild Salmon Center to restore naturally occurring logjams in the Quinault River. The logjams create shady pools where the blueback salmon can rest and spawn, thus promoting blueback population recovery.",
+    "question": "Which choice best states the main idea of the text?",
+    "rule": "Best states the main idea of the text: that nature-based approaches can be effective for achieving conservation goals.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "A partnership between the Quinault Indian Nation and Wild Salmon Center shows the importance of collaborative approaches to preserving biodiversity.",
+        "why": "Choice A is incorrect. Although the text does suggest that the partnership with the Quinault Indian Nation was beneficial, this is not the central aim of the text; the text primarily argues that nature-based approaches to conservation can be effective."
+      },
+      {
+        "label": "B",
+        "text": "Nature-based approaches can be effective ways to achieve conservation goals.",
+        "why": "Choice B is the best answer because it best states the main idea of the text: that nature-based approaches can be effective for achieving conservation goals. The text indicates that in many cases where conservationists are trying to protect ecosystems, their methods depend on natural processes or features. The text then gives an example of this phenomenon, a project with the Quinault Indian Nation that allowed logjams to form naturally in a river, creating spawning habitats for blueback salmon."
+      },
+      {
+        "label": "C",
+        "text": "As indicated by a recent project, logjams help the blueback salmon thrive and reproduce.",
+        "why": "Choice C is incorrect. Although the text indicates that logjams are 22 SAT PRACTICE TEST #7 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2 helpful to blueback salmon, the example of the blueback salmon project is included to illustrate the larger point made earlier in the text: that nature-based approaches to conservation are often effective."
+      },
+      {
+        "label": "D",
+        "text": "Scientists now realize that nature-based conservation methods offer better long-term solutions to environmental issues than methods that are not nature-based do.",
+        "why": "Choice D is incorrect. There is no evidence in the text to support a direct comparison of the efficacy of nature- based conservation approaches to other types of approaches. The text merely indicates that nature-based approaches can often be effective."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt7-m2-q16",
+    "source": "College Board Practice Test 7, Module 2, Question 16",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "inferences",
+    "test": "Practice Test 7",
+    "taken": "2026-08-12",
+    "module": 2,
+    "number": 16,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "The Uto-Aztecan language family is divided into a northern branch, which includes the Shoshone language of present-day Idaho and Utah, and a southern one, whose best-known representative is Nahuatl, the language of the Aztec Empire in Mexico. Lexical similarities across the family, including of botanical terms, confirm descent from a single language spoken millennia ago, and the family’s geographical distribution suggests an origin in what is now the US Southwest. However, vocabulary pertaining to maize isn’t shared between northern and southern branches, despite the crop’s universal cultivation among Uto-Aztecan tribes. Given archaeological evidence that maize originated in Mexico and diffused northward into what became the US Southwest, some linguists reason that ___",
+    "question": "Which choice most logically completes the text?",
+    "rule": "Most logically completes the discussion of Uto-Aztecan languages.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "northern Uto-Aztecan tribes likely obtained the crop directly from a southern Uto-Aztecan tribe rather than from a non-Uto-Aztecan tribe.",
+        "why": "Choice A is incorrect because the text focuses on vocabulary pertaining to maize in the branches of the Uto-Aztecan language family, and referring only to how some Uto-Aztecan tribes obtained maize wouldn’t directly address the role of language. Moreover, if northern Uto-Aztecan tribes had acquired maize from a southern Uto-Aztecan tribe, it’s reasonable to assume that the northern tribes 24 SAT PRACTICE TEST #7 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2 might have also picked up southern Uto-Aztecan terminology for maize in that exchange."
+      },
+      {
+        "label": "B",
+        "text": "variation in maize-related vocabulary within each branch of the Uto-Aztecan family likely reflects regionally specific methods for cultivating the crop.",
+        "why": "Choice B is incorrect because the text discusses the fact that the northern and southern branches of the Uto-Aztecan language family don’t have shared vocabulary pertaining to maize, not the idea that there are variations in such vocabulary within each branch—that is, the text focuses on differences between the two branches, not on differences between languages within a branch."
+      },
+      {
+        "label": "C",
+        "text": "southern Uto-Aztecan tribes likely acquired maize at roughly the same time as northern Uto-Aztecan tribes did, though from different sources.",
+        "why": "Choice C is incorrect because the text focuses on vocabulary pertaining to maize in the branches of the Uto-Aztecan language family, and referring only to the timing and source of maize acquisition wouldn’t directly address the role of language. Furthermore, the text implies that southern Uto-Aztecan tribes probably acquired maize before the northern tribes did, given the evidence that maize originated in Mexico—the location of the best-known representative of the southern branch of the Uto-Aztecan language family—before spreading to the north."
+      },
+      {
+        "label": "D",
+        "text": "the family’s division into northern and southern branches likely preceded the acquisition of the crop by the Uto-Aztecan tribes.",
+        "why": "Choice D is the best answer because it most logically completes the discussion of Uto-Aztecan languages. The text explains that the northern and southern branches of the Uto-Aztecan language family descended from a single language (believed to have originated in what is now the US Southwest), resulting in similarities across the family’s languages; however, the branches don’t have similar vocabulary for maize, even though maize has been cultivated by all Uto-Aztecan tribes. The text also indicates that maize originated in Mexico and spread northward into what is now the US Southwest—the area where the Uto-Aztecan language family originated. It follows, then, that the language family had already divided into northern and southern branches before maize reached that area; if maize had been present before the division occurred, the family’s origin language would have had terminology for it that likely would have been reflected in the branches, meaning they would have had similar vocabulary for maize. If maize arrived after the division occurred, however, the tribes in the two regions likely would have developed vocabulary pertaining to maize separately, at the times when they acquired the crop."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt7-m2-q25",
+    "source": "College Board Practice Test 7, Module 2, Question 25",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "boundaries",
+    "test": "Practice Test 7",
+    "taken": "2026-08-12",
+    "module": 2,
+    "number": 25,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Chondrites are stony meteorites that are undifferentiated—that is, their contents have not melted and separated into distinct layers. They are hardly ___ many chondrites experience aqueous alteration as a result of exposure to fluids, as well as fracturing, veining, and localized melting due to collisions with other objects.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the use of punctuation within a sentence.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "pristine, though",
+        "why": "Choice A is incorrect because placing the comma after “pristine” and using “though” as a subordinating conjunction illogically indicates that the information in the next main clause (many chondrites have experienced damage) is contrary to the information in the previous clause (chondrites are far from pristine)."
+      },
+      {
+        "label": "B",
+        "text": "pristine, though;",
+        "why": "Choice B is the best answer. The convention being tested is the use of punctuation within a sentence. This choice correctly uses a comma to separate the supplementary adverb “though” from the preceding main clause (“They are hardly pristine”) and uses a semicolon to join the two main clauses (“They… though” and “many…objects”). Further, placing the semicolon after “though” indicates that the information in the preceding main clause (chondrites are far from pristine) is contrary to what might be assumed from the information in the previous sentence (chondrites have been generally unaltered by their environment)."
+      },
+      {
+        "label": "C",
+        "text": "pristine; though",
+        "why": "Choice C is incorrect because placing the semicolon after “pristine” illogically 28 SAT PRACTICE TEST #7 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2 indicates that the information in the next main clause (many chondrites have experienced damage) is contrary to the information in the previous clause (chondrites are far from pristine)."
+      },
+      {
+        "label": "D",
+        "text": "pristine, though,",
+        "why": "Choice D is incorrect because it results in a comma splice. Without a conjunction following it, the comma after “though” can’t be used in this way to join two main clauses."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m1-q9",
+    "source": "College Board Practice Test 8, Module 1, Question 9",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 1,
+    "number": 9,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "According to historian Vicki L. Ruiz, Mexican American women made crucial contributions to the labor movement during World War II. At the time, food processing companies entered into contracts to supply United States armed forces with canned goods. Increased production quotas conferred greater bargaining power on the companies’ employees, many of whom were Mexican American women: employees insisted on more favorable benefits, and employers, who were anxious to fulfill the contracts, complied. employees insisted on more favorable benefits, and employers, who were anxious to fulfill the contracts, complied. employees insisted on more favorable benefits, and employers, who were anxious to fulfill the contracts, complied.Thus, labor activism became a platform for Mexican American women to assert their agency.",
+    "question": "Which choice best describes the function of the underlined portion in the text as a whole?",
+    "rule": "Best describes how the underlined portion functions in the text as a whole.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "It elaborates on a claim about labor relations in a particular industry made earlier in the text.",
+        "why": "Choice A is the best answer because it best describes how the underlined portion functions in the text as a whole. The text says that the increased production quotas of food processing companies during World War II enabled employees to make better bargains in exchange for their labor. The underlined portion presents an example of this increased bargaining power: employees requested more favorable benefits, and employers complied because they were under pressure to fulfill the demanding terms of their contracts. Thus, the underlined portion of the text elaborates on a claim about labor relations in a particular industry (food processing) made earlier in the text."
+      },
+      {
+        "label": "B",
+        "text": "It offers an example of a trend in the World War II–era economy discussed earlier in the text.",
+        "why": "Choice B is incorrect because there is no indication in the text that the economic factors that influenced food processing also influenced other parts of the economy; thus, the bargaining described in the underlined portion of the text cannot be called an example of a trend."
+      },
+      {
+        "label": "C",
+        "text": "It notes a possible exception to the historical narrative of labor activism sketched earlier in the text.",
+        "why": "Choice C is incorrect because the underlined portion supports the historical narrative of labor activism in food processing that is sketched in the text, instead of noting an exception to that narrative."
+      },
+      {
+        "label": "D",
+        "text": "It provides further details about the identities of the workers discussed earlier in the text.",
+        "why": "Choice D is incorrect because while the underlined portion does discuss the demands that workers made in exchange for their labor, it does not discuss the identities of the workers."
+      }
+    ],
+    "underline": "employees insisted on more favorable benefits, and employers, who were anxious to fulfill the contracts, complied.",
+    "passageHtml": "<p>According to historian Vicki L. Ruiz, Mexican American women made crucial contributions to the labor movement during World War II. At the time, food processing companies entered into contracts to supply United States armed forces with canned goods. Increased production quotas conferred greater bargaining power on the companies’ employees, many of whom were Mexican American women: <span role=\"region\" aria-label=\"Referenced Content\"><u>employees insisted on more favorable benefits, and employers, who were anxious to fulfill the contracts, complied.</u></span> Thus, labor activism became a platform for Mexican American women to assert their agency.</p>"
+  },
+  {
+    "id": "missed-pt8-m1-q10",
+    "source": "College Board Practice Test 8, Module 1, Question 10",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "central-ideas-details",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 1,
+    "number": 10,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "For many years, the only existing fossil evidence of mixopterid eurypterids—an extinct family of large aquatic arthropods known as sea scorpions and related to modern arachnids and horseshoe crabs—came from four species living on the paleocontinent of Laurussia. In a discovery that expands our understanding of the geographical distribution of mixopterids, paleontologist Bo Wang and others have identified fossilized remains of a new mixopterid species, Terropterus xiushanensis, that lived over 400 million years ago on the paleocontinent of Gondwana.",
+    "question": "According to the text, why was Wang and his team’s discovery of the Terropterus xiushanensis fossil significant?",
+    "rule": "States why Wang and his team’s discovery of the Terropterus xiushanensis fossil was significant.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "The fossil constitutes the first evidence found by scientists that mixopterids lived more than 400 million years ago.",
+        "why": "Choice A is incorrect. Although the text states that Wang and his team identified fossilized remains of a mixopterid species that lived more than 400 million years ago, it doesn’t indicate that mixopterid fossils previously found by scientists dated to a more recent period than that."
+      },
+      {
+        "label": "B",
+        "text": "The fossil helps establish that mixopterids are more closely related to modern arachnids and horseshoe crabs than previously thought.",
+        "why": "Choice B is incorrect. Although the text states that mixopterids are related to modern arachnids and horseshoe crabs, it doesn’t suggest that the fossil discovered by Wang and his team confirmed that this relationship is closer than scientists had previously thought."
+      },
+      {
+        "label": "C",
+        "text": "The fossil helps establish a more accurate timeline of the evolution of mixopterids on the paleocontinents of Laurussia and Gondwana.",
+        "why": "Choice C is incorrect because the team’s fossil established the presence of mixopterids on Gondwana, not on Laurussia. Moreover, the text only discusses the fossil in relation to the geographical distribution of mixopterids, not in relation to their evolution."
+      },
+      {
+        "label": "D",
+        "text": "The fossil constitutes the first evidence found by scientists that mixopterids existed outside the paleocontinent of Laurussia.",
+        "why": "Choice D is the best answer because it states why Wang and his team’s discovery of the Terropterus xiushanensis fossil was significant. The text explains that up until Wang and his team’s discovery, the only fossil evidence of mixopterids came from the paleocontinent of Laurussia. Wang and his team, however, identified fossil remains of a mixopterid species from the paleocontinent Gondwana. Therefore, the team’s discovery was significant because the fossil remains of a mixopterid species were outside of the paleocontinent Laurussia."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m1-q15",
+    "source": "College Board Practice Test 8, Module 1, Question 15",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 1,
+    "number": 15,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Researchers hypothesized that a decline in the population of dusky sharks near the mid-Atlantic coast of North America led to a decline in the population of eastern oysters in the region. Dusky sharks do not typically consume eastern oysters but do consume cownose rays, which are the main predators of the oysters.",
+    "question": "Which finding, if true, would most directly support the researchers’ hypothesis?",
+    "rule": "Presents a finding that, if true, would most directly support the researchers’ hypothesis about the connection between the dusky shark population decline and the eastern oyster population decline.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Declines in the regional abundance of dusky sharks’ prey other than cownose rays are associated with regional declines in dusky shark abundance.",
+        "why": "Choice A is incorrect because a finding that there’s an association between a decline in the regional abundance of some of dusky sharks’ prey and the regional abundance of dusky sharks wouldn’t directly support the researchers’ hypothesis that a decline in dusky sharks has led to a decline in eastern oysters in the region. Although such a finding might help explain why shark abundance has declined, it would reveal nothing about whether the shark decline is related to the oyster decline."
+      },
+      {
+        "label": "B",
+        "text": "Eastern oyster abundance tends to be greater in areas with both dusky sharks and cownose rays than in areas with only dusky sharks.",
+        "why": "Choice B is incorrect because a finding that eastern oyster abundance tends to be greater when dusky sharks and cownose rays are present than when only dusky sharks are present wouldn’t support the researchers’ hypothesis that a decline in dusky sharks has led to a decline in eastern oysters in the region. The text indicates that the sharks prey on the rays, which are the main predators of the oysters; if oyster abundance is found to be greater when rays are present than when rays are absent, that would suggest that rays aren’t keeping oyster abundance down, and thus that a decline in rays’ predators, which would be expected to lead to an increase in the abundance of rays, wouldn’t bring about a decline in oyster abundance as the researchers hypothesize."
+      },
+      {
+        "label": "C",
+        "text": "Consumption of eastern oysters by cownose rays in the region substantially increased before the regional decline in dusky shark abundance began.",
+        "why": "Choice C is incorrect because a finding that consumption of eastern oysters by cownose rays increased substantially before dusky sharks declined in regional abundance wouldn’t support the researchers’ hypothesis that the decline in dusky sharks has led to a decline in eastern oysters in the region. Such a finding would suggest that some factor other than shark abundance led to an increase in rays’ consumption of oysters and thus to a decrease in oyster abundance, thereby weakening the researchers’ hypothesis."
+      },
+      {
+        "label": "D",
+        "text": "Cownose rays have increased in regional abundance as dusky sharks have decreased in regional abundance.",
+        "why": "Choice D is the best answer because it presents a finding that, if true, would most directly support the researchers’ hypothesis about the connection between the dusky shark population decline and the eastern oyster population decline. The text indicates that although dusky sharks don’t usually eat eastern oysters, they do consume cownose rays, which are the main predators of eastern oysters. An increase in the abundance of cownose rays in the region in response to a decline in the abundance of dusky sharks would directly support the researchers’ hypothesis: a higher number of cownose rays would consume more eastern oysters, driving down the oyster population."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m1-q16",
+    "source": "College Board Practice Test 8, Module 1, Question 16",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 1,
+    "number": 16,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "In the mountains of Brazil, Barbacenia tomentosa and Barbacenia macrantha—two plants in the Velloziaceae family—establish themselves on soilless, nutrient-poor patches of quartzite rock. Plant ecologists Anna Abrahão and Patricia de Britto Costa used microscopic analysis to determine that the roots of B. tomentosa and B. macrantha, which grow directly into the quartzite, have clusters of fine hairs near the root tip; further analysis indicated that these hairs secrete both malic and citric acids. The researchers hypothesize that the plants depend on dissolving underlying rock with these acids, as the process not only creates channels for continued growth but also releases phosphates that provide the vital nutrient phosphorus.",
+    "question": "Which finding, if true, would most directly support the researchers’ hypothesis?",
+    "rule": "Presents a finding that, if true, would support the researchers’ hypothesis about the plants’ dependence on dissolving rock.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Other species in the Velloziaceae family are found in terrains with more soil but have root structures similar to those of B. tomentosa and B. macrantha.",
+        "why": "Choice A is incorrect because the existence of soil-inhabiting members of the Velloziaceae family with similar root structures to those of the two species discussed in the text wouldn’t support the researchers’ hypothesis that the species discussed in the text depend on dissolving rock. If other such members exist, that might suggest that the root structures can serve more functions than secreting acids to dissolve rock (since dissolving rock may not be necessary for plants living in soil), but that wouldn’t suggest anything about whether the species discussed in the text benefit from dissolving rock."
+      },
+      {
+        "label": "B",
+        "text": "Though B. tomentosa and B. macrantha both secrete citric and malic acids, each species produces the acids in different proportions.",
+        "why": "Choice B is incorrect because differences in the proportions of citric and malic acid secreted by the two species would be irrelevant to the hypothesis that the plants depend on dissolving rock. There’s no information in the text to suggest that the proportion of each acid has any bearing on the process of dissolving rock or on any benefits the plants might receive from that process."
+      },
+      {
+        "label": "C",
+        "text": "The roots of B. tomentosa and B. macrantha carve new entry points into rocks even when cracks in the surface are readily available.",
+        "why": "Choice C is the best answer because it presents a finding that, if true, would support the researchers’ hypothesis about the plants’ dependence on dissolving rock. The text indicates that the roots of the two plant species grow directly into quartzite rock, where hairs on the roots secrete acids that dissolve the rock. The researchers hypothesize that the plants depend on this process because SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 9 SAT PRACTICE TEST #8 ANSWER EXPLANATIONS dissolving rock opens spaces for the roots to grow and releases phosphates that provide the plants with phosphorus, a vital nutrient. If the plants carry out this process of dissolving rock even when the rock already has spaces into which the roots could grow, that would support the researchers’ hypothesis because it suggests that the plants are getting some advantage—such as access to phosphorus—from the action of dissolving rock. If the plants don’t benefit from dissolving rock, they would be expected to grow in the cracks that already exist, as doing so would mean that the plants don’t have to spend energy creating and secreting acids; if, however, the plants create new entry points by dissolving rock even when cracks already exist, that would support the hypothesis that they depend on dissolving rock for some benefit."
+      },
+      {
+        "label": "D",
+        "text": "B. tomentosa and B. macrantha thrive even when transferred to the surfaces of rocks that do not contain phosphates.",
+        "why": "Choice D is incorrect because if the two species thrive on rocks without phosphates, that would weaken the researchers’ hypothesis that the plants depend on dissolving rock partly because dissolving rock gives them access to phosphates. If the plants can survive on rocks without getting a vital nutrient by dissolving those rocks, then either the nutrient isn’t actually vital for those plants or they can get the nutrient in some way other than by dissolving rocks."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m1-q20",
+    "source": "College Board Practice Test 8, Module 1, Question 20",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "form-structure-sense",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 1,
+    "number": 20,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "In order to prevent nonnative fish species from moving freely between the Mediterranean and Red Seas, marine biologist Bella Galil has proposed that a saline lock system be installed along the Suez Canal in Egypt’s Great Bitter Lakes. The lock would increase the salinity of the lakes and ___ a natural barrier of water most marine creatures would be unable to cross.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the use of non-finite (untensed) verb forms in a sentence.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "creates",
+        "why": "Choice A is incorrect because the finite present tense verb “creates” can’t be used in this way with the modal “would” to describe what the lock would do."
+      },
+      {
+        "label": "B",
+        "text": "create",
+        "why": "Choice B is the best answer. The convention being tested is the use of non-finite (untensed) verb forms in a sentence. The modal “would,” which indicates the future from a perspective in the past, should be accompanied by a non-finite plain form verb. In this choice, the non-finite plain form verb “create” is used correctly in conjunction with the non-finite plain form verb “increase” to describe what the lock would do."
+      },
+      {
+        "label": "C",
+        "text": "creating",
+        "why": "Choice C is incorrect because the present participle “creating” can’t be used in this way with the modal “would” to describe what the lock would do."
+      },
+      {
+        "label": "D",
+        "text": "created",
+        "why": "Choice D is incorrect because the finite past tense verb “created” can’t be used in this way with the modal “would” to describe what the lock would do."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m1-q22",
+    "source": "College Board Practice Test 8, Module 1, Question 22",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "boundaries",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 1,
+    "number": 22,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "In 1943, in the midst of World War II, mathematics professor Grace Hopper was recruited by the US military to help the war effort by solving complex equations. Hopper’s subsequent career would involve more than just ___ as a pioneering computer programmer, Hopper would help usher in the digital age.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the use of punctuation to mark boundaries between supplements and clauses.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "equations, though:",
+        "why": "Choice A is the best answer. The convention being tested is the use of punctuation to mark boundaries between supplements and clauses. The comma after “equations” is used to separate the independent clause (“Hopper’s… equation”) from the supplementary adverb phrase “though.” The colon after “though” is used to mark the boundary between the clause ending with “though” and the following clause (“as…age”). A colon used in this way introduces information that illustrates or explains information that has come before it. In this case, the colon after “though” introduces the following explanation of how Hopper’s subsequent career would involve more than just solving equations: she would become a pioneering computer programmer."
+      },
+      {
+        "label": "B",
+        "text": "equations, though,",
+        "why": "Choice B is incorrect because it results in a comma splice. A comma can’t be used in this way to join two independent clauses (“Hopper’s…though” and “as… age”) such as these."
+      },
+      {
+        "label": "C",
+        "text": "equations. Though,",
+        "why": "Choice C is incorrect because it results in an illogical sequence of sentences. Placing the period after “equations” and beginning the next sentence with “Though” illogically suggests that the following information (that Hopper would help usher in the digital age) is contrary to the information in the previous sentence (Hopper’s subsequent career would involve more than just solving equations). Instead, the information that follows supports the information from the previous sentence by explaining how her work and influence extended beyond solely solving equations."
+      },
+      {
+        "label": "D",
+        "text": "equations though",
+        "why": "Choice D is incorrect because it results in a run-on sentence. The two independent clauses (“Hopper’s…though” and “as…age”) are fused without punctuation."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m1-q24",
+    "source": "College Board Practice Test 8, Module 1, Question 24",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "boundaries",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 1,
+    "number": 24,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "During the English neoclassical period (1660–1789), many writers imitated the epic poetry and satires of ancient Greece and Rome. They were not the first in England to adopt the literary modes of classical ___ some of the most prominent figures of the earlier Renaissance period were also influenced by ancient Greek and Roman literature.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the punctuation of a supplementary phrase following a clause.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "antiquity, however",
+        "why": "Choice A is incorrect because it fails to mark the boundary after “however” between the two independent clauses with appropriate punctuation."
+      },
+      {
+        "label": "B",
+        "text": "antiquity, however,",
+        "why": "Choice B is incorrect because the comma after “however” can’t be used in this way to mark the boundary between the two independent clauses."
+      },
+      {
+        "label": "C",
+        "text": "antiquity, however;",
+        "why": "Choice C is the best answer. The convention being tested is the punctuation of a supplementary phrase following a clause. This choice uses a comma to separate the supplementary adverb phrase “however” from the independent clause it modifies (“They…antiquity”) and uses a semicolon to join the first independent clause (“They…antiquity”) and the second independent clause (“some…literature”). SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 13 SAT PRACTICE TEST #8 ANSWER EXPLANATIONS Further, placing the semicolon after “however” indicates that the information in the clause that this is part of (that neoclassical writers were not the first to adopt classical literary modes) is contrary to what might be assumed from the information in the previous sentence (that the neoclassical writers were unique in imitating classical epic poetry and satires)."
+      },
+      {
+        "label": "D",
+        "text": "antiquity; however,",
+        "why": "Choice D is incorrect because placing the semicolon after “antiquity” illogically indicates that the information in the clause that this is part of (that prominent Renaissance figures were also influenced by classical literature) is contrary to the information in the previous clause (that neoclassical writers were not the first to adopt classical literary modes)."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m1-q25",
+    "source": "College Board Practice Test 8, Module 1, Question 25",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "boundaries",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 1,
+    "number": 25,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "English poet and Shakespeare contemporary John Donne’s ___ much admired during his lifetime (1572–1631) and in the decades that followed, had, at the time of their enthusiastic rediscovery by the early twentieth-century modernists, been essentially gathering dust for the intervening 250 years.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the use of punctuation and verb forms within a sentence.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "works were",
+        "why": "Choice A is incorrect because it fails to offset the supplementary element (“much…followed”) with appropriate punctuation, and using the finite verb “were much admired” results in an ungrammatical sentence."
+      },
+      {
+        "label": "B",
+        "text": "works, were",
+        "why": "Choice B is incorrect because using the finite verb “were much admired” results in an ungrammatical sentence."
+      },
+      {
+        "label": "C",
+        "text": "works,",
+        "why": "Choice C is the best answer. The convention being tested is the use of punctuation and verb forms within a sentence. This choice leaves the verb “admired” in its nonfinite past participle form to function within a supplementary element (“much…followed”). Offset by commas after “works” and “followed,” this supplementary element interrupts the main clause (“English poet and Shakespeare contemporary John Donne’s works…had…been essentially gathering dust…”) with additional information about the works’ reception during Donne’s lifetime."
+      },
+      {
+        "label": "D",
+        "text": "works had been",
+        "why": "Choice D is incorrect because it fails to offset the supplementary element (“much…followed”) with appropriate punctuation, and using the finite verb “had been much admired” results in an ungrammatical sentence."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m1-q31",
+    "source": "College Board Practice Test 8, Module 1, Question 31",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "rhetorical-synthesis",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 1,
+    "number": 31,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "While researching a topic, a student has taken the following notes: • Most, but not all, of the Moon’s oxygen comes from the Sun, via solar wind. • Cosmochemist Kentaro Terada from Osaka University wondered if some of the unaccounted-for oxygen could be coming from Earth. • In 2008, he analyzed data from the Japanese satellite Kaguya. • Kaguya gathered data about gases and particles it encountered while orbiting the Moon. • Based on the Kaguya data, Terada confirmed his suspicion that Earth is sending oxygen to the Moon. The student wants to emphasize the aim of the research study.",
+    "question": "Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "rule": "The sentence emphasizes the aim, or goal, of the research study, noting what Terada set out to do: determine whether some of the Moon’s oxygen was coming from Earth.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "As it orbited the Moon, the Kaguya satellite collected data that was later analyzed by cosmochemist Kentaro Terada.",
+        "why": "Choice A is incorrect. The sentence focuses on how the Kaguya satellite collected data; it doesn’t emphasize the aim of the research study."
+      },
+      {
+        "label": "B",
+        "text": "Before 2008, Kentaro Terada wondered if the Moon was receiving some of its oxygen from Earth.",
+        "why": "Choice B is incorrect. While the sentence mentions what Terada was curious about before conducting the research study, it doesn’t emphasize his study’s aim."
+      },
+      {
+        "label": "C",
+        "text": "Cosmochemist Kentaro Terada set out to determine whether some of the Moon’s oxygen was coming from Earth.",
+        "why": "Choice C is the best answer. The sentence emphasizes the aim, or goal, of the research study, noting what Terada set out to do: determine whether some of the Moon’s oxygen was coming from Earth."
+      },
+      {
+        "label": "D",
+        "text": "Kentaro Terada’s study determined that Earth is sending a small amount of oxygen to the Moon.",
+        "why": "Choice D is incorrect. The sentence presents the research study’s conclusion; it doesn’t emphasize the study’s aim. SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 16 SAT PRACTICE TEST #8 ANSWER EXPLANATIONS"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m2-q3",
+    "source": "College Board Practice Test 8, Module 2, Question 3",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 2,
+    "number": 3,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "The process of mechanically recycling plastics is often considered ___ because of the environmental impact and the loss of material quality that often occurs. But chemist Takunda Chazovachii has helped develop a cleaner process of chemical recycling that converts superabsorbent polymers from diapers into a desirable reusable adhesive.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "rule": "Most logically completes the text’s discussion about recycling plastics.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "resilient",
+        "why": "Choice A is incorrect because in this context “resilient” would mean able to withstand difficulty and the text does not characterize the plastic-recycling process as having this quality or describe any difficulties that these processes might need to overcome.",
+        "gloss": "able to withstand difficulty"
+      },
+      {
+        "label": "B",
+        "text": "inadequate",
+        "why": "Choice B is the best answer because it most logically completes the text’s discussion about recycling plastics. In this context, “inadequate” means not satisfactory. The text indicates that the mechanical plastic-recycling process affects the environment and causes “the loss of material quality.” The text contrasts that with Chazovachii’s chemical plastic-recycling process, which is cleaner and produces a desirable product. The text’s emphasis on the negative aspects of mechanical recycling suggests that it is inadequate in terms of environmental impact and the quality of the material the process yields.",
+        "gloss": "not enough for the purpose"
+      },
+      {
+        "label": "C",
+        "text": "dynamic",
+        "why": "Choice C is incorrect because in this context “dynamic” would mean constantly changing. Although the text suggests that there have been changes in the field of recycling, as is the case with the advent of Chazovachii’s chemical recycling process, there is nothing to suggest that the mechanical process itself has changed or is prone to change.",
+        "gloss": "constantly changing"
+      },
+      {
+        "label": "D",
+        "text": "satisfactory",
+        "why": "Choice D is incorrect because in this context “satisfactory” would mean acceptable but not perfect. The text mentions only shortcomings of the mechanical process (environmental effects and lower material quality), so the text more strongly supports a negative view of this process and provides no evidence that it would be considered satisfactory.",
+        "gloss": "acceptable but not perfect"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m2-q5",
+    "source": "College Board Practice Test 8, Module 2, Question 5",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 2,
+    "number": 5,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Within baleen whale species, some individuals develop an accessory spleen—a seemingly functionless formation of splenetic tissue outside the normal spleen. Given the formation’s greater prevalence among whales known to make deeper dives, some researchers hypothesize that its role isn’t ___; rather, the accessory spleen may actively support diving mechanisms.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "rule": "Most logically completes the text’s discussion of baleen whale accessory spleens.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "replicable",
+        "why": "Choice A is incorrect because it wouldn’t make sense to say that the role of the accessory spleen is “replicable,” or capable of being reproduced. The text indicates that the role of the accessory spleen seems to have no function, but some researchers think it does have a role; the text doesn’t address whether the role of the accessory spleen could or couldn’t be reproduced.",
+        "gloss": "capable of being reproduced"
+      },
+      {
+        "label": "B",
+        "text": "predetermined",
+        "why": "Choice B is incorrect because suggesting that the role of the accessory spleen is “predetermined,” or decided in advance, wouldn’t make sense in context. Although the researchers may agree that the role of the accessory spleen or any other organ hasn’t been determined in advance, the text focuses on the idea that the accessory spleen was thought to have been functionless but may in fact serve an active role for baleen whales.",
+        "gloss": "decided in advance"
+      },
+      {
+        "label": "C",
+        "text": "operative",
+        "why": "Choice C is incorrect because it’s the opposite of what the context of the text is conveying. The second sentence of the text indicates that baleen whale accessory spleens may not be useless, not that they aren’t “operative,” or functional.",
+        "gloss": "functional"
+      },
+      {
+        "label": "D",
+        "text": "latent",
+        "why": "Choice D is the best answer because it most logically completes the text’s discussion of baleen whale accessory spleens. In this context, “latent” means dormant or functionless. The text sets up a contrast between the idea that baleen whale accessory spleens appear not to have a function and the research indicating that the accessory spleen may actually have a role in supporting the whales’ diving mechanisms. This context therefore conveys the idea that the assumption that baleen whale accessory spleens are latent may be incorrect.",
+        "gloss": "dormant or functionless"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m2-q9",
+    "source": "College Board Practice Test 8, Module 2, Question 9",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "cross-text-connections",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 2,
+    "number": 9,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Text 1 Ecologists have long wondered how thousands of microscopic phytoplankton species can live together near ocean surfaces competing for the same resources. According to conventional wisdom, one species should emerge after outcompeting the rest. So why do so many species remain? Ecologists’ many efforts to explain this phenomenon still haven’t uncovered a satisfactory explanation. Text 2 Ecologist Michael Behrenfeld and colleagues have connected phytoplankton’s diversity to their microscopic size. Because these organisms are so tiny, they are spaced relatively far apart from each other in ocean water and, moreover, experience that water as a relatively dense substance. This in turn makes it hard for them to move around and interact with one another. Therefore, says Behrenfeld’s team, direct competition among phytoplankton probably happens much less than previously thought.",
+    "question": "Based on the texts, how would Behrenfeld and colleagues (Text 2) most likely respond to the “conventional wisdom” discussed in Text 1?",
+    "rule": "Based on Text 2, it represents how Behrenfeld and colleagues would most likely respond to the “conventional wisdom” discussed in Text 1.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "By arguing that it is based on a misconception about phytoplankton species competing with one another",
+        "why": "Choice A is the best answer because based on Text 2, it represents how Behrenfeld and colleagues would most likely respond to the “conventional wisdom” discussed in Text 1. The conventional wisdom cited holds the opinion that when there is species diversity within a phytoplankton population, “one species should emerge after outcompeting the rest”—that is, after being so successful in competing for resources that the other species vanish from the population. However, Text 2 explains that according to Behrenfeld and colleagues, phytoplankton are so small and spaced so far apart in the water that there is “much less” direct competition for resources within phytoplankton populations than scientists had previously thought. 21 SAT PRACTICE TEST #8 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2"
+      },
+      {
+        "label": "B",
+        "text": "By asserting that it fails to recognize that routine replenishment of ocean nutrients prevents competition between phytoplankton species",
+        "why": "Choice B is incorrect because Text 2 never discusses whether routine replenishment of ocean nutrients affects competition between phytoplankton species."
+      },
+      {
+        "label": "C",
+        "text": "By suggesting that their own findings help clarify how phytoplankton species are able to compete with larger organisms",
+        "why": "Choice C is incorrect because the interspecies competition discussed in both texts is specifically between phytoplankton species, and neither text considers whether phytoplankton compete for resources with larger nonphytoplankton species."
+      },
+      {
+        "label": "D",
+        "text": "By recommending that more ecologists focus their research on how competition among phytoplankton species is increased with water density",
+        "why": "Choice D is incorrect because according to Text 2, Behrenfeld and colleagues argue that water density decreases, not increases, competition between phytoplankton species."
+      }
+    ],
+    "underline": "conventional wisdom",
+    "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Ecologists have long wondered how thousands of microscopic phytoplankton species can live together near ocean surfaces competing for the same resources. According to <span role=\"region\" aria-label=\"Referenced Content\"><u>conventional wisdom</u></span>, one species should emerge after outcompeting the rest. So why do so many species remain? Ecologists’ many efforts to explain this phenomenon still haven’t uncovered a satisfactory explanation.</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>Ecologist Michael Behrenfeld and colleagues have connected phytoplankton’s diversity to their microscopic size. Because these organisms are so tiny, they are spaced relatively far apart from each other in ocean water and, moreover, experience that water as a relatively dense substance. This in turn makes it hard for them to move around and interact with one another. Therefore, says Behrenfeld’s team, direct competition among phytoplankton probably happens much less than previously thought.</p>"
+  },
+  {
+    "id": "missed-pt8-m2-q12",
+    "source": "College Board Practice Test 8, Module 2, Question 12",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "central-ideas-details",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 2,
+    "number": 12,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Poetry in Classical Nahuatl, the language of the Aztec Empire, relies on difrasismo, or a parallel noun construction that conventionally operates as a single metaphor. For example, the common difrasismo in cuauhtli in ocelotl (literally, “the eagle, the jaguar”) signifies “warrior.” The device’s function is both formal—providing structure to lines of verse—and ritual: semantic relations among the two nouns and the concept they signify can be tenuous, as in the previous example, such that difrasismos are often only intelligible according to the conceptual associations observed in Aztec ceremonial culture.",
+    "question": "Which statement about the difrasismo in cuauhtli in ocelotl is most strongly supported by the text?",
+    "rule": "Presents a statement about the difrasismo in cuauhtli in ocelotl that is directly supported by the text.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Its metaphorical significance derives from the semantic equivalence of the two nouns constituting the difrasismo.",
+        "why": "Choice A is incorrect because the text doesn’t indicate that the two nouns used in a difrasismo are semantically equivalent; instead, the text indicates that the two nouns used in a difrasismo make up a single metaphor whose meaning is often intelligible only in the context of information supplied by Aztec ceremonial culture."
+      },
+      {
+        "label": "B",
+        "text": "Its unintelligibility may cause its formal function within a line of verse to go unnoticed by present-day readers.",
+        "why": "Choice B is incorrect because the text doesn’t indicate that there’s a relationship between the formal function of the difrasismo and the difrasismo’s intelligibility. Additionally, the text suggests that present-day readers who are familiar with Aztec ceremonial culture wouldn’t find the difrasismo to be unintelligible."
+      },
+      {
+        "label": "C",
+        "text": "Its apparent obscurity can be resolved when considered in the proper cultural context.",
+        "why": "Choice C is the best answer because it presents a statement about the difrasismo in cuauhtli in ocelotl that is directly supported by the text. The text begins by describing difrasismo, a device used in Classical Nahuatl poetry. The text then mentions the device’s two functions: a formal one (giving structure to lines of verse) and a ritualistic one. The text indicates that the relation between the words in a difrasismo may appear tenuous without the additional information supplied by Aztec ceremonial culture but that the meaning becomes intelligible in the context of that information. Therefore, the difrasismo’s apparent obscurity can be resolved when considered in the proper cultural context."
+      },
+      {
+        "label": "D",
+        "text": "Its frequency in Classical Nahuatl poetry confirms its intelligibility to the Aztec audience.",
+        "why": "Choice D is incorrect because the text doesn’t indicate that the frequency of difrasismo’s use in Classical Nahuatl is a necessary feature of intelligibility: the text indicates that an infrequently used difrasismo would presumably also be intelligible to members of an Aztec audience who are sufficiently familiar with Aztec ceremonial culture."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m2-q13",
+    "source": "College Board Practice Test 8, Module 2, Question 13",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "central-ideas-details",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 2,
+    "number": 13,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Eighteenth-century economist Adam Smith is famed for his metaphor of the invisible hand, which he putatively used to illustrate a robust model of how individuals produce aggregate benefits by pursuing their own economic interests. Note “putatively”: as Gavin Kennedy has shown, Smith deploys this metaphor only once in his economic writings—to make a narrow point about the then-dominant economic theory of mercantilism—and it was largely ignored until some twentieth-century economists eager to secure an intellectual pedigree for their views elevated it to a fully-fledged paradigm.",
+    "question": "Which choice best states the main idea of the text?",
+    "rule": "Most accurately states the main idea of the text.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Although Smith is famed for his metaphor of the invisible hand, the metaphor was largely ignored until economists in the twentieth century came to realize that the metaphor was a robust model that anticipated their own views.",
+        "why": "Choice A is incorrect. Although the text indicates that Smith’s metaphor was largely ignored until some twentieth-century economists revived it and bolstered its status, the text suggests that the later economists used Smith’s metaphor to self-servingly boost their own work while ignoring the original context in which 23 SAT PRACTICE TEST #8 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2 Smith wrote it. Moreover, the statement in this choice fails to reflect the text’s emphasis on Smith’s limited use of the metaphor in his work."
+      },
+      {
+        "label": "B",
+        "text": "Some twentieth-century economists gave Smith’s metaphor of the invisible hand a significance it does not have in Smith’s work, but it is nevertheless a useful model of how individuals produce aggregate benefits by pursuing their own economic interests.",
+        "why": "Choice B is incorrect. Although the text indicates that some twentieth-century economists altered the significance of Smith’s metaphor, the text doesn’t suggest that the metaphor is a “useful model” of how aggregate benefits arise from individuals’ selfish actions, let alone that this usefulness is unaffected by taking the metaphor out of its original context."
+      },
+      {
+        "label": "C",
+        "text": "Smith’s metaphor of the invisible hand has been interpreted as a model of how individuals acting in their own interest produce aggregate benefits, but it was intended as a subtle critique of the economic theory of mercantilism.",
+        "why": "Choice C is incorrect. Although the text indicates that Smith’s metaphor was intended as a model of how individuals acting in their own interest produce aggregate benefits and it was written within the context of the now-outdated economic theory of mercantilism, these points are subordinate to the primary idea in the text, which is that Smith’s use of the metaphor was tightly constrained but twentieth-century economists ignored the original context so that they could use the metaphor to suggest, without support, that Smith would agree with their economic views."
+      },
+      {
+        "label": "D",
+        "text": "The reputation of Smith’s metaphor of the invisible hand is not due to the importance of the metaphor in Smith’s work but rather to the promotion of the metaphor by some later economists for their own ends.",
+        "why": "Choice D is the best answer because it most accurately states the main idea of the text. The text explains that economist Adam Smith’s famous metaphor of the invisible hand was putatively (that is, widely assumed but not proven) intended to illustrate a robust model (a consistently accurate generalization) of how individuals pursuing their own economic interests can create broader benefits for the population. The text then emphasizes the lack of affirmative evidence for this idea by calling out the term “putatively,” and explaining that, according to Gavin Kennedy, Smith used the metaphor only once in his works, in reference to specific circumstances related to the now-outdated economic view known as mercantilism, and that the metaphor didn’t garner much attention until economists in the twentieth century held it up as a paradigm (a theoretical framework in the field) and thereby implied that Smith shared some of their views on economics. By emphasizing “putatively,” the text implies that there is no independent reason to believe that Smith would agree with the metaphor’s use outside of the specific context for which he wrote it and that, therefore, the twentieth-century economists who used it did so to support their own views without regard for the metaphor’s importance to Smith’s work."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m2-q17",
+    "source": "College Board Practice Test 8, Module 2, Question 17",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "inferences",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 2,
+    "number": 17,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "The domestic sweet potato (Ipomoea batatas) descends from a wild plant native to South America. It also populates the Polynesian Islands, where evidence confirms that Native Hawaiians and other Indigenous peoples were cultivating the plant centuries before seafaring first occurred over the thousands of miles of ocean separating them from South America. To explain how the sweet potato was first introduced in Polynesia, botanist Pablo Muñoz-Rodríguez and colleagues analyzed the DNA of numerous varieties of the plant, concluding that Polynesian varieties diverged from South American ones over 100,000 years ago. Given that Polynesia was peopled only in the last three thousand years, the team concluded that ___",
+    "question": "Which choice most logically completes the text?",
+    "rule": "Most logically completes the text’s discussion of the sweet potato in Polynesia.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "the cultivation of the sweet potato in Polynesia likely predates its cultivation in South America.",
+        "why": "Choice A is incorrect. The text doesn’t provide any information about when the sweet potato began to be cultivated in South America, so there’s no support for the conclusion that cultivation began in Polynesia before it began in South America."
+      },
+      {
+        "label": "B",
+        "text": "Polynesian peoples likely acquired the sweet potato from South American peoples only within the last three thousand years.",
+        "why": "Choice B is incorrect because the text indicates that the sweet potato was being cultivated in Polynesia long before sea journeys between Polynesia and South America began. Therefore, it wouldn’t be reasonable to conclude that Polynesian peoples acquired the sweet potato from South American peoples. Additionally, the text indicates that the Polynesian varieties of sweet potato diverged from the South American varieties thousands of years before people 26 SAT PRACTICE TEST #8 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2 settled in Polynesia, which suggests that the sweet potato was already present in Polynesia when people arrived."
+      },
+      {
+        "label": "C",
+        "text": "human activity likely played no role in the introduction of the sweet potato in Polynesia.",
+        "why": "Choice C is the best answer because it most logically completes the text’s discussion of the sweet potato in Polynesia. The text indicates that the sweet potato is found in Polynesia but originated in South America, and that the sweet potato was being cultivated by Native Hawaiians and other Indigenous peoples in Polynesia long before sea voyages between South America and Polynesia began. The text goes on to note that research by Muñoz-Rodríguez and colleagues has established that the Polynesian varieties of sweet potato split from South American varieties more than 100,000 years ago, which is thousands of years before humans settled in Polynesia. If Polynesian peoples were cultivating the sweet potato before sea voyages between Polynesia and South America began, and if Polynesian varieties of sweet potato diverged from South American varieties well before people were in Polynesia, it can reasonably be concluded that humans didn’t play a role in bringing the sweet potato to Polynesia."
+      },
+      {
+        "label": "D",
+        "text": "Polynesian sweet potato varieties likely descend from a single South American variety that was domesticated, not wild.",
+        "why": "Choice D is incorrect because the text states that the domestic sweet potato, which is found in Polynesia, descends from a wild South American plant, not from a domesticated South American plant. The only people that the text describes as cultivating the sweet potato are Native Hawaiians and other Indigenous peoples of Polynesia."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m2-q18",
+    "source": "College Board Practice Test 8, Module 2, Question 18",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "inferences",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 2,
+    "number": 18,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "The morphological novelty of echinoderms—marine invertebrates with radial symmetry, usually starlike, around a central point—impedes comparisons with most other animals, in which bilateral symmetry on an anterior-posterior (head to tail) axis through a trunk is typical. Particularly puzzling are sea stars, thought to have evolved a headless layout from a known bilateral origin. Applying genomic knowledge of Saccoglossus kowalevskii acorn worms (close relatives of sea stars, and thus expected to have similar markers for corresponding anatomical regions) to the body patterning genes of Patiria miniata sea stars, Laurent Formery et al. observed activity only in anterior genes across P. miniata’s entire body and some posterior genes limited to the edges, suggesting that ___",
+    "question": "Which choice most logically completes the text?",
+    "rule": "Most logically completes the text’s discussion of the morphology (form and structure) of sea stars, a type of echinoderm.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "despite the greater prevalence of anterior genes in sea stars’ genetic makeup, posterior genes active at the body’s perimeter are primarily responsible for the starlike layout that distinguishes sea stars’ radial symmetry from that of other echinoderms.",
+        "why": "Choice A is incorrect because the text doesn’t identify how any particular region of sea stars’ bodies influences the layout of sea stars’ radial symmetry. Moreover, the text indicates that the radial symmetry of echinoderms is “usually starlike,” not that a starlike layout distinguishes sea stars from other echinoderms."
+      },
+      {
+        "label": "B",
+        "text": "contrary to the belief that they evolved from early ancestors with the bilateral form typical of many other animals, sea stars instead originated with an atypical body layout that was neither bilaterally nor radially symmetrical.",
+        "why": "Choice B is incorrect because the text doesn’t suggest that the idea that sea stars evolved from an ancestor with bilateral symmetry is incorrect (describing the bilateral origin as “known”) and doesn’t address any body plans other than those with radial or bilateral symmetry. The text strongly suggests that rather than revealing something about sea stars’ origin, Formery et al.’s findings contradict the assumption that the current body plan of sea stars is “headless.”"
+      },
+      {
+        "label": "C",
+        "text": "although the two species are closely related, there is only minimal correspondence in the genetic markers for head, tail, and trunk region development in P. miniata sea stars and S. kowalevskii acorn worms.",
+        "why": "Choice C is incorrect because the text suggests that Formery et al. were able to make determinations about P. miniata sea stars’ body plan based on the comparability of genetic markers between P. miniata and S. kowalevskii acorn worms. The text indicates only that little or no activity was observed in certain types of genes associated with body development in P. miniata, not that those genes turned out to largely differ from body-development genes in S. kowalevskii."
+      },
+      {
+        "label": "D",
+        "text": "rather than undergoing changes resulting in the eventual elimination of a head region in their radial body plan, as previously assumed, sea stars’ morphology evolved to completely lack a trunk and consist primarily of a head region.",
+        "why": "Choice D is the best answer because it most logically completes the text’s discussion of the morphology (form and structure) of sea stars, a type of echinoderm. The text indicates that echinoderms have radially symmetrical body plans (symmetrical around a central point, usually in the form of a star), whereas most animals have bilaterally symmetrical body plans (symmetrical along an axis running from head to tail through a trunk). According to the text, sea stars are unusual echinoderms because, despite their radial body plan, they descended from known bilateral ancestors. This shift in body plan was thought to be a process of losing the genetic markers associated with the head region. The text explains that by comparing the genes of one sea star species (P. miniata) to those of a close relative, the acorn worm, researchers determined that instead, anterior (head) genes are active across the sea star’s entire body, posterior (tail) genes are active in limited, peripheral locations of the body, and no trunk-related genes are active. This finding strongly suggests that, rather than becoming “headless” as they evolved from a bilateral ancestor, sea stars developed a body plan consisting almost entirely of a head region with a minimal tail region and no trunk region present."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m2-q20",
+    "source": "College Board Practice Test 8, Module 2, Question 20",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "form-structure-sense",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 2,
+    "number": 20,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Formed in 1967 to foster political and economic stability within the Asia-Pacific region, the Association of Southeast Asian Nations was originally made up of five members: Thailand, the Philippines, Singapore, Malaysia, and Indonesia. By the end of the 1990s, the organization ___ its initial membership.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the use of verbs to express tense.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "has doubled",
+        "why": "Choice A is incorrect because the present perfect verb “has doubled” doesn’t indicate that the organization’s doubling of its initial membership occurred during a specific period in the past."
+      },
+      {
+        "label": "B",
+        "text": "had doubled",
+        "why": "Choice B is the best answer. The convention being tested is the use of verbs to express tense. In this choice, the past perfect verb “had doubled” properly indicates that the doubling of the organization’s initial membership occurred during a specific period before the present (between the organization’s founding in 1967 and the end of the 1990s)."
+      },
+      {
+        "label": "C",
+        "text": "doubles",
+        "why": "Choice C is incorrect because the present tense verb “doubles” doesn’t indicate that the organization’s doubling of its initial membership occurred during a specific period in the past."
+      },
+      {
+        "label": "D",
+        "text": "will double",
+        "why": "Choice D is incorrect because the future tense verb “will double” doesn’t indicate that the organization’s doubling of its initial membership occurred during a specific period in the past."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m2-q26",
+    "source": "College Board Practice Test 8, Module 2, Question 26",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "boundaries",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 2,
+    "number": 26,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Jetties—long, narrow structures that extend from a landmass into the water—are often constructed to protect coastlines from erosion. Jetties can sometimes have the opposite ___ obstructing the natural flow of sand along the shore can lead to increased erosion in some areas.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the use of punctuation within a sentence.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "effect, though;",
+        "why": "Choice A is the best answer. The convention being tested is the use of punctuation within a sentence. This choice correctly uses a comma to separate the supplementary adverb “though” from the preceding main clause (“Jetties can sometimes have the opposite effect”) and uses a semicolon to join the next main clause (“obstructing…areas”) to the rest of the sentence. Further, placing the semicolon after “though” logically indicates that the information earlier in this sentence (that jetties can sometimes cause erosion) is contrary to what might be assumed from the information in the previous sentence (that jetties are often constructed for the purpose of protecting coastlines from erosion)."
+      },
+      {
+        "label": "B",
+        "text": "effect, though",
+        "why": "Choice B is incorrect because it fails to mark the boundary between the two main clauses with appropriate punctuation. With “though…areas” functioning as a subordinate clause following the comma, this choice illogically indicates that the following information (that obstructing the natural flow of sand along the shore can sometimes lead to erosion) is contrary to the information earlier in the sentence (that jetties can sometimes cause erosion). Instead, the information following “though” supports the previous claim about the erosive effects of jetties."
+      },
+      {
+        "label": "C",
+        "text": "effect; though",
+        "why": "Choice C is incorrect because it’s not conventional to use a semicolon in this way to separate a main clause from a dependent clause. Further, it illogically indicates that the following information (that obstructing the natural flow of sand along the shore can sometimes lead to erosion) is contrary to the information earlier in the sentence (that jetties can sometimes cause erosion). Instead, the information following “though” supports the previous claim about the erosive effects of jetties."
+      },
+      {
+        "label": "D",
+        "text": "effect, though,",
+        "why": "Choice D is incorrect because it results in a comma splice. Commas can’t be used in this way to set off a supplementary word or phrase between two main clauses."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m2-q31",
+    "source": "College Board Practice Test 8, Module 2, Question 31",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "transitions",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 2,
+    "number": 31,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Economist Elinor Ostrom’s studies of communities around the world have empirically demonstrated that common pool resources, such as grazing lands, can be sustainably managed by the people who use them (rather than through private entities or centralized governments). ___ Ostrom’s work is a repudiation of the “tragedy of the commons,” the view that individuals will inevitably overexploit a finite shared resource if given unfettered access to it.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "rule": "“As such” correctly signals that the claim in this sentence—that Ostrom’s work is a repudiation of the “tragedy of the commons” view—follows logically from the information about Ostrom’s studies in the previous sentence.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "By contrast,",
+        "why": "Choice A is incorrect because “by contrast” illogically signals that the information in this sentence contrasts with the information about Ostrom’s studies in the previous sentence. Instead, the claim that Ostrom’s work repudiates the “tragedy of the commons” view follows logically from that information."
+      },
+      {
+        "label": "B",
+        "text": "For example,",
+        "why": "Choice B is incorrect because “for example” illogically signals that the claim in this sentence exemplifies the information about Ostrom’s studies in the previous sentence. Instead, the claim that Ostrom’s work repudiates the “tragedy of the commons” view follows logically from that information."
+      },
+      {
+        "label": "C",
+        "text": "That said,",
+        "why": "Choice C is incorrect because “that said” illogically signals that the information in this sentence is an exception or caveat to the information about Ostrom’s studies in the previous sentence. Instead, the claim that Ostrom’s work repudiates the “tragedy of the commons” view follows logically from that information."
+      },
+      {
+        "label": "D",
+        "text": "As such,",
+        "why": "Choice D is the best answer. “As such” correctly signals that the claim in this sentence—that Ostrom’s work is a repudiation of the “tragedy of the commons” view—follows logically from the information about Ostrom’s studies in the previous sentence. According to that sentence, Ostrom’s studies demonstrate that common pool resources can in fact be sustainably managed by the people who use them."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt8-m2-q33",
+    "source": "College Board Practice Test 8, Module 2, Question 33",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "rhetorical-synthesis",
+    "test": "Practice Test 8",
+    "taken": "2026-08-13",
+    "module": 2,
+    "number": 33,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "While researching a topic, a student has taken the following notes: • Las sergas de Esplandián was a novel popular in sixteenth-century Spain. • The novel featured a fictional island inhabited solely by Black women and known as California. • That same century, Spanish explorers learned of an “island” off the west coast of Mexico. • They called it California after the island in the novel. • The “island” was actually the peninsula now known as Baja California (“Lower California”), which lies to the south of the US state of California. The student wants to emphasize the role a misconception played in the naming of a place.",
+    "question": "Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "rule": "The sentence emphasizes the role a misconception played in the naming of a place, explaining that Spanish explorers mistook a peninsula for an island and, as a result, named the peninsula after a fictional island, California.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "The novel Las sergas de Esplandián featured a fictional island known as California.",
+        "why": "Choice A is incorrect. The sentence mentions a novel that featured a fictional island, California; it doesn’t emphasize the role a misconception played in the naming of a place."
+      },
+      {
+        "label": "B",
+        "text": "To the south of the US state of California lies Baja California (“Lower California”), originally called California after a fictional place.",
+        "why": "Choice B is incorrect. The sentence notes that Baja California was originally named after a fictional place; it doesn’t emphasize the role a misconception—specifically, the Spanish explorers’ mistaken belief that the peninsula was an island—played in the naming of a place."
+      },
+      {
+        "label": "C",
+        "text": "In the sixteenth century, Spanish explorers learned of a peninsula off the west coast of Mexico and called it California.",
+        "why": "Choice C is incorrect. The sentence indicates when Spanish explorers learned of the peninsula they called California; it doesn’t emphasize the role a misconception played in the naming of a place."
+      },
+      {
+        "label": "D",
+        "text": "Thinking it was an island, Spanish explorers called a peninsula California after an island in a popular novel. STOP If you finish before time is called, you may check your work on this module only. Do not turn to any other module in the test.",
+        "why": "Choice D is the best answer. The sentence emphasizes the role a misconception played in the naming of a place, explaining that Spanish explorers mistook a peninsula for an island and, as a result, named the peninsula after a fictional island, California."
       }
     ]
   }

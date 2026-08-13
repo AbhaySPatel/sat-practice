@@ -136,6 +136,37 @@ TESTS = [
             2: [5, 11, 12, 24, 28],
         },
     },
+    {
+        'key': 'pt7',
+        'label': 'Practice Test 7',
+        'order': 4,
+        'taken': '2026-08-12',
+        'questions_pdf': Path('book/sat-practice-test-7-digital.pdf'),
+        'answers_pdf': Path('book/sat-practice-test-7-answers-digital.pdf'),
+        'modules': {1: range(3, 19), 2: range(19, 31)},
+        'per_module': 33,
+        # tests/Test 7 on 12 Aug.jpeg, scored against the official key. He marked
+        # every one of these himself except M1 Q18, which he had missed.
+        'missed': {
+            1: [3, 5, 6, 8, 13, 18, 33],
+            2: [3, 8, 11, 16, 25],
+        },
+    },
+    {
+        'key': 'pt8',
+        'label': 'Practice Test 8',
+        'order': 5,
+        'taken': '2026-08-13',
+        'questions_pdf': Path('book/sat-practice-test-8-digital.pdf'),
+        'answers_pdf': Path('book/sat-practice-test-8-answers-digital.pdf'),
+        'modules': {1: range(3, 17), 2: range(17, 31)},
+        'per_module': 33,
+        # tests/Test 8 on 13 Aug.jpeg. His own marking of this one was exact.
+        'missed': {
+            1: [9, 10, 15, 16, 20, 22, 24, 25, 31],
+            2: [3, 5, 9, 12, 13, 17, 18, 20, 26, 31, 33],
+        },
+    },
 ]
 
 # --- Reading the test PDF ---------------------------------------------------
@@ -144,6 +175,10 @@ TESTS = [
 # border sometimes lands in front of it ("- 1").
 NUM = re.compile(r'^[-~\s]*(\d{1,2})\s*$')
 OPTION = re.compile(r'^([A-D])\)\s*(.*)$')
+# The first page of Test 8's Module 2 sets its options as bullets rather than
+# "A)", so the four choices arrive unlabelled. They are still in order, so the
+# labels are assigned from their position -- which is all "A)" was telling us.
+BULLET = re.compile(r'^[•·▪]\s*(.+)$')
 
 # The blank in a cloze question extracts as the bare word "blank", usually on a
 # line of its own but sometimes running on from the words before it ("writing
@@ -203,17 +238,25 @@ def split_questions(doc, pages, total):
     expected number is ever accepted, and only when four options follow it
     before the number after that. Both together are enough: this recovers 33 of
     33 on each module of Practice Test 5.
+
+    The number after next is accepted too, because a question number occasionally
+    fails to extract at all -- Test 7's Module 2 has no line for question 23 --
+    and insisting on the exact next one loses every question after it as well: 23
+    through 33, ten of them beyond the one actually missing. A gap of one is the
+    most that is safe. Two would let a page-number footer through, and the footers
+    on these pages run only a few ahead of the question numbers.
     """
     lines = page_lines(doc, pages)
     starts = {}
     expect, i = 1, 0
     while i < len(lines) and expect <= total:
         m = NUM.match(lines[i][0])
-        if m and int(m.group(1)) == expect:
+        if m and int(m.group(1)) in (expect, expect + 1) and int(m.group(1)) <= total:
+            found = int(m.group(1))
             ahead = '\n'.join(ln for ln, _ in lines[i + 1:i + 130])
-            if re.search(r'\nA\)', ahead):
-                starts[expect] = i
-                expect += 1
+            if re.search(r'\n(?:A\)|[•·▪])', ahead):
+                starts[found] = i
+                expect = found + 1
         i += 1
 
     blocks = {}
@@ -226,14 +269,41 @@ def split_questions(doc, pages, total):
     return blocks
 
 
+def marks_line_breaks(doc, pages):
+    """Does this PDF end a wrapped line with a space?
+
+    The rule page_lines depends on -- wrapped line ends with a space, mid-word
+    break does not -- is a property of how a particular PDF was produced, not of
+    the format. Tests 5 and 6 follow it on 95% of wrapped lines. Tests 7 and 8
+    follow it on 2%, so applying it there glues every line onto the next: "the
+    mostlogical and precise word", "wild salmon.Which choice completes the text".
+    A prompt fused to the passage like that is a prompt the splitter cannot find.
+
+    Measured per document rather than configured per test, so the next test is
+    read by whichever convention it actually uses.
+    """
+    total = spaced = 0
+    for p in pages:
+        for line in doc[p].get_text().split('\n'):
+            if len(line.strip()) < 25:      # short lines end a paragraph anyway
+                continue
+            total += 1
+            spaced += line != line.rstrip()
+    return total > 0 and spaced / total > 0.5
+
+
 class Joiner:
     """Rebuilds running text from PDF lines, respecting the mid-word break rule
     described in page_lines: a line that ended with a space gets a space after
-    it, one that did not is glued straight onto what follows."""
+    it, one that did not is glued straight onto what follows.
 
-    def __init__(self):
+    `always_space` turns that rule off for a PDF that does not follow it, where
+    every line break is a word boundary and there is nothing to distinguish."""
+
+    def __init__(self, always_space=False):
         self.parts = []
         self.space_after_last = True
+        self.always_space = always_space
 
     def add(self, raw):
         content = raw.strip()
@@ -242,28 +312,35 @@ class Joiner:
         if self.parts and self.space_after_last:
             self.parts.append(' ')
         self.parts.append(content)
-        self.space_after_last = raw != raw.rstrip()
+        self.space_after_last = self.always_space or raw != raw.rstrip()
 
     def text(self):
         return ''.join(self.parts)
 
 
-def parse_block(block):
+def parse_block(block, always_space=False):
     """Split one question's lines into passage, prompt and options."""
-    body, options, label = Joiner(), {}, None
+    body, options, label = Joiner(always_space), {}, None
     # Options always close a question. Anything textual after them belongs to
     # whatever comes next -- typically the caption of the following question's
     # chart, which reads like prose and so survives is_junk.
     seen_option = False
+    # Bullets are only ever the choices when there are no lettered ones. A
+    # Rhetorical Synthesis question sets the student's research notes as a bulleted
+    # list ABOVE its "A)" choices, so reading bullets as options unconditionally
+    # turns the notes into the answers and the question into nonsense.
+    lettered = any(OPTION.match(l.strip()) for l in block)
     for raw in block:
         m = OPTION.match(raw.strip())
-        if m:
-            label = m.group(1)
+        bullet = None if (m or lettered) else BULLET.match(raw.strip())
+        if m or (bullet and len(options) < 4):
+            label = m.group(1) if m else 'ABCD'[len(options)]
+            rest = m.group(2) if m else bullet.group(1)
             seen_option = True
-            options[label] = Joiner()
+            options[label] = Joiner(always_space)
             # Feed the text after "A)" back in carrying the original line's
             # trailing space, so an option broken mid-word rejoins too.
-            options[label].add(m.group(2) + (' ' if raw != raw.rstrip() else ''))
+            options[label].add(rest + (' ' if raw != raw.rstrip() else ''))
             continue
         if label:
             # A wrapped option line. Anything junk-looking means the options are
@@ -287,7 +364,12 @@ def parse_block(block):
             raw = raw.rstrip() + ' '
         body.add(raw)
 
-    text = BLANK_TOKEN.sub('___', body.text())
+    # Where the PDF marks no line breaks, the placeholder fuses to the word before
+    # it -- "some linguists reason thatblank" -- and BLANK_TOKEN, which requires a
+    # non-letter either side, will not see it. Prised off first. The trailing
+    # guard keeps "blanket" and "blankly" whole.
+    text = re.sub(r'(?<=[a-z])blank(?![a-z])', ' blank', body.text())
+    text = BLANK_TOKEN.sub('___', text)
     text = re.sub(r'\s+([.,;:?!])', r'\1', text)
     text = re.sub(r'\s+', ' ', text).strip()
     # Guarantee exactly one space either side of the blank, whichever way it was
@@ -463,7 +545,10 @@ def classify(prompt, rationale):
         # bank, where the 11 cross-text uses and the 2 single-text ones split exactly
         # on whether a numbered Text is named.
         (r'main idea of the text|According to the text|'
-         r'would most likely agree with which statement', 'central-ideas-details'),
+         r'would most likely agree with which statement|'
+         # Same source of truth as the rule above: the question bank holds this
+         # very item -- the difrasismo one -- and files it here.
+         r'most strongly supported by the text', 'central-ideas-details'),
     ):
         if re.search(pattern, prompt, re.I):
             return skill
@@ -512,6 +597,10 @@ def gloss_options(opts, per_option, manual, word_index):
 def build(test):
     import fitz
     doc = fitz.open(test['questions_pdf'])
+    all_pages = [p for pages in test['modules'].values() for p in pages]
+    always_space = not marks_line_breaks(doc, all_pages)
+    if always_space:
+        print(f'  {test["label"]}: line breaks carry no space; joining on every one')
     answers = read_answers(test['answers_pdf'], test['per_module'])
     manual = load_manual()
     word_index = load_word_index()
@@ -529,7 +618,7 @@ def build(test):
                 continue
             block, page = found
 
-            text, options = parse_block(block)
+            text, options = parse_block(block, always_space)
             text, underline = pull_underline(text)
             passage, prompt = split_prompt(text)
 
@@ -848,7 +937,7 @@ def main():
         print(f'\n  {len(twice)} question(s) missed on more than one test:')
         for rows in twice:
             where = ', '.join(f'{r["test"]} M{r["module"]}Q{r["number"]}' for r in rows)
-            print(f'    {rows[0]["realSkill"]:<24} {where}')
+            print(f'    {rows[0]["realSkill"] or "unclassified":<24} {where}')
 
     if all_problems:
         print(f'\n  {len(all_problems)} need a look:')
