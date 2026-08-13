@@ -2032,3 +2032,42 @@ math { font-size: 1.06em; }
    bookkeeping, not a result, and it goes away on its own. */
 .day-split .is-rest { opacity: 0.72; font-style: italic; }
 .day-split .is-rest b { font-weight: 600; color: var(--muted); }
+
+/* A Reading and Writing chart keeps its paper in both themes. Its greyscale is
+   the legend -- #CDCDCD against #444444 tells one data series from another -- so
+   it needs the white ground it was drawn for. `color` is set alongside the
+   background because the axes and labels arrive as currentColor and must resolve
+   against this ink, not the card's. */
+.math-stem.is-paper {
+  background: #ffffff;
+  color: #1a202c;
+  --figure-paper: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+.math-stem.is-paper svg { margin: 2px auto 8px; }
+
+/* A restored passage marks the portion the question asks about in one of two ways,
+   because College Board does: a real <u>, or a region span carrying only an
+   aria-label. The second is invisible without this, and a question that says "the
+   underlined portion" with nothing underlined is the exact bug this was fixing. */
+.math-stem u,
+.math-stem [aria-label="Referenced Content"] {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+/* Both at once must not double up into a thicker rule. */
+.math-stem [aria-label="Referenced Content"] u { text-decoration: none; }
+
+/* .math-stem now carries restored Reading passages as well as maths stems, and a
+   reading passage runs to a full paragraph -- so it needs reading-size type, the
+   same setting .cloze.is-prose uses. Deliberately NOT `white-space: pre-line`
+   like that rule: these passages are real markup with their own paragraphs, and
+   honouring source newlines would break every line where the JSON happens to wrap. */
+.math-stem {
+  font-size: 1.05rem;
+  line-height: 1.66;
+  color: var(--body-text);
+}

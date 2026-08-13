@@ -12,7 +12,7 @@
 // its markup, but the banks are fetched from here, so nothing was busting them --
 // a browser could serve a months-old vocab.json against new code, which is
 // exactly what happened. Bump this whenever a file under banks/ changes.
-const DATA_VERSION = '2026-08-12a';
+const DATA_VERSION = '2026-08-12c';
 
 // Official College Board banks only. banks/context.json is deliberately absent
 // -- see the note in the README about Words in Context and the direction drill.
@@ -961,6 +961,9 @@ function renderMathStem(question) {
   passageEl.hidden = true;
   if (!mathStemEl) return;
   mathStemEl.hidden = false;
+  // Maths figures are monochrome line art and follow the text colour instead --
+  // only the Reading charts need their paper. See renderPassage.
+  mathStemEl.classList.remove('is-paper');
   setMarkup(mathStemEl, question.questionHtml);
 }
 
@@ -969,7 +972,33 @@ function renderPassage(question, showSignal) {
   if (mathStemEl) {
     mathStemEl.hidden = true;
     mathStemEl.textContent = '';
+    mathStemEl.classList.remove('is-paper');
   }
+
+  // A passage whose figure is a graph or a data table cannot be text nodes -- that
+  // is what put 138 questions behind a "go and open the PDF" notice, with the
+  // graph's axis labels flattened into the prose. fetch_rw_figures.py fetches the
+  // real thing from the API and sanitises it through the same whitelist as Maths,
+  // so it renders here instead. It goes in its own block for the same reason the
+  // maths stem does: `.cloze` is a <p> and cannot hold a <table> or a <figure>.
+  if (question.passageHtml && mathStemEl) {
+    passageEl.textContent = '';
+    passageEl.hidden = true;
+    mathStemEl.hidden = false;
+    setMarkup(mathStemEl, question.passageHtml);
+    // These charts carry a greyscale -- #CDCDCD against #444444 -- and that grey
+    // IS the legend, telling one data series from the other. On the dark card the
+    // dark half disappears, and remapping the greys would merge two series into
+    // one. So the figure keeps its paper: an explicit light ground with dark ink,
+    // in both themes, like a printed insert. The axes and labels come through as
+    // currentColor, which resolves against that ink rather than the card's.
+    mathStemEl.classList.toggle('is-paper', question.passageHtml.includes('<svg'));
+    // The blank arrives inside that markup as #passageBlank, so fillBlank keeps
+    // working untouched; the signal phrase is not marked here, because these
+    // questions turn on reading a figure rather than on a word he read past.
+    return;
+  }
+
   passageEl.textContent = '';
   const signal = showSignal ? question.signal : null;
   const underline = question.underline || null;

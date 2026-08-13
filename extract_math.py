@@ -93,7 +93,7 @@ VOID = {'br', 'img', 'path', 'rect', 'line', 'use', 'circle', 'ellipse',
 ALLOWED = {
     # prose
     'p', 'span', 'div', 'em', 'strong', 'i', 'b', 'u', 'sub', 'sup', 'br',
-    'cite', 'ul', 'ol', 'li', 'table', 'caption', 'thead', 'tbody', 'tr',
+    'cite', 'blockquote', 'ul', 'ol', 'li', 'table', 'caption', 'thead', 'tbody', 'tr',
     'td', 'th', 'figure', 'figcaption', 'img',
     # MathML Core
     'math', 'mrow', 'mi', 'mn', 'mo', 'ms', 'mtext', 'mspace', 'mfrac',
@@ -220,6 +220,15 @@ SAFE_STYLE = {
     'stroke-dasharray', 'stroke-opacity', 'fill-opacity', 'opacity',
     'font-family', 'font-size', 'font-style', 'font-weight', 'text-anchor',
     'color', 'visibility',
+    # Reading and Writing stimuli are often data tables, and College Board sets
+    # their column alignment here -- a centred numeric column left-aligns without
+    # it, which makes a table of figures noticeably harder to read down.
+    'text-align', 'vertical-align',
+    # College Board marks the referenced portion of a passage three ways -- <u>,
+    # an aria-label="Referenced Content" region, and this. Strip it and a question
+    # asking about "the underlined portion" renders with nothing underlined, which
+    # is the exact bug the restoration exists to fix.
+    'text-decoration', 'text-decoration-line', 'text-decoration-thickness',
 }
 
 # College Board draws its axes and plot lines in black, which is invisible on the

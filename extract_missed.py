@@ -32,11 +32,12 @@ so this is safe to run repeatedly.
 Run:  python3 extract_missed.py
 """
 
+import glob
 import json
 import re
 import sys
 from pathlib import Path
-from collections import Counter
+from collections import Counter, defaultdict
 
 OUT = Path('banks/missed-in-test.json')
 # Typed-in questions from the Bluebook tests. An input file rather than rows
@@ -707,6 +708,88 @@ def build_bluebook():
     return rows, problems
 
 
+# Every Reading and Writing bank, because a question he missed on a test can be
+# the same item as one in any of them.
+BANK_GLOB = 'banks/cb-*.json'
+EDU_BANK = Path('banks/educator-question-bank.json')
+
+
+def _norm(s):
+    s = re.sub(r'<[^>]+>', ' ', s or '').replace('\u2019', "'")
+    return re.sub(r'[^a-z0-9]', '', s.lower())
+
+
+def borrow_from_bank(rows):
+    """Take the restored passage from the same question in the question bank.
+
+    The practice tests and the question bank share an item pool: 39 of these 50
+    questions are the very same item as a bank question, confirmed on the prompt,
+    on all four option texts and on which option is correct. Prompts here are
+    boilerplate -- "Which choice best describes data from the graph..." recurs
+    across the bank -- so the prompt alone is not evidence.
+
+    That matters because the bank copies have been repaired and these have not.
+    fetch_rw_figures.py and fetch_rw_underlines.py pulled the real chart, table or
+    underline from College Board's API into `passageHtml`; the copies here were
+    extracted from a PDF that lost them. So where the twin carries a restored
+    passage, this adopts it, and the bank becomes the single place a passage is
+    ever improved -- run this again and the improvement arrives here too.
+
+    `passageHtml` is the whole test for "restored", rather than any judgement about
+    which text reads better: it is set only by those two scripts and only from the
+    API. Where the twin has none there is nothing to gain, and 29 of the 39
+    passages are byte-identical anyway.
+
+    Nothing else is adopted. The options, the derived rule, `chose` (which
+    distractor took him -- recorded nowhere else) and the id all stay, so this
+    question keeps its own history and its own place in "Missed in a test".
+    """
+    if not rows:
+        return
+
+    pool = []
+    for path in sorted(glob.glob(BANK_GLOB)) + ([EDU_BANK] if EDU_BANK.exists() else []):
+        try:
+            pool.extend(json.loads(Path(path).read_text()))
+        except (OSError, ValueError):
+            continue
+    if not pool:
+        return
+
+    # Indexed by prompt so this is not 50 x 1,838 comparisons of full option lists.
+    by_prompt = defaultdict(list)
+    for cand in pool:
+        by_prompt[_norm(cand.get('question', ''))].append(cand)
+
+    borrowed = matched = 0
+    for row in rows:
+        mine = sorted(_norm(o['text']) for o in row['options'])
+        want = _norm(next((o['text'] for o in row['options']
+                           if o['label'] == row.get('correctLabel')), ''))
+        for cand in by_prompt.get(_norm(row.get('question', '')), []):
+            if sorted(_norm(o['text']) for o in cand['options']) != mine:
+                continue
+            theirs = _norm(next((o['text'] for o in cand['options']
+                                 if o['label'] == cand.get('correctLabel')), ''))
+            if theirs != want:
+                continue
+            matched += 1
+            if cand.get('passageHtml'):
+                row['passageHtml'] = cand['passageHtml']
+                row['hasBlank'] = cand.get('hasBlank', row.get('hasBlank', False))
+                # Whatever the twin no longer needs, this no longer needs either.
+                row.pop('figure', None)
+                row.pop('pdf', None)
+                row.pop('page', None)
+                borrowed += 1
+            break
+
+    left = sum(1 for r in rows if r.get('figure'))
+    print(f'  {matched} of {len(rows)} are the same item as a bank question; '
+          f'{borrowed} took a restored passage'
+          + (f'; {left} still need the PDF' if left else '; none still need the PDF'))
+
+
 def main():
     try:
         import fitz  # noqa: F401
@@ -740,6 +823,8 @@ def main():
     dupes = [i for i, n in Counter(r['id'] for r in all_rows).items() if n > 1]
     for i in dupes:
         all_problems.append(f'{i}: duplicate id -- check the "module" on each')
+
+    borrow_from_bank(all_rows)
 
     OUT.write_text(json.dumps(all_rows, indent=2, ensure_ascii=False) + '\n',
                    encoding='utf-8')
