@@ -32,7 +32,7 @@
     "why": "Choice D is incorrect because changing the subject would avoid making any decision altogether, which contradicts the implied advice in Text 2. The author of Text 2 presents research suggesting that directly engaging with the decision by stating preferences helps others make decisions and makes you appear more likable."
    }
   ],
-  "passageHtml": "<p><span role=\"heading\"><strong>Text 1</strong></span></p>\n<p><span role=\"region\" aria-label=\"Referenced Content\">Imagine you and your friend are trying to decide where to eat lunch.</span> When people try to make joint decisions like this, they often don\u2019t reveal their true preferences. Instead, they say they would be happy with all options because they think this response will help them appear more easygoing and likable to the other person.</p>\n<p>\u00a0</p>\n<p><span role=\"heading\"><strong>Text 2</strong></span></p>\n<p>Research shows that people who don\u2019t state their preferences when making a decision with others aren\u2019t more likable in the eyes of others. In fact, stating that you have no preference actually makes the decision more difficult for other people. It can also cause them to feel less happy with their ultimate decision and with you.</p>"
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p><span role=\"region\" aria-label=\"Referenced Content\">Imagine you and your friend are trying to decide where to eat lunch.</span> When people try to make joint decisions like this, they often don\u2019t reveal their true preferences. Instead, they say they would be happy with all options because they think this response will help them appear more easygoing and likable to the other person.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Research shows that people who don\u2019t state their preferences when making a decision with others aren\u2019t more likable in the eyes of others. In fact, stating that you have no preference actually makes the decision more difficult for other people. It can also cause them to feel less happy with their ultimate decision and with you.</p>"
  },
  {
   "id": "cb-cross-text-connections-97e5bf55",
@@ -66,7 +66,8 @@
     "text": "Philip Massinger\u2019s style in the first and last acts of The Two Noble Kinsmen is an homage to Shakespeare\u2019s style.",
     "why": "Choice D is incorrect. Text 1 doesn\u2019t suggest that Massinger was inspired by Shakespeare, and Text 2 doesn\u2019t mention Massinger at all."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>In 1916, H. Dugdale Sykes disputed claims that <em>The Two Noble Kinsmen</em> was coauthored by William Shakespeare and John Fletcher. Sykes felt Fletcher\u2019s contributions to the play were obvious\u2014Fletcher had a distinct style in his other plays, so much so that lines with that style were considered sufficient evidence of Fletcher\u2019s authorship. But for the lines not deemed to be by Fletcher, Sykes felt that their depiction of women indicated that their author was not Shakespeare but Philip Massinger.</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>Scholars have accepted <em>The Two Noble Kinsmen</em> as coauthored by Shakespeare since the 1970s: it appears in all major one-volume editions of Shakespeare\u2019s complete works. Though scholars disagree about who wrote what exactly, it is generally held that on the basis of style, Shakespeare wrote all of the first act and most of the last, while John Fletcher authored most of the three middle acts.</p>"
  },
  {
   "id": "cb-cross-text-connections-1917ba9a",
@@ -100,7 +101,8 @@
     "text": "Since all males were removed from tank 1, the females in the tank could not reproduce regardless of their size and thus some became male, whereas the presence of males in tank 2 meant that females in that tank could reproduce without first becoming male and thus they remained female.",
     "why": "Choice D is incorrect because it doesn\u2019t use the model proposed in Text 1 to explain the findings described in Text 2. It is common sense that a certain number of male fish are required for reproduction to occur in tank 1, but the model presented by Text 1 focuses on the individual reproductive benefits of protogyny, not on its potential to benefit the population by maintaining a favorable sex ratio."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Many teleost fish species are protogynous, meaning that fertile females can become fertile males. One model holds that protogyny occurs when body size confers a greater reproductive advantage on males than on females. In teleost fish, body size is irrelevant to female reproduction, but among males (which tend to be larger than females), only individuals comparatively large enough to defend territory reproduce. An individual could thus maximize its lifetime reproductive success by staying female when small and becoming male upon reaching a critical size threshold.\u00a0</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Investigating protogyny in teleost fish, Alexander Goikoetxea and colleagues placed captured spotty wrasses of typical size distributions into two mixed-sex tanks. During the breeding season, they removed all males from tank 1 but none from tank 2. They observed that sexual change began in 81 percent of females in tank 1 but in no females in tank 2.\u00a0</p>"
  },
  {
   "id": "cb-cross-text-connections-02fd3da7",
@@ -134,7 +136,8 @@
     "text": "Countries that require voting must also make the process of voting easier for their citizens.",
     "why": "Choice D is incorrect. Neither text discusses the ease or difficulty of the voting process in countries that require voting."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Public policy researcher Anthony Fowler studied the history of elections in Australia, a country that requires citizens to vote. Fowler argues that requiring citizens to vote leads to a significant increase in voters who would otherwise not have the time or motivation to vote. Thus, election results in countries that require citizens to vote better reflect the preferences of the country as a whole.\u00a0</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Governments in democratic countries function better when more people vote. However, forcing people to vote may have negative consequences. Shane P. Singh and Jason Roy studied what happens when a country requires its citizens to vote. They found that when people feel forced to vote, they tend to spend less time looking for information about their choices when voting. As a result, votes from these voters may not reflect their actual preferences.</p>"
  },
  {
   "id": "cb-cross-text-connections-c4737d6a",
@@ -168,7 +171,8 @@
     "text": "By asserting that more research needs to be conducted into factors that likely contributed to the desertification of the Sahara region",
     "why": "Choice D is incorrect. Brierley et al. \u2019s research does not call for more research into factors that likely contributed to the desertification of the Sahara region."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Africa\u2019s Sahara region\u2014once a lush ecosystem\u2014began to dry out about 8,000 years ago. A change in Earth\u2019s orbit that affected climate has been posited as a cause of desertification, but archaeologist David Wright also attributes the shift to Neolithic peoples. He cites their adoption of pastoralism as a factor in the region drying out: the pastoralists\u2019 livestock depleted vegetation, prompting the events that created the Sahara Desert.</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>Research by Chris Brierley et al. challenges the idea that Neolithic peoples contributed to the Sahara\u2019s desertification. Using a climate-vegetation model, the team concluded that the end of the region\u2019s humid period occurred 500 years earlier than previously assumed. The timing suggests that Neolithic peoples didn\u2019t exacerbate aridity in the region but, in fact, may have helped delay environmental changes with practices (e.g., selective grazing) that preserved vegetation.</p>"
  },
  {
   "id": "cb-cross-text-connections-a87c3925",
@@ -202,7 +206,8 @@
     "text": "The broths in the 2007 experiment most likely did not have a substantial amount of the dipeptides that played a key part in the 2022 experiment.",
     "why": "Choice D is the best answer. Ishii and O\u2019Mahony were trying to isolate the pure umami flavor, while J\u00fcnger was trying to recreate soy sauce, which has a mix of flavors that includes umami. Accordingly, the broths from Text 1 are not described as having any soy sauce in them\u2014just \u201cshiitake mushrooms and kombu seaweed. \u201d So they probably don\u2019t have as much of the dipeptides described in Text 2, which were found to be a key part of soy sauce\u2019s umami-ness and its saltiness."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Soy sauce, made from fermented soybeans, is noted for its umami flavor. Umami\u2014one of the five basic tastes along with sweet, bitter, salty, and sour\u2014was formally classified when its taste receptors were discovered in the 2000s. In 2007, to define the pure umami flavor scientists Rie Ishii and Michael O\u2019Mahony used broths made from shiitake mushrooms and kombu seaweed, and two panels of Japanese and US judges closely agreed on a description of the taste.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>A 2022 experiment by Manon J\u00fcnger et al. led to a greater understanding of soy sauce\u2019s flavor profile. The team initially presented a mixture of compounds with low molecular weights to taste testers who found it was not as salty or bitter as real soy sauce. Further analysis of soy sauce identified proteins, including dipeptides, that enhanced umami flavor and also contributed to saltiness. The team then made a mix of 50 chemical compounds that re-created soy sauce\u2019s flavor.</p>"
  },
  {
   "id": "cb-cross-text-connections-8d802289",
@@ -236,7 +241,8 @@
     "text": "Ailey blended multiple genres of music together when choreographing dance pieces.",
     "why": "Choice D is incorrect. This isn\u2019t something that either text claims. Neither text mentions any genre of music other than jazz, so we have no evidence that either author would agree with this."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Dance choreographer Alvin Ailey\u2019s deep admiration for jazz music can most clearly be felt in the rhythms and beats his works were set to. Ailey collaborated with some of the greatest jazz legends, like Charles Mingus, Charlie Parker, and perhaps his favorite, Duke Ellington. With his choice of music, Ailey helped bring jazz to life for his audiences.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Jazz is present throughout Ailey\u2019s work, but it\u2019s most visible in Ailey\u2019s approach to choreography. Ailey often incorporated improvisation, a signature characteristic of jazz music, in his work. When managing his dance company, Ailey rarely forced his dancers to an exact set of specific moves. Instead, he encouraged his dancers to let their own skills and experiences shape their performances, as jazz musicians do.</p>"
  },
  {
   "id": "cb-cross-text-connections-7bf79a90",
@@ -270,7 +276,8 @@
     "text": "Most microbes are probably unable to withstand the soil conditions at the Antarctic study site.",
     "why": "Choice D is the best answer because it presents a statement about microbes with which Fierer\u2019s team (Text 1) and the author of Text 2 would most likely agree. Text 1 states that microbes usually thrive in very harsh conditions, and so Fierer\u2019s team was surprised when samples collected from an extremely cold and dry area of Antarctica didn\u2019t appear to contain any life. Fierer\u2019s team says that though this doesn\u2019t conclusively prove there are no microbes in the area, it suggests that microbes would have a notably difficult time surviving in the environment. The author of Text 2 says it\u2019s unlikely that there would be no microbes at all in the Antarctic study site from which Fierer\u2019s team retrieved soil samples and that there may have been hard-to-detect microbes in the samples. However, the presence of only a few microbes in the Antarctic samples rather than the billions found in a typical soil sample (which would presumably be much easier to detect) would illustrate conditions in the Antarctic soil that make it difficult for microbes to thrive. Since Fierer\u2019s team says that the seeming absence of microbes in the Antarctic samples suggests an unusually harsh environment and the author of Text 2 says that even if there are a few undetectable microbes in the samples, the relatively tiny number of microbes would also suggest an unusually harsh environment, then Fierer\u2019s team and the author of Text 2 would most likely agree that most microbes are unable to withstand the soil conditions at the Antarctic study site."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Microbes are tiny organisms in the soil, water, and air all around us. They thrive even in very harsh conditions. That\u2019s why Noah Fierer and colleagues were surprised when soil samples they collected from an extremely cold, dry area in Antarctica didn\u2019t seem to contain any life. The finding doesn\u2019t prove that there are no microbes in that area, but the team says it does suggest that the environment severely restricts microbes\u2019 survival.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Microbes are found in virtually every environment on Earth. So it\u2019s unlikely they would be completely absent from Fierer\u2019s team\u2019s study site, no matter how extreme the environment is. There were probably so few organisms in the samples that current technology couldn\u2019t detect them. But since a spoonful of typical soil elsewhere might contain billions of microbes, the presence of so few in the Antarctic soil samples would show how challenging the conditions are.</p>"
  },
  {
   "id": "cb-cross-text-connections-835d1ae6",
@@ -305,7 +312,7 @@
     "why": "Choice D is the best answer. Trever thinks that the \u201chyper-realistic portrayal of identifiable people\u201d interpretation ignores the sculptors\u2019 imagination and creativity. We can infer that Trevor thinks the facial markings on the sculptures may not have represented real skin blemishes on real people."
    }
   ],
-  "passageHtml": "<p><strong><span role=\"heading\">Text 1</span></strong></p>\n<p>Historians studying pre-Inca Peru have looked to ceramic vessels to understand daily life among the Moche people. These mold-made sculptures present plants, animals, and human faces in precise ways\u2014vessels representing human faces are so detailed that <span role=\"region\" aria-label=\"Referenced Content\"><u>scholars have interpreted facial markings to represent scars and other skin irregularities</u>.</span> Some historians have even used these objects to identify potential skin diseases that may have afflicted people at the time.</p>\n<p>\u00a0</p>\n<p><strong><span role=\"heading\">Text 2</span></strong></p>\n<p>Art historian and archaeologist Lisa Trever has argued that the interpretation of Moche \u201cportrait\u201d vessels as hyper-realistic portrayals of identifiable people may inadvertently disregard the creativity of the objects\u2019 creators. Moche ceramic vessels, Trever argues, are artworks in which sculptors could free their imagination, using realistic objects and people around them as inspiration to explore more abstract concepts.</p>"
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Historians studying pre-Inca Peru have looked to ceramic vessels to understand daily life among the Moche people. These mold-made sculptures present plants, animals, and human faces in precise ways\u2014vessels representing human faces are so detailed that <span role=\"region\" aria-label=\"Referenced Content\"><u>scholars have interpreted facial markings to represent scars and other skin irregularities</u>.</span> Some historians have even used these objects to identify potential skin diseases that may have afflicted people at the time.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Art historian and archaeologist Lisa Trever has argued that the interpretation of Moche \u201cportrait\u201d vessels as hyper-realistic portrayals of identifiable people may inadvertently disregard the creativity of the objects\u2019 creators. Moche ceramic vessels, Trever argues, are artworks in which sculptors could free their imagination, using realistic objects and people around them as inspiration to explore more abstract concepts.</p>"
  },
  {
   "id": "cb-cross-text-connections-81da17d3",
@@ -340,7 +347,7 @@
     "why": "Choice D is the best answer. The author of Text 2 states that Fontana\u2019s painting, which depicts a painting easel in the background, was made in 1577, eight years before Carracci\u2019s painting. Therefore, they might argue that Caracci was not \u201cthe first artist\u201d to depict themself as a painter."
    }
   ],
-  "passageHtml": "<p><strong>Text 1</strong></p>\n<p>Italian painters in the 1500s rarely depicted themselves in their work. Even more rare were self-portrait paintings that portrayed the artist as a painter. At the time, painting was not yet respected as a profession, so painters mostly chose to emphasize other qualities in their self-portraits, like their intellect or social status. <span style=\"text-decoration:underline\">In the city of Bologna, the first artist to depict themself painting was a man named Annibale Carracci.</span> A painting of his from around 1585 shows Carracci in front of an easel holding a palette.\u00a0</p>\n<p>\u00a0</p>\n<p><strong>Text 2</strong></p>\n<p>In their self-portraits, Bolognese artists typically avoided referring to the act of painting until the mid-1600s. However, Lavinia Fontana\u2019s 1577 painting, <em>Self-Portrait at the Keyboard</em>, stands out as the earliest example of such a work by an artist from Bologna. Although the artist is depicted playing music, in the background, one can spot a painting easel by a window.</p>"
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Italian painters in the 1500s rarely depicted themselves in their work. Even more rare were self-portrait paintings that portrayed the artist as a painter. At the time, painting was not yet respected as a profession, so painters mostly chose to emphasize other qualities in their self-portraits, like their intellect or social status. <span style=\"text-decoration:underline\">In the city of Bologna, the first artist to depict themself painting was a man named Annibale Carracci.</span> A painting of his from around 1585 shows Carracci in front of an easel holding a palette.\u00a0</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>In their self-portraits, Bolognese artists typically avoided referring to the act of painting until the mid-1600s. However, Lavinia Fontana\u2019s 1577 painting, <em>Self-Portrait at the Keyboard</em>, stands out as the earliest example of such a work by an artist from Bologna. Although the artist is depicted playing music, in the background, one can spot a painting easel by a window.</p>"
  },
  {
   "id": "cb-cross-text-connections-d6c77ae5",
@@ -374,7 +381,8 @@
     "text": "As puzzling, because it\u2019s unusual to successfully detect lithium and sodium when analyzing wavelengths of light in white dwarf atmospheres",
     "why": "Choice D is incorrect because neither text discusses how likely lithium and sodium are to be detected by analyzing wavelengths of light."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Astronomer Mark Holland and colleagues examined four white dwarfs\u2014small, dense remnants of past stars\u2014in order to determine the composition of exoplanets that used to orbit those stars. Studying wavelengths of light in the white dwarf atmospheres, the team reported that traces of elements such as lithium and sodium support the presence of exoplanets with continental crusts similar to Earth\u2019s.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Past studies of white dwarf atmospheres have concluded that certain exoplanets had continental crusts. Geologist Keith Putirka and astronomer Siyi Xu argue that those studies unduly emphasize atmospheric traces of lithium and other individual elements as signifiers of the types of rock found on Earth. The studies don\u2019t adequately account for different minerals made up of various ratios of those elements, and the possibility of rock types not found on Earth that contain those minerals.</p>"
  },
  {
   "id": "cb-cross-text-connections-8de51658",
@@ -408,7 +416,8 @@
     "text": "It supports a claim about an isolated system of atoms in a laboratory, but that claim should not be extrapolated to a general claim about the universe.",
     "why": "Choice D is incorrect. We can\u2019t infer that the author of Text 1 would respond this way to the experiment. Neither text makes this distinction between laboratory findings and the way the universe works in general."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>The idea that time moves in only one direction is instinctively understood, yet it puzzles physicists. According to the second law of thermodynamics, at a macroscopic level some processes of heat transfer are irreversible due to the production of entropy\u2014after a transfer we cannot rewind time and place molecules back exactly where they were before, just as we cannot unbreak dropped eggs. But laws of physics at a microscopic or quantum level hold that those processes <em>should</em> be reversible.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>In 2015, physicists Tiago Batalh\u00e3o et al. performed an experiment in which they confirmed the irreversibility of thermodynamic processes at a quantum level, producing entropy by applying a rapidly oscillating magnetic field to a system of carbon-13 atoms in liquid chloroform. But the experiment \u201cdoes not pinpoint\u00a0... what causes [irreversibility] at the microscopic level,\u201d coauthor Mauro Paternostro said.</p>"
  },
  {
   "id": "cb-cross-text-connections-059f7201",
@@ -442,7 +451,8 @@
     "text": "By agreeing with the author of Text 1 that most graphic novels aren\u2019t as well crafted as most literary works are",
     "why": "Choice D is incorrect because the author of Text 1 doesn\u2019t imply that graphic novels aren\u2019t well crafted, only that they use language too sparingly to fit the definition of \"literature, \" and that their use of images to convey stories makes them more comparable to film than to literature. Even if the author of Text 1 had implied that most graphic novels aren\u2019t well crafted, Text 2 refers to the fact that many graphic novels are as beautifully written\u2014that is, well crafted\u2014as many standard novels; thus, it wouldn\u2019t be accurate to say that the author of Text 2 would agree with the author of Text 1 that most graphic novels aren\u2019t well crafted."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Graphic novels are increasingly popular in bookstores and libraries, but they shouldn\u2019t be classified as literature. By definition, literature tells a story or conveys meaning through language only; graphic novels tell stories through illustrations and use language only sparingly, in captions and dialogue. Graphic novels are experienced as series of images and not as language, making them more similar to film than to literature.</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>Graphic novels present their stories through both language and images. Without captions and dialogue, readers would be unable to understand what is depicted in the illustrations: the story results from the interaction of text and image. Moreover, Alison Bechdel\u2019s <em>Fun Home</em> and many other graphic novels feature text that is as beautifully written as the prose found in many standard novels. Therefore, graphic novels qualify as literary texts.</p>"
  },
  {
   "id": "cb-cross-text-connections-d72b325e",
@@ -476,7 +486,8 @@
     "text": "It probably holds true only in conditions like those in the research team\u2019s study.",
     "why": "Choice D is incorrect. C\u00e1ceres and co. would not describe the view presented in Text 1 this way. Their research finding directly undermines the view presented in Text 1: so it definitely doesn\u2019t hold true in conditions like those in the study."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>What factors influence the abundance of species in a given ecological community? Some theorists have argued that historical diversity is a major driver of how diverse an ecological community eventually becomes: differences in community diversity across otherwise similar habitats, in this view, are strongly affected by the number of species living in those habitats at earlier times.\u00a0</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>In 2010, a group of researchers including biologist Carla C\u00e1ceres created artificial pools in a New York forest. They stocked some pools with a diverse mix of zooplankton species and others with a single zooplankton species and allowed the pool communities to develop naturally thereafter. Over the course of four years, C\u00e1ceres and colleagues periodically measured the species diversity of the pools, finding\u2014contrary to their expectations\u2014that by the end of the study there was little to no difference in the pools\u2019 species diversity.\u00a0</p>"
  },
  {
   "id": "cb-cross-text-connections-4b4ab04e",
@@ -510,7 +521,8 @@
     "text": "By pointing out that some countries are responsible for greater deforestation than others and thus, to have any significant effect on the environment, will have to replace more than 20% of their beef consumption with mycoprotein",
     "why": "Choice D is incorrect because Text 1 makes no mention of countries\u2019 varying contributions to deforestation, so there is no evidence that the author of Text 1 would respond to the finding described in Text 2 by saying that some countries will have to replace more than 20% of their beef consumption with mycoprotein."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Mycoprotein is a fungal biomass that can be eaten as an alternative to meat. Studies of the environmental impact of its manufacture generally agree it is lower than that of beef and closer to that of chicken or pork. But the expense of producing mycoprotein restricts its availability to a few countries with postindustrial economies. Knowing that cost reductions would expand access to mycoprotein, biochemists are exploring solutions, such as a cheaper substrate to feed the mycoprotein as it grows.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Cattle farming is a principal cause of global deforestation, and a study by Florian Humpen\u00f6der and his colleagues found that replacing 20% of beef consumption worldwide with consumption of mycoprotein would cut deforestation by half if accomplished over the next thirty years. However, this would likely involve only a small change in agricultural water consumption, since water once dedicated to raising cattle would be diverted to raising crops instead.</p>"
  },
  {
   "id": "cb-cross-text-connections-ed52a093",
@@ -544,7 +556,8 @@
     "text": "By arguing that flamingos\u2019 diet doesn\u2019t include much shrimp except during mating season",
     "why": "Choice D is incorrect because nothing in Text 2 suggests that the ecologist would argue about flamingos\u2019 shrimp consumption. Although Text 2 indicates that the ecologist has found that flamingos may make themselves look pinker during mating season, this is addressed in terms of grooming habits; apart from referring to food as a source of pigments, Text 2 doesn\u2019t discuss the diet of flamingos at all."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Flamingos are known for their vibrant pink coloring, but they\u2019re actually born with gray feathers. Their pink color comes from eating brine shrimp, but brine shrimp aren\u2019t naturally pink either. Animals can\u2019t produce carotenoids, the pigments that provide the pink hue. The algae that brine shrimp feed on, however, can produce these pigments. Thus, the pinker the flamingo, the more shrimp it has eaten.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Ecologist Juan Amat has found that flamingos apply a kind of makeup to make themselves appear pinker. A gland near their tail contains pigments that come from the food they eat. When the flamingos groom themselves using the pigments, their feathers become pinker. Flamingos may do this to improve their success during mating season, when they would benefit from looking pinker.</p>"
  },
  {
   "id": "cb-cross-text-connections-e1befb41",
@@ -578,7 +591,8 @@
     "text": "By claiming that the specific activities named in Text 1 are actually examples of productive activities rather than unproductive ones",
     "why": "Choice D is incorrect because Maddux holds the opinion that whether an activity is productive or unproductive is subjective and depends on the individual; therefore, he would most likely claim that watching TV or playing games might be productive for some and unproductive for others."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>In a study of the benefits of having free time, Marissa Sharif found that the reported sense of life satisfaction tended to plateau when participants had two hours of free time per day and actually began to fall when they had five hours of free time per day. After further research, Sharif concluded that this dip in life satisfaction mainly occurred when individuals spent all their free time unproductively, such as by watching TV or playing games.</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>Psychologist James Maddux cautions against suggesting an ideal amount of free time. The human desire for both free time and productivity is universal, but Maddux asserts that individuals have unique needs for life satisfaction. Furthermore, he points out that there is no objective definition for what constitutes productivity; reading a book might be considered a productive activity by some, but idleness by others.</p>"
  },
  {
   "id": "cb-cross-text-connections-c68ceeff",
@@ -612,7 +626,8 @@
     "text": "The most commonly used methods to cook cassava today date to the 1500s.",
     "why": "Choice D is incorrect. This isn\u2019t something that either text claims. The 1500s were when cassava was brought to West Africa, but neither text describes how cassava is cooked, nor do they make any claims about when cooking methods were developed."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Today the starchy root cassava is found in many dishes across West Africa, but its rise to popularity was slow. Portuguese traders brought cassava from Brazil to the West African coast in the 1500s. But at this time, people living in the capitals further inland had little contact with coastal communities. Thus, cassava remained relatively unknown to most of the region\u2019s inhabitants until the 1800s.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Cassava\u2019s slow adoption into the diet of West Africans is mainly due to the nature of the crop itself. If not cooked properly, cassava can be toxic. Knowledge of how to properly prepare cassava needed to spread before the food could grow in popularity. The arrival of formerly enslaved people from Brazil in the 1800s, who brought their knowledge of cassava and its preparation with them, thus directly fueled the spread of this crop.</p>"
  },
  {
   "id": "cb-cross-text-connections-f3c45b4f",
@@ -647,7 +662,7 @@
     "why": "Choice D is incorrect. Text 2 does not state that cosmogenic nuclide dating is applied to the fossils directly but rather to the breccia that surrounds them."
    }
   ],
-  "passageHtml": "<p><strong>Text 1</strong></p>\n<p>Fossils of the hominin <em>Australopithecus africanus</em> have been found in the Sterkfontein Caves of South Africa, but <span style=\"text-decoration:underline\">assigning an age to the fossils is challenging because of the unreliability of dating methods in this context.</span> The geology of Sterkfontein has caused soil layers from different periods to mix, impeding stratigraphic dating, and dates cannot be reliably imputed from those of nearby animal bones since the bones may have been relocated by flooding.</p>\n<p><strong>Text 2</strong></p>\n<p>Archaeologists used new cosmogenic nuclide dating techniques to reevaluate the ages of <em>A. africanus</em> fossils found in the Sterkfontein Caves. This technique involves analyzing the cosmogenic nucleotides in the breccia\u2014the matrix of rock fragments immediately surrounding the fossils. The researchers assert that this approach avoids the potential for misdating associated with assigning ages based on Sterkfontein\u2019s soil layers or animal bones.</p>"
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Fossils of the hominin <em>Australopithecus africanus</em> have been found in the Sterkfontein Caves of South Africa, but <span style=\"text-decoration:underline\">assigning an age to the fossils is challenging because of the unreliability of dating methods in this context.</span> The geology of Sterkfontein has caused soil layers from different periods to mix, impeding stratigraphic dating, and dates cannot be reliably imputed from those of nearby animal bones since the bones may have been relocated by flooding.</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>Archaeologists used new cosmogenic nuclide dating techniques to reevaluate the ages of <em>A. africanus</em> fossils found in the Sterkfontein Caves. This technique involves analyzing the cosmogenic nucleotides in the breccia\u2014the matrix of rock fragments immediately surrounding the fossils. The researchers assert that this approach avoids the potential for misdating associated with assigning ages based on Sterkfontein\u2019s soil layers or animal bones.</p>"
  },
  {
   "id": "cb-cross-text-connections-f7c02e89",
@@ -681,7 +696,8 @@
     "text": "By observing that a widespread practice in film and television largely prevents the kind of problem faced by the scholars mentioned in Text 2",
     "why": "Choice D is the best answer because it reflects how the author of Text 1 would most likely respond to Text 2 based on the information provided. Text 2 discusses how the inconsistent use of credits to identify the contributors to video games can pose an obstacle to scholars of the medium, who rely on such credits to answer questions about the medium\u2019s development. Text 1 notes that in film and television, on the other hand, credits are used consistently and are valuable to researchers studying the cast and crew members in these mediums. Since Text 1 asserts how the consistent use of credits benefits scholars of film and television, it can be inferred that this text\u2019s author would respond to the discussion in Text 2 by observing that the kind of problem faced by scholars of video games\u2014the inability to know who contributed to a particular production and how\u2014is, in film and television studies, largely prevented by the widespread practice of credits in these mediums."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Films and television shows commonly include a long list of credits naming the people involved in a production. Credit sequences may not be exciting, but they generally ensure that everyone\u2019s contributions are duly acknowledged. Because they are highly standardized, film and television credits are also valuable to anyone researching the careers of pioneering cast and crew members who have worked in the mediums.</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>Video game scholars face a major challenge in the industry\u2019s failure to consistently credit the artists, designers, and other contributors involved in making video games. Without a reliable record of which people worked on which games, questions about the medium\u2019s development can be difficult to answer, and the accomplishments of all but its best-known innovators can be difficult to trace.</p>"
  },
  {
   "id": "cb-cross-text-connections-82c05b34",
@@ -715,7 +731,8 @@
     "text": "The rising consumer demand for live music festivals also generates higher demand for music streaming platforms.",
     "why": "Choice D is incorrect. Neither text establishes a cause/effect relationship between the demand for festivals and the demand for streaming platforms. Text 1 does not mention streaming platforms at all, and Text 2 does not imply that streaming platforms benefit from the popularity of festivals."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>The live music festival business is growing in event size and genre variety. With so many consumer options, organizers are finding ways to cement festival attendance as a special experience worth sharing. This phenomenon is linked to the growing \u201cexperiential economy,\u201d where many find it gratifying to purchase lived experiences. To ensure a profitable event, venues need to consider the overall consumer experience, not just the band lineup.</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>Music festival appearances are becoming a more important part of musicians\u2019 careers. One factor in this shift is the rising use of streaming services that allow access to huge numbers of songs for a monthly fee, subsequently reducing sales of full-length albums. With this shift in consumer behavior, musicians are increasingly dependent on revenue from live performances.</p>"
  },
  {
   "id": "cb-cross-text-connections-5a4b147c",
@@ -749,7 +766,8 @@
     "text": "Many people have come to admire the story of Sybil Ludington\u2019s ride.",
     "why": "Choice D is the best answer. Both authors agree that Ludington\u2019s story has been widely celebrated and revered by Americans, even if they disagree on its accuracy. Text 1 states that Ludington has inspired postage stamps, statues, and TV series, and Text 2 states that many articles and books have been written about her. Thus, both authors acknowledge the popularity of Ludington\u2019s story."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>On April 26th, 1777, Sybil Ludington rode 40 miles by horse through Putnam County, New York, to gather up local militia. British forces were burning nearby Danbury, Connecticut, and Ludington wanted to rally rebel troops to meet them. Although she was only 16 years old at the time, her brave feat made Ludington one of the heroes of the American Revolution. Since then, Ludington has been widely celebrated, inspiring postage stamps, statues, and even children\u2019s TV series.\u00a0</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Historian Paula D. Hunt researched the life and legacy of Sybil Ludington but found no evidence for her famous ride. Although many articles and books have been written about Ludington, Hunt believes writers may have been inventing details about Ludington as they retold her story. Ludington is revered by Americans today, but there simply isn\u2019t a strong historical record of her heroic ride.</p>"
  },
  {
   "id": "cb-cross-text-connections-592f94c2",
@@ -784,7 +802,7 @@
     "why": "Choice D is the best answer because the critics mentioned in Text 2 would argue that negative reactions to controversial public art are not solely the result of the nature of the art itself. The claim in Text 1 suggests that public artworks tend to provoke backlash when they are not \u201caesthetically and conceptually bland. \u201d This implies that the content of public art alone can cause backlash. However, the critics in Text 2 offer a more nuanced explanation. They argue that norm-defying pieces of public art that are not \u201ceffectively integrated within their surroundings\u201d are more likely to be judged harshly by the public. They also imply that a museum provides a context that prepares viewers to expect challenging art, while public environments that serve other purposes often do not. This indicates that the critics in Text 2 would contend that factors beyond the attributes of the art, like environment and presentation, play a significant role in how public art is received."
    }
   ],
-  "passageHtml": "<p><span role=\"heading\"><strong>Text 1\u00a0</strong></span></p>\n<p>Good art often challenges and disrupts social and aesthetic norms, but the creation of public art\u2014paintings, sculptures, and performance pieces displayed in nonmuseum or nontheatrical public settings\u2014typically requires broad agreement among artists, civic officials, and community members about the works\u2019 message and artistic goals. <span role=\"region\" aria-label=\"Referenced Content\">Public art that fails to appease everyone by being sufficiently aesthetically and conceptually bland almost inevitably provokes backlash.</span></p>\n<p>\u00a0</p>\n<p><span role=\"heading\"><strong>Text 2</strong></span></p>\n<p>Public art is commonly displayed in spaces intended for purposes other than meaningful aesthetic engagement. Some critics of public art therefore note that norm-defying pieces that aren\u2019t effectively integrated within their surroundings in a manner that primes passersby to appreciate the pieces\u2019 merits (as is often the case) tend to be regarded more unfavorably than similarly provocative art encountered in museums is.\u00a0</p>"
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Good art often challenges and disrupts social and aesthetic norms, but the creation of public art\u2014paintings, sculptures, and performance pieces displayed in nonmuseum or nontheatrical public settings\u2014typically requires broad agreement among artists, civic officials, and community members about the works\u2019 message and artistic goals. <span role=\"region\" aria-label=\"Referenced Content\">Public art that fails to appease everyone by being sufficiently aesthetically and conceptually bland almost inevitably provokes backlash.</span></p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Public art is commonly displayed in spaces intended for purposes other than meaningful aesthetic engagement. Some critics of public art therefore note that norm-defying pieces that aren\u2019t effectively integrated within their surroundings in a manner that primes passersby to appreciate the pieces\u2019 merits (as is often the case) tend to be regarded more unfavorably than similarly provocative art encountered in museums is.\u00a0</p>"
  },
  {
   "id": "cb-cross-text-connections-84dbd633",
@@ -819,7 +837,7 @@
     "why": "Choice D is incorrect because Text 2 describes how Hull\u2019s team found that the climate had recovered from the changes brought about by the Deccan Traps activity before the K-Pg event occurred, which suggests that Hull\u2019s team would say that the Deccan Traps activity had a less enduring effect on global conditions than the scientists referenced in Text 1 believe, not that the effect on global conditions was more significant than those scientists claim."
    }
   ],
-  "passageHtml": "<p><span role=\"heading\"><strong>Text 1</strong></span></p>\n<p>The Cretaceous-Paleogene (K-Pg) mass extinction event is usually attributed solely to an asteroid impact near Chicxulub, Mexico. Some scientists argue that <span role=\"region\" aria-label=\"Referenced Content\"><u>volcanic activity was the true cause, as the K-Pg event occurred relatively early in a long period of eruption of the Deccan Traps range that initially produced huge amounts of climate-altering gases.</u></span> These dissenters note that other mass extinctions have coincided with large volcanic eruptions, while only the K-Pg event lines up with an asteroid strike.</p>\n<p>\u00a0</p>\n<p><span role=\"heading\"><strong>Text 2</strong></span></p>\n<p>In a 2020 study, Pincelli Hull and her colleagues analyzed ocean core samples and modeled climate changes around the K-Pg event. The team concluded that Deccan Traps gases did affect global conditions prior to the event, but that the climate returned to normal well before the extinctions began\u2014extinctions that instead closely align with the Chicxulub impact.</p>"
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>The Cretaceous-Paleogene (K-Pg) mass extinction event is usually attributed solely to an asteroid impact near Chicxulub, Mexico. Some scientists argue that <span role=\"region\" aria-label=\"Referenced Content\"><u>volcanic activity was the true cause, as the K-Pg event occurred relatively early in a long period of eruption of the Deccan Traps range that initially produced huge amounts of climate-altering gases.</u></span> These dissenters note that other mass extinctions have coincided with large volcanic eruptions, while only the K-Pg event lines up with an asteroid strike.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>In a 2020 study, Pincelli Hull and her colleagues analyzed ocean core samples and modeled climate changes around the K-Pg event. The team concluded that Deccan Traps gases did affect global conditions prior to the event, but that the climate returned to normal well before the extinctions began\u2014extinctions that instead closely align with the Chicxulub impact.</p>"
  },
  {
   "id": "cb-cross-text-connections-9645f55e",
@@ -853,7 +871,8 @@
     "text": "As illogical, because the purists overlook crucial aspects of how the bluegrass sound first originated.",
     "why": "Choice D is the best answer. According to Author 1, the \u201cpurists\u201d argue that bluegrass should stick to its folk music roots. But Author 2 points out that this isn\u2019t how bluegrass emerged: it actually got its sound from a mix of folk, jazz, and blues."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>For decades, bluegrass musicians have debated whether their genre should exclude influences from mainstream genres such as rock. Many insist that bluegrass is defined by its adherence to the folk music of the US South, out of which bluegrass emerged. Such \u201cpurists,\u201d as they are known, regard the recordings of Bill Monroe, which established the bluegrass sound in the 1940s, as a standard against which the genre should still be measured.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Bluegrass isn\u2019t simply an extension of folk traditions into the era of recorded music. In reality, Bill Monroe created the bluegrass sound in the 1940s by combining Southern folk music with commercial genres that had arisen only a few decades before, such as jazz and the blues. Since bluegrass has always been a mixed genre, contemporary bluegrass musicians should not be forbidden from incorporating into it influences from rock and other mainstream genres.</p>"
  },
  {
   "id": "cb-cross-text-connections-f1c9d2c1",
@@ -887,7 +906,8 @@
     "text": "Appia was unfamiliar with the use of music and sound in theater.",
     "why": "Choice D is incorrect. Neither text mentions anything about Appia\u2019s familiarity with or ignorance of the use of music and sound in theater. Both focus on his expertise (or lack thereof) in lighting."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Stage lighting theorist Adolphe Appia was perhaps the first to argue that light must be considered alongside all the various elements of a stage to create a single, unified performance. Researcher Kelly Bremner, however, has noted that Appia lacked technical expertise in the use of light in the theater. As a result of Appia\u2019s inexperience, Bremner argues, Appia\u2019s theory of light called for lighting practices that weren\u2019t possible until after the advent of electricity around 1881.\u00a0</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Adolphe Appia was not an amateur in the practice of lighting. Instead, it is precisely his exposure to lighting techniques at the time that contributed to his theory on the importance of light. When working as an apprentice for a lighting specialist in his youth, Appia observed the use of portable lighting devices that could be operated by hand. This experience developed his understanding of what was possible in the coordination of elements on the stage.</p>"
  },
  {
   "id": "cb-cross-text-connections-dc043599",
@@ -921,7 +941,8 @@
     "text": "The author of Text 1 believes that the moon formed more slowly than the author of Text 2 believes.",
     "why": "Choice D is the best answer. Text 1 states that the moon was formed from the debris \u201cover the course of thousands of years, \u201d while Text 2 states that the moon\u2019s formation happened \u201cimmediately after impact, taking just a few hours. \u201d This shows a clear difference in how the authors view the evidence for the speed of the moon\u2019s formation."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Most scientists agree that the moon was likely formed after a collision between Earth and a large planet named Theia. This collision likely created a huge debris field, made up of material from both Earth and Theia. Based on models of this event, scientists believe that the moon was formed from this debris over the course of thousands of years.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Researchers from NASA\u2019s Ames Research Center used a computer to model how the moon could have formed. Although simulations of the moon\u2019s formation have been done in the past, the team from NASA ran simulations that were much more detailed. They found that the formation of the moon was likely not a slow process that took many years. Instead, it\u2019s probable that the moon\u2019s formation happened immediately after impact, taking just a few hours.</p>"
  },
  {
   "id": "cb-cross-text-connections-eae66bf9",
@@ -955,7 +976,8 @@
     "text": "By concurring that carbonaceous chondrites are prevalent in soil samples from sites distant from the Chicxulub crater",
     "why": "Choice D is incorrect. We can\u2019t infer that this is how Artemieva would respond to Siraj\u2019s hypothesis. \u201cSoil samples from sites distant from the Chicxulub crater\u201d is too vague. Only soil samples from sites that are connected to the impact in some way are involved in either hypothesis."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>In 2021, a team led by Amir Siraj hypothesized that the Chicxulub impactor\u2014the object that struck the Yucat\u00e1n Peninsula sixty-six million years ago, precipitating the mass extinction of the dinosaurs\u2014was likely a member of the class of long-period comets. As evidence, Siraj cited the carbonaceous chondritic composition of samples from the Chicxulub impact crater as well as of samples obtained from long-period comet Wild 2 in 2006.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Although long-period comets contain carbonaceous chondrites, asteroids are similarly rich in these materials. Furthermore, some asteroids are rich in iridium, as Natalia Artemieva points out, whereas long-period comets are not. Given the prevalence of iridium at the crater and, more broadly, in geological layers deposited worldwide following the impact, Artemieva argues that an asteroid is a more plausible candidate for the Chicxulub impactor.</p>"
  },
  {
   "id": "cb-cross-text-connections-9a94eb77",
@@ -989,7 +1011,8 @@
     "text": "By noting that a possible solution to the problem is available",
     "why": "Choice D is the best answer because Text 2 presents a possible solution to the problem identified in Text 1\u2014that is, how disparities in the criteria used by different countries to define urban settlements make it \"difficult for researchers to compare aspects of urbanization in different countries. \" Text 2 describes the creation of a shared framework for studying global urbanization: \"global definitions of common types of settlements\" and a \"new measure called the \u2018degree of urbanization\u2019\" that \"allows researchers to better understand global urbanization rates. \""
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>One challenge faced by researchers studying global urbanization is that countries may define urban settlements differently. Many countries define urban settlements based on the number of people living in them. However, countries do not all use the same number; for example, Iceland uses a minimum population of 200, while the Netherlands uses 20,000. Other countries use a combination of population and other factors. This variation makes it difficult for researchers to compare aspects of urbanization in different countries.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Recently, a group of six international organizations developed global definitions of common types of settlements. The group developed a new measure called the \u201cdegree of urbanization.\u201d This new measure establishes global criteria used to define three types of settlements (cities, towns, and rural areas) and allows researchers to better understand global urbanization rates.\u00a0</p>\n"
  },
  {
   "id": "cb-cross-text-connections-5e4e082c",
@@ -1023,7 +1046,8 @@
     "text": "Did chemically analyzing bulk samples lead to a false impression that there is an increase in Mo in that portion?",
     "why": "Choice D is incorrect because Slotznick et al. don\u2019t suggest that bulk chemical analysis created a false impression about the presence of increased Mo. They acknowledge that the Mo increase exists but offer a different explanation for its timing and source. They critique bulk analysis for occluding \u201ccontextual details\u201d that would require another kind of analysis to uncover, not for producing inaccurate measurements of Mo levels."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Chemically analyzing bulk rock-core samples from Australia\u2019s Mount McRae Shale, Ariel Anbar <span>et al.</span> found a transient but significant increase in molybdenum (<span>Mo</span>) at a point corresponding to roughly 2.5 billion years ago (<span>Ga</span>). On Earth, <span>Mo</span> is released mainly through oxidative weathering of minerals; Anbar <span>et al.</span> therefore concluded that atmospheric oxygen briefly increased 2.5 <span>Ga</span>, then returned to its earlier negligible level.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Sarah Slotznick <span>et al.</span> reexamined the Mount McRae Shale core. Since chemically analyzing bulk samples can occlude contextual details, Slotznick <span>et al.</span> also employed high-resolution microscopy, which revealed volcanic debris\u2014a known <span>Mo</span> host\u2014around 2.5 <span>Ga</span> and microfractures in the surrounding matrix. The researchers assert that fluid could have reached the debris through the microfractures and initiated oxidative weathering long after debris deposition.\u00a0</p>"
  },
  {
   "id": "cb-cross-text-connections-c8a2af72",
@@ -1057,7 +1081,8 @@
     "text": "Degas\u2019s preferred framing style was different from that of most Impressionist painters.",
     "why": "Choice D is incorrect because Text 1 presents Degas\u2019s preference for painted frames as being typical of Impressionist painters\u2019 attitudes toward the framing of their works. Moreover, although Text 2 doesn\u2019t specifically discuss Degas, it concurs with Text 1\u2019s assertion that these painters preferred painted frames. Thus, both texts position painted frames as a hallmark of French Impressionist painting, not as a deviation from it."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>French Impressionist artist Edgar Degas insisted that his paintings be kept in their original frames after they were sold. Like many Impressionist painters, Degas used painted frames that stood in contrast to the gold frames frequently seen at the Paris Salon, a prestigious art exhibition that was sponsored by the French government and promoted traditional painting styles. Impressionist painters likely chose these colorful frames to distinguish themselves from what was considered conventional at the time.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Impressionist painters often focused on the interplay of color and light in their works. As such, those Impressionists who placed their works in painted frames instead of the more traditional gold ones did so for aesthetic reasons: a frame\u2019s color was likely chosen because it would harmonize with the colors or subjects in a painting. Gold, conversely, could distract from the subtleties in a painted scene.\u00a0</p>"
  },
  {
   "id": "cb-cross-text-connections-03080769",
@@ -1091,7 +1116,8 @@
     "text": "By pointing out that Moore would assert that external world skepticism is at odds with other beliefs those proponents must unavoidably hold",
     "why": "Choice D is the best answer. According to the author of Text 1, Moore\u2019s definition of common sense\u2014things we instinctively know are true\u2014 includes the belief that we all \u201cexist in a world with other objects. \u201d The author of Text 1 describes this notion as both \u201cobvious\u201d and \u201cgroundbreaking. \u201d So it\u2019s safe to infer that the author would observe that Moore would respond to external world skeptics by arguing that since everyone instinctively knows that things exist outside of their own minds, then external world skepticism must be wrong."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Philosopher G.E. Moore\u2019s most influential work entails the concept of common sense. He asserts that there are certain beliefs that all people, including philosophers, know instinctively to be true, whether or not they profess otherwise: among them, that they have bodies, or that they exist in a world with other objects that have three dimensions. Moore\u2019s careful work on common sense may seem obvious but was in fact groundbreaking.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>External world skepticism is a philosophical stance supposing that we cannot be sure of the existence of anything outside our own minds. During a lecture, G.E. Moore once offered a proof refuting this stance by holding out his hands and saying, \u201cHere is one hand, and here is another.\u201d Many philosophers reflexively reject this proof (Annalisa Coliva called it \u201can obviously annoying failure\u201d) but have found it a challenge to articulate exactly why the proof fails.</p>"
  },
  {
   "id": "cb-cross-text-connections-e4e2aeb3",
@@ -1126,7 +1152,7 @@
     "why": "Choice D is incorrect. While Text 2 does discuss Morrison\u2019s resistance to certain literary conventions, it\u2019s unclear what it would mean for the underlined claim to be \u201cindebted\u201d to that tradition. This choice recycles language from the text, but not in a way that makes any coherent point."
    }
   ],
-  "passageHtml": "<p>Text 1</p>\n<p>Like the work of Ralph Ellison before her, Toni Morrison\u2019s novels feature scenes in which characters deliver sermons of such length and verbal dexterity that for a time, the text exchanges the formal parameters of fiction for those of oral literature. Given the many other echoes of Ellison in Morrison\u2019s novels, both in structure and prose style, <span style=\"text-decoration:underline\">these scenes suggest Ellison\u2019s direct influence on Morrison.</span></p>\n<p>Text 2</p>\n<p>In their destabilizing effect on literary form, the sermons in Morrison\u2019s works recall those in Ellison\u2019s. Yet literature by Black Americans abounds in moments where interpolated speech erodes the division between oral and written forms that literature in English has traditionally observed. Morrison\u2019s use of the sermon is attributable not only to the influence of Ellison but also to a community-wide strategy of resistance to externally imposed literary conventions.</p>"
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Like the work of Ralph Ellison before her, Toni Morrison\u2019s novels feature scenes in which characters deliver sermons of such length and verbal dexterity that for a time, the text exchanges the formal parameters of fiction for those of oral literature. Given the many other echoes of Ellison in Morrison\u2019s novels, both in structure and prose style, <span style=\"text-decoration:underline\">these scenes suggest Ellison\u2019s direct influence on Morrison.</span></p>\n<p data-text-label=\"2\">Text 2</p>\n<p>In their destabilizing effect on literary form, the sermons in Morrison\u2019s works recall those in Ellison\u2019s. Yet literature by Black Americans abounds in moments where interpolated speech erodes the division between oral and written forms that literature in English has traditionally observed. Morrison\u2019s use of the sermon is attributable not only to the influence of Ellison but also to a community-wide strategy of resistance to externally imposed literary conventions.</p>"
  },
  {
   "id": "cb-cross-text-connections-6a1dc7c5",
@@ -1160,7 +1186,8 @@
     "text": "By concurring that the reputation of Orlando as a minor work has led readers to overlook this novel but maintaining that the reputation is unearned",
     "why": "Choice D is incorrect because there\u2019s nothing in Text 1 or Text 2 to suggest that readers have generally ignored Orlando because of its reputation."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Virginia Woolf\u2019s 1928 novel <em>Orlando </em>is an oddity within her body of work. Her other major novels consist mainly of scenes of everyday life and describe their characters\u2019 interior states in great detail, whereas <em>Orlando </em>propels itself through a series of fantastical events and considers its characters\u2019 psychology more superficially. Woolf herself sometimes regarded the novel as a minor work, even admitting once that she \u201cbegan it as a joke.\u201d</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Like Woolf\u2019s other great novels, <em>Orlando </em>portrays how people\u2019s memories inform their experience of the present. Like those works, it examines how people navigate social interactions shaped by gender and social class. Though it is lighter in tone\u2014more entertaining, even\u2014this literary \u201cjoke\u201d nonetheless engages seriously with the themes that motivated the four or five other novels by Woolf that have achieved the status of literary classics.</p>"
  },
  {
   "id": "cb-cross-text-connections-5e101c70",
@@ -1194,7 +1221,8 @@
     "text": "It is unfairly dismissive given the progress that Srivastava and her team have reported.",
     "why": "Choice D is incorrect because Text 1 isn\u2019t at all dismissive of Srivastava\u2019s team\u2019s findings; instead, Text 1 is optimistic about the EGR discovery, characterizing it as promising and exciting. There\u2019s nothing in Text 2 to suggest that the author of Text 2 would say that Text 1\u2019s praise for the discovery is dismissive, or disdainful."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Most animals can regenerate some parts of their bodies, such as skin. But when a three-banded panther worm is cut into three pieces, each piece grows into a new worm. Researchers are investigating this feat partly to learn more about humans\u2019 comparatively limited abilities to regenerate, and they\u2019re making exciting progress. An especially promising discovery is that both humans and panther worms have a gene for early growth response (EGR) linked to regeneration.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>When Mansi Srivastava and her team reported that panther worms, like humans, possess a gene for EGR, it caused excitement. However, as the team pointed out, the gene likely functions very differently in humans than it does in panther worms. Srivastava has likened EGR to a switch that activates other genes involved in regeneration in panther worms, but how this switch operates in humans remains unclear.</p>"
  },
  {
   "id": "cb-cross-text-connections-12d81fc1",
@@ -1228,7 +1256,8 @@
     "text": "By cautioning that the theory overlooks certain important aspects of how the script functioned",
     "why": "Choice D is the best answer. Lacadena\u2019s theory is that Nahuatl script symbols signified syllables, but the consensus described in Text 2 is that they can signify either symbols or full words, depending on the context. So the author of Text 2 would likely consider Lacadena\u2019s theory too simplistic: it\u2019s missing the importance of the context in determining the meaning of a symbol."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Because literacy in Nahuatl script, the writing system of the Aztec Empire, was lost after Spain invaded central Mexico in the 1500s, it is unclear exactly how meaning was encoded in the script\u2019s symbols. Although many scholars had assumed that the symbols signified entire words, linguist Alfonso Lacadena theorized in 2008 that they signified units of language smaller than words: individual syllables.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>The growing consensus among scholars of Nahuatl script is that many of its symbols could signify either words or syllables, depending on syntax and content at any given site within a text. For example, the symbol signifying the word <span><em>huipil</em></span> (blouse) in some contexts could signify the syllable \u201cpil\u201d in others, as in the place name \u201cChipiltepec.\u201d Thus, for the Aztecs, reading required a determination of how such symbols functioned each time they appeared in a text.</p>"
  },
  {
   "id": "cb-cross-text-connections-f0ae0da3",
@@ -1262,7 +1291,8 @@
     "text": "They would claim that mergers have a different effect on consumer prices in the newspaper industry than in most other industries.",
     "why": "Choice D is incorrect because there\u2019s no indication in Text 2 that Focarelli and Panetta believe that the newspaper industry is different from any other industry when it comes to the effects of mergers. Although their own research was about consumer banking, Text 2 suggests that they view their conclusions as applicable to mergers in general."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>When companies in the same industry propose merging with one another, they often claim that the merger will benefit consumers by increasing efficiency and therefore lowering prices. Economist Ying Fan investigated this notion in the context of the United States newspaper market. She modeled a hypothetical merger of Minneapolis-area newspapers and found that subscription prices would rise following a merger.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Economists Dario Focarelli and Fabio Panetta have argued that research on the effect of mergers on prices has focused excessively on short-term effects, which tend to be adverse for consumers. Using the case of consumer banking in Italy, they show that over the long term (several years, in their study), the efficiency gains realized by merged companies do result in economic benefits for consumers.\u00a0</p>"
  },
  {
   "id": "cb-cross-text-connections-2c50ed1a",
@@ -1296,7 +1326,8 @@
     "text": "The author of Text 1 argues that Soyinka\u2019s early plays were his most politically charged, whereas the author of Text 2 claims that Soyinka\u2019s most recent plays are the most politicized.",
     "why": "Choice D is incorrect. Neither text discusses the political aspects of Soyinka\u2019s plays, nor do they make any claims about whether they have changed over time."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Literary scholars have struggled with the vastness of Nigerian writer Wole Soyinka\u2019s collective works of drama (spanning over 20 plays in total). It is best, however, to understand Soyinka\u2019s body of work as a dramatist chronologically. Soyinka\u2019s progression as a playwright can be considered to fall into three periods, with each one representing a particular thematic and stylistic cohesion: the 1960s, the two decades between 1970 and 1990, and lastly, from roughly 1990 onwards.\u00a0</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>It is tempting to impose a linear sense of order on the expanse of Wole Soyinka\u2019s body of work as a dramatist. However, critics who have considered Soyinka\u2019s plays to fit neatly into three phases overlook potential commonalities in Soyinka\u2019s work that span across these phases. Additionally, this view may discount significant differences in the styles and content of plays written around the same time.\u00a0</p>"
  },
  {
   "id": "cb-cross-text-connections-17bf10de",
@@ -1330,7 +1361,8 @@
     "text": "The author of Text 1 claims that Tuchman would agree that World War I was largely due to events in Eastern Europe, while the author of Text 2 maintains that Tuchman would say that Eastern European leaders were not committed to military plans in the same way that other leaders were.",
     "why": "Choice D is incorrect. This doesn\u2019t accurately describe the difference. Text 1 actually says that Tuchman \"fails to address\" the influence of events in Eastern Europe, while Text 2 says that Tuchman\u2019s thesis was that European powers (not Eastern European leaders) were committed to military plans."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Despite its beautiful prose, <em>The Guns of August</em>, Barbara Tuchman\u2019s 1962 analysis of the start of World War I, has certain weaknesses as a work of history. It fails to address events in Eastern Europe just before the outbreak of hostilities, thereby giving the impression that Germany was the war\u2019s principal instigator. Had Tuchman consulted secondary works available to her by scholars such as Luigi Albertini, she would not have neglected the influence of events in Eastern Europe on Germany\u2019s actions.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Barbara Tuchman\u2019s <em>The Guns of August </em>is an engrossing if dated introduction to World War I. Tuchman\u2019s analysis of primary documents is laudable, but her main thesis that European powers committed themselves to a catastrophic outcome by refusing to deviate from military plans developed prior to the conflict is implausibly reductive.</p>"
  },
  {
   "id": "cb-cross-text-connections-d0198544",
@@ -1365,7 +1397,7 @@
     "why": "Choice D is the best answer because it accurately describes how the author of Text 2 would most likely respond to the underlined claim in Text 1. Text 1 indicates that Storey found a genetic mutation in South American chickens from before the European invasion and in Polynesian chickens, which implies that chickens were first brought to South America by Polynesian people. Text 2 explains that the genetic mutation Storey found is in chickens from all over the world, thus undercutting the mutation as evidence of a Polynesian origin. However, Text 2 goes on to say \u201c[m]ore recently\u201d Luzuriaga-Neira and colleagues found multiple genetic markers shared by South American and Polynesian chickens but \u201cthat European breeds lack, \u201d which strongly suggests a Polynesian origin for the South American chickens. This indicates that the author of Text 2 believes Luzuriaga-Neira\u2019s evidence for a Polynesian origin is compelling while Storey\u2019s evidence has been undermined. Thus, the author of Text 2 would most likely agree with the underlined statement and believes Luzuriaga-Neira and colleagues\u2019 evidence for the statement is stronger than Storey\u2019s evidence is."
    }
   ],
-  "passageHtml": "<p>\u00a0</p><p><span role=\"heading\"><strong>Text 1</strong></span></p>\n<p>In 2007, a team led by Alice Storey analyzed a chicken bone found in El Arenal, Chile, dating it to 1321\u20131407 CE\u2014over a century before Europeans invaded the region, bringing their own chickens. Storey also found that the El Arenal chicken shared a unique genetic mutation with the ancient chicken breeds of the Polynesian Islands in the Pacific. Thus, <span role=\"region\" aria-label=\"Referenced Content\"><u>Polynesian peoples, not later Europeans, probably first introduced chickens to South America. </u></span></p>\n<p>\u00a0</p><p><span role=\"heading\"><strong>Text 2</strong></span></p>\n<p>An Australian research team weakened the case for a Polynesian origin for the El Arenal chicken by confirming that the mutation identified by Storey has occurred in breeds from around the world. More recently, though, a team led by Agusto Luzuriaga-Neira found that South American chicken breeds and Polynesian breeds share other genetic markers that European breeds lack. Thus, the preponderance of evidence now favors a Polynesian origin.</p>"
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>In 2007, a team led by Alice Storey analyzed a chicken bone found in El Arenal, Chile, dating it to 1321\u20131407 CE\u2014over a century before Europeans invaded the region, bringing their own chickens. Storey also found that the El Arenal chicken shared a unique genetic mutation with the ancient chicken breeds of the Polynesian Islands in the Pacific. Thus, <span role=\"region\" aria-label=\"Referenced Content\"><u>Polynesian peoples, not later Europeans, probably first introduced chickens to South America. </u></span></p>\n<p data-text-label=\"2\">Text 2</p>\n<p>An Australian research team weakened the case for a Polynesian origin for the El Arenal chicken by confirming that the mutation identified by Storey has occurred in breeds from around the world. More recently, though, a team led by Agusto Luzuriaga-Neira found that South American chicken breeds and Polynesian breeds share other genetic markers that European breeds lack. Thus, the preponderance of evidence now favors a Polynesian origin.</p>"
  },
  {
   "id": "cb-cross-text-connections-ab56a107",
@@ -1399,7 +1431,8 @@
     "text": "By admitting that most digital artists don\u2019t think fundamental drawing skills are important",
     "why": "Choice D is incorrect because the author of Text 2 states that digital artists still need to know \u201cthe fundamentals of art\u201d and that many digital artists begin their work by drafting on paper before transferring the work to a digital format."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Digital art, the use of digital technology to create or display images, isn\u2019t really art at all. It doesn\u2019t require as much skill as creating physical art. \u201cPainting\u201d with a tablet and stylus is much easier than using paint and a brush: the technology is doing most of the work.</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>The painting programs used to create digital art involve more than just pressing a few buttons. In addition to knowing the fundamentals of art, digital artists need to be familiar with sophisticated software. Many artists will start by drawing an image on paper before transforming the piece to a digital format, where they can apply a variety of colors and techniques that would otherwise require many different traditional tools. </p>"
  },
  {
   "id": "cb-cross-text-connections-f653b273",
@@ -1433,7 +1466,8 @@
     "text": "It is reasonable because the O. khaungraae skull is about the same size as the skull of the second fossil but is shaped differently.",
     "why": "Choice D is incorrect. Although the paleontologists in Text 2 might agree that the initial thought of the researchers in Text 1 was reasonable, nothing in Text 2 suggests that the two skulls were shaped differently."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>A tiny, unusual fossil in a piece of 99-million-year-old amber is of the extinct species <em>Oculudentavis khaungraae</em>. The <em>O. khaungraae </em>fossil consists of a rounded skull with a thin snout and a large eye socket. Because these features look like they are avian, or related to birds, researchers initially thought that the fossil might be the smallest avian dinosaur ever found.</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>Paleontologists were excited to discover a second small fossil that is similar to the strange <em>O. khaungraae</em> fossil but has part of the lower body along with a birdlike skull. Detailed studies of both fossils revealed several traits that are found in lizards but not in dinosaurs or birds. Therefore, paleontologists think the two creatures were probably unusual lizards, even though the skulls looked avian at first.</p>"
  },
  {
   "id": "cb-cross-text-connections-faee8ec7",
@@ -1468,7 +1502,7 @@
     "why": "Choice D is incorrect because neither of the texts claim that emotional contagion primarily occurs when a person is exposed to negativity. Instead, Text 1 claims that physical interaction is required for emotional contagion to occur, and Text 2 describes a study that suggests emotional contagion can occur in text-based online interactions."
    }
   ],
-  "passageHtml": "<p><span role=\"heading\"><strong>Text 1</strong></span></p>\n<p><span role=\"region\" aria-label=\"Referenced Content\"><u>It seems clear that emotional contagion (the unintentional transfer of an emotional state from one person to another) requires physical interaction and the observation of body language.</u></span> After all, research shows that talking to someone who is smiling and expressing positive feelings often causes people to respond in a comparably positive way. Similarly, displays of nervous fidgeting have been found to prompt others to begin behaving more nervously, too.</p>\n<p>\u00a0</p>\n<p><span role=\"heading\"><strong>Text 2</strong></span></p>\n<p>In an experiment using a social networking service, Zeyao Yang and Emilio Ferrara found evidence of emotional contagion in text-based online interactions. The researchers discovered that reading social media posts that expressed a positive outlook led people to make more positive posts themselves, while posts with a negative emotional tone led people to make more negative posts.</p>"
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p><span role=\"region\" aria-label=\"Referenced Content\"><u>It seems clear that emotional contagion (the unintentional transfer of an emotional state from one person to another) requires physical interaction and the observation of body language.</u></span> After all, research shows that talking to someone who is smiling and expressing positive feelings often causes people to respond in a comparably positive way. Similarly, displays of nervous fidgeting have been found to prompt others to begin behaving more nervously, too.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>In an experiment using a social networking service, Zeyao Yang and Emilio Ferrara found evidence of emotional contagion in text-based online interactions. The researchers discovered that reading social media posts that expressed a positive outlook led people to make more positive posts themselves, while posts with a negative emotional tone led people to make more negative posts.</p>"
  },
  {
   "id": "cb-cross-text-connections-c19b2f77",
@@ -1502,7 +1536,8 @@
     "text": "By asserting that a more definitive form of evidence than the computer models suggests a different timeline for the onset of plate tectonics on Earth",
     "why": "Choice D is the best answer because it reflects how the author of Text 2 would most likely respond to what the researchers mentioned in Text 1 contend. Text 1 discusses the lack of knowledge of how plate tectonics on Earth began. Text 1 also mentions researchers who contend that movements of tectonic plates began around 3 billion years ago. As support for this assertion, these researchers cite computer models (which are simulations, not empirical evidence) of the temperature in Earth\u2019s mantle that show that at that time, the mantle would have been sufficiently molten for plates to move. However, the author of Text 2 asserts that empirical evidence from the geological record is necessary to make plausible claims about when tectonic movement began. Text 2 mentions an analysis performed by Wriju Chowdhury and his team of the geochemistry of zircon crystals (which would constitute empirical evidence). Chowdhury and his team argue, based on this analysis, that tectonic plates may have begun to move as early as 4.2 billion years ago. Therefore, since the author of Text 2 would consider Chowdhury et al. \u2019s empirical evidence to be more conclusive than the computer models cited in Text 1, the author of Text 2 would most likely assert that a more definitive form of evidence than the computer models suggests a different timeline for the onset of plate tectonics on Earth."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Little is known about how plate tectonics\u2014wherein slabs of Earth\u2019s crust move over, under, away from, and against one another\u2014began. <span style=\"text-decoration:underline\" role=\"region\" aria-label=\"Referenced Content\">Some researchers contend</span> that tectonic movements began around 3 billion years ago, often noting that computer models of Earth\u2019s mantle temperature at the time indicate that the mantle would have been sufficiently molten to enable the plates to move.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Ultimately, any plausible claim about the inception of tectonic movement must rest on empirical evidence from the geological record. Researcher Wriju Chowdhury and his team analyzed the geochemistry of zircon crystals to gain insight into the chemical composition of the magma from which the crystals formed and, based on the data, compellingly argue that plate tectonics may have been occurring as early as 4.2 billion years ago.</p>"
  },
  {
   "id": "cb-cross-text-connections-c885c38b",
@@ -1536,7 +1571,8 @@
     "text": "By challenging the assumption that groupings of hunter-gatherers were among the earliest forms of social structure",
     "why": "Choice D is incorrect because there\u2019s no information in Text 2 suggesting that Graeber and Wengrow would challenge the assumption that groupings of hunter-gatherers were among the earliest forms of social structure. Although Text 1 does indicate that hunter- gatherer groups are assumed to be the earliest human social system, Text 2 says only that Graeber and Wengrow believe that some hunter- gatherer groups made use of different social structures at different times. Text 2 doesn\u2019t imply that Graeber and Wengrow doubt that hunter- gatherer groups preceded most other social structures."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Conventional wisdom long held that human social systems evolved in stages, beginning with hunter-gatherers forming small bands of members with roughly equal status. The shift to agriculture about 12,000 years ago sparked population growth that led to the emergence of groups with hierarchical structures: associations of clans first, then chiefdoms, and finally, bureaucratic states.</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>In a 2021 book, anthropologist David Graeber and archaeologist David Wengrow maintain that humans have always been socially flexible, alternately forming systems based on hierarchy and collective ones with decentralized leadership. The authors point to evidence that as far back as 50,000 years ago some hunter-gatherers adjusted their social structures seasonally, at times dispersing in small groups but also assembling into communities that included esteemed individuals.</p>"
  },
  {
   "id": "cb-cross-text-connections-de2c2f57",
@@ -1570,7 +1606,8 @@
     "text": "Text 1 argues that new research has undermined the standard view of when mammoths went extinct, whereas Text 2 suggests a way to reconcile the standard view with that new research.",
     "why": "Choice D is incorrect. Both components mentioned here (the new \u201cundermining\u201d research and the theory for reconciling this discovery) are contained in Text 1. Text 2 then shows how the attempt to reconcile the standard view and new research is flawed, and still fails to explain the discrepancy."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>The fossil record suggests that mammoths went extinct around 11 thousand years (kyr) ago. In a 2021 study of environmental DNA (eDNA)\u2014genetic material shed into the environment by organisms\u2014in the Arctic, Yucheng Wang and colleagues found mammoth eDNA in sedimentary layers formed millennia later, around 4 kyr ago. To account for this discrepancy, Joshua H. Miller and Carl Simpson proposed that arctic temperatures could preserve a mammoth carcass on the surface, allowing it to leach DNA into the environment, for several thousand years.</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>Wang and colleagues concede that eDNA contains DNA from both living organisms and carcasses, but for DNA to leach from remains over several millennia requires that the remains be perpetually on the surface. Scavengers and weathering in the Arctic, however, are likely to break down surface remains well before a thousand years have passed.</p>"
  },
  {
   "id": "cb-cross-text-connections-3cfbf077",
@@ -1604,7 +1641,8 @@
     "text": "By arguing that K2-18 b and other hycean candidates are unlikely to support life because these planets are located too far from the stars they orbit",
     "why": "Choice D is incorrect because it mischaracterizes Tsai et al. \u2019s findings. Rather than indicating that K2-18 b and other hycean candidates are \u201ctoo far from the stars they orbit, \u201d Tsai et al. \u2019s findings suggest the opposite problem. Because these planets\u2019 hydrogen-rich atmospheres admit wavelengths of light that cause elevated temperatures and water evaporation at distances of less than 3.85 AU, Tsai et al. would be more likely to argue that K2-18 b (at a distance of about 1 AU) and planets like it are too close to their stars, not too far from them. Moreover, Text 2 doesn\u2019t suggest anything about hycean candidates more generally being unable to support life, only that hycean candidates at distances less than 3.85 AU from their stars, like K2-18 b, likely don\u2019t have the liquid water needed to sustain life. Presumably, hycean candidates that are within the HZ described by Tsai et al. could harbor liquid oceans necessary for supporting life."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Hycean planets are a class of exoplanets (planets outside our solar system) with oceans of liquid water\u2014critical to supporting life\u2014and atmospheres rich in hydrogen. Computer models have determined that for potential hycean planets, the range of the habitable zone (HZ), the distance from a star that allows a planet to retain liquid water on its surface, begins at about 1 astronomical unit (<span>AU</span>). In <span>2021</span>, Nikku Madhusudhan et al. identified K2-18 b as a hycean candidate, noting that the planet is located right on the inner edge of the HZ.\u00a0</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>In a <span>2023</span> paper, Shang-Min Tsai <span>et al.</span> claimed that the hydrogen-rich atmospheres of K2-18 b and other hycean candidates admit wavelengths of light that cause elevated surface temperatures and increased water evaporation. Unlike earlier assessments, Tsai et al.\u2019s calculations therefore placed the inner edge for these planets\u2019 HZ as far out as 3.85 <span>AU</span>.</p>"
  },
  {
   "id": "cb-cross-text-connections-7b55e895",
@@ -1638,7 +1676,8 @@
     "text": "Tropical mountain bird species that live at high elevations tend to be genetically similar.",
     "why": "Choice D is incorrect. Neither text provides any information about the genetic similarity of these birds, so we have no evidence that either author would agree with this statement."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Some animal species, like the leopard, can be found in many kinds of areas. On the other hand, tropical mountain bird species tend to be limited in the types of spaces they can call home. This is because many mountain bird species are only able to survive at very specific elevations. Over time, these species have likely become used to living at a specific temperature. Therefore, these species struggle to survive at elevations that are warmer or colder than they are used to.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>A new study reviewed observations of nearly 3,000 bird species to understand why tropical mountain bird species live at specific elevations. They noted that when a mountain bird species was found in an area with many other bird species, it tended to inhabit much smaller geographic areas. It is thus likely that competition for resources with other species, not temperature, limits where these birds can live.</p>"
  },
  {
   "id": "cb-cross-text-connections-c106b9f7",
@@ -1672,7 +1711,8 @@
     "text": "Lewis\u2019s works are varied in the subjects they depict.",
     "why": "Choice D is the best answer. Author 1 acknowledges that Lewis sculpted other subjects besides historical and mythical figures, suggesting a variety of subjects depicted. Author 2 mentions that Lewis carved portrait busts as well as historical sculptures, which also implies variation among Lewis\u2019s subjects."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>American sculptor Edmonia Lewis is best known for her sculptures that represent figures from history and mythology, such as <em>The Death of Cleopatra</em> and <em>Haga</em>r. Although Lewis sculpted other subjects, her career as a sculptor is best represented by the works in which she depicted these historical and mythical themes.\u00a0</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Art historians have typically ignored the many portrait busts Edmonia Lewis created. Lewis likely carved these busts (sculptures of a person\u2019s head) frequently throughout her long career. She is known for her sculptures that represent historical figures, but Lewis likely supported herself financially by carving portrait busts for acquaintances who paid her to represent their features. Thus, Lewis\u2019s portrait busts are a central aspect of her career as a sculptor.</p>"
  },
  {
   "id": "cb-cross-text-connections-6977d22b",
@@ -1706,7 +1746,8 @@
     "text": "By recommending that more ecologists focus their research on how competition among phytoplankton species is increased with water density",
     "why": "Choice D is incorrect because according to Text 2, Behrenfeld and colleagues argue that water density decreases, not increases, competition between phytoplankton species."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Ecologists have long wondered how thousands of microscopic phytoplankton species can live together near ocean surfaces competing for the same resources. According to <span role=\"region\" aria-label=\"Referenced Content\"><u>conventional wisdom</u></span>, one species should emerge after outcompeting the rest. So why do so many species remain? Ecologists\u2019 many efforts to explain this phenomenon still haven\u2019t uncovered a satisfactory explanation.</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>Ecologist Michael Behrenfeld and colleagues have connected phytoplankton\u2019s diversity to their microscopic size. Because these organisms are so tiny, they are spaced relatively far apart from each other in ocean water and, moreover, experience that water as a relatively dense substance. This in turn makes it hard for them to move around and interact with one another. Therefore, says Behrenfeld\u2019s team, direct competition among phytoplankton probably happens much less than previously thought.</p>"
  },
  {
   "id": "cb-cross-text-connections-8889d6e2",
@@ -1741,7 +1782,7 @@
     "why": "Choice D is incorrect because Text 2 focuses on the issue of characterizing the stone pieces as tools made by humans, not on the timing of any particular group\u2019s activity in North America; further, Text 1 seems to support the common belief that the Clovis people reached North America 13,000 years ago and challenges only the idea that they were the continent\u2019s first inhabitants. Therefore, there\u2019s no reason to think the author of Text 2 would say that the author of Text 1 overlooks evidence that the Clovis people were active as early as is commonly thought."
    }
   ],
-  "passageHtml": "<p><span role=\"heading\"><strong>Text 1</strong></span></p>\n<p>An excavation in Chiquihuite Cave in central Mexico has upended the belief that approximately 13,000 years ago, a group known as the Clovis people were the first human inhabitants of North America. More than 200 crude stone tools were found embedded in a layer of earth that is up to 33,150 years old, <span role=\"region\" aria-label=\"Referenced Content\"><u>revealing that humans occupied the cave thousands of years before the Clovis people reached the continent.</u></span></p>\n<p>\u00a0</p>\n<p><span role=\"heading\"><strong>Text 2</strong></span></p>\n<p>The objects uncovered in Chiquihuite Cave are intriguing, but it is premature to characterize them as tools. The stone pieces are so roughly shaped that they may have simply fractured from rocks during natural geological activity in the cave. Moreover, their unearthing has thus far not been accompanied by discoveries of other signs of human activity or even traces of human DNA from surfaces.</p>"
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>An excavation in Chiquihuite Cave in central Mexico has upended the belief that approximately 13,000 years ago, a group known as the Clovis people were the first human inhabitants of North America. More than 200 crude stone tools were found embedded in a layer of earth that is up to 33,150 years old, <span role=\"region\" aria-label=\"Referenced Content\"><u>revealing that humans occupied the cave thousands of years before the Clovis people reached the continent.</u></span></p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>The objects uncovered in Chiquihuite Cave are intriguing, but it is premature to characterize them as tools. The stone pieces are so roughly shaped that they may have simply fractured from rocks during natural geological activity in the cave. Moreover, their unearthing has thus far not been accompanied by discoveries of other signs of human activity or even traces of human DNA from surfaces.</p>"
  },
  {
   "id": "cb-cross-text-connections-88bb0f6f",
@@ -1775,7 +1816,8 @@
     "text": "The author of Text 2 focuses on rewilding\u2019s effect on carbon emissions, whereas the author of Text 1 focuses on its effect on biodiversity.",
     "why": "Choice D is incorrect. This isn\u2019t a difference between the two views. Text 1 focuses on rewilding\u2019s effects on both carbon emissions and biodiversity. Text 2 doesn\u2019t focus on rewilding\u2019s effect on carbon emissions at all. Instead, it focuses on a third factor: global food supplies."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>A team led by Bernardo Strassburg has found that rewilding farmland (returning the land to its natural state) could help preserve biodiversity and offset carbon emissions. The amount of farmland that would need to be restored, they found, is remarkably low. Rewilding a mere 15% of the world\u2019s current farmland would prevent 60% of expected species extinctions and help absorb nearly 299 gigatons of carbon dioxide\u2014a clear win in the fight against the biodiversity and climate crises.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>While Strassburg\u2019s team\u2019s findings certainly offer encouraging insight into the potential benefits of rewilding, it\u2019s important to consider potential effects on global food supplies. The researchers suggest that to compensate for the loss of food-producing land, remaining farmland would need to produce even more food. Thus, policies focused on rewilding farmland must also address strategies for higher-yield farming.</p>"
  },
  {
   "id": "cb-cross-text-connections-f878693b",
@@ -1810,7 +1852,7 @@
     "why": "Choice D is the best answer because it reflects how the author of Text 2 would most likely respond to the underlined claim in Text 1. Text 1 begins by noting the success of The Nutcracker but then claims that the ballet is \"stuck in the past\" and should \"no longer be produced. \" Text 2 begins by conceding that The Nutcracker is indeed outdated but argues that it should continue to be performed, states that the show can be updated to include more contemporary dance styles, and provides an example of one such modernized version, Hot Chocolate Nutcracker. Hence, the author of Text 2 would most likely respond to the underlined claim in Text 1 by suggesting that dance companies should consider offering revised versions of The Nutcracker instead of completely rejecting the show."
    }
   ],
-  "passageHtml": "<p><strong><span role=\"heading\">Text 1</span></strong></p>\n<p>In <span>1954</span> George Balanchine choreographed a production of <em>The Nutcracker</em>, a ballet by Pyotr Ilyich Tchaikovsky. It has since become a tradition for hundreds of dance companies in North America to stage <em>The Nutcracker</em> each year.\u00a0<span role=\"region\" aria-label=\"Referenced Content\"><u>But the show is stuck in the past, with an old-fashioned story and references, so it should no longer be produced.</u></span> Ballet needs to create new traditions if it wants to stay relevant to contemporary audiences.</p>\n<p>\u00a0</p>\n<p><strong><span role=\"heading\">Text 2</span></strong></p>\n<p><em>The Nutcracker</em> is outdated, but it should be kept because it\u2019s a holiday favorite and provides substantial income for some dance companies. Although it can be behind the times, there are creative ways to update the show. For example, Debbie Allen successfully modernized the story. Her show <em>Hot Chocolate Nutcracker</em> combines ballet, tap, hip-hop, and other styles, and it has been gaining in popularity since it opened in 2009.</p>"
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>In <span>1954</span> George Balanchine choreographed a production of <em>The Nutcracker</em>, a ballet by Pyotr Ilyich Tchaikovsky. It has since become a tradition for hundreds of dance companies in North America to stage <em>The Nutcracker</em> each year.\u00a0<span role=\"region\" aria-label=\"Referenced Content\"><u>But the show is stuck in the past, with an old-fashioned story and references, so it should no longer be produced.</u></span> Ballet needs to create new traditions if it wants to stay relevant to contemporary audiences.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p><em>The Nutcracker</em> is outdated, but it should be kept because it\u2019s a holiday favorite and provides substantial income for some dance companies. Although it can be behind the times, there are creative ways to update the show. For example, Debbie Allen successfully modernized the story. Her show <em>Hot Chocolate Nutcracker</em> combines ballet, tap, hip-hop, and other styles, and it has been gaining in popularity since it opened in 2009.</p>"
  },
  {
   "id": "cb-cross-text-connections-35e21b06",
@@ -1844,7 +1886,8 @@
     "text": "That behavior might be adequately explained without suggesting that the magpies were attempting to assist the other magpie.",
     "why": "Choice D is the best answer because it reflects how the author of Text 2 would most likely respond to the researchers\u2019 perspective in Text 1 on the behavior of the magpies without trackers. According to Text 1, Dominique Potvin and colleagues observed magpies without trackers pecking at a tracker on another magpie until the device fell off. The researchers suggested that the birds might have been attempting to help the other bird, with no benefit to themselves. Text 2 generally discusses scenarios in which animals have been observed removing trackers from each other. The text cautions that it shouldn\u2019t be assumed that these animals are helping one another deliberately, since they might simply be pecking at trackers out of curiosity, causing them to fall off eventually. Therefore, the author of Text 2 would most likely respond to Potvin and colleagues\u2019 perspective in Text 1 by saying that the behavior of the magpies without trackers could be adequately explained without suggesting that they were attempting to assist the other magpie."
    }
-  ]
+  ],
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Dominique Potvin and colleagues captured five Australian magpies (<em>Gymnorhina tibicen</em>) to test a new design for attaching tracking devices to birds. As the researchers fitted each magpie with a tracker attached by a small harness, they noticed some magpies without trackers pecking at another magpie\u2019s tracker until it broke off. The researchers suggest that this behavior could be evidence of magpies attempting to help another magpie without benefiting themselves.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>It can be tempting to think that animals are deliberately providing help when we see them removing trackers and other equipment from one another, especially when a species is known to exhibit other cooperative behaviors. At the same time, it can be difficult to exclude the possibility that individuals are simply interested in the equipment because of its novelty, curiously pawing or pecking at it until it detaches.</p>"
  },
  {
   "id": "cb-cross-text-connections-f52cc78c",
@@ -1879,7 +1922,7 @@
     "why": "Choice D is incorrect. Text 2 doesn\u2019t imply that polar bears rely on a single seal-hunting strategy. In fact, the researcher in Text 2 would say that Text 1 fails to account for polar bears\u2019 ability to develop other hunting strategies and food sources."
    }
   ],
-  "passageHtml": "<p>Text 1</p>\n<p>Polar bears sustain themselves primarily by hunting seals on the Arctic sea ice, but rising ocean temperatures are causing the ice to diminish, raising concerns about polar bear population declines as these large predators\u2019 seal-hunting habitats continue to shrink. A 2020 study examining polar bear populations across the Arctic <u>concluded that populations affected by sea-ice loss are at great risk of extinction by the end of the twenty-first century</u>.</p>\n<p>Text 2</p>\n<p>Monitoring carried out by researchers from the Norwegian Polar Institute shows that the polar bear population on the Arctic archipelago of Svalbard remains stable and well nourished despite rapidly declining sea ice in recent years. The researchers attribute this population\u2019s resilience in part to a shift in feeding strategies: in addition to hunting seals, the Svalbard polar bears have begun relying on a diet of reindeer meat and birds\u2019 eggs.</p>"
+  "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>Polar bears sustain themselves primarily by hunting seals on the Arctic sea ice, but rising ocean temperatures are causing the ice to diminish, raising concerns about polar bear population declines as these large predators\u2019 seal-hunting habitats continue to shrink. A 2020 study examining polar bear populations across the Arctic <u>concluded that populations affected by sea-ice loss are at great risk of extinction by the end of the twenty-first century</u>.</p>\n<p data-text-label=\"2\">Text 2</p>\n<p>Monitoring carried out by researchers from the Norwegian Polar Institute shows that the polar bear population on the Arctic archipelago of Svalbard remains stable and well nourished despite rapidly declining sea ice in recent years. The researchers attribute this population\u2019s resilience in part to a shift in feeding strategies: in addition to hunting seals, the Svalbard polar bears have begun relying on a diet of reindeer meat and birds\u2019 eggs.</p>"
  },
  {
   "id": "cb-cross-text-connections-9828ab3d",
@@ -1913,6 +1956,7 @@
     "text": "As a point of connection between London and the countryside, King\u2019s Cross suggests to Margaret the possibility of experiencing the intangible abundance promised by the kinds of authentic engagements that the novel\u2019s rural spaces seem to offer.",
     "why": "Choice D is the best answer because it presents a statement about King\u2019s Cross, as depicted in Text 1, that the author of Text 2 would most likely agree with. In Text 1, Margaret associates King\u2019s Cross with \u201cInfinity\u201d and sees its arches as portals for an adventure whose value transcends London\u2019s mundane materialism. The author of Text 2 provides an interpretation of the novel\u2019s geography that is consistent with Margaret\u2019s vision, explaining that London represents capitalist materialism while the countryside\u2014\u201caccessible via King\u2019s Cross\u201d\u2014fosters idealism, authentic connection, and the aesthetic (\u201cthe infinite\u201d). By characterizing King\u2019s Cross as a \u201cpoint of connection between London and the countryside\u201d that offers access to the \u201cintangible abundance\u201d promised by \u201cthe novel\u2019s rural spaces, \u201d choice D provides a reading of the railway terminal that aligns with the interpretive framework set up by the author of Text 2."
    }
-  ]
+  ],
+  "passageHtml": "<p>Text 1 is adapted from <span>E.M.</span> Forster\u2019s 1910 novel <em>Howards End</em>. Text 2 discusses <em>Howards End</em>. King\u2019s Cross and <span>St.</span> Pancras are adjacent railway terminals in London from which trains travel to the countryside.</p>\n\n<p data-text-label=\"1\">Text 1</p>\n<p>To Margaret the station of King\u2019s Cross had always suggested Infinity. Its very situation\u2014withdrawn a little behind the facile splendours of <span>St.</span> Pancras\u2014implied a comment on the materialism of life. Those two great arches, colourless, indifferent, shouldering between them an unlovely clock, were fit portals for some eternal adventure, whose issue might be prosperous, but would certainly not be expressed in the ordinary language of prosperity.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>The interplay between opposing ideological positions in <em>Howards End</em> is broadly articulated in the novel\u2019s organization of geographic space. On the one hand, the modern metropolis of London represents capitalism\u2019s emphasis on pragmatism and the accumulation of material wealth; on the other, the English countryside, accessible via King\u2019s Cross, fosters an idealism that values tradition, authentic personal connection, and the aesthetic\u2014what the novel calls \u201cthe infinite.\u201d</p>"
  }
 ]

@@ -112,6 +112,27 @@ BLANK_HTML = '<span class="blank" id="passageBlank"> </span>'
 re_sr_only = re.compile(r'<span[^>]*class="sr-only"[^>]*>[^<]*</span>', re.I)
 
 
+# A cross-text passage is two texts, and College Board labels them five different
+# ways across twelve questions -- <strong>, a role="heading" span, both nested
+# either way round, and twice as bare text with no emphasis at all. Rendered as
+# given, those last two put "Text 1" in the middle of the prose as an unexplained
+# line. So the label is normalised to one element the stylesheet can own, whatever
+# shape it arrived in.
+re_text_label = re.compile(
+    r'<p>\s*(?:<(?:strong|span)[^>]*>\s*)*Text\s+(\d+)\s*(?:</(?:strong|span)>\s*)*</p>',
+    re.I)
+# Empty paragraphs used as spacing. The stylesheet sets the rhythm; these just
+# leave a hole, and one question opens with one.
+re_empty_p = re.compile(r'<p>(?:\s|&nbsp;|<br\s*/?>)*</p>', re.I)
+
+
+def tidy_passage(body):
+    """Normalise the label markup a restored passage arrives with."""
+    body = re_text_label.sub(
+        lambda m: f'<p data-text-label="{m.group(1)}">Text {m.group(1)}</p>', body)
+    return re_empty_p.sub('', body)
+
+
 def build_passage(stimulus, qid):
     """API stimulus -> sanitised HTML carrying the app's own blank."""
     marked = re_api_blank.sub(BLANK_TOKEN, stimulus or '')
@@ -122,6 +143,7 @@ def build_passage(stimulus, qid):
     # it received -- `class` and `id` are not on the whitelist by design.
     had_blank = BLANK_TOKEN in body
     body = body.replace(BLANK_TOKEN, BLANK_HTML)
+    body = tidy_passage(body)
     return body, re.sub(r'\s+', ' ', text.replace(BLANK_TOKEN, ' ___ ')).strip(), had_blank
 
 

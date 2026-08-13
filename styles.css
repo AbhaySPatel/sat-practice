@@ -2071,3 +2071,23 @@ math { font-size: 1.06em; }
   line-height: 1.66;
   color: var(--body-text);
 }
+
+/* "Text 1" / "Text 2" on a cross-text question. College Board sends the label five
+   different ways -- twice with no emphasis at all -- so fetch_rw_figures.tidy_passage
+   normalises them all to this, and the styling lives in one place. It has to read
+   as a divider: the whole question is comparing one text against the other, and two
+   passages running together as continuous prose is unanswerable. */
+.math-stem [data-text-label] {
+  margin: 18px 0 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.math-stem [data-text-label]:first-child { margin-top: 0; }
+/* The second text gets a rule above it, so the break is visible without reading. */
+.math-stem [data-text-label="2"] {
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
