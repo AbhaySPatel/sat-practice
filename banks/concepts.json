@@ -1,0 +1,111 @@
+[
+  {
+    "id": "one-main-verb",
+    "title": "One main verb to a clause",
+    "skills": [
+      "boundaries",
+      "form-structure-sense"
+    ],
+    "families": [
+      "verb forms & agreement",
+      "supplementary elements"
+    ],
+    "why": "10 of your 18 Standard English Conventions misses come down to this one rule — 5 of them because you picked a main verb where the sentence already had one.",
+    "rule": "One clause, one main verb — unless “and” joins a second.",
+    "ruleDetail": "The main verb is the one carrying the tense — past, present or future. Once the subject has it, the blank cannot be a second one. It becomes a describing form instead: -ing, -ed, or to + verb.",
+    "forms": [
+      {
+        "form": "-ing",
+        "example": "This hypothesis, suggesting the trees survived, cannot stand."
+      },
+      {
+        "form": "-ed",
+        "example": "The bridge, designed by Roebling, still stands."
+      },
+      {
+        "form": "to + verb",
+        "example": "She paused to consider the map."
+      }
+    ],
+    "formsWarning": "Careful with -ed: it is spelled the same as the past tense. \"They published a study\" is a main verb; \"the study, published in 2023, showed…\" is a describing form. The spelling will not tell you which. Only the rest of the sentence will.",
+    "steps": [
+      "Find the subject. Who is doing the action?",
+      "Cover the blank.",
+      "Read all the way to the full stop.",
+      "Look for another main verb belonging to that subject."
+    ],
+    "then": [
+      "No other main verb — the blank IS the main verb. Use the tensed form, and check it agrees with the subject.",
+      "There is one already — the blank is a describing form. Use -ing, -ed or to + verb."
+    ],
+    "trap": "The wrong answer sounds perfect at the blank, because it completes the sentence so far. That is exactly why it is offered. The words that prove it wrong sit later — in 4 of your 5 errors, 10 or more words later. Don't decide at the blank. Read to the full stop.",
+    "exception": {
+      "title": "The one exception: and",
+      "intro": "When “and” joins two verbs, they share the subject and the clause is allowed both.",
+      "pairs": [
+        {
+          "right": "Scientists studied the data and published their findings."
+        },
+        {
+          "right": "The lock would increase the salinity and create a barrier.",
+          "wrong": "The lock would increase the salinity and creates a barrier."
+        }
+      ],
+      "note": "With a modal — would, could, will, might, should — the modal carries the tense for both verbs, so the second stays in its plain form: create, not creates. You missed exactly this on Practice Test 8, Module 1, Question 20."
+    },
+    "commas": "Commas are a separate question, and not every describing phrase takes them. Ask what the phrase is doing. If it picks out which one you mean, it runs on with no commas: “The student sitting by the window answered first.” If it is extra information dropped in, it is fenced at both ends: “Priya, sitting by the window, answered first.” Your two examples below are one of each — College Board calls the first a restrictive phrase and the second a supplementary one.",
+    "examples": [
+      {
+        "questionId": "missed-pt9-m1-q25",
+        "source": "Practice Test 9, Module 1, Question 25",
+        "sentence": "This hypothesis ___ that certain trees, such as P. sylvestris, survived without interruption throughout the Holocene cannot stand, researchers Michael O'Connell and Karen Molloy counter.",
+        "choices": [
+          "suggesting",
+          "suggested",
+          "suggests",
+          "has suggested"
+        ],
+        "answer": "suggesting",
+        "wrong": "This hypothesis suggests … cannot stand.",
+        "right": "This hypothesis suggesting … cannot stand.",
+        "working": "Subject: this hypothesis. Read to the full stop and there it is — cannot stand. That is already its main verb, so the blank cannot be a second one. \"This hypothesis suggests\" sounds perfect; the words that sink it are 11 further on. No commas here: the phrase says which hypothesis, so it runs straight on — restrictive."
+      },
+      {
+        "questionId": "missed-pt5-m2-q25",
+        "source": "Practice Test 5, Module 2, Question 25",
+        "sentence": "American abstract artist Richard ___ his installations to make passersby keenly aware of how one's movements are affected by their environment, assembles large-scale steel plates into sculptures.",
+        "choices": [
+          "Serra is intending",
+          "Serra, intends",
+          "Serra, intending",
+          "Serra intends"
+        ],
+        "answer": "Serra, intending",
+        "wrong": "Richard Serra intends his installations … , assembles steel plates.",
+        "right": "Richard Serra, intending his installations … , assembles steel plates.",
+        "working": "Subject: Richard Serra. His main verb is assembles, at the far end, so the middle is describing him. This one is extra information rather than which-one, so it is fenced at both ends — and the comma after \"environment\" is already printed for you, which tells you the other belongs after \"Serra\"."
+      },
+      {
+        "questionId": "missed-pt5-m2-q18",
+        "source": "Practice Test 5, Module 2, Question 18",
+        "sentence": "In January 2023, Nery and her colleagues ___ a study showing changes over time in four whale genes associated with body size.",
+        "choices": [
+          "published",
+          "publishing",
+          "having published",
+          "to publish"
+        ],
+        "answer": "published",
+        "wrong": "Nery and her colleagues publishing a study.",
+        "right": "Nery and her colleagues published a study.",
+        "working": "The same test, the other way round. Cover the blank, read to the full stop: there is no other main verb anywhere. So the blank has to be it. This is the case that stops the rule collapsing into \"always pick -ing\" — the other three choices leave the sentence with no verb at all."
+      }
+    ],
+    "memorise": [
+      "Find the subject → cover the blank → read to the full stop.",
+      "No main verb yet? The blank is the main verb.",
+      "Main verb already there? The blank is a describing form: -ing, -ed, to + verb.",
+      "Don't decide at the blank. Read to the full stop."
+    ]
+  }
+]

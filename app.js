@@ -309,6 +309,12 @@ const DEFECTIVE_SKILL = 'defective';
 // cosmetic: `pool` is `bank` filtered in place, and the saved cursor is an index
 // into it, so anything inserted ahead of an existing question moves the place he
 // had been holding. Appending at the end leaves every existing index untouched.
+// Short lessons on the rules the questions turn on, keyed to the skills they
+// belong to. Authored, not extracted: College Board's rationales explain one
+// question each, and a rule is the thing they have in common.
+const CONCEPTS_FILE = 'banks/concepts.json';
+let concepts = [];
+
 const MISSED_FILE = 'banks/missed-in-test.json';
 const MISSED_SKILL = 'missed-in-test';
 let missedQuestions = [];
@@ -388,6 +394,9 @@ const passageEl = document.querySelector('.cloze');
 const mathStemEl = document.getElementById('mathStem');
 const optionsContainer = document.querySelector('.options');
 const ruleBox = document.getElementById('ruleBox');
+const conceptPanel = document.getElementById('conceptPanel');
+const conceptTitleEl = document.getElementById('conceptTitle');
+const conceptBodyEl = document.getElementById('conceptBody');
 const correctCountEl = document.getElementById('correctCount');
 const incorrectCountEl = document.getElementById('incorrectCount');
 const streakEl = document.getElementById('streakStrip');
@@ -491,6 +500,9 @@ function emptyStore() {
     // means "I want to find this again", which no amount of answer history can
     // infer, so nothing ever sets or clears it except him.
     starred: {},
+    // concepts[conceptId] = { folded } -- whether he has closed that lesson. Only
+    // ever set by him folding it; it opens by itself the first time only.
+    concepts: {},
     sinceReview: 0,
     filters: { skill: 'all', difficulty: 'all', test: 'all', hideAced: true }
   };
@@ -1170,6 +1182,163 @@ function paintStar(question) {
   starBtn.title = on
     ? 'Starred. Press to remove it.'
     : 'Star this question, to find it again under "Starred only".';
+}
+
+// The lesson for a question is the one whose skills include the skill the
+// question actually tests -- realSkill for a missed question, whose own skill is
+// the set it lives in rather than the thing it examines.
+function conceptFor(question) {
+  if (!question) return null;
+  const skill = skillTested(question);
+  return concepts.find((c) => (c.skills || []).includes(skill)) || null;
+}
+
+function renderConceptBody(concept) {
+  conceptBodyEl.textContent = '';
+  const para = (text, cls) => {
+    const el = document.createElement('p');
+    if (cls) el.className = cls;
+    el.textContent = text;
+    return el;
+  };
+  const heading = (text) => para(text, 'concept-h');
+  // Wrong above right, both spelled out. Seeing the two together does more than
+  // any amount of explaining why one of them fails. Either half may be absent --
+  // some points only need the correct version showing.
+  const pairEl = (wrong, right) => {
+    const box = document.createElement('div');
+    box.className = 'concept-pair';
+    if (wrong) {
+      const bad = para(wrong, 'concept-bad');
+      bad.dataset.mark = '\u2717';
+      box.append(bad);
+    }
+    if (right) {
+      const good = para(right, 'concept-good');
+      good.dataset.mark = '\u2713';
+      box.append(good);
+    }
+    return box;
+  };
+
+  if (concept.why) conceptBodyEl.append(para(concept.why, 'concept-why'));
+
+  // The rule, in the words he is meant to keep. Everything under it is support.
+  if (concept.rule) conceptBodyEl.append(para(concept.rule, 'concept-rule'));
+  if (concept.ruleDetail) conceptBodyEl.append(para(concept.ruleDetail));
+
+  if ((concept.forms || []).length) {
+    const list = document.createElement('dl');
+    list.className = 'concept-forms';
+    concept.forms.forEach((f) => {
+      const dt = document.createElement('dt');
+      dt.textContent = f.form;
+      const dd = document.createElement('dd');
+      dd.textContent = f.example;
+      list.append(dt, dd);
+    });
+    conceptBodyEl.append(list);
+  }
+  if (concept.formsWarning) {
+    conceptBodyEl.append(para(concept.formsWarning, 'concept-warning'));
+  }
+
+  if ((concept.steps || []).length) {
+    conceptBodyEl.append(heading('The test'));
+    const ol = document.createElement('ol');
+    ol.className = 'concept-steps';
+    concept.steps.forEach((step) => {
+      const li = document.createElement('li');
+      li.textContent = step;
+      ol.append(li);
+    });
+    conceptBodyEl.append(ol);
+  }
+  // The two outcomes, set apart from the steps: the steps are what he does, these
+  // are what he does with the answer.
+  (concept.then || []).forEach((line) => {
+    conceptBodyEl.append(para(line, 'concept-then'));
+  });
+
+  // A callout, not a paragraph: this is the diagnosis, not background. He knows
+  // the grammar -- he decides before he has read far enough to decide.
+  if (concept.trap) {
+    const box = document.createElement('div');
+    box.className = 'concept-trap';
+    box.append(para('The trap', 'concept-h'), para(concept.trap));
+    conceptBodyEl.append(box);
+  }
+
+  // "and" is taught here and nowhere else. It was in two places -- a caveat under
+  // the rule and a footnote at the end -- which is one more than a student needs
+  // to meet the same idea.
+  if (concept.exception) {
+    const box = document.createElement('div');
+    box.className = 'concept-exception';
+    box.append(para(concept.exception.title || 'The one exception', 'concept-h'));
+    if (concept.exception.intro) box.append(para(concept.exception.intro));
+    (concept.exception.pairs || []).forEach((pr) => box.append(pairEl(pr.wrong, pr.right)));
+    if (concept.exception.note) box.append(para(concept.exception.note, 'concept-working'));
+    conceptBodyEl.append(box);
+  }
+
+  // Kept apart from the rule above: which form to use and whether it takes
+  // commas are two questions, and running them together teaches that every
+  // describing phrase is comma-fenced. His own two examples show both cases.
+  if (concept.commas) {
+    conceptBodyEl.append(heading('What about the commas?'), para(concept.commas));
+  }
+
+  (concept.examples || []).forEach((ex) => {
+    const box = document.createElement('div');
+    box.className = 'concept-example';
+    box.append(para(ex.source || '', 'concept-src'));
+    box.append(para(ex.sentence || '', 'concept-sentence'));
+
+    const choices = document.createElement('p');
+    choices.className = 'concept-choices';
+    (ex.choices || []).forEach((text) => {
+      const chip = document.createElement('span');
+      chip.className = text === ex.answer ? 'concept-choice is-answer' : 'concept-choice';
+      chip.textContent = text;
+      choices.append(chip);
+    });
+    box.append(choices);
+
+    if (ex.wrong || ex.right) box.append(pairEl(ex.wrong, ex.right));
+
+    if (ex.working) box.append(para(ex.working, 'concept-working'));
+    conceptBodyEl.append(box);
+  });
+
+  if (concept.alsoNote) {
+    conceptBodyEl.append(heading('One related rule'), para(concept.alsoNote));
+  }
+
+  // Last, and the only part worth learning by heart.
+  if ((concept.memorise || []).length) {
+    const box = document.createElement('div');
+    box.className = 'concept-memorise';
+    box.append(para('Memorise this', 'concept-h'));
+    concept.memorise.forEach((line) => box.append(para(line)));
+    conceptBodyEl.append(box);
+  }
+  if (concept.check) conceptBodyEl.append(para(concept.check, 'concept-check'));
+}
+
+// Shown for any question the lesson covers. Open the first time he meets it,
+// folded ever after -- a lesson he has read is furniture.
+function renderConcept(question) {
+  if (!conceptPanel) return;
+  const concept = conceptFor(question);
+  conceptPanel.hidden = !concept;
+  if (!concept) return;
+
+  conceptPanel.dataset.conceptId = concept.id;
+  conceptTitleEl.textContent = concept.title || '';
+  renderConceptBody(concept);
+  store.concepts = store.concepts || {};
+  conceptPanel.open = !(store.concepts[concept.id] || {}).folded;
 }
 
 function renderMeta(question) {
@@ -2132,6 +2301,8 @@ function loadQuestion(question) {
 
   // Before renderMeta, which paints the badge the clock lives in.
   startQuestionTimer();
+  offerConcept(question, false);   // clears the previous question's, if any
+  renderConcept(question);
   renderMeta(question);
   if (sectionOf(question) === 'math') {
     // A maths stem is one block carrying everything -- a displayed equation, the
@@ -2236,7 +2407,29 @@ function submitEntry() {
 
   updateSubmitState();
   showRule(current);
+  offerConcept(current, !isCorrect);
   renderSourceLink();
+}
+
+// Offered at the moment the rule would have paid for itself, and only then. The
+// panel sits above the question and is folded once he has read it, so this opens
+// it and takes him up rather than leaving him to remember it is there.
+function offerConcept(question, gotItWrong) {
+  const existing = document.querySelector('.concept-jump');
+  if (existing) existing.remove();      // showRule runs again on every re-serve
+  if (!gotItWrong || !conceptPanel) return;
+  const concept = conceptFor(question);
+  if (!concept) return;
+
+  const link = document.createElement('button');
+  link.type = 'button';
+  link.className = 'btn btn-small concept-jump';
+  link.textContent = `Read the rule — ${concept.title}`;
+  link.addEventListener('click', () => {
+    conceptPanel.open = true;
+    conceptPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  ruleBox.after(link);
 }
 
 function reveal(selectedIndex) {
@@ -2295,6 +2488,7 @@ function reveal(selectedIndex) {
     fillBlank(selected.text);
     showRule(current);
   }
+  offerConcept(current, !isCorrect);
 
   renderSourceLink();
 
@@ -3013,6 +3207,17 @@ function loadEducator() {
 
 // Same contract again: swallows its own errors and always resolves, so a missing
 // file just means the revision set is absent and everything else runs as before.
+function loadConcepts() {
+  return fetch(`${CONCEPTS_FILE}?v=${DATA_VERSION}`)
+    .then((r) => (r.ok ? r.json() : null))
+    .then((data) => {
+      if (!Array.isArray(data)) return;
+      concepts = data;
+      console.info(`Concepts: ${concepts.length} loaded.`);
+    })
+    .catch((err) => console.warn('No concepts loaded.', err));
+}
+
 function loadMissed() {
   return fetch(`${MISSED_FILE}?v=${DATA_VERSION}`)
     .then((r) => (r.ok ? r.json() : null))
@@ -3117,6 +3322,7 @@ function loadBanks() {
     loadVocab(),
     loadDefective(),
     loadMissed(),
+    loadConcepts(),
     loadEducator()
   ]).then(([results]) => {
     // Order matters and is append-only: the saved cursor is an index into this,
@@ -3876,6 +4082,17 @@ if (practiseBtn) {
     const target = questionOnShow;
     if (missedDialog && missedDialog.open) missedDialog.close();
     if (target) jumpToQuestion(target.id);
+  });
+}
+
+// Folding is his decision and it sticks; nothing else ever opens or closes it.
+if (conceptPanel) {
+  conceptPanel.addEventListener('toggle', () => {
+    const id = conceptPanel.dataset.conceptId;
+    if (!id) return;
+    store.concepts = store.concepts || {};
+    store.concepts[id] = { folded: !conceptPanel.open };
+    saveStore();
   });
 }
 
