@@ -608,6 +608,8 @@ body {
 .topbar-tools {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 10px;
   flex-shrink: 0;
 }
@@ -2455,4 +2457,38 @@ math { font-size: 1.06em; }
   .missed-body {
     max-height: 34vh;
   }
+}
+
+/* ---------- Star ---------- */
+
+/* One of the badges, and the only one that can be pressed. Outlined and muted
+   until it is on -- an unstarred question should not look like it is asking to be
+   starred -- then it takes the amber the app already uses for "needs attention".
+   font: inherit resets the UA button face back to the badge line's type. */
+.q-meta .tag-star {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border-color: var(--option-border);
+  color: var(--muted);
+  font-family: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.q-meta .tag-star:hover {
+  border-color: var(--pending-fg);
+  color: var(--pending-fg);
+}
+
+.q-meta .tag-star:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.q-meta .tag-star.is-on {
+  background: var(--pending-bg);
+  border-color: var(--pending-fg);
+  color: var(--pending-fg);
 }

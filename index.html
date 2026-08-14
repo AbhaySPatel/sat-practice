@@ -6,7 +6,7 @@
   <title>SAT Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=73" />
+  <link rel="stylesheet" href="styles.css?v=77" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -33,6 +33,18 @@
            rest of it: the ring fills with the day's points and the mark inside
            changes as it does, so one glance says how the day is going. -->
       <div class="topbar-tools">
+        <!-- Up here with the chrome rather than down in the filter bar: the SAT
+             scores these separately, 200-800 each, so they are two modes and not
+             two filters -- switching swaps the pool, the skill list and the
+             headline figure together. Moving it out also lets the filters below
+             sit on one line. Maths is ~33 MB of MathML and figures and is not
+             fetched until this is pressed. -->
+        <div class="section-switch" role="group" aria-label="Section">
+          <button type="button" class="section-btn is-on" data-section="rw"
+                  aria-pressed="true">Reading &amp; Writing</button>
+          <button type="button" class="section-btn" data-section="math"
+                  aria-pressed="false">Math</button>
+        </div>
         <button type="button" class="target-tile" id="openProgress" aria-label="Open progress">
           <span class="target-ring" id="targetRing">
             <span class="target-icon" id="targetIcon" aria-hidden="true">💤</span>
@@ -60,16 +72,6 @@
          grouped by domain inside the dropdown, so the four score-report
          headings survive without costing four rows of screen. -->
     <div class="controls">
-      <!-- The SAT scores these separately, 200-800 each, so they are two modes
-           rather than two filters: switching swaps the pool, the skill list and
-           the headline figure together. Maths is ~33 MB of MathML and figures and
-           is not fetched until this is pressed. -->
-      <div class="section-switch" role="group" aria-label="Section">
-        <button type="button" class="section-btn is-on" data-section="rw"
-                aria-pressed="true">Reading &amp; Writing</button>
-        <button type="button" class="section-btn" data-section="math"
-                aria-pressed="false">Math</button>
-      </div>
       <label class="control">
         <span>Skill</span>
         <select id="skillSelect"></select>
@@ -104,6 +106,13 @@
       <label class="switch" title="Hides questions answered correctly first time and never missed since. Nothing is deleted — untick to practise them again.">
         <input type="checkbox" id="hideAcedToggle" checked />
         <span>Hide first-time correct</span>
+      </label>
+      <!-- The only set he picks by hand. Inside it the two automatic retirements
+           are off: a question he starred must not disappear because he later got
+           it right. -->
+      <label class="switch" title="Only the questions you have starred. Star and unstar them on the question itself — nothing here is automatic.">
+        <input type="checkbox" id="starredOnlyToggle" />
+        <span>Starred only</span>
       </label>
       <button type="button" class="link-btn" id="restartSequence">Restart</button>
     </div>
@@ -368,6 +377,6 @@
   </dialog>
 
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=84"></script>
+  <script src="app.js?v=86"></script>
 </body>
 </html>

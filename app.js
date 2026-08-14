@@ -361,6 +361,7 @@ let wrongOnly = false;     // restrict to questions he has gotten wrong
 // this: the pool, the skill dropdown, the cursor and the projection.
 let section = DEFAULT_SECTION;
 let hideAced = true;
+let starredOnly = false;   // show only the questions he has starred
 let clearedCount = 0;      // how many the line above set aside, for the readout
 let missedCount = 0;       // and how many "Wrong answers only" is holding back
 let directionAnswered = false;
@@ -396,6 +397,11 @@ const difficultySelect = document.getElementById('difficultySelect');
 const testSelect = document.getElementById('testSelect');
 const testControl = document.getElementById('testControl');
 const hideAcedToggle = document.getElementById('hideAcedToggle');
+const starredOnlyToggle = document.getElementById('starredOnlyToggle');
+// Rebuilt with the rest of the badge line on every renderMeta, exactly as the
+// timer is, so it is looked up again rather than held: the element this points at
+// is replaced, not mutated.
+let starBtn = null;
 const skillStatsEl = document.getElementById('skillStats');
 // One readout per pager -- there is a copy above and below the question -- so
 // this is a list rather than a single element by id.
@@ -480,6 +486,11 @@ function emptyStore() {
     served: 0,
     // vocab[questionId] = { run } -- consecutive right answers on that word.
     vocab: {},
+    // starred[questionId] = true. The one set in here he chooses by hand: every
+    // other -- missed, cleared, mastered -- is worked out from his answers. A star
+    // means "I want to find this again", which no amount of answer history can
+    // infer, so nothing ever sets or clears it except him.
+    starred: {},
     sinceReview: 0,
     filters: { skill: 'all', difficulty: 'all', test: 'all', hideAced: true }
   };
@@ -609,11 +620,12 @@ testFilter = (store.filters && store.filters.test) || 'all';
 // stored value only to honour an explicit untick, and `|| true` would not do:
 // stored `false` has to survive a reload.
 hideAced = !(store.filters && store.filters.hideAced === false);
+starredOnly = !!(store.filters && store.filters.starredOnly);
 
 function rememberFilters() {
   store.filters = {
     skill: skillFilter, difficulty: difficultyFilter, test: testFilter,
-    hideAced: hideAced
+    hideAced: hideAced, starredOnly: starredOnly
   };
   saveStore();
 }
@@ -891,6 +903,22 @@ function isAced(question) {
 // is precisely the word the drill has to bring back, and it retires words itself
 // once he has answered them right VOCAB_MASTERED_BY times running. Pulling missed
 // words out here would leave the drill nothing to teach him.
+function isStarred(id) {
+  return !!(store.starred && store.starred[id]);
+}
+
+function toggleStar(id) {
+  store.starred = store.starred || {};
+  if (store.starred[id]) delete store.starred[id];
+  else store.starred[id] = true;
+  saveStore();
+  return isStarred(id);
+}
+
+function starredCount() {
+  return Object.keys(store.starred || {}).length;
+}
+
 function isMissed(question) {
   return !wrongOnly && question.skill !== VOCAB_SKILL && isWrongEver(question.id);
 }
@@ -1131,6 +1159,19 @@ document.addEventListener('visibilitychange', () => {
   paintTimer();
 });
 
+// The star reflects the question on screen and nothing else -- it is never set or
+// cleared by answering, only by pressing it.
+function paintStar(question) {
+  if (!starBtn) return;
+  const on = isStarred(question.id);
+  starBtn.classList.toggle('is-on', on);
+  starBtn.setAttribute('aria-pressed', String(on));
+  starBtn.textContent = on ? '\u2605 Starred' : '\u2606 Star';
+  starBtn.title = on
+    ? 'Starred. Press to remove it.'
+    : 'Star this question, to find it again under "Starred only".';
+}
+
 function renderMeta(question) {
   metaEl.textContent = '';
   timerEl = null;
@@ -1228,6 +1269,21 @@ function renderMeta(question) {
     worth.textContent = 'no points';
   }
   metaEl.append(worth);
+
+  // A property of the question like the badges either side of it, so it sits on
+  // the same line and wears the same pill -- just the one that can be pressed.
+  starBtn = document.createElement('button');
+  starBtn.type = 'button';
+  starBtn.className = 'tag tag-star';
+  starBtn.addEventListener('click', () => {
+    toggleStar(question.id);
+    paintStar(question);
+    // The dropdown counts move with it; the question on screen does not. Starring
+    // is a note to self, not a filter change.
+    if (bank.length > 0) buildSkillSelect();
+  });
+  paintStar(question);
+  metaEl.append(starBtn);
 
   // Last on the line, so the one thing on it that moves is not sitting between
   // two that do not.
@@ -2342,7 +2398,8 @@ function applyFilters() {
     sectionOf(q) === section &&
     (skillFilter === 'all' || q.skill === skillFilter) &&
     (difficultyFilter === 'all' || q.difficulty === difficultyFilter) &&
-    (!testFilterApplies() || q.test === testFilter)
+    (!testFilterApplies() || q.test === testFilter) &&
+    (!starredOnly || isStarred(q.id))
   );
   // Words he has beaten drop out, so the drill is always the ones still costing
   // him something rather than a march through all 952.
@@ -2350,8 +2407,13 @@ function applyFilters() {
   // Same idea one level up, and for the same reason: what is left to do is more
   // use to him than the whole bank. A no-op under wrong-only, which already keeps
   // only questions he has missed.
+  // Both retirements are switched off inside the starred set. He put a question
+  // there by hand; getting it right afterwards must not take it away again, which
+  // is what "Hide first-time correct" would otherwise do the moment the star
+  // started paying off. Same for the missed set: a starred question he has also
+  // missed should not need a second tick to be visible.
   const beforeAced = pool.length;
-  pool = pool.filter((q) => !isAced(q));
+  if (!starredOnly) pool = pool.filter((q) => !isAced(q));
   // Kept so the readout can show what was set aside. Questions dropping out of a
   // count with no explanation reads like losing them. Zero under wrong-only: a
   // question he has never missed is not part of that set to begin with, so
@@ -2363,7 +2425,7 @@ function applyFilters() {
   // aside rather than appear to have been lost, and the number is the whole
   // argument for going and looking at them.
   const beforeMissed = pool.length;
-  pool = pool.filter((q) => !isMissed(q));
+  if (!starredOnly) pool = pool.filter((q) => !isMissed(q));
   missedCount = beforeMissed - pool.length;
 
   if (wrongOnly) pool = pool.filter((q) => isWrongEver(q.id));
@@ -2389,8 +2451,11 @@ function cursorKey() {
   // built up -- they are saved, and each holds a real position -- still means what
   // it did. Only maths adds one.
   const sec = section === DEFAULT_SECTION ? '' : `${section}|`;
+  // Appended only when on, so every key he has already built up still means what
+  // it did before starring existed.
+  const star = starredOnly ? '|star' : '';
   return `${sec}${skillFilter}|${difficultyFilter}`
-    + `|${wrongOnly ? 'wrong' : 'all'}${test}${left}`;
+    + `|${wrongOnly ? 'wrong' : 'all'}${test}${left}${star}`;
 }
 
 function cursorValue() {
@@ -2438,6 +2503,14 @@ function nextQuestion(options) {
     // The missed ones go first when there are any: an empty set with questions
     // waiting behind a tick is not an ending, and that tick is the one thing on
     // the page that would give him something to do.
+    // Nothing is automatic in the starred set, so an empty one has exactly one
+    // cause and one cure, and neither is any of the messages below.
+    const noStars = starredOnly
+      ? (starredCount() === 0
+        ? 'No questions starred yet. Open any question and press Star to keep it here.'
+        : 'None of your starred questions match the other filters. Widen Skill or '
+          + 'Difficulty, or untick "Starred only".')
+      : null;
     const waiting = !wrongOnly && missedCount > 0
       ? `Nothing fresh left here — but ${missedCount} you got wrong `
         + `${missedCount === 1 ? 'is' : 'are'} waiting. `
@@ -2455,7 +2528,7 @@ function nextQuestion(options) {
       skillFilter !== 'all' ? 'skill' : null,
       difficultyFilter !== 'all' ? 'difficulty' : null
     ].filter(Boolean);
-    setEmptyState(waiting || cleared || (wrongOnly
+    setEmptyState(noStars || waiting || cleared || (wrongOnly
       ? (narrowed.length === 0
         ? 'Nothing wrong yet. Untick "Wrong answers only" to keep practising.'
         : `Nothing wrong here. Widen the ${narrowed.join(' or ')}, or untick `
@@ -3176,7 +3249,8 @@ function buildSkillSelect() {
     if (sectionOf(q) !== section) return;
     if (q.skill === VOCAB_SKILL && vocabMastered(q.id)) return;
     present[q.skill] = true;
-    if (wrongOnly ? !isWrongEver(q.id) : isAced(q) || isMissed(q)) return;
+    if (starredOnly && !isStarred(q.id)) return;
+    if (starredOnly ? false : (wrongOnly ? !isWrongEver(q.id) : isAced(q) || isMissed(q))) return;
     counts[q.skill] = (counts[q.skill] || 0) + 1;
     if (!EXTRA_SKILLS.has(q.skill)) available += 1;
   });
@@ -3328,6 +3402,17 @@ function setupControls() {
     difficultySelect.addEventListener('change', () => {
       difficultyFilter = difficultySelect.value;
       rememberFilters();
+      current = null;
+      nextQuestion({ step: 0, scroll: false });
+    });
+  }
+
+  if (starredOnlyToggle) {
+    starredOnlyToggle.checked = starredOnly;
+    starredOnlyToggle.addEventListener('change', () => {
+      starredOnly = starredOnlyToggle.checked;
+      rememberFilters();
+      if (bank.length > 0) buildSkillSelect();
       current = null;
       nextQuestion({ step: 0, scroll: false });
     });
