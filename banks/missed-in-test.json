@@ -3291,5 +3291,560 @@
         "why": "Choice D is the best answer. The sentence emphasizes the role a misconception played in the naming of a place, explaining that Spanish explorers mistook a peninsula for an island and, as a result, named the peninsula after a fictional island, California."
       }
     ]
+  },
+  {
+    "id": "missed-pt9-m1-q5",
+    "source": "College Board Practice Test 9, Module 1, Question 5",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice Test 9",
+    "taken": "2026-08-14",
+    "module": 1,
+    "number": 5,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Although science fiction was dominated mostly by white male authors when Octavia Butler, a Black woman, began writing, she did not view the genre as ___ Butler broke into the field with the publication of several short stories and her 1976 novel Patternmaster, and she later became the first science fiction writer to win a prestigious MacArthur Fellowship.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "rule": "Most logically completes the discussion of Octavia Butler’s career.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "legitimate",
+        "why": "Choice A is incorrect. In this context, “legitimate” would mean genuinely good or valid. Nothing in the text suggests that Butler didn’t think the science fiction genre was good or valid; in fact, it indicates that she pursued and made a successful career of publishing work in that field.",
+        "gloss": "genuinely good or valid"
+      },
+      {
+        "label": "B",
+        "text": "impenetrable",
+        "why": "Choice B is the best answer because it most logically completes the discussion of Octavia Butler’s career. In this context, “impenetrable” means impossible to enter. The text indicates that the field of science fiction was dominated by white males when Butler, a Black woman, started writing, but she published several science fiction short stories and a novel and later won a prestigious award; that is, Butler pursued science fiction writing and had success. This context suggests that Butler didn’t view the genre as impossible to enter.",
+        "gloss": "impossible to enter"
+      },
+      {
+        "label": "C",
+        "text": "compelling",
+        "why": "Choice C is incorrect. In this context, “compelling” would mean attracting or demanding attention. The text indicates that Butler chose to write science fiction, so it wouldn’t make sense to say that she didn’t see the field as drawing her attention.",
+        "gloss": "attracting or demanding attention"
+      },
+      {
+        "label": "D",
+        "text": "indecipherable",
+        "why": "Choice D is incorrect. To say that Butler didn’t consider science fiction “indecipherable,” or impossible to understand, would suggest that Butler did understand it. However, the text doesn’t address Butler’s ability to interpret works in the genre; rather, it focuses on Butler’s successful pursuit of writing science fiction.",
+        "gloss": "impossible to understand"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt9-m1-q8",
+    "source": "College Board Practice Test 9, Module 1, Question 8",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice Test 9",
+    "taken": "2026-08-14",
+    "module": 1,
+    "number": 8,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "In response to concerns that some recent financial crises were exacerbated by consumers misunderstanding risks associated with credit cards, loans, and other financial products, policymakers in many countries have instituted risk-disclosure requirements on sellers of those products. Enrique Seira et al. investigated a variety of risk-disclosure messages sent to thousands of credit card customers and found that the messages had only small and short-lived effects on behavior. Seira et al. asserted that such effects may nevertheless be worth pursuing, given the negligible cost of messaging.",
+    "question": "Which choice best describes the function of the underlined portion in the text as a whole?",
+    "rule": "Most accurately describes the function of the underlined portion in the text as a whole.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "It notes a factor that led Seira et al. to not dismiss risk-disclosure messaging altogether despite their evidence of its limited utility.",
+        "why": "Choice A is the best answer because it most accurately describes the function of the underlined portion in the text as a whole. The text establishes that many countries have adopted risk-disclosure requirements for financial products due to concerns that consumers don’t understand the risks associated with the products. According to the text, Seira et al. found that the effects of such messaging on consumer behavior were small and temporary. The text then adds that the researchers assert that because the cost of the messaging is negligible, the approach may be worth doing even if the effects are limited. Thus, the underlined portion notes a factor—very low cost—that led the researchers to not completely dismiss risk-disclosure messaging despite their evidence of its limited utility."
+      },
+      {
+        "label": "B",
+        "text": "It acknowledges a type of risk-disclosure messaging that Seira et al. may not have fully accounted for in their study.",
+        "why": "Choice B is incorrect because the underlined portion doesn’t refer to a particular type of risk-disclosure messaging, whether Seira et al. considered it or not; the underlined portion simply indicates that the cost of the messaging (broadly) is very low, which makes the approach worth pursuing even if its effects are limited."
+      },
+      {
+        "label": "C",
+        "text": "It describes a consideration that explains why Seira et al. recommended risk-disclosure messaging even though its effects may be small relative to its costs.",
+        "why": "Choice C is incorrect. Although the underlined portion does describe a consideration that led the researchers to recommend risk-disclosure messaging despite the messaging’s small effects on consumer behavior, it directly states that the cost of such messaging is negligible, or very low—meaning that both the effects and the costs are small, not that the effects are small only relative to the costs."
+      },
+      {
+        "label": "D",
+        "text": "It points out a circumstance that Seira et al. conceded may make risk-disclosure messaging more effective than their study suggests.",
+        "why": "Choice D is incorrect because there’s no indication that Seira et al. suggest that risk-disclosure messaging could be more effective if it had lower costs; rather, the underlined portion indicates that Seira et al. believe the already negligible cost of messaging makes the approach worth pursuing even if its effects are limited."
+      }
+    ],
+    "underline": "given the negligible cost of messaging.",
+    "passageHtml": "<p>In response to concerns that some recent financial crises were exacerbated by consumers misunderstanding risks associated with credit cards, loans, and other financial products, policymakers in many countries have instituted risk-disclosure requirements on sellers of those products. Enrique Seira <span>et al.</span> investigated a variety of risk-disclosure messages sent to thousands of credit card customers and found that the messages had only small and short-lived effects on behavior. Seira <span>et al.</span> asserted that such effects may nevertheless be worth pursuing, <span role=\"region\" aria-label=\"Referenced Content\">given the negligible cost of messaging</span>.</p>"
+  },
+  {
+    "id": "missed-pt9-m1-q9",
+    "source": "College Board Practice Test 9, Module 1, Question 9",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "cross-text-connections",
+    "test": "Practice Test 9",
+    "taken": "2026-08-14",
+    "module": 1,
+    "number": 9,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Text 1 When companies in the same industry propose merging with one another, they often claim that the merger will benefit consumers by increasing efficiency and therefore lowering prices. Economist Ying Fan investigated this notion in the context of the United States newspaper market. She modeled a hypothetical merger of Minneapolis-area newspapers and found that subscription prices would rise following a merger. Text 2 Economists Dario Focarelli and Fabio Panetta have argued that research on the effect of mergers on prices has focused excessively on short-term effects, which tend to be adverse for consumers. Using the case of consumer banking in Italy, they show that over the long term (several years, in their study), the efficiency gains realized by merged companies do result in economic benefits for consumers.",
+    "question": "Based on the texts, how would Focarelli and Panetta (Text 2) most likely respond to Fan’s findings (Text 1)?",
+    "rule": "Text 1 indicates that Fan found that a newspaper merger would result in a rise in subscription prices.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "They would recommend that Fan compare the near-term effect of a merger on subscription prices in the Minneapolis area with the effect of a merger in another newspaper market.",
+        "why": "Choice A is incorrect because Text 2 doesn’t indicate that Focarelli and Panetta connect the effects of mergers to specific locations. Instead, Focarelli and Panetta focus on the length of time over which the effects of mergers should be evaluated."
+      },
+      {
+        "label": "B",
+        "text": "They would argue that over the long term the expenses incurred by the merged newspaper company will also increase.",
+        "why": "Choice B is incorrect because Text 2 indicates that Focarelli and Panetta found that merged companies experience “efficiency gains” over the long term, meaning that their expenses go down relative to their output, not that their expenses increase."
+      },
+      {
+        "label": "C",
+        "text": "They would encourage Fan to investigate whether the projected effect on subscription prices persists over an extended period.",
+        "why": "Choice C is the best answer because, based on the information presented in the texts, it represents how Focarelli and Panetta would most likely respond to Fan’s findings. Text 1 indicates that Fan found that a newspaper merger would result in a rise in subscription prices. This rise wouldn’t benefit customers, who would have to pay more for news after a merger. Text 2 presents Focarelli and Panetta’s argument that merger research tends to focus too much on what happens immediately after the merger. Text 2 goes on to describe their finding that mergers can be economically beneficial for consumers over the long term. This suggests that Focarelli and Panetta would encourage Fan to investigate the long-term effect of the hypothetical newspaper merger on subscription prices. SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 6 SAT PRACTICE TEST #9 ANSWER EXPLANATIONS"
+      },
+      {
+        "label": "D",
+        "text": "They would claim that mergers have a different effect on consumer prices in the newspaper industry than in most other industries.",
+        "why": "Choice D is incorrect because there’s no indication in Text 2 that Focarelli and Panetta believe that the newspaper industry is different from any other industry when it comes to the effects of mergers. Although their own research was about consumer banking, Text 2 suggests that they view their conclusions as applicable to mergers in general."
+      }
+    ],
+    "passageHtml": "<p data-text-label=\"1\">Text 1</p>\n<p>When companies in the same industry propose merging with one another, they often claim that the merger will benefit consumers by increasing efficiency and therefore lowering prices. Economist Ying Fan investigated this notion in the context of the United States newspaper market. She modeled a hypothetical merger of Minneapolis-area newspapers and found that subscription prices would rise following a merger.</p>\n\n<p data-text-label=\"2\">Text 2</p>\n<p>Economists Dario Focarelli and Fabio Panetta have argued that research on the effect of mergers on prices has focused excessively on short-term effects, which tend to be adverse for consumers. Using the case of consumer banking in Italy, they show that over the long term (several years, in their study), the efficiency gains realized by merged companies do result in economic benefits for consumers. </p>"
+  },
+  {
+    "id": "missed-pt9-m1-q16",
+    "source": "College Board Practice Test 9, Module 1, Question 16",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice Test 9",
+    "taken": "2026-08-14",
+    "module": 1,
+    "number": 16,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "ALSOL is a microcredit program in Mexico that makes small loans to female entrepreneurs who lack the collateral and credit history to secure financing from conventional banks. Borrowers use their business proceeds to repay loans in equal weekly installments and incur no penalty for missed payments other than lack of access to larger loans. Economists Gustavo Barboza and Sandra Trejos analyzed ALSOL data and found that rural borrowers, who mostly make and sell handicrafts, miss payments more often than urban borrowers do, partly because they sell their goods less frequently than they could. Barboza and Trejos claim that this behavior reflects strategic decisions that enable rural women to increase their profits per unit sold.",
+    "question": "Which finding, if true, would most directly support Barboza and Trejos’s claim?",
+    "rule": "Presents a finding that, if true, would most directly support Barboza and Trejos’s claim that rural female entrepreneurs who have received small loans from ALSOL are strategic in selling their goods less frequently than they could, even if it means missing payments.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Many marketplaces require entrepreneurs to pay marketplace operators a fixed percentage of each day’s proceeds in exchange for permission to sell goods there.",
+        "why": "Choice A is incorrect because the finding that many marketplaces require entrepreneurs to pay the operators of the marketplace a fixed percentage of proceeds to be able to sell goods there wouldn’t explain why rural entrepreneurs strategically choose to sell their goods less frequently than they could in order to increase their profits per unit sold. With a fixed percentage of proceeds due to operators, the amount entrepreneurs have to pay operators would also be fixed SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 10 SAT PRACTICE TEST #9 ANSWER EXPLANATIONS regardless of frequency of selling."
+      },
+      {
+        "label": "B",
+        "text": "Rural entrepreneurs can typically sell their goods for higher prices in cities than in their home areas, but the number of people selling competing goods tends to be higher in cities.",
+        "why": "Choice B is incorrect because the finding that rural entrepreneurs can usually sell their goods for higher prices in cities than in their local areas but also face higher competition to sell goods in cities wouldn’t explain why rural entrepreneurs strategically choose to sell their goods less frequently than they could in order to increase their profits per unit sold. This is because both the higher prices and higher competition in cities would be stable factors—meaning there would be no clear reason for the rural entrepreneurs not to take every available chance to sell their goods in cities and to instead sell their goods in cities only sometimes."
+      },
+      {
+        "label": "C",
+        "text": "Due to the lower costs they incur, rural entrepreneurs tend to require smaller initial loans than urban entrepreneurs do.",
+        "why": "Choice C is incorrect because the finding that rural entrepreneurs have lower costs and thus tend to require smaller initial loans than urban entrepreneurs do has no bearing on rural borrowers strategically choosing to sell their goods less frequently than they could specifically to increase their profits per unit sold. The cost of producing goods doesn’t depend on the frequency with which an entrepreneur sells those goods, so lower frequency alone wouldn’t affect profits, and the initial loan amount is set and has nothing to do with how much profit is earned from each sale."
+      },
+      {
+        "label": "D",
+        "text": "The cost to rural entrepreneurs to bring their goods to towns with marketplaces is high but largely independent of the number of goods they bring.",
+        "why": "Choice D is the best answer because it presents a finding that, if true, would most directly support Barboza and Trejos’s claim that rural female entrepreneurs who have received small loans from ALSOL are strategic in selling their goods less frequently than they could, even if it means missing payments. The text explains that borrowers in the ALSOL program use proceeds from their businesses to repay loans in equal weekly payments, with almost no penalty for missed payments. According to the text, Barboza and Trejos found that rural borrowers miss weekly payments in part because they don’t sell their goods as often as they could, a move the researchers claim allows the entrepreneurs to help increase profits for the goods they sell. Finding that the cost of bringing goods to towns with marketplaces is high for rural entrepreneurs but is largely independent of how many goods are brought would support the researchers’ claim: traveling to marketplaces less frequently would mean that a rural entrepreneur spends less on travel overall, and taking a large load of goods to a marketplace for essentially the same cost as taking a small load would allow the entrepreneur to more substantially offset the cost of travel with greater overall sales at the marketplace, resulting in more profit per good sold—even if those profits are earned less frequently and don’t support weekly loan payments."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt9-m1-q22",
+    "source": "College Board Practice Test 9, Module 1, Question 22",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "boundaries",
+    "test": "Practice Test 9",
+    "taken": "2026-08-14",
+    "module": 1,
+    "number": 22,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Journalists have dubbed Gil Scott-Heron the “godfather of rap,” a title that has appeared in hundreds of articles about him since the 1990s. Scott- Heron himself resisted the godfather ___ feeling that it didn’t encapsulate his devotion to the broader African American blues music tradition as well as “bluesologist,” the moniker he preferred.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is punctuation use between a main clause and two supplementary elements.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "nickname, however",
+        "why": "Choice A is incorrect because it fails to mark the boundary between the supplementary adverb “however” and the supplementary phrase (“feeling… bluesologist”)."
+      },
+      {
+        "label": "B",
+        "text": "nickname, however;",
+        "why": "Choice B is incorrect because a semicolon can’t be used in this way to join the supplementary adverb “however” and the supplementary phrase (“feeling…bluesologist”)."
+      },
+      {
+        "label": "C",
+        "text": "nickname, however,",
+        "why": "Choice C is the best answer. The convention being tested is punctuation use between a main clause and two supplementary elements. In this choice, the commas after “nickname” and “however” are correctly used to separate the supplementary adverb “however” from the main clause (“Scott-Heron… nickname”) on one side and the supplementary participial phrase (“feeling… bluesologist”) on the other."
+      },
+      {
+        "label": "D",
+        "text": "nickname; however,",
+        "why": "Choice D is incorrect because a semicolon can’t be used in this way to join the main clause (“Scott-Heron…nickname”) and the supplementary word and phrase (“however” and “feeling…bluesologist”). Moreover, placing the semicolon after “nickname” illogically signals that the following information (Scott-Heron’s feeling that the nickname didn’t encapsulate his devotion to the blues tradition) is contrary to the information in the previous clause (Scott-Heron’s resistance to the nickname)."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt9-m1-q25",
+    "source": "College Board Practice Test 9, Module 1, Question 25",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "form-structure-sense",
+    "test": "Practice Test 9",
+    "taken": "2026-08-14",
+    "module": 1,
+    "number": 25,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Recent pollen analyses of the Aran Islands have led some researchers to propose that the now treeless islands were once wooded. This hypothesis ___ that certain trees, such as P. sylvestris, survived without interruption or human intervention throughout the Holocene cannot stand, researchers Michael O’Connell and Karen Molloy counter, unless other explanations can first be ruled out.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the use of verb forms within a sentence.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "suggesting",
+        "why": "Choice A is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite present participle “suggesting” is correctly used to form a restrictive participial phrase (“suggesting...Holocene”) within the main clause (“This hypothesis...cannot stand...”). This participial phrase functions as part of the sentence’s subject (“This...Holocene”), providing essential identifying information about what the hypothesis states—namely, that certain trees survived without interruption or human intervention throughout the Holocene."
+      },
+      {
+        "label": "B",
+        "text": "suggested",
+        "why": "Choice B is incorrect because it results in an ungrammatical sentence. The finite verb “suggested” can’t be used in this way within the subject of the sentence."
+      },
+      {
+        "label": "C",
+        "text": "suggests",
+        "why": "Choice C is incorrect because it results in an ungrammatical sentence. The finite verb “suggests” can’t be used in this way within the subject of the sentence."
+      },
+      {
+        "label": "D",
+        "text": "has suggested",
+        "why": "Choice D is incorrect because it results in an ungrammatical sentence. The finite verb “has suggested” can’t be used in this way within the subject of the sentence."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt9-m1-q28",
+    "source": "College Board Practice Test 9, Module 1, Question 28",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "transitions",
+    "test": "Practice Test 9",
+    "taken": "2026-08-14",
+    "module": 1,
+    "number": 28,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Some members of the US Supreme Court have resisted calls to televise the court’s oral arguments, concerned that the participants would be tempted to perform for the cameras (and thus lower the quality of the discourse). ___ the justices worry that most viewers would not even watch the full deliberations, only short clips that could be misinterpreted and mischaracterized.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "rule": "“Additionally” logically signals that the claim in this sentence—that some Supreme Court justices worry that viewers (of televised court arguments) would watch only short, misleading clips—adds to the information in the previous sentence.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "However,",
+        "why": "Choice A is incorrect because “however” illogically signals that the claim in this sentence contrasts with the information in the previous sentence. Instead, the claim adds to the information, indicating a second, additional concern that some Supreme Court justices have about televising the court’s arguments."
+      },
+      {
+        "label": "B",
+        "text": "Additionally,",
+        "why": "Choice B is the best answer. “Additionally” logically signals that the claim in this sentence—that some Supreme Court justices worry that viewers (of televised court arguments) would watch only short, misleading clips—adds to the information in the previous sentence. Specifically, the previous sentence indicates one concern raised by those opposed to televising the court’s oral arguments, and the claim that follows indicates a second, additional concern."
+      },
+      {
+        "label": "C",
+        "text": "In comparison,",
+        "why": "Choice C is incorrect because “in comparison” illogically signals that the claim in this sentence is being compared to the information in the previous sentence. Instead, the claim adds to the information, indicating a second, additional concern that some Supreme Court justices have about televising the court’s arguments."
+      },
+      {
+        "label": "D",
+        "text": "For example,",
+        "why": "Choice D is incorrect because “for example” illogically signals that the claim in this sentence exemplifies the information in the previous sentence. Instead, the claim adds to the information, indicating a second, additional concern that some Supreme Court justices have about televising the court’s arguments."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt9-m2-q9",
+    "source": "College Board Practice Test 9, Module 2, Question 9",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice Test 9",
+    "taken": "2026-08-14",
+    "module": 2,
+    "number": 9,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Individual elephants and Arctic herbivores such as caribou tend to h ave fixed geographic ranges throughout their lifetimes,which had prompted some researchers to speculate that the Arctic woolly mammoth, an extinct elephantid, might have exhibited similar behavior. Mammoth tusks grew in sequential layers, incorporating ingested minerals and organics, and so each ivory stratum reflects the ratio of strontium isotopes (87Sr/86Sr) in the local environment; thus, the sequence of strata shows where the animal roamed during life. Recent analysis of the strontium ratios in the strata of one Arctic woolly mammoth tusk in relation to the geographic distribution of strontium ratios in the environment shows the animal’s range begin to expand as it reached sexual maturity, only to contract again in its final 1.5 years.",
+    "question": "Which choice best describes the function of the underlined statement in the text as a whole?",
+    "rule": "Most accurately describes how the underlined statement functions in the text as a whole.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "It discusses a characteristic shared by certain animals in order to explain why researchers raised a possibility that turned out not to be supported by data described later in the text.",
+        "why": "Choice A is the best answer because it most accurately describes how the underlined statement functions in the text as a whole. The underlined statement mentions a category of animals that have a feature in common: they tend to have fixed geographic ranges throughout their lifetimes. The text then presents the speculation of some researchers that the Arctic woolly mammoth might also 21 SAT PRACTICE TEST #9 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2 share this characteristic. However, an examination of the content of strontium in the strata (or layers) of a woolly mammoth tusk indicated that contrary to the researchers’ hypothesis, the mammoth had an expanding range in its environment that contracted in its last 1.5 years of life. Thus, the underlined statement discusses a characteristic shared by certain animals in order to explain why researchers raised a possibility that turned out not to be supported by data described later in the text."
+      },
+      {
+        "label": "B",
+        "text": "It illustrates a pattern of behavior among certain animals in order to present a theory about exceptions to that pattern that is weakened by a finding described later in the text.",
+        "why": "Choice B is incorrect. Though the underlined statement presents a pattern of behavior (the habit of certain animals of staying within a fixed geographic range), the rest of the text does not present a theory of exceptions to that pattern; rather, the researchers are merely concerned with whether one particular animal has behavior consistent with the pattern."
+      },
+      {
+        "label": "C",
+        "text": "It describes a similarity in the behavior of certain animals in order to show why a method described later in the text did not reveal whether another animal also showed that behavior.",
+        "why": "Choice C is incorrect. Though the underlined statement does describe a similarity in the behavior of certain animals (their tendency to stay within a fixed geographic range), this is not done in order to show why a method described later in the text failed to show whether another animal showed that behavior; rather, the method of analysis of strata of a woolly mammoth tusk showed that the mammoth’s behavior was different from that of the animals mentioned in the underlined statement."
+      },
+      {
+        "label": "D",
+        "text": "It introduces a trait shared by certain animals in order to contextualize a hypothesis about the origin of that trait that is advanced later in the text.",
+        "why": "Choice D is incorrect. Though the underlined statement mentions a trait shared by a number of animals (their fixed geographic range), the rest of the text does not present a hypothesis regarding the origin of that trait; rather, the researchers are concerned with whether another particular animal shares that trait."
+      }
+    ],
+    "underline": "Individual elephants and Arctic herbivores such as caribou tend to h ave fixed geographic ranges throughout their lifetimes,",
+    "passageHtml": "<p><span role=\"region\" aria-label=\"Referenced Content\">Individual elephants and Arctic herbivores such as caribou tend to have fixed geographic ranges throughout their lifetimes,</span> which had prompted some researchers to speculate that the Arctic woolly mammoth, an extinct elephantid, might have exhibited similar behavior. Mammoth tusks grew in sequential layers, incorporating ingested minerals and organics, and so each ivory stratum reflects the ratio of strontium isotopes (<sup>87</sup><span>Sr</span>/<sup>86</sup><span>Sr</span>) in the local environment; thus, the sequence of strata shows where the animal roamed during life. Recent analysis of the strontium ratios in the strata of one Arctic woolly mammoth tusk in relation to the geographic distribution of strontium ratios in the environment shows the animal’s range begin to expand as it reached sexual maturity, only to contract again in its final 1.5 years.</p>"
+  },
+  {
+    "id": "missed-pt9-m2-q13",
+    "source": "College Board Practice Test 9, Module 2, Question 13",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "central-ideas-details",
+    "test": "Practice Test 9",
+    "taken": "2026-08-14",
+    "module": 2,
+    "number": 13,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "The following text is adapted from Charles W. Chesnutt’s 1901 novel The Marrow of Tradition. Mrs. Ochiltree was a woman of strong individuality, whose comments upon her acquaintance[s], present or absent, were marked by a frankness at times no less than startling. This characteristic caused her to be more or less avoided. Mrs. Ochiltree was aware of this sentiment on the part of her acquaintance[s], and rather exulted in it.",
+    "question": "Based on the text, what is true about Mrs. Ochiltree’s acquaintances?",
+    "rule": "Presents a statement about Mrs.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "They try to refrain from discussing topics that would upset Mrs. Ochiltree.",
+        "why": "Choice A is incorrect because the text doesn’t suggest that Mrs. Ochiltree’s acquaintances avoid discussing topics that would upset Mrs. Ochiltree; instead, it states that they avoid being around Mrs. Ochiltree at all."
+      },
+      {
+        "label": "B",
+        "text": "They are unable to spend as much time with Mrs. Ochiltree as she would like.",
+        "why": "Choice B is incorrect because the text makes it clear that Mrs. Ochiltree knows her acquaintances often avoid her and is pleased about it (she “rather exulted in it”), not that she wants to spend more time with them."
+      },
+      {
+        "label": "C",
+        "text": "They are too preoccupied with their own concerns to speak with Mrs. Ochiltree.",
+        "why": "Choice C is incorrect because the text doesn’t suggest that Mrs. Ochiltree’s acquaintances don’t speak with Mrs. Ochiltree because they are too focused on their own concerns, but rather because they don’t like the frank comments she makes. 23 SAT PRACTICE TEST #9 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2"
+      },
+      {
+        "label": "D",
+        "text": "They are likely offended by what Mrs. Ochiltree has said about them.",
+        "why": "Choice D is the best answer because it presents a statement about Mrs. Ochiltree’s acquaintances that is supported by the text. The text indicates that Mrs. Ochiltree makes comments about her acquaintances that are frank, or direct and blunt, and sometimes startling. It also states that because of this behavior, the acquaintances tend to avoid Mrs. Ochiltree. Together, these details suggest that the acquaintances choose not to be around Mrs. Ochiltree because they are offended by the things she has said about them."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt9-m2-q16",
+    "source": "College Board Practice Test 9, Module 2, Question 16",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice Test 9",
+    "taken": "2026-08-14",
+    "module": 2,
+    "number": 16,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "In the twentieth century, ethnographers made a concerted effort to collect Mexican American folklore, but they did not always agree about that folklore’s origins. Scholars such as Aurelio Espinosa claimed that Mexican American folklore derived largely from the folklore of Spain, which ruled Mexico and what is now the southwestern United States from the sixteenth to early nineteenth centuries. Scholars such as Américo Paredes, by contrast, argued that while some Spanish influence is undeniable, Mexican American folklore is mainly the product of the ongoing interactions of various cultures in Mexico and the United States.",
+    "question": "Which finding, if true, would most directly support Paredes’s argument?",
+    "rule": "Presents a finding that, if true, would support Paredes’s argument about the origin of Mexican American folklore.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "The folklore that the ethnographers collected included several songs written in the form of a décima, a type of poem originating in late sixteenth-century Spain.",
+        "why": "Choice A is incorrect because the inclusion of songs influenced by sixteenth- century Spanish poetry among Mexican American folklore collected in the twentieth century would not support Paredes’s view that the folklore was the result of cultural interactions in Mexico and the United States rather than an offshoot of Spanish folklore. If anything, the presence of such songs among the folklore collected in the twentieth century would weaken Paredes’s argument, since it would reflect the influence of Spanish culture on the folklore."
+      },
+      {
+        "label": "B",
+        "text": "Much of the folklore that the ethnographers collected had similar elements from region to region.",
+        "why": "Choice B is incorrect because the mere presence of similarities in Mexican American folklore across regions would not be sufficient to draw a conclusion about where the folklore originated, let alone to support Paredes’s argument that the folklore reflects various cultural interactions in Mexico and the United States. In fact, Paredes would likely expect there to be regional variations in folklore as different cultures have interacted in different places."
+      },
+      {
+        "label": "C",
+        "text": "Most of the folklore that the ethnographers collected was previously unknown to scholars.",
+        "why": "Choice C is incorrect because scholars’ previous ignorance of the folklore would have no bearing on Paredes’s argument that Mexican American folklore mostly reflects cultural interactions in Mexico and the United States; the folklore’s actual origins exist regardless of the scholars’ awareness."
+      },
+      {
+        "label": "D",
+        "text": "Most of the folklore that the ethnographers collected consisted of corridos—ballads about history and social life—of a clearly recent origin.",
+        "why": "Choice D is the best answer because it presents a finding that, if true, would support Paredes’s argument about the origin of Mexican American folklore. The text describes a disagreement among scholars about whether Mexican American folklore mostly derived from the folklore of Spain (the view held by Espinosa and others) or originated in Mexico and the United States through ongoing cultural interactions there (the view held by Paredes and others). If Mexican American folklore collected in the twentieth century mostly consists of ballads about history and social life that originated recently, then that would support Paredes’s argument by suggesting that the folklore mostly arose after Spanish rule ended in the early nineteenth century and that the folklore reflects cultural interactions in Mexico and the United States rather than traditions from Spain."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt9-m2-q17",
+    "source": "College Board Practice Test 9, Module 2, Question 17",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "inferences",
+    "test": "Practice Test 9",
+    "taken": "2026-08-14",
+    "module": 2,
+    "number": 17,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Among social animals that care for their young, such as chickens, macaque monkeys, and humans, newborns appear to show an innate attraction to faces and face-like stimuli. Elisabetta Versace and her colleagues used an image of three black dots arranged in the shape of eyes and a nose or mouth to test whether this trait also occurs in Testudo tortoises, which live alone and do not engage in parental care. They found that tortoise hatchlings showed a significant preference for the image, suggesting that ___",
+    "question": "Which choice most logically completes the text?",
+    "rule": "Presents the conclusion that most logically follows from the text’s discussion of the study by Versace and colleagues.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "face-like stimuli are likely perceived as harmless by newborns of social species that practice parental care but as threatening by newborns of solitary species without parental care.",
+        "why": "Choice A is incorrect because the text indicates that the tortoise hatchlings, which are solitary and don’t practice parental care, were attracted to the face-like stimuli, not that they perceived the stimuli as threatening."
+      },
+      {
+        "label": "B",
+        "text": "researchers should not assume that an innate attraction to face-like stimuli is necessarily an adaptation related to social interaction or parental care.",
+        "why": "Choice B is the best answer because it presents the conclusion that most logically follows from the text’s discussion of the study by Versace and colleagues. The text indicates that newborn animals of some species are attracted to faces and to stimuli that resemble faces. These species, the text says, share two characteristics: they’re social and they practice parental care, meaning that parents care for their young. The text goes on to describe Versace and colleagues’ experiment, which showed that Testudo tortoises, which aren’t social and don’t practice parental care, were attracted to a stimulus that resembles a face. Since Versace and colleagues have shown that a species that isn’t social and doesn’t practice parental care nevertheless has the innate characteristic of being attracted to face-like stimuli, it follows that this characteristic shouldn’t be assumed to be an adaptation related to social interaction or parental care. 25 SAT PRACTICE TEST #9 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2"
+      },
+      {
+        "label": "C",
+        "text": "researchers can assume that the attraction to face-like stimuli that is seen in social species that practice parental care is learned rather than innate.",
+        "why": "Choice C is incorrect because the phenomenon discussed in the text is an attraction to faces and face-like stimuli on the part of newborn animals, which can’t show any learned characteristics since they were just born. Additionally, the text tells us that the tortoises Versace and colleagues studied aren’t social and don’t practice parental care, so any findings about those tortoises wouldn’t be relevant to the question of whether an attraction to faces in social species that practice parental care is innate or learned."
+      },
+      {
+        "label": "D",
+        "text": "newly hatched Testudo tortoises show a stronger preference for face-like stimuli than adult Testudo tortoises do.",
+        "why": "Choice D is incorrect because the text gives no indication that adult tortoises were tested on face-like stimuli and, if adults were in fact tested, no information about how they responded is provided. Since no information about adult tortoises’ responses is provided, no conclusion comparing those responses to the responses of newly hatched tortoises can be supported."
+      }
+    ]
+  },
+  {
+    "id": "missed-pt9-m2-q25",
+    "source": "College Board Practice Test 9, Module 2, Question 25",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "form-structure-sense",
+    "test": "Practice Test 9",
+    "taken": "2026-08-14",
+    "module": 2,
+    "number": 25,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "In the late nineteenth and early twentieth centuries, automobiles were commonly referred to as horseless carriages after the older technology they still resembled. Known as the Brass Era, this period in automotive design is remembered for its grandeur and artistry, its vehicles ___ by collectors for their ornate detailing and gleaming brass fittings.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the use of verb forms in a sentence.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "are highly prized",
+        "why": "Choice A is incorrect because it results in a comma splice. Using the finite present tense verb phrase “are highly prized” creates a second main clause in the sentence, and two main clauses can’t be joined in this way with only a comma after “artistry.”"
+      },
+      {
+        "label": "B",
+        "text": "had been highly prized",
+        "why": "Choice B is incorrect because it results in a comma splice. Using the finite past perfect tense verb phrase “had been highly prized” creates a second main clause in the sentence, and two main clauses can’t be joined in this way with only a comma after “artistry.”"
+      },
+      {
+        "label": "C",
+        "text": "highly prized",
+        "why": "Choice C is the best answer. The convention being tested is the use of verb forms in a sentence. The nonfinite past participle phrase “highly prized” is correctly used to form a supplementary element that modifies the main clause “this…artistry,” describing memorable features of Brass Era automotive design."
+      },
+      {
+        "label": "D",
+        "text": "were highly prized",
+        "why": "Choice D is incorrect because it results in a 28 SAT PRACTICE TEST #9 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2 comma splice. Using the finite past tense verb phrase “were highly prized” creates a second main clause in the sentence, and two main clauses can’t be joined in this way with only a comma after “artistry.”"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt9-m2-q27",
+    "source": "College Board Practice Test 9, Module 2, Question 27",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "transitions",
+    "test": "Practice Test 9",
+    "taken": "2026-08-14",
+    "module": 2,
+    "number": 27,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Before California’s 1911 election to approve a proposition granting women the right to vote, activists across the state sold tea to promote the cause of suffrage. In San Francisco, the Woman’s Suffrage Party sold Equality Tea at local fairs. ___ in Los Angeles, activist Nancy Tuttle Craig, who ran one of California’s largest grocery store firms, distributed Votes for Women Tea.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "rule": "“Similarly” logically signals that the activity described in this sentence (Nancy Tuttle Craig distributing Votes for Women Tea in her Los Angeles grocery stores) is like the activity described in the previous sentence (the Woman’s Suffrage Party selling Equality Tea at fairs in San Francisco).",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "For example,",
+        "why": "Choice A is incorrect because “for example” illogically signals that the activity described in this sentence exemplifies the activity described in the previous sentence. Instead, the two activities are similar, and both support the preceding claim about selling tea to promote women’s right to vote."
+      },
+      {
+        "label": "B",
+        "text": "To conclude,",
+        "why": "Choice B is incorrect because “to conclude” illogically signals that the activity described in this sentence concludes or summarizes the information in the previous sentences. Instead, the activity is similar to the one described in the previous sentence, and both support the preceding claim about selling tea to promote women’s right to vote."
+      },
+      {
+        "label": "C",
+        "text": "Similarly,",
+        "why": "Choice C is the best answer. “Similarly” logically signals that the activity described in this sentence (Nancy Tuttle Craig distributing Votes for Women Tea in her Los Angeles grocery stores) is like the activity described in the previous sentence (the Woman’s Suffrage Party selling Equality Tea at fairs in San Francisco). Together, the two examples support the preceding claim that “activists across the state sold tea to promote the cause of suffrage.”"
+      },
+      {
+        "label": "D",
+        "text": "In other words,",
+        "why": "Choice D is incorrect because “in other words” illogically signals that the activity described in this sentence paraphrases the activity described in the previous sentence. Instead, the two activities are similar, and both support the preceding claim about selling tea to promote women’s right to vote. 29 SAT PRACTICE TEST #9 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2"
+      }
+    ]
+  },
+  {
+    "id": "missed-pt9-m2-q33",
+    "source": "College Board Practice Test 9, Module 2, Question 33",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "rhetorical-synthesis",
+    "test": "Practice Test 9",
+    "taken": "2026-08-14",
+    "module": 2,
+    "number": 33,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "While researching a topic, a student has taken the following notes: • Ducklings expend up to 62.8% less energy when swimming in a line behind their mother than when swimming alone. • The physics behind this energy savings hasn’t always been well understood. • Naval architect Zhiming Yuan used computer simulations to study the effect of the mother duck’s wake. • The study revealed that ducklings are pushed in a forward direction by the wake’s waves. • Yuan determined this push reduces the effect of wave drag on the ducklings by 158%. The student wants to present the study and its methodology.",
+    "question": "Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "rule": "The sentence presents both the study and its methodology (that is, the researcher’s approach to the problem), explaining that Yuan used computer simulations to study the effect of the mother duck’s wake on the ducklings’ energy expenditure.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "A study revealed that ducklings, which expend up to 62.8% less energy when swimming in a line behind their mother, also experience 158% less drag.",
+        "why": "Choice A is incorrect. The sentence describes the findings of Yuan’s study; it doesn’t present the study and its methodology."
+      },
+      {
+        "label": "B",
+        "text": "Seeking to understand how ducklings swimming in a line behind their mother save energy, Zhiming Yuan used computer simulations to study the effect of the mother duck’s wake.",
+        "why": "Choice B is the best answer. The sentence presents both the study and its methodology (that is, the researcher’s approach to the problem), explaining that Yuan used computer simulations to study the effect of the mother duck’s wake on the ducklings’ energy expenditure."
+      },
+      {
+        "label": "C",
+        "text": "Zhiming Yuan studied the physics behind the fact that by being pushed in a forward direction by waves, ducklings save energy.",
+        "why": "Choice C is incorrect. While the sentence provides general information about Yuan’s study, it doesn’t present the study’s methodology."
+      },
+      {
+        "label": "D",
+        "text": "Naval architect Zhiming Yuan discovered that ducklings are pushed in a forward direction by the waves of their mother’s wake, reducing the effect of drag by 158%. STOP If you finish before time is called, you may check your work on this module only. Do not turn to any other module in the test.",
+        "why": "Choice D is incorrect. The sentence describes the findings of Yuan’s study; it doesn’t present the study and its methodology."
+      }
+    ]
   }
 ]

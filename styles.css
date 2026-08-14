@@ -2091,3 +2091,368 @@ math { font-size: 1.06em; }
   padding-top: 16px;
   border-top: 1px solid var(--rule);
 }
+
+/* ---------- Missed in a test ---------- */
+
+/* Narrower than Progress: this is one column of rows, and the full 1000px would
+   leave the reference stranded a long way from the skill it belongs to. */
+.missed-dialog {
+  width: min(96vw, 1180px);
+}
+
+/* [open] and not the bare class, for the reason the note by [hidden] gives: a
+   closed dialog is display:none from the UA stylesheet, and any author display
+   beats it -- setting flex unscoped would leave this permanently on screen.
+   Column flex is what gives .missed-split a definite height to divide up: with a
+   max-height instead, its grid row sizes to content, grows past the cap, gets
+   clipped by the dialog's overflow, and neither side ever scrolls. */
+.missed-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.missed-dialog .progress-head {
+  flex: 0 0 auto;
+}
+
+/* List on the left, the question on the right. Each column scrolls on its own so
+   reading one never moves the other, and the dialog itself never scrolls. */
+.missed-split {
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+  align-items: stretch;
+  /* Takes what the head leaves, and min-height:0 lets it be smaller than its
+     content -- without which a flex item refuses to shrink and the scroll moves
+     back out to the dialog. */
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.missed-pane {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-right: 1px solid var(--rule);
+}
+
+.missed-detail {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.missed-detail-head {
+  padding: 14px 20px 10px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.missed-detail-title {
+  margin: 0;
+  font-size: 1.06rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--heading);
+}
+
+.missed-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.missed-filters .control {
+  flex: 1 1 220px;
+}
+
+/* .control caps the select at 260px for the compact bar on the page; in here
+   the row is the only thing competing for the width, so let it fill. */
+.missed-filters .control select {
+  flex: 1 1 auto;
+  max-width: none;
+}
+
+/* Its own scroll box, so the dialog never scrolls and the filters stay put
+   while the list moves under them. */
+.missed-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  font-size: 0.92rem;
+  padding: 6px 20px 18px;
+  overflow-y: auto;
+}
+
+.missed-test {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 18px 0 6px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--rule);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.missed-test:first-child {
+  margin-top: 6px;
+}
+
+.missed-when {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* A button, not a row with a click handler: it does something, so it should be
+   reachable by keyboard and announce itself as pressable. */
+.missed-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.missed-row:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent-border);
+}
+
+.missed-row:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* Which of the ninety-odd is the one showing on the right. */
+.missed-row.is-selected {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.missed-row.is-selected .missed-skill {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.missed-item + .missed-item {
+  margin-top: 2px;
+}
+
+/* The row fills its line; there is one action per row and it opens the question. */
+.missed-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.missed-line .missed-row {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.missed-ref {
+  flex: none;
+  min-width: 4.4em;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.missed-skill {
+  flex: 1 1 auto;
+  font-size: 0.84rem;
+}
+
+/* The distractor that took him, where the sitting recorded it. Bluebook does;
+   the paper worksheets do not. No answer letter sits here -- the list is
+   browsed before choosing what to work on, and a column of correct letters
+   would hand him every one of them at a glance. */
+.missed-chose {
+  flex: none;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--bad-fg);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Already answered correctly since -- still listed, because it is still a
+   question he once missed, but visibly behind him. */
+.missed-row.is-done .missed-skill,
+.missed-row.is-done .missed-ref {
+  opacity: 0.55;
+}
+
+.missed-done-mark {
+  flex: none;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--good-fg);
+}
+
+/* ---------- One missed question, in full ---------- */
+
+/* The body is the question card rebuilt from the same classes, so almost nothing
+   is needed here: only the box it sits in, and the few places where being inside
+   a dialog rather than on the page changes what is right. */
+.question-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px 20px;
+}
+
+/* The card's options are pressable; these are a record of a question already
+   sat, so they must not offer a hand. */
+.question-body .option {
+  cursor: default;
+}
+
+/* The card is sized for a question being worked one at a time on a full page.
+   In here the whole thing has to be readable at once inside a box, with the
+   reasoning on all four choices below it, so the scale steps down a notch --
+   still reading size, just not page-heading size. The card itself is untouched. */
+.question-body .question-title {
+  margin: 0;
+  font-size: 1.06rem;
+  line-height: 1.4;
+}
+
+.question-body .cloze {
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.question-body .cloze.is-prose {
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.question-body .cloze .blank {
+  min-width: 96px;
+}
+
+.question-body .option {
+  padding: 10px 13px;
+  border-radius: 13px;
+  gap: 4px;
+}
+
+.question-body .option .label {
+  width: 26px;
+  height: 26px;
+  font-size: 0.82rem;
+}
+
+.question-body .option .text {
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.question-body .explanation,
+.question-body .gloss {
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.question-body .rule-box {
+  padding: 10px 13px;
+  font-size: 0.88rem;
+}
+
+.question-body .math-stem {
+  font-size: 0.94rem;
+}
+
+/* The card sets its own rhythm with margins; in here the column gap does it, so
+   the doubled-up spacing comes off. */
+.question-body .cloze,
+.question-body .rule-box {
+  margin: 0;
+}
+
+/* Skill and pick sit on the subtitle line, so it has to lay out as a row. */
+.missed-detail-head .progress-sub {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.82rem;
+}
+
+.missed-detail-head .progress-sub .tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.missed-detail-head .progress-sub .tag-warn {
+  background: var(--pending-bg);
+  border-color: var(--pending-fg);
+  color: var(--pending-fg);
+}
+
+
+
+.question-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 20px 16px;
+  border-top: 1px solid var(--rule);
+}
+
+/* "See solution" is the quieter of the two: taking it again is the thing worth
+   doing, reading the answer is the fallback. */
+#revealSolution {
+  background: transparent;
+  border: 1px solid var(--btn-bg);
+  color: var(--muted);
+}
+
+#revealSolution:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.missed-empty {
+  padding: 34px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* Stacks below 900px: two 300px columns in a phone-width dialog would leave the
+   passage in a gutter. The list keeps a capped height so the question is not
+   pushed off the bottom. */
+@media (max-width: 900px) {
+  .missed-split {
+    grid-template-columns: minmax(0, 1fr);
+    /* The question takes the rest and scrolls; without a 1fr row it would size
+       to content and push its own scrollbar off the bottom of the dialog. */
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  .missed-pane {
+    border-right: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .missed-body {
+    max-height: 34vh;
+  }
+}

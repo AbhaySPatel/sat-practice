@@ -167,6 +167,22 @@ TESTS = [
             2: [3, 5, 9, 12, 13, 17, 18, 20, 26, 31, 33],
         },
     },
+    {
+        'key': 'pt9',
+        'label': 'Practice Test 9',
+        'order': 6,
+        'taken': '2026-08-14',
+        'questions_pdf': Path('book/sat-practice-test-9-digital.pdf'),
+        'answers_pdf': Path('book/sat-practice-test-9-answers-digital.pdf'),
+        'modules': {1: range(3, 17), 2: range(17, 31)},
+        'per_module': 33,
+        # tests/Test 9 on 14 Aug.jpeg. He marked all fourteen himself and every
+        # figure on the sheet was right, the first time that has happened.
+        'missed': {
+            1: [5, 8, 9, 16, 22, 25, 28],
+            2: [9, 13, 16, 17, 25, 27, 33],
+        },
+    },
 ]
 
 # --- Reading the test PDF ---------------------------------------------------
@@ -190,8 +206,14 @@ BLANK_TOKEN = re.compile(r'(?<![A-Za-z])blank(?![A-Za-z])')
 # Accessibility markers wrapping the portion the question calls "underlined".
 # Unlike the question-bank exports, the practice-test PDFs carry these, so the
 # underline survives extraction instead of leaving the question unanswerable.
+# Case-insensitive: Tests 5 and 6 write "Start referenced Content", Test 9 writes
+# "Start referenced content". Miss it and the marker text stays in the passage,
+# which leaves the prompt running on from the word "content" rather than from a
+# full stop -- and split_prompt only starts a prompt after sentence-ending
+# punctuation, so the question comes through with no prompt at all.
 REFERENCED = re.compile(
-    r'Start referenced Content:\s*(?P<text>.*?)\s*End referenced Content\.?', re.S)
+    r'Start referenced Content:\s*(?P<text>.*?)\s*End referenced Content\.?',
+    re.S | re.I)
 
 # Page furniture. Everything here appears on every page and belongs to none of
 # the questions.
@@ -213,8 +235,16 @@ def is_junk(line):
     # Dotted rules between questions, and the ASCII wreckage of a plotted line.
     letters = sum(c.isalpha() for c in s)
     if letters == 0:
-        return True
-    if len(s) < 40 and letters / len(s) < 0.5:
+        # ...but a sentence's terminator sometimes lands on a line of its own, and
+        # dropping it costs the question its question mark -- which is what
+        # split_prompt looks for to find where the prompt ends.
+        return s not in ('?', '.', '!')
+    # A short line that is mostly not letters is chart wreckage -- an axis, a
+    # stray tick, "- 1 -". But a cross-text prompt can end on a line like
+    # "(Text 1)?", four letters in nine characters, and dropping that takes the
+    # question mark with it. A run of three letters together is a word, and chart
+    # debris does not have one.
+    if len(s) < 40 and letters / len(s) < 0.5 and not re.search(r'[A-Za-z]{3}', s):
         return True
     return False
 
@@ -548,7 +578,10 @@ def classify(prompt, rationale):
          r'would most likely agree with which statement|'
          # Same source of truth as the rule above: the question bank holds this
          # very item -- the difrasismo one -- and files it here.
-         r'most strongly supported by the text', 'central-ideas-details'),
+         r'most strongly supported by the text|'
+         # "Based on the text, what is true about Mrs. Ochiltree's acquaintances?"
+         # The bank has four of these and files them all here.
+         r'what is true about', 'central-ideas-details'),
     ):
         if re.search(pattern, prompt, re.I):
             return skill

@@ -12,7 +12,7 @@
 // its markup, but the banks are fetched from here, so nothing was busting them --
 // a browser could serve a months-old vocab.json against new code, which is
 // exactly what happened. Bump this whenever a file under banks/ changes.
-const DATA_VERSION = '2026-08-12e';
+const DATA_VERSION = '2026-08-14a';
 
 // Official College Board banks only. banks/context.json is deliberately absent
 // -- see the note in the README about Words in Context and the direction drill.
@@ -3088,6 +3088,7 @@ function loadBanks() {
 
     backfillDays();
     buildSkillSelect();
+    syncMissedButton();
     updateSummary();
     // Restore the saved position instead of stepping past it, so reloading the
     // page shows the question he was on rather than skipping one.
@@ -3380,6 +3381,448 @@ wirePager('.next-question', 1);
 // Going back does not undo an answer -- per-question history is cumulative, so
 // revisiting a question just shows it again with its counts intact.
 wirePager('.prev-question', -1);
+
+// --- Missed in a test, as a list -------------------------------------------
+
+// The dialog is a way into the questions, not a second rendering of them: the
+// card behind it already shows a question properly -- passage, underline, the
+// options, the reasoning -- so each row here carries only what is needed to
+// choose one, and picking it hands over to jumpToQuestion.
+const missedDialog = document.getElementById('missedDialog');
+const missedListEl = document.getElementById('missedList');
+const missedTestSel = document.getElementById('missedTest');
+const missedSkillSel = document.getElementById('missedSkill');
+const missedSubEl = document.getElementById('missedSub');
+
+function missedRows() {
+  return bank.filter((q) => q.skill === MISSED_SKILL);
+}
+
+// Newest sitting first: the test he just sat is the one he wants.
+function missedTestsByDate(rows) {
+  const taken = {};
+  rows.forEach((q) => { taken[q.test] = q.taken || ''; });
+  return Object.keys(taken).sort((a, b) =>
+    (taken[b] || '').localeCompare(taken[a] || '') || a.localeCompare(b));
+}
+
+// Each dropdown counts within the OTHER one's selection, so the numbers describe
+// what picking that option would actually give him. Counting both against the
+// whole set leaves "Practice Test 9 (14)" sitting beside "Words in Context (15)"
+// -- a number that cannot be true of the fourteen.
+//
+// Options with none left are listed anyway, showing (0), for the reason
+// buildTestSelect gives: a list that reorders and shortens as he filters is a
+// list he has to re-find his place in every time.
+function buildMissedFilters() {
+  if (!missedTestSel || !missedSkillSel) return;
+  const rows = missedRows();
+  const test = missedTestSel.value || 'all';
+  const skill = missedSkillSel.value || 'all';
+
+  const inSkill = rows.filter((q) => skill === 'all' || q.realSkill === skill);
+  const inTest = rows.filter((q) => test === 'all' || q.test === test);
+
+  const option = (value, label, count) => {
+    const el = document.createElement('option');
+    el.value = value;
+    el.textContent = `${label} (${count})`;
+    return el;
+  };
+
+  missedTestSel.textContent = '';
+  missedTestSel.append(option('all', 'Every test', inSkill.length));
+  missedTestsByDate(rows).forEach((t) => missedTestSel.append(
+    option(t, t, inSkill.filter((q) => q.test === t).length)));
+
+  // Ordered by how many he has missed overall, not within the current filter --
+  // otherwise the list reshuffles under the cursor as he changes the other one.
+  const skills = [...new Set(rows.map((q) => q.realSkill).filter(Boolean))]
+    .sort((a, b) => rows.filter((q) => q.realSkill === b).length
+                  - rows.filter((q) => q.realSkill === a).length);
+  missedSkillSel.textContent = '';
+  missedSkillSel.append(option('all', 'All skills', inTest.length));
+  skills.forEach((sk) => missedSkillSel.append(
+    option(sk, SKILL_LABELS[sk] || sk, inTest.filter((q) => q.realSkill === sk).length)));
+
+  // Both lists always carry every option, so a selection always survives the
+  // rebuild -- but fall back rather than leave a select showing blank.
+  missedTestSel.value = test;
+  if (!missedTestSel.value) missedTestSel.value = 'all';
+  missedSkillSel.value = skill;
+  if (!missedSkillSel.value) missedSkillSel.value = 'all';
+}
+
+// Recount, then redraw. Both, always: changing either dropdown moves the other's
+// numbers as well as the list.
+function refreshMissed() {
+  buildMissedFilters();
+  renderMissedList();
+}
+
+function renderMissedList() {
+  if (!missedListEl) return;
+  missedListEl.textContent = '';
+
+  const wantTest = missedTestSel ? missedTestSel.value : 'all';
+  const wantSkill = missedSkillSel ? missedSkillSel.value : 'all';
+  const rows = missedRows().filter((q) =>
+    (wantTest === 'all' || q.test === wantTest) &&
+    (wantSkill === 'all' || q.realSkill === wantSkill));
+
+  if (missedSubEl) {
+    const done = rows.filter((q) => !isWrongEver(q.id) && statsFor(q.id).seen > 0).length;
+    missedSubEl.textContent = rows.length === 0
+      ? 'Nothing matches those filters.'
+      : `${rows.length} question${rows.length === 1 ? '' : 's'}`
+        + (done > 0 ? ` · ${done} since answered right` : '');
+  }
+
+  if (rows.length === 0) {
+    const p = document.createElement('p');
+    p.className = 'missed-empty';
+    p.textContent = 'Nothing missed in that combination.';
+    missedListEl.append(p);
+    return;
+  }
+
+  missedTestsByDate(rows).forEach((test) => {
+    const mine = rows.filter((q) => q.test === test)
+      .sort((a, b) => (a.module - b.module) || (a.number - b.number));
+    if (mine.length === 0) return;
+
+    const head = document.createElement('h3');
+    head.className = 'missed-test';
+    const name = document.createElement('span');
+    name.textContent = test;
+    const when = document.createElement('span');
+    when.className = 'missed-when';
+    when.textContent = `${mine.length} missed`;
+    head.append(name, when);
+    missedListEl.append(head);
+
+    mine.forEach((q) => {
+      const item = document.createElement('div');
+      item.className = 'missed-item';
+
+      const line = document.createElement('div');
+      line.className = 'missed-line';
+
+      const row = document.createElement('button');
+      row.type = 'button';
+      row.className = 'missed-row';
+      // Beaten since: still his, still listed, but visibly behind him.
+      const beaten = !isWrongEver(q.id) && statsFor(q.id).seen > 0;
+      if (beaten) row.classList.add('is-done');
+
+      const ref = document.createElement('span');
+      ref.className = 'missed-ref';
+      ref.textContent = q.module ? `M${q.module} Q${q.number}` : `Q${q.number}`;
+
+      const skill = document.createElement('span');
+      skill.className = 'missed-skill';
+      skill.textContent = SKILL_LABELS[q.realSkill] || q.realSkill || '';
+
+      row.append(ref, skill);
+
+      // No answer letter here. The list is somewhere he browses before deciding
+      // what to work on, and a column of correct letters hands him every one of
+      // them at a glance -- including for questions he is about to sit again.
+      // It is in the question view, where he has chosen to see it.
+      if (q.chose) {
+        const chose = document.createElement('span');
+        chose.className = 'missed-chose';
+        chose.textContent = `chose ${q.chose}`;
+        row.append(chose);
+      }
+
+      if (beaten) {
+        const tick = document.createElement('span');
+        tick.className = 'missed-done-mark';
+        tick.textContent = '✓';
+        row.append(tick);
+      }
+
+      row.dataset.qid = q.id;
+      row.title = q.source || '';
+      row.addEventListener('click', () => openMissedQuestion(q));
+
+      line.append(row);
+      item.append(line);
+      missedListEl.append(item);
+    });
+  });
+
+  // A re-render wipes the rows, so the selection has to be put back -- or let go
+  // of, if the filters have taken that question off the list.
+  const stillListed = questionOnShow && rows.some((q) => q.id === questionOnShow.id);
+  if (stillListed) {
+    const row = missedListEl.querySelector(`[data-qid="${questionOnShow.id}"]`);
+    if (row) row.classList.add('is-selected');
+  } else if (questionOnShow) {
+    clearMissedDetail();
+  }
+}
+
+// --- One missed question, in full ------------------------------------------
+
+const missedDetailEl = document.getElementById('missedDetail');
+const qDialogBody = document.getElementById('qDialogBody');
+const qDialogSub = document.getElementById('qDialogSub');
+const qDialogTitle = document.getElementById('qDialogTitle');
+const practiseBtn = document.getElementById('practiseQuestion');
+const revealBtn = document.getElementById('revealSolution');
+let questionOnShow = null;
+
+// The question view is the card the app already uses, rebuilt inside the dialog:
+// same classes, so the same stylesheet lays it out and it reads as the same
+// thing he answers on the page rather than a second design for the same object.
+// The one difference is that it opens already graded -- he has sat this one, so
+// the answer, his pick and the reasoning are all shown at once.
+function renderMissedPassage(question, into) {
+  // Two shapes, exactly as renderPassage deals with them and for its reasons: a
+  // restored passage is markup and may hold a figure or a table, so it needs the
+  // stem block; an extracted one is text, and the underline has to be put back.
+  if (question.passageHtml) {
+    const stem = document.createElement('div');
+    stem.className = 'math-stem';
+    // A greyscale chart's own greys ARE its legend, so it keeps its paper in
+    // both themes rather than collapsing into one indistinguishable series.
+    if (question.passageHtml.includes('<svg')) stem.classList.add('is-paper');
+    setMarkup(stem, question.passageHtml);
+    into.append(stem);
+    return;
+  }
+
+  const text = question.passage || '';
+  const cloze = document.createElement('p');
+  cloze.className = text.includes('___') ? 'cloze' : 'cloze is-prose';
+
+  const addWithBlank = (parent, chunk) => {
+    chunk.split('___').forEach((part, i) => {
+      if (i > 0) {
+        const b = document.createElement('span');
+        b.className = 'blank filled';
+        b.textContent = ' ';
+        parent.append(b);
+      }
+      if (part) parent.append(document.createTextNode(part));
+    });
+  };
+
+  const und = question.underline;
+  if (und && text.includes(und)) {
+    const at = text.indexOf(und);
+    addWithBlank(cloze, text.slice(0, at));
+    const u = document.createElement('u');
+    u.className = 'referenced';
+    addWithBlank(u, und);
+    cloze.append(u);
+    addWithBlank(cloze, text.slice(at + und.length));
+  } else {
+    addWithBlank(cloze, text);
+  }
+  into.append(cloze);
+}
+
+// Opens unmarked: nothing says which choice was right, no reasoning, and not even
+// which one he picked last time -- knowing that rules one out. "See solution"
+// reveals all three at once, which is the state the card is in after grading.
+let missedRevealed = false;
+
+function openMissedQuestion(question) {
+  if (!qDialogBody) return;
+  questionOnShow = question;
+  missedRevealed = false;
+
+  // Mark the row it came from, so the left column says which of the ninety-odd
+  // is currently on the right.
+  if (missedListEl) {
+    missedListEl.querySelectorAll('.missed-row.is-selected')
+      .forEach((el) => el.classList.remove('is-selected'));
+    const row = missedListEl.querySelector(`[data-qid="${question.id}"]`);
+    if (row) row.classList.add('is-selected');
+  }
+  renderMissedDetail();
+}
+
+function renderMissedDetail() {
+  const question = questionOnShow;
+  if (!qDialogBody || !question) return;
+  qDialogBody.textContent = '';
+
+  if (practiseBtn) practiseBtn.hidden = false;
+  // Once shown there is nothing left to show, so the button retires rather than
+  // sitting there as a no-op.
+  if (revealBtn) revealBtn.hidden = missedRevealed;
+
+  if (qDialogTitle) {
+    qDialogTitle.textContent = question.module
+      ? `Module ${question.module}, Question ${question.number}`
+      : `Question ${question.number}`;
+  }
+  // Skill and pick ride the subtitle rather than taking a badge row of their own.
+  // The dialog is short and the passage is the thing worth the height.
+  if (qDialogSub) {
+    qDialogSub.textContent = '';
+    const where = document.createElement('span');
+    where.textContent = question.test || '';
+    qDialogSub.append(where);
+
+    const skill = document.createElement('span');
+    skill.className = 'tag';
+    skill.textContent = SKILL_LABELS[question.realSkill] || question.realSkill || '';
+    qDialogSub.append(skill);
+
+    // Held back with the rest of it: "you picked C" is a free elimination.
+    if (question.chose && missedRevealed) {
+      const picked = document.createElement('span');
+      picked.className = 'tag tag-warn';
+      picked.textContent = `You picked ${question.chose}`;
+      qDialogSub.append(picked);
+    }
+  }
+
+  // Prompt above the passage, as on the card.
+  const title = document.createElement('h2');
+  title.className = 'question-title';
+  title.textContent = question.question || '';
+  qDialogBody.append(title);
+
+  renderMissedPassage(question, qDialogBody);
+
+  const options = document.createElement('div');
+  options.className = 'options';
+  (question.options || []).forEach((option) => {
+    const correct = option.label === question.correctLabel;
+
+    const optionEl = document.createElement('div');
+    optionEl.className = 'option';
+    if (missedRevealed) {
+      // showExplanation is what the card adds once a question is graded: it drops
+      // the hover affordance and reveals the gloss and the reasoning.
+      optionEl.classList.add('showExplanation', correct ? 'correct' : 'incorrect');
+      if (option.label === question.chose) optionEl.classList.add('selected');
+      optionEl.dataset.isCorrect = String(correct);
+    }
+
+    const row = document.createElement('div');
+    row.className = 'row';
+
+    const label = document.createElement('span');
+    label.className = 'label';
+    label.textContent = option.label;
+
+    const text = document.createElement('span');
+    // Monospace only where punctuation IS the question -- the card's rule.
+    const punctuationMatters =
+      question.realSkill === 'boundaries' || question.realSkill === 'form-structure-sense';
+    text.className = punctuationMatters ? 'text choice' : 'text';
+    text.textContent = option.text;
+
+    const mark = document.createElement('span');
+    mark.className = 'option-result';
+    if (missedRevealed) {
+      mark.textContent = correct ? '\u2714' : (option.label === question.chose ? '\u2716' : '');
+    }
+
+    row.append(label, text, mark);
+    optionEl.append(row);
+
+    if (missedRevealed) {
+      const gloss = glossFor(question, option.label);
+      if (gloss) {
+        const g = document.createElement('p');
+        g.className = 'gloss';
+        g.textContent = gloss;
+        optionEl.append(g);
+      }
+
+      const why = document.createElement('p');
+      why.className = 'explanation';
+      why.textContent = option.why;
+      optionEl.append(why);
+    }
+
+    options.append(optionEl);
+  });
+  qDialogBody.append(options);
+
+  // The rule states what the answer turns on, so it belongs with the solution.
+  if (question.rule && missedRevealed) {
+    const rule = document.createElement('p');
+    rule.className = 'rule-box';
+    rule.textContent = question.rule;
+    qDialogBody.append(rule);
+  }
+
+  // The right column scrolls on its own, so a new selection starts at the top of
+  // the passage rather than wherever the last one was left. Revealing does not
+  // move it: he is reading, and being thrown back to the top would lose his place.
+  if (!missedRevealed && missedDetailEl) missedDetailEl.scrollTop = 0;
+}
+
+// Nothing picked yet, or what was picked has been filtered away.
+function clearMissedDetail() {
+  questionOnShow = null;
+  missedRevealed = false;
+  if (qDialogBody) qDialogBody.textContent = '';
+  if (qDialogTitle) qDialogTitle.textContent = 'Nothing selected';
+  if (qDialogSub) qDialogSub.textContent = 'Pick a question on the left to see it in full.';
+  if (practiseBtn) practiseBtn.hidden = true;
+  if (revealBtn) revealBtn.hidden = true;
+  if (missedListEl) {
+    missedListEl.querySelectorAll('.missed-row.is-selected')
+      .forEach((el) => el.classList.remove('is-selected'));
+  }
+}
+
+if (revealBtn) {
+  revealBtn.addEventListener('click', () => {
+    missedRevealed = true;
+    renderMissedDetail();
+  });
+}
+
+// The dialog closes: jumpToQuestion scrolls the card into view, and it cannot be
+// seen from behind a modal.
+if (practiseBtn) {
+  practiseBtn.addEventListener('click', () => {
+    const target = questionOnShow;
+    if (missedDialog && missedDialog.open) missedDialog.close();
+    if (target) jumpToQuestion(target.id);
+  });
+}
+
+const openMissedBtn = document.getElementById('openMissed');
+const closeMissedBtn = document.getElementById('closeMissed');
+
+// Nothing sat yet, or the file did not load: a button that opens an empty
+// dialog is worse than no button. Called once the banks are in.
+function syncMissedButton() {
+  if (!openMissedBtn) return;
+  const n = missedRows().length;
+  openMissedBtn.hidden = n === 0;
+  openMissedBtn.title = n ? `${n} questions missed on a real test` : '';
+}
+
+if (openMissedBtn && missedDialog) {
+  openMissedBtn.addEventListener('click', () => {
+    if (!questionOnShow) clearMissedDetail();
+    refreshMissed();
+    missedDialog.showModal();
+  });
+}
+if (closeMissedBtn && missedDialog) {
+  closeMissedBtn.addEventListener('click', () => missedDialog.close());
+}
+if (missedDialog) {
+  missedDialog.addEventListener('click', (ev) => {
+    if (ev.target === missedDialog) missedDialog.close();
+  });
+}
+if (missedTestSel) missedTestSel.addEventListener('change', refreshMissed);
+if (missedSkillSel) missedSkillSel.addEventListener('change', refreshMissed);
 
 const openProgressBtn = document.getElementById('openProgress');
 const closeProgressBtn = document.getElementById('closeProgress');

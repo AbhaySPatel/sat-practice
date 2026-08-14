@@ -6,7 +6,7 @@
   <title>SAT Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=66" />
+  <link rel="stylesheet" href="styles.css?v=73" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -41,6 +41,13 @@
             <span class="target-num" id="targetMini">0 / 500</span>
             <span class="target-lbl" id="targetLbl">points today</span>
           </span>
+        </button>
+        <!-- Every question he has missed on a real test, in one list. Shares the
+             theme toggle's shape because it is the same kind of control: a small
+             thing beside the ring, not competing with it. -->
+        <button type="button" class="theme-toggle" id="openMissed" aria-haspopup="dialog">
+          <span class="theme-toggle-icon" aria-hidden="true">✍️</span>
+          <span class="theme-toggle-label">Missed</span>
         </button>
         <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false">
           <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
@@ -309,7 +316,58 @@
     </div>
   </dialog>
 
+  <!-- Every question missed on a real test, in one place: the sittings down the
+       left, the question he picks laid out on the right. One dialog rather than a
+       list that opens a second over the top of itself -- browsing and reading are
+       the same activity here, and a popup covering the list loses his place in it.
+       Nothing is withheld on the right: he has already sat these. -->
+  <dialog class="progress-dialog missed-dialog" id="missedDialog" aria-labelledby="missedTitle">
+    <div class="progress-head">
+      <div>
+        <h2 class="progress-title" id="missedTitle">Missed in a test</h2>
+        <p class="progress-sub" id="missedSub"></p>
+      </div>
+      <button type="button" class="dialog-close" id="closeMissed" aria-label="Close missed questions">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+
+    <div class="missed-split">
+      <!-- Left: the filters and the list, scrolling on their own. -->
+      <div class="missed-pane">
+        <div class="missed-filters">
+          <label class="control">
+            <span>Test</span>
+            <select id="missedTest"></select>
+          </label>
+          <label class="control">
+            <span>Skill</span>
+            <select id="missedSkill"></select>
+          </label>
+        </div>
+        <div class="missed-body" id="missedList"></div>
+      </div>
+
+      <!-- Right: whichever question is selected, as the card renders it. -->
+      <div class="missed-detail" id="missedDetail">
+        <div class="missed-detail-head">
+          <h3 class="missed-detail-title" id="qDialogTitle">Nothing selected</h3>
+          <p class="progress-sub" id="qDialogSub"></p>
+        </div>
+        <div class="question-body" id="qDialogBody"></div>
+        <!-- Two things to want from a question he has already sat, and opening it
+             should not decide for him: read it cold and try it again, or go
+             straight to why the answer was the answer. So it opens unmarked and
+             the solution is a deliberate press. -->
+        <div class="question-foot">
+          <button type="button" class="btn btn-small" id="revealSolution" hidden>See solution</button>
+          <button type="button" class="btn btn-small" id="practiseQuestion" hidden>Take this question</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=78"></script>
+  <script src="app.js?v=84"></script>
 </body>
 </html>
