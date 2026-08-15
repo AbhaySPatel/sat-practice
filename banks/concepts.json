@@ -296,5 +296,70 @@
       "Uncover the choices and pick the closest match."
     ],
     "check": "You know these words. Decide what you need before you see what you are offered."
+  },
+  {
+    "id": "answer-the-goal",
+    "title": "The goal sentence is the question",
+    "skills": [
+      "rhetorical-synthesis"
+    ],
+    "families": [
+      "uses relevant information from the notes"
+    ],
+    "why": "6 of your 96 misses, and all six are the same question word for word. Every one of them is also in the last three questions of the module — so this is partly a skill and partly what happens when you arrive here with no time left.",
+    "rule": "Read the goal sentence first. It tells you the job.",
+    "ruleDetail": "The notes are not the question. The goal sentence — \"the student wants to…\" — is the question. The choices usually use the notes correctly. Only one does the job the goal names.",
+    "steps": [
+      "Read the goal sentence at the bottom. Read it before the notes.",
+      "Say the job in your own words: generalise · compare · explain why · emphasise X.",
+      "Read the choices, asking only: does this do that job?",
+      "Don't use truth to choose. The choices are usually all true; the goal separates them."
+    ],
+    "then": [
+      "GENERALISE → talk about the whole group, not one example.",
+      "EMPHASISE → put the important idea front and centre.",
+      "OVERVIEW → cover all of it, not two of the seventeen."
+    ],
+    "trap": "Every wrong choice is normally an accurate sentence built from the notes — 17 of the 18 you faced were factually accurate. Truth eliminates nothing, so you end up picking whichever sounds best written. The goal is what separates them. Do still glance at accuracy before you commit: 1 of those 18 was factually wrong about the notes.",
+    "examples": [
+      {
+        "questionId": "missed-p6-m2-q27",
+        "source": "Practice 6, Module 2, Question 27 — the last question of the module",
+        "sentence": "The student wants to make a generalization about the materials used in dhow replicas.",
+        "choices": [
+          "A traditional material used to stitch ancient dhow hulls, coconut palm fiber rope is still used by shipbuilders.",
+          "The ancient Arab dhow was a sailing vessel used primarily for trade.",
+          "Although most materials used in dhow replicas are traditional, some modern materials are used.",
+          "Contemporary shipbuilders in Oman build replicas of the dhow, an ancient sailing vessel."
+        ],
+        "answer": "Although most materials used in dhow replicas are traditional, some modern materials are used.",
+        "wrong": "coconut palm fiber rope is still used  —  true, but that is ONE material",
+        "right": "most are traditional, some are modern  —  that is a generalisation",
+        "working": "The job word is generalisation: a statement about the materials as a whole. You took the coconut rope sentence. It is completely true and it is straight from the notes — it is just one example, which is the opposite of a generalisation. Only C says something about all the materials at once."
+      },
+      {
+        "questionId": "missed-pt8-m2-q33",
+        "source": "Practice Test 8, Module 2, Question 33 — the last question of the module",
+        "sentence": "The student wants to emphasize the role a misconception played in the naming of a place.",
+        "choices": [
+          "The novel featured a fictional island known as California.",
+          "To the south of the US state lies Baja California, originally named after…",
+          "In the sixteenth century, Spanish explorers learned of a peninsula off the west coast of Mexico…",
+          "Thinking it was an island, Spanish explorers called a peninsula California after an island in a novel."
+        ],
+        "answer": "Thinking it was an island, Spanish explorers called a peninsula California after an island in a novel.",
+        "wrong": "the other three  —  all true, none of them about the mistake",
+        "right": "Thinking it was an island…  —  the mistake is the first thing in the sentence",
+        "working": "The job is to emphasise a misconception. Only D contains the mistake at all: they thought a peninsula was an island. The other three are accurate sentences about the novel, the place and the explorers — and not one of them mentions anyone being wrong about anything. Find the job word, then look for the only choice that does it."
+      }
+    ],
+    "memorise": [
+      "GOAL → JOB → MATCH",
+      "Read the goal sentence first, before the notes.",
+      "Name the job: generalise, compare, emphasise, explain.",
+      "Ask: which choice does the goal? Not: which choice is best?",
+      "The choices are usually all true. Truth doesn't separate them."
+    ],
+    "check": "All four can be true. Only one does the job."
   }
 ]
