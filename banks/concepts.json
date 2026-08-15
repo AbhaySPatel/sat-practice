@@ -3,13 +3,13 @@
     "id": "one-main-verb",
     "title": "One main verb to a clause",
     "skills": [
-      "boundaries",
       "form-structure-sense"
     ],
     "families": [
-      "verb forms & agreement",
-      "supplementary elements"
+      "verb forms"
     ],
+    "cost": 6,
+    "costLabel": "questions this cost you",
     "why": "10 of your 18 Standard English Conventions misses come down to this one rule — 5 of them because you picked a main verb where the sentence already had one.",
     "rule": "One clause, one main verb — unless “and” joins a second.",
     "ruleDetail": "The main verb carries the tense — past, present or future. If the subject already has a main verb, the blank cannot be another main verb. It becomes a describing form instead: -ing, -ed, or to + verb.",
@@ -28,17 +28,6 @@
       }
     ],
     "formsWarning": "Careful with -ed: it is spelled the same as the past tense. \"They published a study\" is a main verb; \"the study, published in 2023, showed…\" is a describing form. The spelling will not tell you which. Only the rest of the sentence will.",
-    "steps": [
-      "Find the subject. Who is doing the action?",
-      "Cover the blank.",
-      "Read all the way to the full stop.",
-      "Look for another main verb belonging to that subject."
-    ],
-    "then": [
-      "No other main verb — the blank IS the main verb. Use the tensed form, and check it agrees with the subject.",
-      "There is one already — the blank is a describing form. Use -ing, -ed or to + verb."
-    ],
-    "trap": "The wrong answer sounds perfect at the blank, because it completes the sentence so far. That is exactly why it is offered. The verb that decides it can sit a long way off — 21 words after the blank in one of yours, 17 in another — and sometimes it sits behind you, before the blank. Either way you cannot decide at the blank. Read the whole sentence.",
     "exception": {
       "title": "The main exception: and",
       "intro": "When “and” joins two verbs, they share the subject and the clause can have both. “Or” and “but” work the same way.",
@@ -54,6 +43,17 @@
       "note": "With a modal — would, could, will, might, should — the modal carries the tense for both verbs, so the second stays in its plain form: create, not creates. You missed exactly this on Practice Test 8, Module 1, Question 20."
     },
     "commas": "Commas are a separate question, and not every describing phrase takes them. Ask what the phrase is doing. If it picks out which one you mean, it runs on with no commas: “The student sitting by the window answered first.” If it is extra information dropped in, it is fenced at both ends: “Priya, sitting by the window, answered first.” Your two examples below are one of each — College Board calls the first a restrictive phrase and the second a supplementary one.",
+    "steps": [
+      "Find the subject. Who is doing the action?",
+      "Cover the blank.",
+      "Read all the way to the full stop.",
+      "Look for another main verb belonging to that subject."
+    ],
+    "then": [
+      "No other main verb — the blank IS the main verb. Use the tensed form, and check it agrees with the subject.",
+      "There is one already — the blank is a describing form. Use -ing, -ed or to + verb."
+    ],
+    "trap": "The wrong answer sounds perfect at the blank, because it completes the sentence so far. That is exactly why it is offered. The verb that decides it can sit a long way off — 21 words after the blank in one of yours, 17 in another — and sometimes it sits behind you, before the blank. Either way you cannot decide at the blank. Read the whole sentence.",
     "examples": [
       {
         "questionId": "missed-pt9-m1-q25",
@@ -107,7 +107,33 @@
       "No main verb yet? The blank is the main verb.",
       "Main verb already there? The blank is a describing form: -ing, -ed, to + verb.",
       "Don't decide at the blank. Read to the full stop."
-    ]
+    ],
+    "match": {
+      "note": "form-structure-sense also holds subject-verb agreement, tense, plurals, possessives, pronouns and modifier placement -- none of which FIND -> COVER -> READ -> DECIDE settles. College Board states the convention on every question, so the lesson claims only the finite/nonfinite verb-form ones its own rule decides.",
+      "any": [
+        "verb form",
+        "finite verb",
+        "nonfinite",
+        "non-finite",
+        "finite and nonfinite",
+        "finite verbs"
+      ],
+      "none": [
+        "express tense",
+        "agreement",
+        "possessive",
+        "plural",
+        "pronoun",
+        "modifier",
+        "determiner",
+        "noun",
+        "series",
+        "supplement",
+        "preposition",
+        "quotation"
+      ]
+    },
+    "railHint": "sentence"
   },
   {
     "id": "function-not-content",
@@ -118,6 +144,8 @@
     "families": [
       "function of the underlined portion"
     ],
+    "cost": 13,
+    "costLabel": "questions this cost you",
     "why": "13 of your 96 missed questions are this one type — \"which choice best describes the function of the underlined portion\" — and 12 of the 13 are the same question word for word. The wrong ones you took describe what the underlined part SAYS. The answer describes what it DOES in relation to the text around it.",
     "rule": "Ask what it does, not what it says.",
     "ruleDetail": "CONTENT = what it says. FUNCTION = what it does. The underlined part is not being tested by itself. Ask what job it does in the passage: does it add a detail, admit a limitation, introduce an idea, or support a claim?",
@@ -197,7 +225,8 @@
       "Could you write the choice using only the underlined words? Yes → content. Reject it.",
       "The answer describes the JOB: elaborates, concedes, supports, introduces, illustrates."
     ],
-    "check": "True ≠ correct. Job first, truth second."
+    "check": "True ≠ correct. Job first, truth second.",
+    "railHint": "scope"
   },
   {
     "id": "say-it-yourself",
@@ -208,6 +237,8 @@
     "families": [
       "words in context"
     ],
+    "cost": 15,
+    "costLabel": "questions this cost you",
     "why": "This is your biggest single group: 15 of your 96 misses. And it is not a vocabulary problem — 44 of the 60 words in those questions are already in your word drill. You knew the words. You just chose between them instead of deciding what you needed first.",
     "rule": "Cover the choices. Say your own word. Then look.",
     "ruleDetail": "The sentence usually gives you enough to predict what the blank needs to mean. If you read the choices first, you end up asking \"which of these sounds okay here?\" — and three of them will. If you decide first, you are only looking for a match, and the wrong ones stop being tempting.",
@@ -295,7 +326,8 @@
       "Say your own word.",
       "Uncover the choices and pick the closest match."
     ],
-    "check": "You know these words. Decide what you need before you see what you are offered."
+    "check": "You know these words. Decide what you need before you see what you are offered.",
+    "railHint": "signal"
   },
   {
     "id": "answer-the-goal",
@@ -306,6 +338,8 @@
     "families": [
       "uses relevant information from the notes"
     ],
+    "cost": 6,
+    "costLabel": "questions this cost you",
     "why": "6 of your 96 misses, and all six are the same question word for word. Every one of them is also in the last three questions of the module — so this is partly a skill and partly what happens when you arrive here with no time left.",
     "rule": "Read the goal sentence first. It tells you the job.",
     "ruleDetail": "The notes are not the question. The goal sentence — \"the student wants to…\" — is the question. The choices usually use the notes correctly. Only one does the job the goal names.",
@@ -360,6 +394,7 @@
       "Ask: which choice does the goal? Not: which choice is best?",
       "The choices are usually all true. Truth doesn't separate them."
     ],
-    "check": "All four can be true. Only one does the job."
+    "check": "All four can be true. Only one does the job.",
+    "railHint": "goal"
   }
 ]

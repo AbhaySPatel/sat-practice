@@ -397,6 +397,7 @@ const ruleBox = document.getElementById('ruleBox');
 const conceptPanel = document.getElementById('conceptPanel');
 const conceptTitleEl = document.getElementById('conceptTitle');
 const conceptBodyEl = document.getElementById('conceptBody');
+const conceptHintEl = document.getElementById('conceptHint');
 const correctCountEl = document.getElementById('correctCount');
 const incorrectCountEl = document.getElementById('incorrectCount');
 const streakEl = document.getElementById('streakStrip');
@@ -481,6 +482,10 @@ function emptyStore() {
     version: 2,
     progress: {},
     cursor: {},
+    // learn[conceptId] = { read, rung, seen, best }. The Learn section's own
+    // record, kept apart from progress on purpose: a rung he fluffs must not
+    // mark a question wrong in the drill or move a counter.
+    learn: {},
     // days['2026-08-07'] = { answered, correct }. One row per calendar day he
     // works, which is what the daily target reads and what the streak and the
     // day-to-day comparison will read later.
@@ -1187,14 +1192,60 @@ function paintStar(question) {
 // The lesson for a question is the one whose skills include the skill the
 // question actually tests -- realSkill for a missed question, whose own skill is
 // the set it lives in rather than the thing it examines.
+// A skill is not a lesson. "boundaries" holds series punctuation, supplements,
+// title commas and subject-verb spacing alongside the clause-joining questions,
+// and none of the first four are decided by FIND -> COVER -> READ -> DECIDE --
+// so offering that lesson beside them teaches him the rule does not work.
+// College Board states the convention on every question ("The convention being
+// tested is..."), so a lesson can claim exactly the ones its own rule settles.
+//
+// Permissive by default in both directions: a lesson with no `match` block takes
+// its whole skill, and a question with no stated convention is kept rather than
+// dropped. Narrowing is opt-in, per lesson.
+function conceptMatches(concept, question) {
+  const m = concept.match;
+  if (!m) return true;
+  const rule = (question.rule || '').toLowerCase();
+  if (!rule) return true;
+  if ((m.none || []).some((word) => rule.includes(word))) return false;
+  return (m.any || []).some((word) => rule.includes(word));
+}
+
 function conceptFor(question) {
   if (!question) return null;
   const skill = skillTested(question);
-  return concepts.find((c) => (c.skills || []).includes(skill)) || null;
+  return concepts.find((c) =>
+    (c.skills || []).includes(skill) && conceptMatches(c, question)) || null;
 }
 
-function renderConceptBody(concept) {
-  conceptBodyEl.textContent = '';
+// A lesson is 800-1000 words. Opened all at once, ahead of a 70-word passage, it
+// is a wall he folds away without reading -- which is what happened. So it is
+// released a card at a time: the first is the number it has cost him and the rule
+// itself, about twenty words, and he can stop there and still have the only part
+// that matters. Nothing is cut; it just arrives in the order he can take it.
+let conceptDeck = [];
+let conceptAt = 0;
+
+function conceptCards(c) {
+  const cards = [{ kind: 'cost' }];
+  if (c.ruleDetail || (c.forms || []).length) cards.push({ kind: 'means' });
+  if ((c.steps || []).length) cards.push({ kind: 'test' });
+  if (c.trap) cards.push({ kind: 'trap' });
+  (c.examples || []).forEach((_, i) => cards.push({ kind: 'example', i }));
+  if (c.exception) cards.push({ kind: 'exception' });
+  if (c.commas) cards.push({ kind: 'commas' });
+  if ((c.memorise || []).length || c.check) cards.push({ kind: 'memorise' });
+  return cards;
+}
+
+// `card` is passed in rather than read off the module cursor, so the Learn
+// section can render the same lesson at its own position without the two decks
+// fighting over one index.
+function renderConceptCard(concept, card) {
+  const box = document.createElement('div');
+  box.className = 'concept-card';
+  box.dataset.kind = card.kind;
+
   const para = (text, cls) => {
     const el = document.createElement('p');
     if (cls) el.className = cls;
@@ -1202,49 +1253,41 @@ function renderConceptBody(concept) {
     return el;
   };
   const heading = (text) => para(text, 'concept-h');
-  // Wrong above right, both spelled out. Seeing the two together does more than
-  // any amount of explaining why one of them fails. Either half may be absent --
-  // some points only need the correct version showing.
   const pairEl = (wrong, right) => {
-    const box = document.createElement('div');
-    box.className = 'concept-pair';
-    if (wrong) {
-      const bad = para(wrong, 'concept-bad');
-      bad.dataset.mark = '\u2717';
-      box.append(bad);
-    }
-    if (right) {
-      const good = para(right, 'concept-good');
-      good.dataset.mark = '\u2713';
-      box.append(good);
-    }
-    return box;
+    const pair = document.createElement('div');
+    pair.className = 'concept-pair';
+    if (wrong) { const b = para(wrong, 'concept-bad'); b.dataset.mark = '\u2717'; pair.append(b); }
+    if (right) { const g = para(right, 'concept-good'); g.dataset.mark = '\u2713'; pair.append(g); }
+    return pair;
   };
 
-  if (concept.why) conceptBodyEl.append(para(concept.why, 'concept-why'));
-
-  // The rule, in the words he is meant to keep. Everything under it is support.
-  if (concept.rule) conceptBodyEl.append(para(concept.rule, 'concept-rule'));
-  if (concept.ruleDetail) conceptBodyEl.append(para(concept.ruleDetail));
-
-  if ((concept.forms || []).length) {
-    const list = document.createElement('dl');
-    list.className = 'concept-forms';
-    concept.forms.forEach((f) => {
-      const dt = document.createElement('dt');
-      dt.textContent = f.form;
-      const dd = document.createElement('dd');
-      dd.textContent = f.example;
-      list.append(dt, dd);
-    });
-    conceptBodyEl.append(list);
-  }
-  if (concept.formsWarning) {
-    conceptBodyEl.append(para(concept.formsWarning, 'concept-warning'));
+  if (card.kind === 'cost') {
+    // The number first, on its own, at the size of a score. He reads scores.
+    const fig = document.createElement('p');
+    fig.className = 'concept-cost';
+    fig.textContent = String(concept.cost != null ? concept.cost : '');
+    box.append(fig, para(concept.costLabel || 'questions this cost you', 'concept-cost-label'));
+    if (concept.rule) box.append(para(concept.rule, 'concept-rule'));
   }
 
-  if ((concept.steps || []).length) {
-    conceptBodyEl.append(heading('The test'));
+  if (card.kind === 'means') {
+    box.append(heading('What it means'));
+    if (concept.ruleDetail) box.append(para(concept.ruleDetail));
+    if ((concept.forms || []).length) {
+      const list = document.createElement('dl');
+      list.className = 'concept-forms';
+      concept.forms.forEach((f) => {
+        const dt = document.createElement('dt'); dt.textContent = f.form;
+        const dd = document.createElement('dd'); dd.textContent = f.example;
+        list.append(dt, dd);
+      });
+      box.append(list);
+    }
+    if (concept.formsWarning) box.append(para(concept.formsWarning, 'concept-warning'));
+  }
+
+  if (card.kind === 'test') {
+    box.append(heading('The test'));
     const ol = document.createElement('ol');
     ol.className = 'concept-steps';
     concept.steps.forEach((step) => {
@@ -1252,93 +1295,135 @@ function renderConceptBody(concept) {
       li.textContent = step;
       ol.append(li);
     });
-    conceptBodyEl.append(ol);
-  }
-  // The two outcomes, set apart from the steps: the steps are what he does, these
-  // are what he does with the answer.
-  (concept.then || []).forEach((line) => {
-    conceptBodyEl.append(para(line, 'concept-then'));
-  });
-
-  // A callout, not a paragraph: this is the diagnosis, not background. He knows
-  // the grammar -- he decides before he has read far enough to decide.
-  if (concept.trap) {
-    const box = document.createElement('div');
-    box.className = 'concept-trap';
-    box.append(para('The trap', 'concept-h'), para(concept.trap));
-    conceptBodyEl.append(box);
+    box.append(ol);
+    (concept.then || []).forEach((line) => box.append(para(line, 'concept-then')));
   }
 
-  // "and" is taught here and nowhere else. It was in two places -- a caveat under
-  // the rule and a footnote at the end -- which is one more than a student needs
-  // to meet the same idea.
-  if (concept.exception) {
-    const box = document.createElement('div');
-    box.className = 'concept-exception';
-    box.append(para(concept.exception.title || 'The one exception', 'concept-h'));
-    if (concept.exception.intro) box.append(para(concept.exception.intro));
-    (concept.exception.pairs || []).forEach((pr) => box.append(pairEl(pr.wrong, pr.right)));
-    if (concept.exception.note) box.append(para(concept.exception.note, 'concept-working'));
-    conceptBodyEl.append(box);
+  if (card.kind === 'trap') {
+    box.classList.add('is-trap');
+    box.append(heading('The trap'), para(concept.trap));
   }
 
-  // Kept apart from the rule above: which form to use and whether it takes
-  // commas are two questions, and running them together teaches that every
-  // describing phrase is comma-fenced. His own two examples show both cases.
-  if (concept.commas) {
-    conceptBodyEl.append(heading('What about the commas?'), para(concept.commas));
-  }
-
-  (concept.examples || []).forEach((ex) => {
-    const box = document.createElement('div');
-    box.className = 'concept-example';
+  if (card.kind === 'example') {
+    const ex = concept.examples[card.i];
     box.append(para(ex.source || '', 'concept-src'));
     box.append(para(ex.sentence || '', 'concept-sentence'));
-
-    const choices = document.createElement('p');
-    choices.className = 'concept-choices';
-    (ex.choices || []).forEach((text) => {
-      const chip = document.createElement('span');
-      chip.className = text === ex.answer ? 'concept-choice is-answer' : 'concept-choice';
-      chip.textContent = text;
-      choices.append(chip);
-    });
-    box.append(choices);
-
+    if ((ex.choices || []).length) {
+      const choices = document.createElement('p');
+      choices.className = 'concept-choices';
+      ex.choices.forEach((text) => {
+        const chip = document.createElement('span');
+        chip.className = text === ex.answer ? 'concept-choice is-answer' : 'concept-choice';
+        chip.textContent = text;
+        choices.append(chip);
+      });
+      box.append(choices);
+    }
     if (ex.wrong || ex.right) box.append(pairEl(ex.wrong, ex.right));
-
     if (ex.working) box.append(para(ex.working, 'concept-working'));
-    conceptBodyEl.append(box);
-  });
-
-  if (concept.alsoNote) {
-    conceptBodyEl.append(heading('One related rule'), para(concept.alsoNote));
   }
 
-  // Last, and the only part worth learning by heart.
-  if ((concept.memorise || []).length) {
-    const box = document.createElement('div');
-    box.className = 'concept-memorise';
-    box.append(para('Memorise this', 'concept-h'));
-    concept.memorise.forEach((line) => box.append(para(line)));
-    conceptBodyEl.append(box);
+  if (card.kind === 'exception') {
+    const e = concept.exception;
+    box.classList.add('is-aside');
+    box.append(heading(e.title || 'The one exception'));
+    if (e.intro) box.append(para(e.intro));
+    (e.pairs || []).forEach((pr) => box.append(pairEl(pr.wrong, pr.right)));
+    if (e.note) box.append(para(e.note, 'concept-working'));
   }
-  if (concept.check) conceptBodyEl.append(para(concept.check, 'concept-check'));
+
+  if (card.kind === 'commas') {
+    box.classList.add('is-aside');
+    box.append(heading('What about the commas?'), para(concept.commas));
+  }
+
+  if (card.kind === 'memorise') {
+    box.classList.add('is-memorise');
+    box.append(heading('Memorise this'));
+    (concept.memorise || []).forEach((line) => box.append(para(line)));
+    if (concept.check) box.append(para(concept.check, 'concept-check'));
+  }
+
+  return box;
 }
 
-// Shown for any question the lesson covers. Open the first time he meets it,
-// folded ever after -- a lesson he has read is furniture.
+function renderConceptBody(concept) {
+  conceptBodyEl.textContent = '';
+  conceptDeck = conceptCards(concept);
+  if (conceptAt >= conceptDeck.length) conceptAt = 0;
+
+  conceptBodyEl.append(renderConceptCard(concept, conceptDeck[conceptAt]));
+
+  // Dots say how much is left, so a long lesson never feels open-ended, and each
+  // is clickable: he can jump straight to the example or the memorise card.
+  const nav = document.createElement('div');
+  nav.className = 'concept-nav';
+
+  const dots = document.createElement('div');
+  dots.className = 'concept-dots';
+  conceptDeck.forEach((c, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = i === conceptAt ? 'concept-dot is-on' : 'concept-dot';
+    dot.setAttribute('aria-label', `Card ${i + 1} of ${conceptDeck.length}`);
+    dot.addEventListener('click', () => { conceptAt = i; renderConceptBody(concept); });
+    dots.append(dot);
+  });
+
+  const back = document.createElement('button');
+  back.type = 'button';
+  back.className = 'btn btn-small concept-back';
+  back.textContent = '\u2190 Back';
+  back.hidden = conceptAt === 0;
+  back.addEventListener('click', () => { conceptAt -= 1; renderConceptBody(concept); });
+
+  const next = document.createElement('button');
+  next.type = 'button';
+  next.className = 'btn btn-small concept-next';
+  const last = conceptAt === conceptDeck.length - 1;
+  next.textContent = last ? 'Got it' : 'Next \u2192';
+  next.addEventListener('click', () => {
+    if (!last) { conceptAt += 1; renderConceptBody(concept); return; }
+    // Read to the end: fold it away and remember he has been through it, so the
+    // summary line can carry the short version from now on.
+    store.concepts = store.concepts || {};
+    store.concepts[concept.id] = { folded: true, read: true };
+    saveStore();
+    conceptAt = 0;
+    conceptPanel.open = false;
+    renderConcept(current);
+  });
+
+  nav.append(back, dots, next);
+  conceptBodyEl.append(nav);
+}
+
 function renderConcept(question) {
   if (!conceptPanel) return;
   const concept = conceptFor(question);
   conceptPanel.hidden = !concept;
   if (!concept) return;
 
+  const fresh = conceptPanel.dataset.conceptId !== concept.id;
   conceptPanel.dataset.conceptId = concept.id;
-  conceptTitleEl.textContent = concept.title || '';
-  renderConceptBody(concept);
+  if (fresh) conceptAt = 0;   // a different lesson starts at its first card
+
   store.concepts = store.concepts || {};
-  conceptPanel.open = !(store.concepts[concept.id] || {}).folded;
+  const state = store.concepts[concept.id] || {};
+
+  conceptTitleEl.textContent = concept.title || '';
+  // Once he has read it through, the folded line carries the procedure itself --
+  // COVER -> PREDICT -> MATCH -- so the panel is useful at a glance without being
+  // opened at all. Before that it says what it will cost him not to.
+  if (conceptHintEl) {
+    conceptHintEl.textContent = state.read
+      ? ((concept.memorise || [])[0] || '')
+      : `${concept.cost} questions`;
+    conceptHintEl.classList.toggle('is-read', !!state.read);
+  }
+
+  renderConceptBody(concept);
+  conceptPanel.open = !state.folded;
 }
 
 function renderMeta(question) {
@@ -4256,6 +4341,643 @@ window.eraseProgress = function eraseProgress() {
   nextQuestion({ step: 0, scroll: false });
   console.info('Progress erased.');
 };
+
+/* ==========================================================================
+   Learn -- a separate place from the drill.
+
+   The drill serves a question and grades it. That is practice, and it assumes
+   he already knows the rule. Learn is the other half: read the rule, then meet
+   it three times where nothing is in the way, three times at the level the test
+   actually asks, and three times where it has been deliberately hidden. The
+   ladder is the point -- an easy question proves the rule landed, a hard one
+   proves it survives pressure, and doing the hard one first only proves he is
+   still guessing.
+
+   It writes to store.learn and nothing else. No counters move, no cursor is
+   consumed, no question is retired from the main pool -- so a bad run in here
+   costs him nothing and the same questions still turn up in the drill later.
+   ========================================================================== */
+
+const LEARN_LADDER = [
+  { difficulty: 'easy',   title: 'Warm-up',
+    blurb: 'The rule with nothing in the way.',            count: 3, pass: 3 },
+  { difficulty: 'medium', title: 'Test level',
+    blurb: 'Where most of your questions come from.',      count: 3, pass: 2 },
+  { difficulty: 'hard',   title: 'The hardest ones',
+    blurb: 'Same rule, buried. This is the one that pays.', count: 3, pass: 2 }
+];
+
+let learnScreen = 'home';   // 'home' | 'lesson' | 'ladder' | 'result'
+let learnConcept = null;
+let learnRung = 0;
+let learnSet = [];          // the three questions of the current attempt
+let learnAt = 0;
+let learnPicked = null;
+let learnGraded = false;
+let learnMarks = [];        // true/false per question of this attempt
+let learnBanked = false;    // this attempt's result already written to the store
+
+const learnDialog = document.getElementById('learnDialog');
+const learnBodyEl = document.getElementById('learnBody');
+const learnSubEl = document.getElementById('learnSub');
+
+function learnState(id) {
+  store.learn = store.learn || {};
+  const at = store.learn[id] || {};
+  return {
+    read: !!at.read,
+    rung: at.rung || 0,        // 0-2 in progress, 3 = ladder finished
+    seen: at.seen || [],       // ids already used, so a retry brings new ones
+    best: at.best || {}        // difficulty -> best score, for the home tiles
+  };
+}
+
+function saveLearn(id, patch) {
+  store.learn = store.learn || {};
+  store.learn[id] = Object.assign({}, learnState(id), patch);
+  saveStore();
+}
+
+// Only the real College Board banks can supply a rung: the missed set and the
+// educator bank carry their own skill names, so they never match a lesson's
+// skills and drop out here without needing to be named.
+function learnPick(concept, difficulty, count, seen) {
+  const skills = new Set(concept.skills || []);
+  const taken = new Set(seen);
+  // Same narrowing as the inline panel: a rung must be questions the lesson
+  // actually decides, or the ladder disproves the rule it just taught.
+  const fits = (q) =>
+    skills.has(q.skill) && q.difficulty === difficulty && conceptMatches(concept, q);
+
+  let eligible = bank.filter((q) => fits(q) && !taken.has(q.id));
+  // Every question at this level used up: start the set over rather than serve a
+  // short rung. Hundreds deep at each level, so this is a long way off.
+  if (eligible.length < count) eligible = bank.filter(fits);
+
+  const shuffled = eligible.slice();
+  for (let i = shuffled.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled.slice(0, count);
+}
+
+function learnStartRung(concept, rung) {
+  const state = learnState(concept.id);
+  learnBanked = false;
+  learnRung = rung;
+  learnSet = learnPick(concept, LEARN_LADDER[rung].difficulty, LEARN_LADDER[rung].count, state.seen);
+  learnAt = 0;
+  learnPicked = null;
+  learnGraded = false;
+  learnMarks = [];
+  learnScreen = 'ladder';
+}
+
+/* ---------- the screens ---------- */
+
+function learnEl(tag, cls, text) {
+  const el = document.createElement(tag);
+  if (cls) el.className = cls;
+  if (text != null) el.textContent = text;
+  return el;
+}
+
+function learnButton(text, cls, onClick) {
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = cls;
+  b.textContent = text;
+  b.addEventListener('click', onClick);
+  return b;
+}
+
+function renderLearn() {
+  if (!learnBodyEl) return;
+  learnBodyEl.textContent = '';
+  if (learnScreen === 'home' || !learnConcept) return renderLearnHome();
+  if (learnScreen === 'lesson') return renderLearnLesson();
+  if (learnScreen === 'result') return renderLearnResult();
+  return renderLearnLadder();
+}
+
+function renderLearnHome() {
+  learnScreen = 'home';
+  learnConcept = null;
+  if (learnSubEl) {
+    learnSubEl.textContent =
+      'Read the rule, then practise it easy to hard. Nothing in here touches your scores.';
+  }
+
+  if (!concepts.length) {
+    learnBodyEl.append(learnEl('p', 'learn-verdict-line', 'Loading lessons\u2026'));
+    return;
+  }
+
+  const grid = learnEl('div', 'learn-grid');
+
+  concepts.forEach((concept) => {
+    const state = learnState(concept.id);
+    const done = state.rung >= LEARN_LADDER.length;
+
+    const tile = learnEl('button', 'learn-tile');
+    tile.type = 'button';
+    if (done) tile.classList.add('is-done');
+
+    const top = learnEl('span', 'learn-tile-top');
+    top.append(learnEl('span', 'learn-tile-title', concept.title));
+
+    // One word for where he is, because a tile he has to decode is a tile he
+    // does not press.
+    let badge = 'Start here';
+    if (done) badge = 'Done';
+    else if (state.rung > 0) badge = LEARN_LADDER[state.rung].title;
+    else if (state.read) badge = 'Ready to practise';
+    const badgeEl = learnEl('span', 'learn-badge', badge);
+    if (done) badgeEl.classList.add('is-done');
+    top.append(badgeEl);
+    tile.append(top);
+
+    if (concept.rule) tile.append(learnEl('span', 'learn-tile-rule', concept.rule));
+
+    const rungs = learnEl('span', 'learn-rungs');
+    LEARN_LADDER.forEach((rung, i) => {
+      const best = state.best[rung.difficulty];
+      const pill = learnEl('span', 'learn-rung', rung.title);
+      if (i < state.rung) pill.classList.add('is-clear');
+      else if (i === state.rung && state.read) pill.classList.add('is-next');
+      if (best) pill.title = `Best: ${best} of ${rung.count}`;
+      rungs.append(pill);
+    });
+    tile.append(rungs);
+
+    tile.append(learnEl('span', 'learn-tile-cost',
+      `${concept.cost} questions on your real tests`));
+
+    tile.addEventListener('click', () => {
+      learnConcept = concept;
+      const at = learnState(concept.id);
+      // Read it once and the lesson stops being the front door -- he goes
+      // straight back to the rung he stopped on. The lesson is one press away
+      // from inside the ladder if he wants it again.
+      if (!at.read || at.rung >= LEARN_LADDER.length) learnScreen = 'lesson';
+      else learnStartRung(concept, at.rung);
+      renderLearn();
+    });
+
+    grid.append(tile);
+  });
+
+  learnBodyEl.append(grid);
+}
+
+// The inline panel releases this a card at a time because it sits above a
+// question in a strip of space he has not chosen to be in. Here he has opened
+// Learn on purpose and the dialog is the size of a page, so the same content
+// goes down as a sheet: every section at once, two columns, one scroll. Nine
+// presses to read one lesson was the reason he was not reading it.
+function renderLearnLesson() {
+  const concept = learnConcept;
+  const deck = conceptCards(concept);
+
+  learnBodyEl.append(learnCrumb(concept.title));
+  if (learnSubEl) learnSubEl.textContent = concept.rule || '';
+
+  const sheet = learnEl('div', 'learn-sheet');
+  deck.forEach((card) => sheet.append(renderConceptCard(concept, card)));
+  learnBodyEl.append(sheet);
+
+  // Pinned to the bottom of the dialog rather than sitting under the last
+  // section: the way on should never be something he has to scroll to find.
+  const bar = learnEl('div', 'learn-sticky');
+  bar.append(learnEl('span', 'learn-sticky-note',
+    `${LEARN_LADDER.length} levels · ${LEARN_LADDER.reduce((n, r) => n + r.count, 0)} questions`));
+  bar.append(learnButton('Practise it \u2192', 'btn', () => {
+    saveLearn(concept.id, { read: true });
+    store.concepts = store.concepts || {};
+    store.concepts[concept.id] = { folded: true, read: true };
+    saveStore();
+    renderConcept(current);
+    const at = learnState(concept.id);
+    learnStartRung(concept, Math.min(at.rung, LEARN_LADDER.length - 1));
+    renderLearn();
+  }));
+  learnBodyEl.append(bar);
+}
+
+function learnCrumb(text, onBack) {
+  const bar = learnEl('div', 'learn-crumb');
+  bar.append(learnButton('← All lessons', 'learn-crumb-back', onBack || (() => {
+    learnScreen = 'home';
+    renderLearn();
+  })));
+  bar.append(learnEl('span', 'learn-crumb-here', text));
+  return bar;
+}
+
+/* ---------- the rail: the rule applied to the question in front of him ----------
+
+   A rule he can recite and cannot use is worth nothing, and the gap between the
+   two is exactly "how does FIND -> COVER -> READ -> DECIDE cash out on THIS
+   sentence". So the procedure sits beside the question with the parts of it that
+   can be made concrete filled in, and afterwards College Board's own reasoning
+   for the right choice is lifted out of the option list and put at the top --
+   that paragraph is the rule applied to this question, written by the people who
+   set it.
+
+   Nothing that names the answer appears before he has answered. */
+
+// 346 of the bank's questions state the convention in the neutral form "The
+// convention being tested is X" -- that names the topic, not the answer, so it
+// is safe to show up front. The rest state the rule by working the question out
+// ("A comma is the appropriate way to link..."), which gives it away, so those
+// are held until after he has committed.
+const LEARN_CONVENTION = /^the conventions? being tested (?:is|are)\s+/i;
+
+function learnConvention(question) {
+  const rule = (question.rule || '').trim();
+  if (!LEARN_CONVENTION.test(rule)) return null;
+  return rule.replace(LEARN_CONVENTION, '').replace(/\.$/, '');
+}
+
+// "Read all the way to the full stop" is the step he skips, so the sentence is
+// pulled out and shown on its own. Only for questions with a blank -- on the
+// others the whole passage is the unit and cutting it would mislead.
+function learnFocusSentence(question) {
+  const text = question.passage || '';
+  if (!text.includes('___')) return null;
+  const at = text.indexOf('___');
+  let from = 0;
+  for (let i = at; i > 0; i -= 1) {
+    if ('.!?'.includes(text[i - 1]) && text[i] === ' ') { from = i + 1; break; }
+  }
+  let to = text.length;
+  for (let i = at; i < text.length - 1; i += 1) {
+    if ('.!?'.includes(text[i]) && text[i + 1] === ' ') { to = i + 1; break; }
+  }
+  const hit = text.slice(from, to).trim();
+  // The passage is one sentence: showing it again beside itself is noise.
+  return hit && hit.length < text.trim().length ? hit : null;
+}
+
+// Every explanation opens "Choice C is the best answer." -- which is the one part
+// he does not need, and naming the letter again adds nothing beside a marked
+// option list.
+function learnWhy(question) {
+  const right = (question.options || []).find((o) => o.label === question.correctLabel);
+  if (!right || !right.why) return null;
+  return right.why.replace(/^choice\s+[a-d]\s+is\s+the\s+best\s+answer[.,]?\s*/i, '').trim();
+}
+
+/* Each lesson names one of its own steps that the rail can make concrete on the
+   question in front of him -- concept.railHint says which. That step is the one
+   he skips, and seeing it done on this passage is the difference between a rule
+   he can recite and a rule he can use. */
+
+// "Read the goal sentence at the bottom. Read it before the notes." It is the
+// last sentence of every synthesis passage, and it is the whole question.
+function learnGoal(question) {
+  const hit = /the student wants to[^.]*\./i.exec(question.passage || '');
+  return hit ? hit[0] : null;
+}
+
+// "Find the signal: a colon, contrast words, or cause/result words." Present in
+// roughly half of them; silent rather than inventing one when it is not.
+const LEARN_SIGNALS = [
+  ':', ' but ', ' although ', ' while ', ' yet ', ' however', ' because ',
+  ' since ', ' so ', ' therefore', ' thus ', ' despite ', ' whereas '
+];
+
+function learnSignals(question) {
+  const text = ' ' + (learnFocusSentence(question) || question.passage || '').toLowerCase() + ' ';
+  const found = LEARN_SIGNALS.filter((word) => text.includes(word)).map((word) => word.trim());
+  return found.length ? found : null;
+}
+
+// "Now hide the rest of the passage." Which half of the skill this one is
+// decides what he hides, and the stem always says.
+function learnScope(question) {
+  const stem = (question.question || '').toLowerCase();
+  if (stem.includes('underlined')) {
+    return 'This one asks about the underlined part only. Hide the rest of the passage '
+      + 'and ask whether the choice could be written from those words alone.';
+  }
+  if (stem.includes('main purpose') || stem.includes('overall structure')) {
+    return 'This one asks about the whole text -- the job the passage does, not the job '
+      + 'of any one sentence.';
+  }
+  return null;
+}
+
+function learnRail(concept, question) {
+  const rail = learnEl('aside', 'learn-rail');
+  const convention = learnConvention(question);
+
+  if (!learnGraded) {
+    rail.append(learnEl('p', 'learn-rail-head', 'Apply the rule'));
+
+    const steps = concept.steps || [];
+    if (steps.length) {
+      const ol = document.createElement('ol');
+      ol.className = 'learn-rail-steps';
+      steps.forEach((step) => ol.append(learnEl('li', null, step)));
+      rail.append(ol);
+    }
+
+    const hint = concept.railHint;
+    const sentence = learnFocusSentence(question);
+
+    if (hint === 'goal') {
+      const goal = learnGoal(question);
+      if (goal) {
+        rail.append(learnEl('p', 'learn-rail-tag', 'The goal — read this first'));
+        rail.append(learnEl('p', 'learn-rail-sentence', goal));
+      }
+    } else if (hint === 'scope') {
+      const scope = learnScope(question);
+      if (scope) {
+        rail.append(learnEl('p', 'learn-rail-tag', 'What to hide'));
+        rail.append(learnEl('p', 'learn-rail-note', scope));
+      }
+    } else {
+      if (sentence) {
+        rail.append(learnEl('p', 'learn-rail-tag',
+          hint === 'signal' ? 'Say your own word for this' : 'Read this far'));
+        rail.append(learnEl('p', 'learn-rail-sentence', sentence));
+      }
+      if (hint === 'signal') {
+        const signals = learnSignals(question);
+        rail.append(learnEl('p', 'learn-rail-tag', 'Signal'));
+        if (signals) {
+          const row = learnEl('p', 'learn-rail-signals');
+          signals.forEach((word) => row.append(learnEl('span', 'learn-signal', word)));
+          rail.append(row);
+        } else {
+          rail.append(learnEl('p', 'learn-rail-note',
+            'No colon or contrast word here, so the meaning has to come from the '
+            + 'sentence itself. Say your word before you look.'));
+        }
+      }
+    }
+
+    if (convention) {
+      rail.append(learnEl('p', 'learn-rail-tag', 'What this one tests'));
+      rail.append(learnEl('p', 'learn-rail-note', convention));
+    }
+
+    (concept.then || []).forEach((line) => rail.append(learnEl('p', 'learn-rail-then', line)));
+    return rail;
+  }
+
+  rail.classList.add('is-graded');
+  rail.append(learnEl('p', 'learn-rail-head', 'How the rule applied'));
+  if (convention) {
+    rail.append(learnEl('p', 'learn-rail-tag', 'What this one tested'));
+    rail.append(learnEl('p', 'learn-rail-note', convention));
+  }
+  const why = learnWhy(question);
+  if (why) {
+    rail.append(learnEl('p', 'learn-rail-tag', 'Why that answer'));
+    rail.append(learnEl('p', 'learn-rail-why', why));
+  }
+  const hook = (concept.memorise || [])[0];
+  if (hook) rail.append(learnEl('p', 'learn-rail-hook', hook));
+  return rail;
+}
+
+function renderLearnLadder() {
+  const concept = learnConcept;
+  const rung = LEARN_LADDER[learnRung];
+  const question = learnSet[learnAt];
+  if (!learnSet.length) {
+    learnBodyEl.append(learnCrumb(concept.title));
+    learnBodyEl.append(learnEl('p', 'learn-verdict-line',
+      'No questions at this level are loaded yet. Give the banks a moment and try again.'));
+    return;
+  }
+  if (!question) { learnScreen = 'result'; return renderLearn(); }
+
+  learnBodyEl.append(learnCrumb(concept.title));
+  if (learnSubEl) learnSubEl.textContent = `${rung.title} · ${rung.blurb}`;
+
+  const stage = learnEl('div', 'learn-stage');
+
+  // The rule stays on screen the whole way up the ladder. He is not being tested
+  // on whether he remembered it; he is being shown it works.
+  const hook = (concept.memorise || [])[0];
+  if (hook) {
+    const reminder = learnEl('div', 'learn-reminder');
+    reminder.append(learnEl('span', 'learn-reminder-tag', 'The rule'));
+    reminder.append(learnEl('span', 'learn-reminder-text', hook));
+    reminder.append(learnButton('Read the lesson again', 'learn-relesson', () => {
+      learnScreen = 'lesson'; renderLearn();
+    }));
+    stage.append(reminder);
+  }
+
+  const head = learnEl('div', 'learn-qhead');
+  head.append(learnEl('span', 'learn-step', `Question ${learnAt + 1} of ${learnSet.length}`));
+  const pips = learnEl('span', 'learn-pips');
+  learnSet.forEach((_, i) => {
+    const pip = learnEl('span', 'learn-pip');
+    if (i < learnMarks.length) pip.classList.add(learnMarks[i] ? 'is-right' : 'is-wrong');
+    else if (i === learnAt) pip.classList.add('is-now');
+    pips.append(pip);
+  });
+  head.append(pips);
+  stage.append(head);
+
+  stage.append(learnEl('h3', 'question-title', question.question || ''));
+  stage.append(learnPassage(question));
+  stage.append(learnOptions(question));
+
+  const foot = learnEl('div', 'learn-foot');
+  if (!learnGraded) {
+    const submit = learnButton('Check', 'btn', () => {
+      if (learnPicked === null) return;
+      learnGraded = true;
+      learnMarks[learnAt] = learnPicked === question.correctLabel;
+      renderLearn();
+    });
+    submit.disabled = learnPicked === null;
+    foot.append(submit);
+  } else {
+    const right = learnMarks[learnAt];
+    const verdict = learnEl('span', right ? 'learn-verdict is-right' : 'learn-verdict is-wrong',
+      right ? '✔ Right' : `✖ The answer was ${question.correctLabel}`);
+    foot.append(verdict);
+    const lastOne = learnAt === learnSet.length - 1;
+    foot.append(learnButton(lastOne ? 'See how you did' : 'Next question →', 'btn', () => {
+      if (lastOne) { learnScreen = 'result'; renderLearn(); return; }
+      learnAt += 1;
+      learnPicked = null;
+      learnGraded = false;
+      renderLearn();
+    }));
+  }
+  stage.append(foot);
+
+  const work = learnEl('div', 'learn-work');
+  work.append(stage, learnRail(concept, question));
+  learnBodyEl.append(work);
+}
+
+// A local copy of the card's passage rendering rather than a call into it: that
+// one paints the single .cloze element the card owns, and Learn must not reach
+// into the page behind the dialog.
+function learnPassage(question) {
+  const box = learnEl('div', 'cloze');
+  const text = question.passage || '';
+  const underline = question.underline || null;
+
+  if (underline && text.includes(underline)) {
+    box.classList.add('is-prose');
+    appendUnderlined(box, text, underline, null);
+    return box;
+  }
+  if (!text.includes('___')) {
+    box.classList.add('is-prose');
+    appendText(box, text, null);
+    return box;
+  }
+  const [before, after] = text.split('___');
+  const blank = learnEl('span', 'blank');
+  blank.append(' ');
+  appendText(box, before, null);
+  box.append(blank);
+  appendText(box, after, null);
+  return box;
+}
+
+function learnOptions(question) {
+  const box = learnEl('div', 'options');
+  const punctuationMatters =
+    question.skill === 'boundaries' || question.skill === 'form-structure-sense';
+
+  (question.options || []).forEach((option) => {
+    const correct = option.label === question.correctLabel;
+    const el = learnEl('div', 'option');
+    if (learnGraded) {
+      el.classList.add('showExplanation', correct ? 'correct' : 'incorrect');
+      if (option.label === learnPicked) el.classList.add('selected');
+      el.dataset.isCorrect = String(correct);
+    } else if (option.label === learnPicked) {
+      el.classList.add('selected');
+    }
+
+    const row = learnEl('div', 'row');
+    row.append(learnEl('span', 'label', option.label));
+    row.append(learnEl('span', punctuationMatters ? 'text choice' : 'text', option.text));
+    const mark = learnEl('span', 'option-result');
+    if (learnGraded) {
+      mark.textContent = correct ? '✔' : (option.label === learnPicked ? '✖' : '');
+    }
+    row.append(mark);
+    el.append(row);
+
+    if (learnGraded && option.why) {
+      // Every explanation, not just the right one: on a rung the wrong answers
+      // are the lesson. He picked one of them for a reason.
+      el.append(learnEl('p', 'explanation', option.why));
+    }
+
+    if (!learnGraded) {
+      el.addEventListener('click', () => { learnPicked = option.label; renderLearn(); });
+    }
+    box.append(el);
+  });
+  return box;
+}
+
+function renderLearnResult() {
+  const concept = learnConcept;
+  const rung = LEARN_LADDER[learnRung];
+  const score = learnMarks.filter(Boolean).length;
+  const passed = score >= rung.pass;
+  const state = learnState(concept.id);
+
+  learnBodyEl.append(learnCrumb(concept.title));
+  if (learnSubEl) learnSubEl.textContent = `${rung.title} · result`;
+
+  const stage = learnEl('div', 'learn-stage learn-result');
+  stage.append(learnEl('p', 'learn-score', `${score} / ${learnSet.length}`));
+  stage.append(learnEl('p', 'learn-score-label', rung.title));
+
+  const nextRung = learnRung + 1;
+
+  // Banked once per attempt rather than on every paint: this screen re-renders
+  // and `seen` is a growing list, so writing it here twice would record the same
+  // three questions twice.
+  if (!learnBanked) {
+    learnBanked = true;
+    const best = state.best[rung.difficulty];
+    const bestScore = best ? Number(String(best).split('/')[0]) : -1;
+    const patch = {
+      seen: state.seen.concat(learnSet.map((q) => q.id)),
+      best: Object.assign({}, state.best,
+        score > bestScore ? { [rung.difficulty]: `${score}/${learnSet.length}` } : {})
+    };
+    if (passed) patch.rung = Math.max(state.rung, nextRung);
+    saveLearn(concept.id, patch);
+  }
+
+  const foot = learnEl('div', 'learn-foot');
+
+  if (passed && nextRung < LEARN_LADDER.length) {
+    stage.append(learnEl('p', 'learn-verdict-line',
+      `The rule holds at this level. ${LEARN_LADDER[nextRung].blurb}`));
+    foot.append(learnButton(`${LEARN_LADDER[nextRung].title} →`, 'btn', () => {
+      learnStartRung(concept, nextRung);
+      renderLearn();
+    }));
+  } else if (passed) {
+    stage.append(learnEl('p', 'learn-verdict-line',
+      'All three levels. That rule is yours -- go and use it on the real drill.'));
+    foot.append(learnButton('Back to lessons', 'btn', () => { learnScreen = 'home'; renderLearn(); }));
+  } else {
+    // Not a failure screen. Three more at the same level, all questions he has
+    // not seen, because the rung is what teaches and repeating it is the method.
+    stage.append(learnEl('p', 'learn-verdict-line',
+      `${rung.pass} of ${learnSet.length} moves you up. Read the rule once more, then take three new ones.`));
+    const hook = (concept.memorise || [])[0];
+    if (hook) stage.append(learnEl('p', 'learn-rehook', hook));
+    foot.append(learnButton('Three more →', 'btn', () => {
+      learnStartRung(concept, learnRung);
+      renderLearn();
+    }));
+    foot.append(learnButton('Read the lesson again', 'btn btn-small', () => {
+      learnScreen = 'lesson'; renderLearn();
+    }));
+  }
+
+  stage.append(foot);
+  learnBodyEl.append(stage);
+}
+
+/* ---------- wiring ---------- */
+
+const openLearnBtn = document.getElementById('openLearn');
+if (openLearnBtn && learnDialog) {
+  openLearnBtn.addEventListener('click', () => {
+    // Opens where he left off only within a session; a fresh open shows the
+    // shelf, because which lesson to work on is the first decision.
+    learnScreen = 'home';
+    renderLearn();
+    learnDialog.showModal();
+  });
+}
+
+const closeLearnBtn = document.getElementById('closeLearn');
+if (closeLearnBtn && learnDialog) {
+  closeLearnBtn.addEventListener('click', () => learnDialog.close());
+}
+
+if (learnDialog) {
+  // Backdrop click closes, as the other dialogs do.
+  learnDialog.addEventListener('click', (ev) => {
+    if (ev.target === learnDialog) learnDialog.close();
+  });
+}
 
 window.Sparkle.init();
 setupControls();

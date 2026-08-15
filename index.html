@@ -6,7 +6,7 @@
   <title>SAT Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=84" />
+  <link rel="stylesheet" href="styles.css?v=89" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -53,6 +53,14 @@
             <span class="target-num" id="targetMini">0 / 500</span>
             <span class="target-lbl" id="targetLbl">points today</span>
           </span>
+        </button>
+        <!-- The other half of the app: not "answer this", but "learn this, then
+             prove it three times over". Marked as the primary of the small
+             controls because on a 1410 the lessons are worth more than the
+             drill. -->
+        <button type="button" class="theme-toggle is-primary" id="openLearn" aria-haspopup="dialog">
+          <span class="theme-toggle-icon" aria-hidden="true">🎓</span>
+          <span class="theme-toggle-label">Learn</span>
         </button>
         <!-- Every question he has missed on a real test, in one list. Shares the
              theme toggle's shape because it is the same kind of control: a small
@@ -140,6 +148,9 @@
             <summary class="concept-head">
               <span class="concept-kicker">Worth knowing first</span>
               <span class="concept-title" id="conceptTitle"></span>
+              <!-- What it has cost him, until he has read it; the procedure
+                   afterwards, so the folded line stays worth glancing at. -->
+              <span class="concept-hint" id="conceptHint"></span>
             </summary>
             <div class="concept-body" id="conceptBody"></div>
           </details>
@@ -388,7 +399,23 @@
     </div>
   </dialog>
 
+  <!-- Learn. A shelf of lessons, each with a three-rung ladder behind it:
+       easy, test level, hardest. Everything inside is rendered by app.js, so the
+       markup is only the frame. -->
+  <dialog class="progress-dialog learn-dialog" id="learnDialog" aria-labelledby="learnTitle">
+    <div class="progress-head">
+      <div>
+        <h2 class="progress-title" id="learnTitle">Learn</h2>
+        <p class="progress-sub" id="learnSub"></p>
+      </div>
+      <button type="button" class="dialog-close" id="closeLearn" aria-label="Close Learn">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="learn-body" id="learnBody"></div>
+  </dialog>
+
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=91"></script>
+  <script src="app.js?v=98"></script>
 </body>
 </html>
