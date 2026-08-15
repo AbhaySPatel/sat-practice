@@ -1,5 +1,4 @@
 {
-  "note": "Hand-written glosses for option words whose College Board rationale never defined them. Merged by extract_vocab.py, which prefers a gloss extracted from the rationale where one exists, since that one is context-specific. Keys are lowercase.",
   "glosses": {
     "a coincidence": "two things happening together by chance",
     "a collaboration": "a joint effort",
@@ -86,6 +85,7 @@
     "appropriate": "fitting for the situation",
     "approximate": "close but not exact",
     "arcane": "obscure; known to few",
+    "arduous": "demanding great effort",
     "arguing about": "disputing",
     "arriving at": "reaching, as a conclusion",
     "assemble": "put together; gather",
@@ -380,6 +380,7 @@
     "indicator of": "a sign pointing to",
     "indifference to": "lack of interest in",
     "individualistic": "acting on one's own lines",
+    "ineffectual": "failing to produce an effect",
     "inertia": "the tendency to stay as it is",
     "inevitable": "certain to happen; unavoidable",
     "inexperienced with": "having little practice at",
@@ -721,5 +722,6 @@
     "withdraw": "take back; pull out",
     "worried": "troubled in mind",
     "yield": "give way; or produce"
-  }
+  },
+  "note": "Hand-written glosses for option words whose College Board rationale never defined them. Merged by extract_vocab.py, which prefers a gloss extracted from the rationale where one exists, since that one is context-specific. Keys are lowercase."
 }

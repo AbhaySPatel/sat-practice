@@ -579,6 +579,9 @@ def classify(prompt, rationale):
          # Same source of truth as the rule above: the question bank holds this
          # very item -- the difrasismo one -- and files it here.
          r'most strongly supported by the text|'
+         # "What does the text most strongly suggest about X?" — seven in the
+         # bank, all filed here.
+         r'most strongly suggest|'
          # "Based on the text, what is true about Mrs. Ochiltree's acquaintances?"
          # The bank has four of these and files them all here.
          r'what is true about', 'central-ideas-details'),

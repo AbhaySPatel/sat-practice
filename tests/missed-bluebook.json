@@ -265,5 +265,222 @@
         "rationale": "Choice C is the best answer. The sentence makes a generalization about the materials used in dhow replicas, noting that while some modern materials are used, most of the materials are traditional. Choice A is incorrect. The sentence provides an example of a traditional material used in ancient dhows; it doesn’t indicate that the material is used in dhow replicas or make any other generalization about materials used in those replicas. Choice B is incorrect. The sentence explains what an ancient dhow was; it doesn’t make a generalization about materials used to make dhow replicas. Choice D is incorrect. The sentence introduces the construction of dhow replicas to an audience unfamiliar with the vessel; it doesn’t make a generalization about the materials used in those replicas."
       }
     ]
+  },
+  {
+    "key": "p7",
+    "label": "Practice 7",
+    "taken": "2026-08-15",
+    "order": 7,
+    "questions": [
+      {
+        "number": 10,
+        "chose": "A",
+        "domainBand": "Information and Ideas, 6 out of 7",
+        "passage": "Conservationists worldwide are working to protect ecosystems from habitat destruction and biodiversity loss, and in many cases, initiatives that rely on natural features or processes can help address such challenges. In response to a rapidly dwindling population of blueback salmon, the Quinault Indian Nation (a tribe in Washington State) partnered with the conservation organization Wild Salmon Center to restore naturally occurring logjams in the Quinault River. The logjams create shady pools where the blueback salmon can rest and spawn, thus promoting blueback population recovery.",
+        "question": "Which choice best states the main idea of the text?",
+        "options": {
+          "A": "A partnership between the Quinault Indian Nation and Wild Salmon Center shows the importance of collaborative approaches to preserving biodiversity.",
+          "B": "Nature-based approaches can be effective ways to achieve conservation goals.",
+          "C": "As indicated by a recent project, logjams help the blueback salmon thrive and reproduce.",
+          "D": "Scientists now realize that nature-based conservation methods offer better long-term solutions to environmental issues than methods that are not nature-based do."
+        },
+        "rationale": "Choice B is the best answer because it best states the main idea of the text: that nature-based approaches can be effective for achieving conservation goals. The text indicates that in many cases where conservationists are trying to protect ecosystems, their methods depend on natural processes or features. The text then gives an example of this phenomenon, a project with the Quinault Indian Nation that allowed logjams to form naturally in a river, creating spawning habitats for blueback salmon. Choice A is incorrect. Although the text does suggest that the partnership with the Quinault Indian Nation was beneficial, this is not the central aim of the text; the text primarily argues that nature-based approaches to conservation can be effective. Choice C is incorrect. Although the text indicates that logjams are helpful to blueback salmon, the example of the blueback salmon project is included to illustrate the larger point made earlier in the text: that nature-based approaches to conservation are often effective. Choice D is incorrect. There is no evidence in the text to support a direct comparison of the efficacy of nature-based conservation approaches to other types of approaches. The text merely indicates that nature-based approaches can often be effective.",
+        "difficulty": "hard",
+        "module": 1
+      },
+      {
+        "number": 17,
+        "chose": "D",
+        "domainBand": "Standard English Conventions, 7 out of 7",
+        "passage": "Featuring jagged peaks of black ink surrounded by hazy swirls of blue and green paint, Zhang Daqian’s 1983 painting Panorama of Mount Lu is inspired by the tradition of qinglü shanshui, a type of Chinese landscape painting ___ by the use of blue and green hues to depict ethereal, otherworldly landscapes.",
+        "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+        "options": {
+          "A": "has been characterized",
+          "B": "will be characterized",
+          "C": "characterized",
+          "D": "is characterized"
+        },
+        "rationale": "Choice C is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite past participle \"characterized\" is correctly used within a supplementary element that modifies the main clause \"Zhang...shanshui,\" defining qinglü shanshui and explaining some of its identifying traits. Choice A is incorrect because it results in a comma splice. Using the finite present perfect tense verb \"has been characterized\" creates a second main clause in the sentence, and the two main clauses can’t be joined in this way by only the comma before \"a type.\" Choice B is incorrect because it results in a comma splice. Using the finite future tense verb \"will be characterized\" creates a second main clause in the sentence, and the two main clauses can’t be joined in this way by only the comma before \"a type.\" Choice D is incorrect because it results in a comma splice. Using the finite present tense verb \"is characterized\" creates a second main clause in the sentence, and the two main clauses can’t be joined in this way by only the comma before \"a type.\"",
+        "difficulty": "hard",
+        "module": 1
+      },
+      {
+        "number": 27,
+        "chose": "B",
+        "domainBand": "Expression of Ideas, 6 out of 7",
+        "passage": "While researching a topic, a student has taken the following notes: Bike-share programs provide bicycles for shared use. In docked bike sharing, riders rent a bike and return it to designated docking stations. Docked programs are orderly and offer consistency to riders but require significant space and money to implement. In dockless bike sharing, riders locate a bike and leave it wherever they choose. Dockless programs are relatively simple and inexpensive to implement and offer flexibility to riders. Dockless programs can be disorganized. The student wants to compare some disadvantages of docked and dockless bike-share programs.",
+        "question": "Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+        "options": {
+          "A": "Dockless programs can be disorganized; docked programs, on the other hand, offer order and consistency.",
+          "B": "Worth noting is that while dockless programs are relatively easy and inexpensive to implement, they are less flexible than docked programs.",
+          "C": "Docked programs are more resource-intensive than dockless programs, but they avoid some of the latter’s organizational challenges.",
+          "D": "Though dockless programs offer flexibility, docked bike-share programs provide bicycles for shared use."
+        },
+        "rationale": "Choice C is the best answer. The sentence compares some disadvantages of docked and dockless bike-share programs, explaining that while docked programs are more resource-intensive (requiring significant space and money), dockless programs have greater organizational challenges. Choice A is incorrect. The sentence compares dockless programs to docked programs, noting an advantage of docked programs: they offer order and consistency. It doesn’t compare disadvantages of the two types of programs. Choice B is incorrect. The sentence compares dockless programs to docked programs, noting an advantage of dockless programs: they are easy and inexpensive to implement. However, it misrepresents information from the notes, stating that dockless programs are less flexible than docked programs. In addition, it doesn’t compare disadvantages of the two types of programs. Choice D is incorrect. The sentence emphasizes an advantage of dockless programs, then makes a general statement that applies to both types of programs; it doesn’t compare disadvantages of the two types of programs.",
+        "difficulty": "hard",
+        "module": 1
+      },
+      {
+        "number": 1,
+        "chose": "D",
+        "domainBand": "Craft and Structure, 4 out of 7",
+        "passage": "At the turn of the twentieth century, Black residents of Richmond, Virginia, had few formal options for banking and other financial services. To ___ this situation, Maggie Lena Walker chartered the St. Luke Penny Savings Bank in 1903. The bank went on to provide home loans and savings opportunities to thousands of Black families over the following decades.",
+        "question": "Which choice completes the text with the most logical and precise word or phrase?",
+        "options": {
+          "A": "prolong",
+          "B": "rectify",
+          "C": "retain",
+          "D": "highlight"
+        },
+        "rationale": "Choice B is the best answer because it most logically completes the text’s discussion of how Maggie Lena Walker addressed the lack of financial services available to Black residents in Richmond, Virginia, at the turn of the twentieth century. In this context, \"rectify\" means to correct or remedy something undesirable. The text indicates that by chartering the St. Luke Penny Savings Bank in 1903, Walker took action to provide local Black residents with greater access to financial services like home loans and savings opportunities. This context supports the idea that she aimed to rectify the undesirable situation affecting these residents. Choice A is incorrect because in this context, \"prolong\" would mean to lengthen something in time. The text indicates that at the turn of the twentieth century, Black residents in Richmond, Virginia, were faced with a lack of formal banking options. The text then states that Walker founded a new bank that provided these residents with financial services. Therefore, instead of prolonging the situation, she took steps to rectify, or correct, it. Choice C is incorrect because in this context, \"retain\" would mean to continue to have or to keep something. According to the text, at the turn of the twentieth century, Black residents in Richmond, Virginia, had few formal banking options, and Walker chartered a new institution to provide these residents with expanded financial services; therefore, she took steps to rectify, not retain, the situation. Choice D is incorrect because in this context, \"highlight\" would mean to emphasize or call attention to something, but the text indicates that Walker took concrete steps beyond merely drawing attention to the situation Black residents were facing in Richmond, Virginia, at the turn of the twentieth century. According to the text, Walker worked to rectify, or correct, the lack of formal banking options that were available to these residents by establishing a bank that provided them with home loans and savings opportunities.",
+        "difficulty": "medium",
+        "module": 2
+      },
+      {
+        "number": 2,
+        "chose": "A",
+        "domainBand": "Craft and Structure, 4 out of 7",
+        "passage": "The creation of Lotte Reiniger’s 1926 animated film The Adventures of Prince Achmed was ___ process. Over the course of three years, Reiniger and her collaborators painstakingly made more than 250,000 individual images of hand-cut paper silhouettes and repeatedly had to invent entirely new methods and tools to create the special effects Reiniger envisioned.",
+        "question": "Which choice completes the text with the most logical and precise word or phrase?",
+        "options": {
+          "A": "a haphazard",
+          "B": "a contentious",
+          "C": "an ineffectual",
+          "D": "an arduous"
+        },
+        "rationale": "Choice D is the best answer because it most logically completes the text’s discussion of the creation of The Adventures of Prince Achmed. In this context, \"arduous\" means that the process is marked by great labor or effort. According to the text, the creation of the 1926 animated film The Adventures of Prince Achmed took three years and was a painstaking process. Since the process was so long and required great efforts by Lotte Reiniger and her team, the creation of the film was therefore an arduous process. Choice A is incorrect because the text doesn’t indicate that the creation of Reiniger’s film was \"a haphazard,\" or disorganized, process. In fact, the text suggests that the creation process was quite meticulous and the team worked hard together to produce the envisioned effects. Choice B is incorrect. While the text does suggest that the creation of Reiniger’s film was a long and difficult process, it doesn’t suggest that the process was \"a contentious\" one, or one causing controversy or argument. The text suggests that the team worked together to produce the envisioned effects. Choice C is incorrect because rather than describing the process of creating the film as \"ineffectual,\" or not having the effect it was intended to have, the text describes the process as ultimately successful despite the difficulty it involved.",
+        "difficulty": "medium",
+        "module": 2
+      },
+      {
+        "number": 3,
+        "chose": "B",
+        "domainBand": "Craft and Structure, 4 out of 7",
+        "passage": "Diadromous fish migrate between freshwater and marine biomes during their life cycle. The migration’s obligate nature is why diadromous fish can be ___ those that are merely euryhaline (able to tolerate high salinity): the euryhaline blackchin tilapia can survive high salinity, but its life cycle does not involve relocation to a different biome, as does that of the diadromous wild salmon.",
+        "question": "Which choice completes the text with the most logical and precise word or phrase?",
+        "options": {
+          "A": "demarcated from",
+          "B": "reconstituted as",
+          "C": "conflated with",
+          "D": "derived from"
+        },
+        "rationale": "Choice A is the best answer because it most logically completes the text’s discussion of diadromous fish. In this context, \"demarcated from\" means separate or set apart from. The text indicates that diadromous fish differ from euryhaline fish in that diadromous fish \"migrate between freshwater and marine biomes during their life,\" whereas euryhaline fish do not relocate to a different biome because they can tolerate higher salinity environments. Therefore, this context suggests that because of differences between their migration patterns, diadromous fish are distinct and can be demarcated from euryhaline fish. Choice B is incorrect. Although the text states that diadromous fish migrate and relocate, the text does not suggest that diadromous fish would be \"reconstituted as,\" or formed again as, anything new. Only their environments change and not the fish themselves. Choice C is incorrect because the text does not suggest that diadromous fish can be \"conflated with,\" or combined with, euryhaline fish. Instead, the text distinguishes the two types of fish by pointing out their differences with regard to migration and tolerance for salinity. Choice D is incorrect because the text indicates that based on migration habits and tolerance for salinity, diadromous fish are different from euryhaline fish; so it would not make logical sense to say that diadromous fish would be \"derived from,\" or be an extension of or result from, euryhaline fish.",
+        "difficulty": "medium",
+        "module": 2
+      },
+      {
+        "number": 6,
+        "chose": "D",
+        "domainBand": "Craft and Structure, 4 out of 7",
+        "passage": "The Bayeux Tapestry, from eleventh-century France, depicts 75 scenes over 250 feet of fabric. It was likely produced by workers embroidering in sections and then joining the resulting panels together. It’s plausible that the workshop that produced the tapestry had never produced one so large, and some researchers claim that a close examination of the joins—the places where the panels are stitched together—suggests that the workers developed and refined their joining process over the course of production. For example, the first join the workers completed exhibits a clear misalignment of the borders of the two panels, whereas the later joins are virtually invisible.",
+        "underline": "For example, the first join the workers completed exhibits a clear misalignment of the borders of the two panels, whereas the later joins are virtually invisible.",
+        "question": "Which choice best describes the function of the underlined sentence in the text as a whole?",
+        "options": {
+          "A": "It identifies the people and events depicted in the Bayeux Tapestry.",
+          "B": "It supports an argument about the workers who produced the Bayeux Tapestry.",
+          "C": "It compares the Bayeux Tapestry with other tapestries from eleventh-century France.",
+          "D": "It describes how researchers determined where the Bayeux Tapestry was produced."
+        },
+        "rationale": "Choice B is the best answer because it most accurately describes the function of the underlined sentence in the text as a whole. The text discusses the Bayeux Tapestry, making the point that the workers who produced the huge tapestry in the eleventh century might not have ever produced a tapestry so large before. The text goes on to suggest that because of this lack of previous experience, the workers developed and refined the process of joining the tapestry’s panels over time as they worked. The last sentence of the text then provides an example of an observation that suggests the workers’ process changed: clear misalignment of the borders of the two panels the workers joined first and virtually invisible joins completed later. Thus, the underlined sentence serves to support an argument about the workers who produced the tapestry. Choice A is incorrect because the example given in the last sentence of the text has to do with how the panels of the Bayeux Tapestry were joined by the workers, not with what is depicted in those panels; the text never identifies any people or places depicted in the tapestry. Choice C is incorrect because the last sentence compares how early panels in the Bayeux Tapestry were joined with how later panels in the same tapestry were joined; it doesn’t make any comparison between the Bayeux Tapestry and other tapestries from the same time in France. Choice D is incorrect because the last sentence doesn’t address the location where the Bayeux Tapestry was created; the first sentence of the text presents it as a given that the tapestry was created in France, but nothing in the text indicates how that origin was determined.",
+        "difficulty": "medium",
+        "module": 2
+      },
+      {
+        "number": 7,
+        "chose": "A",
+        "domainBand": "Information and Ideas, 6 out of 7",
+        "passage": "The following text is from Thomas Mann’s 1924 novel The Magic Mountain, translated by John E. Woods in 1995. The story of Hans Castorp that we intend to tell here—not for his sake (for the reader will come to know him as a perfectly ordinary, if engaging young man), but for the sake of the story itself, which seems to us to be very much worth telling (although in Hans Castorp’s favor it should be noted that it is his story, and that not every story happens to everybody)—is a story that took place long ago, and is, so to speak, covered with the patina of history and must necessarily be told with verbs whose tense is that of the deepest past.",
+        "question": "What does the text most strongly suggest about the story of Hans Castorp?",
+        "options": {
+          "A": "Though it is true that stories of even the most uninteresting people are themselves interesting because all people are unique, the reason this story is interesting is nonetheless difficult to understand because of the passage of time.",
+          "B": "Even though it is a story of a person of no particular importance, its age and the manner in which it therefore must be told are both indicators that the story itself is important.",
+          "C": "Like all stories about the lives of inconsequential people, this story must necessarily be related in a particular way if the reason the story is consequential is to be made evident to the audience.",
+          "D": "It is a remarkable story that happened to an unremarkable person, though one could plausibly argue that because the story is valuable, some of its value accrues to the person at its center."
+        },
+        "rationale": "Choice D is the best answer because it presents a statement about Hans Castorp’s story that is suggested by the text. The narrator of the text indicates that the story about Hans Castorp will be told not because there is something particularly notable about him, since he is pleasant but \"perfectly ordinary,\" but because the story itself is remarkable (\"very much worth telling\"). The narrator then notes that there is a benefit in being at the heart of the story—that it is \"in Hans Castorp’s favor\" that the story is his, and maybe uniquely so (\"not every story happens to everybody\"). Thus, the text suggests both that the story that will be told is a remarkable one that happened to an unremarkable person and that it is reasonable to argue that the person at the center of a valuable story takes on some of the story’s value. Choice A is incorrect. Although the narrator of the text makes the point that \"not every story happens to everybody,\" the narrator doesn’t state that stories are interesting simply because the people they are about are unique. Rather, the narrator suggests that one particular story is \"very much worth telling\" on its own and that Hans Castorp benefits from the fact that the story is remarkable and may be unique to him. Further, the narrator never suggests that the story will be hard to understand even though it is old. Choice B is incorrect. Although the narrator of the text suggests that Hans Castorp is of no particular importance, since he is a \"perfectly ordinary\" person, the narrator never reveals what makes the story of Castorp important, just that \"the story itself\" is \"very much worth telling.\" The narrator states that the story \"took place long ago,\" is \"covered with the patina of history,\" and can be told only \"with verbs whose tense is that of the deepest past,\" but the story’s age and the way it must be told aren’t presented as reasons the story is important; the narrator is simply providing details about how the story will be told. Choice C is incorrect because the narrator of the text doesn’t suggest that all stories about people who are \"perfectly ordinary\" (like Hans Castorp) must be told in particular ways to make it clear why those stories are consequential. Further, the narrator suggests that Hans Castorp’s story must be told \"with verbs whose tense is that of the deepest past\" because it took place so long ago, not because telling it that way will convey the story’s importance.",
+        "difficulty": "hard",
+        "module": 2
+      },
+      {
+        "number": 8,
+        "chose": "C",
+        "domainBand": "Information and Ideas, 6 out of 7",
+        "passage": "Early Earth is thought to have been characterized by a stagnant lid tectonic regime, in which the upper lithosphere (the outer rocky layer) was essentially immobile and there was no interaction between the lithosphere and the underlying mantle. Researchers investigated the timing of the transition from a stagnant lid regime to a tectonic plate regime, in which the lithosphere is fractured into dynamic plates that in turn allow lithospheric and mantle material to mix. Examining chemical data from lithospheric and mantle-derived rocks ranging from 285 million to 3.8 billion years old, the researchers dated the transition to 3.2 billion years ago.",
+        "question": "Which finding, if true, would most directly support the researchers’ conclusion?",
+        "options": {
+          "A": "Among rocks known to be older than 3.2 billion years, significantly more are mantle derived than lithospheric, but the opposite is true for the rocks younger than 3.2 billion years.",
+          "B": "Mantle-derived rocks older than 3.2 billion years show significantly more compositional diversity than lithospheric rocks older than 3.2 billion years do.",
+          "C": "There is a positive correlation between the age of lithospheric rocks and their chemical similarity to mantle-derived rocks, and that correlation increases significantly in strength at around 3.2 billion years old.",
+          "D": "Mantle-derived rocks younger than 3.2 billion years contain some material that is not found in older mantle-derived rocks but is found in older and contemporaneous lithospheric rocks."
+        },
+        "rationale": "Choice D is the best answer because it presents a finding that, if true, would most directly support the researchers’ conclusion that the transition from a stagnant lid regime to a tectonic plate regime occurred around 3.2 billion years ago. The text explains that early in Earth’s history, Earth exhibited a stagnant lid regime in which there’s no interaction between the lithosphere and the underlying mantle. The text further explains that, by contrast, once Earth began to exhibit a tectonic plate regime, its lithospheric and mantle material began to mix. If mantle-derived rocks younger than 3.2 billion years contain material not found in older mantle-derived rocks, that material must have originated somewhere other than the mantle. And if this material is found in both older and contemporaneous lithospheric rocks, that would imply that the lithosphere was able to mix with mantle material beginning around 3.2 billion years ago, as the researchers concluded. Choice A is incorrect. The text gives no basis for comparing the quantities of lithospheric and mantle-derived rocks. Choice B is incorrect. The text gives no basis for comparing the material makeup of lithospheric rocks to that of mantle-derived rocks. Choice C is incorrect. A positive correlation between the age of lithospheric rocks and these rocks’ chemical similarity to mantle-derived rocks would mean that the oldest rocks would be the most similar, which contradicts the text’s claim that lithospheric and mantle-derived rocks were completely separate until 3.2 billion years ago. If the researchers’ conclusion about the onset of tectonics on Earth is correct, then younger lithospheric rocks would show greater chemical similarity to mantle-derived rocks than older lithospheric rocks do.",
+        "difficulty": "hard",
+        "module": 2
+      },
+      {
+        "number": 9,
+        "chose": "C",
+        "domainBand": "Information and Ideas, 6 out of 7",
+        "passage": "Almost all works of fiction contain references to the progression of time, including the time of day when events in a story take place. In a 2020 study, Allen Kim, Charuta Pethe, and Steven Skiena claim that an observable pattern in such references reflects a shift in human behavior prompted by the spread of electric lighting in the late nineteenth century. The researchers drew this conclusion from an analysis of more than 50,000 novels spanning many centuries and cultures, using software to recognize and tally both specific time references—that is, clock phrases, such as 7 a.m. or 2:30 p.m.—and implied ones, such as mentions of meals typically associated with a particular time of day.",
+        "question": "Which finding from the study, if true, would most directly support the researchers’ conclusion?",
+        "options": {
+          "A": "Novels published after the year 1800 include the clock phrase 10 a.m. less often than novels published before the year 1800 do.",
+          "B": "Novels published after 1880 contain significantly more references to activities occurring after 10 p.m. than do novels from earlier periods.",
+          "C": "Among novels published in the nineteenth century, implied time references become steadily more common than clock phrases as publication dates approach 1900.",
+          "D": "The time references of noon (12 p.m.) and midnight (12 a.m.) are used with roughly the same frequency in the novels."
+        },
+        "rationale": "Choice B is the best answer because it presents a finding that, if true, would most directly support the researchers’ conclusion that an observable pattern in time references in novels reflects a shift in human behavior prompted by the spread of electric lighting in the late nineteenth century. If novels published after 1880 contain significantly more references to activities occurring after 10 p.m. than novels from earlier periods do, this would suggest a change in human behavior and daily routines enabled by the availability of electric lighting. Before electric lighting—which provided illumination more easily than other available forms of light—many activities ceased after nightfall, so references to late-night activities would be less common in earlier novels. An increase in such references after 1880 would align with the researchers’ conclusion, reflecting an increase in late-night activities made possible by electric lighting. Choice A is incorrect because a decrease in references to 10 a.m. after the year 1800 would not support the researchers’ conclusion involving a shift in human behavior prompted by the spread of electric lighting toward the end of the 1800s. The time of 10 a.m. is in the morning and, in most places, characterized by daylight, so a change in references to that time would not be clearly linked to the impact of electric lighting. Choice C is incorrect because while an increase in implied time references relative to clock phrases in nineteenth-century novels could suggest a change in writing style or conventions, it does not directly support the conclusion involving a shift in human behavior prompted by the spread of electric lighting. The text indicates that the researchers’ conclusion is based on the content of the time references themselves, not the phrasing used. Choice D is incorrect. If references to noon and midnight are used with roughly the same frequency in all the novels analyzed by the researchers, this would reflect a lack of change in human behavior with regard to time and therefore would not support the researchers’ conclusion involving a shift in human behavior that occurred in response to the spread of electric lighting.",
+        "difficulty": "hard",
+        "module": 2
+      },
+      {
+        "number": 11,
+        "chose": "D",
+        "domainBand": "Information and Ideas, 6 out of 7",
+        "passage": "China’s Imports by Type, 2000–2006 (imports in hundreds of millions of dollars; all values approximate). Ordinary imports — 2000: 1,000; 2003: 1,700; 2006: 3,300. Processing with assembly — 2000: 250; 2003: 350; 2006: 750. Processing with inputs — 2000: 650; 2003: 1,250; 2006: 2,300. A student is researching the Chinese government’s 1992 shift to a market economy that emphasizes trade liberalization. One means of trade liberalization involves expanding from ordinary imports into an emphasis on processing imports, which have two types: processing with assembly (in which a firm obtains raw materials from a foreign trading partner without payment and sells the final goods to that partner, charging for assembly) and processing with inputs (in which a firm expends capital to buy raw materials from a trading partner, processes them into final goods, and sells those goods to whichever trading partner it chooses). The student asserts that while initial efforts at trade liberalization were shaped by Chinese firms’ limited capital, this situation resolved during the 2000s.",
+        "question": "Which choice best describes data from the graph that support the student’s assertion?",
+        "options": {
+          "A": "Processing imports with inputs were greater than both ordinary imports and processing imports with assembly in 2006.",
+          "B": "From 2000 to 2006, processing imports with inputs rose much more sharply than processing imports with assembly did.",
+          "C": "From 2000 to 2006, neither processing imports with inputs nor processing imports with assembly were greater than ordinary imports.",
+          "D": "Processing imports with assembly were greater in 2006 than processing imports with inputs in 2000."
+        },
+        "rationale": "Choice B is the best answer because it describes data from the graph that best support the student’s assertion that initial efforts at trade liberalization in China were shaped by firms having limited capital (assets available for use) and that this situation resolved during the 2000s. The text explains that an approach to trade liberalization involves engaging in processing imports, one type of which doesn’t require payment to a trade partner (processing with assembly) and one type of which requires upfront payment to a trade partner for raw materials (processing with inputs). The graph, which presents China’s imports for ordinary imports and both types of processing imports in the years 2000, 2003, and 2006, shows that while processing imports with assembly rose from about 250 hundred million dollars in 2000 to about 750 hundred million dollars in 2006, processing imports with inputs rose much more sharply, increasing from approximately 650 hundred million dollars in 2000 to about 2,300 hundred million dollars in 2006. Because processing with inputs requires firms to pay for materials (expending capital) and processing with assembly doesn’t, the sharper rise in processing imports with inputs suggests that Chinese firms’ assets—and thus their ability to engage in that type of processing imports—were relatively limited in (and before) 2000 and then substantially increased from 2000 to 2006. In other words, the data suggest that the situation of having limited capital resolved during the 2000s. Choice A is incorrect because the graph indicates that ordinary imports were greater than both types of processing imports in 2006, not that processing imports with inputs were greater than ordinary imports and processing imports with assembly that year. Choice C is incorrect because the observation that ordinary imports were greater than both types of processing imports in 2000, 2003, and 2006 doesn’t address a change within any type of imports from 2000 to 2006, and an indication of a change in that period that might be related to the availability of assets is needed to support the assertion that the situation of having limited capital resolved during the 2000s. Choice D is incorrect because the fact that processing imports with assembly were greater at the end of the period from 2000 to 2006 than processing imports with inputs were at the start of the same period doesn’t address a change within either type of imports during the period, and an indication of such a change that might be related to the availability of assets is needed to support the assertion that the situation of having limited capital resolved during the 2000s.",
+        "difficulty": "hard",
+        "module": 2
+      },
+      {
+        "number": 12,
+        "chose": "C",
+        "domainBand": "Information and Ideas, 6 out of 7",
+        "passage": "The Uto-Aztecan language family is divided into a northern branch, which includes the Shoshone language of present-day Idaho and Utah, and a southern one, whose best-known representative is Nahuatl, the language of the Aztec Empire in Mexico. Lexical similarities across the family, including of botanical terms, confirm descent from a single language spoken millennia ago, and the family’s geographical distribution suggests an origin in what is now the US Southwest. However, vocabulary pertaining to maize isn’t shared between northern and southern branches, despite the crop’s universal cultivation among Uto-Aztecan tribes. Given archaeological evidence that maize originated in Mexico and diffused northward into what became the US Southwest, some linguists reason that ___",
+        "question": "Which choice most logically completes the text?",
+        "options": {
+          "A": "northern Uto-Aztecan tribes likely obtained the crop directly from a southern Uto-Aztecan tribe rather than from a non-Uto-Aztecan tribe.",
+          "B": "variation in maize-related vocabulary within each branch of the Uto-Aztecan family likely reflects regionally specific methods for cultivating the crop.",
+          "C": "southern Uto-Aztecan tribes likely acquired maize at roughly the same time as northern Uto-Aztecan tribes did, though from different sources.",
+          "D": "the family’s division into northern and southern branches likely preceded the acquisition of the crop by the Uto-Aztecan tribes."
+        },
+        "rationale": "Choice D is the best answer because it most logically completes the discussion of Uto-Aztecan languages. The text explains that the northern and southern branches of the Uto-Aztecan language family descended from a single language (believed to have originated in what is now the US Southwest), resulting in similarities across the family’s languages; however, the branches don’t have similar vocabulary for maize, even though maize has been cultivated by all Uto-Aztecan tribes. The text also indicates that maize originated in Mexico and spread northward into what is now the US Southwest—the area where the Uto-Aztecan language family originated. It follows, then, that the language family had already divided into northern and southern branches before maize reached that area; if maize had been present before the division occurred, the family’s origin language would have had terminology for it that likely would have been reflected in the branches, meaning they would have had similar vocabulary for maize. If maize arrived after the division occurred, however, the tribes in the two regions likely would have developed vocabulary pertaining to maize separately, at the times when they acquired the crop. Choice A is incorrect because the text focuses on vocabulary pertaining to maize in the branches of the Uto-Aztecan language family, and referring only to how some Uto-Aztecan tribes obtained maize wouldn’t directly address the role of language. Moreover, if northern Uto-Aztecan tribes had acquired maize from a southern Uto-Aztecan tribe, it’s reasonable to assume that the northern tribes might have also picked up southern Uto-Aztecan terminology for maize in that exchange. Choice B is incorrect because the text discusses the fact that the northern and southern branches of the Uto-Aztecan language family don’t have shared vocabulary pertaining to maize, not the idea that there are variations in such vocabulary within each branch—that is, the text focuses on differences between the two branches, not on differences between languages within a branch. Choice C is incorrect because the text focuses on vocabulary pertaining to maize in the branches of the Uto-Aztecan language family, and referring only to the timing and source of maize acquisition wouldn’t directly address the role of language. Furthermore, the text implies that southern Uto-Aztecan tribes probably acquired maize before the northern tribes did, given the evidence that maize originated in Mexico—the location of the best-known representative of the southern branch of the Uto-Aztecan language family—before spreading to the north.",
+        "difficulty": "hard",
+        "module": 2
+      },
+      {
+        "number": 14,
+        "chose": "A",
+        "domainBand": "Information and Ideas, 6 out of 7",
+        "passage": "An analysis by Alain Elayi and colleagues of coins minted in Sidon in the fifth and fourth centuries BCE reveals a change in their composition over time: while a coin from circa 450 BCE contains about 98% silver and 1% copper, a coin from 367 BCE (the end of Ba’alšillem II’s reign) contains 74.2% silver and 24.7% copper, giving it a relatively yellowish appearance that traders would have noticed. Because coins with a silver content below 80% were widely considered unsuitable for trade, Elayi et al. speculate that a crisis in confidence in the currency occurred in Sidon around 367 BCE, which was likely relieved—despite Sidon’s persistent oppressive financial obligations—as a result of Ba’alšillem II’s successor Abd’aštart I’s decision to ___",
+        "question": "Which choice most logically completes the text?",
+        "options": {
+          "A": "proclaim that the percentage of silver in coins suitable for trade would be raised to a threshold higher than 80%.",
+          "B": "keep the amount of silver in Sidonian coins consistent with that in coins minted in 367 BCE but decrease their weight.",
+          "C": "begin minting heavier coins with a proportion of silver to copper similar to that in coins minted in 367 BCE.",
+          "D": "fund the mining of some copper deposits that were not available to Ba’alšillem II."
+        },
+        "rationale": "Choice B is the best answer because it most logically completes the text’s discussion of Sidonian coins. As the text explains, researchers determined that Sidonian coins were made of silver and copper and that from 450 BCE to 367 BCE, the percentage of silver in each coin decreased from 98% to 74.2% while the percentage of copper increased from 1% to 24.7%. The text indicates that because the coins containing less than 80% silver weren’t considered suitable for trade (suggesting that copper was less valuable than silver) and looked different from coins containing more silver, the researchers suspect there was a serious loss in confidence in the currency in Sidon in 367 BCE when the copper content was high. It’s reasonable to assume that it wasn’t possible to boost confidence simply by devoting a greater amount of valuable silver to the currency, since Sidon was under significant and ongoing financial pressure; however, keeping the total amount of silver the same and reducing the amount of copper in the coins would have resulted in smaller coins with a higher percentage of silver. Therefore, it makes sense to suggest that Abd’aštart I (the ruler after 367 BCE) likely restored confidence in the currency by deciding to keep the amount of silver in Sidonian coins consistent with that in coins minted in 367 BCE but to decrease the coins’ weight. Choice A is incorrect because the text conveys that a crisis in confidence in the currency of Sidon likely occurred around 367 BCE because the percentage of silver in coins had fallen below 80% (presumably because Sidon’s financial pressures meant that less silver was available for currency), making the coins unsuitable for trade. Thus, announcing that the threshold for the percentage of silver in coins would be raised—that is, that coins would need to contain even more than 80% silver to be suitable for trade—likely would have worsened the crisis rather than relieved it. Choice C is incorrect because the text strongly suggests that a crisis in confidence in the currency of Sidon was caused by the proportion of silver to copper in the coins in 367 BCE, with 74.2% being too little silver for the coins to be considered suitable for trade; therefore, it’s unlikely that minting coins with a similar proportion of silver to copper (that is, still around 74.2% silver) would have restored confidence, even if the coins were heavier. Choice D is incorrect because the text gives no indication that funding the mining of more copper would have relieved a crisis in confidence in the currency of Sidon. The text establishes that Sidonian coins that visibly contained copper weren’t considered suitable for trade, so Abd’aštart I wouldn’t have wanted to add even more copper to them, and it’s unclear how else copper mining would affect views of the currency.",
+        "difficulty": "hard",
+        "module": 2
+      }
+    ]
   }
 ]
