@@ -12,7 +12,7 @@
     ],
     "why": "10 of your 18 Standard English Conventions misses come down to this one rule — 5 of them because you picked a main verb where the sentence already had one.",
     "rule": "One clause, one main verb — unless “and” joins a second.",
-    "ruleDetail": "The main verb is the one carrying the tense — past, present or future. Once the subject has it, the blank cannot be a second one. It becomes a describing form instead: -ing, -ed, or to + verb.",
+    "ruleDetail": "The main verb carries the tense — past, present or future. If the subject already has a main verb, the blank cannot be another main verb. It becomes a describing form instead: -ing, -ed, or to + verb.",
     "forms": [
       {
         "form": "-ing",
@@ -38,10 +38,10 @@
       "No other main verb — the blank IS the main verb. Use the tensed form, and check it agrees with the subject.",
       "There is one already — the blank is a describing form. Use -ing, -ed or to + verb."
     ],
-    "trap": "The wrong answer sounds perfect at the blank, because it completes the sentence so far. That is exactly why it is offered. The words that prove it wrong sit later — in 4 of your 5 errors, 10 or more words later. Don't decide at the blank. Read to the full stop.",
+    "trap": "The wrong answer sounds perfect at the blank, because it completes the sentence so far. That is exactly why it is offered. The verb that decides it can sit a long way off — 21 words after the blank in one of yours, 17 in another — and sometimes it sits behind you, before the blank. Either way you cannot decide at the blank. Read the whole sentence.",
     "exception": {
-      "title": "The one exception: and",
-      "intro": "When “and” joins two verbs, they share the subject and the clause is allowed both.",
+      "title": "The main exception: and",
+      "intro": "When “and” joins two verbs, they share the subject and the clause can have both. “Or” and “but” work the same way.",
       "pairs": [
         {
           "right": "Scientists studied the data and published their findings."
@@ -102,6 +102,7 @@
       }
     ],
     "memorise": [
+      "FIND → COVER → READ → DECIDE",
       "Find the subject → cover the blank → read to the full stop.",
       "No main verb yet? The blank is the main verb.",
       "Main verb already there? The blank is a describing form: -ing, -ed, to + verb.",
@@ -134,15 +135,15 @@
     "steps": [
       "Read before + after.",
       "Ask: why is this here?",
-      "Cover the underlined part. Could you still write the choice?",
-      "Yes → it probably describes content. Reject it.",
-      "No → it describes a job. Keep checking."
+      "Now hide the rest of the passage and look only at the underlined words.",
+      "Could you write this choice using only the underlined words? Yes → it is content. Reject it.",
+      "No — it needed the passage around it. That is a job. Keep checking."
     ],
     "then": [
       "Now check the choice is actually supported by the passage.",
       "Job first. Truth second."
     ],
-    "trap": "The trap is often TRUE. That is why it is tempting. It answers \"what does this say?\" instead of \"what does this do?\" — accurate about the underlined words, silent about their job.",
+    "trap": "The trap is often TRUE. That is why it is tempting: it tells you what the words say, but not what they do.",
     "examples": [
       {
         "questionId": "missed-p6-m2-q5",
@@ -157,7 +158,7 @@
         "answer": "It elaborates on the previous sentence's statement about a transitional moment in Johnson's artistic career.",
         "wrong": "It provides information about Johnson's travels…",
         "right": "It elaborates on the previous sentence's statement…",
-        "working": "The sentence before says his style \"underwent an abrupt transformation\". The underlined sentence then says what the transformation was: away from expressionist landscapes, towards portraits. That is elaboration — it takes the previous claim and fills it in. Your choice, \"provides information about Johnson's travels\", describes content, and points at nothing. Note also that the answer names the previous sentence out loud. Three of your 13 answers did that; not one of the traps did."
+        "working": "The sentence before says his style \"underwent an abrupt transformation\". The underlined sentence then says what the transformation was: away from expressionist landscapes, towards portraits. That is elaboration — it takes the previous claim and fills it in. Your choice, \"provides information about Johnson's travels\", describes content, and points at nothing. And notice choice D also says \"the previous sentence\" — naming it is not the tell. D claims the underlined sentence CONTRADICTS the previous one; it does the opposite, it fills it in. The question is never whether a choice mentions a relationship, but whether it is the right one."
       },
       {
         "questionId": "missed-p6-m1-q6",
@@ -191,10 +192,109 @@
       }
     ],
     "memorise": [
+      "READ → ASK WHY → HIDE → CHECK",
       "Read before + after. Ask: WHY IS THIS HERE?",
-      "Cover the underlined words. Could you still write the choice? Yes → probably content. Reject it.",
+      "Could you write the choice using only the underlined words? Yes → content. Reject it.",
       "The answer describes the JOB: elaborates, concedes, supports, introduces, illustrates."
     ],
     "check": "True ≠ correct. Job first, truth second."
+  },
+  {
+    "id": "say-it-yourself",
+    "title": "Say your own word first",
+    "skills": [
+      "words-in-context"
+    ],
+    "families": [
+      "words in context"
+    ],
+    "why": "This is your biggest single group: 15 of your 96 misses. And it is not a vocabulary problem — 44 of the 60 words in those questions are already in your word drill. You knew the words. You just chose between them instead of deciding what you needed first.",
+    "rule": "Cover the choices. Say your own word. Then look.",
+    "ruleDetail": "The sentence usually gives you enough to predict what the blank needs to mean. If you read the choices first, you end up asking \"which of these sounds okay here?\" — and three of them will. If you decide first, you are only looking for a match, and the wrong ones stop being tempting.",
+    "forms": [
+      {
+        "form": "colon :",
+        "example": "Look after the colon for a clue, explanation, example or definition of what the blank needs."
+      },
+      {
+        "form": "but · although · while · yet",
+        "example": "CONTRAST — the blank and the other part push in different directions."
+      },
+      {
+        "form": "because · since",
+        "example": "REASON — one part explains why the other is true."
+      },
+      {
+        "form": "so",
+        "example": "RESULT — one part is the result of the other."
+      }
+    ],
+    "formsWarning": "93% of the questions you missed had one of these signals, and nearly half had a colon. The sentence was giving you a clue almost every time. They are the common ones, not a complete list — your job is to notice the clue before looking at the choices.",
+    "steps": [
+      "Read the whole sentence. Do not look at the choices yet.",
+      "Find the signal: a colon, contrast words (but / although / while / yet), or cause/result words (because / since / so).",
+      "Ask: what word or phrase would I put in the blank? It does not have to be fancy.",
+      "Now uncover the choices and find the one closest to yours."
+    ],
+    "then": [
+      "If nothing matches, your word may be close but too specific. Make it broader and look again — \"blocking\" becomes obstructing, interfering with, providing resistance to.",
+      "If two match, go back to the signal. It will separate them."
+    ],
+    "trap": "The choices are built to make you compare words with each other. Don't. Decide what the sentence needs, then compare your idea with the choices. Without a word of your own you pick whichever feels most familiar — usually a word's everyday meaning, not the one this sentence needs.",
+    "examples": [
+      {
+        "questionId": "missed-p6-m2-q2",
+        "source": "Practice 6, Module 2, Question 2",
+        "sentence": "Historians argue that Morris's repudiation of industrialization is ___ the Kelmscott editions' use of handmade materials and intricate ornamentation: these meticulously handcrafted elements exemplify the artistry involved.",
+        "choices": [
+          "insensible to",
+          "manifest in",
+          "scrutinized by",
+          "complicated by"
+        ],
+        "answer": "manifest in",
+        "wrong": "insensible to  —  the opposite of what the colon says",
+        "right": "manifest in  —  \"you can see it in\"",
+        "working": "There is a colon. Everything after it says the handmade elements SHOW the artistry. So the blank means something like \"shown by\" or \"you can see it in\". Say that to yourself and \"manifest in\" is easy to spot. You took \"insensible to\", which means unaware of — pointing the opposite way to the half of the sentence that was explaining the answer to you."
+      },
+      {
+        "questionId": "missed-p6-m2-q3",
+        "source": "Practice 6, Module 2, Question 3",
+        "sentence": "___ the long-standing trend of overemphasizing teenagers and young adults in research on social media use, scholars have recently begun to expand their focus to include the fastest-growing cohort of social media users: senior citizens.",
+        "choices": [
+          "Exacerbating",
+          "Redressing",
+          "Epitomizing",
+          "Precluding"
+        ],
+        "answer": "Redressing",
+        "wrong": "Precluding  —  preventing something from happening",
+        "right": "Redressing  —  \"fixing\"",
+        "working": "Scholars used to study only young people. Now they are adding older people. So the blank means fixing, correcting, making up for. Say \"fixing\" and you are done. You took \"Precluding\", which means preventing something from happening — but the trend already exists. The scholars are correcting it, not stopping it from ever starting."
+      },
+      {
+        "questionId": "missed-p6-m2-q4",
+        "source": "Practice 6, Module 2, Question 4",
+        "sentence": "Here they were now, in blue, disputing, every inch, our passage, with their wagons, handtrucks, their bursting baskets…",
+        "choices": [
+          "Arguing about",
+          "Disapproving of",
+          "Asserting possession of",
+          "Providing resistance to"
+        ],
+        "answer": "Providing resistance to",
+        "wrong": "Arguing about  —  what the word usually means",
+        "right": "Providing resistance to  —  what it means here",
+        "working": "Nobody is talking. A crowd with wagons and baskets is in the way of a taxi, inch by inch. So the blank means getting in the way, slowing it down. \"Disputing\" usually means arguing, and that is why \"Arguing about\" felt right — but you are asked what it means HERE. This is the whole reason for saying your own word first: your own word would have been \"blocking\", and \"Arguing about\" would never have tempted you."
+      }
+    ],
+    "memorise": [
+      "COVER → PREDICT → MATCH",
+      "Cover the choices.",
+      "Find the signal.",
+      "Say your own word.",
+      "Uncover the choices and pick the closest match."
+    ],
+    "check": "You know these words. Decide what you need before you see what you are offered."
   }
 ]
