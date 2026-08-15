@@ -107,5 +107,94 @@
       "Main verb already there? The blank is a describing form: -ing, -ed, to + verb.",
       "Don't decide at the blank. Read to the full stop."
     ]
+  },
+  {
+    "id": "function-not-content",
+    "title": "Function, not content",
+    "skills": [
+      "text-structure-purpose"
+    ],
+    "families": [
+      "function of the underlined portion"
+    ],
+    "why": "13 of your 96 missed questions are this one type — \"which choice best describes the function of the underlined portion\" — and 12 of the 13 are the same question word for word. The wrong ones you took describe what the underlined part SAYS. The answer describes what it DOES in relation to the text around it.",
+    "rule": "Ask what it does, not what it says.",
+    "ruleDetail": "CONTENT = what it says. FUNCTION = what it does. The underlined part is not being tested by itself. Ask what job it does in the passage: does it add a detail, admit a limitation, introduce an idea, or support a claim?",
+    "forms": [
+      {
+        "form": "talks about the text around it",
+        "example": "adds detail to the previous sentence · admits a limitation · supports the claim · introduces an example"
+      },
+      {
+        "form": "just tells you what the words say",
+        "example": "describes the desert · tells what the study found · recounts a moment"
+      }
+    ],
+    "formsWarning": "Don't judge a choice by its first verb. \"Explains\" is right when it explains how the underlined part connects to the passage, and wrong when it only tells you what the underlined words say. Your own misses show describes, explains, presents, provides and recounts are the common trap openings — use that as a tiebreaker, never as the rule.",
+    "steps": [
+      "Read before + after.",
+      "Ask: why is this here?",
+      "Cover the underlined part. Could you still write the choice?",
+      "Yes → it probably describes content. Reject it.",
+      "No → it describes a job. Keep checking."
+    ],
+    "then": [
+      "Now check the choice is actually supported by the passage.",
+      "Job first. Truth second."
+    ],
+    "trap": "The trap is often TRUE. That is why it is tempting. It answers \"what does this say?\" instead of \"what does this do?\" — accurate about the underlined words, silent about their job.",
+    "examples": [
+      {
+        "questionId": "missed-p6-m2-q5",
+        "source": "Practice 6, Module 2, Question 5 — and you missed the same question again on paper Test 6",
+        "sentence": "…his style underwent an abrupt transformation. [Turning away from landscapes painted in an expressionist style … Johnson began painting portraits of Black Americans in a bold new way.] Evocative of African sculpture …",
+        "choices": [
+          "It elaborates on the previous sentence's statement about a transitional moment in Johnson's artistic career.",
+          "It provides information about Johnson's travels in support of a claim about his artistic influences.",
+          "It recounts a moment in Johnson's personal life that enabled the success of his subsequent career.",
+          "It presents evidence that calls into question the previous sentence's characterization of Johnson's development."
+        ],
+        "answer": "It elaborates on the previous sentence's statement about a transitional moment in Johnson's artistic career.",
+        "wrong": "It provides information about Johnson's travels…",
+        "right": "It elaborates on the previous sentence's statement…",
+        "working": "The sentence before says his style \"underwent an abrupt transformation\". The underlined sentence then says what the transformation was: away from expressionist landscapes, towards portraits. That is elaboration — it takes the previous claim and fills it in. Your choice, \"provides information about Johnson's travels\", describes content, and points at nothing. Note also that the answer names the previous sentence out loud. Three of your 13 answers did that; not one of the traps did."
+      },
+      {
+        "questionId": "missed-p6-m1-q6",
+        "source": "Practice 6, Module 1, Question 6",
+        "sentence": "…most medieval towns had at least one public bathhouse … [While such amenities were available mainly to town dwellers,] regular bathing in rivers and streams or daily sponge baths at home were common practices throughout medieval Europe.",
+        "choices": [
+          "It asserts that steam baths were more popular in rural areas than in urban ones.",
+          "It describes a limitation of earlier historians' studies of medieval bathing habits.",
+          "It concedes that not all people in medieval Europe had access to public bathhouses.",
+          "It explains why Janega decided to study the popularity of public bathhouses."
+        ],
+        "answer": "It concedes that not all people in medieval Europe had access to public bathhouses.",
+        "wrong": "It asserts that steam baths were more popular in rural areas…",
+        "right": "It concedes that not all people had access to public bathhouses.",
+        "working": "The whole text argues medieval people were cleaner than we assume. This clause admits something that cuts against that argument — not everyone could reach a bathhouse — before the rest of the sentence answers it. Admitting a point against your own case is conceding, and that is a job. Your choice asserts a fact about rural popularity, which the text never claims and which does nothing for the argument either way."
+      },
+      {
+        "questionId": "missed-pt9-m1-q8",
+        "source": "Practice Test 9, Module 1, Question 8",
+        "sentence": "Seira et al. … found that the messages had only small and short-lived effects on behavior. Seira et al. asserted that such effects may nevertheless be worth pursuing, [given the negligible cost of messaging.]",
+        "choices": [
+          "It notes a factor that led Seira et al. to not dismiss risk-disclosure messaging altogether.",
+          "It acknowledges a type of messaging Seira et al. may not have fully considered.",
+          "It describes a consideration that explains why Seira et al. recommended risk-disclosure requirements.",
+          "It points out a circumstance that Seira et al. conceded may weaken messaging."
+        ],
+        "answer": "It notes a factor that led Seira et al. to not dismiss risk-disclosure messaging altogether.",
+        "wrong": "It describes a consideration that explains why they recommended requirements…",
+        "right": "It notes a factor that led them not to dismiss messaging altogether.",
+        "working": "Six words underlined. You physically cannot answer this from the underlined portion — the whole answer is in what surrounds it. The researchers found the messages barely worked, then said they were worth doing anyway; these six words are the reason that survives the bad result. Note the trap here opens with \"describes a consideration that explains\" — content vocabulary, on a question where the underlined text has almost no content of its own."
+      }
+    ],
+    "memorise": [
+      "Read before + after. Ask: WHY IS THIS HERE?",
+      "Cover the underlined words. Could you still write the choice? Yes → probably content. Reject it.",
+      "The answer describes the JOB: elaborates, concedes, supports, introduces, illustrates."
+    ],
+    "check": "True ≠ correct. Job first, truth second."
   }
 ]
