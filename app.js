@@ -3329,7 +3329,7 @@ function jumpToQuestion(id) {
   if (bank.length > 0) buildSkillSelect();
   syncSkillSelect();
   syncTestSelect();
-  if (difficultySelect) difficultySelect.value = difficultyFilter;
+  syncDifficultySelect();
   if (testSelect) testSelect.value = testFilter;
   if (wrongOnlyToggle) wrongOnlyToggle.checked = wrongOnly;
   rememberFilters();
@@ -3854,6 +3854,26 @@ function syncSkillSelect() {
   skillSelect.value = skillFilter;
 }
 
+// Very hard is a maths level and only a maths level: the band it selects on comes
+// from the maths API, and no Reading question has one. So the option is taken off
+// the dropdown outside maths rather than left there to return an empty pool, and
+// a choice carried across from maths falls back to Hard -- the level it was
+// split out of, so nothing he was working through disappears.
+function syncDifficultySelect() {
+  if (!difficultySelect) return;
+  const veryHard = difficultySelect.querySelector('option[value="very-hard"]');
+  const allowed = section === 'math';
+  if (veryHard) {
+    veryHard.hidden = !allowed;
+    veryHard.disabled = !allowed;
+  }
+  if (!allowed && difficultyFilter === 'very-hard') {
+    difficultyFilter = 'hard';
+    rememberFilters();
+  }
+  difficultySelect.value = difficultyFilter;
+}
+
 function setupControls() {
   if (skillSelect) {
     skillSelect.addEventListener('change', () => {
@@ -3882,7 +3902,9 @@ function setupControls() {
   }
 
   if (difficultySelect) {
-    difficultySelect.value = difficultyFilter;
+    // Not a plain assignment: on a reload into Reading this is also what takes
+    // Very hard back off the dropdown and clears it if it was the stored choice.
+    syncDifficultySelect();
     difficultySelect.addEventListener('change', () => {
       difficultyFilter = difficultySelect.value;
       rememberFilters();
@@ -4535,6 +4557,7 @@ function setSection(next) {
     });
 
     buildSkillSelect();
+    syncDifficultySelect();
     // Reading skills and maths skills share no keys, so a value carried across
     // would filter on one the new list does not hold.
     if (missedOnly) { skillFilter = 'all'; buildTestSelect(); syncTestSelect(); }
