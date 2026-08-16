@@ -6,7 +6,7 @@
   <title>SAT Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=90" />
+  <link rel="stylesheet" href="styles.css?v=92" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -356,6 +356,16 @@
         <h3 class="panel-heading" id="wordsHeading">Words met</h3>
         <div class="words-list" id="wordsList"></div>
       </section>
+
+      <!-- What is still untouched, so "how much is left" has an answer that is
+           not "scroll until the questions run out". A bank he has never met is
+           worth more than one he has, and this is the only place that says how
+           much of it there is. -->
+      <section class="words-block">
+        <h3 class="panel-heading">Never attempted</h3>
+        <div class="left-rows" id="leftToDo"></div>
+        <p class="queue-note" id="leftNote"></p>
+      </section>
     </div>
   </dialog>
 
@@ -427,6 +437,6 @@
   </dialog>
 
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=102"></script>
+  <script src="app.js?v=104"></script>
 </body>
 </html>

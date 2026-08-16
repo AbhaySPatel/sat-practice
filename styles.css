@@ -345,6 +345,45 @@ body {
   border-top: 1px solid var(--rule);
 }
 
+/* One row per section, laid out like the day's points split above -- the same
+   question asked of a different quantity, so it reads the same way. */
+.left-rows {
+  display: grid;
+  gap: 6px;
+  margin-top: 4px;
+}
+.left-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.left-row b {
+  font-size: 1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--fg);
+}
+/* The section name carries the row, so it is the one part set in the body ink. */
+.left-row .left-name {
+  font-weight: 600;
+  color: var(--fg);
+  min-width: 8.5rem;
+}
+/* Pushed to the far end: it is the same fact counted the other way round, and
+   reads as a check on the big number rather than as a second one to add up. */
+.left-row .left-of { margin-left: auto; }
+
+/* The breakdown of what "attempted" was made of, set under its own row and
+   indented to the section name so it reads as belonging to it. */
+.left-split {
+  font-size: 0.76rem;
+  color: var(--muted);
+  opacity: 0.85;
+  margin: -2px 0 2px;
+}
+
 /* Scrolls inside its own box, so a long list never makes the dialog scroll. */
 .words-list {
   max-height: 116px;

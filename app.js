@@ -12,7 +12,7 @@
 // its markup, but the banks are fetched from here, so nothing was busting them --
 // a browser could serve a months-old vocab.json against new code, which is
 // exactly what happened. Bump this whenever a file under banks/ changes.
-const DATA_VERSION = '2026-08-15a';
+const DATA_VERSION = '2026-08-16a';
 
 // Official College Board banks only. banks/context.json is deliberately absent
 // -- see the note in the README about Words in Context and the direction drill.
@@ -369,6 +369,12 @@ const EDU_FILE = 'banks/educator-question-bank.json';
 const EDU_SKILL = 'educator-bank';
 let eduQuestions = [];
 
+// Bank id -> the practice tests it appeared in. Not questions and never added to
+// `bank`: these ARE bank questions, and this only records that he has already
+// met them on paper. Used by the "Never attempted" count and nothing else.
+const SEEN_FILE = 'banks/seen-in-tests.json';
+let seenInTests = {};
+
 // What a question actually tests, as opposed to which set it is filed under.
 // Both the missed-in-test and educator sets are grouped by where they came from,
 // so anything reasoning about skill -- the peek, the drill link, the badge line --
@@ -467,6 +473,8 @@ const correctCountEl = document.getElementById('correctCount');
 const incorrectCountEl = document.getElementById('incorrectCount');
 const streakEl = document.getElementById('streakStrip');
 const lifetimeEl = document.getElementById('lifetimeStats');
+const leftToDoEl = document.getElementById('leftToDo');
+const leftNoteEl = document.getElementById('leftNote');
 const skillSelect = document.getElementById('skillSelect');
 const difficultySelect = document.getElementById('difficultySelect');
 const testSelect = document.getElementById('testSelect');
@@ -2156,6 +2164,7 @@ function updateSummary() {
   renderStreak();
   renderSkillStats();
   renderWords();
+  renderLeftToDo();
 }
 
 // The headline figure for whichever section is on screen. Reading and Writing
@@ -3157,6 +3166,100 @@ function renderWords() {
   });
 }
 
+// The maths half of "met on a test": those misses were matched to their College
+// Board twin when they were extracted and carry its id as `bankId`, so the twin
+// sitting untouched in the bank is a question he has in fact already seen.
+//
+// Reading is not here. It does not need to be -- seenInTests covers every bank
+// question in a practice test he sat, right answers included, which is the far
+// larger set. This stays because the maths PDFs have no matchable text, so those
+// 24 hand-matched links are the only maths credit there is.
+function attemptedOnPaper() {
+  const ids = new Set();
+  [missedQuestions, missedMathQuestions, missedBbMathQuestions].forEach((set) => {
+    (set || []).forEach((q) => { if (q.bankId) ids.add(q.bankId); });
+  });
+  return ids;
+}
+
+// What "left to do" is counted over. The vocabulary drill is synthesised from
+// words rather than being a bank of questions, the defective set is questions
+// the extraction broke, and the missed sets are his own copies of questions he
+// has by definition already attempted. None of the three is work remaining.
+function countsAsRemaining(question) {
+  return question.skill !== VOCAB_SKILL
+    && question.skill !== DEFECTIVE_SKILL
+    && question.skill !== MISSED_SKILL;
+}
+
+function renderLeftToDo() {
+  if (!leftToDoEl) return;
+  const onPaper = attemptedOnPaper();
+  leftToDoEl.textContent = '';
+
+  let credited = 0;
+  let anyUnloaded = false;
+
+  SECTION_ORDER.forEach((key) => {
+    const rows = bank.filter((q) => sectionOf(q) === key && countsAsRemaining(q));
+    // Maths arrives only when he first opens it, so before that there is nothing
+    // to count and a zero would read as "none left" -- the opposite of the truth.
+    // Same for the first paint of all, before any bank has landed.
+    if (rows.length === 0) {
+      if (key === 'math' && !mathLoaded) anyUnloaded = true;
+      return;
+    }
+    // Three counts, not one, because "attempted" hides which way. A question met
+    // in the app has been drilled; one met only on a test was answered once under
+    // exam conditions and never revisited, which is the weaker claim of the two.
+    const inApp = rows.filter((q) => statsFor(q.id).seen > 0);
+    const onTest = rows.filter((q) => seenInTests[q.id] || onPaper.has(q.id));
+    const both = rows.filter((q) => statsFor(q.id).seen > 0
+      && (seenInTests[q.id] || onPaper.has(q.id)));
+    // The union, not the sum: the overlap would otherwise be counted twice and
+    // the remainder come out short.
+    const done = inApp.length + onTest.length - both.length;
+    credited += onTest.length - both.length;
+
+    const row = document.createElement('div');
+    row.className = 'left-row';
+
+    const count = document.createElement('b');
+    count.textContent = (rows.length - done).toLocaleString();
+
+    // The section leads and the heading above supplies "never attempted", so the
+    // row is a name, its number, and the same fact counted the other way round.
+    // Repeating the words here is what made it read as one run-on line.
+    const name = document.createElement('span');
+    name.className = 'left-name';
+    name.textContent = SECTIONS[key].label || key;
+
+    const of = document.createElement('span');
+    of.className = 'left-of';
+    of.textContent = `of ${rows.length.toLocaleString()}`;
+
+    row.append(name, count, of);
+
+    const split = document.createElement('div');
+    split.className = 'left-split';
+    split.textContent = `${inApp.length.toLocaleString()} in the app · `
+      + `${onTest.length.toLocaleString()} on a test · `
+      + `${both.length.toLocaleString()} both`;
+
+    leftToDoEl.append(row, split);
+  });
+
+  if (leftNoteEl) {
+    const parts = [];
+    if (credited) {
+      parts.push(`${credited} counted as attempted because he met them on a test`);
+    }
+    if (anyUnloaded) parts.push('maths counts once its bank has loaded');
+    leftNoteEl.hidden = parts.length === 0;
+    leftNoteEl.textContent = parts.join(' · ');
+  }
+}
+
 // --- Vocabulary drill ------------------------------------------------------
 // The wordlist becomes questions rather than a list to scroll: 137 rows in a box
 // teaches nothing, whereas picking the right meaning out of four is both how the
@@ -3438,6 +3541,23 @@ function loadMissed() {
     .catch((err) => console.warn('No missed-in-test set loaded.', err));
 }
 
+// The bank questions he has already answered on a real test. A practice test is
+// not a separate pool -- it is the bank, sampled, and nearly every Reading and
+// Writing question in tests 5 to 9 is in it -- so without this the app counts a
+// question he sat and got right as one he has never seen. Built by
+// extract_test_seen.py; maths is absent from it, as those PDFs have no matchable
+// text and the maths credit comes from the missed sets' `bankId` instead.
+function loadSeenInTests() {
+  return fetch(`${SEEN_FILE}?v=${DATA_VERSION}`)
+    .then((r) => (r.ok ? r.json() : null))
+    .then((data) => {
+      if (!data || !data.seen) return;
+      seenInTests = data.seen;
+      console.info(`Seen on a test: ${Object.keys(data.seen).length} bank questions.`);
+    })
+    .catch((err) => console.warn('No test-seen set loaded.', err));
+}
+
 // Fetched alongside the banks and deliberately not awaited by them: a missing or
 // broken vocab file must not stop questions loading.
 function loadVocab() {
@@ -3532,7 +3652,8 @@ function loadBanks() {
     loadMissedMath(),
     loadMissedBbMath(),
     loadConcepts(),
-    loadEducator()
+    loadEducator(),
+    loadSeenInTests()
   ]).then(([results]) => {
     // Order matters and is append-only: the saved cursor is an index into this,
     // so new questions go on the end and every existing index keeps its meaning.
