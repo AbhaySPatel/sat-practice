@@ -83,6 +83,13 @@ DOMAIN_SLUG = {
 
 DIFFICULTY = {'E': 'easy', 'M': 'medium', 'H': 'hard'}
 
+# College Board grades every question twice: the three-way E/M/H shown in the bank
+# UI, and `score_band_range_cd`, a 1-7 band that nests inside it exactly --
+# easy is bands 1-3, medium 4-5, hard 6-7. So the band is the only thing that
+# splits the 594 hard questions into the merely hard (band 6) and the hardest
+# (band 7), which is what the app's "Very hard" filter selects on.
+HARDEST_BAND = 7
+
 VOID = {'br', 'img', 'path', 'rect', 'line', 'use', 'circle', 'ellipse',
         'polyline', 'polygon', 'stop', 'mspace', 'none'}
 
@@ -592,6 +599,7 @@ def main():
             'domain': domain,
             'domainLabel': meta['primary_class_cd_desc'],
             'difficulty': DIFFICULTY.get(meta['difficulty'], 'medium'),
+            'band': meta.get('score_band_range_cd'),
             'figure': '<svg' in q['questionHtml'],
         })
 
@@ -651,7 +659,7 @@ def main():
     # The dropdown counts and the per-skill totals come from this, so the app can
     # show what is available before a single figure has been downloaded.
     index = [{k: q[k] for k in ('id', 'section', 'skill', 'skillLabel', 'domain',
-                                'domainLabel', 'difficulty', 'format')
+                                'domainLabel', 'difficulty', 'band', 'format')
               if k in q} for q in bank]
     INDEX.write_text(json.dumps(index, indent=1))
 

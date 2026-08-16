@@ -121,6 +121,29 @@ const MIN_FOR_PROJECTION = 20;
 // Harder questions pay more because they are worth more on the test too.
 const POINTS_BY_DIFFICULTY = { easy: 10, medium: 15, hard: 20 };
 
+// College Board grades every maths question twice: the easy/medium/hard shown in
+// the bank, and `score_band_range_cd`, a 1-7 band that nests inside it exactly --
+// easy is bands 1-3, medium 4-5, hard 6-7. So band 7 is College Board's own mark
+// for the hardest half of the hard set, and the app offers it as its own level:
+// 594 hard maths questions is more than anyone will walk through to reach the
+// ones actually worth the time.
+//
+// The two levels partition rather than nest. Choosing Hard means band 6 and
+// leaves band 7 to Very hard, so the two together are still the whole hard set
+// and neither repeats the other.
+//
+// Reading questions carry no band and so stay under Hard, which is honest: that
+// bank never claimed to know which of its hard questions are the hardest. Very
+// hard is a maths-only level, and the dropdown is per-section anyway.
+//
+// Deliberately not in POINTS_BY_DIFFICULTY: a band 7 question still pays hard's
+// 20. Repricing it would silently rewrite what every past session was worth.
+const HARDEST_BAND = 7;
+
+function difficultyOf(question) {
+  return question.band === HARDEST_BAND ? 'very-hard' : question.difficulty;
+}
+
 // Redeeming a question he previously got wrong is the single most valuable thing
 // he can do, so repeats pay a premium.
 const REVIEW_BONUS = 1.5;
@@ -397,7 +420,7 @@ let answered = false;
 let pendingIndex = null;
 let servingReview = false; // is the question on screen a spliced-in repeat?
 let skillFilter = 'all';   // 'all' or any key of SKILL_LABELS
-let difficultyFilter = 'all'; // 'all' | 'easy' | 'medium' | 'hard'
+let difficultyFilter = 'all'; // 'all' | 'easy' | 'medium' | 'hard' | 'very-hard'
 // 'all' or a `test` label from the missed-in-test set. Applies to that one skill
 // only -- every other bank is a question bank, not a sitting of a test.
 let testFilter = 'all';
@@ -1497,7 +1520,7 @@ function renderMeta(question) {
   // choice that is on screen two inches above. Both dropdowns apply in every
   // view now, wrong-only included, so this holds wherever he is.
   const skillIsChosen = skillFilter === question.skill;
-  const difficultyIsChosen = difficultyFilter === question.difficulty;
+  const difficultyIsChosen = difficultyFilter === difficultyOf(question);
 
   const labels = [];
   if (!skillIsChosen) labels.push(SKILL_LABELS[question.skill] || question.skill);
@@ -1524,7 +1547,9 @@ function renderMeta(question) {
       labels.push(`${question.test} · ${where}`);
     }
   } else if (!difficultyIsChosen) {
-    labels.push(question.difficulty);
+    // Band 7 says "very hard" rather than "hard", so a question he meets under
+    // Any is labelled the same way the dropdown would have found it.
+    labels.push(difficultyOf(question).replace('-', ' '));
   }
 
   labels.filter(Boolean).forEach((label) => {
@@ -2747,7 +2772,7 @@ function applyFilters() {
     (missedOnly ? q.skill === MISSED_SKILL : true) &&
     (skillFilter === 'all'
       || (missedOnly ? missedSkillOf(q) === skillFilter : q.skill === skillFilter)) &&
-    (difficultyFilter === 'all' || q.difficulty === difficultyFilter) &&
+    (difficultyFilter === 'all' || difficultyOf(q) === difficultyFilter) &&
     (!testFilterApplies() || q.test === testFilter) &&
     (!starredOnly || isStarred(q.id))
   );
