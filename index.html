@@ -6,7 +6,7 @@
   <title>SAT Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=89" />
+  <link rel="stylesheet" href="styles.css?v=90" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -93,8 +93,18 @@
           <option value="hard">Hard</option>
         </select>
       </label>
-      <!-- Only ever means anything inside "Missed in a test", so it appears with
-           that skill and is absent otherwise rather than sitting there greyed
+      <!-- A tick rather than a skill. As a skill it OCCUPIED the dropdown, so
+           choosing it cost the skill breakdown entirely -- the one thing worth
+           knowing about a set of mistakes is which skill they fall in. As a tick
+           it narrows the pool and leaves the dropdown free to answer that, with
+           counts. Works the same in both sections; maths misses are grouped by
+           College Board's own skill for the question. -->
+      <label class="switch" title="Only the questions you have missed on a real test. The Skill dropdown then counts them by skill, so you can see where they cluster.">
+        <input type="checkbox" id="missedOnlyToggle" />
+        <span>Missed in a test</span>
+      </label>
+      <!-- Only ever means anything inside the missed set, so it appears with
+           that tick and is absent otherwise rather than sitting there greyed
            out in every other view. Options are built from the set itself. -->
       <label class="control" id="testControl" hidden>
         <span>Test</span>
@@ -416,6 +426,6 @@
   </dialog>
 
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=98"></script>
+  <script src="app.js?v=102"></script>
 </body>
 </html>

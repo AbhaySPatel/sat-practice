@@ -3444,3 +3444,62 @@ math { font-size: 1.06em; }
   .learn-reminder { flex-wrap: wrap; }
   .learn-body { padding: 4px 15px 18px 15px; }
 }
+
+
+/* ---------- Maths missed in a test: the page itself ---------- */
+
+/* Cropped straight out of the practice-test PDF at 200 dpi, because the
+   fractions, tables and figures have no honest text form. Capped by width so a
+   tall question scrolls with the card instead of forcing a zoom, and given a
+   paper ground in both themes -- the crop is black ink on white, and floating it
+   on a dark card makes it look like a mistake rather than a page. */
+.page-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 620px;
+  margin: 2px 0 6px;
+  padding: 10px 12px;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+/* Choices live inside the picture, so the row is the letter alone. Laid out as
+   four across rather than four stacked: with no text to read, a column of tall
+   empty rows is all the cost and none of the use. */
+.options.is-letters {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.options.is-letters .option { padding: 12px 10px; }
+
+.options.is-letters .row {
+  justify-content: center;
+  gap: 0;
+}
+
+.options.is-letters .text { display: none; }
+
+.options.is-letters .label {
+  font-size: 1.05rem;
+  font-weight: 750;
+}
+
+/* The tick and cross still have to land somewhere once it is graded. */
+.options.is-letters .option-result {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+}
+
+.options.is-letters .option { position: relative; }
+
+.options.is-letters .explanation,
+.options.is-letters .gloss { display: none; }
+
+@media (max-width: 520px) {
+  .options.is-letters { grid-template-columns: repeat(2, 1fr); }
+}

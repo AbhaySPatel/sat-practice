@@ -12,7 +12,7 @@
 // its markup, but the banks are fetched from here, so nothing was busting them --
 // a browser could serve a months-old vocab.json against new code, which is
 // exactly what happened. Bump this whenever a file under banks/ changes.
-const DATA_VERSION = '2026-08-14a';
+const DATA_VERSION = '2026-08-15a';
 
 // Official College Board banks only. banks/context.json is deliberately absent
 // -- see the note in the README about Words in Context and the direction drill.
@@ -234,6 +234,9 @@ const DIRECTIONS = [
 ];
 
 const SKILL_LABELS = {
+  // Maths misses are not sorted by skill: they are photographs of a page, and
+  // the paper tests do not publish a skill for each question.
+  math: 'Math',
   vocabulary: 'Vocabulary',
   defective: 'Needs the PDF',
   'missed-in-test': 'Missed in a test',
@@ -277,8 +280,10 @@ const SKILLS_BY_DOMAIN = {
   'expression-of-ideas': ['transitions', 'rhetorical-synthesis'],
   'standard-english': ['boundaries', 'form-structure-sense'],
   'information-ideas': ['inferences', 'central-ideas-details', 'command-of-evidence'],
-  // First in the group: it is the set with the most to teach him.
-  extra: ['missed-in-test', 'educator-bank', 'vocabulary', 'defective']
+  // 'missed-in-test' is deliberately absent: it is the tick beside the dropdown
+  // now, not an entry inside it. As an entry it displaced the skill breakdown,
+  // which is the one thing worth knowing about a set of mistakes.
+  extra: ['educator-bank', 'vocabulary', 'defective']
 };
 
 // The ones that are not score-report skills, as a set, so the "all skills" total
@@ -316,6 +321,16 @@ const CONCEPTS_FILE = 'banks/concepts.json';
 let concepts = [];
 
 const MISSED_FILE = 'banks/missed-in-test.json';
+// The maths misses are pictures of the page, not text -- see extract_missed_math.py
+// for why. They ride the same skill as the Reading set so one dropdown, one test
+// filter and one dialog serve both; `section: 'math'` is what keeps them apart.
+const MISSED_MATH_FILE = 'banks/missed-math.json';
+let missedMathQuestions = [];
+// The Bluebook maths misses are not pictures: every one of them is also in the
+// College Board bank, so they are adopted whole -- MathML, SVG figures and all --
+// and carry their own copy, which means they render without the 33 MB maths banks.
+const MISSED_BB_MATH_FILE = 'banks/missed-math-bluebook.json';
+let missedBbMathQuestions = [];
 const MISSED_SKILL = 'missed-in-test';
 let missedQuestions = [];
 
@@ -335,6 +350,32 @@ let eduQuestions = [];
 // Both the missed-in-test and educator sets are grouped by where they came from,
 // so anything reasoning about skill -- the peek, the drill link, the badge line --
 // has to ask this rather than read `skill` directly.
+// Inside the missed set the dropdown groups by what the question TESTS, not by
+// the set it lives in. Reading questions carry that as realSkill; maths ones
+// carry College Board's own label, recovered by matching each to the bank.
+function missedSkillOf(question) {
+  return question.bankSkill || question.realSkill || question.skill;
+}
+
+// "one-variable-data-distributions-and-measures-of-center-and-spread" is the
+// bank's own key, not a label. Sentence case, and shortened where the full name
+// would push the dropdown wider than the screen.
+function missedSkillLabel(key) {
+  if (SKILL_LABELS[key]) return SKILL_LABELS[key];
+  const words = String(key).replace(/-/g, ' ');
+  const short = words
+    .replace('one variable data distributions and measures of center and spread',
+             'one-variable data & spread')
+    .replace('two variable data models and scatterplots', 'two-variable data & scatterplots')
+    .replace('evaluating statistical claims observational studies and experiments',
+             'evaluating statistical claims')
+    .replace('linear equations in one variable', 'linear equations (one variable)')
+    .replace('linear equations in two variables', 'linear equations (two variables)')
+    .replace('linear inequalities in one or two variables', 'linear inequalities')
+    .replace('probability and conditional probability', 'probability');
+  return short.charAt(0).toUpperCase() + short.slice(1);
+}
+
 function skillTested(question) {
   if (!question) return null;
   return question.realSkill || question.skill;
@@ -368,6 +409,7 @@ let wrongOnly = false;     // restrict to questions he has gotten wrong
 let section = DEFAULT_SECTION;
 let hideAced = true;
 let starredOnly = false;   // show only the questions he has starred
+let missedOnly = false;    // restrict the pool to questions missed on a real test
 let clearedCount = 0;      // how many the line above set aside, for the readout
 let missedCount = 0;       // and how many "Wrong answers only" is holding back
 let directionAnswered = false;
@@ -408,6 +450,7 @@ const testSelect = document.getElementById('testSelect');
 const testControl = document.getElementById('testControl');
 const hideAcedToggle = document.getElementById('hideAcedToggle');
 const starredOnlyToggle = document.getElementById('starredOnlyToggle');
+const missedOnlyToggle = document.getElementById('missedOnlyToggle');
 // Rebuilt with the rest of the badge line on every renderMeta, exactly as the
 // timer is, so it is looked up again rather than held: the element this points at
 // is replaced, not mutated.
@@ -638,11 +681,12 @@ testFilter = (store.filters && store.filters.test) || 'all';
 // stored `false` has to survive a reload.
 hideAced = !(store.filters && store.filters.hideAced === false);
 starredOnly = !!(store.filters && store.filters.starredOnly);
+missedOnly = !!(store.filters && store.filters.missedOnly);
 
 function rememberFilters() {
   store.filters = {
     skill: skillFilter, difficulty: difficultyFilter, test: testFilter,
-    hideAced: hideAced, starredOnly: starredOnly
+    hideAced: hideAced, starredOnly: starredOnly, missedOnly: missedOnly
   };
   saveStore();
 }
@@ -1006,6 +1050,24 @@ function renderMathStem(question) {
   passageEl.hidden = true;
   if (!mathStemEl) return;
   mathStemEl.hidden = false;
+  // A maths question he missed on a PAPER test is a picture of the page: the
+  // fractions, tables and figures only survive as one. Its four choices are
+  // inside that picture, so renderOptions puts bare letters underneath -- which
+  // is what the paper gave him too. Everything else here is markup.
+  if (question.image) {
+    mathStemEl.classList.remove('is-paper');
+    mathStemEl.textContent = '';
+    const shot = document.createElement('img');
+    shot.className = 'page-shot';
+    shot.src = question.image;
+    shot.alt = `Question ${question.number} from ${question.test}, module ${question.module}`;
+    if (question.imageWidth && question.imageHeight) {
+      shot.width = question.imageWidth;
+      shot.height = question.imageHeight;   // reserves the space, so nothing jumps
+    }
+    mathStemEl.append(shot);
+    return;
+  }
   // Maths figures are monochrome line art and follow the text colour instead --
   // only the Reading charts need their paper. See renderPassage.
   mathStemEl.classList.remove('is-paper');
@@ -1675,6 +1737,11 @@ function renderOptions(question) {
     renderEntry(question);
     return;
   }
+
+  // The choices are inside the page image, so the row is the letter alone. Same
+  // element and same classes as every other option, so selection, grading and the
+  // keyboard shortcuts all work without knowing about it.
+  optionsContainer.classList.toggle('is-letters', !!question.image);
 
   (question.options || []).forEach((option, index) => {
     const isCorrect = option.label === question.correctLabel;
@@ -2667,7 +2734,7 @@ function vocabMastered(id) {
 // control that narrows it earns its place. All three apply here exactly as they
 // do everywhere else.
 function testFilterApplies() {
-  return testFilter !== 'all' && skillFilter === MISSED_SKILL;
+  return testFilter !== 'all' && missedOnly;
 }
 
 function applyFilters() {
@@ -2675,7 +2742,11 @@ function applyFilters() {
     // First and unconditionally: the two sections are scored separately and
     // never share a pool, so nothing below can reach across them.
     sectionOf(q) === section &&
-    (skillFilter === 'all' || q.skill === skillFilter) &&
+    // Inside the missed set the dropdown means the skill the question tests;
+    // everywhere else it means the bank the question came from.
+    (missedOnly ? q.skill === MISSED_SKILL : true) &&
+    (skillFilter === 'all'
+      || (missedOnly ? missedSkillOf(q) === skillFilter : q.skill === skillFilter)) &&
     (difficultyFilter === 'all' || q.difficulty === difficultyFilter) &&
     (!testFilterApplies() || q.test === testFilter) &&
     (!starredOnly || isStarred(q.id))
@@ -2692,7 +2763,7 @@ function applyFilters() {
   // started paying off. Same for the missed set: a starred question he has also
   // missed should not need a second tick to be visible.
   const beforeAced = pool.length;
-  if (!starredOnly) pool = pool.filter((q) => !isAced(q));
+  if (!starredOnly && !missedOnly) pool = pool.filter((q) => !isAced(q));
   // Kept so the readout can show what was set aside. Questions dropping out of a
   // count with no explanation reads like losing them. Zero under wrong-only: a
   // question he has never missed is not part of that set to begin with, so
@@ -2704,7 +2775,7 @@ function applyFilters() {
   // aside rather than appear to have been lost, and the number is the whole
   // argument for going and looking at them.
   const beforeMissed = pool.length;
-  if (!starredOnly) pool = pool.filter((q) => !isMissed(q));
+  if (!starredOnly && !missedOnly) pool = pool.filter((q) => !isMissed(q));
   missedCount = beforeMissed - pool.length;
 
   if (wrongOnly) pool = pool.filter((q) => isWrongEver(q.id));
@@ -2733,8 +2804,12 @@ function cursorKey() {
   // Appended only when on, so every key he has already built up still means what
   // it did before starring existed.
   const star = starredOnly ? '|star' : '';
+  // Same rule: appended only when on. The keys built while "Missed in a test"
+  // was a SKILL are still valid -- they just belong to a skill value nothing
+  // selects any more, and no position or count is lost either way.
+  const miss = missedOnly ? '|missed' : '';
   return `${sec}${skillFilter}|${difficultyFilter}`
-    + `|${wrongOnly ? 'wrong' : 'all'}${test}${left}${star}`;
+    + `|${wrongOnly ? 'wrong' : 'all'}${test}${left}${star}${miss}`;
 }
 
 function cursorValue() {
@@ -3303,6 +3378,28 @@ function loadConcepts() {
     .catch((err) => console.warn('No concepts loaded.', err));
 }
 
+function loadMissedBbMath() {
+  return fetch(`${MISSED_BB_MATH_FILE}?v=${DATA_VERSION}`)
+    .then((r) => (r.ok ? r.json() : null))
+    .then((data) => {
+      if (!Array.isArray(data)) return;
+      missedBbMathQuestions = data;
+      console.info(`Missed in a test (Bluebook maths): ${data.length} questions.`);
+    })
+    .catch((err) => console.warn('No Bluebook maths missed set loaded.', err));
+}
+
+function loadMissedMath() {
+  return fetch(`${MISSED_MATH_FILE}?v=${DATA_VERSION}`)
+    .then((r) => (r.ok ? r.json() : null))
+    .then((data) => {
+      if (!Array.isArray(data)) return;
+      missedMathQuestions = data;
+      console.info(`Missed in a test (maths): ${data.length} questions.`);
+    })
+    .catch((err) => console.warn('No maths missed set loaded.', err));
+}
+
 function loadMissed() {
   return fetch(`${MISSED_FILE}?v=${DATA_VERSION}`)
     .then((r) => (r.ok ? r.json() : null))
@@ -3407,12 +3504,15 @@ function loadBanks() {
     loadVocab(),
     loadDefective(),
     loadMissed(),
+    loadMissedMath(),
+    loadMissedBbMath(),
     loadConcepts(),
     loadEducator()
   ]).then(([results]) => {
     // Order matters and is append-only: the saved cursor is an index into this,
     // so new questions go on the end and every existing index keeps its meaning.
-    const raw = results.flat().concat(vocabQuestions, missedQuestions, eduQuestions);
+    const raw = results.flat().concat(vocabQuestions, missedQuestions,
+      missedMathQuestions, missedBbMathQuestions, eduQuestions);
     bank = raw.filter(isReady);
 
     // Retag before anything reads `bank`: the skill filter, the dropdown counts
@@ -3530,6 +3630,57 @@ function buildSkillSelect() {
   // skill with nothing to show in the current view reads (0) rather than
   // vanishing from the list. A skill that disappears reads as a bug, and it takes
   // the only honest place to show the zero with it.
+  // Inside the missed set the dropdown is a different question -- not "which
+  // bank shall I draw from" but "where do my mistakes fall" -- so it is built
+  // from the missed questions themselves, by the skill each one tests, ordered
+  // by how many there are. That ordering is the answer he opened it for.
+  if (missedOnly) {
+    const rows = bank.filter((q) =>
+      q.skill === MISSED_SKILL && sectionOf(q) === section);
+    // Counted within whichever test is selected, so the two controls describe the
+    // same set: picking a test rewrites these numbers to say where THAT sitting's
+    // mistakes fell. `all` counts everything, as it says.
+    const inTest = rows.filter((q) => !testFilterApplies() || q.test === testFilter);
+
+    const tally = {};
+    const overall = {};
+    rows.forEach((q) => {
+      const key = missedSkillOf(q);
+      if (!key) return;
+      overall[key] = (overall[key] || 0) + 1;
+      tally[key] = tally[key] || 0;
+    });
+    inTest.forEach((q) => {
+      const key = missedSkillOf(q);
+      if (key) tally[key] += 1;
+    });
+
+    // Ordered by the OVERALL total, not by the count on screen: ordering by the
+    // filtered number would reshuffle the list under his cursor every time he
+    // changed the test. Skills with none in this sitting stay, showing (0) --
+    // a skill that vanishes reads as a bug, and the zero is worth seeing.
+    const keys = Object.keys(overall).sort((a, b) =>
+      overall[b] - overall[a] || missedSkillLabel(a).localeCompare(missedSkillLabel(b)));
+
+    skillSelect.textContent = '';
+    const opt = (value, label, count) => {
+      const el = document.createElement('option');
+      el.value = value;
+      el.textContent = `${label} (${count})`;
+      return el;
+    };
+    skillSelect.append(opt('all', 'All skills', inTest.length));
+    keys.forEach((k) => skillSelect.append(opt(k, missedSkillLabel(k), tally[k])));
+
+    skillSelect.value = skillFilter;
+    if (skillSelect.value !== skillFilter) {
+      skillFilter = 'all';
+      skillSelect.value = 'all';
+      rememberFilters();
+    }
+    return;
+  }
+
   const tax = sectionTaxonomy();
   const counts = {};
   const present = {};
@@ -3602,8 +3753,16 @@ function buildTestSelect() {
   // would give him -- and, as with the skills, a sitting he has finished shows
   // (0) rather than dropping out of a list whose length decides whether the
   // control is on screen at all.
-  const sat = bank.filter((q) => q.skill === MISSED_SKILL && q.test);
-  const available = (q) => (wrongOnly ? isWrongEver(q.id) : !isAced(q) && !isMissed(q));
+  // Section-scoped: both sections have a missed set now, and a Reading sitting
+  // has no business in the maths list.
+  const sat = bank.filter((q) =>
+    q.skill === MISSED_SKILL && q.test && sectionOf(q) === section);
+  // Inside the tick nothing retires. `isMissed` is true of every question here,
+  // so the old test would have counted every sitting as empty -- and beyond that,
+  // a count that fell as he practised would stop answering the question he opened
+  // the dropdown for, which is where his mistakes ARE, not what is left to do.
+  const available = (q) =>
+    missedOnly ? true : (wrongOnly ? isWrongEver(q.id) : !isAced(q) && !isMissed(q));
   // Newest first by the date he sat it, falling back to the label so tests
   // without a date still order predictably rather than by bank position.
   const taken = {};
@@ -3612,6 +3771,9 @@ function buildTestSelect() {
   sat.forEach((q) => {
     taken[q.test] = q.taken || '';
     counts[q.test] = counts[q.test] || 0;
+    // Counted within the chosen skill, so the two controls describe the same
+    // set rather than each describing one the other has already narrowed.
+    if (missedOnly && skillFilter !== 'all' && missedSkillOf(q) !== skillFilter) return;
     if (!available(q)) return;
     counts[q.test] += 1;
     total += 1;
@@ -3654,8 +3816,7 @@ function buildTestSelect() {
 // skill brings his choice back with it.
 function syncTestSelect() {
   if (!testControl) return;
-  const relevant = skillFilter === MISSED_SKILL
-    && testSelect && testSelect.options.length > 2;
+  const relevant = missedOnly && testSelect && testSelect.options.length > 2;
   testControl.hidden = !relevant;
 }
 
@@ -3672,6 +3833,9 @@ function setupControls() {
   if (skillSelect) {
     skillSelect.addEventListener('change', () => {
       skillFilter = skillSelect.value;
+      // Inside the missed set the test counts are scoped to the chosen skill, so
+      // they have to be rebuilt when it changes.
+      if (missedOnly) buildTestSelect();
       syncTestSelect();
       rememberFilters();
       current = null;
@@ -3682,6 +3846,10 @@ function setupControls() {
   if (testSelect) {
     testSelect.addEventListener('change', () => {
       testFilter = testSelect.value;
+      // The skill counts are scoped to the chosen test, so they have to be
+      // rebuilt with it -- otherwise picking a sitting leaves the breakdown
+      // describing a set he is no longer looking at.
+      if (missedOnly && bank.length > 0) buildSkillSelect();
       rememberFilters();
       current = null;
       nextQuestion({ step: 0, scroll: false });
@@ -3704,6 +3872,24 @@ function setupControls() {
       starredOnly = starredOnlyToggle.checked;
       rememberFilters();
       if (bank.length > 0) buildSkillSelect();
+      current = null;
+      nextQuestion({ step: 0, scroll: false });
+    });
+  }
+
+  if (missedOnlyToggle) {
+    missedOnlyToggle.checked = missedOnly;
+    missedOnlyToggle.addEventListener('change', () => {
+      missedOnly = missedOnlyToggle.checked;
+      // The dropdown means something different on each side of this tick -- the
+      // skill a question TESTS inside the set, the bank it came from outside --
+      // so a value carried across would filter on a key the new list does not
+      // hold and empty the pool. Reset to "all" and let him choose again.
+      skillFilter = 'all';
+      rememberFilters();
+      if (bank.length > 0) buildSkillSelect();
+      buildTestSelect();
+      syncTestSelect();
       current = null;
       nextQuestion({ step: 0, scroll: false });
     });
@@ -3897,7 +4083,12 @@ function renderMissedList() {
 
       const skill = document.createElement('span');
       skill.className = 'missed-skill';
-      skill.textContent = SKILL_LABELS[q.realSkill] || q.realSkill || '';
+      // "Math" on every maths row tells him nothing while he is choosing what to
+      // work on; the bank's own name -- percentages, area and volume -- is the
+      // whole reason to browse this list.
+      skill.textContent = q.bankSkill
+        ? q.bankSkill.replace(/-/g, ' ')
+        : (SKILL_LABELS[q.realSkill] || q.realSkill || '');
 
       row.append(ref, skill);
 
@@ -3956,9 +4147,33 @@ let questionOnShow = null;
 // The one difference is that it opens already graded -- he has sat this one, so
 // the answer, his pick and the reasoning are all shown at once.
 function renderMissedPassage(question, into) {
+  // Maths misses are page images -- same reason as on the card.
+  if (question.image) {
+    const shot = document.createElement('img');
+    shot.className = 'page-shot';
+    shot.src = question.image;
+    shot.alt = `Question ${question.number} from ${question.test}, module ${question.module}`;
+    if (question.imageWidth && question.imageHeight) {
+      shot.width = question.imageWidth;
+      shot.height = question.imageHeight;
+    }
+    into.append(shot);
+    return;
+  }
+
   // Two shapes, exactly as renderPassage deals with them and for its reasons: a
   // restored passage is markup and may hold a figure or a table, so it needs the
   // stem block; an extracted one is text, and the underline has to be put back.
+  // A Bluebook maths miss carries the bank's own stem: the MathML and any SVG
+  // figure are in questionHtml, exactly as the card renders it.
+  if (question.questionHtml) {
+    const stem = document.createElement('div');
+    stem.className = 'math-stem';
+    setMarkup(stem, question.questionHtml);
+    into.append(stem);
+    return;
+  }
+
   if (question.passageHtml) {
     const stem = document.createElement('div');
     stem.className = 'math-stem';
@@ -4047,7 +4262,12 @@ function renderMissedDetail() {
 
     const skill = document.createElement('span');
     skill.className = 'tag';
-    skill.textContent = SKILL_LABELS[question.realSkill] || question.realSkill || '';
+    // bankSkill is College Board's own name for what the question tests
+    // ("probability-and-conditional-probability"), which says far more than the
+    // "Math" that realSkill carries.
+    skill.textContent = question.bankSkill
+      ? question.bankSkill.replace(/-/g, ' ')
+      : (SKILL_LABELS[question.realSkill] || question.realSkill || '');
     qDialogSub.append(skill);
 
     // Held back with the rest of it: "you picked C" is a free elimination.
@@ -4059,16 +4279,20 @@ function renderMissedDetail() {
     }
   }
 
-  // Prompt above the passage, as on the card.
-  const title = document.createElement('h2');
-  title.className = 'question-title';
-  title.textContent = question.question || '';
-  qDialogBody.append(title);
+  // Prompt above the passage, as on the card -- but a maths stem is one block
+  // carrying the question already, and its `question` field is flattened MathML
+  // ("StartFraction 28 Over 15 EndFraction"), so it stands down there.
+  if (!question.questionHtml) {
+    const title = document.createElement('h2');
+    title.className = 'question-title';
+    title.textContent = question.question || '';
+    qDialogBody.append(title);
+  }
 
   renderMissedPassage(question, qDialogBody);
 
   const options = document.createElement('div');
-  options.className = 'options';
+  options.className = question.image ? 'options is-letters' : 'options';
   (question.options || []).forEach((option) => {
     const correct = option.label === question.correctLabel;
 
@@ -4286,6 +4510,9 @@ function setSection(next) {
     });
 
     buildSkillSelect();
+    // Reading skills and maths skills share no keys, so a value carried across
+    // would filter on one the new list does not hold.
+    if (missedOnly) { skillFilter = 'all'; buildTestSelect(); syncTestSelect(); }
     updateSummary();
     // `current` cleared so the cursor of the section he is arriving at is honoured
     // rather than overwritten with the position of the question he was just on.
