@@ -310,5 +310,30 @@
         "text": ""
       }
     ]
+  },
+  {
+    "id": "missed-math-pt11-m2-q27",
+    "skill": "missed-in-test",
+    "realSkill": "math",
+    "section": "math",
+    "domain": "extra",
+    "domainLabel": "Extras",
+    "skillLabel": "Missed in a test",
+    "source": "SAT paper practice test",
+    "test": "Practice Test 11",
+    "testOrder": 8,
+    "taken": "2026-08-16",
+    "module": 2,
+    "number": 27,
+    "image": "media/missed-math/pt11-m2-q27.png",
+    "imageWidth": 704,
+    "imageHeight": 179,
+    "format": "spr",
+    "chose": "157.77",
+    "bankSkill": null,
+    "bankId": null,
+    "answers": [
+      "157.8; 789/5"
+    ]
   }
 ]

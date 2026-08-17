@@ -4381,5 +4381,493 @@
       }
     ],
     "chose": "A"
+  },
+  {
+    "id": "missed-pt11-m1-q5",
+    "source": "College Board Practice Test 11, Module 1, Question 5",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice Test 11",
+    "taken": "2026-08-16",
+    "module": 1,
+    "number": 5,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "A casual description of Scherezade García’s 2019 mural Blame It on the Bean: The Power of Coffee can make the work seem ___ —a painting that is housed in a coffee shop and that depicts three women drinking coffee may not sound particularly ambitious—but in fact the work is a complex, dynamic meditation on gender and the legacy of colonialism that demands serious attention.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "rule": "Most logically completes the text’s discussion of Scherezade García’s mural Blame It on the Bean: The Power of Coffee.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "unassuming",
+        "why": "Choice A is the best answer because it most logically completes the text’s discussion of Scherezade García’s mural Blame It on the Bean: The Power of Coffee. In this context, “unassuming” means ordinary or unremarkable. The text draws a contrast between a “casual description” of the mural’s ordinary location (a coffee shop) and subject matter (three women drinking coffee)—details that would make it seem relatively unambitious—and a characterization of the painting as a “dynamic meditation” on gender and colonialism deserving of “serious attention.” This context suggests that the mural has significant depth and complexity, but a superficial description of it might make the mural seem ordinary and unremarkable—that is, unassuming.",
+        "gloss": "ordinary or unremarkable"
+      },
+      {
+        "label": "B",
+        "text": "shrewd",
+        "why": "Choice B is incorrect because in this context, “shrewd” would mean clever or astute, and there’s nothing in the text to suggest that a casual yet misleading description that only mentions the apparent simplicity of the mural’s location and subject matter would make the mural seem particularly clever or astute. Though it’s possible that the text’s assertion that the mural is a “complex, dynamic meditation” demanding “serious attention” might convey the idea that it’s a particularly clever or astute—that is, shrewd—artwork, the text wouldn’t suggest that a casual description that fails to account for the work’s complexity would likewise characterize the work as shrewd.",
+        "gloss": "clever or astute"
+      },
+      {
+        "label": "C",
+        "text": "incongruous",
+        "why": "Choice C is incorrect because in this context, “incongruous” would mean unsuitable for its surroundings or internally inconsistent. The “casual description” presented in the text indicates that the painting is housed in a coffee shop and depicts women drinking coffee, which would imply that the mural may in fact be well suited to its surroundings, not that it’s ill suited to its location. Moreover, none of the details mentioned in this description would suggest that the painting contains internal inconsistencies of any kind.",
+        "gloss": "unsuitable for its surroundings or internally inconsistent"
+      },
+      {
+        "label": "D",
+        "text": "pretentious",
+        "why": "Choice D is incorrect because in this context, “pretentious” would mean expressive of exaggerated importance, which wouldn’t fit the contrast established in the text between a “casual description” of the painting and the work’s deeper themes. Though the text argues that the painting is worthy of “serious attention,” which would suggest its importance, the text doesn’t suggest that the casual description would by contrast imply that the painting’s importance is exaggerated. Rather, by merely mentioning the mural’s relatively ordinary location and subject matter without reference to this complexity, the casual description conveys that the painting is more unassuming and understated than it actually is, not that it expresses an exaggerated self-importance. SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 5 SAT PRACTICE TEST #11 ANSWER EXPLANATIONS",
+        "gloss": "expressive of exaggerated importance"
+      }
+    ],
+    "chose": "B"
+  },
+  {
+    "id": "missed-pt11-m1-q12",
+    "source": "College Board Practice Test 11, Module 1, Question 12",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "central-ideas-details",
+    "test": "Practice Test 11",
+    "taken": "2026-08-16",
+    "module": 1,
+    "number": 12,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "The following text is from Mark Haber’s 2022 novel Saint Sebastian’s Abyss. The narrator and Schmidt are both art critics.When my first wife admitted to Schmidt over dinner that she didn’t find art, painting in particular, especially compelling, Schmidt winced, set down his fork, and sighed dramatically; he then excused himself, explaining an appointment he’d forgotten about had suddenly and inexplicably been remembered, while making it abundantly clear there was no appointment at all.",
+    "question": "Based on the text, what is notable about Schmidt’s behavior?",
+    "rule": "Most accurately describes what is notable about Schmidt’s behavior.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Schmidt is only given to theatrical behavior when in the company of the narrator and his first wife.",
+        "why": "Choice A is incorrect because the text provides no evidence that Schmidt’s theatrical behavior—wincing, sighing dramatically, and abruptly leaving dinner—is unique to situations involving the narrator and his first wife. The text describes only one interaction involving Schmidt, so there’s no basis for determining SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 9 SAT PRACTICE TEST #11 ANSWER EXPLANATIONS whether his dramatic reactions are typical of him in all situations or limited to this particular social context."
+      },
+      {
+        "label": "B",
+        "text": "Schmidt’s absentmindedness regarding his schedule is uncharacteristic of him.",
+        "why": "Choice B is incorrect because nothing in the text suggests that Schmidt is typically mindful of his schedule or that forgetting appointments would be uncharacteristic of him. Rather, the text makes it clear that Schmidt hasn’t actually forgotten an appointment at all—the narrator indicates that Schmidt’s reason for leaving is an obvious fabrication, not a genuine instance of absentmindedness."
+      },
+      {
+        "label": "C",
+        "text": "Schmidt’s departure is occasioned by the resumption of a previous disagreement with the narrator’s first wife about a particular painting.",
+        "why": "Choice C is incorrect because the text doesn’t mention any previous disagreement between Schmidt and the narrator’s first wife about a particular painting or any other topic. The text presents what appears to be a spontaneous reaction by Schmidt to the wife’s statement about not finding art compelling, not the continuation of an earlier conversation or dispute."
+      },
+      {
+        "label": "D",
+        "text": "Schmidt conveys his feelings about one of his dining companions without explicitly stating them.",
+        "why": "Choice D is the best answer because it most accurately describes what is notable about Schmidt’s behavior. According to the text, when the narrator’s first wife admits she doesn’t find art particularly compelling, Schmidt responds by wincing, sighing dramatically, and abruptly leaving dinner with an obviously false excuse about a remembered appointment. The narrator makes it clear that there is no actual appointment and that the excuse is merely a pretense. Through these actions—the physical reactions of wincing and sighing, followed by the transparent excuse to leave—Schmidt clearly communicates his disapproval of the wife without directly stating his feelings about her."
+      }
+    ],
+    "chose": "C"
+  },
+  {
+    "id": "missed-pt11-m1-q13",
+    "source": "College Board Practice Test 11, Module 1, Question 13",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "central-ideas-details",
+    "test": "Practice Test 11",
+    "taken": "2026-08-16",
+    "module": 1,
+    "number": 13,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "The following text is from Mick Herron’s 2023 novel The Secret Hours. The narrator is describing members of a government committee.Finally, and adding much-needed gravitas, was Sir Winston Day, whose features seemed moulded to adorn a bust, or possibly a stamp, and whose forehead was so evidently bulging with grey matter that it would have been impertinent to inquire too closely into the actual achievements his half century of public service had produced. His recently published memoirs possibly cast light on this enigma, but given that such details were not provided until after the thirty-page mark, they might as well have remained state secrets.",
+    "question": "Based on the text, which choice best describes Sir Winston Day?",
+    "rule": "Accurately describes Sir Winston Day as he is portrayed in the text.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "He has the appearance of a distinguished figure, but it is uncertain whether he has accomplished anything to earn distinction.",
+        "why": "Choice A is the best answer because it accurately describes Sir Winston Day as he is portrayed in the text. The text indicates that Sir Winston’s “features seemed moulded to adorn a bust, or possibly a stamp,” suggesting that he appeared distinguished. But the text also indicates that his “actual achievements” during his long public service constitute an “enigma,” or mystery, highlighting the point with a joke about Sir Winston’s uninteresting memoirs (any information about his achievements past the first thirty pages “might as well have remained state secrets” since, it’s implied, no one bothered to read that far). Thus, the text suggests that Sir Winston appears distinguished even though his known accomplishments, if any, are relatively few."
+      },
+      {
+        "label": "B",
+        "text": "He looks like a person worthy of respect, but his memoirs reveal that some of his actions were dishonorable.",
+        "why": "Choice B is incorrect because nothing in the text indicates that Sir Winston behaved dishonorably. Rather, the text indicates that his “actual achievements” during his long public service constitute an enigma, or mystery, suggesting that he may have done very little, not that what he has done was disreputable."
+      },
+      {
+        "label": "C",
+        "text": "He would be a celebrated public figure if his achievements did not have to be kept secret.",
+        "why": "Choice C is incorrect. Although the text says that Sir Winston’s achievements that appear “after the thirty-page mark” in his memoirs “might as well have remained state secrets,” this is a joke about the public’s lack of interest in the memoirs, not a sincere claim that secrecy was intended."
+      },
+      {
+        "label": "D",
+        "text": "He has maintained a modest profile even though he has served the public capably for many years.",
+        "why": "Choice D is incorrect because the text does not associate Sir Winston with modesty, nor does it suggest that he was a capable public servant. Rather, by indicating that Sir Winston’s “features seemed moulded to adorn a bust, or possibly a stamp,” the text suggests that Sir Winston’s appearance communicated importance, not modesty. The text further indicates that his “actual achievements” during his long public service constitute an enigma, or mystery, suggesting that he may have done very little, not that he was particularly capable."
+      }
+    ],
+    "chose": "C"
+  },
+  {
+    "id": "missed-pt11-m1-q14",
+    "source": "College Board Practice Test 11, Module 1, Question 14",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "central-ideas-details",
+    "test": "Practice Test 11",
+    "taken": "2026-08-16",
+    "module": 1,
+    "number": 14,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Studies of ocean wave breaking have predominantly focused on traveling waves (those propagating along the horizontal plane), so Mark McAllister et al. utilized a circular wave tank to produce and study spike waves, axisymmetric standing waves that can erupt vertically when traveling waves propagating in opposing directions intersect. Traveling waves break when wave steepness (height-to-length ratio) passes a critical threshold; breaking thus constrains wave height. McAllister et al. found that spike waves can exceed that constraint, as other factors than just steepness (e.g., jet stability and cavity shape) mediate spike-wave breaking.",
+    "question": "Which choice best states the main idea of the text?",
+    "rule": "Most accurately states the main idea of the text.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Previous studies have suggested that steepness mediates breaking in traveling waves, but the study by McAllister et al. shows that jet stability and cavity shape may also influence breaking in such waves.",
+        "why": "Choice A is incorrect because it misrepresents the information in the text; the text indicates that McAllister et al. showed that jet stability and cavity shape (along with steepness) influence breaking in spike waves, not in traveling waves. Further, the information about specific influences is not the main focus of the text."
+      },
+      {
+        "label": "B",
+        "text": "The process of breaking limits the height of traveling waves, but the study by McAllister et al. suggests that spike waves can exceed those limits if their height-to-length ratio reaches a critical threshold.",
+        "why": "Choice B is incorrect because it misrepresents the information in the text; the text indicates that McAllister et al. found that spike waves can pass the steepness threshold at which traveling waves break because factors like jet stability and cavity shape affect the breaking of spike waves, not because they’ve simply reached a critical threshold of steepness."
+      },
+      {
+        "label": "C",
+        "text": "McAllister et al. suggest that spike waves can form when traveling waves propagating in opposing directions intersect and that spike waves tend to be higher than traveling waves.",
+        "why": "Choice C is incorrect. Although the text does explain that spike waves can form when traveling waves intersect, it presents this as a known fact that McAllister et al.’s study was based on, not as something the researchers suggested. Further, the text indicates that spike waves can exceed a threshold that limits traveling wave height but doesn’t focus on the idea that spike waves typically are higher than traveling waves."
+      },
+      {
+        "label": "D",
+        "text": "The study by McAllister et al. suggests that when traveling waves intersect in specific ways, the resulting wave may be higher than would be expected based on the properties of traveling waves.",
+        "why": "Choice D is the best answer because it most accurately states the main idea of the text. The text begins by explaining that most studies of ocean wave breaking have focused on traveling waves (those that move horizontally) but that McAllister et al. studied spike waves, which form when traveling waves moving in opposing directions intersect. The text establishes that while traveling waves break when SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 10 SAT PRACTICE TEST #11 ANSWER EXPLANATIONS their steepness exceeds a critical threshold (limiting their height), McAllister et al. found that spike waves can exceed these constraints because factors like jet stability and cavity shape can mitigate the effects of steepness. Thus, the main idea of the text is that spike waves resulting from traveling waves intersecting in specific ways can reach heights greater than what would be expected based on the general properties of traveling waves."
+      }
+    ],
+    "chose": "A"
+  },
+  {
+    "id": "missed-pt11-m1-q18",
+    "source": "College Board Practice Test 11, Module 1, Question 18",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "inferences",
+    "test": "Practice Test 11",
+    "taken": "2026-08-16",
+    "module": 1,
+    "number": 18,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Like many other genera of wild bees, bumblebees have in recent decades experienced population collapse caused by, among other factors, habitat destruction and climate variation. Bumblebees are also one of the most researched bee genera, second only to honeybees. As a result, ecologists have gained much of their insight about wild-bee declines from bumblebees. In a 2021 paper, zoologist Guillaume Ghisbain notes that bumblebees are among the relatively few wild-bee genera that display social behaviors and dietary generalism (ability to obtain nectar and pollen from a diversity of plant species), two traits that are associated with increased resilience to some specific environmental changes. Ghisbain therefore contends that ___",
+    "question": "Which choice most logically completes the text?",
+    "rule": "Most logically completes the text’s discussion of wild-bee declines.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "although bumblebees and many other wild bees have experienced similar population declines in the past, compared with other wild bees, bumblebees are likely at greater risk of being harmed by climate variation than by habitat destruction.",
+        "why": "Choice A is incorrect because the text doesn’t indicate that climate variation is more of a threat to bumblebees than habitat destruction is or that it is a bigger threat to bumblebees than it is to other wild bees. The text simply indicates that climate variation and habitat destruction are among the factors that have caused population collapses for bumblebees and other wild-bee genera."
+      },
+      {
+        "label": "B",
+        "text": "although bumblebees have been more extensively studied than most wild bees, researchers should not use bumblebees to draw conclusions about the decline of other wild bees, even ones with feeding patterns and levels of sociability that are similar to those of bumblebees.",
+        "why": "Choice B is incorrect. As it is presented in the text, Ghisbain notes that bumblebees may respond to environmental changes differently than many other wild-bee genera do; this suggests that bumblebees shouldn’t be treated as representative of all wild bees, but there’s no reason to think that Ghisbain would go so far as to assert that bumblebee data shouldn’t be used to draw conclusions about other wild-bee genera that are similar to bumblebees in their dietary and social traits, even if there are relatively few. The text suggests caution in extrapolation, not a complete rejection of using bumblebee research."
+      },
+      {
+        "label": "C",
+        "text": "because bumblebees and other bees with generalist diets are less negatively affected by environmental stress than bees with specialized diets are, they are less likely to experience major population changes in the future than bees with specialized diets are.",
+        "why": "Choice C is incorrect. Although the text indicates that dietary generalism is linked to increased resilience to specific environmental changes (that is, to some but not all environmental stresses), it doesn’t suggest that bumblebees and other bees with this trait are less likely than bees with specialized diets to experience major population changes. In fact, the text makes it clear that like many other wild-bee genera—most of which don’t display dietary generalism—bumblebees are already experiencing population collapse."
+      },
+      {
+        "label": "D",
+        "text": "because the responses of bumblebees and other wild bees to environmental threats are not always comparable, researchers need to exercise caution when extrapolating information about wild-bee population declines from bumblebees.",
+        "why": "Choice D is the best answer because it most logically completes the text’s discussion of wild-bee declines. The text establishes that bumblebees and other wild bees have been experiencing population collapse as a result of habitat destruction, climate variation, and other factors. The text then indicates that because bumblebees are very extensively researched, ecologists rely heavily on findings about them to understand wild-bee declines in general. However, the text then introduces Ghisbain’s observation that unlike most other wild-bee genera, bumblebees have certain traits (social behaviors and dietary generalism) linked to increased resilience to certain environmental changes. In other words, bumblebees aren’t necessarily representative of wild bees as a whole because they are likely more tolerant of some pressures. Therefore, it logically follows that Ghisbain would urge researchers to exercise caution when using bumblebee data to draw conclusions about other wild-bee population declines, since bumblebees and other wild bees don’t always respond comparably to environmental threats."
+      }
+    ],
+    "chose": "A"
+  },
+  {
+    "id": "missed-pt11-m1-q22",
+    "source": "College Board Practice Test 11, Module 1, Question 22",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "boundaries",
+    "test": "Practice Test 11",
+    "taken": "2026-08-16",
+    "module": 1,
+    "number": 22,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "According to the original text of the US Constitution, written in 1787, the presidential candidate receiving the second-most Electoral College votes becomes vice president. The 12th amendment, ratified in ___ separated the elections for the two offices.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the use of punctuation within a sentence.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "1804—",
+        "why": "Choice A is incorrect because a dash can’t be paired with a comma in this way to separate the supplementary element from the rest of the sentence."
+      },
+      {
+        "label": "B",
+        "text": "1804,",
+        "why": "Choice B is the best answer. The convention being tested is the use of punctuation within a sentence. The comma after “1804” pairs with the comma after “amendment” to separate the supplementary element “ratified in 1804” from the rest of the sentence. This supplementary element functions to provide additional information on the term “12th amendment,” and the pair of commas indicates that this element could be removed without affecting the grammatical coherence of the sentence. SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 1 14 SAT PRACTICE TEST #11 ANSWER EXPLANATIONS"
+      },
+      {
+        "label": "C",
+        "text": "1804:",
+        "why": "Choice C is incorrect because a colon can’t be paired with a comma in this way to separate the supplementary element from the rest of the sentence."
+      },
+      {
+        "label": "D",
+        "text": "1804",
+        "why": "Choice D is incorrect because it fails to use appropriate punctuation to separate the supplemental element from the rest of the sentence."
+      }
+    ],
+    "chose": "C"
+  },
+  {
+    "id": "missed-pt11-m1-q32",
+    "source": "College Board Practice Test 11, Module 1, Question 32",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "rhetorical-synthesis",
+    "test": "Practice Test 11",
+    "taken": "2026-08-16",
+    "module": 1,
+    "number": 32,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "While researching a topic, a student has taken the following notes:• The meter of a poem is the rhythmic structure or pattern of accents in its lines. • Alliterative meter is structured by a pattern of repeated sounds.• Quantitative meter is structured by a pattern of long and short syllables. • The Old English poem Widsith uses an alliterative meter.• The Sanskrit poem Meghadūta uses a quantitative meter.The student wants to emphasize a difference between the meters of the two poems.",
+    "question": "Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "rule": "Noting that Meghadūta uses a pattern of long and short syllables in its lines (quantitative meter) and Widsith uses a pattern of repeated sounds in its lines (alliterative meter), and signaling a contrast with “whereas,” the sentence emphasizes a difference between the meters of the two poems.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "The poem Widsith is written in Old English, but Meghadūta is written in Sanskrit.",
+        "why": "Choice A is incorrect. The sentence indicates that the two poems were written in different languages; it doesn’t emphasize a difference between the meters of the two poems."
+      },
+      {
+        "label": "B",
+        "text": "Alliterative meter is a pattern of repeated sounds, but quantitative meter is a rhythmic structure or pattern of accents.",
+        "why": "Choice B is incorrect. The sentence mentions the meters of the two poems but misrepresents information from the notes; the overall definition of a meter (the rhythmic structure or pattern of accents in a poem’s lines) applies to both alliterative and quantitative meters, not just quantitative."
+      },
+      {
+        "label": "C",
+        "text": "The Sanskrit poem Meghadūta uses a quantitative meter, while the meter of the Old English poem Widsith uses a pattern of long and short syllables.",
+        "why": "Choice C is incorrect. While the sentence emphasizes a difference between the meters of the two poems, it misrepresents information from the notes; Widsith uses an alliterative meter, which is structured by a pattern of repeated sounds, not a pattern of long and short syllables."
+      },
+      {
+        "label": "D",
+        "text": "The lines of the poem Meghadūta use a pattern of long and short syllables, whereas Widsith’s lines use a pattern of repeated sounds.",
+        "why": "Choice D is the best answer. Noting that Meghadūta uses a pattern of long and short syllables in its lines (quantitative meter) and Widsith uses a pattern of repeated sounds in its lines (alliterative meter), and signaling a contrast with “whereas,” the sentence emphasizes a difference between the meters of the two poems."
+      }
+    ],
+    "chose": "B"
+  },
+  {
+    "id": "missed-pt11-m2-q5",
+    "source": "College Board Practice Test 11, Module 2, Question 5",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice Test 11",
+    "taken": "2026-08-16",
+    "module": 2,
+    "number": 5,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "The following text is from a 1955 translation of Samuel Beckett’s 1951 novel Molloy (translated by the author and Patrick Bowles). In the text, Molloy has arrived at the town ramparts, an elevated walkway atop the city walls.And having cleared the ramparts I had to confess the sky was clearing, prior to its winding in the other shroud, night. Yes, the great cloud was ravelling, discovering here and there a pale and dying sky, and the sun, already down, was Start referenced Content: manifest End referenced Conten t in the livid tongues of fire darting towards the zenith, falling and darting again, ever more pale and languid, and doomed no sooner lit to be extinguished.",
+    "question": "As used in the text, what does the word “manifest” most nearly mean?",
+    "rule": "As used in the text, “manifest” most nearly means perceptible or detectable.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Realized",
+        "why": "Choice A is incorrect. Although in some contexts “manifest” can mean “realized” or “brought into being,” that is not the context here. Rather, the text is about how the sun’s presence was perceptible or manifest in the “darting” beams of light that could still be seen in the sky.",
+        "gloss": "brought into being"
+      },
+      {
+        "label": "B",
+        "text": "Perceptible",
+        "why": "Choice B is the best answer because as used in the text, “manifest” most nearly means perceptible or detectable. The text indicates that the sun was “already down,” meaning it was below the horizon and not directly visible. However, the sun’s presence was nonetheless perceptible or manifest in the “tongues of fire” (or beams of light) that still flickered in the darkening sky.",
+        "gloss": "able to be noticed"
+      },
+      {
+        "label": "C",
+        "text": "Situated",
+        "why": "Choice C is incorrect. This choice would suggest that the sun is situated, or located, in the light it emits, which is not supported by the surrounding context. Rather, the text is about how the sun’s presence was perceptible or manifest in the remaining light that could still be seen in the sky.",
+        "gloss": "located"
+      },
+      {
+        "label": "D",
+        "text": "Dwindling",
+        "why": "Choice D is incorrect. Although the text is about the decreasing light in the scene at sunset, the text’s use of “manifest” is about how the sun’s presence was nonetheless perceptible or manifest in the “tongues of fire” still visible in the sky as night approached.",
+        "gloss": "steadily shrinking"
+      }
+    ],
+    "chose": "C"
+  },
+  {
+    "id": "missed-pt11-m2-q7",
+    "source": "College Board Practice Test 11, Module 2, Question 7",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice Test 11",
+    "taken": "2026-08-16",
+    "module": 2,
+    "number": 7,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Following the eradication of the gray wolf in Yellowstone National Park in 1926, the population of elk—a primary prey of the gray wolf—exceeded a healthy size for the park’s ecosystem. Elk overpopulation led to overgrazing of areas that a multitude of other animals relied on for food and shelter. As scientists began to see how essential the gray wolf was to the Yellowstone food chain, ecological restoration strategies were employed to reintroduce the gray wolf to the park in 1996. The rebound effect in the park’s natural ecosystem was noticed almost immediately.",
+    "question": "Which choice best describes the overall structure of the text?",
+    "rule": "Most accurately describes the overall structure of the text.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "It summarizes a problem that developed in Yellowstone National Park in the 1920s and then offers potential solutions to that problem.",
+        "why": "Choice A is incorrect. While the text does summarize a problem associated with an event in the 1920s (the eradication of gray wolves from Yellowstone in 1926), the problems discussed arose after that event—namely, the subsequent elk overpopulation, resultant overgrazing, and then further impacts to other animals in Yellowstone. Furthermore, the text doesn’t present multiple potential solutions. Instead, it describes one solution that was actually implemented: the reintroduction of gray wolves in 1996."
+      },
+      {
+        "label": "B",
+        "text": "It mentions the elimination of the gray wolf from Yellowstone National Park and then explains why the wolf was eventually restored to the park.",
+        "why": "Choice B is the best answer because it most accurately describes the overall structure of the text. The text begins by stating that the gray wolf was eradicated from Yellowstone National Park in 1926. It then explains the consequences of this elimination—namely that the elk population grew too large and overgrazing occurred, negatively affecting other animals in the area. The text then states that once scientists realized the importance of the gray wolf to the Yellowstone food chain, they undertook efforts leading to the wolves’ reintroduction to the park in 1996. Thus, the structure of the text can be accurately described as mentioning the elimination of the gray wolf from Yellowstone and then explaining why the wolf was later restored to the park."
+      },
+      {
+        "label": "C",
+        "text": "It presents a claim about the health of the Yellowstone National Park gray wolf population and then gives specific examples to support that claim.",
+        "why": "Choice C is incorrect because the text doesn’t make a claim about the health of the gray wolf population apart from pointing out that the wolves had been eradicated from, and then subsequently restored to, Yellowstone. Instead, the text focuses on outcomes associated with the gray wolf’s eradication and reintroduction."
+      },
+      {
+        "label": "D",
+        "text": "It explains why Yellowstone National Park allowed the eradication of the gray wolf and then discusses the consequences of reintroducing the wolf to the park.",
+        "why": "Choice D is incorrect. Though the text does mention that the ecosystem of Yellowstone rebounded after the gray wolf was reintroduced in 1996, the text never explains why the park allowed the wolves to be eradicated in 1926. It simply states that this eradication occurred without elaborating on the decision-making process behind it."
+      }
+    ],
+    "chose": "A"
+  },
+  {
+    "id": "missed-pt11-m2-q29",
+    "source": "College Board Practice Test 11, Module 2, Question 29",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "transitions",
+    "test": "Practice Test 11",
+    "taken": "2026-08-16",
+    "module": 2,
+    "number": 29,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Upper-atmospheric jets—phenomena whereby electrical discharges cause narrow cones of blue light to briefly burst upward from the tops of thunderclouds—have been observed reaching the ionosphere. The extreme altitudes involved (the ionosphere begins about 80 km above Earth) mark these gigantic jets as outliers; ___ the majority of jets reach heights of only 20 to 50 km.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "rule": "“Indeed” logically signals that the information that follows—that the majority of jets reach heights of only 20 to 50 km—offers additional emphasis in support of the previous claim that jets reaching the ionosphere (about 80 km above Earth) are outliers.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "nevertheless,",
+        "why": "Choice A is incorrect because “nevertheless” illogically signals that the information about most jets reaching heights of only 20 to 50 km contrasts with the previous claim that jets reaching the ionosphere are outliers. Instead, it provides additional emphasis in support of that claim."
+      },
+      {
+        "label": "B",
+        "text": "consequently,",
+        "why": "Choice B is incorrect because “consequently” illogically signals that the information about most jets 32 SAT PRACTICE TEST #11 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2 reaching heights of only 20 to 50 km is a consequence, or result, of some jets being outliers. Instead, it offers additional emphasis in support of the claim that jets reaching the ionosphere are outliers."
+      },
+      {
+        "label": "C",
+        "text": "indeed,",
+        "why": "Choice C is the best answer. “Indeed” logically signals that the information that follows—that the majority of jets reach heights of only 20 to 50 km—offers additional emphasis in support of the previous claim that jets reaching the ionosphere (about 80 km above Earth) are outliers."
+      },
+      {
+        "label": "D",
+        "text": "in addition,",
+        "why": "Choice D is incorrect because “in addition” illogically signals that the information about most jets reaching heights of only 20 to 50 km merely adds to the previous claim that jets reaching the ionosphere are considered outliers. Instead, it provides additional emphasis in support of that claim."
+      }
+    ],
+    "chose": "D"
+  },
+  {
+    "id": "missed-pt11-m2-q32",
+    "source": "College Board Practice Test 11, Module 2, Question 32",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "rhetorical-synthesis",
+    "test": "Practice Test 11",
+    "taken": "2026-08-16",
+    "module": 2,
+    "number": 32,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "While researching a topic, a student has taken the following notes:• Pedestrian malls are outdoor streets in a city or town where vehicle traffic is prohibited. • Many pedestrian malls were built in the 19th and 20th centuries in Europe and Asia.• Qianmen Dajie is a famous pedestrian mall in Beijing. • It has existed since the Ming dynasty • Rue Mouffetard is a famous pedestrian mall in Paris.• It has existed since the mid-Roman Empire The student wants to emphasize a similarity between the ages of the malls.",
+    "question": "Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "rule": "The sentence emphasizes a similarity between the ages of the two pedestrian malls, noting that both are relatively old—Qianmen Dajie has roots that go back hundreds of years and Rue Mouffetard has existed for centuries.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "The Qianmen Dajie pedestrian mall has roots as far back as the Ming dynasty; likewise, Rue Mouffetard has existed for centuries.",
+        "why": "Choice A is the best answer. The sentence emphasizes a similarity between the ages of the two pedestrian malls, noting that both are relatively old—Qianmen Dajie has roots that go back hundreds of years and Rue Mouffetard has existed for centuries. 33 SAT PRACTICE TEST #11 ANSWER EXPLANATIONS SAT ANSWER EXPLANATIONS n READING AND WRITING: MODULE 2"
+      },
+      {
+        "label": "B",
+        "text": "Both Qianmen Dajie and Rue Mouffetard are famous pedestrian malls, the former in Beijing and the latter in Paris.",
+        "why": "Choice B is incorrect. The sentence emphasizes that both locations are famous pedestrian malls and notes that they are in different locations; it doesn’t emphasize a similarity in their ages."
+      },
+      {
+        "label": "C",
+        "text": "Qianmen Dajie and Rue Mouffetard are pedestrian malls, outdoor streets closed to vehicle traffic.",
+        "why": "Choice C is incorrect. While the sentence emphasizes that both locations are pedestrian malls, it doesn’t emphasize a similarity in their ages."
+      },
+      {
+        "label": "D",
+        "text": "Qianmen Dajie and Rue Mouffetard are examples of pedestrian malls, which proliferated in Europe in the 19th and 20th centuries.",
+        "why": "Choice D is incorrect. The sentence explains that Qianmen Dajie and Rue Mouffetard are examples of pedestrian malls and gives information about pedestrian malls in general; it doesn’t emphasize a similarity in the ages of these two malls specifically."
+      }
+    ],
+    "chose": "D"
+  },
+  {
+    "id": "missed-pt11-m2-q33",
+    "source": "College Board Practice Test 11, Module 2, Question 33",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "rhetorical-synthesis",
+    "test": "Practice Test 11",
+    "taken": "2026-08-16",
+    "module": 2,
+    "number": 33,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "While researching a topic, a student has taken the following notes: • Modularity of mind is the notion that the mind is at least partly composed of innate neural structures (modules) that perform fast, necessary tasks.• 1983: cognitive scientist Jerry A. Fodor hypothesized that low-level cognitive systems (e.g., perception, language) are modular.• In Fodorian modularity, high-level systems (e.g., reasoning) are not modular.• 2003: cognitive scientist Peter Carruthers proposed the massive modularity hypothesis (MMH). • MMH expands modularity to include all cognitive systems.The student wants to compare Fodor’s hypothesis with Carruthers’s.",
+    "question": "Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "rule": "The sentence compares Fodor’s hypothesis with Carruthers’s, noting that because Fodorian modularity considers some but not all cognitive systems modular, it is not as expansive in its definition of modularity as Carruthers’s MMH, which includes all cognitive systems.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "In considering some but not all cognitive systems modular, Fodorian modularity is not as expansive in its definition of modularity as MMH is.",
+        "why": "Choice A is the best answer. The sentence compares Fodor’s hypothesis with Carruthers’s, noting that because Fodorian modularity considers some but not all cognitive systems modular, it is not as expansive in its definition of modularity as Carruthers’s MMH, which includes all cognitive systems."
+      },
+      {
+        "label": "B",
+        "text": "Following Fodor’s 1983 hypothesis, Carruthers proposed that modularity of mind includes all cognitive systems.",
+        "why": "Choice B is incorrect. The sentence describes Carruthers’s hypothesis—that modularity of mind includes all cognitive systems—but indicates only that this hypothesis followed Fodor’s 1983 hypothesis rather than making a comparison between the hypotheses."
+      },
+      {
+        "label": "C",
+        "text": "The hypotheses of Fodor and Carruthers differ in whether they consider low-level cognitive systems, such as perception and language, modular.",
+        "why": "Choice C is incorrect. The sentence misrepresents a difference between Fodor’s and Carruthers’s hypotheses. According to the information in the notes, both Fodor and Carruthers consider low-level cognitive systems modular, and their difference lies in whether they also consider high-level systems modular."
+      },
+      {
+        "label": "D",
+        "text": "In 2003, Carruthers proposed the massive modularity hypothesis, disagreeing with Fodor’s earlier hypothesis that the mind is composed of innate neural structures.",
+        "why": "Choice D is incorrect. The sentence misrepresents a difference between Fodor’s and Carruthers’s hypotheses. According to the information in the notes, both Fodor and Carruthers consider the mind to be at least partly composed of innate neural structures (modules). Their difference lies in whether they consider high-level systems modular."
+      }
+    ],
+    "chose": "C"
   }
 ]

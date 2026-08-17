@@ -183,6 +183,30 @@ TESTS = [
             2: [9, 13, 16, 17, 25, 27, 33],
         },
     },
+    {
+        'key': 'pt11',
+        'label': 'Practice Test 11',
+        'order': 8,
+        'taken': '2026-08-16',
+        'questions_pdf': Path('book/sat-practice-test-11-digital.pdf'),
+        'answers_pdf': Path('book/sat-practice-test-11-answers-digital.pdf'),
+        # Test 11 is set tighter than 5-9: 52 pages against 56, and Reading runs
+        # 3-15 and 17-29 rather than 3-17 and 17-31. Taking the older layout on
+        # trust found the blocks but not the prompts inside them, which showed up
+        # as "no prompt found" on every question of module 1.
+        'modules': {1: range(3, 16), 2: range(17, 30)},
+        'per_module': 33,
+        # tests/Test 11 on 16 Aug.jpeg. Read carefully: the WIDE column, filled on
+        # every row, is his own answer sheet; the narrow one holds the correct
+        # letter and is written only where he went wrong. (Taking them the other
+        # way round makes every "wrong" answer match the key, which is how the
+        # mistake announces itself.) Checked against the official key: his column
+        # differs from it at exactly these twelve and nowhere else.
+        'missed': {
+            1: {5: 'B', 12: 'C', 13: 'C', 14: 'A', 18: 'A', 22: 'C', 32: 'B'},
+            2: {5: 'C', 7: 'A', 29: 'D', 32: 'D', 33: 'C'},
+        },
+    },
 ]
 
 # --- Reading the test PDF ---------------------------------------------------
@@ -417,7 +441,11 @@ PROMPT_START = re.compile(
     # Starts the text, follows the end of a sentence, or follows the blank -- a
     # cloze question runs "...concluded that ___ Which choice completes...", with
     # the full stop stranded on its own line and dropped as page furniture.
-    r'(?:^|(?<=[.?!"”\'_]) )('
+    # The space after the full stop is optional: tests 5-9 set the prompt on its
+    # own line, but test 11 runs it straight on -- "...demands serious
+    # attention.Which choice completes the text..." -- and requiring the space
+    # found no prompt at all on every question of its first module.
+    r'(?:^|(?<=[.?!"”\'_])\s*)('
     r'Which (?:choice|quotation|finding|statement|data)|'
     r'What (?:does|is|makes|choice)|'
     r'As used in the text|'
@@ -426,6 +454,29 @@ PROMPT_START = re.compile(
     # reasonably be inferred from the text that ... for which reason?"
     r'It can most reasonably be inferred|'
     r'Based on the (?:text|texts|data|table|graph))')
+
+
+# Two things test 11's PDF does that tests 5-9 do not.
+#
+# It spells the cloze blank out as the letters "b l a n k" -- put there for
+# screen readers, where the older papers print "___". Left alone the passage
+# shows the word on screen, the app's blank never renders, and the prompt that
+# follows it is unreachable because the character before it is a letter.
+SPELLED_BLANK = re.compile(r'\bb\s+l\s+a\s+n\s+k(?=[^a-z]|$)')
+
+# And it runs the copyright credit straight into the prompt with no space:
+# "...there was no appointment at all.\u00a92022 by Mark HaberBased on the text,
+# what is notable about Schmidt's behavior?" -- so the prompt does not follow a
+# full stop and is not found.
+CREDIT = re.compile(
+    r'\u00a9\s*\d{4}\s+by\s+.*?(?=(?:Which|What|Based|According|As used|It can)\b)')
+
+
+def tidy(text):
+    """Undo the two test-11 rendering quirks. A no-op on every earlier test."""
+    text = SPELLED_BLANK.sub('___', text)
+    text = CREDIT.sub(' ', text)
+    return re.sub(r'[ \t]+', ' ', text).strip()
 
 
 def split_prompt(text):
@@ -584,7 +635,13 @@ def classify(prompt, rationale):
          r'most strongly suggest|'
          # "Based on the text, what is true about Mrs. Ochiltree's acquaintances?"
          # The bank has four of these and files them all here.
-         r'what is true about', 'central-ideas-details'),
+         r'what is true about|'
+        # "Based on the text, what is notable about Schmidt's behavior?" and
+        # "Based on the text, which choice best describes Sir Winston Day?" --
+        # the bank holds both of these very questions and files them here, and
+        # four more of the "which choice best describes" shape besides.
+        r'what is notable about|'
+        r'which choice best describes', 'central-ideas-details'),
     ):
         if re.search(pattern, prompt, re.I):
             return skill
@@ -643,7 +700,12 @@ def build(test):
 
     rows, problems = [], []
     for module, pages in test['modules'].items():
-        wanted = test['missed'].get(module, [])
+        # A module's misses are either a plain list of numbers or, where his
+        # sheet records what he actually put, {number: chose}. Both read as an
+        # ordered list of numbers here; the pick is looked up further down.
+        entry = test['missed'].get(module, [])
+        wanted = sorted(entry) if isinstance(entry, dict) else entry
+        picks = entry if isinstance(entry, dict) else {}
         if not wanted:
             continue
         blocks = split_questions(doc, pages, test['per_module'])
@@ -655,6 +717,7 @@ def build(test):
             block, page = found
 
             text, options = parse_block(block, always_space)
+            text = tidy(text)
             text, underline = pull_underline(text)
             passage, prompt = split_prompt(text)
 
@@ -709,6 +772,8 @@ def build(test):
                         ' option(s) without a gloss — add them to '
                         'banks/vocab-glosses.json')
 
+            if picks.get(num):
+                row['chose'] = picks[num]
             if underline:
                 row['underline'] = underline
             # A question built on a graph or table cannot be worked from text
@@ -922,10 +987,22 @@ def main():
         sys.exit('PyMuPDF is needed: pip install pymupdf')
 
     all_rows, all_problems = [], []
+    # A test can be recorded here before its PDFs are to hand -- the sheet is
+    # marked the day he sits it, the papers arrive later. Those wait, named, and
+    # everything else still builds. Only the case where NOTHING is present is an
+    # error, because that is the run-from-the-wrong-directory mistake.
+    ready = [t for t in TESTS
+             if t['questions_pdf'].exists() and t['answers_pdf'].exists()]
+    if not ready:
+        sys.exit('No practice-test PDFs found -- run from the repo root.')
     for test in TESTS:
-        for key in ('questions_pdf', 'answers_pdf'):
-            if not test[key].exists():
-                sys.exit(f'{test[key]} not found -- run from the repo root.')
+        if test not in ready:
+            missing = [t['questions_pdf'].name for t in [test]
+                       if not test['questions_pdf'].exists()]
+            print(f'{test["label"]}: WAITING for {", ".join(missing) or "its answer key"}'
+                  f' -- {sum(len(v) for v in test["missed"].values())} misses recorded,'
+                  ' nothing extracted')
+            continue
         rows, problems = build(test)
         all_rows += [(test.get('order', 0), r) for r in rows]
         all_problems += problems

@@ -53,6 +53,12 @@ TESTS = [
         'key': 'pt9', 'label': 'Practice Test 9', 'order': 6, 'taken': '2026-08-14',
         'missed': {1: {25: 'A'}, 2: {26: 'C'}},
     },
+    {
+        # Module 1 was clean, 27 for 27. The one miss is a grid-in: he put
+        # 157.77 where the key gives 157.8 (789/5).
+        'key': 'pt11', 'label': 'Practice Test 11', 'order': 8, 'taken': '2026-08-16',
+        'missed': {1: {}, 2: {27: '157.77'}},
+    },
 ]
 
 QUESTIONS_PDF = 'book/sat-practice-test-{n}-digital.pdf'
@@ -76,30 +82,35 @@ PAGE_BOTTOM = 700.0
 
 
 def module_pages(doc):
-    """Return {module: [page indexes]} for the two maths modules."""
-    starts = {}
-    for i in range(doc.page_count):
-        head = doc[i].get_text()[:400]
-        if 'Math' not in head or 'QUESTIONS' not in head:
-            continue
-        found = re.search(r'Module\s*(\d)', head)
-        if found:
-            starts.setdefault(int(found.group(1)), i)
-    if len(starts) < 2:
-        raise SystemExit(f'  ! could not find both maths modules (found {sorted(starts)})')
+    """Return {module: [page indexes]} for the two maths modules.
 
-    out = {}
-    first, second = starts[1], starts[2]
-    out[1] = list(range(first, second))
-    # The maths section is the tail of the book, but the last pages are the
-    # "No Test Material On This Page" fillers and the back matter.
+    Identified by the directions page, not by the running header: tests 5-9 print
+    "Module 1 / Math / 27 QUESTIONS" at the top, test 11 does not, and matching on
+    that found nothing at all in it. Every maths directions page mentions the
+    calculator and the reference sheet, and no Reading one does -- so that is the
+    test used here.
+    """
+    starts = []
+    for i in range(doc.page_count):
+        head = doc[i].get_text()[:900]
+        if 'DIRECTIONS' not in head:
+            continue
+        low = head.lower()
+        if 'calculator' in low or 'reference sheet' in low:
+            starts.append(i)
+    if len(starts) < 2:
+        raise SystemExit(f'  ! could not find both maths modules (found {starts})')
+    first, second = starts[0], starts[1]
+
+    # Module 2 runs to the back matter: the general directions, or the filler
+    # pages, whichever comes first.
     end = doc.page_count
-    for i in range(second, doc.page_count):
-        if 'No Test Material' in doc[i].get_text()[:200]:
+    for i in range(second + 1, doc.page_count):
+        head = doc[i].get_text()[:300]
+        if 'No Test Material' in head or 'GENERAL DIRECTIONS' in head:
             end = i
             break
-    out[2] = list(range(second, end))
-    return out
+    return {1: list(range(first, second)), 2: list(range(second, end))}
 
 
 def markers(page):
@@ -298,7 +309,8 @@ def main():
     out = []
 
     for test in TESTS:
-        n = test['key'][2]
+        # [2:] not [2]: 'pt11' is a two-digit test and one character of it is 'pt1'.
+        n = test['key'][2:]
         doc = fitz.open(QUESTIONS_PDF.format(n=n))
         pages = module_pages(doc)
         keys = answer_key(n)
