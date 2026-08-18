@@ -6,7 +6,7 @@
   <title>SAT Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=92" />
+  <link rel="stylesheet" href="styles.css?v=98" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -61,6 +61,13 @@
         <button type="button" class="theme-toggle is-primary" id="openLearn" aria-haspopup="dialog">
           <span class="theme-toggle-icon" aria-hidden="true">🎓</span>
           <span class="theme-toggle-label">Learn</span>
+        </button>
+        <!-- Find any question by what it says. The bank is 3,700 questions and
+             the only ways in were the filters and the sequence; this is the way
+             in when he remembers the passage and not where it lives. -->
+        <button type="button" class="theme-toggle" id="openSearch" aria-haspopup="dialog">
+          <span class="theme-toggle-icon" aria-hidden="true">🔍</span>
+          <span class="theme-toggle-label">Search</span>
         </button>
         <!-- Every question he has missed on a real test, in one list. Shares the
              theme toggle's shape because it is the same kind of control: a small
@@ -436,7 +443,40 @@
     <div class="learn-body" id="learnBody"></div>
   </dialog>
 
+  <!-- Search. One box, results underneath, and a press takes him to the
+       question in the drill. -->
+  <dialog class="progress-dialog search-dialog" id="searchDialog" aria-labelledby="searchTitle">
+    <div class="progress-head">
+      <div>
+        <h2 class="progress-title" id="searchTitle">Search</h2>
+        <p class="progress-sub" id="searchSub">Any word from a passage, a question or an answer choice.</p>
+      </div>
+      <button type="button" class="dialog-close" id="closeSearch" aria-label="Close search">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+
+    <div class="search-bar">
+      <input type="search" id="searchInput" class="search-input" autocomplete="off"
+             placeholder="e.g. zebras, Marianne Moore, semicolon" aria-label="Search questions" />
+      <label class="control search-scope">
+        <span>In</span>
+        <select id="searchScope">
+          <option value="all">Everything</option>
+          <option value="rw">Reading &amp; Writing</option>
+          <option value="math">Math</option>
+          <option value="missed">Missed in a test</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="search-body" id="searchResults"></div>
+    <!-- Pinned to the foot of the dialog: stepping through pages should not mean
+         scrolling to the bottom of one to find the way to the next. -->
+    <div class="search-pager" id="searchPager" hidden></div>
+  </dialog>
+
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=104"></script>
+  <script src="app.js?v=110"></script>
 </body>
 </html>

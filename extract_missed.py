@@ -613,6 +613,11 @@ def classify(prompt, rationale):
          # hypothetical result rather than about something already in the text.
          r'if true, would most \w+ly (?:support|weaken|undermine)|'
          r'data from the (?:graph|table)|Based on the (?:data|table|graph)|'
+         # "Which completion of the text is best supported by data in the graph?"
+         # -- the quantitative form, and the same family as the two above. No bank
+         # example of this exact wording, but Bluebook files it under Information
+         # and Ideas and SKILL_DOMAIN agrees.
+         r'supported by data in the (?:graph|table)|'
          r'most effectively uses data', 'command-of-evidence'),
         (r'most logically completes the text|most reasonably be inferred', 'inferences'),
         # Ahead of Central Ideas and Details, and matching either text on its own:
@@ -636,6 +641,10 @@ def classify(prompt, rationale):
          # "Based on the text, what is true about Mrs. Ochiltree's acquaintances?"
          # The bank has four of these and files them all here.
          r'what is true about|'
+        # "In the text, which point does Prospero most directly make about
+        # Miranda and her memories?" -- a what-does-the-text-say question, and
+        # Bluebook files it under Information and Ideas.
+        r'which point does .* most directly make|'
         # "Based on the text, what is notable about Schmidt's behavior?" and
         # "Based on the text, which choice best describes Sir Winston Day?" --
         # the bank holds both of these very questions and files them here, and

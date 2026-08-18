@@ -1,0 +1,1182 @@
+{
+ "source": "College Board SAT Suite question bank, Words in Context passages",
+ "note": "Hard words from the passage text itself, as opposed to the four option words in banks/vocab.json. Chosen by wordfreq and then by hand; see extract_wic_vocab.py.",
+ "words": [
+  {
+   "word": "allusions",
+   "gloss": "indirect references",
+   "seen": 1,
+   "sentence": "Ezra Pound\u2019s poetry can be hard to ___: it is dense, experimental, and so full of references and allusions that many readers have a difficult time even identifying the poems\u2019 subjects.",
+   "sourceId": "cb-words-in-context-d529c1ad"
+  },
+  {
+   "word": "applicability",
+   "gloss": "how far something applies",
+   "seen": 1,
+   "sentence": "However, this practice may undercut the applicability of the study\u2019s results: people who join a study in response to ___ may differ in important ways from a representative sample of the population of interest.",
+   "sourceId": "cb-words-in-context-5ccbfe22"
+  },
+  {
+   "word": "approachable",
+   "gloss": "easy to talk to",
+   "seen": 1,
+   "sentence": "Brand names presented using rounded logos, for example, were found to lead consumers to view brands as significantly more approachable than the same names did when presented using angular logos.",
+   "sourceId": "cb-words-in-context-644f59cd"
+  },
+  {
+   "word": "artistry",
+   "gloss": "creative skill",
+   "seen": 1,
+   "sentence": "Historians argue that Morris\u2019s repudiation of industrialization is ___ the Kelmscott editions\u2019 use of handmade materials and intricate ornamentation reminiscent of medieval manuscripts: these meticulously handcrafted elements exemplify the artistry involved.",
+   "sourceId": "cb-words-in-context-7b4dde72"
+  },
+  {
+   "word": "ascertain",
+   "gloss": "find out for certain",
+   "seen": 1,
+   "sentence": "While scholars believe many Mesoamerican cities influenced each other, direct evidence of such influence is difficult to ascertain.",
+   "sourceId": "cb-words-in-context-54804e10"
+  },
+  {
+   "word": "asymmetry",
+   "gloss": "lack of balance between the sides",
+   "seen": 1,
+   "sentence": "The way in which individual elements are balanced within a photographic image tends to affect how viewers perceive it: symmetry tends to give the elements equal importance, asymmetry emphasizes differences, and radial balance (organizing the elements around a central point) emphasizes the center over the periphery.",
+   "sourceId": "cb-words-in-context-4830ab87"
+  },
+  {
+   "word": "authoritarian",
+   "gloss": "demanding strict obedience",
+   "seen": 1,
+   "sentence": "Though copies of The Adventures of Indiana Jones in Wenceslas Square in Prague on January 16, 1989\u2014an underground computer game that was created anonymously in 1989 as an act of political protest against the authoritarian regime of what was then Czechoslovakia\u2014were originally distributed ___, the game is now readily available online for anyone to play.",
+   "sourceId": "cb-words-in-context-177ed7dc"
+  },
+  {
+   "word": "benign",
+   "gloss": "harmless; kindly",
+   "seen": 1,
+   "sentence": "In studying the use of external stimuli to reduce the itching sensation caused by an allergic histamine response, Louise Ward and colleagues found that while harmless applications of vibration or warming can provide a temporary distraction, such ___ stimuli actually offer less relief than a stimulus that seems less benign, like a mild electric shock.",
+   "sourceId": "cb-words-in-context-98364791"
+  },
+  {
+   "word": "buoyancy",
+   "gloss": "the tendency to float; cheerfulness",
+   "seen": 1,
+   "sentence": "These plants are extremely ___ to water depth during the \u201cfloating leaf\u201d stage of development, and if the water is too deep, the buoyancy of the young wild-rice plants can literally uproot them from the lake bottom, destroying them.",
+   "sourceId": "cb-words-in-context-01de46bb"
+  },
+  {
+   "word": "canonical",
+   "gloss": "accepted as the standard",
+   "seen": 1,
+   "sentence": "In Habitat Threshold, Chamoru (Chamorro) poet Craig Santos Perez practices what he calls \u201crecycling, \u201d in which he preserves the syntactical and rhetorical structures of canonical poems but replaces their content to evoke current environmental issues.",
+   "sourceId": "cb-words-in-context-be069e38"
+  },
+  {
+   "word": "causal",
+   "gloss": "to do with cause and effect",
+   "seen": 1,
+   "sentence": "on tracking eye movements supports a theory that people envision ___ scenarios when making causal judgments: when subjects were asked to look at two colliding billiard balls and judge whether one caused or prevented the other\u2019s movement through a gate, their eyes looked at where the target ball would have gone if the ball that altered its path did not exist.",
+   "sourceId": "cb-words-in-context-9ff88d6b"
+  },
+  {
+   "word": "centrality",
+   "gloss": "the state of being central",
+   "seen": 1,
+   "sentence": "In Nature Poem (2017), Kumeyaay poet Tommy Pico portrays his ___ the natural world by honoring the centrality of nature within his tribe\u2019s traditional beliefs while simultaneously expressing his distaste for being in wilderness settings himself.",
+   "sourceId": "cb-words-in-context-e0656211"
+  },
+  {
+   "word": "circulated",
+   "gloss": "passed round",
+   "seen": 1,
+   "sentence": "Although the government of the Soviet Union attempted to ___ Georgi Vladimov\u2019s novel Faithful Ruslan, copies of the book circulated in secret among readers in several parts of the country.",
+   "sourceId": "cb-words-in-context-16f2d678"
+  },
+  {
+   "word": "coalesced",
+   "gloss": "came together as one",
+   "seen": 1,
+   "sentence": "One popular theory of the origin of the Moon, the \u201cbig whack, \u201d posits that a protoplanet called Theia collided with Earth, flinging debris into orbit that eventually coalesced into the Moon.",
+   "sourceId": "cb-words-in-context-6c9f1727"
+  },
+  {
+   "word": "cohesive",
+   "gloss": "holding together",
+   "seen": 1,
+   "sentence": "The many elements of subak\u2014terraces, canals, and water temples\u2014 are ___: they are joined together into a single cohesive unit.",
+   "sourceId": "cb-words-in-context-bcd924a5"
+  },
+  {
+   "word": "compensating",
+   "gloss": "making up for",
+   "seen": 1,
+   "sentence": "Charities can mitigate this effect by compensating donors for nuisance costs, but those costs, though variable, are largely ___ donation size, so charities that compensate donors will likely favor attracting a few large donors over many small donors.",
+   "sourceId": "cb-words-in-context-5e57efec"
+  },
+  {
+   "word": "compositional",
+   "gloss": "to do with how a work is arranged",
+   "seen": 1,
+   "sentence": "Mineralogical differences are detectable in samples collected from two locations on the near-Earth asteroid Ryugu, but such differences may not indicate substantial compositional variations in the asteroid.",
+   "sourceId": "cb-words-in-context-bce627d9"
+  },
+  {
+   "word": "conceivable",
+   "gloss": "possible to imagine",
+   "seen": 1,
+   "sentence": "It seemed as if nature had determined to throw every conceivable obstacle in the way of those who should seek to join the two great oceans of the world.",
+   "sourceId": "cb-words-in-context-ba974387"
+  },
+  {
+   "word": "conducive",
+   "gloss": "helping to bring about",
+   "seen": 1,
+   "sentence": "Business researcher Melanie Brucks and colleagues found that remote video conference meetings may be less conducive to brainstorming than in-person meetings are.",
+   "sourceId": "cb-words-in-context-d8d1ecaa"
+  },
+  {
+   "word": "confounding",
+   "gloss": "confusing; upsetting expectations",
+   "seen": 1,
+   "sentence": "While there are several possible reasons for this, one is that practitioners may overlook confounding variables that account for the results they attribute to the interventions in question.",
+   "sourceId": "cb-words-in-context-d5ad34f0"
+  },
+  {
+   "word": "conjecture",
+   "gloss": "a guess from incomplete evidence",
+   "seen": 1,
+   "sentence": "This conjecture informs her interest in future research missions to the moon.",
+   "sourceId": "cb-words-in-context-97ab5669"
+  },
+  {
+   "word": "consequential",
+   "gloss": "important; following as a result",
+   "seen": 1,
+   "sentence": "Whether the reign of a French monarch such as Hugh Capet or Henry I was historically consequential or relatively uneventful, its trajectory was shaped by questions of legitimacy and therefore cannot be understood without a corollary understanding of the factors that allowed the monarch to ___ his right to hold the throne.",
+   "sourceId": "cb-words-in-context-7bc05fa2"
+  },
+  {
+   "word": "conspicuous",
+   "gloss": "easy to notice; standing out",
+   "seen": 1,
+   "sentence": "Political blogs with conspicuous ideological alignments became an integral component of US media in the early 2000s.",
+   "sourceId": "cb-words-in-context-d7807ec8"
+  },
+  {
+   "word": "corollary",
+   "gloss": "something that follows naturally",
+   "seen": 1,
+   "sentence": "Whether the reign of a French monarch such as Hugh Capet or Henry I was historically consequential or relatively uneventful, its trajectory was shaped by questions of legitimacy and therefore cannot be understood without a corollary understanding of the factors that allowed the monarch to ___ his right to hold the throne.",
+   "sourceId": "cb-words-in-context-7bc05fa2"
+  },
+  {
+   "word": "counterintuitive",
+   "gloss": "against what one would expect",
+   "seen": 2,
+   "sentence": "According to Potawatomi ecologist Robin Wall Kimmerer, the Indigenous method of harvesting Hierochloe odorata, or sweetgrass, by snapping the plant off at the root actually ___ wild populations: it may seem counterintuitive, she says, but this method of removal allows new sweetgrass plants to repopulate the space, with an overall increase in number and vigor.",
+   "sourceId": "cb-words-in-context-6d5ddea4"
+  },
+  {
+   "word": "cryptic",
+   "gloss": "mysterious; hard to interpret",
+   "seen": 1,
+   "sentence": "Many critics focus their attention on art that is cryptic or overtly challenging.",
+   "sourceId": "cb-words-in-context-d3ca5d59"
+  },
+  {
+   "word": "culminates",
+   "gloss": "reaches its high point",
+   "seen": 1,
+   "sentence": "Nigerian American author Teju Cole\u2019s ___ his two passions\u2014photography and the written word\u2014culminates in his 2017 book, Blind Spot, which evocatively combines his original photographs from his travels with his poetic prose.",
+   "sourceId": "cb-words-in-context-f8ca5766"
+  },
+  {
+   "word": "curator",
+   "gloss": "one who looks after a collection",
+   "seen": 1,
+   "sentence": "It would be a mistake to ___ the exhibit that artist and curator Joe Baker, who is a member of the Lenape (Delaware) people, has organized at the Brooklyn Public Library.",
+   "sourceId": "cb-words-in-context-dc0bca21"
+  },
+  {
+   "word": "densely",
+   "gloss": "packed closely together",
+   "seen": 1,
+   "sentence": "For this reason, many researchers believe that birds in densely vegetated habitats generally sing at lower frequencies than birds living in comparatively sparse habitats, since dense vegetation tends to ___ the distance that high-frequency sounds can travel.",
+   "sourceId": "cb-words-in-context-d3104a68"
+  },
+  {
+   "word": "depicts",
+   "gloss": "shows or portrays",
+   "seen": 1,
+   "sentence": "A casual description of Scherezade Garc\u00eda\u2019s 2019 mural Blame It on the Bean: The Power of Coffee can make the work seem ___\u2014a painting that is housed in a coffee shop and that depicts three women drinking coffee may not sound particularly ambitious\u2014but in fact the work is a complex, dynamic meditation on gender and the legacy of colonialism that demands serious attention.",
+   "sourceId": "cb-words-in-context-b35e2fdc"
+  },
+  {
+   "word": "derives",
+   "gloss": "gets or comes from",
+   "seen": 1,
+   "sentence": "Cannon derives its power in part from the tension among his ___ influences: classic European portraiture, with its realistic treatment of faces; the American pop art movement, with its vivid colors; and flatstyle, the intertribal painting style that rejects the effect of depth typically achieved through shading and perspective.",
+   "sourceId": "cb-words-in-context-a06c434d"
+  },
+  {
+   "word": "detectable",
+   "gloss": "able to be noticed",
+   "seen": 2,
+   "sentence": "Particle physicists like Ayana Holloway Arce and Aida El-Khadra spend much of their time ___ what is invisible to the naked eye: using sophisticated technology, they closely examine the behavior of subatomic particles, the smallest detectable parts of matter.",
+   "sourceId": "cb-words-in-context-7d84fe2b"
+  },
+  {
+   "word": "deviations",
+   "gloss": "departures from the usual",
+   "seen": 2,
+   "sentence": "Recent measurements of the mass of the W boson (a subatomic particle) were notable not only for the mere fact that the particle\u2019s mass differed from expectations but for the ___ of that difference: the measured mass of the W boson was seven standard deviations higher than predicted by the standard model of particle physics.",
+   "sourceId": "cb-words-in-context-be612a26"
+  },
+  {
+   "word": "devising",
+   "gloss": "thinking up",
+   "seen": 1,
+   "sentence": "Like other tribal nations, the Muscogee (Creek) Nation is self-governing; its National Council generates laws regulating aspects of community life such as land use and healthcare, while the principal chief and cabinet officials ___ those laws by devising policies and administering services in accordance with them.",
+   "sourceId": "cb-words-in-context-f7d58b53"
+  },
+  {
+   "word": "devoid",
+   "gloss": "entirely lacking",
+   "seen": 1,
+   "sentence": "Austin McCoy has argued that historians have tended to ___ rank-and-file workers in analyses of changes in organized labor in the United States in the decades following the Second World War, presenting political, business, and labor leaders as the major actors and ordinary workers as nearly devoid of agency.",
+   "sourceId": "cb-words-in-context-1374a9fa"
+  },
+  {
+   "word": "dialect",
+   "gloss": "a regional form of a language",
+   "seen": 1,
+   "sentence": "A unique dialect, or regional variety, of Spanish is spoken in Puerto Rico.",
+   "sourceId": "cb-words-in-context-a7991da1"
+  },
+  {
+   "word": "dictated",
+   "gloss": "laid down; determined",
+   "seen": 1,
+   "sentence": "Most of the comedies end in marriage, with characters returning to their socially dictated gender roles after previously defying them, but there are some notable exceptions.",
+   "sourceId": "cb-words-in-context-a60b0004"
+  },
+  {
+   "word": "discrepancy",
+   "gloss": "an inconsistency between things",
+   "seen": 1,
+   "sentence": "Given how little ___ there is among scientists regarding the scope of these categories, this discrepancy shouldn\u2019t be surprising: forest researchers regularly dispute one another\u2019s classifications.",
+   "sourceId": "cb-words-in-context-d4e8662d"
+  },
+  {
+   "word": "dispersal",
+   "gloss": "a scattering",
+   "seen": 1,
+   "sentence": "When these animals died out, cucurbits faced extinction in turn, having lost their means of seed dispersal.",
+   "sourceId": "cb-words-in-context-bdab32fc"
+  },
+  {
+   "word": "distaste",
+   "gloss": "mild dislike",
+   "seen": 1,
+   "sentence": "In Nature Poem (2017), Kumeyaay poet Tommy Pico portrays his ___ the natural world by honoring the centrality of nature within his tribe\u2019s traditional beliefs while simultaneously expressing his distaste for being in wilderness settings himself.",
+   "sourceId": "cb-words-in-context-e0656211"
+  },
+  {
+   "word": "divisive",
+   "gloss": "causing disagreement",
+   "seen": 1,
+   "sentence": "One of her most divisive works was an essay questioning the idea of photography as an emerging medium for fine art: in the essay, Eastlake ___ that the value of photographs was informational rather than creative.",
+   "sourceId": "cb-words-in-context-8b46bb51"
+  },
+  {
+   "word": "elicited",
+   "gloss": "drew out a response",
+   "seen": 1,
+   "sentence": "Stephen Hannock\u2019s luminous landscape paintings are appealing to viewers but have elicited little commentary from contemporary critics, a phenomenon that may be due to the very fact that the paintings seem so ___.",
+   "sourceId": "cb-words-in-context-d3ca5d59"
+  },
+  {
+   "word": "eluded",
+   "gloss": "escaped or evaded",
+   "seen": 1,
+   "sentence": "I longed for sleep to obliterate them but it eluded me.",
+   "sourceId": "cb-words-in-context-a0777403"
+  },
+  {
+   "word": "emanate",
+   "gloss": "flow out from a source",
+   "seen": 1,
+   "sentence": "Leka and colleagues found that the Sun\u2019s corona provides an advance indication of solar flares\u2014intense eruptions of electromagnetic radiation that emanate from active regions in the Sun\u2019s photosphere and can interfere with telecommunications on Earth.",
+   "sourceId": "cb-words-in-context-0ed8f24f"
+  },
+  {
+   "word": "emitted",
+   "gloss": "gave off",
+   "seen": 1,
+   "sentence": "On cloudless nights after a daytime rain, Saeed\u2019s father would sometimes bring out the telescope, and the family would sip green tea on their balcony, enjoying a breeze, and take turns to look up at objects whose light, often, had been emitted before any of these three viewers had been born\u2014light from other centuries, only now reaching Earth.",
+   "sourceId": "cb-words-in-context-aa7ae735"
+  },
+  {
+   "word": "enriching",
+   "gloss": "making fuller or better",
+   "seen": 1,
+   "sentence": "In the Indigenous intercropping system known as the Three Sisters, maize, squash, and beans form an ___ web of relations: maize provides the structure on which the bean vines grow; the squash vines cover the soil, discouraging competition from weeds; and the beans aid their two \u201csisters\u201d by enriching the soil with essential nitrogen.",
+   "sourceId": "cb-words-in-context-81a3a607"
+  },
+  {
+   "word": "entice",
+   "gloss": "tempt or attract",
+   "seen": 1,
+   "sentence": "To entice study participants, psychology researchers commonly offer a gift card or other compensation.",
+   "sourceId": "cb-words-in-context-5ccbfe22"
+  },
+  {
+   "word": "envisioned",
+   "gloss": "pictured in the mind",
+   "seen": 1,
+   "sentence": "Over the course of three years, Reiniger and her collaborators painstakingly made more than 250,000 individual images of hand-cut paper silhouettes and repeatedly had to invent entirely new methods and tools to create the special effects Reiniger envisioned.",
+   "sourceId": "cb-words-in-context-af4300b0"
+  },
+  {
+   "word": "epoch",
+   "gloss": "a distinct period of time",
+   "seen": 1,
+   "sentence": "The fossil remains of the individual known as Oase 1, discovered in Romania in 2002, can help paleoanthropologists not only ___ steps in the evolution of hominids but also illuminate the Pleistocene epoch generally, revealing important details about the time in which Oase 1 lived.",
+   "sourceId": "cb-words-in-context-adc8ea28"
+  },
+  {
+   "word": "equanimity",
+   "gloss": "calmness of mind",
+   "seen": 1,
+   "sentence": "The absence of old friends one can endure with equanimity.",
+   "sourceId": "cb-words-in-context-3566120b"
+  },
+  {
+   "word": "erroneous",
+   "gloss": "mistaken",
+   "seen": 1,
+   "sentence": "Investigating whether shared false visual memories\u2014specific but inaccurate and widely held recollections of images such as product logos\u2014are caused by people\u2019s previous ___ incorrect renditions of the images, researchers Deepasri Prasad and Wilma Bainbridge found that, in fact, such memories are often not explained by familiarity with erroneous versions of the images.",
+   "sourceId": "cb-words-in-context-3f753a8e"
+  },
+  {
+   "word": "esteemed",
+   "gloss": "highly respected",
+   "seen": 1,
+   "sentence": "These characteristic works include his esteemed portraits of poet Wendy Cope and soccer player and coach Ryan Griggs.",
+   "sourceId": "cb-words-in-context-d74788e1"
+  },
+  {
+   "word": "evoke",
+   "gloss": "call up; bring to mind",
+   "seen": 1,
+   "sentence": "In Habitat Threshold, Chamoru (Chamorro) poet Craig Santos Perez practices what he calls \u201crecycling, \u201d in which he preserves the syntactical and rhetorical structures of canonical poems but replaces their content to evoke current environmental issues.",
+   "sourceId": "cb-words-in-context-be069e38"
+  },
+  {
+   "word": "exacerbated",
+   "gloss": "made worse",
+   "seen": 1,
+   "sentence": "While some commentators lauded this development, asserting that such blogs had a welcome transparency missing from traditional news, less ___ observers countered that such blogs tended to ideological extremes that exacerbated political polarization to problematic levels.",
+   "sourceId": "cb-words-in-context-d7807ec8"
+  },
+  {
+   "word": "exceeds",
+   "gloss": "goes beyond",
+   "seen": 1,
+   "sentence": "The percentage of US forest land that a 2023 federal report identified as being either mature or old growth exceeds other recent estimates.",
+   "sourceId": "cb-words-in-context-d4e8662d"
+  },
+  {
+   "word": "exemplify",
+   "gloss": "be a typical example of",
+   "seen": 1,
+   "sentence": "Historians argue that Morris\u2019s repudiation of industrialization is ___ the Kelmscott editions\u2019 use of handmade materials and intricate ornamentation reminiscent of medieval manuscripts: these meticulously handcrafted elements exemplify the artistry involved.",
+   "sourceId": "cb-words-in-context-7b4dde72"
+  },
+  {
+   "word": "exhorting",
+   "gloss": "strongly urging",
+   "seen": 1,
+   "sentence": "It was [Marija\u2019s] task to see that all things went in due form, and after the best home traditions; and, flying wildly hither and thither, bowling every one out of the way, and scolding and exhorting all day with her tremendous voice, Marija was too eager to see that others conformed to the proprieties to consider them herself.",
+   "sourceId": "cb-words-in-context-ab1bd603"
+  },
+  {
+   "word": "familial",
+   "gloss": "to do with family",
+   "seen": 1,
+   "sentence": "The familial structure of the black swan (Cygnus atratus) shows tremendous ___: breeding pairs with demonstrated success in rearing cygnets (young swans) have been observed to foster those of less successful pairs, and while rearing by female-male pairs is most common, male-male pairs sometimes rear cygnets too, achieving a significantly higher rate of survival to adulthood than female-male pairs.",
+   "sourceId": "cb-words-in-context-dd19befa"
+  },
+  {
+   "word": "familiarity",
+   "gloss": "close acquaintance with",
+   "seen": 1,
+   "sentence": "Investigating whether shared false visual memories\u2014specific but inaccurate and widely held recollections of images such as product logos\u2014are caused by people\u2019s previous ___ incorrect renditions of the images, researchers Deepasri Prasad and Wilma Bainbridge found that, in fact, such memories are often not explained by familiarity with erroneous versions of the images.",
+   "sourceId": "cb-words-in-context-3f753a8e"
+  },
+  {
+   "word": "forage",
+   "gloss": "search for food",
+   "seen": 1,
+   "sentence": "Some foraging models predict that the distance bees travel when foraging will decline as floral density increases, but biologists Shalene Jha and Claire Kremen showed that bees\u2019 behavior is inconsistent with this prediction if flowers in dense patches are ___: bees will forage beyond patches of low species richness to acquire multiple resource types.",
+   "sourceId": "cb-words-in-context-3d658a5a"
+  },
+  {
+   "word": "forefront",
+   "gloss": "the leading position",
+   "seen": 1,
+   "sentence": "I tried to distract myself with these sights of the ordinary world, but in my mind it was the lines I had been translating and the lines that I had been writing that remained in the forefront.",
+   "sourceId": "cb-words-in-context-a0777403"
+  },
+  {
+   "word": "formless",
+   "gloss": "without definite shape",
+   "seen": 1,
+   "sentence": "[Jay Gatsby] was balancing himself on the dashboard of his car with that resourcefulness of movement that is so peculiarly American\u2014that comes, I suppose, with the absence of lifting work in youth and, even more, with the formless grace of our nervous, sporadic games.",
+   "sourceId": "cb-words-in-context-9aa44886"
+  },
+  {
+   "word": "formulaic",
+   "gloss": "following a set pattern; unoriginal",
+   "seen": 1,
+   "sentence": "Jemisin declines to ___ the conventions of the science fiction genre in which she writes, and she has suggested that her readers appreciate her work precisely because of this willingness to thwart expectations and avoid formulaic plots and themes.",
+   "sourceId": "cb-words-in-context-9c35759f"
+  },
+  {
+   "word": "frail",
+   "gloss": "weak and delicate",
+   "seen": 1,
+   "sentence": "\u201d Now, Love and April, and the gold of your hair, Are all mingled together Like the blending of an exotic dream plant With the fragrant perfume of a strange, frail flower.",
+   "sourceId": "cb-words-in-context-5d48f889"
+  },
+  {
+   "word": "gratification",
+   "gloss": "the satisfying of a desire",
+   "seen": 1,
+   "sentence": "Cuttlefish appear to be surprisingly ___ at exercising self-control: in a 2021 study conducted by behavioral ecologist Alexandra Schnell, these cephalopods routinely demonstrated restraint by delaying gratification, waiting for a favorite treat instead of instantly devouring a readily available meal.",
+   "sourceId": "cb-words-in-context-710799ae"
+  },
+  {
+   "word": "groundbreaking",
+   "gloss": "new and pioneering",
+   "seen": 3,
+   "sentence": "Jenkins recognized and took full advantage of this ___ access to powerful technology to create groundbreaking works of video art, such as Mass of Images (1978).",
+   "sourceId": "cb-words-in-context-e3f05561"
+  },
+  {
+   "word": "handedness",
+   "gloss": "the preference for one hand",
+   "seen": 1,
+   "sentence": "Handedness, a preferential use of either the right or left hand, typically is easy to observe in humans.",
+   "sourceId": "cb-words-in-context-1fa751f1"
+  },
+  {
+   "word": "hoax",
+   "gloss": "a deception",
+   "seen": 1,
+   "sentence": "Historians were unable to ___ the authenticity of the letters, however, and quickly dismissed them as a hoax.",
+   "sourceId": "cb-words-in-context-e41dfaab"
+  },
+  {
+   "word": "hypothesize",
+   "gloss": "propose as a hypothesis",
+   "seen": 1,
+   "sentence": "Given the formation\u2019s greater prevalence among whales known to make deeper dives, some researchers hypothesize that its role isn\u2019t ___; rather, the accessory spleen may actively support diving mechanisms.",
+   "sourceId": "cb-words-in-context-dba9eaf8"
+  },
+  {
+   "word": "illuminate",
+   "gloss": "light up; make clear",
+   "seen": 1,
+   "sentence": "The fossil remains of the individual known as Oase 1, discovered in Romania in 2002, can help paleoanthropologists not only ___ steps in the evolution of hominids but also illuminate the Pleistocene epoch generally, revealing important details about the time in which Oase 1 lived.",
+   "sourceId": "cb-words-in-context-adc8ea28"
+  },
+  {
+   "word": "imbibe",
+   "gloss": "drink in; absorb",
+   "seen": 1,
+   "sentence": "At first [the rose] lay lightly on the surface of the fluid, appearing to imbibe none of its moisture.",
+   "sourceId": "cb-words-in-context-359902ae"
+  },
+  {
+   "word": "inaccessible",
+   "gloss": "impossible to reach",
+   "seen": 2,
+   "sentence": "The equipment from the Apollo Moon landings (1969\u20131972), such as radiation detectors and temperature probes, remains there to this day, but the data from these missions were mostly inaccessible until a recent data-transfer project made them ___.",
+   "sourceId": "cb-words-in-context-b5898291"
+  },
+  {
+   "word": "incomprehensible",
+   "gloss": "impossible to understand",
+   "seen": 1,
+   "sentence": "Her son\u2019s desires were incomprehensible to her, that was all.",
+   "sourceId": "cb-words-in-context-62a18353"
+  },
+  {
+   "word": "inhabiting",
+   "gloss": "living in",
+   "seen": 1,
+   "sentence": "Ancient Inca inhabiting the Andes Mountains used terraces, rows of flattened land with built-in irrigation systems, to grow crops at different altitudes.",
+   "sourceId": "cb-words-in-context-0afb2ac4"
+  },
+  {
+   "word": "insignificant",
+   "gloss": "too small to matter",
+   "seen": 1,
+   "sentence": "That journey across the Isthmus [of Panama], insignificant in distance as it was, was by no means an easy one.",
+   "sourceId": "cb-words-in-context-ba974387"
+  },
+  {
+   "word": "intensified",
+   "gloss": "became stronger",
+   "seen": 1,
+   "sentence": "Individuals tend to be more decisive if the information flow between the regions is intensified, whereas they make choices more slowly when information flow is ___.",
+   "sourceId": "cb-words-in-context-c977cfcf"
+  },
+  {
+   "word": "languid",
+   "gloss": "slow and lacking energy",
+   "seen": 1,
+   "sentence": "Yes, the great cloud was ravelling, discovering here and there a pale and dying sky, and the sun, already down, was manifest in the livid tongues of fire darting towards the zenith, falling and darting again, ever more pale and languid, and doomed no sooner lit to be extinguished.",
+   "sourceId": "cb-words-in-context-7f935017"
+  },
+  {
+   "word": "lauded",
+   "gloss": "praised",
+   "seen": 1,
+   "sentence": "While some commentators lauded this development, asserting that such blogs had a welcome transparency missing from traditional news, less ___ observers countered that such blogs tended to ideological extremes that exacerbated political polarization to problematic levels.",
+   "sourceId": "cb-words-in-context-d7807ec8"
+  },
+  {
+   "word": "legitimize",
+   "gloss": "make acceptable or lawful",
+   "seen": 1,
+   "sentence": "Critics who drew similarities between film and traditional art forms, like drama, could help legitimize film as an art form.",
+   "sourceId": "cb-words-in-context-6e3fdd1a"
+  },
+  {
+   "word": "livid",
+   "gloss": "furious; or discoloured",
+   "seen": 1,
+   "sentence": "Yes, the great cloud was ravelling, discovering here and there a pale and dying sky, and the sun, already down, was manifest in the livid tongues of fire darting towards the zenith, falling and darting again, ever more pale and languid, and doomed no sooner lit to be extinguished.",
+   "sourceId": "cb-words-in-context-7f935017"
+  },
+  {
+   "word": "luminous",
+   "gloss": "giving off light",
+   "seen": 1,
+   "sentence": "Stephen Hannock\u2019s luminous landscape paintings are appealing to viewers but have elicited little commentary from contemporary critics, a phenomenon that may be due to the very fact that the paintings seem so ___.",
+   "sourceId": "cb-words-in-context-d3ca5d59"
+  },
+  {
+   "word": "meticulously",
+   "gloss": "with great attention to detail",
+   "seen": 1,
+   "sentence": "Historians argue that Morris\u2019s repudiation of industrialization is ___ the Kelmscott editions\u2019 use of handmade materials and intricate ornamentation reminiscent of medieval manuscripts: these meticulously handcrafted elements exemplify the artistry involved.",
+   "sourceId": "cb-words-in-context-7b4dde72"
+  },
+  {
+   "word": "mingled",
+   "gloss": "mixed together",
+   "seen": 1,
+   "sentence": "\u201d Now, Love and April, and the gold of your hair, Are all mingled together Like the blending of an exotic dream plant With the fragrant perfume of a strange, frail flower.",
+   "sourceId": "cb-words-in-context-5d48f889"
+  },
+  {
+   "word": "miraculously",
+   "gloss": "as if by a miracle",
+   "seen": 1,
+   "sentence": "The water was so clear that it was almost invisible, and when we floated slowly out over the plants and fishes, we seemed to be miraculously sustained in the air while exploring a veritable fairyland.",
+   "sourceId": "cb-words-in-context-37219ba2"
+  },
+  {
+   "word": "misconception",
+   "gloss": "a mistaken belief",
+   "seen": 1,
+   "sentence": "Disproving the common misconception of Native art as ___, the painters whose work appears in the collection at the National Museum of the American Indian employ a range of styles.",
+   "sourceId": "cb-words-in-context-85083d4d"
+  },
+  {
+   "word": "multitude",
+   "gloss": "a great number",
+   "seen": 1,
+   "sentence": "The multitude of Paris seems to be dressed in blue every day but Sunday, when, for the most part, they put on an unbelievably festive black.",
+   "sourceId": "cb-words-in-context-be94c9fc"
+  },
+  {
+   "word": "myopic",
+   "gloss": "short-sighted, in sight or in outlook",
+   "seen": 1,
+   "sentence": "Despite stated claims of global relevance, much major research on income inequality performed in the 2010s suffered from a myopic focus on a few countries in North America and Western Europe, partly due to limited data availability.",
+   "sourceId": "cb-words-in-context-83fd3cf4"
+  },
+  {
+   "word": "nuances",
+   "gloss": "fine shades of meaning",
+   "seen": 1,
+   "sentence": "Because he paid close attention to all the details of his Harlem neighborhood, Lawrence\u2019s artwork captured nuances in the beauty and vitality of the Black experience during the Harlem Renaissance and the Great Migration.",
+   "sourceId": "cb-words-in-context-49bbe4d7"
+  },
+  {
+   "word": "nuisance",
+   "gloss": "an annoyance",
+   "seen": 1,
+   "sentence": "Economist Marco Castillo and colleagues showed that nuisance costs\u2014the time and effort people must spend to make donations\u2014reduce charitable giving.",
+   "sourceId": "cb-words-in-context-5e57efec"
+  },
+  {
+   "word": "obliterate",
+   "gloss": "wipe out completely",
+   "seen": 1,
+   "sentence": "I longed for sleep to obliterate them but it eluded me.",
+   "sourceId": "cb-words-in-context-a0777403"
+  },
+  {
+   "word": "ornamentation",
+   "gloss": "decoration",
+   "seen": 1,
+   "sentence": "Historians argue that Morris\u2019s repudiation of industrialization is ___ the Kelmscott editions\u2019 use of handmade materials and intricate ornamentation reminiscent of medieval manuscripts: these meticulously handcrafted elements exemplify the artistry involved.",
+   "sourceId": "cb-words-in-context-7b4dde72"
+  },
+  {
+   "word": "ostensibly",
+   "gloss": "apparently, though perhaps not really",
+   "seen": 1,
+   "sentence": "The form of these poems is thus ___ to their meaning, inviting readers to consider how climate change alters ostensibly familiar experiences.",
+   "sourceId": "cb-words-in-context-be069e38"
+  },
+  {
+   "word": "painstakingly",
+   "gloss": "with great care and effort",
+   "seen": 1,
+   "sentence": "Over the course of three years, Reiniger and her collaborators painstakingly made more than 250,000 individual images of hand-cut paper silhouettes and repeatedly had to invent entirely new methods and tools to create the special effects Reiniger envisioned.",
+   "sourceId": "cb-words-in-context-af4300b0"
+  },
+  {
+   "word": "participatory",
+   "gloss": "involving people taking part",
+   "seen": 1,
+   "sentence": "Following the principles of community-based participatory research, tribal nations and research institutions are equal partners in health studies conducted on reservations.",
+   "sourceId": "cb-words-in-context-4d1a9c0d"
+  },
+  {
+   "word": "passivity",
+   "gloss": "not acting; accepting what happens",
+   "seen": 1,
+   "sentence": "Many of the 8.5 percent of subscribers who canceled their food and beverage subscriptions in January 2022 had stopped valuing their subscriptions long before then, but sellers profited from those customers\u2019 passivity in the interim.",
+   "sourceId": "cb-words-in-context-1eeb9bb8"
+  },
+  {
+   "word": "peculiarly",
+   "gloss": "strangely; or distinctively",
+   "seen": 1,
+   "sentence": "[Jay Gatsby] was balancing himself on the dashboard of his car with that resourcefulness of movement that is so peculiarly American\u2014that comes, I suppose, with the absence of lifting work in youth and, even more, with the formless grace of our nervous, sporadic games.",
+   "sourceId": "cb-words-in-context-9aa44886"
+  },
+  {
+   "word": "penetrate",
+   "gloss": "pass into or through",
+   "seen": 1,
+   "sentence": "Readers who manage to penetrate Hegel\u2019s frustratingly dense prose often find that his thrillingly original and profound ideas wind up shaping their own thinking.",
+   "sourceId": "cb-words-in-context-a5e747f0"
+  },
+  {
+   "word": "periodically",
+   "gloss": "from time to time",
+   "seen": 1,
+   "sentence": "Critics have asserted that fine art and fashion rarely ___ in a world where artists create timeless works for exhibition and designers periodically produce new styles for the public to buy.",
+   "sourceId": "cb-words-in-context-aaa3ee7c"
+  },
+  {
+   "word": "periphery",
+   "gloss": "the outer edge",
+   "seen": 1,
+   "sentence": "The way in which individual elements are balanced within a photographic image tends to affect how viewers perceive it: symmetry tends to give the elements equal importance, asymmetry emphasizes differences, and radial balance (organizing the elements around a central point) emphasizes the center over the periphery.",
+   "sourceId": "cb-words-in-context-4830ab87"
+  },
+  {
+   "word": "permissive",
+   "gloss": "allowing much freedom",
+   "seen": 1,
+   "sentence": "Eighteenth-century historian Edward Gibbon thought the only character defect of the Roman emperor Marcus Aurelius was his mild temperament \u2014though the emperor was widely considered virtuous, his overly permissive nature led him to ___ the vices of those who surrounded him.",
+   "sourceId": "cb-words-in-context-2e8ab360"
+  },
+  {
+   "word": "pinpoint",
+   "gloss": "locate exactly",
+   "seen": 1,
+   "sentence": "Researchers have struggled to pinpoint specific causes for hiccups, which happen when a person\u2019s diaphragm contracts ___.",
+   "sourceId": "cb-words-in-context-f6d1f735"
+  },
+  {
+   "word": "plethora",
+   "gloss": "an excess; a great many",
+   "seen": 1,
+   "sentence": "Archaeologists have identified a plethora of beads fashioned from Tritia gibbosula shells in many Middle Stone Age (MSA) sites across western North Africa, including El Mnasra Cave, Morocco.",
+   "sourceId": "cb-words-in-context-bce4d106"
+  },
+  {
+   "word": "posits",
+   "gloss": "puts forward as true",
+   "seen": 1,
+   "sentence": "One popular theory of the origin of the Moon, the \u201cbig whack, \u201d posits that a protoplanet called Theia collided with Earth, flinging debris into orbit that eventually coalesced into the Moon.",
+   "sourceId": "cb-words-in-context-6c9f1727"
+  },
+  {
+   "word": "potency",
+   "gloss": "strength or power",
+   "seen": 1,
+   "sentence": "M\u00f4nica Lopes-Ferreira and others at Brazil\u2019s Butantan Institute are studying the freshwater stingray species Potamotrygon rex to determine whether biological characteristics such as the rays\u2019 age and sex have ___ effect on the toxicity of their venom\u2014that is, to see if differences in these traits are associated with considerable variations in venom potency.",
+   "sourceId": "cb-words-in-context-daaed806"
+  },
+  {
+   "word": "preclude",
+   "gloss": "make impossible; rule out",
+   "seen": 1,
+   "sentence": "Detailed statistical analysis helped preclude claims of the event\u2019s ___, confirming the signal at a confidence level of over 99%.",
+   "sourceId": "cb-words-in-context-6017ae31"
+  },
+  {
+   "word": "preferential",
+   "gloss": "giving an advantage to some",
+   "seen": 1,
+   "sentence": "Handedness, a preferential use of either the right or left hand, typically is easy to observe in humans.",
+   "sourceId": "cb-words-in-context-1fa751f1"
+  },
+  {
+   "word": "probes",
+   "gloss": "investigates; or instruments that explore",
+   "seen": 1,
+   "sentence": "The equipment from the Apollo Moon landings (1969\u20131972), such as radiation detectors and temperature probes, remains there to this day, but the data from these missions were mostly inaccessible until a recent data-transfer project made them ___.",
+   "sourceId": "cb-words-in-context-b5898291"
+  },
+  {
+   "word": "proprieties",
+   "gloss": "the rules of correct behaviour",
+   "seen": 1,
+   "sentence": "It was [Marija\u2019s] task to see that all things went in due form, and after the best home traditions; and, flying wildly hither and thither, bowling every one out of the way, and scolding and exhorting all day with her tremendous voice, Marija was too eager to see that others conformed to the proprieties to consider them herself.",
+   "sourceId": "cb-words-in-context-ab1bd603"
+  },
+  {
+   "word": "punctilious",
+   "gloss": "exact about the details of conduct",
+   "seen": 1,
+   "sentence": "This quality was continually breaking through his punctilious manner in the shape of restlessness.",
+   "sourceId": "cb-words-in-context-9aa44886"
+  },
+  {
+   "word": "rambling",
+   "gloss": "wandering, without clear direction",
+   "seen": 1,
+   "sentence": "Brooke] had travelled in his younger years, and was held in this part of the country to have contracted a too rambling habit of mind.",
+   "sourceId": "cb-words-in-context-e459076b"
+  },
+  {
+   "word": "randomized",
+   "gloss": "put into random order",
+   "seen": 1,
+   "sentence": "The results of randomized clinical trials testing the efficacy of common medical interventions sometimes fail to ___ conclusions that practitioners reach based on their real-world observations of patients.",
+   "sourceId": "cb-words-in-context-d5ad34f0"
+  },
+  {
+   "word": "recollections",
+   "gloss": "things remembered",
+   "seen": 1,
+   "sentence": "Investigating whether shared false visual memories\u2014specific but inaccurate and widely held recollections of images such as product logos\u2014are caused by people\u2019s previous ___ incorrect renditions of the images, researchers Deepasri Prasad and Wilma Bainbridge found that, in fact, such memories are often not explained by familiarity with erroneous versions of the images.",
+   "sourceId": "cb-words-in-context-3f753a8e"
+  },
+  {
+   "word": "reconcile",
+   "gloss": "bring into agreement",
+   "seen": 1,
+   "sentence": "[John] had on several occasions attempted to reconcile his mother to the notion, but found it a difficult task.",
+   "sourceId": "cb-words-in-context-62a18353"
+  },
+  {
+   "word": "relocation",
+   "gloss": "a move to a new place",
+   "seen": 1,
+   "sentence": "The migration\u2019s obligate nature is why diadromous fish can be ___ those that are merely euryhaline (able to tolerate high salinity): the euryhaline blackchin tilapia can survive high salinity, but its life cycle does not involve relocation to a different biome, as does that of the diadromous wild salmon.",
+   "sourceId": "cb-words-in-context-7afb470b"
+  },
+  {
+   "word": "reluctance",
+   "gloss": "unwillingness",
+   "seen": 1,
+   "sentence": "There was no hint of disapproval in her reserve; I merely felt in her an insurmountable reluctance to speak of him.",
+   "sourceId": "cb-words-in-context-6557f7fc"
+  },
+  {
+   "word": "repudiation",
+   "gloss": "a firm rejection",
+   "seen": 1,
+   "sentence": "Historians argue that Morris\u2019s repudiation of industrialization is ___ the Kelmscott editions\u2019 use of handmade materials and intricate ornamentation reminiscent of medieval manuscripts: these meticulously handcrafted elements exemplify the artistry involved.",
+   "sourceId": "cb-words-in-context-7b4dde72"
+  },
+  {
+   "word": "resemblance",
+   "gloss": "likeness",
+   "seen": 2,
+   "sentence": "Forrest\u2019s novel Divine Days contains a long passage in tribute to Faulkner that is a perfect ___ of Faulkner\u2019s style: anyone familiar with Faulkner\u2019s writing would see the resemblance.",
+   "sourceId": "cb-words-in-context-7a327791"
+  },
+  {
+   "word": "resourcefulness",
+   "gloss": "skill at finding ways round problems",
+   "seen": 1,
+   "sentence": "[Jay Gatsby] was balancing himself on the dashboard of his car with that resourcefulness of movement that is so peculiarly American\u2014that comes, I suppose, with the absence of lifting work in youth and, even more, with the formless grace of our nervous, sporadic games.",
+   "sourceId": "cb-words-in-context-9aa44886"
+  },
+  {
+   "word": "restive",
+   "gloss": "restless and hard to control",
+   "seen": 1,
+   "sentence": "The trees in their spring beauty sent through her restive mind a sharp thrill of pleasure.",
+   "sourceId": "cb-words-in-context-9ccf463e"
+  },
+  {
+   "word": "restlessness",
+   "gloss": "inability to settle",
+   "seen": 1,
+   "sentence": "This quality was continually breaking through his punctilious manner in the shape of restlessness.",
+   "sourceId": "cb-words-in-context-9aa44886"
+  },
+  {
+   "word": "reticent",
+   "gloss": "reserved; unwilling to speak",
+   "seen": 1,
+   "sentence": "Her mind was a store-house of innocuous anecdote and any question about her acquaintances brought forth a volume of detail; but on the subject of Ethan Frome I found her unexpectedly reticent.",
+   "sourceId": "cb-words-in-context-6557f7fc"
+  },
+  {
+   "word": "reviving",
+   "gloss": "bringing back to life or use",
+   "seen": 1,
+   "sentence": "The crushed and dried petals stirred and assumed a deepening tinge of crimson, as if the flower were reviving from a deathlike slumber.",
+   "sourceId": "cb-words-in-context-359902ae"
+  },
+  {
+   "word": "rhetorical",
+   "gloss": "to do with persuasive language",
+   "seen": 1,
+   "sentence": "In Habitat Threshold, Chamoru (Chamorro) poet Craig Santos Perez practices what he calls \u201crecycling, \u201d in which he preserves the syntactical and rhetorical structures of canonical poems but replaces their content to evoke current environmental issues.",
+   "sourceId": "cb-words-in-context-be069e38"
+  },
+  {
+   "word": "secondhand",
+   "gloss": "not direct; had from another",
+   "seen": 1,
+   "sentence": "The fashion resale market, in which consumers purchase secondhand clothing from stores and online sellers, generated nearly $30 billion globally in 2019.",
+   "sourceId": "cb-words-in-context-3118ca93"
+  },
+  {
+   "word": "seductive",
+   "gloss": "temptingly attractive",
+   "seen": 1,
+   "sentence": "Seductive, charming, and beckoning as cities were, they had not this easy unhuman loveliness.",
+   "sourceId": "cb-words-in-context-9ccf463e"
+  },
+  {
+   "word": "self-effacement",
+   "gloss": "keeping oneself out of view",
+   "seen": 1,
+   "sentence": "Johnson\u2019s self-effacement diverged from the editorial stances of W.E.B.",
+   "sourceId": "cb-words-in-context-22a41819"
+  },
+  {
+   "word": "shortcoming",
+   "gloss": "a failing or defect",
+   "seen": 1,
+   "sentence": "Researchers would later ___ this shortcoming after gaining new access to banking records located in nations in Africa, such as Tunisia, and Eastern Europe, such as Hungary.",
+   "sourceId": "cb-words-in-context-83fd3cf4"
+  },
+  {
+   "word": "shroud",
+   "gloss": "a covering that hides",
+   "seen": 1,
+   "sentence": "And having cleared the ramparts I had to confess the sky was clearing, prior to its winding in the other shroud, night.",
+   "sourceId": "cb-words-in-context-7f935017"
+  },
+  {
+   "word": "skepticism",
+   "gloss": "doubt about what is claimed",
+   "seen": 1,
+   "sentence": "Archaeologist Helle Vandkilde and colleagues recently provided radiocarbon dates for the helmets, and their findings ___ scholars\u2019 skepticism: the helmets date to the Nordic Bronze Age, centuries before the Vikings existed.",
+   "sourceId": "cb-words-in-context-428cd2c1"
+  },
+  {
+   "word": "slang",
+   "gloss": "very informal language",
+   "seen": 1,
+   "sentence": "Seminole/Muscogee director Sterlin Harjo ___ television\u2019s tendency to situate Native characters in the distant past: this rejection is evident in his series Reservation Dogs, which revolves around teenagers who dress in contemporary styles and whose dialogue is laced with current slang.",
+   "sourceId": "cb-words-in-context-93665100"
+  },
+  {
+   "word": "slumber",
+   "gloss": "sleep",
+   "seen": 1,
+   "sentence": "The crushed and dried petals stirred and assumed a deepening tinge of crimson, as if the flower were reviving from a deathlike slumber.",
+   "sourceId": "cb-words-in-context-359902ae"
+  },
+  {
+   "word": "solidified",
+   "gloss": "made or became firm",
+   "seen": 1,
+   "sentence": "The company further solidified its ___ in rail access to the state\u2019s Pacific coast when it completed the Sunset Route in 1883: running from Louisiana to Southern California, the route established the first transcontinental rail line across the southern United States.",
+   "sourceId": "cb-words-in-context-afd48140"
+  },
+  {
+   "word": "sparse",
+   "gloss": "thinly spread; scanty",
+   "seen": 1,
+   "sentence": "For this reason, many researchers believe that birds in densely vegetated habitats generally sing at lower frequencies than birds living in comparatively sparse habitats, since dense vegetation tends to ___ the distance that high-frequency sounds can travel.",
+   "sourceId": "cb-words-in-context-d3104a68"
+  },
+  {
+   "word": "sporadic",
+   "gloss": "happening at irregular intervals",
+   "seen": 1,
+   "sentence": "[Jay Gatsby] was balancing himself on the dashboard of his car with that resourcefulness of movement that is so peculiarly American\u2014that comes, I suppose, with the absence of lifting work in youth and, even more, with the formless grace of our nervous, sporadic games.",
+   "sourceId": "cb-words-in-context-9aa44886"
+  },
+  {
+   "word": "spurred",
+   "gloss": "prompted into action",
+   "seen": 1,
+   "sentence": "Indeed, from Jules Verne\u2019s 1865 novel From the Earth to the Moon inspiring developments in aerospace engineering to the television show Star Trek sparking the design of the ancestor of today\u2019s smartphones, these narratives have spurred many actual innovations.",
+   "sourceId": "cb-words-in-context-dd0aada1"
+  },
+  {
+   "word": "stalwart",
+   "gloss": "loyal and dependable",
+   "seen": 1,
+   "sentence": "At five-thirty the old Panhandle bridge, supported by massive sandstone pillars, stalwart, as when erected fifty years before to serve a generation now passed behind the portals of life, had become a spectral outline against the sky.",
+   "sourceId": "cb-words-in-context-e3ffb854"
+  },
+  {
+   "word": "stemmed",
+   "gloss": "originated from",
+   "seen": 1,
+   "sentence": "When Mexican-American archaeologist Zelia Maria Magdalena Nuttall published her 1886 research paper on sculptures found at the ancient Indigenous city of Teotihuacan in present-day Mexico, other researchers readily ___ her work as groundbreaking; this recognition stemmed from her convincing demonstration that the sculptures were much older than had previously been thought.",
+   "sourceId": "cb-words-in-context-84a7fbca"
+  },
+  {
+   "word": "sterile",
+   "gloss": "barren; producing nothing",
+   "seen": 1,
+   "sentence": "From the sterile soil no ray Of hope in a blade of green, Nor sheltering roof is seen\u2014 Though the skies are heavy and gray.",
+   "sourceId": "cb-words-in-context-6cf906fc"
+  },
+  {
+   "word": "stimuli",
+   "gloss": "things that provoke a reaction",
+   "seen": 2,
+   "sentence": "In studying the use of external stimuli to reduce the itching sensation caused by an allergic histamine response, Louise Ward and colleagues found that while harmless applications of vibration or warming can provide a temporary distraction, such ___ stimuli actually offer less relief than a stimulus that seems less benign, like a mild electric shock.",
+   "sourceId": "cb-words-in-context-98364791"
+  },
+  {
+   "word": "subtly",
+   "gloss": "in a fine, hard-to-notice way",
+   "seen": 1,
+   "sentence": "Everything Osmond did was pose\u2014pose so subtly considered that if one were not on the lookout one mistook it for impulse.",
+   "sourceId": "cb-words-in-context-3bd32343"
+  },
+  {
+   "word": "successors",
+   "gloss": "those who come after",
+   "seen": 1,
+   "sentence": "Barring major archaeological discoveries, we are unlikely to ever have ___ account of ancient Egypt under the female pharaoh Hatshepsut, as much of the evidence of her reign was deliberately destroyed by her successors.",
+   "sourceId": "cb-words-in-context-0462dac3"
+  },
+  {
+   "word": "surging",
+   "gloss": "rushing forward",
+   "seen": 1,
+   "sentence": "\u201d It is summer, glorious, deep-toned summer, The very crown of nature\u2019s changing year When all her surging life is at its full.",
+   "sourceId": "cb-words-in-context-b11bb2a3"
+  },
+  {
+   "word": "symbiotic",
+   "gloss": "living together to mutual benefit",
+   "seen": 1,
+   "sentence": "In habitats with limited nutrients, certain fungus species grow on the roots of trees, engaging in mutually beneficial relationships known as ectomycorrhizae: in this symbiotic exchange, the tree provides the fungus with carbon, a nutrient necessary for both species, and the fungus ___ by enhancing the tree\u2019s ability to absorb nitrogen, another key nutrient, from the soil.",
+   "sourceId": "cb-words-in-context-1ad04ea0"
+  },
+  {
+   "word": "symmetry",
+   "gloss": "balance between the sides",
+   "seen": 1,
+   "sentence": "The way in which individual elements are balanced within a photographic image tends to affect how viewers perceive it: symmetry tends to give the elements equal importance, asymmetry emphasizes differences, and radial balance (organizing the elements around a central point) emphasizes the center over the periphery.",
+   "sourceId": "cb-words-in-context-4830ab87"
+  },
+  {
+   "word": "syntax",
+   "gloss": "how words are arranged into sentences",
+   "seen": 1,
+   "sentence": "Due to their often strange images, highly experimental syntax, and opaque subject matter, many of John Ashbery\u2019s poems can be quite difficult to ___ and thus are the object of heated debate among scholars.",
+   "sourceId": "cb-words-in-context-83687083"
+  },
+  {
+   "word": "temperament",
+   "gloss": "a person's usual nature",
+   "seen": 1,
+   "sentence": "Eighteenth-century historian Edward Gibbon thought the only character defect of the Roman emperor Marcus Aurelius was his mild temperament \u2014though the emperor was widely considered virtuous, his overly permissive nature led him to ___ the vices of those who surrounded him.",
+   "sourceId": "cb-words-in-context-2e8ab360"
+  },
+  {
+   "word": "thronged",
+   "gloss": "crowded",
+   "seen": 1,
+   "sentence": "In the 2010s, the price of pop music cassette tapes from the 1980s and 1990s rose dramatically, which had the counterintuitive effect of ___ demand: buyers who hadn\u2019t previously wanted to purchase vintage cassettes thronged the market, believing prices would continue to rise and the tapes could be resold later at a profit.",
+   "sourceId": "cb-words-in-context-4b54bbf0"
+  },
+  {
+   "word": "thwart",
+   "gloss": "prevent; frustrate",
+   "seen": 1,
+   "sentence": "Jemisin declines to ___ the conventions of the science fiction genre in which she writes, and she has suggested that her readers appreciate her work precisely because of this willingness to thwart expectations and avoid formulaic plots and themes.",
+   "sourceId": "cb-words-in-context-9c35759f"
+  },
+  {
+   "word": "timeless",
+   "gloss": "unaffected by the passing of time",
+   "seen": 1,
+   "sentence": "Critics have asserted that fine art and fashion rarely ___ in a world where artists create timeless works for exhibition and designers periodically produce new styles for the public to buy.",
+   "sourceId": "cb-words-in-context-aaa3ee7c"
+  },
+  {
+   "word": "tinge",
+   "gloss": "a slight trace of colour or feeling",
+   "seen": 1,
+   "sentence": "The crushed and dried petals stirred and assumed a deepening tinge of crimson, as if the flower were reviving from a deathlike slumber.",
+   "sourceId": "cb-words-in-context-359902ae"
+  },
+  {
+   "word": "toxicity",
+   "gloss": "how poisonous something is",
+   "seen": 1,
+   "sentence": "M\u00f4nica Lopes-Ferreira and others at Brazil\u2019s Butantan Institute are studying the freshwater stingray species Potamotrygon rex to determine whether biological characteristics such as the rays\u2019 age and sex have ___ effect on the toxicity of their venom\u2014that is, to see if differences in these traits are associated with considerable variations in venom potency.",
+   "sourceId": "cb-words-in-context-daaed806"
+  },
+  {
+   "word": "tropes",
+   "gloss": "recurring themes or devices",
+   "seen": 1,
+   "sentence": "Set in a world where science fiction tropes exist as everyday realities, Charles Yu\u2019s 2010 novel How to Live Safely in a Science Fictional Universe traces a time traveler\u2019s quest to find his father.",
+   "sourceId": "cb-words-in-context-e56b66e5"
+  },
+  {
+   "word": "tutelage",
+   "gloss": "instruction or guardianship",
+   "seen": 1,
+   "sentence": "These variations suggest that the work may be that of a student under Vermeer\u2019s tutelage\u2014 potentially ___ our understanding of Vermeer as a solitary artist.",
+   "sourceId": "cb-words-in-context-c14daa3c"
+  },
+  {
+   "word": "unbearable",
+   "gloss": "impossible to endure",
+   "seen": 1,
+   "sentence": "But even a momentary separation from anyone to whom one has just been introduced is almost unbearable.",
+   "sourceId": "cb-words-in-context-3566120b"
+  },
+  {
+   "word": "undercut",
+   "gloss": "weaken from below",
+   "seen": 1,
+   "sentence": "However, this practice may undercut the applicability of the study\u2019s results: people who join a study in response to ___ may differ in important ways from a representative sample of the population of interest.",
+   "sourceId": "cb-words-in-context-5ccbfe22"
+  },
+  {
+   "word": "undermined",
+   "gloss": "weakened gradually",
+   "seen": 1,
+   "sentence": "While recent scholarship has undermined claims that the works of twelfth-century Islamic philosopher Ibn Rushd were ___ other Muslim philosophers of his time, it is indisputable that his location in the Muslim-ruled area of what is now Spain meant that his works were primarily available thousands of miles west of the era\u2019s center of Islamic thought.",
+   "sourceId": "cb-words-in-context-1455b754"
+  },
+  {
+   "word": "unearthed",
+   "gloss": "dug up; brought to light",
+   "seen": 1,
+   "sentence": "However, recent excavations in a sector of Tikal (Guatemala) unearthed a citadel that shows ___ Teotihuac\u00e1n (Mexico) architecture\u2014including a near replica of a famed Teotihuac\u00e1n temple\u2014providing tangible evidence of outside influence in portions of Tikal.",
+   "sourceId": "cb-words-in-context-54804e10"
+  },
+  {
+   "word": "uneventful",
+   "gloss": "without incident",
+   "seen": 1,
+   "sentence": "Whether the reign of a French monarch such as Hugh Capet or Henry I was historically consequential or relatively uneventful, its trajectory was shaped by questions of legitimacy and therefore cannot be understood without a corollary understanding of the factors that allowed the monarch to ___ his right to hold the throne.",
+   "sourceId": "cb-words-in-context-7bc05fa2"
+  },
+  {
+   "word": "unorthodox",
+   "gloss": "not conventional",
+   "seen": 1,
+   "sentence": "So unorthodox was Klein\u2019s work that he had difficulty finding a publisher for his now-iconic 1956 photo book Life is Good & Good for You in New York.",
+   "sourceId": "cb-words-in-context-aad56f2b"
+  },
+  {
+   "word": "unrelenting",
+   "gloss": "never easing off",
+   "seen": 1,
+   "sentence": "I was loud and unrelenting.",
+   "sourceId": "cb-words-in-context-1695391a"
+  },
+  {
+   "word": "unrestrained",
+   "gloss": "not held back",
+   "seen": 1,
+   "sentence": "My soul had left its body to lose itself in the wild unrestrained beauty around me\u2014from where it came\u2014and only left a trembling suggestion of its existence within me.",
+   "sourceId": "cb-words-in-context-c2c26e20"
+  },
+  {
+   "word": "uproot",
+   "gloss": "pull up by the roots; displace",
+   "seen": 1,
+   "sentence": "These plants are extremely ___ to water depth during the \u201cfloating leaf\u201d stage of development, and if the water is too deep, the buoyancy of the young wild-rice plants can literally uproot them from the lake bottom, destroying them.",
+   "sourceId": "cb-words-in-context-01de46bb"
+  },
+  {
+   "word": "vested",
+   "gloss": "firmly held, as an interest is",
+   "seen": 1,
+   "sentence": "During film\u2019s early years, those who worked in the industry had a vested interest in convincing the public to embrace the new medium.",
+   "sourceId": "cb-words-in-context-6e3fdd1a"
+  },
+  {
+   "word": "vigor",
+   "gloss": "strength and energy",
+   "seen": 1,
+   "sentence": "According to Potawatomi ecologist Robin Wall Kimmerer, the Indigenous method of harvesting Hierochloe odorata, or sweetgrass, by snapping the plant off at the root actually ___ wild populations: it may seem counterintuitive, she says, but this method of removal allows new sweetgrass plants to repopulate the space, with an overall increase in number and vigor.",
+   "sourceId": "cb-words-in-context-6d5ddea4"
+  },
+  {
+   "word": "virtuous",
+   "gloss": "morally good",
+   "seen": 1,
+   "sentence": "Eighteenth-century historian Edward Gibbon thought the only character defect of the Roman emperor Marcus Aurelius was his mild temperament \u2014though the emperor was widely considered virtuous, his overly permissive nature led him to ___ the vices of those who surrounded him.",
+   "sourceId": "cb-words-in-context-2e8ab360"
+  },
+  {
+   "word": "vitality",
+   "gloss": "liveliness; life force",
+   "seen": 1,
+   "sentence": "Because he paid close attention to all the details of his Harlem neighborhood, Lawrence\u2019s artwork captured nuances in the beauty and vitality of the Black experience during the Harlem Renaissance and the Great Migration.",
+   "sourceId": "cb-words-in-context-49bbe4d7"
+  },
+  {
+   "word": "vividly",
+   "gloss": "with sharp clarity",
+   "seen": 1,
+   "sentence": "Osage Nation citizen Randy Tinker-Smith produced and directed the ballet Wahzhazhe, which vividly chronicles Osage history and culture.",
+   "sourceId": "cb-words-in-context-9d73c9eb"
+  },
+  {
+   "word": "zenith",
+   "gloss": "the highest point",
+   "seen": 1,
+   "sentence": "Yes, the great cloud was ravelling, discovering here and there a pale and dying sky, and the sun, already down, was manifest in the livid tongues of fire darting towards the zenith, falling and darting again, ever more pale and languid, and doomed no sooner lit to be extinguished.",
+   "sourceId": "cb-words-in-context-7f935017"
+  }
+ ]
+}

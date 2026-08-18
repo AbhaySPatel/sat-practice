@@ -1076,6 +1076,34 @@ function setMarkup(el, markup) {
   el.innerHTML = markup || '';
 }
 
+// Verse without a blockquote.
+//
+// Most poems arrive from the API wrapped in one, and the stylesheet closes the
+// lines up inside it. Four do not: the API sends them as a run of bare <p>, one
+// per line, which the passage's paragraph rule then sets 12px apart -- a sonnet
+// rendered as fourteen paragraphs. They are recognisable without guessing at the
+// text: an opening line that names a poem, followed by four or more short
+// paragraphs and no blockquote of their own. Marking the block here rather than
+// rewriting the bank keeps the data exactly as College Board sent it, and means
+// a poem restored tomorrow is handled without another migration.
+const VERSE_INTRO = /\b(poem|sonnet|stanza|verse)\b/i;
+
+function markVerse(stem) {
+  stem.classList.remove('is-verse');
+  if (stem.querySelector('blockquote')) return;
+  const paras = [...stem.children].filter((el) => el.tagName === 'P');
+  if (paras.length < 5) return;
+  if (!VERSE_INTRO.test(paras[0].textContent || '')) return;
+  // Verse lines are short; prose paragraphs that merely follow a mention of a
+  // poem are not. 120 rather than 90 because Whitman's "Calamus 24" runs to 107
+  // characters a line and is unmistakably verse -- a prose paragraph in this bank
+  // is several hundred, so there is a wide gap to sit in.
+  const lines = paras.slice(1);
+  const shortish = lines.filter((el) => (el.textContent || '').trim().length <= 120);
+  if (shortish.length < lines.length * 0.8) return;
+  stem.classList.add('is-verse');
+}
+
 function renderMathStem(question) {
   passageEl.textContent = '';
   passageEl.hidden = true;
@@ -1124,6 +1152,7 @@ function renderPassage(question, showSignal) {
     passageEl.hidden = true;
     mathStemEl.hidden = false;
     setMarkup(mathStemEl, question.passageHtml);
+    markVerse(mathStemEl);
     // These charts carry a greyscale -- #CDCDCD against #444444 -- and that grey
     // IS the legend, telling one data series from the other. On the dark card the
     // dark half disappears, and remapping the greys would merge two series into
@@ -1173,11 +1202,21 @@ function renderPassage(question, showSignal) {
   appendText(passageEl, after, !inBefore ? signal : null);
 }
 
-function fillBlank(text) {
+// Called only from reveal, so the answer is already on screen and putting it in
+// the sentence gives nothing away. `corrected` is true when the word shown is not
+// the one he picked -- the blank then reads as the correction it is, rather than
+// as a record of his choice.
+function fillBlank(text, corrected, chose) {
   const blank = document.getElementById('passageBlank');
   if (!blank) return;
   blank.textContent = text;
   blank.classList.add('filled');
+  blank.classList.toggle('is-corrected', Boolean(corrected));
+  if (corrected && chose) {
+    blank.title = `You chose "${chose}"`;
+  } else {
+    blank.removeAttribute('title');
+  }
 }
 
 // --- How long this question is taking -------------------------------------
@@ -2671,7 +2710,13 @@ function reveal(selectedIndex) {
   } else {
     // Re-render with the signal phrase marked, now that giving it away costs nothing.
     renderPassage(current, true);
-    fillBlank(selected.text);
+    // The CORRECT word, not the one he chose. The sentence is the thing he will
+    // read back and remember, and filling it with his own wrong answer left the
+    // finished article saying the wrong thing -- "poetry can be hard to dislike:
+    // it is dense, experimental..." -- which teaches the error rather than the fix.
+    // What he picked is still on the option list, marked, where it belongs.
+    const answer = (current.options || []).find((o) => o.label === current.correctLabel);
+    fillBlank(answer ? answer.text : selected.text, !isCorrect, selected.text);
     showRule(current);
   }
   offerConcept(current, !isCorrect);
@@ -3411,10 +3456,35 @@ function jumpToQuestion(id) {
   const target = bank.find((q) => q.id === id);
   if (!target) return false;
 
+  // The section comes first, because applyFilters tests it before anything else:
+  // a maths question is not in the Reading pool at any filter setting, so every
+  // other widening below would be wasted and the lookup would simply fail. This
+  // is why a search result in the other section did nothing when pressed.
+  if (sectionOf(target) !== section) {
+    section = sectionOf(target);
+    document.querySelectorAll('.section-btn').forEach((btn) => {
+      const on = btn.dataset.section === section;
+      btn.classList.toggle('is-on', on);
+      btn.setAttribute('aria-pressed', String(on));
+    });
+    // The rest of maths is 33 MB and fetched on demand. The question he asked for
+    // is already in `bank` -- the missed sets are loaded up front -- so this does
+    // not block the jump; it just fills the pool in behind him.
+    if (section === 'math' && !mathLoaded) {
+      loadMathBanks().then((ok) => {
+        if (ok && sectionOf(current) === 'math') buildSkillSelect();
+      });
+    }
+  }
+
   // Widen the filters only as far as needed to make the question reachable. The
   // test goes too: a link into a Practice 5 question is unreachable while the set
   // is narrowed to Practice 6, and it is the same question either way.
   skillFilter = target.skill;
+  // Nothing is automatic in the starred set: a question he never starred is
+  // invisible while it is on, however wide everything else is opened.
+  starredOnly = false;
+  if (starredOnlyToggle) starredOnlyToggle.checked = false;
   difficultyFilter = 'all';
   testFilter = 'all';
   // A question he has missed lives behind "Wrong answers only" now, so a link to
@@ -3436,10 +3506,32 @@ function jumpToQuestion(id) {
   if (testSelect) testSelect.value = testFilter;
   if (wrongOnlyToggle) wrongOnlyToggle.checked = wrongOnly;
   rememberFilters();
+  updateSummary();
 
   applyFilters();
-  const at = pool.findIndex((q) => q.id === id);
-  if (at < 0) return false;
+  let at = pool.findIndex((q) => q.id === id);
+  if (at < 0) {
+    // Last resort. The widening above is deliberate rather than blanket -- it
+    // keeps him in the set he asked for -- but a question that is still out of
+    // reach is worse than a wider set, so the skill goes too and we try again.
+    skillFilter = 'all';
+    syncSkillSelect();
+    rememberFilters();
+    applyFilters();
+    at = pool.findIndex((q) => q.id === id);
+  }
+  if (at < 0) {
+    // Named, not silent: a jump that does nothing is the least debuggable thing
+    // in the app, and this is the line that says which filter still holds it.
+    console.warn('jumpToQuestion: still unreachable', {
+      id,
+      section, skillFilter, difficultyFilter, testFilter,
+      wrongOnly, hideAced, starredOnly,
+      targetSection: sectionOf(target), targetSkill: target.skill,
+      poolSize: pool.length, bankSize: bank.length
+    });
+    return false;
+  }
 
   // Park the cursor on it, then re-serve without stepping.
   store.cursor[cursorKey()] = at;
@@ -4349,6 +4441,7 @@ function renderMissedPassage(question, into) {
     // both themes rather than collapsing into one indistinguishable series.
     if (question.passageHtml.includes('<svg')) stem.classList.add('is-paper');
     setMarkup(stem, question.passageHtml);
+    markVerse(stem);
     into.append(stem);
     return;
   }
@@ -5352,6 +5445,7 @@ function renderLearnResult() {
 
 /* ---------- wiring ---------- */
 
+const openSearchBtn = document.getElementById('openSearch');
 const openLearnBtn = document.getElementById('openLearn');
 if (openLearnBtn && learnDialog) {
   openLearnBtn.addEventListener('click', () => {
@@ -5372,6 +5466,344 @@ if (learnDialog) {
   // Backdrop click closes, as the other dialogs do.
   learnDialog.addEventListener('click', (ev) => {
     if (ev.target === learnDialog) learnDialog.close();
+  });
+}
+
+/* ==========================================================================
+   Search.
+
+   The bank is ~3,700 questions and until now the only ways into it were the
+   filters and his place in the sequence. Neither helps when what he remembers is
+   the passage: "the one about the zebras", "the Marianne Moore poem". This
+   searches what a question SAYS -- its passage, its prompt and its four choices
+   -- and a press takes him straight there in the drill.
+
+   Read-only. It never marks, scores or retires anything; the only thing it
+   changes is which question is on screen, through the same jumpToQuestion the
+   missed list already uses.
+   ========================================================================== */
+
+// Paged rather than capped. A cap meant "1,247 questions · showing the first 60"
+// and no way to reach the other 1,187; this reaches all of them and keeps the
+// scroll short enough that a result near the bottom is still findable.
+const SEARCH_PER_PAGE = 20;
+const SEARCH_SNIPPET = 150;
+
+const searchDialog = document.getElementById('searchDialog');
+const searchInput = document.getElementById('searchInput');
+const searchScopeSel = document.getElementById('searchScope');
+const searchResultsEl = document.getElementById('searchResults');
+const searchSubEl = document.getElementById('searchSub');
+const searchPagerEl = document.getElementById('searchPager');
+
+// The hits are held so paging can redraw without searching again, and the terms
+// with them because the snippet highlighting needs them on every page.
+let searchHits = [];
+let searchTermsNow = [];
+let searchPage = 0;
+
+// Built once per question and kept, because retyping a letter re-searches the
+// whole bank and stripping markup 3,700 times per keystroke is what would make
+// it feel slow.
+const searchTextCache = new Map();
+
+function searchableText(question) {
+  const hit = searchTextCache.get(question.id);
+  if (hit !== undefined) return hit;
+  const parts = [question.passage || ''];
+  // A maths stem and a restored passage are markup; the tags must not be
+  // searchable or every question matches "span".
+  const markup = question.questionHtml || question.passageHtml || '';
+  if (markup) parts.push(markup.replace(/<[^>]+>/g, ' '));
+  parts.push(question.question || '');
+  (question.options || []).forEach((o) => parts.push(o.text || ''));
+  const text = parts.join(' · ').replace(/\s+/g, ' ').trim();
+  searchTextCache.set(question.id, text);
+  return text;
+}
+
+// Matched on but never shown: the skill's name, so "boundaries" or "probability"
+// find their questions. Kept apart from the visible text so a snippet can never
+// be a label rather than the passage -- and deliberately NOT including `rule`,
+// which on a Words in Context question says what the missing word means.
+const searchLabelCache = new Map();
+
+function searchLabels(question) {
+  const hit = searchLabelCache.get(question.id);
+  if (hit !== undefined) return hit;
+  const skill = skillTested(question);
+  const bits = [
+    question.bankSkill || '', skill || '', SKILL_LABELS[skill] || '',
+    question.domainLabel || '', question.test || ''
+  ];
+  const text = bits.join(' ').replace(/-/g, ' ').replace(/\s+/g, ' ').toLowerCase().trim();
+  searchLabelCache.set(question.id, text);
+  return text;
+}
+
+function searchScopeOk(question, scope) {
+  if (scope === 'all') return true;
+  if (scope === 'missed') return question.skill === MISSED_SKILL;
+  return sectionOf(question) === scope;
+}
+
+// Every word must appear, in any order and anywhere: "moore poem" finds the
+// Marianne Moore one whichever way round he types it. Quoted text is taken as a
+// phrase.
+function searchTerms(query) {
+  const phrases = [];
+  const rest = query.replace(/"([^"]+)"/g, (_, inner) => {
+    phrases.push(inner.toLowerCase().trim());
+    return ' ';
+  });
+  rest.split(/\s+/).forEach((w) => { if (w) phrases.push(w.toLowerCase()); });
+  return phrases.filter(Boolean);
+}
+
+function runSearch() {
+  // A new query or a new scope starts at the first page: page 3 of the old
+  // results says nothing about the new ones.
+  searchPage = 0;
+  searchHits = [];
+  if (!searchResultsEl) return;
+  const query = (searchInput ? searchInput.value : '').trim();
+  searchTermsNow = searchTerms(query);
+  const scope = searchScopeSel ? searchScopeSel.value : 'all';
+
+  if (query.length < 2) {
+    searchResultsEl.textContent = '';
+    if (searchSubEl) {
+      searchSubEl.textContent =
+        'Any word from a passage, a question or an answer choice. Use "quotes" for a phrase.';
+    }
+    return;
+  }
+
+  const terms = searchTermsNow;
+  bank.forEach((q) => {
+    if (!searchScopeOk(q, scope)) return;
+    const text = searchableText(q).toLowerCase() + ' ' + searchLabels(q);
+    if (terms.every((t) => text.includes(t))) searchHits.push(q);
+  });
+  renderSearchPage();
+}
+
+// Drawing only. Paging must not re-search: he has already waited for that once,
+// and the hits cannot change between pressing Next and the page appearing.
+function renderSearchPage() {
+  if (!searchResultsEl) return;
+  searchResultsEl.textContent = '';
+
+  const scope = searchScopeSel ? searchScopeSel.value : 'all';
+  // Maths is 33 MB and is not fetched until he presses Math, so a search before
+  // that would quietly report nothing rather than "not loaded yet".
+  const mathMissing = !mathLoaded && (scope === 'all' || scope === 'math');
+  const total = searchHits.length;
+  const pages = Math.max(1, Math.ceil(total / SEARCH_PER_PAGE));
+  if (searchPage >= pages) searchPage = pages - 1;
+
+  if (searchSubEl) {
+    const from = total === 0 ? 0 : searchPage * SEARCH_PER_PAGE + 1;
+    const to = Math.min(total, (searchPage + 1) * SEARCH_PER_PAGE);
+    searchSubEl.textContent = `${total} question${total === 1 ? '' : 's'}`
+      + (total > SEARCH_PER_PAGE ? ` · showing ${from}\u2013${to}` : '')
+      + (mathMissing ? ' \u00b7 maths not loaded yet, press Math to include it' : '');
+  }
+
+  if (total === 0) {
+    const p = document.createElement('p');
+    p.className = 'search-empty';
+    p.textContent = mathMissing
+      ? 'Nothing in Reading and Writing. The maths bank has not been loaded this '
+        + 'session -- press Math in the top bar and search again.'
+      : 'Nothing matches. Try one distinctive word rather than a whole sentence.';
+    searchResultsEl.append(p);
+    return;
+  }
+
+  searchHits
+    .slice(searchPage * SEARCH_PER_PAGE, (searchPage + 1) * SEARCH_PER_PAGE)
+    .forEach((q) => searchResultsEl.append(searchRow(q, searchTermsNow)));
+
+  // Back to the top of the list on a page change, not to wherever he had
+  // scrolled to in the previous one.
+  searchResultsEl.scrollTop = 0;
+  if (pages > 1) searchPagerEl.hidden = false;
+  else searchPagerEl.hidden = true;
+  drawSearchPager(pages);
+}
+
+// Compact on purpose: two arrows and "page 2 of 63". A numbered strip for sixty
+// pages is either truncated with ellipses or wider than the dialog, and neither
+// is worth the room when what he actually does is step or retype the query.
+function drawSearchPager(pages) {
+  if (!searchPagerEl) return;
+  searchPagerEl.textContent = '';
+
+  const step = (by) => {
+    searchPage = Math.min(pages - 1, Math.max(0, searchPage + by));
+    renderSearchPage();
+  };
+  const button = (label, aria, by, disabled) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'search-page-btn';
+    b.textContent = label;
+    b.setAttribute('aria-label', aria);
+    b.disabled = disabled;
+    b.addEventListener('click', () => step(by));
+    return b;
+  };
+
+  searchPagerEl.append(button('\u2039', 'Previous page', -1, searchPage === 0));
+  const at = document.createElement('span');
+  at.className = 'search-page-at';
+  at.textContent = `page ${searchPage + 1} of ${pages}`;
+  searchPagerEl.append(at);
+  searchPagerEl.append(button('\u203a', 'Next page', 1, searchPage === pages - 1));
+}
+
+// The snippet is centred on the first term found, not the start of the passage:
+// the match is the whole reason the row is there, and a passage's opening 150
+// characters usually do not contain it.
+function searchSnippet(text, terms) {
+  const low = text.toLowerCase();
+  let at = -1;
+  terms.forEach((t) => {
+    const i = low.indexOf(t);
+    if (i !== -1 && (at === -1 || i < at)) at = i;
+  });
+  if (at === -1) return text.slice(0, SEARCH_SNIPPET);
+  const from = Math.max(0, at - 40);
+  const cut = text.slice(from, from + SEARCH_SNIPPET);
+  return (from > 0 ? '…' : '') + cut + (from + SEARCH_SNIPPET < text.length ? '…' : '');
+}
+
+function searchRow(question, terms) {
+  const row = document.createElement('button');
+  row.type = 'button';
+  row.className = 'search-row';
+
+  const head = document.createElement('div');
+  head.className = 'search-row-head';
+
+  const what = document.createElement('span');
+  what.className = 'search-skill';
+  what.textContent = question.bankSkill
+    ? question.bankSkill.replace(/-/g, ' ')
+    : (SKILL_LABELS[skillTested(question)] || skillTested(question) || question.skill);
+  head.append(what);
+
+  // Where it came from, when that is a real sitting rather than the bank.
+  if (question.test) {
+    const where = document.createElement('span');
+    where.className = 'search-where';
+    where.textContent = question.module
+      ? `${question.test} · M${question.module} Q${question.number}`
+      : `${question.test} · Q${question.number}`;
+    head.append(where);
+  }
+  if (question.difficulty) {
+    const d = document.createElement('span');
+    d.className = 'search-diff';
+    d.textContent = question.difficulty;
+    head.append(d);
+  }
+  // What he has already done with it, so a search result is not a question he
+  // cleared last week presented as new.
+  const stats = statsFor(question.id);
+  if (stats.seen > 0) {
+    const done = document.createElement('span');
+    const beaten = !isWrongEver(question.id);
+    done.className = beaten ? 'search-done is-right' : 'search-done';
+    done.textContent = beaten ? '✓ answered right' : 'missed before';
+    head.append(done);
+  }
+  row.append(head);
+
+  const snip = document.createElement('p');
+  snip.className = 'search-snippet';
+  // Text node by text node so a term can be wrapped without ever putting the
+  // question's own characters through innerHTML.
+  const text = searchSnippet(searchableText(question), terms);
+  const low = text.toLowerCase();
+  const marks = [];
+  terms.forEach((t) => {
+    let i = low.indexOf(t);
+    while (i !== -1) { marks.push([i, i + t.length]); i = low.indexOf(t, i + t.length); }
+  });
+  marks.sort((a, b) => a[0] - b[0]);
+  let at = 0;
+  marks.forEach(([from, to]) => {
+    if (from < at) return;                       // overlapping terms
+    snip.append(text.slice(at, from));
+    const mark = document.createElement('mark');
+    mark.textContent = text.slice(from, to);
+    snip.append(mark);
+    at = to;
+  });
+  snip.append(text.slice(at));
+  row.append(snip);
+
+  row.addEventListener('click', () => {
+    // Both outcomes have to be visible. A press that silently does nothing is
+    // indistinguishable from a dead button, which is how this arrived as "clicking
+    // does not take me anywhere" with nothing in the console to go on.
+    let went = false;
+    try {
+      went = jumpToQuestion(question.id);
+    } catch (err) {
+      console.error('search: jump failed', err);
+      row.classList.add('is-stuck');
+      snip.textContent = `Could not open it: ${err.message}`;
+      return;
+    }
+    if (went) {
+      searchDialog.close();
+      return;
+    }
+    row.classList.add('is-stuck');
+    snip.textContent = 'Could not open this one — the console says which filter is '
+      + 'holding it. Try clearing Skill and Difficulty and searching again.';
+  });
+  return row;
+}
+
+/* ---------- wiring ---------- */
+
+if (openSearchBtn && searchDialog) {
+  openSearchBtn.addEventListener('click', () => {
+    searchDialog.showModal();
+    if (searchInput) { searchInput.focus(); searchInput.select(); }
+    runSearch();
+  });
+}
+
+// Debounced: he types faster than 3,700 substring searches, and re-running on
+// every keystroke made the box feel like it was lagging behind him.
+let searchTimer = null;
+if (searchInput) {
+  searchInput.addEventListener('input', () => {
+    window.clearTimeout(searchTimer);
+    searchTimer = window.setTimeout(runSearch, 140);
+  });
+  // Enter opens the first result: the common case is that he already knows which
+  // one he meant.
+  searchInput.addEventListener('keydown', (ev) => {
+    if (ev.key !== 'Enter') return;
+    const first = searchResultsEl && searchResultsEl.querySelector('.search-row');
+    if (first) { ev.preventDefault(); first.click(); }
+  });
+}
+if (searchScopeSel) searchScopeSel.addEventListener('change', runSearch);
+
+const closeSearchBtn = document.getElementById('closeSearch');
+if (closeSearchBtn && searchDialog) {
+  closeSearchBtn.addEventListener('click', () => searchDialog.close());
+}
+if (searchDialog) {
+  searchDialog.addEventListener('click', (ev) => {
+    if (ev.target === searchDialog) searchDialog.close();
   });
 }
 

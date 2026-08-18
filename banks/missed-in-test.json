@@ -642,7 +642,8 @@
         "text": "“Reading [poetry], however, with a perfect contempt for it, one discovers that there is in / it after all, a place for the genuine.”",
         "why": "Choice D is the best answer because it most effectively uses a quotation from “Poetry” to illustrate the claim that the poem highlights an ambivalence, or a conflicted attitude, toward poetry. In the quotation, the speaker suggests that one might read poetry with “contempt,” or disdain, for it, but even with this negative attitude one will find “a place for the genuine.” Because the quotation expresses conflicting attitudes toward poetry, it effectively illustrates the speaker’s ambivalence in discussing the merits and displeasure of reading poetry."
       }
-    ]
+    ],
+    "passageHtml": "<p>“Poetry” is a 1919 poem by Marianne Moore. The poem highlights an ambivalence toward poetry as the speaker acknowledges its merits while also expressing a sense of displeasure, writing <span class=\"blank\" id=\"passageBlank\"> </span></p>"
   },
   {
     "id": "missed-pt5-m2-q16",
@@ -2180,7 +2181,7 @@
       }
     ],
     "underline": "A slight wind shakes the seed-pods",
-    "passageHtml": "<p>The following text is from <span>H.D.’s</span> 1916 poem “Mid-Day.” In the poem, the speaker is on a path in an outdoor setting.</p>\n\n<p><span role=\"region\" aria-label=\"Referenced Content\">A slight wind shakes the seed-pods</span>—</p>\n<p>my thoughts are spent</p>\n<p>as the black seeds.</p>\n<p>My thoughts tear me,</p>\n<p>I dread their fever.</p>\n<p>I am scattered in its whirl.</p>\n<p>I am scattered like</p>\n<p>the hot shrivelled seeds.</p>"
+    "passageHtml": "<p>The following text is from <span>H.D.’s</span> 1916 poem “Mid-Day.” In the poem, the speaker is on a path in an outdoor setting.</p>\n<blockquote>\n<p><span style=\"text-decoration:underline\" role=\"region\" aria-label=\"Referenced Content\">A slight wind shakes the seed-pods</span>—</p>\n<p>my thoughts are spent</p>\n<p>as the black seeds.</p>\n<p>My thoughts tear me,</p>\n<p>I dread their fever.</p>\n<p>I am scattered in its whirl.</p>\n<p>I am scattered like</p>\n<p>the hot shrivelled seeds.</p>\n</blockquote>"
   },
   {
     "id": "missed-pt7-m1-q13",
@@ -3017,7 +3018,8 @@
         "text": "Its frequency in Classical Nahuatl poetry confirms its intelligibility to the Aztec audience.",
         "why": "Choice D is incorrect because the text doesn’t indicate that the frequency of difrasismo’s use in Classical Nahuatl is a necessary feature of intelligibility: the text indicates that an infrequently used difrasismo would presumably also be intelligible to members of an Aztec audience who are sufficiently familiar with Aztec ceremonial culture."
       }
-    ]
+    ],
+    "passageHtml": "<p>Poetry in Classical Nahuatl, the language of the Aztec Empire, relies on <em>difrasismo</em>, or a parallel noun construction that conventionally operates as a single metaphor. For example, the common difrasismo <span><em>in cuauhtli in ocelotl</em></span> (literally, “the eagle, the jaguar”) signifies “warrior.” The device’s function is both formal—providing structure to lines of verse—and ritual: semantic relations among the two nouns and the concept they signify can be tenuous, as in the previous example, such that difrasismos are often only intelligible according to the conceptual associations observed in Aztec ceremonial culture.</p>"
   },
   {
     "id": "missed-pt8-m2-q13",
@@ -4664,7 +4666,8 @@
         "why": "Choice D is the best answer. Noting that Meghadūta uses a pattern of long and short syllables in its lines (quantitative meter) and Widsith uses a pattern of repeated sounds in its lines (alliterative meter), and signaling a contrast with “whereas,” the sentence emphasizes a difference between the meters of the two poems."
       }
     ],
-    "chose": "B"
+    "chose": "B",
+    "passageHtml": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>The meter of a poem is the rhythmic structure or pattern of accents in its lines.</li>\n<li>Alliterative meter is structured by a pattern of repeated sounds.</li>\n<li>Quantitative meter is structured by a pattern of long and short syllables.</li>\n<li>The Old English poem <em>Widsith</em> uses an alliterative meter.</li>\n<li>The Sanskrit poem <em>Meghadūta</em> uses a quantitative meter.</li>\n</ul>"
   },
   {
     "id": "missed-pt11-m2-q5",
@@ -4869,5 +4872,448 @@
       }
     ],
     "chose": "C"
+  },
+  {
+    "id": "missed-p8-m1-q8",
+    "source": "College Board Practice 8, Module 1, Question 8",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice 8",
+    "taken": "2026-08-18",
+    "module": 1,
+    "number": 8,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "The north celestial pole (NCP)—the fixed point around which stars in the Northern Hemisphere (including the Sun) appear to rotate—is discernible only at night. Inspired by the navigational strategies of some insects and birds, researchers devised a method for locating the NCP in daytime using skylight polarization, which occurs as atmospheric particles scatter sunlight. A polarimetric camera captures images of polarization patterns, which rotate as the Sun's position in the sky changes; temporal variances across images can then be used to determine an observer's latitude and bearing relative to the NCP.",
+    "question": "Which choice best describes the overall structure of the text?",
+    "rule": "Accurately describes the overall structure of the text.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "It illustrates how most navigational tools utilize the NCP, recounts how researchers discovered that certain animals are able to navigate without using the NCP, and then proposes that this discovery could be used to avoid problems in navigation associated with reliance on the NCP.",
+        "why": "Choice A is incorrect. The text doesn't state that researchers discovered that insects and birds navigate without the NCP."
+      },
+      {
+        "label": "B",
+        "text": "It presents a celestial-based method of navigation, enumerates the comparative benefits of an alternative method used by certain animals that is based on an unrelated natural occurrence, and then indicates how researchers assessed the relative accuracy of the two methods.",
+        "why": "Choice B is incorrect. The text doesn't state that humans have used the NCP for navigation."
+      },
+      {
+        "label": "C",
+        "text": "It explains how the NCP is typically located, emphasizes a key difference between how humans and certain animals use the NCP for navigation, and then suggests an alternative way of using the NCP to improve existing navigational instruments.",
+        "why": "Choice C is incorrect. The text doesn't emphasize a difference between how humans and animals use the NCP."
+      },
+      {
+        "label": "D",
+        "text": "It notes an obstacle to observing an astronomical phenomenon, mentions a navigational ability of certain animals that inspired a solution to that obstacle, and then explains how researchers used an optical device to mimic that ability.",
+        "why": "Choice D is the best answer because it accurately describes the overall structure of the text. The text begins by pointing out an obstacle to observing the astronomical phenomenon of the NCP: the NCP is visible only at night. The text then indicates that, inspired by the ability of some insects and birds to navigate using visualizations of polarized sunlight, researchers devised a way to locate the NCP during daylight. The text then indicates that the researchers mimicked the insects' and birds' polarized-light visualization capabilities using a polarimetric camera."
+      }
+    ],
+    "chose": "B"
+  },
+  {
+    "id": "missed-p8-m1-q9",
+    "source": "College Board Practice 8, Module 1, Question 9",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "central-ideas-details",
+    "test": "Practice 8",
+    "taken": "2026-08-18",
+    "module": 1,
+    "number": 9,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Culinary anthropologist Vertamae Smart-Grosvenor may be known for her decades of work in national public television and radio, but her book Vibration Cooking: or, the Travel Notes of a Geechee Girl is likely her most influential project. The 1970 book, whose title refers to Smart-Grosvenor's roots in the Low Country of South Carolina, was unusual for its time. It combined memoir, recipes, travel writing, and social commentary and challenged notions about conventions of food and cooking. Long admired by many, the book and its author have shaped contemporary approaches to writing about cuisine.",
+    "question": "Which choice best describes the main idea of the text?",
+    "rule": "Most accurately states the main idea of the text.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Smart-Grosvenor's unconventional book Vibration Cooking: or, the Travel Notes of a Geechee Girl is an important contribution to food writing.",
+        "why": "Choice A is the best answer because it most accurately states the main idea of the text. The text describes the book as Smart-Grosvenor's “most influential project” and as “unusual for its time.” The text also notes that the book and author have influenced contemporary approaches to writing about food and cooking."
+      },
+      {
+        "label": "B",
+        "text": "Smart-Grosvenor held many different positions over her life, including reporter and food writer.",
+        "why": "Choice B is incorrect. Although the text mentions that Smart-Grosvenor worked in national public television and radio and was a food writer, these details aren't the main focus."
+      },
+      {
+        "label": "C",
+        "text": "Smart-Grosvenor's groundbreaking book Vibration Cooking: or, the Travel Notes of a Geechee Girl didn't receive the praise it deserved when it was first published in 1970.",
+        "why": "Choice C is incorrect. The text states that the book is “long admired.”"
+      },
+      {
+        "label": "D",
+        "text": "Smart-Grosvenor was a talented chef whose work inspired many people to start cooking for themselves.",
+        "why": "Choice D is incorrect because the text states that Smart-Grosvenor was a culinary anthropologist."
+      }
+    ],
+    "chose": "B"
+  },
+  {
+    "id": "missed-p8-m1-q10",
+    "source": "College Board Practice 8, Module 1, Question 10",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "central-ideas-details",
+    "test": "Practice 8",
+    "taken": "2026-08-18",
+    "module": 1,
+    "number": 10,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "The following text is from William Shakespeare's play The Tempest, first performed in 1611. Miranda has lived on an island with her father, Prospero, since she was three years old. Prospero has stated that Miranda likely does not remember anything other than her life on the island. MIRANDA: 'Tis far off, And rather like a dream than an assurance That my remembrance warrants. Had I not Four or five women once that tended me? PROSPERO: Thou hadst, and more, Miranda. But how is it That this lives in thy mind? What seest thou else In the dark backward and abysm of time? If thou remember'st ought ere thou camest here, How thou camest here thou mayst.",
+    "question": "In the text, which point does Prospero most directly make about Miranda and her memories?",
+    "rule": "Presents a point that Prospero makes about Miranda.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Miranda's reminiscences about her early childhood have a melancholy quality that betrays her discontented view of her current circumstances.",
+        "why": "Choice A is incorrect because Prospero doesn't suggest that he believes Miranda is discontent in her current circumstances."
+      },
+      {
+        "label": "B",
+        "text": "Miranda's doubts about the accuracy of one recollection of a place other than the island are clouding her judgment and seem to be making her reluctant to explore her recollection of traveling to the island.",
+        "why": "Choice B is incorrect. Rather than indicating that doubt is making Miranda reluctant, Prospero simply states that Miranda may have the ability to remember traveling to the island."
+      },
+      {
+        "label": "C",
+        "text": "Miranda's ability to summon details of an experience she had before arriving on the island suggests that she may also be able to summon details of her arrival on the island.",
+        "why": "Choice C is the best answer because it presents a point that Prospero makes about Miranda. Prospero indicates that Miranda's ability to summon details of an experience from before her arrival on the island suggests that she may also be able to summon details of her arrival."
+      },
+      {
+        "label": "D",
+        "text": "Miranda's impression of a scene is vague because she is remembering a scenario she had daydreamed about as a child rather than a scenario that had occurred in reality.",
+        "why": "Choice D is incorrect. Prospero doesn't indicate that Miranda is remembering a childhood daydream."
+      }
+    ],
+    "chose": "A"
+  },
+  {
+    "id": "missed-p8-m1-q11",
+    "source": "College Board Practice 8, Module 1, Question 11",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice 8",
+    "taken": "2026-08-18",
+    "module": 1,
+    "number": 11,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "In a research paper, a student criticizes some historians of modern African politics, claiming that they have evaluated Patrice Lumumba, the first prime minister of what is now the Democratic Republic of the Congo, primarily as a symbol rather than in terms of his actions.",
+    "question": "Which quotation from a work by a historian would best illustrate the student's claim?",
+    "rule": "Illustrates the student's claim about some historians viewing Lumumba primarily as a symbol.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "“Lumumba is a difficult figure to evaluate due to the starkly conflicting opinions he inspired during his life and continues to inspire today.”",
+        "why": "Choice A is incorrect. It doesn't address how historians of modern African politics view him as a symbol."
+      },
+      {
+        "label": "B",
+        "text": "“The available information makes it clear that Lumumba's political beliefs and values were largely consistent throughout his career.”",
+        "why": "Choice B is incorrect. It doesn't discuss historians viewing him as a symbol."
+      },
+      {
+        "label": "C",
+        "text": "“Lumumba's practical accomplishments can be passed over quickly; it is mainly as the personification of Congolese independence that he warrants scholarly attention.”",
+        "why": "Choice C is the best answer because it illustrates the student's claim about some historians viewing Lumumba primarily as a symbol. This quotation argues that Lumumba “warrants” scholarly attention as a symbol and not for his “practical accomplishments.”"
+      },
+      {
+        "label": "D",
+        "text": "“Many questions remain about Lumumba's ultimate vision for an independent Congo; without new evidence coming to light, these questions are likely to remain unanswered.”",
+        "why": "Choice D is incorrect. This quotation touches on Lumumba's vision for his country, but it doesn't discuss historians viewing him as a symbol."
+      }
+    ],
+    "chose": "A"
+  },
+  {
+    "id": "missed-p8-m1-q12",
+    "source": "College Board Practice 8, Module 1, Question 12",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice 8",
+    "taken": "2026-08-18",
+    "module": 1,
+    "number": 12,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Researchers hypothesized that a decline in the population of dusky sharks near the mid-Atlantic coast of North America led to a decline in the population of eastern oysters in the region. Dusky sharks do not typically consume eastern oysters but do consume cownose rays, which are the main predators of the oysters.",
+    "question": "Which finding, if true, would most directly support the researchers' hypothesis?",
+    "rule": "Presents a finding that would most directly support the researchers' hypothesis.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Declines in the regional abundance of dusky sharks' prey other than cownose rays are associated with regional declines in dusky shark abundance.",
+        "why": "Choice A is incorrect because it would reveal nothing about whether the shark decline is related to the oyster decline."
+      },
+      {
+        "label": "B",
+        "text": "Eastern oyster abundance tends to be greater in areas with both dusky sharks and cownose rays than in areas with only dusky sharks.",
+        "why": "Choice B is incorrect because it would suggest that rays aren't keeping oyster abundance down."
+      },
+      {
+        "label": "C",
+        "text": "Consumption of eastern oysters by cownose rays in the region substantially increased before the regional decline in dusky shark abundance began.",
+        "why": "Choice C is incorrect because such a finding would suggest that some factor other than shark abundance led to an increase in rays' consumption of oysters, thereby weakening the researchers' hypothesis."
+      },
+      {
+        "label": "D",
+        "text": "Cownose rays have increased in regional abundance as dusky sharks have decreased in regional abundance.",
+        "why": "Choice D is the best answer because it presents a finding that would most directly support the researchers' hypothesis. An increase in the abundance of cownose rays in response to a decline in the abundance of dusky sharks would directly support the hypothesis: a higher number of cownose rays would consume more eastern oysters, driving down the oyster population."
+      }
+    ],
+    "chose": "C"
+  },
+  {
+    "id": "missed-p8-m1-q16",
+    "source": "College Board Practice 8, Module 1, Question 16",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "form-structure-sense",
+    "test": "Practice 8",
+    "taken": "2026-08-18",
+    "module": 1,
+    "number": 16,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Formed in 1967 to foster political and economic stability within the Asia-Pacific region, the Association of Southeast Asian Nations was originally made up of five members: Thailand, the Philippines, Singapore, Malaysia, and Indonesia. By the end of the 1990s, the organization ___ its initial membership.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the use of verbs to express tense.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "has doubled",
+        "why": "Choice A is incorrect because the present perfect verb “has doubled” doesn't indicate that the doubling occurred during a specific period in the past."
+      },
+      {
+        "label": "B",
+        "text": "had doubled",
+        "why": "Choice B is the best answer. The convention being tested is the use of verbs to express tense. In this choice, the past perfect verb “had doubled” properly indicates that the doubling of the organization's initial membership occurred during a specific period before the present (between the organization's founding in 1967 and the end of the 1990s)."
+      },
+      {
+        "label": "C",
+        "text": "doubles",
+        "why": "Choice C is incorrect because the present tense verb “doubles” doesn't indicate that the doubling occurred during a specific period in the past."
+      },
+      {
+        "label": "D",
+        "text": "will double",
+        "why": "Choice D is incorrect because the future tense verb “will double” doesn't indicate that the doubling occurred during a specific period in the past."
+      }
+    ],
+    "chose": "A"
+  },
+  {
+    "id": "missed-p8-m2-q5",
+    "source": "College Board Practice 8, Module 2, Question 5",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice 8",
+    "taken": "2026-08-18",
+    "module": 2,
+    "number": 5,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "The following text is adapted from Zora Neale Hurston's 1921 short story “John Redding Goes to Sea.” John is a child who lives in a town in the woods. Perhaps ten-year-old John was puzzling to the folk there in the Florida woods for he was an imaginative child and fond of day-dreams. The St. John River flowed a scarce three hundred feet from his back door. On its banks at this point grow numerous palms, luxuriant magnolias and bay trees. On the bosom of the stream float millions of delicately colored hyacinths. John Redding loved to wander down to the water's edge, and, casting in dry twigs, watch them sail away down stream to Jacksonville, the sea, the wide world and he wanted to follow them.",
+    "question": "Which choice best describes the function of the underlined sentence in the text as a whole?",
+    "rule": "Accurately describes how the underlined sentence functions in the text as a whole.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "It provides an extended description of a location that John likes to visit.",
+        "why": "Choice A is incorrect because the second and third sentences of the text provide an extended description of the riverbank."
+      },
+      {
+        "label": "B",
+        "text": "It reveals that some residents of John's town are confused by his behavior.",
+        "why": "Choice B is incorrect because the first sentence of the text suggests that John's behavior “was puzzling” to others around him."
+      },
+      {
+        "label": "C",
+        "text": "It illustrates the uniqueness of John's imagination compared to the imaginations of other children.",
+        "why": "Choice C is incorrect because the underlined sentence doesn't mention any other children to whom John could be compared."
+      },
+      {
+        "label": "D",
+        "text": "It suggests that John longs to experience a larger life outside the Florida woods.",
+        "why": "Choice D is the best answer because it accurately describes how the underlined sentence functions in the text as a whole. The underlined sentence depicts John sending twigs sailing down the river while he imagines them reaching “Jacksonville, the sea, the wide world,” where he wishes he could follow. This suggests that John longs to expand his life experiences beyond the Florida woods."
+      }
+    ],
+    "chose": "A",
+    "underline": "John Redding loved to wander down to the water's edge, and, casting in dry twigs, watch them sail away down stream to Jacksonville, the sea, the wide world and he wanted to follow them.",
+    "passageHtml": "<p>The following text is adapted from Zora Neale Hurston’s 1921 short story “John Redding Goes to Sea.” John is a child who lives in a town in the woods.</p>\n<p>Perhaps ten-year-old John was puzzling to the folk there in the Florida woods for he was an imaginative child and fond of day-dreams. The St. John River flowed a scarce three hundred feet from his back door. On its banks at this point grow numerous palms, luxuriant magnolias and bay trees. On the bosom of the stream float millions of delicately colored hyacinths. <span role=\"region\" aria-label=\"Referenced Content\"><u>[John Redding] loved to wander down to the water’s edge, and, casting in dry twigs, watch them sail away down stream to Jacksonville, the sea, the wide world and [he] wanted to follow them.</u></span></p>"
+  },
+  {
+    "id": "missed-p8-m2-q10",
+    "source": "College Board Practice 8, Module 2, Question 10",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice 8",
+    "taken": "2026-08-18",
+    "module": 2,
+    "number": 10,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "When digging for clams, their primary food, sea otters damage the roots of eelgrass plants growing on the seafloor. Near Vancouver Island in Canada, the otter population is large and well established, yet the eelgrass meadows are healthier than those found elsewhere off Canada's coast. To explain this, conservation scientist Erin Foster and colleagues compared the Vancouver Island meadows to meadows where otters are absent or were reintroduced only recently. Finding that the Vancouver Island meadows have a more diverse gene pool than the others do, Foster hypothesized that damage to eelgrass roots increases the plant's rate of sexual reproduction; this, in turn, boosts genetic diversity, which benefits the meadows' health overall.",
+    "question": "Which finding, if true, would most directly undermine Foster's hypothesis?",
+    "rule": "Presents a finding that would weaken Foster's hypothesis.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "At some sites in the study, eelgrass meadows are found near otter populations that are small and have only recently been reintroduced.",
+        "why": "Choice A is incorrect because small, recently introduced otter populations wouldn't be expected to have caused much damage."
+      },
+      {
+        "label": "B",
+        "text": "At several sites not included in the study, there are large, well-established sea otter populations but no eelgrass meadows.",
+        "why": "Choice B is incorrect because the existence of areas with otters but without eelgrass meadows wouldn't reveal anything about whether the damage benefits eelgrass meadows."
+      },
+      {
+        "label": "C",
+        "text": "At several sites not included in the study, eelgrass meadows' health correlates negatively with the length of residence and size of otter populations.",
+        "why": "Choice C is the best answer because it presents a finding that would weaken Foster's hypothesis. If other meadows not included in the study are less healthy the larger the local otter population is and the longer the otters have been in residence, that would suggest that damage to the eelgrass roots isn't leading meadows to be healthier."
+      },
+      {
+        "label": "D",
+        "text": "At some sites in the study, the health of plants unrelated to eelgrass correlates negatively with the length of residence and size of otter populations.",
+        "why": "Choice D is incorrect because the health of plants other than eelgrass would have no bearing on Foster's hypothesis."
+      }
+    ],
+    "chose": "A"
+  },
+  {
+    "id": "missed-p8-m2-q12",
+    "source": "College Board Practice 8, Module 2, Question 12",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice 8",
+    "taken": "2026-08-18",
+    "module": 2,
+    "number": 12,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "In a study of the evolution of DptA and DptB—Diptericin genes encoding antimicrobial peptides that combat pathogens and foster beneficial microbes in fruit flies (Drosophila)—researchers assessed Drosophila melanogaster resistance to pathogenic infections by Providencia rettgeri and Acetobacter sicerae, bacteria common in the flies' environments. Subjects included flies identified by mutations silencing DptA, DptB, or both DptA and DptB (termed types A, B, and AB, respectively). In conjunction with the observation that resistance to P. rettgeri correlates with DptA activity but is not significantly affected by DptB activity, data in the graph of survival rates post–A. sicerae infection suggest that ___",
+    "question": "Which completion of the text is best supported by data in the graph?",
+    "rule": "Most logically completes the text based on supporting data in the graph.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "DptA confers defense against A. sicerae regardless of the presence of DptB.",
+        "why": "Choice A is incorrect. The graph suggests that DptA activity is associated with a low rate of survival, not a high one."
+      },
+      {
+        "label": "B",
+        "text": "DptB protects against only one bacteria species, whereas DptA protects against multiple species.",
+        "why": "Choice B is incorrect. Only two bacteria species were considered in the text."
+      },
+      {
+        "label": "C",
+        "text": "DptB may have developed as a specific defense against A. sicerae.",
+        "why": "Choice C is the best answer because it most logically completes the text based on supporting data in the graph. The graph shows the post–A. sicerae infection results, which indicate that DptB activity was most strongly associated with survival, whereas DptA activity was not (manifesting in the graph as the type A flies having greater survival rates than the other fly types). In other words, when DptA activity was silenced, the flies showed relatively high survival rates, but when DptB activity was silenced, survival rates were low, suggesting that DptB may have developed as a specific defense against A. sicerae."
+      },
+      {
+        "label": "D",
+        "text": "defense against A. sicerae is strongest when both DptA and DptB are present.",
+        "why": "Choice D is incorrect. The graph does not address flies with activity in both DptA and DptB."
+      }
+    ],
+    "chose": "A",
+    "passageHtml": "<figure><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"380\" height=\"506.84\" role=\"img\" aria-label=\"Line graph titled Average Survival of Fruit Flies following Infection. The horizontal axis is labeled Days after infection. Its values are 0, 2, 6, 10, and 14. The vertical axis is labeled Survival rate, in % alive. It ranges from 0 to 110 in increments of 10. 3 lines are shown. Refer to long description.\" fill=\"currentColor\"><g id=\"edu-command-of-evidence-cbdd5287-ed420550-79eb-48d4-af01-cd27cdd08afd\"><defs>\n      <marker id=\"edu-command-of-evidence-cbdd5287-marker0\">\n        <polygon points=\"3 0, 0 5.196, 6 5.196\" fill=\"currentColor\" />\n      </marker>\n      <marker id=\"edu-command-of-evidence-cbdd5287-marker1\">\n        <path d=\"M0,0 L0,5 L5,5 L5,0 z\" fill=\"#BBB\" stroke=\"currentColor\" stroke-width=\"1.5\" />\n      </marker>\n      <marker id=\"edu-command-of-evidence-cbdd5287-marker2\">\n        <circle cx=\"3\" cy=\"3\" r=\"1.8\" fill=\"var(--figure-paper, #ffffff)\" stroke=\"currentColor\" stroke-width=\".6\" />\n      </marker>\n      <marker id=\"edu-command-of-evidence-cbdd5287-marker3\">\n        <polygon points=\"0.5 3, 2.3 2.3, 3 0.5, 3.7 2.3, 5.5 3, 3.7 3.7, 3 5.5, 2.3 3.7, 0.5 3\" fill=\"#999\" stroke-linejoin=\"round\" stroke=\"currentColor\" stroke-width=\".5\" />\n      </marker>\n    </defs><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"84.65625\" y1=\"72\" x2=\"365\" y2=\"72\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"78.65625\" y1=\"72\" x2=\"90.65625\" y2=\"72\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(72.65625 78)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">110</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"84.65625\" y1=\"94.72727272727272\" x2=\"365\" y2=\"94.72727272727272\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"78.65625\" y1=\"94.72727272727272\" x2=\"90.65625\" y2=\"94.72727272727272\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(72.65625 100.72727272727272)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">100</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"84.65625\" y1=\"117.45454545454545\" x2=\"365\" y2=\"117.45454545454545\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"78.65625\" y1=\"117.45454545454545\" x2=\"90.65625\" y2=\"117.45454545454545\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(72.65625 123.45454545454545)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">90</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"84.65625\" y1=\"140.1818181818182\" x2=\"365\" y2=\"140.1818181818182\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"78.65625\" y1=\"140.1818181818182\" x2=\"90.65625\" y2=\"140.1818181818182\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(72.65625 146.1818181818182)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">80</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"84.65625\" y1=\"162.9090909090909\" x2=\"365\" y2=\"162.9090909090909\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"78.65625\" y1=\"162.9090909090909\" x2=\"90.65625\" y2=\"162.9090909090909\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(72.65625 168.9090909090909)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">70</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"84.65625\" y1=\"185.63636363636363\" x2=\"365\" y2=\"185.63636363636363\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"78.65625\" y1=\"185.63636363636363\" x2=\"90.65625\" y2=\"185.63636363636363\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(72.65625 191.63636363636363)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">60</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"84.65625\" y1=\"208.36363636363637\" x2=\"365\" y2=\"208.36363636363637\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"78.65625\" y1=\"208.36363636363637\" x2=\"90.65625\" y2=\"208.36363636363637\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(72.65625 214.36363636363637)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">50</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"84.65625\" y1=\"231.0909090909091\" x2=\"365\" y2=\"231.0909090909091\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"78.65625\" y1=\"231.0909090909091\" x2=\"90.65625\" y2=\"231.0909090909091\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(72.65625 237.0909090909091)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">40</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"84.65625\" y1=\"253.8181818181818\" x2=\"365\" y2=\"253.8181818181818\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"78.65625\" y1=\"253.8181818181818\" x2=\"90.65625\" y2=\"253.8181818181818\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(72.65625 259.8181818181818)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">30</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"84.65625\" y1=\"276.5454545454545\" x2=\"365\" y2=\"276.5454545454545\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"78.65625\" y1=\"276.5454545454545\" x2=\"90.65625\" y2=\"276.5454545454545\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(72.65625 282.5454545454545)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">20</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"84.65625\" y1=\"299.27272727272725\" x2=\"365\" y2=\"299.27272727272725\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"78.65625\" y1=\"299.27272727272725\" x2=\"90.65625\" y2=\"299.27272727272725\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(72.65625 305.27272727272725)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">10</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"84.65625\" y1=\"322\" x2=\"365\" y2=\"322\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"78.65625\" y1=\"322\" x2=\"90.65625\" y2=\"322\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(72.65625 328)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">0</text><text text-anchor=\"middle\" transform=\"translate(24 197) rotate(-90)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">Survival rate (% alive)</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"84.65625\" y1=\"72\" x2=\"84.65625\" y2=\"322\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"112.690625\" x2=\"112.690625\" y1=\"72\" y2=\"322\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(112.690625 341.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">0</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"168.759375\" x2=\"168.759375\" y1=\"72\" y2=\"322\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(168.759375 341.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">2</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"224.828125\" x2=\"224.828125\" y1=\"72\" y2=\"322\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(224.828125 341.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">6</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"280.896875\" x2=\"280.896875\" y1=\"72\" y2=\"322\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(280.896875 341.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">10</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"336.96562500000005\" x2=\"336.96562500000005\" y1=\"72\" y2=\"322\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(336.96562500000005 341.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">14</text><text text-anchor=\"middle\" transform=\"translate(224.828125 24)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">Average Survival of Fruit Flies </text><text text-anchor=\"middle\" transform=\"translate(224.828125 48)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">following Infection</text><text text-anchor=\"middle\" transform=\"translate(224.828125 375.67999999999995)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">Days after infection</text><rect xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" x=\"107.23628997802734\" y=\"392.84000000000003\" height=\"103\" width=\"180.5274200439453\" stroke=\"currentColor\" stroke-linejoin=\"mitre\" stroke-width=\"0.9\" /><line x1=\"114.23628997802734\" y1=\"409.84000000000003\" x2=\"141.23628997802734\" y2=\"409.84000000000003\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker0)\" /><line x1=\"141.23628997802734\" y1=\"409.84000000000003\" x2=\"168.23628997802734\" y2=\"409.84000000000003\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker0)\" /><text transform=\"translate(178.23628997802734 416.84000000000003)\" text-anchor=\"top\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\"> type A flies</text><line x1=\"114.23628997802734\" y1=\"441.84000000000003\" x2=\"141.23628997802734\" y2=\"441.84000000000003\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker1)\" /><line x1=\"141.23628997802734\" y1=\"441.84000000000003\" x2=\"168.23628997802734\" y2=\"441.84000000000003\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker1)\" /><text transform=\"translate(178.23628997802734 448.84000000000003)\" text-anchor=\"top\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\"> type AB flies</text><line x1=\"114.23628997802734\" y1=\"473.84000000000003\" x2=\"141.23628997802734\" y2=\"473.84000000000003\" stroke=\"currentColor\" stroke-width=\"3\" stroke-dasharray=\"1.1 6\" stroke-linecap=\"round\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker2)\" /><line x1=\"141.23628997802734\" y1=\"473.84000000000003\" x2=\"168.23628997802734\" y2=\"473.84000000000003\" stroke=\"currentColor\" stroke-width=\"3\" stroke-dasharray=\"1.1 6\" stroke-linecap=\"round\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker2)\" /><text transform=\"translate(178.23628997802734 480.84000000000003)\" text-anchor=\"top\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\"> type B flies</text><line x1=\"112.690625\" y1=\"94.72727272727275\" x2=\"168.759375\" y2=\"94.72727272727275\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker0)\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker0)\" /><line x1=\"112.690625\" y1=\"94.72727272727275\" x2=\"168.759375\" y2=\"99.27272727272728\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker1)\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker1)\" /><line x1=\"112.690625\" y1=\"94.72727272727275\" x2=\"168.759375\" y2=\"103.81818181818184\" stroke=\"currentColor\" stroke-width=\"3\" stroke-dasharray=\"1.1 6\" stroke-linecap=\"round\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker2)\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker2)\" /><line x1=\"168.759375\" y1=\"94.72727272727275\" x2=\"224.828125\" y2=\"103.81818181818184\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker0)\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker0)\" /><line x1=\"168.759375\" y1=\"99.27272727272728\" x2=\"224.828125\" y2=\"217.45454545454547\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker1)\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker1)\" /><line x1=\"168.759375\" y1=\"103.81818181818184\" x2=\"224.828125\" y2=\"228.8181818181818\" stroke=\"currentColor\" stroke-width=\"3\" stroke-dasharray=\"1.1 6\" stroke-linecap=\"round\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker2)\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker2)\" /><line x1=\"224.828125\" y1=\"103.81818181818184\" x2=\"280.896875\" y2=\"112.90909090909093\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker0)\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker0)\" /><line x1=\"224.828125\" y1=\"217.45454545454547\" x2=\"280.896875\" y2=\"294.72727272727275\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker1)\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker1)\" /><line x1=\"224.828125\" y1=\"228.8181818181818\" x2=\"280.896875\" y2=\"312.90909090909093\" stroke=\"currentColor\" stroke-width=\"3\" stroke-dasharray=\"1.1 6\" stroke-linecap=\"round\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker2)\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker2)\" /><line x1=\"280.896875\" y1=\"112.90909090909093\" x2=\"336.96562500000005\" y2=\"117.45454545454544\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker0)\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker0)\" /><line x1=\"280.896875\" y1=\"294.72727272727275\" x2=\"336.96562500000005\" y2=\"322\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker1)\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker1)\" /><line x1=\"280.896875\" y1=\"312.90909090909093\" x2=\"336.96562500000005\" y2=\"322\" stroke=\"currentColor\" stroke-width=\"3\" stroke-dasharray=\"1.1 6\" stroke-linecap=\"round\" marker-end=\"url(#edu-command-of-evidence-cbdd5287-marker2)\" marker-start=\"url(#edu-command-of-evidence-cbdd5287-marker2)\" /></g></svg></figure><div role=\"region\" aria-label=\"Long description for line graph titled Average Survival of Fruit Flies following Infection\"><ul>\n<li>The following 3 lines are shown:<br />\n<ul>\n<li>type A flies</li>\n<li>type AB flies</li>\n<li>type B flies</li>\n</ul>\n</li>\n<li>The type A flies line:<br />\n<ul>\n<li>Begins at 0 days, 100%</li>\n<li>Remains level to 2 days after infection, 100%</li>\n<li>Falls gradually to 6 days after infection, 96%</li>\n<li>Falls gradually to 10 days after infection, 92%</li>\n<li>Falls gradually to 14 days after infection, 90%</li>\n</ul>\n</li>\n<li>The type AB flies line: <br />\n<ul>\n<li>Begins at 0 days after infection, 100%</li>\n<li>Falls gradually to 2 days after infection, 98%</li>\n<li>Falls sharply to 6 days after infection, 46%</li>\n<li>Falls sharply to 10 days after infection, 12%</li>\n<li>Falls sharply to 14 days after infection, 0%</li>\n</ul>\n</li>\n<li>The type B flies line: <br />\n<ul>\n<li>Begins at 0 days after infection, 100%</li>\n<li>Falls gradually to 2 days after infection, 96%</li>\n<li>Falls sharply to 6 days after infection, 41%</li>\n<li>Falls sharply to 10 days after infection, 4%</li>\n<li>Falls gradually to 14 days after infection, 0%</li>\n</ul>\n</li>\n</ul></div>\n<p>In a study of the evolution of <em>DptA</em> and <em>DptB</em>—<em>Diptericin</em> genes encoding antimicrobial peptides that combat pathogens and foster beneficial microbes in fruit flies (<em>Drosophila</em>)—researchers assessed <em>Drosophila melanogaster</em> resistance to pathogenic infections by <em>Providencia rettgeri</em> and <em>Acetobacter</em> <em>sicerae</em>, bacteria common in the flies’ environments. Subjects included flies identified by mutations silencing <em>DptA</em>, <em>DptB</em>, or both <em>DptA</em> and <em>DptB</em> (termed types A, B, and <span>AB</span>, respectively). In conjunction with the observation that resistance to <em><span>P.</span> rettgeri</em> correlates with <em>DptA</em> activity but is not significantly affected by <em>DptB</em> activity, data in the graph of survival rates post–<em><span>A.</span> sicerae</em> infection suggest that <span class=\"blank\" id=\"passageBlank\"> </span></p>"
+  },
+  {
+    "id": "missed-p8-m2-q13",
+    "source": "College Board Practice 8, Module 2, Question 13",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "inferences",
+    "test": "Practice 8",
+    "taken": "2026-08-18",
+    "module": 2,
+    "number": 13,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Some economists have attributed the increasing adoption of automation technology by firms in the United States in part to the productivity gains firms can achieve by automating tasks previously requiring paid labor. Daron Acemoglu et al. recently complicated this account by showing not only that automation's productivity gains are often unremarkable, but that there is a disparity in the US tax code between automation technology and the labor it is nominally equivalent to: the tax code classifies automation-related technology as a depreciating asset, meaning that capital expenditures on that technology can reduce a firm's tax burden relative to its tax burden if equivalent expenditures were labor costs. Together, these findings suggest that ___",
+    "question": "Which choice most logically completes the text?",
+    "rule": "Most logically completes the text's discussion of the research by Acemoglu et al.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "the explanation that some economists have offered for US firms' increasing adoption of automation technology may be based on an overestimation of the tax benefits and productivity gains associated with that technology.",
+        "why": "Choice A is incorrect. Nothing in the text supports the idea that those economists have also overestimated the tax benefits of automation technology."
+      },
+      {
+        "label": "B",
+        "text": "US firms' increasing adoption of automation technology may be driven more by the fact that the government indirectly incentivizes firms to adopt that technology than by the ongoing benefits that the technology has for firms' outputs.",
+        "why": "Choice B is the best answer because it most logically completes the text's discussion of the research by Acemoglu et al. These findings suggest that the increasing adoption of automation technology by US firms may be more attributable to the US government indirectly incentivizing—through the tax code—the adoption of that technology than to automation being directly beneficial for firms' outputs."
+      },
+      {
+        "label": "C",
+        "text": "changes to the US tax code that result in capital expenditures on automation technology being treated the same as expenditures on labor costs would likely have little effect on firms' productivity but may encourage further adoption of that technology.",
+        "why": "Choice C is incorrect. If the tax code changed to treat expenditures on automation the same as expenditures on labor, then automation technology would likely become less appealing to firms rather than more appealing."
+      },
+      {
+        "label": "D",
+        "text": "US firms have actually tended to experience a decrease in productivity as a result of adopting automation technology, but that decrease is overlooked due to the tax advantages associated with the technology.",
+        "why": "Choice D is incorrect because nothing in the text suggests that automation leads to a decrease in productivity."
+      }
+    ],
+    "chose": "A"
+  },
+  {
+    "id": "missed-p8-m2-q14",
+    "source": "College Board Practice 8, Module 2, Question 14",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "inferences",
+    "test": "Practice 8",
+    "taken": "2026-08-18",
+    "module": 2,
+    "number": 14,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "The morphological novelty of echinoderms—marine invertebrates with radial symmetry, usually starlike, around a central point—impedes comparisons with most other animals, in which bilateral symmetry on an anterior-posterior (head to tail) axis through a trunk is typical. Particularly puzzling are sea stars, thought to have evolved a headless layout from a known bilateral origin. Applying genomic knowledge of Saccoglossus kowalevskii acorn worms (close relatives of sea stars, and thus expected to have similar markers for corresponding anatomical regions) to the body patterning genes of Patiria miniata sea stars, Laurent Formery et al. observed activity only in anterior genes across P. miniata's entire body and some posterior genes limited to the edges, suggesting that ___",
+    "question": "Which choice most logically completes the text?",
+    "rule": "Most logically completes the text's discussion of the morphology of sea stars.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "despite the greater prevalence of anterior genes in sea stars' genetic makeup, posterior genes active at the body's perimeter are primarily responsible for the starlike layout that distinguishes sea stars' radial symmetry from that of other echinoderms.",
+        "why": "Choice A is incorrect because the text doesn't identify how any particular region of sea stars' bodies influences the layout of sea stars' radial symmetry."
+      },
+      {
+        "label": "B",
+        "text": "contrary to the belief that they evolved from early ancestors with the bilateral form typical of many other animals, sea stars instead originated with an atypical body layout that was neither bilaterally nor radially symmetrical.",
+        "why": "Choice B is incorrect because the text doesn't suggest that the idea that sea stars evolved from an ancestor with bilateral symmetry is incorrect."
+      },
+      {
+        "label": "C",
+        "text": "although the two species are closely related, there is only minimal correspondence in the genetic markers for head, tail, and trunk region development in P. miniata sea stars and S. kowalevskii acorn worms.",
+        "why": "Choice C is incorrect because the text suggests that Formery et al. were able to make determinations about P. miniata sea stars' body plan based on the comparability of genetic markers between P. miniata and S. kowalevskii acorn worms."
+      },
+      {
+        "label": "D",
+        "text": "rather than undergoing changes resulting in the eventual elimination of a head region in their radial body plan, as previously assumed, sea stars' morphology evolved to completely lack a trunk and consist primarily of a head region.",
+        "why": "Choice D is the best answer because it most logically completes the text's discussion of the morphology of sea stars. Researchers determined that anterior (head) genes are active across the sea star's entire body, posterior (tail) genes are active in limited, peripheral locations of the body, and no trunk-related genes are active. This finding strongly suggests that, rather than becoming “headless” as they evolved from a bilateral ancestor, sea stars developed a body plan consisting almost entirely of a head region with a minimal tail region and no trunk region present."
+      }
+    ],
+    "chose": "A"
   }
 ]

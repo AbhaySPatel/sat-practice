@@ -119,7 +119,18 @@ def find_gloss(word, why):
 # The closing-quote case is why the old rfind('. ') approach failed on passages
 # like 'Drowne's Wooden Image. ” Drowne, a young man...' and returned four
 # sentences at once.
-SENTENCE_END = re.compile(r'(?<=[.!?])[”"’\']?\s+')
+#
+# The abbreviation guard is why a citation no longer splits a sentence in half.
+# "LaTanya Brown-Robertson et al. found that increases in household spending
+# power..." was being cut after "al.", so the stored sentence began "found that",
+# with no subject -- four of the sixty hard questions read that way on the
+# printed sheet.
+# Each pattern carries its own full stop: the match begins AFTER that stop, so a
+# lookbehind written without it tests the wrong characters and never fires.
+ABBREV = (r'(?<!\bet al\.)(?<!\be\.g\.)(?<!\bi\.e\.)(?<!\bcf\.)(?<!\bvs\.)'
+          r'(?<!\bDr\.)(?<!\bMr\.)(?<!\bMrs\.)(?<!\bMs\.)(?<!\bSt\.)'
+          r'(?<!\betc\.)(?<!\bFig\.)(?<!\bca\.)(?<!\bNo\.)')
+SENTENCE_END = re.compile(ABBREV + r'(?<=[.!?])[”"’\']?\s+')
 
 
 def sentence_around(passage, blank='___'):
@@ -135,6 +146,10 @@ def sentence_around(passage, blank='___'):
             # Drop the "The following text is adapted from..." preamble if the
             # blank happens to share a chunk with it.
             s = re.sub(r'^The following text is adapted from[^.]*\.\s*', '', s)
+            # The split leaves a closing quote at the head of the next sentence
+            # ('...Wooden Image. ” They found that...'), which then opens the
+            # printed line with a mark that closes nothing.
+            s = re.sub(r'^[”"’\']\s*', '', s.strip())
             return s.strip()
     return ''
 

@@ -1,0 +1,1154 @@
+{
+ "source": "College Board SAT Suite question bank, Command of Evidence",
+ "note": "Hard words anywhere in a Command of Evidence question -- passage, stem or the four quotations. Chosen by wordfreq and then by hand; see extract_coe_vocab.py. Words already in vocab.json or wic-passage-vocab.json are excluded.",
+ "words": [
+  {
+   "word": "acclaim",
+   "gloss": "public praise",
+   "seen": 1,
+   "sentence": "The novels written by Toni Morrison that were published after 1983 sold significantly more copies and received wider critical acclaim than the novels she wrote that were published before 1983.",
+   "sourceId": "cb-command-of-evidence-4fc9a13a"
+  },
+  {
+   "word": "accumulate",
+   "gloss": "build up over time",
+   "seen": 1,
+   "sentence": "The African countries tended to accumulate a variety of foreign currencies for their reserves, whereas the Asian countries tended to favor a single foreign currency for their reserves.",
+   "sourceId": "cb-command-of-evidence-7575e417"
+  },
+  {
+   "word": "accumulation",
+   "gloss": "a gradual building up",
+   "seen": 1,
+   "sentence": "Etta-Nkwelle posited that herding would manifest in regional peer countries converging on the same foreign currency accumulation rate regardless of each country\u2019s observable circumstances.",
+   "sourceId": "cb-command-of-evidence-7575e417"
+  },
+  {
+   "word": "alleviate",
+   "gloss": "make less severe",
+   "seen": 1,
+   "sentence": "The best among them, those who consecrate Nature with their sacred desire for the future, will lose, in a sordid and painful annihilation, all stimulus to alleviate the ugliness of humanity.",
+   "sourceId": "cb-command-of-evidence-20583752"
+  },
+  {
+   "word": "allocate",
+   "gloss": "set aside for a purpose",
+   "seen": 1,
+   "sentence": "One potential explanation for this result is that individuals conceive of and allocate funds in physical money differently than they conceive of and allocate funds in electronic form.",
+   "sourceId": "cb-command-of-evidence-156ff681"
+  },
+  {
+   "word": "anguish",
+   "gloss": "severe mental pain",
+   "seen": 1,
+   "sentence": "\u201cPoetry, which brings together or separates, which fortifies or brings anguish, which shores up or demolishes souls, which gives or robs men of faith and vigor, is more necessary to a people than industry itself, for industry provides them with a means of subsistence, while literature gives them the",
+   "sourceId": "cb-command-of-evidence-20583752"
+  },
+  {
+   "word": "annihilation",
+   "gloss": "complete destruction",
+   "seen": 1,
+   "sentence": "The best among them, those who consecrate Nature with their sacred desire for the future, will lose, in a sordid and painful annihilation, all stimulus to alleviate the ugliness of humanity.",
+   "sourceId": "cb-command-of-evidence-20583752"
+  },
+  {
+   "word": "approximation",
+   "gloss": "a close but inexact figure",
+   "seen": 1,
+   "sentence": "But even this approximation of grid-cell activity has less to do with similarity between the neural networks and biological brains than it does with the rules programmed into the networks.",
+   "sourceId": "cb-command-of-evidence-dd1757fd"
+  },
+  {
+   "word": "artifact",
+   "gloss": "an object made by people, esp. of historical interest",
+   "seen": 1,
+   "sentence": "Although many believe that only modern humans developed systems for notating numbers, one archaeologist asserts that this artifact may be a sign that Neanderthals also recorded numerical information.",
+   "sourceId": "cb-command-of-evidence-73d457b6"
+  },
+  {
+   "word": "asserts",
+   "gloss": "states firmly, without proving it",
+   "seen": 6,
+   "sentence": "A student in a biology seminar who is writing a paper on these fish asserts that their escape from Brazilian fish farms into the wild may have significant negative long-term ecological effects.",
+   "sourceId": "cb-command-of-evidence-29f5c8c2"
+  },
+  {
+   "word": "attrition",
+   "gloss": "a gradual wearing away or loss in numbers",
+   "seen": 1,
+   "sentence": "The linguistic niche hypothesis (LNH) posits that the exotericity of languages (how prevalent non-native speakers are) and grammatical complexity are inversely related, which the LNH ascribes to attrition of complex grammatical rules as more non-native speakers adopt the language but fail to acquire",
+   "sourceId": "cb-command-of-evidence-b28dc26d"
+  },
+  {
+   "word": "authenticity",
+   "gloss": "being genuine rather than copied",
+   "seen": 1,
+   "sentence": "In a paper for an art history class, a student claims that Chambi\u2019s photographs have considerable ethnographic value\u2014in his work, Chambi was able to capture diverse elements of Peruvian society, representing his subjects with both dignity and authenticity.",
+   "sourceId": "cb-command-of-evidence-9aa5efc4"
+  },
+  {
+   "word": "bleak",
+   "gloss": "grim; without hope",
+   "seen": 1,
+   "sentence": "\u201cShe looked fixedly up the bleak street as if she were gathering her strength to face something, as if she were trying with all her might to grasp a situation which, no matter how painful, must be met and dealt with somehow.",
+   "sourceId": "cb-command-of-evidence-c83e0b43"
+  },
+  {
+   "word": "brazen",
+   "gloss": "boldly shameless",
+   "seen": 1,
+   "sentence": "\u201cWhat does this brazen tongue declare, / That falling on the midnight air / Brings to my heart a sense of care / Akin to fright?\u201d \u201cThe snow has ceased its fluttering flight, / The wind sunk to a whisper light, / An ominous stillness fills the night, / A pause\u2014a hush.",
+   "sourceId": "cb-command-of-evidence-87023f34"
+  },
+  {
+   "word": "breadth",
+   "gloss": "range; how wide something is",
+   "seen": 1,
+   "sentence": "As the movement spread beyond Chile, the breadth of musical traditions incorporated into its foundation also expanded.",
+   "sourceId": "cb-command-of-evidence-3a489e1e"
+  },
+  {
+   "word": "bribery",
+   "gloss": "paying someone to act dishonestly",
+   "seen": 1,
+   "sentence": "\u2019 In particular, he thinks oligarchies are particularly susceptible to corruption through bribery.",
+   "sourceId": "cb-command-of-evidence-eaf22802"
+  },
+  {
+   "word": "caricature",
+   "gloss": "an exaggerated portrayal",
+   "seen": 1,
+   "sentence": "\u201d \u201cCaricature has sought again to spoil the quaint beauty of the music, and has filled the air with many debased melodies which vulgar ears scarce know from the real.",
+   "sourceId": "cb-command-of-evidence-783d1388"
+  },
+  {
+   "word": "causality",
+   "gloss": "one thing actually causing another",
+   "seen": 1,
+   "sentence": "Although no major election took place sufficiently near the study for Gil de Z\u00fa\u00f1iga and Diehl to identify causality between NFM and voting behavior, they did posit that NFM may reduce voting probability through an indirect effect.",
+   "sourceId": "cb-command-of-evidence-64cd7321"
+  },
+  {
+   "word": "characterize",
+   "gloss": "describe the nature of",
+   "seen": 1,
+   "sentence": "Although Plato\u2019s writings typically characterize representational art as an inferior reflection of the physical world, Aristotle suggests that mimesis can refer to art\u2019s capacity to envision hypothetical conditions that could, but don\u2019t yet, exist.",
+   "sourceId": "cb-command-of-evidence-068f939b"
+  },
+  {
+   "word": "charisma",
+   "gloss": "personal magnetism",
+   "seen": 1,
+   "sentence": "\u201d \u201cWhile Coleman was beloved by spectators for her charisma, she had a more complicated relationship with her managers and staff, who at times found her behavior too impulsive and demanding.",
+   "sourceId": "cb-command-of-evidence-f38b40ac"
+  },
+  {
+   "word": "cognition",
+   "gloss": "thinking and knowing",
+   "seen": 1,
+   "sentence": "When the results of molecular analysis of two species of octopus\u2014an animal known for its intelligence\u2014were announced in 2022, the confirmation of a LINE transposon in Octopus vulgaris and Octopus bimaculoides genomes prompted researchers to hypothesize that that transposon family is tied to a specie",
+   "sourceId": "cb-command-of-evidence-22e4d633"
+  },
+  {
+   "word": "colonization",
+   "gloss": "settling and taking control of a place",
+   "seen": 1,
+   "sentence": "Many feature political commentary addressing contemporary issues that stemmed from shared experiences of European colonization in Latin American countries.",
+   "sourceId": "cb-command-of-evidence-3a489e1e"
+  },
+  {
+   "word": "comparatively",
+   "gloss": "relatively; when set against others",
+   "seen": 1,
+   "sentence": "Proudie] was comparatively young, and had, as he fondly flattered himself, been selected as possessing such gifts, natural and acquired, as must be sure to recommend him to a yet higher notice.",
+   "sourceId": "cb-command-of-evidence-dc87adf4"
+  },
+  {
+   "word": "compiling",
+   "gloss": "gathering together into one work",
+   "seen": 1,
+   "sentence": "Parra traveled all over Chile compiling extensive records of authentic folk music as well as recipes, proverbs, and other facets of cultural history.",
+   "sourceId": "cb-command-of-evidence-3a489e1e"
+  },
+  {
+   "word": "conceive",
+   "gloss": "form in the mind; imagine",
+   "seen": 1,
+   "sentence": "One potential explanation for this result is that individuals conceive of and allocate funds in physical money differently than they conceive of and allocate funds in electronic form.",
+   "sourceId": "cb-command-of-evidence-156ff681"
+  },
+  {
+   "word": "conclusively",
+   "gloss": "in a way that settles the matter",
+   "seen": 1,
+   "sentence": "Sites in the Canadian Rockies from later periods than the Cambrian period have yielded fossils that have been conclusively identified as ctenophore fossils.",
+   "sourceId": "cb-command-of-evidence-0d7f4966"
+  },
+  {
+   "word": "condensed",
+   "gloss": "made shorter or denser",
+   "seen": 1,
+   "sentence": "\u201cWhile Stevens\u2019s ambassadorial sandpaintings are undoubtedly educative for audiences that have little exposure to Din\u00e9 culture, they should not be confused with authentic ikaah, which cannot be extricated from a practice that is intentionally and necessarily transitory nor condensed into a single pe",
+   "sourceId": "cb-command-of-evidence-ca9dc00f"
+  },
+  {
+   "word": "confine",
+   "gloss": "keep within limits",
+   "seen": 1,
+   "sentence": "\u201d \u201cDuring special occasions, curtains were placed inside the temple to minimize reverberation and confine the sound to designated locations.",
+   "sourceId": "cb-command-of-evidence-2903668a"
+  },
+  {
+   "word": "confiscation",
+   "gloss": "official seizure of property",
+   "seen": 1,
+   "sentence": "Two years later, Henry VIII introduced a policy titled the Dissolution of the Monasteries that by 1540 had resulted in the closure of all Catholic monasteries in England and the confiscation of their estates.",
+   "sourceId": "cb-command-of-evidence-04cbeca3"
+  },
+  {
+   "word": "conformity",
+   "gloss": "going along with what others do",
+   "seen": 1,
+   "sentence": "\u201d \u201cThey speedily discovered that their enjoyment of dancing and music was mutual, and that it arose from a general conformity of judgment in all that related to either.",
+   "sourceId": "cb-command-of-evidence-c538954d"
+  },
+  {
+   "word": "contemporaries",
+   "gloss": "people living at the same time",
+   "seen": 1,
+   "sentence": "\u201d \u201cMany of Kelly\u2019s contemporaries were inspired by his designs to incorporate buttons, as well as zippers and snaps, as decorative items in their work.",
+   "sourceId": "cb-command-of-evidence-0113152f"
+  },
+  {
+   "word": "contradictory",
+   "gloss": "in conflict with each other",
+   "seen": 1,
+   "sentence": "In the poem, the speaker describes having contradictory feelings while experiencing the sights and sounds of a spring day: ___ Which quotation from \u201cLines Written in Early Spring\u201d most effectively illustrates the claim?",
+   "sourceId": "cb-command-of-evidence-9e5ce27c"
+  },
+  {
+   "word": "converge",
+   "gloss": "come together at a point",
+   "seen": 1,
+   "sentence": "Economists have demonstrated that herding\u2014in which individuals converge on the same action by imitating the economic decisions of one or more peers\u2014occurs among investors.",
+   "sourceId": "cb-command-of-evidence-7575e417"
+  },
+  {
+   "word": "conveying",
+   "gloss": "getting across; communicating",
+   "seen": 1,
+   "sentence": "Cornelius Johnson\u2019s appearance as conveying his exaggerated sense of his importance: ___ Which quotation from \u201cMr.",
+   "sourceId": "cb-command-of-evidence-29cde5fa"
+  },
+  {
+   "word": "conveys",
+   "gloss": "gets across; communicates",
+   "seen": 2,
+   "sentence": "The poem conveys the speaker\u2019s determination to experience the countryside around her: ___ Which quotation from the poem most effectively illustrates the claim?",
+   "sourceId": "cb-command-of-evidence-81af81d4"
+  },
+  {
+   "word": "correlated",
+   "gloss": "varying together, without proving cause",
+   "seen": 2,
+   "sentence": "Utilizing the Index of Waterbird Community Integrity (IWCI), on which a high score corresponds to high community integrity, the researchers found that bulkheads are more strongly negatively correlated with waterbird community integrity than is riprap.",
+   "sourceId": "cb-command-of-evidence-356ad646"
+  },
+  {
+   "word": "corresponds",
+   "gloss": "matches; answers to",
+   "seen": 1,
+   "sentence": "Utilizing the Index of Waterbird Community Integrity (IWCI), on which a high score corresponds to high community integrity, the researchers found that bulkheads are more strongly negatively correlated with waterbird community integrity than is riprap.",
+   "sourceId": "cb-command-of-evidence-356ad646"
+  },
+  {
+   "word": "corrupted",
+   "gloss": "spoiled; altered for the worse",
+   "seen": 1,
+   "sentence": "Although many transposons, DNA sequences that move within an organism\u2019s genome through shuffling or duplication, have become corrupted and inactive over time, those from the long interspersed nuclear elements (LINE) family appear to remain active in the genomes of some species.",
+   "sourceId": "cb-command-of-evidence-22e4d633"
+  },
+  {
+   "word": "cultivated",
+   "gloss": "grown deliberately; refined",
+   "seen": 1,
+   "sentence": "By analyzing the chemical composition of the bones of sheep, goats, and cattle from this era, the team determined that wild plants made up the bulk of sheep\u2019s and goats\u2019 diets, while the cattle\u2019s diet consisted largely of millet, a crop cultivated by humans.",
+   "sourceId": "cb-command-of-evidence-ec93e52c"
+  },
+  {
+   "word": "cumulative",
+   "gloss": "adding up as it goes",
+   "seen": 1,
+   "sentence": "Although potentially less expensive than producing new cells, recycling cells does incur costs, and thus reducing cell lifetimes entails greater cumulative costs.",
+   "sourceId": "cb-command-of-evidence-8e22efd9"
+  },
+  {
+   "word": "curated",
+   "gloss": "selected and arranged by an expert",
+   "seen": 1,
+   "sentence": "Many music streaming services also function as social media platforms: by giving users the option to follow friends and share curated playlists or information about their listening history, these platforms allow people to convey their music preferences and listening activities directly to their soci",
+   "sourceId": "cb-command-of-evidence-d52fca9f"
+  },
+  {
+   "word": "depict",
+   "gloss": "show or represent",
+   "seen": 1,
+   "sentence": "The ancient Greek concept of \u201cmimesis, \u201d a term used in the works of Plato, Aristotle, and other Greek philosophers in discussions of representational art\u2014visual, performance, or literary art that aims to depict the real world\u2014is a foundational concept of the Western philosophy of aesthetics.",
+   "sourceId": "cb-command-of-evidence-068f939b"
+  },
+  {
+   "word": "depiction",
+   "gloss": "a representation of something",
+   "seen": 1,
+   "sentence": "Its depiction of Mexican American culture inspired later authors to examine their own heritage within their fictional works.",
+   "sourceId": "cb-command-of-evidence-a13541c0"
+  },
+  {
+   "word": "detachment",
+   "gloss": "being uninvolved; distance",
+   "seen": 1,
+   "sentence": "\u201d \u201cOne experiences a certain sense of detachment from ordinary day and daylight duties that is exhilarating.",
+   "sourceId": "cb-command-of-evidence-5fb6ed10"
+  },
+  {
+   "word": "deviation",
+   "gloss": "a departure from the usual",
+   "seen": 1,
+   "sentence": "Since nongravitational accelerations of interstellar objects are several orders of magnitude weaker than gravitational accelerations, deviation from behavior that could be fully attributed to gravitational pull has been detected on a limited number of objects similar to \u2018Oumuamua.",
+   "sourceId": "cb-command-of-evidence-6d69ab93"
+  },
+  {
+   "word": "disenfranchised",
+   "gloss": "deprived of a right, esp. the vote",
+   "seen": 1,
+   "sentence": "\u2019 That is, oligarchic leaders who wish to hold on to power will introduce members of disenfranchised classes into government in a participatory role.",
+   "sourceId": "cb-command-of-evidence-eaf22802"
+  },
+  {
+   "word": "disparity",
+   "gloss": "a marked inequality",
+   "seen": 1,
+   "sentence": "Securing new cell materials is more expensive than recycling cell materials, and thus more frequent cell replacement entails greater disparity in cumulative costs.",
+   "sourceId": "cb-command-of-evidence-8e22efd9"
+  },
+  {
+   "word": "displeasure",
+   "gloss": "annoyance; disapproval",
+   "seen": 1,
+   "sentence": "The poem highlights an ambivalence toward poetry as the speaker acknowledges its merits while also expressing a sense of displeasure, writing ___ Which quotation from \u201cPoetry\u201d most effectively illustrates the claim?",
+   "sourceId": "cb-command-of-evidence-66fd248a"
+  },
+  {
+   "word": "divergence",
+   "gloss": "a moving apart; a difference",
+   "seen": 1,
+   "sentence": "The researchers hypothesize that fork-tailed flycatcher females are attracted to the specific sound made by the males of their own subspecies, and that over time the females\u2019 preference will drive further genetic and anatomical divergence between the subspecies.",
+   "sourceId": "cb-command-of-evidence-860803dd"
+  },
+  {
+   "word": "domesticated",
+   "gloss": "tamed for human use",
+   "seen": 1,
+   "sentence": "Guinea pigs had originally been domesticated much earlier in both Colombia and Peru.",
+   "sourceId": "cb-command-of-evidence-d76ea360"
+  },
+  {
+   "word": "duplication",
+   "gloss": "repeating something unnecessarily",
+   "seen": 1,
+   "sentence": "Although many transposons, DNA sequences that move within an organism\u2019s genome through shuffling or duplication, have become corrupted and inactive over time, those from the long interspersed nuclear elements (LINE) family appear to remain active in the genomes of some species.",
+   "sourceId": "cb-command-of-evidence-22e4d633"
+  },
+  {
+   "word": "emphasizes",
+   "gloss": "gives special weight to",
+   "seen": 1,
+   "sentence": "In the story, the author emphasizes that the setting where the character Valia is reading is nearly silent: ___ Which quotation from \u201cValia\u201d most effectively illustrates the claim?",
+   "sourceId": "cb-command-of-evidence-628e1305"
+  },
+  {
+   "word": "enactment",
+   "gloss": "putting a law into force; performing",
+   "seen": 1,
+   "sentence": "Some historians assert that the enactment of the policy was primarily motivated by perceived financial opportunities.",
+   "sourceId": "cb-command-of-evidence-04cbeca3"
+  },
+  {
+   "word": "entails",
+   "gloss": "necessarily involves",
+   "seen": 1,
+   "sentence": "Although potentially less expensive than producing new cells, recycling cells does incur costs, and thus reducing cell lifetimes entails greater cumulative costs.",
+   "sourceId": "cb-command-of-evidence-8e22efd9"
+  },
+  {
+   "word": "entrusted",
+   "gloss": "given as a responsibility",
+   "seen": 1,
+   "sentence": "Proudie\u2019s] residence in the metropolis, rendered necessary by duties thus entrusted to him, his high connexions, and the peculiar talents and nature of the man, recommended him to persons in power.",
+   "sourceId": "cb-command-of-evidence-dc87adf4"
+  },
+  {
+   "word": "envision",
+   "gloss": "picture in the mind",
+   "seen": 1,
+   "sentence": "Although Plato\u2019s writings typically characterize representational art as an inferior reflection of the physical world, Aristotle suggests that mimesis can refer to art\u2019s capacity to envision hypothetical conditions that could, but don\u2019t yet, exist.",
+   "sourceId": "cb-command-of-evidence-068f939b"
+  },
+  {
+   "word": "ephemeral",
+   "gloss": "lasting a very short time",
+   "seen": 1,
+   "sentence": "This may seem in tension with the role of cultural ambassador\u2014how could static objects authentically represent an inherently ephemeral and dynamic practice?\u2014but such a view is itself overly object-focused and neglects how Stevens strove to convey exactly those characteristics of ikaah as a cultural ",
+   "sourceId": "cb-command-of-evidence-ca9dc00f"
+  },
+  {
+   "word": "ethnographic",
+   "gloss": "describing a people and their culture",
+   "seen": 1,
+   "sentence": "In a paper for an art history class, a student claims that Chambi\u2019s photographs have considerable ethnographic value\u2014in his work, Chambi was able to capture diverse elements of Peruvian society, representing his subjects with both dignity and authenticity.",
+   "sourceId": "cb-command-of-evidence-9aa5efc4"
+  },
+  {
+   "word": "evasive",
+   "gloss": "avoiding a direct answer",
+   "seen": 1,
+   "sentence": "Jan Gimsa, Robert Sleigh, and Ulrike Gimsa have hypothesized that the sail-like structure running down the back of the dinosaur Spinosaurus aegyptiacus improved the animal\u2019s success in underwater pursuits of prey species capable of making quick, evasive movements.",
+   "sourceId": "cb-command-of-evidence-5d6ab069"
+  },
+  {
+   "word": "evidently",
+   "gloss": "apparently; as far as one can see",
+   "seen": 1,
+   "sentence": "\u2019 They had evidently been giving her intense pain, for she positively closed her eyes as I moved them away.",
+   "sourceId": "cb-command-of-evidence-37e15265"
+  },
+  {
+   "word": "exhilarating",
+   "gloss": "thrilling; invigorating",
+   "seen": 1,
+   "sentence": "\u201d \u201cOne experiences a certain sense of detachment from ordinary day and daylight duties that is exhilarating.",
+   "sourceId": "cb-command-of-evidence-5fb6ed10"
+  },
+  {
+   "word": "expansive",
+   "gloss": "wide-ranging; extensive",
+   "seen": 1,
+   "sentence": "The newsletter had an expansive reach for a publication of its kind: around 4,000 copies were published each month.",
+   "sourceId": "cb-command-of-evidence-e7dc27dc"
+  },
+  {
+   "word": "expenditures",
+   "gloss": "amounts spent",
+   "seen": 1,
+   "sentence": "\u201cWhen constructing his argument regarding the characteristics of a well-functioning government, Aristotle asserts that \u2018Transgression creeps in unperceived and at last ruins the state, \u2019 illustrating this idea with a comparison to frequent small expenditures slowly and almost imperceptibly chipping ",
+   "sourceId": "cb-command-of-evidence-eaf22802"
+  },
+  {
+   "word": "explanatory",
+   "gloss": "serving to explain",
+   "seen": 1,
+   "sentence": "A student is examining a long, challenging poem that was initially published in a quarterly journal without explanatory notes, then later republished in a stand-alone volume containing only that poem and accompanying explanatory notes written by the poet.",
+   "sourceId": "cb-command-of-evidence-94ca8ebd"
+  },
+  {
+   "word": "expulsion",
+   "gloss": "being forced out",
+   "seen": 1,
+   "sentence": "Now, Jennifer Bergner and colleagues propose that the nongravitational acceleration is due to the gaseous expulsion of entrapped hydrogen from \u2018Oumuamua\u2019s water-rich icy body.",
+   "sourceId": "cb-command-of-evidence-6d69ab93"
+  },
+  {
+   "word": "exuberant",
+   "gloss": "full of lively energy",
+   "seen": 1,
+   "sentence": "In addition to her technical skill and daring feats, American stunt pilot Bessie Coleman was also known for dazzling the crowds that came to watch her air shows in the 1920s with her exuberant personality.",
+   "sourceId": "cb-command-of-evidence-f38b40ac"
+  },
+  {
+   "word": "facets",
+   "gloss": "aspects; sides of something",
+   "seen": 1,
+   "sentence": "Parra traveled all over Chile compiling extensive records of authentic folk music as well as recipes, proverbs, and other facets of cultural history.",
+   "sourceId": "cb-command-of-evidence-3a489e1e"
+  },
+  {
+   "word": "fathom",
+   "gloss": "understand after effort",
+   "seen": 1,
+   "sentence": "\u201d \u201cI cease to wonder, and no more attempt / Thine height t\u2019explore, or fathom thy profound.",
+   "sourceId": "cb-command-of-evidence-25290c8d"
+  },
+  {
+   "word": "feats",
+   "gloss": "impressive achievements",
+   "seen": 1,
+   "sentence": "In addition to her technical skill and daring feats, American stunt pilot Bessie Coleman was also known for dazzling the crowds that came to watch her air shows in the 1920s with her exuberant personality.",
+   "sourceId": "cb-command-of-evidence-f38b40ac"
+  },
+  {
+   "word": "flatter",
+   "gloss": "praise beyond what is deserved",
+   "seen": 1,
+   "sentence": "I hardly yet have learn\u2019d / To insinuate, flatter, bow, and bend my knee.",
+   "sourceId": "cb-command-of-evidence-4ef17800"
+  },
+  {
+   "word": "flourished",
+   "gloss": "thrived; did well",
+   "seen": 1,
+   "sentence": "Archaeologist Weiwei Wang and her colleagues analyzed footed grinding slabs and other food-preparation tools excavated from \u00d3c Eo, a Southeast Asian port city that flourished between the first and sixth centuries CE.",
+   "sourceId": "cb-command-of-evidence-2398ffbf"
+  },
+  {
+   "word": "fluency",
+   "gloss": "ease and smoothness, esp. in speech",
+   "seen": 1,
+   "sentence": "In their 2016 study of a school in an Anishinaabe community in Ontario, Canada, scholars Lindsay Morcom and Stephanie Roy (who are Anishinaabe themselves) found that the model not only imparted fluency in the Anishinaabe language but also enhanced students\u2019 pride in Anishinaabe culture overall.",
+   "sourceId": "cb-command-of-evidence-df91532e"
+  },
+  {
+   "word": "folklore",
+   "gloss": "the traditional stories of a people",
+   "seen": 1,
+   "sentence": "In the twentieth century, ethnographers made a concerted effort to collect Mexican American folklore, but they did not always agree about that folklore\u2019s origins.",
+   "sourceId": "cb-command-of-evidence-0240d11c"
+  },
+  {
+   "word": "folly",
+   "gloss": "foolishness",
+   "seen": 2,
+   "sentence": "\u201d says to himself while striking his head, \u201cBeat at this gate that let thy folly in / And thy dear judgement out!\u201d says of himself, \u201cI will do such things\u2014 / What they are yet, I know not; but they shall be / The terrors of the earth!\u201d",
+   "sourceId": "cb-command-of-evidence-825dc766"
+  },
+  {
+   "word": "fortified",
+   "gloss": "strengthened; reinforced",
+   "seen": 1,
+   "sentence": "It fortified her to reflect upon the great operations of nature, and when she thought of the law that lay behind them, she felt a sense of personal security.",
+   "sourceId": "cb-command-of-evidence-c83e0b43"
+  },
+  {
+   "word": "fractured",
+   "gloss": "broken; split",
+   "seen": 1,
+   "sentence": "Researchers investigated the timing of the transition from a stagnant lid regime to a tectonic plate regime, in which the lithosphere is fractured into dynamic plates that in turn allow lithospheric and mantle material to mix.",
+   "sourceId": "cb-command-of-evidence-d696eafa"
+  },
+  {
+   "word": "framing",
+   "gloss": "how something is presented",
+   "seen": 1,
+   "sentence": "Linguist Deborah Tannen has cautioned against framing contentious issues in terms of two highly competitive perspectives, such as pro versus con.",
+   "sourceId": "cb-command-of-evidence-71904085"
+  },
+  {
+   "word": "frivolous",
+   "gloss": "not serious; trivial",
+   "seen": 1,
+   "sentence": "\u201d \u201cThe banker, spoilt and frivolous, with millions beyond his reckoning, was delighted at the bet.",
+   "sourceId": "cb-command-of-evidence-3f7f35ea"
+  },
+  {
+   "word": "heightened",
+   "gloss": "increased; made more intense",
+   "seen": 1,
+   "sentence": "The Yok Balum data show prolonged dry conditions during the same portions of the Little Ice Age in which the Huagapo data show heightened levels of rainfall.",
+   "sourceId": "cb-command-of-evidence-b32c4b3a"
+  },
+  {
+   "word": "hypothetical",
+   "gloss": "supposed for argument, not actual",
+   "seen": 1,
+   "sentence": "Although Plato\u2019s writings typically characterize representational art as an inferior reflection of the physical world, Aristotle suggests that mimesis can refer to art\u2019s capacity to envision hypothetical conditions that could, but don\u2019t yet, exist.",
+   "sourceId": "cb-command-of-evidence-068f939b"
+  },
+  {
+   "word": "idiosyncratic",
+   "gloss": "peculiar to one person",
+   "seen": 1,
+   "sentence": "In his 1950 masterpiece History of Mexico, Medell\u00edn fuses these influences into a style so idiosyncratic that it resists efforts to view his work through the lens of nationality or cultural identity.",
+   "sourceId": "cb-command-of-evidence-378c66d5"
+  },
+  {
+   "word": "illumination",
+   "gloss": "light; clarification",
+   "seen": 1,
+   "sentence": "Chambi\u2019s photographs demonstrate a high level of technical skill, as seen in his strategic use of illumination to create dramatic light and shadow contrasts.",
+   "sourceId": "cb-command-of-evidence-9aa5efc4"
+  },
+  {
+   "word": "immobile",
+   "gloss": "unable to move",
+   "seen": 1,
+   "sentence": "Early Earth is thought to have been characterized by a stagnant lid tectonic regime, in which the upper lithosphere (the outer rocky layer) was essentially immobile and there was no interaction between the lithosphere and the underlying mantle.",
+   "sourceId": "cb-command-of-evidence-d696eafa"
+  },
+  {
+   "word": "improvisation",
+   "gloss": "making it up as you go",
+   "seen": 1,
+   "sentence": "\u201cThe company presented actos, short comedy sketches, that often relied on exaggerated physical humor to groups of agricultural workers, whose reactions\u2014enthusiastic cheers of appreciation and, occasionally, loud boos of disapproval\u2014promoted improvisation.",
+   "sourceId": "cb-command-of-evidence-33b1b285"
+  },
+  {
+   "word": "impulsive",
+   "gloss": "acting without thinking first",
+   "seen": 1,
+   "sentence": "\u201d \u201cWhile Coleman was beloved by spectators for her charisma, she had a more complicated relationship with her managers and staff, who at times found her behavior too impulsive and demanding.",
+   "sourceId": "cb-command-of-evidence-f38b40ac"
+  },
+  {
+   "word": "inconsistencies",
+   "gloss": "places where things do not agree",
+   "seen": 1,
+   "sentence": "Existing proposed models of outgassing from \u2018Oumuamua include the direct conversion of nitrogen or carbon monoxide from a solid to a gaseous state without becoming liquid, but these models have theoretical or observational inconsistencies.",
+   "sourceId": "cb-command-of-evidence-6d69ab93"
+  },
+  {
+   "word": "incorporates",
+   "gloss": "takes in as part of itself",
+   "seen": 1,
+   "sentence": "Having demonstrated that the power conversion efficiency of new perovskite photovoltaic cells is nearly indistinguishable from that of cells recycled multiple times, Xun Xiao and colleagues evaluated the levelized cost of electricity (LCOE)\u2014a measure of cost per produced electricity unit that incorp",
+   "sourceId": "cb-command-of-evidence-8e22efd9"
+  },
+  {
+   "word": "incur",
+   "gloss": "bring upon oneself (a cost, a risk)",
+   "seen": 2,
+   "sentence": "Although potentially less expensive than producing new cells, recycling cells does incur costs, and thus reducing cell lifetimes entails greater cumulative costs.",
+   "sourceId": "cb-command-of-evidence-8e22efd9"
+  },
+  {
+   "word": "indistinguishable",
+   "gloss": "impossible to tell apart",
+   "seen": 1,
+   "sentence": "Having demonstrated that the power conversion efficiency of new perovskite photovoltaic cells is nearly indistinguishable from that of cells recycled multiple times, Xun Xiao and colleagues evaluated the levelized cost of electricity (LCOE)\u2014a measure of cost per produced electricity unit that incorp",
+   "sourceId": "cb-command-of-evidence-8e22efd9"
+  },
+  {
+   "word": "induce",
+   "gloss": "bring about; persuade",
+   "seen": 1,
+   "sentence": "Both Plato\u2019s and Aristotle\u2019s theorizations of mimesis examine the psychological effects that works of art induce in the viewer or listener.",
+   "sourceId": "cb-command-of-evidence-068f939b"
+  },
+  {
+   "word": "influx",
+   "gloss": "an arrival of many at once",
+   "seen": 1,
+   "sentence": "Its physical characteristics are most consistent with it having formed as a result of a massive but short-lived influx of liquid water.",
+   "sourceId": "cb-command-of-evidence-0c622cfb"
+  },
+  {
+   "word": "infrequently",
+   "gloss": "rarely",
+   "seen": 1,
+   "sentence": "Some recipients of physical transfers received small amounts of money relatively frequently, while others received large amounts relatively infrequently.",
+   "sourceId": "cb-command-of-evidence-156ff681"
+  },
+  {
+   "word": "inhabit",
+   "gloss": "live in",
+   "seen": 1,
+   "sentence": "Studies have found a positive correlation between the depths that various piezophiles inhabit and concentrations of a compound called trimethylamine N-oxide (TMAO) in their muscle tissues, which has led a team of researchers to hypothesize that TMAO reduces water\u2019s compressibility.",
+   "sourceId": "cb-command-of-evidence-0198240a"
+  },
+  {
+   "word": "inherently",
+   "gloss": "by its very nature",
+   "seen": 1,
+   "sentence": "This may seem in tension with the role of cultural ambassador\u2014how could static objects authentically represent an inherently ephemeral and dynamic practice?\u2014but such a view is itself overly object-focused and neglects how Stevens strove to convey exactly those characteristics of ikaah as a cultural ",
+   "sourceId": "cb-command-of-evidence-ca9dc00f"
+  },
+  {
+   "word": "inhibit",
+   "gloss": "hold back; slow down",
+   "seen": 1,
+   "sentence": "The soil surrounding healthy plants contained significantly higher concentrations of microbes known to inhibit Ralstonia solanacearum than the soil surrounding diseased plants did.",
+   "sourceId": "cb-command-of-evidence-67b59a67"
+  },
+  {
+   "word": "insightful",
+   "gloss": "showing deep understanding",
+   "seen": 1,
+   "sentence": "This insightful depiction of a preteen girl encouraged authors who, like Cisneros herself, are Latina to use fictional works to examine experiences from their own youth.",
+   "sourceId": "cb-command-of-evidence-a13541c0"
+  },
+  {
+   "word": "interspersed",
+   "gloss": "scattered in among",
+   "seen": 1,
+   "sentence": "Although many transposons, DNA sequences that move within an organism\u2019s genome through shuffling or duplication, have become corrupted and inactive over time, those from the long interspersed nuclear elements (LINE) family appear to remain active in the genomes of some species.",
+   "sourceId": "cb-command-of-evidence-22e4d633"
+  },
+  {
+   "word": "intervening",
+   "gloss": "coming in between",
+   "seen": 1,
+   "sentence": "But in one of the experiments, Sevilla and Townsend arranged the same jewelry with different levels of intervening space at an upscale retailer (Tiffany & Co.) and a relatively inexpensive retailer (Forever 21).",
+   "sourceId": "cb-command-of-evidence-09775cbf"
+  },
+  {
+   "word": "intuitive",
+   "gloss": "grasped without reasoning it out",
+   "seen": 1,
+   "sentence": "In the book, Du Bois suggests that upon hearing Black folk songs, he felt an intuitive and sometimes unexpected sense of cultural recognition: ___ Which quotation from The Souls of Black Folk most effectively illustrates the claim?",
+   "sourceId": "cb-command-of-evidence-783d1388"
+  },
+  {
+   "word": "inverse",
+   "gloss": "reversed; the opposite way round",
+   "seen": 1,
+   "sentence": "In one Kerinci bee colony, a greater proportion of bees returned to their nests with pollen than returned without pollen, whereas the inverse was observed in a second Kerinci bee colony.",
+   "sourceId": "cb-command-of-evidence-6eb0223c"
+  },
+  {
+   "word": "keenly",
+   "gloss": "sharply; intensely",
+   "seen": 1,
+   "sentence": "\u201d \u201cAlexandra drew her shawl closer about her and stood leaning against the frame of the mill, looking at the stars which glittered so keenly through the frosty autumn air.",
+   "sourceId": "cb-command-of-evidence-c83e0b43"
+  },
+  {
+   "word": "lament",
+   "gloss": "express grief over",
+   "seen": 1,
+   "sentence": "\u201cO thou pure sunlight, and thou air, earth\u2019s canopy, how often have ye heard the strains of my lament, the wild blows dealt against this bleeding breast, when dark night fails!\u201d \u201cSend to me my brother; for I have no more the strength to bear up alone against the load of grief that weighs me down.",
+   "sourceId": "cb-command-of-evidence-af9e3240"
+  },
+  {
+   "word": "leisurely",
+   "gloss": "unhurried",
+   "seen": 1,
+   "sentence": "\u201d \u201cThe social and the picturesque charm of the long journey is singularly enhanced by the leisurely stops made for refreshment.",
+   "sourceId": "cb-command-of-evidence-5fb6ed10"
+  },
+  {
+   "word": "magistrates",
+   "gloss": "local judges or officials",
+   "seen": 2,
+   "sentence": "\u201d \u201cIn 1535, the year before enacting the Dissolution of the Monasteries, Henry commissioned a survey of the value of church holdings in England\u2014the work, performed by sheriffs, bishops, and magistrates, began that January and was swiftly completed by the summer.",
+   "sourceId": "cb-command-of-evidence-04cbeca3"
+  },
+  {
+   "word": "manipulating",
+   "gloss": "handling skilfully; controlling unfairly",
+   "seen": 1,
+   "sentence": "In a series of experiments, Julio Sevilla and Claudia Townsend showed that manipulating the space between products in store displays can influence consumers\u2019 views of those products.",
+   "sourceId": "cb-command-of-evidence-09775cbf"
+  },
+  {
+   "word": "mindful",
+   "gloss": "keeping something in mind",
+   "seen": 1,
+   "sentence": "Walsh found that these dimensions tended to make study participants feel more mindful of how their listening activities may be perceived, which in turn influenced how they managed those activities.",
+   "sourceId": "cb-command-of-evidence-d52fca9f"
+  },
+  {
+   "word": "modernist",
+   "gloss": "of the early-20th-century break with tradition",
+   "seen": 1,
+   "sentence": "A member of the Otomi, an Indigenous people in Central Mexico, Octavio Medell\u00edn immigrated to the United States as a child, and his sculpture bears the impress of traditions on both sides of the border: US-based modernist sculpture, Mexican modernist painting, Otomi art, and the ancient sculpture of",
+   "sourceId": "cb-command-of-evidence-378c66d5"
+  },
+  {
+   "word": "monumental",
+   "gloss": "very great; like a monument",
+   "seen": 1,
+   "sentence": "They show shapes consistent with monumental platforms and dense central settlements linked to smaller settlements by a system of canals and roadways.",
+   "sourceId": "cb-command-of-evidence-39e440e4"
+  },
+  {
+   "word": "motifs",
+   "gloss": "recurring elements in a work",
+   "seen": 1,
+   "sentence": "\u201d \u201cWhile A History of Mexico features modernist motifs, it relies primarily on angular human forms in profile\u2014a staple of Maya sculpture\u2014and thus invites classification as Indigenous art.",
+   "sourceId": "cb-command-of-evidence-378c66d5"
+  },
+  {
+   "word": "nonfiction",
+   "gloss": "writing about real events",
+   "seen": 1,
+   "sentence": "\u201d \u201cMany of Tobar\u2019s notable nonfiction articles are marked by the writer\u2019s use of techniques usually associated with fiction, such as complex narrative structures and the incorporation of symbolism.",
+   "sourceId": "cb-command-of-evidence-1d08c7ee"
+  },
+  {
+   "word": "obedience",
+   "gloss": "doing as one is told",
+   "seen": 1,
+   "sentence": "The student claims that in particular Aristotle asserts that in a healthy state obedience to law must be as close to absolute as possible and that even minor infractions should not be ignored.",
+   "sourceId": "cb-command-of-evidence-eaf22802"
+  },
+  {
+   "word": "observational",
+   "gloss": "based on watching rather than experimenting",
+   "seen": 1,
+   "sentence": "Existing proposed models of outgassing from \u2018Oumuamua include the direct conversion of nitrogen or carbon monoxide from a solid to a gaseous state without becoming liquid, but these models have theoretical or observational inconsistencies.",
+   "sourceId": "cb-command-of-evidence-6d69ab93"
+  },
+  {
+   "word": "obstruction",
+   "gloss": "something blocking the way",
+   "seen": 1,
+   "sentence": "Water flowing around an obstruction creates vortices (patterns of swirls) of varying size; by detecting the vortices, fish can determine the size and position of the obstruction.",
+   "sourceId": "cb-command-of-evidence-31ad8024"
+  },
+  {
+   "word": "ominous",
+   "gloss": "suggesting something bad is coming",
+   "seen": 1,
+   "sentence": "\u201cWhat does this brazen tongue declare, / That falling on the midnight air / Brings to my heart a sense of care / Akin to fright?\u201d \u201cThe snow has ceased its fluttering flight, / The wind sunk to a whisper light, / An ominous stillness fills the night, / A pause\u2014a hush.",
+   "sourceId": "cb-command-of-evidence-87023f34"
+  },
+  {
+   "word": "outnumbered",
+   "gloss": "fewer than the others",
+   "seen": 1,
+   "sentence": "\u201cIn one site in the wild where transgenic fish were observed, females outnumbered males, while in another the numbers of females and males were equivalent.",
+   "sourceId": "cb-command-of-evidence-29f5c8c2"
+  },
+  {
+   "word": "passively",
+   "gloss": "without acting; letting things happen",
+   "seen": 1,
+   "sentence": "As media consumption has become increasingly multiplatform and socially mediated, active news acquisition has diminished in favor of an attitude known as \u201cnews finds me\u201d (NFM), in which people passively rely on their social networks and ambient media environments for information about current events",
+   "sourceId": "cb-command-of-evidence-64cd7321"
+  },
+  {
+   "word": "pedagogy",
+   "gloss": "the practice of teaching",
+   "seen": 1,
+   "sentence": "Hip-hop pedagogy is a form of teaching that\u2019s gaining popularity across school subjects.",
+   "sourceId": "cb-command-of-evidence-26ee16ba"
+  },
+  {
+   "word": "pivotal",
+   "gloss": "on which everything turns",
+   "seen": 1,
+   "sentence": "Also influential was the book\u2019s portrayal of the main character, Esperanza, during a pivotal year of her youth.",
+   "sourceId": "cb-command-of-evidence-a13541c0"
+  },
+  {
+   "word": "ponder",
+   "gloss": "think over carefully",
+   "seen": 1,
+   "sentence": "\u201d says during a growing storm, \u201cThis tempest will not give me leave to ponder / On things would hurt me more.",
+   "sourceId": "cb-command-of-evidence-825dc766"
+  },
+  {
+   "word": "populace",
+   "gloss": "the people of a place",
+   "seen": 1,
+   "sentence": "\u2019 He holds that rulers who wish to see constitutions preserved must continually remind the populace of the dangers that would result from a constitutional collapse.",
+   "sourceId": "cb-command-of-evidence-eaf22802"
+  },
+  {
+   "word": "porous",
+   "gloss": "full of tiny holes; letting things through",
+   "seen": 1,
+   "sentence": "\u201d \u201cWhen his first jugs had worn out\u2014the sweet-scented, porous red clay becomes perforated in time\u2014he had buried them to their necks in the corner where he slept, and they were now his treasury.",
+   "sourceId": "cb-command-of-evidence-194dd448"
+  },
+  {
+   "word": "portrayal",
+   "gloss": "the way something is depicted",
+   "seen": 2,
+   "sentence": "Also influential was the book\u2019s portrayal of the main character, Esperanza, during a pivotal year of her youth.",
+   "sourceId": "cb-command-of-evidence-a13541c0"
+  },
+  {
+   "word": "portrays",
+   "gloss": "depicts; represents",
+   "seen": 3,
+   "sentence": "In the novel, Cather portrays Alexandra Bergson as having a deep emotional connection to her natural surroundings: ___ Which quotation from O Pioneers!",
+   "sourceId": "cb-command-of-evidence-0770b53d"
+  },
+  {
+   "word": "predation",
+   "gloss": "hunting other animals for food",
+   "seen": 1,
+   "sentence": "The variety of species with adaptations to produce toxins is matched by the variety of uses of those toxins: northern stargazers, for example, use toxins for defense, whereas tiger snakes use toxins for predation and skeleton shrimp use toxins for intraspecific competition.",
+   "sourceId": "cb-command-of-evidence-44da37eb"
+  },
+  {
+   "word": "predecessors",
+   "gloss": "those who came before",
+   "seen": 1,
+   "sentence": "Art historians working today have largely rejected the idea, common among Baxandall\u2019s predecessors, that artists\u2019 intentions should influence how artworks are interpreted.",
+   "sourceId": "cb-command-of-evidence-10455a19"
+  },
+  {
+   "word": "predictor",
+   "gloss": "something that indicates what will happen",
+   "seen": 1,
+   "sentence": "The average emotionality score of a movie\u2019s reviews was a positive predictor of that movie\u2019s box office earnings.",
+   "sourceId": "cb-command-of-evidence-2584bcfb"
+  },
+  {
+   "word": "profoundly",
+   "gloss": "deeply; thoroughly",
+   "seen": 1,
+   "sentence": "Enwezor\u2019s work as curator of the 2001 exhibition The Short Century: Independence and Liberation Movements in Africa, 1945\u20131994 showed how African movements for independence from European colonial powers following the Second World War profoundly influenced work by African artists of the period, such ",
+   "sourceId": "cb-command-of-evidence-94c54577"
+  },
+  {
+   "word": "prominence",
+   "gloss": "being important or noticeable",
+   "seen": 2,
+   "sentence": "\u201d While some scholars have welcomed this development for bringing diverse musical forms to prominence in countries where they\u2019d previously been overlooked, musicologist Su Zheng claims that the concept of world music homogenizes highly distinct traditions by reducing them all to a single category.",
+   "sourceId": "cb-command-of-evidence-09f9edb0"
+  },
+  {
+   "word": "propagated",
+   "gloss": "spread; multiplied",
+   "seen": 1,
+   "sentence": "granosus may have propagated through the species because it mitigates risk during feeding in addition to enhancing predation success.",
+   "sourceId": "cb-command-of-evidence-44da37eb"
+  },
+  {
+   "word": "proverbs",
+   "gloss": "short traditional sayings",
+   "seen": 1,
+   "sentence": "Parra traveled all over Chile compiling extensive records of authentic folk music as well as recipes, proverbs, and other facets of cultural history.",
+   "sourceId": "cb-command-of-evidence-3a489e1e"
+  },
+  {
+   "word": "purposeful",
+   "gloss": "done with a clear aim",
+   "seen": 1,
+   "sentence": "During her career, she was careful and purposeful about how she crafted her public persona.",
+   "sourceId": "cb-command-of-evidence-f38b40ac"
+  },
+  {
+   "word": "pursuits",
+   "gloss": "activities one gives time to",
+   "seen": 1,
+   "sentence": "Jan Gimsa, Robert Sleigh, and Ulrike Gimsa have hypothesized that the sail-like structure running down the back of the dinosaur Spinosaurus aegyptiacus improved the animal\u2019s success in underwater pursuits of prey species capable of making quick, evasive movements.",
+   "sourceId": "cb-command-of-evidence-5d6ab069"
+  },
+  {
+   "word": "quaint",
+   "gloss": "attractively old-fashioned",
+   "seen": 2,
+   "sentence": "\u201d \u201cIn the old French house on Royal Street, with its quaint windows and Spanish courtyard green and cool, and made musical by the plashing of the fountain and the trill of caged birds, lived Odalie in convent-like seclusion.",
+   "sourceId": "cb-command-of-evidence-c6b470bb"
+  },
+  {
+   "word": "reckoning",
+   "gloss": "a calculation; a settling of accounts",
+   "seen": 1,
+   "sentence": "\u201d \u201cThe banker, spoilt and frivolous, with millions beyond his reckoning, was delighted at the bet.",
+   "sourceId": "cb-command-of-evidence-3f7f35ea"
+  },
+  {
+   "word": "reconstruct",
+   "gloss": "build up again from evidence",
+   "seen": 1,
+   "sentence": "For some historical periods, it is difficult for art historians to reconstruct how the original viewers of artworks understood what artists\u2019 intentions for their works were.",
+   "sourceId": "cb-command-of-evidence-10455a19"
+  },
+  {
+   "word": "recounts",
+   "gloss": "tells the story of",
+   "seen": 1,
+   "sentence": "\u201d \u201cA contemporary description of the Dissolution of the Monasteries, Michael Sherbrook\u2019s Falle of the Religious Howses, recounts witness testimony that monks were allowed to keep the contents of their cells and that the monastery timber was purchased by local yeomen.",
+   "sourceId": "cb-command-of-evidence-04cbeca3"
+  },
+  {
+   "word": "reflective",
+   "gloss": "thoughtful; throwing back light",
+   "seen": 1,
+   "sentence": "In an essay, a student asserts that the production of these diverse creations by others is reflective of Braschi\u2019s own approach to crafting literature.",
+   "sourceId": "cb-command-of-evidence-e946a32e"
+  },
+  {
+   "word": "regal",
+   "gloss": "royal; magnificent",
+   "seen": 1,
+   "sentence": "\u201cI have no name, no title,\u2014 / No, not that name was given me at the font,\u2014 / But \u2019tis usurp\u2019d:\u2014 Alack the heavy day, / That I have worn so many winters out, / And know not now what name to call myself!\u201d \u201cAlack, why am I sent for to a king, / Before I have shook off the regal thoughts / Wherewith I r",
+   "sourceId": "cb-command-of-evidence-4ef17800"
+  },
+  {
+   "word": "relinquish",
+   "gloss": "give up; let go of",
+   "seen": 1,
+   "sentence": "Aristotle observes that different forms of government can fall in different ways\u2014for example, oligarchies might grant power to military leaders during wartime who refuse to relinquish that power during peacetime\u2014but some methods of preserving order apply across all forms of government.",
+   "sourceId": "cb-command-of-evidence-eaf22802"
+  },
+  {
+   "word": "reverence",
+   "gloss": "deep respect",
+   "seen": 1,
+   "sentence": "Psychologists Dacher Keltner and Jonathan Haidt have argued that experiencing awe\u2014a sensation of reverence and wonder typically brought on by perceiving something grand or powerful\u2014can enable us to feel more connected to others and thereby inspire us to act more altruistically.",
+   "sourceId": "cb-command-of-evidence-5d122d45"
+  },
+  {
+   "word": "scarce",
+   "gloss": "in short supply",
+   "seen": 1,
+   "sentence": "\u201d \u201cCaricature has sought again to spoil the quaint beauty of the music, and has filled the air with many debased melodies which vulgar ears scarce know from the real.",
+   "sourceId": "cb-command-of-evidence-783d1388"
+  },
+  {
+   "word": "scarcely",
+   "gloss": "hardly; only just",
+   "seen": 1,
+   "sentence": "\u201d \u201cHow [the sailor] haunted my dreams, I need scarcely tell you.",
+   "sourceId": "cb-command-of-evidence-2a5aa08a"
+  },
+  {
+   "word": "seclusion",
+   "gloss": "being kept apart from others",
+   "seen": 2,
+   "sentence": "\u201d \u201cThe real journey begins, of course, at Chicago, and as these trains leave in the evening the traveller fares forth in the seclusion of his berth.",
+   "sourceId": "cb-command-of-evidence-5fb6ed10"
+  },
+  {
+   "word": "sordid",
+   "gloss": "squalid; morally grubby",
+   "seen": 1,
+   "sentence": "The best among them, those who consecrate Nature with their sacred desire for the future, will lose, in a sordid and painful annihilation, all stimulus to alleviate the ugliness of humanity.",
+   "sourceId": "cb-command-of-evidence-20583752"
+  },
+  {
+   "word": "stagnant",
+   "gloss": "not moving; not developing",
+   "seen": 1,
+   "sentence": "Early Earth is thought to have been characterized by a stagnant lid tectonic regime, in which the upper lithosphere (the outer rocky layer) was essentially immobile and there was no interaction between the lithosphere and the underlying mantle.",
+   "sourceId": "cb-command-of-evidence-d696eafa"
+  },
+  {
+   "word": "stillness",
+   "gloss": "complete quiet and lack of motion",
+   "seen": 1,
+   "sentence": "\u201cWhat does this brazen tongue declare, / That falling on the midnight air / Brings to my heart a sense of care / Akin to fright?\u201d \u201cThe snow has ceased its fluttering flight, / The wind sunk to a whisper light, / An ominous stillness fills the night, / A pause\u2014a hush.",
+   "sourceId": "cb-command-of-evidence-87023f34"
+  },
+  {
+   "word": "stylistic",
+   "gloss": "to do with style rather than content",
+   "seen": 5,
+   "sentence": "Many demonstrate the stylistic influence of corrido, a genre of narrative songs from Mexico that had come to be characterized by political themes in the early 1800s.",
+   "sourceId": "cb-command-of-evidence-3a489e1e"
+  },
+  {
+   "word": "stylized",
+   "gloss": "made to follow a convention rather than life",
+   "seen": 1,
+   "sentence": "\u201d \u201cCreated in 1968, Catlett\u2019s sculpture Black Unity, a stylized fist sculpted from mahogany and measuring two feet across, remains an important piece and has received renewed and well-deserved attention in recent years.",
+   "sourceId": "cb-command-of-evidence-7cbb9764"
+  },
+  {
+   "word": "subdue",
+   "gloss": "bring under control; soften",
+   "seen": 1,
+   "sentence": "Finding that the venom used by the Panamanian scorpion Centruroides granosus to subdue prey also inhibits growth of the pathogenic bacteria Escherichia coli, Dumas G\u00e1lvez and colleagues conclude that the particular form of venom production observed in C.",
+   "sourceId": "cb-command-of-evidence-44da37eb"
+  },
+  {
+   "word": "subset",
+   "gloss": "a smaller group inside a larger one",
+   "seen": 2,
+   "sentence": "\u201d \u201cThe ecosystems into which transgenic fish are known to have been introduced may represent a subset of the ecosystems into which the fish have actually been introduced.",
+   "sourceId": "cb-command-of-evidence-29f5c8c2"
+  },
+  {
+   "word": "subsistence",
+   "gloss": "having only just enough to live on",
+   "seen": 1,
+   "sentence": "\u201cPoetry, which brings together or separates, which fortifies or brings anguish, which shores up or demolishes souls, which gives or robs men of faith and vigor, is more necessary to a people than industry itself, for industry provides them with a means of subsistence, while literature gives them the",
+   "sourceId": "cb-command-of-evidence-20583752"
+  },
+  {
+   "word": "symbolism",
+   "gloss": "using things to stand for ideas",
+   "seen": 1,
+   "sentence": "\u201d \u201cMany of Tobar\u2019s notable nonfiction articles are marked by the writer\u2019s use of techniques usually associated with fiction, such as complex narrative structures and the incorporation of symbolism.",
+   "sourceId": "cb-command-of-evidence-1d08c7ee"
+  },
+  {
+   "word": "tiresome",
+   "gloss": "tedious; wearying",
+   "seen": 1,
+   "sentence": "\u201cMardi Gras was a tiresome day, after all, she sighed, and Tante Louise agreed with her for once.",
+   "sourceId": "cb-command-of-evidence-c6b470bb"
+  },
+  {
+   "word": "topography",
+   "gloss": "the shape of the land",
+   "seen": 1,
+   "sentence": "Lamb recently added to this debate by using data from NASA and the Mars Orbiter Laser Altimeter to map the topography of what is now a large basin in Mars\u2019s northern hemisphere.",
+   "sourceId": "cb-command-of-evidence-0c622cfb"
+  },
+  {
+   "word": "trajectory",
+   "gloss": "the path something follows",
+   "seen": 1,
+   "sentence": "Researchers have been puzzled because its acceleration cannot be entirely explained by the gravitational pull of nearby bodies: there must be a nongravitational influence on its velocity and trajectory.",
+   "sourceId": "cb-command-of-evidence-6d69ab93"
+  },
+  {
+   "word": "troublesome",
+   "gloss": "causing difficulty",
+   "seen": 1,
+   "sentence": "Proudie] was certainly possessed of sufficient tact to answer the purpose for which he was required without making himself troublesome.",
+   "sourceId": "cb-command-of-evidence-dc87adf4"
+  },
+  {
+   "word": "unifying",
+   "gloss": "bringing together into a whole",
+   "seen": 1,
+   "sentence": "In a paper for an art history class, a student claims that Catlett had a particular talent for unifying various artistic traditions and styles in her work.",
+   "sourceId": "cb-command-of-evidence-7cbb9764"
+  },
+  {
+   "word": "unjustified",
+   "gloss": "not supported by good reason",
+   "seen": 1,
+   "sentence": "Although there were initial concerns that people who viewed the virtual tours would then consider an in-person visit unnecessary, museum administrators claim that their surveys of in-person visitors show that those concerns were unjustified.",
+   "sourceId": "cb-command-of-evidence-98fd50f2"
+  },
+  {
+   "word": "unrealistic",
+   "gloss": "not matching how things really are",
+   "seen": 1,
+   "sentence": "Some previously suggested explanations for this nongravitational acceleration involve mechanisms that are unlikely or unrealistic, such as geometric effects from \u2018Oumuamua being potentially composed of several spatially separated bodies.",
+   "sourceId": "cb-command-of-evidence-6d69ab93"
+  },
+  {
+   "word": "vanquished",
+   "gloss": "defeated utterly",
+   "seen": 1,
+   "sentence": "Although King Richard has been vanquished by his cousin Henry Bolingbroke, he intimates that he is not entirely ready to show subservience to his cousin, saying, ___ Which quotation from Richard II most effectively illustrates the claim?",
+   "sourceId": "cb-command-of-evidence-4ef17800"
+  },
+  {
+   "word": "vigorously",
+   "gloss": "with force and energy",
+   "seen": 1,
+   "sentence": "Do not eat too quickly nor fan too vigorously now that the weather is warming.",
+   "sourceId": "cb-command-of-evidence-25176ff8"
+  },
+  {
+   "word": "wayward",
+   "gloss": "wilful; hard to control",
+   "seen": 1,
+   "sentence": "\u201d \u201cBut the moon in her wayward beauty / Is ever and always the same.",
+   "sourceId": "cb-command-of-evidence-1f3be847"
+  },
+  {
+   "word": "whereupon",
+   "gloss": "at which point",
+   "seen": 1,
+   "sentence": "\u201d \u201cWhereupon they\u2019d crawl in hooded night-caps / Contentedly to bed.",
+   "sourceId": "cb-command-of-evidence-b238a07a"
+  },
+  {
+   "word": "yielded",
+   "gloss": "produced; gave way",
+   "seen": 2,
+   "sentence": "In the past twenty years, two sites in China and the United States have yielded fossils of a similar age that some experts believe are most likely jellyfish due to their shapes and the appearance of projecting tentacles.",
+   "sourceId": "cb-command-of-evidence-0d7f4966"
+  }
+ ]
+}

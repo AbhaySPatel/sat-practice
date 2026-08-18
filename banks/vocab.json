@@ -288,7 +288,7 @@
         {
           "label": "C",
           "word": "questioned",
-          "gloss": null,
+          "gloss": "expressed doubt about",
           "isAnswer": false
         },
         {
@@ -369,7 +369,7 @@
       "id": "cb-words-in-context-1c7fe9be",
       "difficulty": "medium",
       "prompt": "Which choice completes the text with the most logical and precise word or phrase?",
-      "sentence": "To ___ this situation, Maggie Lena Walker chartered the St.",
+      "sentence": "To ___ this situation, Maggie Lena Walker chartered the St. Luke Penny Savings Bank in 1903.",
       "answer": "B",
       "words": [
         {
@@ -1293,7 +1293,7 @@
       "id": "cb-words-in-context-5a97d9cd",
       "difficulty": "hard",
       "prompt": "Which choice completes the text with the most logical and precise word or phrase?",
-      "sentence": "found that increases in household spending power (via tax credits) had mixed effects on mobility decisions, possibly because residential location choices are not fully reducible to economic factors but are also ___ noneconomic factors such as access to strong local social networks.",
+      "sentence": "In a study of residential mobility in Washington, DC, LaTanya Brown-Robertson et al. found that increases in household spending power (via tax credits) had mixed effects on mobility decisions, possibly because residential location choices are not fully reducible to economic factors but are also ___ noneconomic factors such as access to strong local social networks.",
       "answer": "B",
       "words": [
         {
@@ -1893,7 +1893,7 @@
         {
           "label": "A",
           "word": "overlooked",
-          "gloss": null,
+          "gloss": "missed; failed to notice",
           "isAnswer": false
         },
         {
@@ -4164,7 +4164,7 @@
       "id": "cb-words-in-context-0ee67e09",
       "difficulty": "easy",
       "prompt": "Which choice completes the text with the most logical and precise word or phrase?",
-      "sentence": "” They found that these bones were ___ the clavicle and shoulder bones of modern apes that are frequent climbers, such as gorillas and chimpanzees, suggesting that Little Foot had adapted to life in the trees.",
+      "sentence": "They found that these bones were ___ the clavicle and shoulder bones of modern apes that are frequent climbers, such as gorillas and chimpanzees, suggesting that Little Foot had adapted to life in the trees.",
       "answer": "B",
       "words": [
         {
@@ -4716,7 +4716,7 @@
         {
           "label": "D",
           "word": "overlooked",
-          "gloss": null,
+          "gloss": "missed; failed to notice",
           "isAnswer": false
         }
       ]
@@ -4791,7 +4791,7 @@
       "id": "cb-words-in-context-bce4d106",
       "difficulty": "hard",
       "prompt": "Which choice completes the text with the most logical and precise word or phrase?",
-      "sentence": "attribute these artifacts’ apparent ___ to the evolution and propagation of symbolic behavior (e.g., use of personal ornaments) in humans and the widespread availability of T .",
+      "sentence": "In a 2021 paper, El Mehdi Sehasseh et al. attribute these artifacts’ apparent ___ to the evolution and propagation of symbolic behavior (e.g., use of personal ornaments) in humans and the widespread availability of T .",
       "answer": "B",
       "words": [
         {
@@ -4896,7 +4896,7 @@
         {
           "label": "A",
           "word": "substantial",
-          "gloss": null,
+          "gloss": "considerable in size or importance",
           "isAnswer": false
         },
         {
@@ -5781,7 +5781,7 @@
       "id": "cb-words-in-context-9ff88d6b",
       "difficulty": "hard",
       "prompt": "Which choice completes the text with the most logical and precise word or phrase?",
-      "sentence": "on tracking eye movements supports a theory that people envision ___ scenarios when making causal judgments: when subjects were asked to look at two colliding billiard balls and judge whether one caused or prevented the other’s movement through a gate, their eyes looked at where the target ball would have gone if the ball that altered its path did not exist.",
+      "sentence": "The work of Tobias Gerstenberg et al. on tracking eye movements supports a theory that people envision ___ scenarios when making causal judgments: when subjects were asked to look at two colliding billiard balls and judge whether one caused or prevented the other’s movement through a gate, their eyes looked at where the target ball would have gone if the ball that altered its path did not exist.",
       "answer": "C",
       "words": [
         {
@@ -6498,7 +6498,7 @@
         {
           "label": "D",
           "word": "derived from",
-          "gloss": null,
+          "gloss": "obtained or developed out of",
           "isAnswer": false
         }
       ]
@@ -6771,7 +6771,7 @@
       "id": "cb-words-in-context-3021d9ef",
       "difficulty": "hard",
       "prompt": "Which choice completes the text with the most logical and precise word or phrase?",
-      "sentence": "cautioned that although similarities in the isotopic signatures of elements detected in Mars’s atmosphere and in Martian meteorites recovered on Earth make it tempting to treat the geochemical properties of the meteorites as ___ those of Mars’s interiors, Mars’s geology cannot be ascertained based solely on meteorite-sample analyses.",
+      "sentence": "In a 2020 paper, Arya Udry et al. cautioned that although similarities in the isotopic signatures of elements detected in Mars’s atmosphere and in Martian meteorites recovered on Earth make it tempting to treat the geochemical properties of the meteorites as ___ those of Mars’s interiors, Mars’s geology cannot be ascertained based solely on meteorite-sample analyses.",
       "answer": "B",
       "words": [
         {
@@ -7866,7 +7866,7 @@
         {
           "label": "A",
           "word": "opaque",
-          "gloss": null,
+          "gloss": "not transparent; hard to understand",
           "isAnswer": true
         },
         {
@@ -8717,7 +8717,7 @@
     },
     {
       "word": "derived from",
-      "gloss": "obtained from",
+      "gloss": "obtained or developed out of",
       "seen": 2,
       "wasAnswer": false,
       "difficulty": "hard",
@@ -9120,7 +9120,7 @@
     },
     {
       "word": "questioned",
-      "gloss": "asked about",
+      "gloss": "expressed doubt about",
       "seen": 2,
       "wasAnswer": false,
       "difficulty": "hard",
@@ -9250,7 +9250,7 @@
     },
     {
       "word": "substantial",
-      "gloss": "considerable in size, amount, or importance",
+      "gloss": "considerable in size or importance",
       "seen": 2,
       "wasAnswer": false,
       "difficulty": "hard",
@@ -11242,7 +11242,7 @@
       "seen": 1,
       "wasAnswer": true,
       "difficulty": "easy",
-      "sentence": "” They found that these bones were comparable to the clavicle and shoulder bones of modern apes that are frequent climbers, such as gorillas and chimpanzees, suggesting that Little Foot had adapted to life in the trees.",
+      "sentence": "They found that these bones were comparable to the clavicle and shoulder bones of modern apes that are frequent climbers, such as gorillas and chimpanzees, suggesting that Little Foot had adapted to life in the trees.",
       "sourceId": "cb-words-in-context-0ee67e09",
       "from": [
         "cb-words-in-context-0ee67e09"
@@ -11950,7 +11950,7 @@
       "seen": 1,
       "wasAnswer": true,
       "difficulty": "hard",
-      "sentence": "on tracking eye movements supports a theory that people envision counterfactual scenarios when making causal judgments: when subjects were asked to look at two colliding billiard balls and judge whether one caused or prevented the other’s movement through a gate, their eyes looked at where the target ball would have gone if the ball that altered its path did not exist.",
+      "sentence": "The work of Tobias Gerstenberg et al. on tracking eye movements supports a theory that people envision counterfactual scenarios when making causal judgments: when subjects were asked to look at two colliding billiard balls and judge whether one caused or prevented the other’s movement through a gate, their eyes looked at where the target ball would have gone if the ball that altered its path did not exist.",
       "sourceId": "cb-words-in-context-9ff88d6b",
       "from": [
         "cb-words-in-context-9ff88d6b"
@@ -15706,7 +15706,7 @@
       "seen": 1,
       "wasAnswer": true,
       "difficulty": "hard",
-      "sentence": "found that increases in household spending power (via tax credits) had mixed effects on mobility decisions, possibly because residential location choices are not fully reducible to economic factors but are also mediated by noneconomic factors such as access to strong local social networks.",
+      "sentence": "In a study of residential mobility in Washington, DC, LaTanya Brown-Robertson et al. found that increases in household spending power (via tax credits) had mixed effects on mobility decisions, possibly because residential location choices are not fully reducible to economic factors but are also mediated by noneconomic factors such as access to strong local social networks.",
       "sourceId": "cb-words-in-context-5a97d9cd",
       "from": [
         "cb-words-in-context-5a97d9cd"
@@ -17122,7 +17122,7 @@
       "seen": 1,
       "wasAnswer": true,
       "difficulty": "hard",
-      "sentence": "cautioned that although similarities in the isotopic signatures of elements detected in Mars’s atmosphere and in Martian meteorites recovered on Earth make it tempting to treat the geochemical properties of the meteorites as proxies for those of Mars’s interiors, Mars’s geology cannot be ascertained based solely on meteorite-sample analyses.",
+      "sentence": "In a 2020 paper, Arya Udry et al. cautioned that although similarities in the isotopic signatures of elements detected in Mars’s atmosphere and in Martian meteorites recovered on Earth make it tempting to treat the geochemical properties of the meteorites as proxies for those of Mars’s interiors, Mars’s geology cannot be ascertained based solely on meteorite-sample analyses.",
       "sourceId": "cb-words-in-context-3021d9ef",
       "from": [
         "cb-words-in-context-3021d9ef"
@@ -17446,7 +17446,7 @@
       "seen": 1,
       "wasAnswer": true,
       "difficulty": "medium",
-      "sentence": "To rectify this situation, Maggie Lena Walker chartered the St.",
+      "sentence": "To rectify this situation, Maggie Lena Walker chartered the St. Luke Penny Savings Bank in 1903.",
       "sourceId": "cb-words-in-context-1c7fe9be",
       "from": [
         "cb-words-in-context-1c7fe9be"
@@ -19486,7 +19486,7 @@
       "seen": 1,
       "wasAnswer": true,
       "difficulty": "hard",
-      "sentence": "attribute these artifacts’ apparent ubiquity to the evolution and propagation of symbolic behavior (e.g., use of personal ornaments) in humans and the widespread availability of T .",
+      "sentence": "In a 2021 paper, El Mehdi Sehasseh et al. attribute these artifacts’ apparent ubiquity to the evolution and propagation of symbolic behavior (e.g., use of personal ornaments) in humans and the widespread availability of T .",
       "sourceId": "cb-words-in-context-bce4d106",
       "from": [
         "cb-words-in-context-bce4d106"

@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Build printable vocabulary sheets from banks/vocab.json.
 
-Two PDFs, each meant for one sheet of paper (front and back):
-  print/vocab-words.pdf    single words
-  print/vocab-phrases.pdf  multi-word options (phrase + its preposition)
+Four PDFs, each meant for one sheet of paper (front and back):
+  print/vocab-words.pdf                 single words
+  print/vocab-phrases.pdf               multi-word options (phrase + its preposition)
+  print/vocab-wic-passages.pdf          hard words in the Words in Context passages
+  print/vocab-command-of-evidence.pdf   hard words in the Command of Evidence questions
 
 Included words are the ones tagged hard by the question bank, plus a
 hand-picked set of uncommon words that happen to sit in easy/medium
@@ -18,6 +20,13 @@ from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.pdfgen import canvas
 
 BANK = "banks/vocab.json"
+# The other vocabulary problem: words in the Words in Context PASSAGE rather than
+# in its four choices. Built by extract_wic_vocab.py.
+WIC_BANK = "banks/wic-passage-vocab.json"
+# Command of Evidence is his biggest single loss and the reading load is the whole
+# of it -- four quotations a question, median 146 characters each. Built by
+# extract_coe_vocab.py.
+COE_BANK = "banks/coe-vocab.json"
 OUTDIR = "print"
 
 # Uncommon words sitting in easy/medium questions, kept alongside the hard set.
@@ -59,6 +68,33 @@ def collect():
     words = [p for p in picked if " " not in p[0]]
     phrases = [p for p in picked if " " in p[0]]
     return words, phrases
+
+
+def collect_passage():
+    """The passage words, which are already curated -- nothing to filter here."""
+    rows = json.load(open(WIC_BANK))["words"]
+    return sorted(((w["word"], w["gloss"]) for w in rows), key=lambda p: p[0].lower())
+
+
+def collect_hard_wic():
+    """The 60 HARD Words in Context questions, with all four meanings each.
+
+    Abhay asked for this specifically, and it is a different sheet from
+    vocab-words.pdf rather than a subset of it: that one is an alphabetical list of
+    hard WORDS, which is what you revise from. This is grouped by QUESTION, which
+    is how the test asks it -- four near-synonyms and only one that fits the
+    sentence. Comparing the four IS the skill, and an alphabetical list takes the
+    comparison apart.
+    """
+    qs = [q for q in json.load(open(BANK))["questions"] if q["difficulty"] == "hard"]
+    # In bank order, which is the order he meets them in the app.
+    return qs
+
+
+def collect_coe():
+    """Command of Evidence words -- curated in extract_coe_vocab.py, so as-is."""
+    rows = json.load(open(COE_BANK))["words"]
+    return sorted(((w["word"], w["gloss"]) for w in rows), key=lambda p: p[0].lower())
 
 
 def wrap(text, font, size, width):
@@ -139,14 +175,58 @@ def pack_balanced(blocks, rows_per_col, ncols):
     return columns if i == len(blocks) else None
 
 
-def render(path, title, entries, cols, pages, sizes):
+def build_question_blocks(questions, size, col_w):
+    """Each hard question -> one block: its sentence, then all four meanings.
+
+    A block is never split across columns, which is the whole point: four options
+    read together are a comparison, and four options with one of them overleaf are
+    not. That is also why this reuses render()'s packing rather than its
+    build_lines -- same machinery, a different unit.
+    """
+    gap = size * 0.5
+    blocks = []
+    for q in questions:
+        lines = []
+        # The sentence, so the meanings have something to be the answer to.
+        for i, part in enumerate(wrap(q['sentence'], "Helvetica-Oblique", size, col_w)):
+            lines.append([(part, "Helvetica-Oblique", 0)])
+        for w in q['words']:
+            # A bullet on the right answer. Nothing else in WinAnsi reads as a tick
+            # and a missing glyph would print as a hollow box on every question.
+            mark = "\u2022" if w['isAnswer'] else " "
+            label = f"{mark} {w['label']}"
+            lab_w = stringWidth(label + "  ", "Helvetica-Bold", size)
+            word = w['word']
+            word_w = stringWidth(word, "Helvetica-Bold", size)
+            head = [(label, "Helvetica-Bold", 0), (word, "Helvetica-Bold", lab_w)]
+            rest_w = col_w - lab_w - word_w - gap
+            gloss = w.get('gloss') or ''
+            if rest_w > col_w * 0.3:
+                wrapped = wrap(gloss, "Helvetica", size, rest_w)
+                head.append((wrapped[0], "Helvetica", lab_w + word_w + gap))
+                lines.append(head)
+                # Wrapped glosses hang under the WORD, not under where the gloss
+                # started -- that indent was two thirds of the way across the
+                # column and read as a separate entry.
+                for extra in wrapped[1:]:
+                    lines.append([(extra, "Helvetica", lab_w)])
+            else:
+                lines.append(head)
+                for extra in wrap(gloss, "Helvetica", size, col_w - lab_w):
+                    lines.append([(extra, "Helvetica", lab_w)])
+        lines.append([("", "Helvetica", 0)])       # a blank line between questions
+        blocks.append(lines)
+    return blocks
+
+
+def render(path, title, entries, cols, pages, sizes, blocks_fn=None):
     col_w = (PAGE_W - 2 * MARGIN_X - GUTTER * (cols - 1)) / cols
     body_h = PAGE_H - MARGIN_TOP - MARGIN_BOT - HEADER_H
 
     for size in sizes:
         leading = size * 1.32
         rows = int(body_h // leading)
-        blocks = build_lines(entries, size, col_w)
+        blocks = (blocks_fn or build_lines)(entries, size, col_w)
         columns = pack(blocks, rows, cols, pages)
         if columns:
             # Even out the columns so the last one isn't left half empty.
@@ -202,6 +282,35 @@ def main():
     s, n = render(os.path.join(OUTDIR, "vocab-phrases.pdf"),
                   "SAT vocabulary — phrases", phrases, cols=2, pages=1, sizes=sizes)
     print("vocab-phrases.pdf %3d entries  %d columns  %.1fpt" % (len(phrases), n, s))
+
+    # Two sides at the same 13pt ceiling as the words sheet, so the three print
+    # as one set rather than as three different documents.
+    passage = collect_passage()
+    s, n = render(os.path.join(OUTDIR, "vocab-wic-passages.pdf"),
+                  "SAT vocabulary — Words in Context passages",
+                  passage, cols=2, pages=2, sizes=[x for x in sizes if x <= 13.0])
+    print("vocab-wic-passages.pdf %3d entries  %d columns  %.1fpt"
+          % (len(passage), n, s))
+
+    # Same 13pt ceiling and two sides as the passage sheet, for the same reason:
+    # the four print as one set rather than four different documents.
+    coe = collect_coe()
+    s, n = render(os.path.join(OUTDIR, "vocab-command-of-evidence.pdf"),
+                  "SAT vocabulary — Command of Evidence",
+                  coe, cols=2, pages=2, sizes=[x for x in sizes if x <= 13.0])
+    print("vocab-command-of-evidence.pdf %3d entries  %d columns  %.1fpt"
+          % (len(coe), n, s))
+
+    # Grouped by question, so it needs its own block builder. Two columns rather
+    # than four: a block is a sentence plus four meanings, and in a narrow column
+    # every one of those five lines would wrap.
+    hard = collect_hard_wic()
+    s, n = render(os.path.join(OUTDIR, "vocab-wic-hard-questions.pdf"),
+                  "Words in Context — hard questions, every option explained",
+                  hard, cols=2, pages=6, sizes=[x for x in sizes if x <= 10.0],
+                  blocks_fn=build_question_blocks)
+    print("vocab-wic-hard-questions.pdf %3d questions  %d columns  %.1fpt"
+          % (len(hard), n, s))
 
 
 if __name__ == "__main__":

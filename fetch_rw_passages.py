@@ -15,6 +15,7 @@ general form of both.
 
 Usage:
     python3 fetch_rw_passages.py cross-text-connections     # one skill
+    python3 fetch_rw_passages.py --poems                    # every poem, any skill
     python3 fetch_rw_passages.py --all                      # every bank file
 
 Only questions that do not already carry `passageHtml` are fetched, so re-running
@@ -25,6 +26,7 @@ saved cursor is an index into bank order.
 
 import glob
 import json
+import re
 import random
 import sys
 import time
@@ -36,8 +38,23 @@ from fetch_rw_figures import (JAR_EVERY, JITTER, LIST_BODY, LIST_URL, PAUSE,
 BANKS = Path('banks')
 
 
+# A poem arrives from the PDF as one unbroken run -- every line of verse joined
+# end to end into a paragraph, which is how Abhay met it on screen. The API keeps
+# the structure (a blockquote, one <p> per line), so these want restoring whether
+# or not their skill does. They span nine of the ten skill files, so selecting
+# them by skill would mean fetching the whole bank.
+POEM = re.compile(r'\bpoems?\b|\bsonnet\b|\bstanzas?\b|\bverse\b', re.I)
+
+
+def wanted(question, mode):
+    if mode != '--poems':
+        return True
+    text = (question.get('passage') or '') + ' ' + (question.get('question') or '')
+    return bool(POEM.search(text))
+
+
 def bank_files(skill):
-    if skill == '--all':
+    if skill in ('--all', '--poems'):
         return sorted(BANKS.glob('cb-*.json')) + [BANKS / 'educator-question-bank.json']
     path = BANKS / f'cb-{skill}.json'
     if not path.exists():
@@ -64,7 +81,8 @@ def main():
         rows = json.loads(path.read_text())
         # The College Board id is the last segment of ours, in every bank file.
         todo = [q for q in rows if not q.get('passageHtml')
-                and q['id'].rsplit('-', 1)[-1] in by_qid]
+                and q['id'].rsplit('-', 1)[-1] in by_qid
+                and wanted(q, sys.argv[1])]
         already = sum(1 for q in rows if q.get('passageHtml'))
         print(f'\n{path.name}: {len(rows)} questions, {already} already restored, '
               f'{len(todo)} to fetch')
