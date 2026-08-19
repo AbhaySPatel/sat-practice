@@ -657,5 +657,165 @@
    }
   ],
   "key": "p8"
+ },
+ {
+  "key": "p9",
+  "label": "Practice 9",
+  "order": 10,
+  "taken": "2026-08-19",
+  "questions": [
+   {
+    "module": 1,
+    "number": 3,
+    "chose": "C",
+    "domainBand": "Craft and Structure",
+    "passage": "Some researchers believe that the genes that enable groundhogs and certain other mammals to hibernate through the winter by slowing their breathing and heart rates and lowering their body temperature may be ___ in humans: present yet having essentially no effect on our bodily processes.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "options": {
+     "A": "decisive",
+     "B": "lacking",
+     "C": "variable",
+     "D": "dormant"
+    },
+    "rationale": "Choice D is the best answer because it logically completes the text's discussion about genes related to hibernation. In this context, “dormant” means inactive. The text explains that the same genes that enable certain nonhuman mammal species to hibernate during the winter by altering their bodily processes are also found in our species but have “essentially no effect” on humans' bodily processes. In other words, these genes don't function in humans. Choice A is incorrect because in this context, “decisive” means has the power to affect the outcome of something, but the text states that genes related to hibernation are instead inactive in humans. Choice B is incorrect because in this context, “lacking” means missing, but the text states that the genes are present in humans, though inactive. Choice C is incorrect because “variable” means characterized by the potential to change, but the text indicates that these genes don't change in their effect on humans' bodily processes; instead, the genes are consistently inactive in humans."
+   },
+   {
+    "module": 1,
+    "number": 8,
+    "chose": "C",
+    "domainBand": "Craft and Structure",
+    "underline": "given the negligible cost of messaging",
+    "passage": "In response to concerns that some recent financial crises were exacerbated by consumers misunderstanding risks associated with credit cards, loans, and other financial products, policymakers in many countries have instituted risk-disclosure requirements on sellers of those products. Enrique Seira et al. investigated a variety of risk-disclosure messages sent to thousands of credit card customers and found that the messages had only small and short-lived effects on behavior. Seira et al. asserted that such effects may nevertheless be worth pursuing, given the negligible cost of messaging.",
+    "question": "Which choice best describes the function of the underlined portion in the text as a whole?",
+    "options": {
+     "A": "It notes a factor that led Seira et al. to not dismiss risk-disclosure messaging altogether despite their evidence of its limited utility.",
+     "B": "It acknowledges a type of risk-disclosure messaging that Seira et al. may not have fully accounted for in their study.",
+     "C": "It describes a consideration that explains why Seira et al. recommended risk-disclosure messaging even though its effects may be small relative to its costs.",
+     "D": "It points out a circumstance that Seira et al. conceded may make risk-disclosure messaging more effective than their study suggests."
+    },
+    "rationale": "Choice A is the best answer because it most accurately describes the function of the underlined portion in the text as a whole. Seira et al. found that the effects of such messaging on consumer behavior were small and temporary, then assert that because the cost of the messaging is negligible, the approach may be worth doing even if the effects are limited. Thus, the underlined portion notes a factor—very low cost—that led the researchers to not completely dismiss risk-disclosure messaging despite their evidence of its limited utility. Choice B is incorrect because the underlined portion doesn't refer to a particular type of risk-disclosure messaging. Choice C is incorrect. Although the underlined portion does describe a consideration that led the researchers to recommend the messaging despite its small effects, it directly states that the cost is negligible—meaning that both the effects and the costs are small, not that the effects are small only relative to the costs. Choice D is incorrect because there's no indication that Seira et al. suggest the messaging could be more effective if it had lower costs."
+   },
+   {
+    "module": 1,
+    "number": 11,
+    "chose": "D",
+    "domainBand": "Information and Ideas",
+    "passage": "A student is examining a long, challenging poem that was initially published in a quarterly journal without explanatory notes, then later republished in a stand-alone volume containing only that poem and accompanying explanatory notes written by the poet. The student asserts that the explanatory notes were included in the republication primarily as a marketing device to help sell the stand-alone volume.",
+    "question": "Which statement, if true, would most directly support the student's claim?",
+    "options": {
+     "A": "The text of the poem as published in the quarterly journal is not identical to the text of the poem published in the stand-alone volume.",
+     "B": "Many critics believe that the poet's explanatory notes remove certain ambiguities of the poem and make it less interesting as a result.",
+     "C": "The publishers of the stand-alone volume requested the explanatory notes from the poet in order to make the book attractive to readers who already had a copy of the poem in a journal issue.",
+     "D": "Correspondence between the poet and the publisher reveals that the poet's explanatory notes went through several drafts."
+    },
+    "rationale": "Choice C is the best answer because it would most directly support the student's claim about the motivation for including explanatory notes. If the publishers had requested the notes to make the book attractive to readers who already had a copy of the journal issue, this fact would support the student's claim that the notes were included primarily as a marketing device. Choice A is incorrect because the student's claim is about the motivation for including the notes, not about changes to the poem itself. Choice B is incorrect because the claim is about why the notes were included, not about how they affected readers' experience of the poem. Choice D is incorrect because the fact that the poet drafted multiple versions doesn't directly address whether the notes were intended as a marketing device."
+   },
+   {
+    "module": 1,
+    "number": 24,
+    "chose": "D",
+    "domainBand": "Expression of Ideas",
+    "passage": "While researching a topic, a student has taken the following notes:\n• If a moon orbiting a planet comes close enough to that planet, tidal forces can cause the moon to break apart.\n• In a 2022 study, researchers proposed that Saturn was once orbited by a large moon they named Chrysalis.\n• Their simulations indicated that Chrysalis would likely have come very close to Saturn around 160 million years ago.\n• At that distance, Chrysalis would have been broken apart by tidal forces.\n• The researchers hypothesized that the resulting debris formed Saturn's rings.\nThe student wants to recount the sequence of events proposed by the researchers.",
+    "question": "Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "options": {
+     "A": "According to researchers' simulations, two events likely occurred around 160 million years ago: first, Chrysalis came very close to Saturn, and second, debris from Saturn's rings caused the moon to break apart.",
+     "B": "If a moon orbiting a planet (like Saturn) comes close enough to that planet, tidal forces can cause the moon to break apart.",
+     "C": "Around 160 million years ago, a large moon (Chrysalis) came close enough to Saturn that tidal forces broke the moon apart; its debris then formed the planet's rings.",
+     "D": "First, researchers proposed that Saturn was orbited by a large moon (Chrysalis); next, they conducted simulations; and, finally, they formed a hypothesis."
+    },
+    "rationale": "Choice C is the best answer. The sentence recounts the sequence of events proposed by the researchers: a large moon orbiting Saturn came close enough to the planet that it was broken apart by tidal forces, and the resulting debris formed Saturn's rings. Choice A is incorrect because the sentence misrepresents information from the notes; according to the notes, tidal forces, not debris, caused the moon to break apart. Choice B is incorrect. The sentence offers information relevant to the 2022 study but doesn't recount the sequence of events proposed by the researchers. Choice D is incorrect. The sentence recounts a sequence, but it's a sequence of the researchers' activities, not the sequence of events proposed by the researchers."
+   },
+   {
+    "module": 1,
+    "number": 27,
+    "chose": "D",
+    "domainBand": "Expression of Ideas",
+    "passage": "While researching a topic, a student has taken the following notes:\n• In 1851, German American artist Emanuel Leutze painted Washington Crossing the Delaware.\n• His huge painting (149 × 255 inches) depicts the first US president crossing a river with soldiers in the Revolutionary War.\n• In 2019, Cree artist Kent Monkman painted mistikôsiwak (Wooden Boat People): Resurgence of the People.\n• Monkman's huge painting (132 × 264 inches) was inspired by Leutze's.\n• It portrays Indigenous people in a boat rescuing refugees.\nThe student wants to emphasize a similarity between the two paintings.",
+    "question": "Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "options": {
+     "A": "Monkman, a Cree artist, finished his painting in 2019; Leutze, a German American artist, completed his in 1851.",
+     "B": "Although Monkman's painting was inspired by Leutze's, the people and actions the two paintings portray are very different.",
+     "C": "Leutze's and Monkman's paintings are both huge, measuring 149 × 255 inches and 132 × 264 inches, respectively.",
+     "D": "Leutze's painting depicts Revolutionary War soldiers, while Monkman's depicts Indigenous people and refugees."
+    },
+    "rationale": "Choice C is the best answer. The sentence emphasizes a similarity between the two paintings, noting that Leutze's painting (which measures 149 × 255 inches) and Monkman's painting (which measures 132 × 264 inches) are both very large. Choice A is incorrect. The sentence mentions when each painting was completed; it doesn't emphasize a similarity between the two paintings. Choice B is incorrect. While the sentence acknowledges that one painting was inspired by the other, it emphasizes differences between the two paintings. Choice D is incorrect. The sentence mentions a difference between the two paintings; it doesn't emphasize a similarity between them."
+   },
+   {
+    "module": 2,
+    "number": 8,
+    "chose": "A",
+    "domainBand": "Information and Ideas",
+    "passage": "Poetry in Classical Nahuatl, the language of the Aztec Empire, relies on difrasismo, or a parallel noun construction that conventionally operates as a single metaphor. For example, the common difrasismo in cuauhtli in ocelotl (literally, “the eagle, the jaguar”) signifies “warrior.” The device's function is both formal—providing structure to lines of verse—and ritual: semantic relations among the two nouns and the concept they signify can be tenuous, as in the previous example, such that difrasismos are often only intelligible according to the conceptual associations observed in Aztec ceremonial culture.",
+    "question": "Which statement about the difrasismo in cuauhtli in ocelotl is most strongly supported by the text?",
+    "options": {
+     "A": "Its metaphorical significance derives from the semantic equivalence of the two nouns constituting the difrasismo.",
+     "B": "Its unintelligibility may cause its formal function within a line of verse to go unnoticed by present-day readers.",
+     "C": "Its apparent obscurity can be resolved when considered in the proper cultural context.",
+     "D": "Its frequency in Classical Nahuatl poetry confirms its intelligibility to the Aztec audience."
+    },
+    "rationale": "Choice C is the best answer because it presents a statement about the difrasismo that is directly supported by the text. The text indicates that the relation between the words in a difrasismo may appear tenuous without the additional information supplied by Aztec ceremonial culture but that the meaning becomes intelligible in the context of that information. Choice A is incorrect because the text doesn't indicate that the two nouns used in a difrasismo are semantically equivalent. Choice B is incorrect because the text doesn't indicate that there's a relationship between the formal function of the difrasismo and its intelligibility. Choice D is incorrect because the text doesn't indicate that frequency of use is a necessary feature of intelligibility."
+   },
+   {
+    "module": 2,
+    "number": 9,
+    "chose": "A",
+    "domainBand": "Information and Ideas",
+    "figure": true,
+    "passage": "The population of the coral Lophelia pertusa declined significantly around 9,000 years ago in the Alboran Sea and around 11,000 years ago near the Mauritanian coast. Using the ratio of manganese to calcium, which inversely correlates with ocean oxygenation levels, marine scientist Rodrigo da Costa Portilho-Ramos and colleagues evaluated whether oxygenation played a role in the declines of L. pertusa. The researchers concluded that oxygenation may have been important in the Alboran Sea but not near the Mauritanian coast, since ___",
+    "question": "Which choice most effectively uses data from the graph to complete the statement?",
+    "options": {
+     "A": "a substantial increase in oxygenation in the Alboran Sea corresponded with the local decline in L. pertusa, but the opposite relationship between oxygenation and L. pertusa was found near the Mauritanian coast.",
+     "B": "L. pertusa declined in the Alboran Sea during a period of substantial local decline in oxygenation, but L. pertusa declined near the Mauritanian coast during a period of little local change in oxygenation.",
+     "C": "oxygenation in the Alboran Sea was higher before the decline in L. pertusa than after the decline, whereas oxygenation near the Mauritanian coast was relatively low both before and after the decline in L. pertusa.",
+     "D": "oxygenation in the Alboran Sea tended to be substantially higher than oxygenation near the Mauritanian coast during the period studied."
+    },
+    "rationale": "Choice B is the best answer because it effectively uses data from the graph. The ratio of manganese to calcium in samples from the Alboran Sea increased from about 30 micromoles per mole 10,000 years ago to about 80 micromoles per mole 8,000 years ago, which means that oxygenation decreased between 10,000 and 8,000 years ago. Meanwhile, there was almost no discernible change in the ratio near the Mauritanian coast between 12,000 and 10,000 years ago. Choice A is incorrect because it asserts the opposite of what the graph indicates regarding oxygenation in the Alboran Sea: if the ratio was increasing, oxygenation was decreasing, not substantially increasing. Choice C is incorrect because the graph doesn't support the claim that oxygenation near the Mauritanian coast was consistently low. Choice D is incorrect because it states the opposite of what the graph indicates."
+   },
+   {
+    "module": 2,
+    "number": 12,
+    "chose": "D",
+    "domainBand": "Information and Ideas",
+    "passage": "Political scientists who favor the traditional view of voter behavior claim that voting in an election does not change a voter's attitude toward the candidates in that election. Focusing on each US presidential election from 1976 to 1996, Ebonya Washington and Sendhil Mullainathan tested this claim by distinguishing between subjects who had just become old enough to vote (around half of whom actually voted) and otherwise similar subjects who were slightly too young to vote (and thus none of whom voted). Washington and Mullainathan compared the attitudes of the groups of subjects toward the winning candidate two years after each election.",
+    "question": "Which finding from Washington and Mullainathan's study, if true, would most directly weaken the claim made by people who favor the traditional view of voter behavior?",
+    "options": {
+     "A": "Subjects' attitudes toward the winning candidate two years after a given election were strongly predicted by subjects' general political orientation, regardless of whether subjects were old enough to vote at the time of the election.",
+     "B": "Subjects who were not old enough to vote in a given election held significantly more positive attitudes towards the winning candidate two years later than they held at the time of the election.",
+     "C": "Subjects who voted in a given election held significantly more polarized attitudes toward the winning candidate two years later than did subjects who were not old enough to vote in that election.",
+     "D": "Two years after a given election, subjects who voted and subjects who were not old enough to vote were significantly more likely to express negative attitudes than positive attitudes toward the winning candidate in that election."
+    },
+    "rationale": "Choice C is the best answer because it presents a finding that would weaken the claim. If attitudes toward the winning candidate were significantly more polarized among subjects who had voted than among subjects who had been too young to vote, that would suggest that the act of voting did have an effect on the voters' attitudes. Choice A is incorrect because a finding about general political orientation wouldn't address the presence or absence of changes in attitudes among those subjects who did actually vote. Choice B is incorrect because the finding would involve only people who didn't vote. Choice D is incorrect because the finding would reflect all subjects' attitudes at one particular time whether they voted or not, rather than the presence or absence of a change in voters' attitudes after voting."
+   },
+   {
+    "module": 2,
+    "number": 19,
+    "chose": "C",
+    "domainBand": "Standard English Conventions",
+    "passage": "Recent pollen analyses of the Aran Islands have led some researchers to propose that the now treeless islands were once wooded. This hypothesis ___ that certain trees, such as P. sylvestris, survived without interruption or human intervention throughout the Holocene cannot stand, researchers Michael O'Connell and Karen Molloy counter, unless other explanations can first be ruled out.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "options": {
+     "A": "suggesting",
+     "B": "suggested",
+     "C": "suggests",
+     "D": "has suggested"
+    },
+    "rationale": "Choice A is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite present participle \"suggesting\" is correctly used to form a restrictive participial phrase (\"suggesting...Holocene\") within the main clause (\"This hypothesis...cannot stand...\"). This participial phrase functions as part of the sentence's subject. Choice B is incorrect because it results in an ungrammatical sentence: the finite verb \"suggested\" can't be used in this way within the subject of the sentence. Choice C is incorrect because it results in an ungrammatical sentence: the finite verb \"suggests\" can't be used in this way within the subject of the sentence. Choice D is incorrect because it results in an ungrammatical sentence: the finite verb \"has suggested\" can't be used in this way within the subject of the sentence."
+   },
+   {
+    "module": 2,
+    "number": 23,
+    "chose": "A",
+    "domainBand": "Expression of Ideas",
+    "passage": "Economist Elinor Ostrom's studies of communities around the world have empirically demonstrated that common pool resources, such as grazing lands, can be sustainably managed by the people who use them (rather than through private entities or centralized governments). ___ Ostrom's work is a repudiation of the “tragedy of the commons,” the view that individuals will inevitably overexploit a finite shared resource if given unfettered access to it.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "options": {
+     "A": "By contrast,",
+     "B": "For example,",
+     "C": "That said,",
+     "D": "As such,"
+    },
+    "rationale": "Choice D is the best answer. \"As such\" correctly signals that the claim in this sentence—that Ostrom's work is a repudiation of the \"tragedy of the commons\" view—follows logically from the information about Ostrom's studies in the previous sentence. Choice A is incorrect because \"by contrast\" illogically signals that the information in this sentence contrasts with the information about Ostrom's studies. Choice B is incorrect because \"for example\" illogically signals that the claim exemplifies the information about Ostrom's studies. Choice C is incorrect because \"that said\" illogically signals that the information is an exception or caveat to the information about Ostrom's studies."
+   }
+  ]
  }
 ]

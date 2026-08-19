@@ -2544,82 +2544,6 @@ math { font-size: 1.06em; }
   color: var(--pending-fg);
 }
 
-/* ---------- Concept ---------- */
-
-/* The rule behind the skill, above the questions on it. Panel-coloured rather
-   than card-coloured so it reads as something about the set he is working, not
-   as part of this particular question. */
-.concept {
-  border: 1px solid var(--panel-border);
-  border-radius: 16px;
-  background: var(--panel-bg);
-  color: var(--body-text);
-}
-
-.concept-head {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  flex-wrap: wrap;
-  /* Matches the body's padding, so the title sits on the same left edge as
-     everything it introduces. */
-  padding: 13px 22px;
-  cursor: pointer;
-  list-style: none;
-}
-
-.concept-head::-webkit-details-marker { display: none; }
-
-.concept-head::before {
-  content: "+";
-  flex: none;
-  width: 0.9em;
-  color: var(--panel-fg);
-  font-weight: 800;
-}
-
-.concept[open] .concept-head::before { content: "\2212"; }
-
-.concept-kicker {
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--panel-fg);
-}
-
-.concept-title {
-  font-size: 0.98rem;
-  font-weight: 700;
-  color: var(--heading);
-}
-
-.concept-head:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-/* Everything to the same width. Capping the prose for reading measure and
-   leaving the boxes full width was defensible on paper and looked like a fault
-   on screen -- a ragged right edge reads as broken, whatever the reason for it.
-   Line length is controlled by the panel's padding instead, which shortens every
-   line by the same amount and leaves nothing ending in a different place. */
-.concept-body {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 0 22px 18px 22px;
-  font-size: 0.92rem;
-  line-height: 1.62;
-}
-
-.concept-body p { margin: 0; }
-
-.concept-why {
-  font-weight: 700;
-  color: var(--panel-fg);
-}
-
 /* The rule itself, given the weight of the thing everything else explains. */
 /* Four words he is meant to keep, so they get the size of a heading rather than
    the size of a note. */
@@ -2649,13 +2573,6 @@ math { font-size: 1.06em; }
   display: flex;
   flex-direction: column;
   gap: 4px;
-}
-
-.concept-example {
-  padding: 12px 14px;
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  background: var(--card-bg);
 }
 
 .concept-src {
@@ -2708,18 +2625,6 @@ math { font-size: 1.06em; }
   border: 1px solid var(--accent-border);
   color: var(--accent);
   font-weight: 700;
-}
-
-/* Sits under the rule box the moment a question on this rule goes wrong. */
-.concept-jump {
-  align-self: flex-start;
-  background: transparent;
-  border: 1px solid var(--accent-border);
-  color: var(--accent);
-}
-
-.concept-jump:hover {
-  background: var(--accent-soft);
 }
 
 
@@ -2800,64 +2705,7 @@ math { font-size: 1.06em; }
   font-weight: 600;
 }
 
-/* The closing block: the whole rule compressed to three lines. */
-.concept-memorise {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 13px 16px;
-  border: 1px solid var(--accent-border);
-  border-radius: 12px;
-  background: var(--accent-soft);
-}
 
-.concept-memorise p {
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: var(--accent);
-}
-
-.concept-memorise .concept-h {
-  color: var(--accent);
-  opacity: 0.75;
-}
-
-/* A lesson whose first memorise line is the hook -- COVER → PREDICT → MATCH --
-   gets it at heading size. The lines under it are the expansion. */
-.concept-memorise p:nth-of-type(2) {
-  font-size: 1.06rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-}
-
-
-/* The exception, in one place. Bordered rather than filled: it is a footnote to
-   the rule, not a second rule competing with it. */
-.concept-exception {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 12px 15px;
-  border: 1px dashed var(--option-border);
-  border-radius: 12px;
-}
-
-.concept-exception .concept-pair { margin: 0; }
-
-/* The diagnosis, given a box of its own. He is not failing to understand verbs;
-   he is deciding before he has read far enough to decide. */
-.concept-trap {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 12px 15px;
-  border: 1px solid var(--pending-fg);
-  border-radius: 12px;
-  background: var(--pending-bg);
-}
-
-.concept-trap p { color: var(--pending-fg); }
-.concept-trap .concept-h { color: var(--pending-fg); opacity: 0.8; }
 
 
 /* ---------- Concept, as a deck ---------- */
@@ -2922,70 +2770,6 @@ math { font-size: 1.06em; }
 .concept-card.is-memorise p:nth-of-type(2) {
   font-size: 1.06rem;
   font-weight: 800;
-  letter-spacing: 0.02em;
-}
-
-.concept-nav {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 4px;
-  padding-top: 12px;
-  border-top: 1px solid var(--rule);
-}
-
-/* Dots in the middle so the two buttons sit at the edges and never move as the
-   card changes. Each is clickable: he can jump to the example or the memorise
-   card without stepping through everything between. */
-.concept-dots {
-  display: flex;
-  gap: 6px;
-  margin: 0 auto;
-}
-
-.concept-dot {
-  width: 8px;
-  height: 8px;
-  padding: 0;
-  border-radius: 50%;
-  border: 1px solid var(--option-border);
-  background: transparent;
-  cursor: pointer;
-}
-
-.concept-dot.is-on {
-  background: var(--accent);
-  border-color: var(--accent);
-}
-
-.concept-dot:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.concept-next { flex-shrink: 0; }
-
-.concept-back {
-  flex-shrink: 0;
-  background: transparent;
-  border: 1px solid var(--btn-bg);
-  color: var(--muted);
-}
-
-/* The folded line: what it will cost him, or -- once read -- the procedure. */
-.concept-hint {
-  margin-left: auto;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--pending-fg);
-  white-space: nowrap;
-}
-
-.concept-hint.is-read {
-  color: var(--accent);
-  text-transform: none;
   letter-spacing: 0.02em;
 }
 

@@ -707,5 +707,131 @@
         "why": "Choice D is incorrect. This function gives the cost of renting a carpet cleaner for d d days if the cost is dollar sign 130 $130, not dollar sign 52 $52, for the first day and dollar sign 52 $52, not dollar sign 26 $26, for each additional day."
       }
     ]
+  },
+  {
+    "id": "missed-bb-9-q9-a456cfd2",
+    "skill": "missed-in-test",
+    "realSkill": "math",
+    "section": "math",
+    "domain": "extra",
+    "domainLabel": "Extras",
+    "skillLabel": "Missed in a test",
+    "source": "Bluebook practice test",
+    "test": "Practice 9",
+    "testOrder": 15,
+    "taken": "2026-08-19",
+    "module": null,
+    "number": 9,
+    "questionHtml": "<figure><figure><table>\n<tbody>\n<tr>\n<th scope=\"col\">Data value</th>\n<th scope=\"col\">Frequency</th>\n</tr>\n<tr>\n<td><math alttext=\"6\"><mn>6</mn>\n</math></td>\n<td><math alttext=\"3\"><mn>3</mn>\n</math></td>\n</tr>\n<tr>\n<td><math alttext=\"7\"><mn>7</mn>\n</math></td>\n<td><math alttext=\"3\"><mn>3</mn>\n</math></td>\n</tr>\n<tr>\n<td><math alttext=\"8\"><mn>8</mn>\n</math></td>\n<td><math alttext=\"8\"><mn>8</mn>\n</math></td>\n</tr>\n<tr>\n<td><math alttext=\"9\"><mn>9</mn>\n</math></td>\n<td><math alttext=\"8\"><mn>8</mn>\n</math></td>\n</tr>\n<tr>\n<td><math alttext=\"10\"><mn>10</mn>\n</math></td>\n<td><math alttext=\"9\"><mn>9</mn>\n</math></td>\n</tr>\n<tr>\n<td><math alttext=\"11\"><mn>11</mn>\n</math></td>\n<td><math alttext=\"11\"><mn>11</mn>\n</math></td>\n</tr>\n<tr>\n<td><math alttext=\"12\"><mn>12</mn>\n</math></td>\n<td><math alttext=\"9\"><mn>9</mn>\n</math></td>\n</tr>\n<tr>\n<td><math alttext=\"13\"><mn>13</mn>\n</math></td>\n<td><math alttext=\"0\"><mn>0</mn>\n</math></td>\n</tr>\n<tr>\n<td><math alttext=\"14\"><mn>14</mn>\n</math></td>\n<td><math alttext=\"6\"><mn>6</mn>\n</math></td>\n</tr>\n</tbody>\n</table></figure></figure>\n<p>The frequency table summarizes the <math alttext=\"57\"><mn>57</mn>\n</math> data values in a data set. What is the maximum data value in the data set?</p>",
+    "question": "Data value Frequency 6 6 3 3 7 7 3 3 8 8 8 8 9 9 8 8 10 10 9 9 11 11 11 11 12 12 9 9 13 13 0 0 14 14 6 6 The frequency table summarizes the 57 57 data values in a data set. What is the maximum data value in the data set?",
+    "figure": false,
+    "format": "spr",
+    "difficulty": "medium",
+    "bankSkill": "one-variable-data-distributions-and-measures-of-center-and-spread",
+    "bankId": "math-a456cfd2",
+    "chose": "11",
+    "answers": [
+      "14"
+    ]
+  },
+  {
+    "id": "missed-bb-9-q14-3c03cbd8",
+    "skill": "missed-in-test",
+    "realSkill": "math",
+    "section": "math",
+    "domain": "extra",
+    "domainLabel": "Extras",
+    "skillLabel": "Missed in a test",
+    "source": "Bluebook practice test",
+    "test": "Practice 9",
+    "testOrder": 15,
+    "taken": "2026-08-19",
+    "module": null,
+    "number": 14,
+    "questionHtml": "<p>A certain township consists of a <math alttext=\"5\"><mn>5</mn>\n</math>-hectare industrial park and a <math alttext=\"24\"><mn>24</mn>\n</math>-hectare neighborhood. The total number of trees in the township is <math alttext=\"4,529\"><mn>4,529</mn>\n</math>. The equation <math alttext=\"5 x plus 24 y equals 4,529\"><mrow>\n\t<mrow>\n\t\t<mrow>\n\t\t\t<mn>5</mn>\n\t\t\t<mi>x</mi>\n\t\t</mrow>\n\t\t<mo>+</mo>\n\t\t<mrow>\n\t\t\t<mn>24</mn>\n\t\t\t<mi>y</mi>\n\t\t</mrow>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>4,529</mn>\n</mrow>\n</math> represents this situation. Which of the following is the best interpretation of <math alttext=\"x\"><mi>x</mi>\n</math> in this context?</p>",
+    "question": "A certain township consists of a 5 5 -hectare industrial park and a 24 24 -hectare neighborhood. The total number of trees in the township is 4,529 4,529 . The equation 5 x plus 24 y equals 4,529 5 x + 24 y = 4,529 represents this situation. Which of the following is the best interpretation of x x in this context?",
+    "figure": false,
+    "format": "mcq",
+    "difficulty": "medium",
+    "bankSkill": "linear-equations-in-two-variables",
+    "bankId": "math-3c03cbd8",
+    "chose": "C",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "textHtml": "<p>The average number of trees per hectare in the industrial park</p>",
+        "text": "The average number of trees per hectare in the industrial park",
+        "why": "Choice A is correct. It's given that a certain township consists of a 5 5 -hectare industrial park and a 24 24 -hectare neighborhood and that the total number of trees in the township is 4,529 4,529 . It's also given that the equation 5 x plus 24 y equals 4,529 5x+24y=4,529 represents this situation. Since the total number of trees for a given area can be determined by taking the size of the area, in hectares, times the average number of trees per hectare, the best interpretation of 5 x 5 x is the number of trees in the industrial park and the best interpretation of 24 y 24 y is the number of trees in the neighborhood. Since 5 5 is the size of the industrial park, in hectares, the best interpretation of x x is the average number of trees per hectare in the industrial park."
+      },
+      {
+        "label": "B",
+        "textHtml": "<p>The average number of trees per hectare in the neighborhood</p>",
+        "text": "The average number of trees per hectare in the neighborhood",
+        "why": "Choice B is incorrect and may result from conceptual errors."
+      },
+      {
+        "label": "C",
+        "textHtml": "<p>The total number of trees in the industrial park</p>",
+        "text": "The total number of trees in the industrial park",
+        "why": "Choice C is incorrect and may result from conceptual errors."
+      },
+      {
+        "label": "D",
+        "textHtml": "<p>The total number of trees in the neighborhood</p>",
+        "text": "The total number of trees in the neighborhood",
+        "why": "Choice D is incorrect and may result from conceptual errors."
+      }
+    ]
+  },
+  {
+    "id": "missed-bb-9-q18-d1f50dbe",
+    "skill": "missed-in-test",
+    "realSkill": "math",
+    "section": "math",
+    "domain": "extra",
+    "domainLabel": "Extras",
+    "skillLabel": "Missed in a test",
+    "source": "Bluebook practice test",
+    "test": "Practice 9",
+    "testOrder": 15,
+    "taken": "2026-08-19",
+    "module": null,
+    "number": 18,
+    "questionHtml": "<p>One gallon of stain will cover <math alttext=\"170\"><mn>170</mn>\n</math> square feet of a surface. A yard has a total fence area of <math alttext=\"w\"><mi>w</mi>\n</math><em> </em>square feet. Which equation represents the total amount of stain <math alttext=\"upper S\"><mi>S</mi>\n</math>, in gallons, needed to stain the fence in this yard twice?</p>",
+    "question": "One gallon of stain will cover 170 170 square feet of a surface. A yard has a total fence area of w w square feet. Which equation represents the total amount of stain upper S S , in gallons, needed to stain the fence in this yard twice?",
+    "figure": false,
+    "format": "mcq",
+    "difficulty": "hard",
+    "bankSkill": "linear-functions",
+    "bankId": "math-d1f50dbe",
+    "chose": "A",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "textHtml": "<p><math alttext=\"upper S equals StartFraction w Over 170 EndFraction\"><mrow>\n\t<mi>S</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mfrac>\n\t\t\t<mi>w</mi>\n\t\t\t<mn>170</mn>\n\t\t</mfrac>\n\t</mrow>\n</mrow>\n</math></p>",
+        "text": "upper S equals StartFraction w Over 170 EndFraction S = w 170",
+        "why": ""
+      },
+      {
+        "label": "B",
+        "textHtml": "<p><math alttext=\"upper S equals 170 w\"><mrow>\n\t<mi>S</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>170</mn>\n\t\t<mi>w</mi>\n\t</mrow>\n</mrow>\n</math></p>",
+        "text": "upper S equals 170 w S = 170 w",
+        "why": "Choice B is incorrect and may result from conceptual or calculation errors."
+      },
+      {
+        "label": "C",
+        "textHtml": "<p><math alttext=\"upper S equals 340 w\"><mrow>\n\t<mi>S</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mn>340</mn>\n\t\t<mi>w</mi>\n\t</mrow>\n</mrow>\n</math></p>",
+        "text": "upper S equals 340 w S = 340 w",
+        "why": "Choice C is incorrect and may result from conceptual or calculation errors."
+      },
+      {
+        "label": "D",
+        "textHtml": "<p><math alttext=\"upper S equals StartFraction w Over 85 EndFraction\"><mrow>\n\t<mi>S</mi>\n\t<mo>=</mo>\n\t<mrow>\n\t\t<mfrac>\n\t\t\t<mi>w</mi>\n\t\t\t<mn>85</mn>\n\t\t</mfrac>\n\t</mrow>\n</mrow>\n</math></p>",
+        "text": "upper S equals StartFraction w Over 85 EndFraction S = w 85",
+        "why": "Choice D is correct. It's given that w w represents the total fence area, in square feet. Since the fence will be stained twice, the amount of stain, in gallons, will need to cover 2 w 2 w square feet. It’s also given that one gallon of stain will cover 170 170 square feet. Dividing the total area, in square feet, of the surface to be stained by the number of square feet covered by one gallon of stain gives the number of gallons of stain that will be needed. Dividing 2 w 2 w by 170 170 yields StartFraction 2 w Over 170 EndFraction 2w170, or StartFraction w Over 85 EndFraction w85. Therefore, the equation that represents the total amount of stain upper S S , in gallons, needed to stain the fence of the yard twice is upper S equals StartFraction w Over 85 EndFraction S=w85."
+      }
+    ]
   }
 ]

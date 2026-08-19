@@ -56,11 +56,18 @@ MISSED = [
     # ---- Practice 7, 15 August 2026 ----
     ('Practice 7', '2026-08-15', 21, 'times a number',                  'A',      'B'),
     ('Practice 7', '2026-08-15', 21, 'carpet cleaner',                  'A',      'B'),
+    # ---- Practice 9, 19 August 2026 ----
+    # Q18 is the same item he missed on paper Test 9 M1 Q25 five days earlier, and
+    # he chose A both times.
+    ('Practice 9', '2026-08-19',  9, 'maximum data value',              '14',     '11'),
+    ('Practice 9', '2026-08-19', 14, 'hectare industrial park',         'A',      'C'),
+    ('Practice 9', '2026-08-19', 18, 'stain will cover',                'D',      'A'),
 ]
 
 # Bluebook's own date ordering, kept apart from the paper tests' `order` numbers
 # so the two series never interleave in the Test dropdown.
-ORDER = {'Practice 4': 11, 'Practice 5': 12, 'Practice 6': 13, 'Practice 7': 14}
+ORDER = {'Practice 4': 11, 'Practice 5': 12, 'Practice 6': 13, 'Practice 7': 14,
+         'Practice 9': 15}
 
 
 def load_bank():

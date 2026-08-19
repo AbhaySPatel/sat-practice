@@ -12,7 +12,7 @@
 // its markup, but the banks are fetched from here, so nothing was busting them --
 // a browser could serve a months-old vocab.json against new code, which is
 // exactly what happened. Bump this whenever a file under banks/ changes.
-const DATA_VERSION = '2026-08-16a';
+const DATA_VERSION = '2026-08-19a';
 
 // Official College Board banks only. banks/context.json is deliberately absent
 // -- see the note in the README about Words in Context and the direction drill.
@@ -465,10 +465,6 @@ const passageEl = document.querySelector('.cloze');
 const mathStemEl = document.getElementById('mathStem');
 const optionsContainer = document.querySelector('.options');
 const ruleBox = document.getElementById('ruleBox');
-const conceptPanel = document.getElementById('conceptPanel');
-const conceptTitleEl = document.getElementById('conceptTitle');
-const conceptBodyEl = document.getElementById('conceptBody');
-const conceptHintEl = document.getElementById('conceptHint');
 const correctCountEl = document.getElementById('correctCount');
 const incorrectCountEl = document.getElementById('incorrectCount');
 const streakEl = document.getElementById('streakStrip');
@@ -579,9 +575,10 @@ function emptyStore() {
     // means "I want to find this again", which no amount of answer history can
     // infer, so nothing ever sets or clears it except him.
     starred: {},
-    // concepts[conceptId] = { folded } -- whether he has closed that lesson. Only
-    // ever set by him folding it; it opens by itself the first time only.
-    concepts: {},
+    // No `concepts` key any more: it held the fold state of the panel that used to
+    // sit above the question, and Learn replaced that. Stores saved before
+    // 19 Aug 2026 still carry one; nothing reads it, so it sits there harmlessly
+    // rather than being migrated away and losing history for no gain.
     sinceReview: 0,
     filters: { skill: 'all', difficulty: 'all', test: 'all', hideAced: true }
   };
@@ -1343,21 +1340,6 @@ function conceptMatches(concept, question) {
   return (m.any || []).some((word) => rule.includes(word));
 }
 
-function conceptFor(question) {
-  if (!question) return null;
-  const skill = skillTested(question);
-  return concepts.find((c) =>
-    (c.skills || []).includes(skill) && conceptMatches(c, question)) || null;
-}
-
-// A lesson is 800-1000 words. Opened all at once, ahead of a 70-word passage, it
-// is a wall he folds away without reading -- which is what happened. So it is
-// released a card at a time: the first is the number it has cost him and the rule
-// itself, about twenty words, and he can stop there and still have the only part
-// that matters. Nothing is cut; it just arrives in the order he can take it.
-let conceptDeck = [];
-let conceptAt = 0;
-
 function conceptCards(c) {
   const cards = [{ kind: 'cost' }];
   if (c.ruleDetail || (c.forms || []).length) cards.push({ kind: 'means' });
@@ -1477,85 +1459,6 @@ function renderConceptCard(concept, card) {
   }
 
   return box;
-}
-
-function renderConceptBody(concept) {
-  conceptBodyEl.textContent = '';
-  conceptDeck = conceptCards(concept);
-  if (conceptAt >= conceptDeck.length) conceptAt = 0;
-
-  conceptBodyEl.append(renderConceptCard(concept, conceptDeck[conceptAt]));
-
-  // Dots say how much is left, so a long lesson never feels open-ended, and each
-  // is clickable: he can jump straight to the example or the memorise card.
-  const nav = document.createElement('div');
-  nav.className = 'concept-nav';
-
-  const dots = document.createElement('div');
-  dots.className = 'concept-dots';
-  conceptDeck.forEach((c, i) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className = i === conceptAt ? 'concept-dot is-on' : 'concept-dot';
-    dot.setAttribute('aria-label', `Card ${i + 1} of ${conceptDeck.length}`);
-    dot.addEventListener('click', () => { conceptAt = i; renderConceptBody(concept); });
-    dots.append(dot);
-  });
-
-  const back = document.createElement('button');
-  back.type = 'button';
-  back.className = 'btn btn-small concept-back';
-  back.textContent = '\u2190 Back';
-  back.hidden = conceptAt === 0;
-  back.addEventListener('click', () => { conceptAt -= 1; renderConceptBody(concept); });
-
-  const next = document.createElement('button');
-  next.type = 'button';
-  next.className = 'btn btn-small concept-next';
-  const last = conceptAt === conceptDeck.length - 1;
-  next.textContent = last ? 'Got it' : 'Next \u2192';
-  next.addEventListener('click', () => {
-    if (!last) { conceptAt += 1; renderConceptBody(concept); return; }
-    // Read to the end: fold it away and remember he has been through it, so the
-    // summary line can carry the short version from now on.
-    store.concepts = store.concepts || {};
-    store.concepts[concept.id] = { folded: true, read: true };
-    saveStore();
-    conceptAt = 0;
-    conceptPanel.open = false;
-    renderConcept(current);
-  });
-
-  nav.append(back, dots, next);
-  conceptBodyEl.append(nav);
-}
-
-function renderConcept(question) {
-  if (!conceptPanel) return;
-  const concept = conceptFor(question);
-  conceptPanel.hidden = !concept;
-  if (!concept) return;
-
-  const fresh = conceptPanel.dataset.conceptId !== concept.id;
-  conceptPanel.dataset.conceptId = concept.id;
-  if (fresh) conceptAt = 0;   // a different lesson starts at its first card
-
-  store.concepts = store.concepts || {};
-  const state = store.concepts[concept.id] || {};
-
-  conceptTitleEl.textContent = concept.title || '';
-  // Once he has read it through, the folded line carries the procedure itself --
-  // COVER -> PREDICT -> MATCH -- so the panel is useful at a glance without being
-  // opened at all. Before that it says what it will cost him not to.
-  if (conceptHintEl) {
-    conceptHintEl.textContent = state.read
-      ? ((concept.memorise || [])[0] || '')
-      : `${concept.cost} questions`;
-    conceptHintEl.classList.toggle('is-read', !!state.read);
-  }
-
-  renderConceptBody(concept);
-  conceptPanel.open = !state.folded;
 }
 
 function renderMeta(question) {
@@ -2526,8 +2429,6 @@ function loadQuestion(question) {
 
   // Before renderMeta, which paints the badge the clock lives in.
   startQuestionTimer();
-  offerConcept(question, false);   // clears the previous question's, if any
-  renderConcept(question);
   renderMeta(question);
   if (sectionOf(question) === 'math') {
     // A maths stem is one block carrying everything -- a displayed equation, the
@@ -2632,31 +2533,10 @@ function submitEntry() {
 
   updateSubmitState();
   showRule(current);
-  offerConcept(current, !isCorrect);
   renderSourceLink();
 }
 
 // Offered at the moment the rule would have paid for itself, and only then. The
-// panel sits above the question and is folded once he has read it, so this opens
-// it and takes him up rather than leaving him to remember it is there.
-function offerConcept(question, gotItWrong) {
-  const existing = document.querySelector('.concept-jump');
-  if (existing) existing.remove();      // showRule runs again on every re-serve
-  if (!gotItWrong || !conceptPanel) return;
-  const concept = conceptFor(question);
-  if (!concept) return;
-
-  const link = document.createElement('button');
-  link.type = 'button';
-  link.className = 'btn btn-small concept-jump';
-  link.textContent = `Read the rule — ${concept.title}`;
-  link.addEventListener('click', () => {
-    conceptPanel.open = true;
-    conceptPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-  ruleBox.after(link);
-}
-
 function reveal(selectedIndex) {
   // The choices stay locked until he has called the relationship — that is the
   // entire point of the drill.
@@ -2719,7 +2599,6 @@ function reveal(selectedIndex) {
     fillBlank(answer ? answer.text : selected.text, !isCorrect, selected.text);
     showRule(current);
   }
-  offerConcept(current, !isCorrect);
 
   renderSourceLink();
 
@@ -3916,6 +3795,13 @@ function buildSkillSelect() {
       skillSelect.value = 'all';
       rememberFilters();
     }
+    // The Test dropdown is built at the foot of this function, and this branch
+    // returns before reaching it -- so with the tick already on at page load the
+    // control was never populated, and syncTestSelect then hid it for having no
+    // options. It is the one view the Test dropdown exists for, so it has to be
+    // built here too before returning.
+    syncSkillSelect();
+    buildTestSelect();
     return;
   }
 
@@ -4655,17 +4541,6 @@ if (practiseBtn) {
   });
 }
 
-// Folding is his decision and it sticks; nothing else ever opens or closes it.
-if (conceptPanel) {
-  conceptPanel.addEventListener('toggle', () => {
-    const id = conceptPanel.dataset.conceptId;
-    if (!id) return;
-    store.concepts = store.concepts || {};
-    store.concepts[id] = { folded: !conceptPanel.open };
-    saveStore();
-  });
-}
-
 const openMissedBtn = document.getElementById('openMissed');
 const closeMissedBtn = document.getElementById('closeMissed');
 
@@ -5043,10 +4918,6 @@ function renderLearnLesson() {
     `${LEARN_LADDER.length} levels · ${LEARN_LADDER.reduce((n, r) => n + r.count, 0)} questions`));
   bar.append(learnButton('Practise it \u2192', 'btn', () => {
     saveLearn(concept.id, { read: true });
-    store.concepts = store.concepts || {};
-    store.concepts[concept.id] = { folded: true, read: true };
-    saveStore();
-    renderConcept(current);
     const at = learnState(concept.id);
     learnStartRung(concept, Math.min(at.rung, LEARN_LADDER.length - 1));
     renderLearn();

@@ -5315,5 +5315,414 @@
       }
     ],
     "chose": "A"
+  },
+  {
+    "id": "missed-p9-m1-q3",
+    "source": "College Board Practice 9, Module 1, Question 3",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "words-in-context",
+    "test": "Practice 9",
+    "taken": "2026-08-19",
+    "module": 1,
+    "number": 3,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Some researchers believe that the genes that enable groundhogs and certain other mammals to hibernate through the winter by slowing their breathing and heart rates and lowering their body temperature may be ___ in humans: present yet having essentially no effect on our bodily processes.",
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "rule": "Logically completes the text's discussion about genes related to hibernation.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "decisive",
+        "why": "Choice A is incorrect because in this context, “decisive” means has the power to affect the outcome of something, but the text states that genes related to hibernation are instead inactive in humans.",
+        "gloss": "has the power to affect the outcome of something"
+      },
+      {
+        "label": "B",
+        "text": "lacking",
+        "why": "Choice B is incorrect because in this context, “lacking” means missing, but the text states that the genes are present in humans, though inactive.",
+        "gloss": "missing"
+      },
+      {
+        "label": "C",
+        "text": "variable",
+        "why": "Choice C is incorrect because “variable” means characterized by the potential to change, but the text indicates that these genes don't change in their effect on humans' bodily processes; instead, the genes are consistently inactive in humans.",
+        "gloss": "characterized by the potential to change"
+      },
+      {
+        "label": "D",
+        "text": "dormant",
+        "why": "Choice D is the best answer because it logically completes the text's discussion about genes related to hibernation. In this context, “dormant” means inactive. The text explains that the same genes that enable certain nonhuman mammal species to hibernate during the winter by altering their bodily processes are also found in our species but have “essentially no effect” on humans' bodily processes. In other words, these genes don't function in humans.",
+        "gloss": "inactive"
+      }
+    ],
+    "chose": "C"
+  },
+  {
+    "id": "missed-p9-m1-q8",
+    "source": "College Board Practice 9, Module 1, Question 8",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "text-structure-purpose",
+    "test": "Practice 9",
+    "taken": "2026-08-19",
+    "module": 1,
+    "number": 8,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "In response to concerns that some recent financial crises were exacerbated by consumers misunderstanding risks associated with credit cards, loans, and other financial products, policymakers in many countries have instituted risk-disclosure requirements on sellers of those products. Enrique Seira et al. investigated a variety of risk-disclosure messages sent to thousands of credit card customers and found that the messages had only small and short-lived effects on behavior. Seira et al. asserted that such effects may nevertheless be worth pursuing, given the negligible cost of messaging.",
+    "question": "Which choice best describes the function of the underlined portion in the text as a whole?",
+    "rule": "Most accurately describes the function of the underlined portion in the text as a whole.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "It notes a factor that led Seira et al. to not dismiss risk-disclosure messaging altogether despite their evidence of its limited utility.",
+        "why": "Choice A is the best answer because it most accurately describes the function of the underlined portion in the text as a whole. Seira et al. found that the effects of such messaging on consumer behavior were small and temporary, then assert that because the cost of the messaging is negligible, the approach may be worth doing even if the effects are limited. Thus, the underlined portion notes a factor—very low cost—that led the researchers to not completely dismiss risk-disclosure messaging despite their evidence of its limited utility."
+      },
+      {
+        "label": "B",
+        "text": "It acknowledges a type of risk-disclosure messaging that Seira et al. may not have fully accounted for in their study.",
+        "why": "Choice B is incorrect because the underlined portion doesn't refer to a particular type of risk-disclosure messaging."
+      },
+      {
+        "label": "C",
+        "text": "It describes a consideration that explains why Seira et al. recommended risk-disclosure messaging even though its effects may be small relative to its costs.",
+        "why": "Choice C is incorrect. Although the underlined portion does describe a consideration that led the researchers to recommend the messaging despite its small effects, it directly states that the cost is negligible—meaning that both the effects and the costs are small, not that the effects are small only relative to the costs."
+      },
+      {
+        "label": "D",
+        "text": "It points out a circumstance that Seira et al. conceded may make risk-disclosure messaging more effective than their study suggests.",
+        "why": "Choice D is incorrect because there's no indication that Seira et al. suggest the messaging could be more effective if it had lower costs."
+      }
+    ],
+    "chose": "C",
+    "underline": "given the negligible cost of messaging",
+    "passageHtml": "<p>In response to concerns that some recent financial crises were exacerbated by consumers misunderstanding risks associated with credit cards, loans, and other financial products, policymakers in many countries have instituted risk-disclosure requirements on sellers of those products. Enrique Seira <span>et al.</span> investigated a variety of risk-disclosure messages sent to thousands of credit card customers and found that the messages had only small and short-lived effects on behavior. Seira <span>et al.</span> asserted that such effects may nevertheless be worth pursuing, <span role=\"region\" aria-label=\"Referenced Content\">given the negligible cost of messaging</span>.</p>"
+  },
+  {
+    "id": "missed-p9-m1-q11",
+    "source": "College Board Practice 9, Module 1, Question 11",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice 9",
+    "taken": "2026-08-19",
+    "module": 1,
+    "number": 11,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "A student is examining a long, challenging poem that was initially published in a quarterly journal without explanatory notes, then later republished in a stand-alone volume containing only that poem and accompanying explanatory notes written by the poet. The student asserts that the explanatory notes were included in the republication primarily as a marketing device to help sell the stand-alone volume.",
+    "question": "Which statement, if true, would most directly support the student's claim?",
+    "rule": "Would most directly support the student's claim about the motivation for including explanatory notes.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "The text of the poem as published in the quarterly journal is not identical to the text of the poem published in the stand-alone volume.",
+        "why": "Choice A is incorrect because the student's claim is about the motivation for including the notes, not about changes to the poem itself."
+      },
+      {
+        "label": "B",
+        "text": "Many critics believe that the poet's explanatory notes remove certain ambiguities of the poem and make it less interesting as a result.",
+        "why": "Choice B is incorrect because the claim is about why the notes were included, not about how they affected readers' experience of the poem."
+      },
+      {
+        "label": "C",
+        "text": "The publishers of the stand-alone volume requested the explanatory notes from the poet in order to make the book attractive to readers who already had a copy of the poem in a journal issue.",
+        "why": "Choice C is the best answer because it would most directly support the student's claim about the motivation for including explanatory notes. If the publishers had requested the notes to make the book attractive to readers who already had a copy of the journal issue, this fact would support the student's claim that the notes were included primarily as a marketing device."
+      },
+      {
+        "label": "D",
+        "text": "Correspondence between the poet and the publisher reveals that the poet's explanatory notes went through several drafts.",
+        "why": "Choice D is incorrect because the fact that the poet drafted multiple versions doesn't directly address whether the notes were intended as a marketing device."
+      }
+    ],
+    "chose": "D",
+    "passageHtml": "<p>A student is examining a long, challenging poem that was initially published in a quarterly journal without explanatory notes, then later republished in a stand-alone volume containing only that poem and accompanying explanatory notes written by the poet. The student asserts that the explanatory notes were included in the republication primarily as a marketing device to help sell the stand-alone volume.</p>"
+  },
+  {
+    "id": "missed-p9-m1-q24",
+    "source": "College Board Practice 9, Module 1, Question 24",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "rhetorical-synthesis",
+    "test": "Practice 9",
+    "taken": "2026-08-19",
+    "module": 1,
+    "number": 24,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "While researching a topic, a student has taken the following notes: • If a moon orbiting a planet comes close enough to that planet, tidal forces can cause the moon to break apart. • In a 2022 study, researchers proposed that Saturn was once orbited by a large moon they named Chrysalis. • Their simulations indicated that Chrysalis would likely have come very close to Saturn around 160 million years ago. • At that distance, Chrysalis would have been broken apart by tidal forces. • The researchers hypothesized that the resulting debris formed Saturn's rings. The student wants to recount the sequence of events proposed by the researchers.",
+    "question": "Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "rule": "The sentence recounts the sequence of events proposed by the researchers: a large moon orbiting Saturn came close enough to the planet that it was broken apart by tidal forces, and the resulting debris formed Saturn's rings.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "According to researchers' simulations, two events likely occurred around 160 million years ago: first, Chrysalis came very close to Saturn, and second, debris from Saturn's rings caused the moon to break apart.",
+        "why": "Choice A is incorrect because the sentence misrepresents information from the notes; according to the notes, tidal forces, not debris, caused the moon to break apart."
+      },
+      {
+        "label": "B",
+        "text": "If a moon orbiting a planet (like Saturn) comes close enough to that planet, tidal forces can cause the moon to break apart.",
+        "why": "Choice B is incorrect. The sentence offers information relevant to the 2022 study but doesn't recount the sequence of events proposed by the researchers."
+      },
+      {
+        "label": "C",
+        "text": "Around 160 million years ago, a large moon (Chrysalis) came close enough to Saturn that tidal forces broke the moon apart; its debris then formed the planet's rings.",
+        "why": "Choice C is the best answer. The sentence recounts the sequence of events proposed by the researchers: a large moon orbiting Saturn came close enough to the planet that it was broken apart by tidal forces, and the resulting debris formed Saturn's rings."
+      },
+      {
+        "label": "D",
+        "text": "First, researchers proposed that Saturn was orbited by a large moon (Chrysalis); next, they conducted simulations; and, finally, they formed a hypothesis.",
+        "why": "Choice D is incorrect. The sentence recounts a sequence, but it's a sequence of the researchers' activities, not the sequence of events proposed by the researchers."
+      }
+    ],
+    "chose": "D"
+  },
+  {
+    "id": "missed-p9-m1-q27",
+    "source": "College Board Practice 9, Module 1, Question 27",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "rhetorical-synthesis",
+    "test": "Practice 9",
+    "taken": "2026-08-19",
+    "module": 1,
+    "number": 27,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "While researching a topic, a student has taken the following notes: • In 1851, German American artist Emanuel Leutze painted Washington Crossing the Delaware. • His huge painting (149 × 255 inches) depicts the first US president crossing a river with soldiers in the Revolutionary War. • In 2019, Cree artist Kent Monkman painted mistikôsiwak (Wooden Boat People): Resurgence of the People. • Monkman's huge painting (132 × 264 inches) was inspired by Leutze's. • It portrays Indigenous people in a boat rescuing refugees. The student wants to emphasize a similarity between the two paintings.",
+    "question": "Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "rule": "The sentence emphasizes a similarity between the two paintings, noting that Leutze's painting (which measures 149 × 255 inches) and Monkman's painting (which measures 132 × 264 inches) are both very large.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Monkman, a Cree artist, finished his painting in 2019; Leutze, a German American artist, completed his in 1851.",
+        "why": "Choice A is incorrect. The sentence mentions when each painting was completed; it doesn't emphasize a similarity between the two paintings."
+      },
+      {
+        "label": "B",
+        "text": "Although Monkman's painting was inspired by Leutze's, the people and actions the two paintings portray are very different.",
+        "why": "Choice B is incorrect. While the sentence acknowledges that one painting was inspired by the other, it emphasizes differences between the two paintings."
+      },
+      {
+        "label": "C",
+        "text": "Leutze's and Monkman's paintings are both huge, measuring 149 × 255 inches and 132 × 264 inches, respectively.",
+        "why": "Choice C is the best answer. The sentence emphasizes a similarity between the two paintings, noting that Leutze's painting (which measures 149 × 255 inches) and Monkman's painting (which measures 132 × 264 inches) are both very large."
+      },
+      {
+        "label": "D",
+        "text": "Leutze's painting depicts Revolutionary War soldiers, while Monkman's depicts Indigenous people and refugees.",
+        "why": "Choice D is incorrect. The sentence mentions a difference between the two paintings; it doesn't emphasize a similarity between them."
+      }
+    ],
+    "chose": "D"
+  },
+  {
+    "id": "missed-p9-m2-q8",
+    "source": "College Board Practice 9, Module 2, Question 8",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "central-ideas-details",
+    "test": "Practice 9",
+    "taken": "2026-08-19",
+    "module": 2,
+    "number": 8,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Poetry in Classical Nahuatl, the language of the Aztec Empire, relies on difrasismo, or a parallel noun construction that conventionally operates as a single metaphor. For example, the common difrasismo in cuauhtli in ocelotl (literally, “the eagle, the jaguar”) signifies “warrior.” The device's function is both formal—providing structure to lines of verse—and ritual: semantic relations among the two nouns and the concept they signify can be tenuous, as in the previous example, such that difrasismos are often only intelligible according to the conceptual associations observed in Aztec ceremonial culture.",
+    "question": "Which statement about the difrasismo in cuauhtli in ocelotl is most strongly supported by the text?",
+    "rule": "Presents a statement about the difrasismo that is directly supported by the text.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Its metaphorical significance derives from the semantic equivalence of the two nouns constituting the difrasismo.",
+        "why": "Choice A is incorrect because the text doesn't indicate that the two nouns used in a difrasismo are semantically equivalent."
+      },
+      {
+        "label": "B",
+        "text": "Its unintelligibility may cause its formal function within a line of verse to go unnoticed by present-day readers.",
+        "why": "Choice B is incorrect because the text doesn't indicate that there's a relationship between the formal function of the difrasismo and its intelligibility."
+      },
+      {
+        "label": "C",
+        "text": "Its apparent obscurity can be resolved when considered in the proper cultural context.",
+        "why": "Choice C is the best answer because it presents a statement about the difrasismo that is directly supported by the text. The text indicates that the relation between the words in a difrasismo may appear tenuous without the additional information supplied by Aztec ceremonial culture but that the meaning becomes intelligible in the context of that information."
+      },
+      {
+        "label": "D",
+        "text": "Its frequency in Classical Nahuatl poetry confirms its intelligibility to the Aztec audience.",
+        "why": "Choice D is incorrect because the text doesn't indicate that frequency of use is a necessary feature of intelligibility."
+      }
+    ],
+    "chose": "A",
+    "passageHtml": "<p>Poetry in Classical Nahuatl, the language of the Aztec Empire, relies on <em>difrasismo</em>, or a parallel noun construction that conventionally operates as a single metaphor. For example, the common difrasismo <span><em>in cuauhtli in ocelotl</em></span> (literally, “the eagle, the jaguar”) signifies “warrior.” The device’s function is both formal—providing structure to lines of verse—and ritual: semantic relations among the two nouns and the concept they signify can be tenuous, as in the previous example, such that difrasismos are often only intelligible according to the conceptual associations observed in Aztec ceremonial culture.</p>"
+  },
+  {
+    "id": "missed-p9-m2-q9",
+    "source": "College Board Practice 9, Module 2, Question 9",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice 9",
+    "taken": "2026-08-19",
+    "module": 2,
+    "number": 9,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "The population of the coral Lophelia pertusa declined significantly around 9,000 years ago in the Alboran Sea and around 11,000 years ago near the Mauritanian coast. Using the ratio of manganese to calcium, which inversely correlates with ocean oxygenation levels, marine scientist Rodrigo da Costa Portilho-Ramos and colleagues evaluated whether oxygenation played a role in the declines of L. pertusa. The researchers concluded that oxygenation may have been important in the Alboran Sea but not near the Mauritanian coast, since ___",
+    "question": "Which choice most effectively uses data from the graph to complete the statement?",
+    "rule": "Effectively uses data from the graph.",
+    "correctLabel": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "a substantial increase in oxygenation in the Alboran Sea corresponded with the local decline in L. pertusa, but the opposite relationship between oxygenation and L. pertusa was found near the Mauritanian coast.",
+        "why": "Choice A is incorrect because it asserts the opposite of what the graph indicates regarding oxygenation in the Alboran Sea: if the ratio was increasing, oxygenation was decreasing, not substantially increasing."
+      },
+      {
+        "label": "B",
+        "text": "L. pertusa declined in the Alboran Sea during a period of substantial local decline in oxygenation, but L. pertusa declined near the Mauritanian coast during a period of little local change in oxygenation.",
+        "why": "Choice B is the best answer because it effectively uses data from the graph. The ratio of manganese to calcium in samples from the Alboran Sea increased from about 30 micromoles per mole 10,000 years ago to about 80 micromoles per mole 8,000 years ago, which means that oxygenation decreased between 10,000 and 8,000 years ago. Meanwhile, there was almost no discernible change in the ratio near the Mauritanian coast between 12,000 and 10,000 years ago."
+      },
+      {
+        "label": "C",
+        "text": "oxygenation in the Alboran Sea was higher before the decline in L. pertusa than after the decline, whereas oxygenation near the Mauritanian coast was relatively low both before and after the decline in L. pertusa.",
+        "why": "Choice C is incorrect because the graph doesn't support the claim that oxygenation near the Mauritanian coast was consistently low."
+      },
+      {
+        "label": "D",
+        "text": "oxygenation in the Alboran Sea tended to be substantially higher than oxygenation near the Mauritanian coast during the period studied.",
+        "why": "Choice D is incorrect because it states the opposite of what the graph indicates."
+      }
+    ],
+    "chose": "A",
+    "passageHtml": "<figure><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"450\" height=\"472.84\" role=\"img\" aria-label=\"Line graph titled Ratio of Manganese to Calcium in Samples from Alboran Sea and Mauritanian Coast. The horizontal axis is labeled Approximate years before present, in thousands. It ranges from 2 to 20 in increments of 2. The vertical axis is labeled Manganese to calcium ratio, in micromoles per mole. It ranges from 0 to 100 in increments of 10. 2 lines are shown. Refer to long description.\" fill=\"currentColor\"><g id=\"edu-command-of-evidence-3233c162-ed420550-79eb-48d4-af01-cd27cdd08afd\"><defs>\n      <marker id=\"edu-command-of-evidence-3233c162-marker0\">\n        <polygon points=\"3 0, 0 5.196, 6 5.196\" fill=\"currentColor\" />\n      </marker>\n      <marker id=\"edu-command-of-evidence-3233c162-marker1\">\n        <path d=\"M0,0 L0,5 L5,5 L5,0 z\" fill=\"#BBB\" stroke=\"currentColor\" stroke-width=\"1.5\" />\n      </marker>\n      <marker id=\"edu-command-of-evidence-3233c162-marker2\">\n        <circle cx=\"3\" cy=\"3\" r=\"1.8\" fill=\"var(--figure-paper, #ffffff)\" stroke=\"currentColor\" stroke-width=\".6\" />\n      </marker>\n      <marker id=\"edu-command-of-evidence-3233c162-marker3\">\n        <polygon points=\"0.5 3, 2.3 2.3, 3 0.5, 3.7 2.3, 5.5 3, 3.7 3.7, 3 5.5, 2.3 3.7, 0.5 3\" fill=\"#999\" stroke-linejoin=\"round\" stroke=\"currentColor\" stroke-width=\".5\" />\n      </marker>\n    </defs><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"113.765625\" y1=\"96\" x2=\"435\" y2=\"96\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"107.765625\" y1=\"96\" x2=\"119.765625\" y2=\"96\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(101.765625 102)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">100</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"113.765625\" y1=\"116\" x2=\"435\" y2=\"116\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"107.765625\" y1=\"116\" x2=\"119.765625\" y2=\"116\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(101.765625 122)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">90</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"113.765625\" y1=\"136\" x2=\"435\" y2=\"136\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"107.765625\" y1=\"136\" x2=\"119.765625\" y2=\"136\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(101.765625 142)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">80</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"113.765625\" y1=\"156\" x2=\"435\" y2=\"156\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"107.765625\" y1=\"156\" x2=\"119.765625\" y2=\"156\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(101.765625 162)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">70</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"113.765625\" y1=\"176\" x2=\"435\" y2=\"176\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"107.765625\" y1=\"176\" x2=\"119.765625\" y2=\"176\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(101.765625 182)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">60</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"113.765625\" y1=\"196\" x2=\"435\" y2=\"196\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"107.765625\" y1=\"196\" x2=\"119.765625\" y2=\"196\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(101.765625 202)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">50</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"113.765625\" y1=\"216\" x2=\"435\" y2=\"216\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"107.765625\" y1=\"216\" x2=\"119.765625\" y2=\"216\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(101.765625 222)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">40</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"113.765625\" y1=\"236\" x2=\"435\" y2=\"236\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"107.765625\" y1=\"236\" x2=\"119.765625\" y2=\"236\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(101.765625 242)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">30</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"113.765625\" y1=\"256\" x2=\"435\" y2=\"256\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"107.765625\" y1=\"256\" x2=\"119.765625\" y2=\"256\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(101.765625 262)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">20</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"113.765625\" y1=\"276\" x2=\"435\" y2=\"276\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"107.765625\" y1=\"276\" x2=\"119.765625\" y2=\"276\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(101.765625 282)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">10</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"113.765625\" y1=\"296\" x2=\"435\" y2=\"296\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"107.765625\" y1=\"296\" x2=\"119.765625\" y2=\"296\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text text-anchor=\"end\" transform=\"translate(101.765625 302)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">0</text><text text-anchor=\"middle\" transform=\"translate(24 196) rotate(-90)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">Manganese to calcium ratio</text><text text-anchor=\"middle\" transform=\"translate(48 196) rotate(-90)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">(micromoles per mole)</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"113.765625\" y1=\"96\" x2=\"113.765625\" y2=\"296\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"129.82734375\" x2=\"129.82734375\" y1=\"96\" y2=\"296\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(129.82734375 315.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">2</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"161.95078125\" x2=\"161.95078125\" y1=\"96\" y2=\"296\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(161.95078125 315.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">4</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"194.07421875\" x2=\"194.07421875\" y1=\"96\" y2=\"296\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(194.07421875 315.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">6</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"226.19765625\" x2=\"226.19765625\" y1=\"96\" y2=\"296\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(226.19765625 315.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">8</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"258.32109375\" x2=\"258.32109375\" y1=\"96\" y2=\"296\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(258.32109375 315.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">10</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"290.44453125\" x2=\"290.44453125\" y1=\"96\" y2=\"296\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(290.44453125 315.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">12</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"322.56796875000003\" x2=\"322.56796875000003\" y1=\"96\" y2=\"296\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(322.56796875000003 315.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">14</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"354.69140625000006\" x2=\"354.69140625000006\" y1=\"96\" y2=\"296\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(354.69140625000006 315.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">16</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"386.8148437500001\" x2=\"386.8148437500001\" y1=\"96\" y2=\"296\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(386.8148437500001 315.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">18</text><line xmlns=\"http://www.w3.org/2000/svg\" x1=\"418.9382812500001\" x2=\"418.9382812500001\" y1=\"96\" y2=\"296\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"0.9\" /><text xmlns=\"http://www.w3.org/2000/svg\" x=\"0\" y=\"0\" text-anchor=\"middle\" transform=\"translate(418.9382812500001 315.84)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">20</text><text text-anchor=\"middle\" transform=\"translate(274.3828125 24)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">Ratio of Manganese to Calcium in Samples</text><text text-anchor=\"middle\" transform=\"translate(274.3828125 48)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">from Alboran Sea and Mauritanian Coast</text><text text-anchor=\"middle\" transform=\"translate(274.3828125 72)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\"></text><text text-anchor=\"middle\" transform=\"translate(274.3828125 349.67999999999995)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">Approximate years before present</text><text text-anchor=\"middle\" transform=\"translate(274.3828125 373.67999999999995)\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\">(in thousands)</text><rect xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" x=\"119.91252899169922\" y=\"390.84000000000003\" height=\"71\" width=\"225.17494201660156\" stroke=\"currentColor\" stroke-linejoin=\"mitre\" stroke-width=\"0.9\" /><line x1=\"126.91252899169922\" y1=\"407.84000000000003\" x2=\"153.91252899169922\" y2=\"407.84000000000003\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker0)\" /><line x1=\"153.91252899169922\" y1=\"407.84000000000003\" x2=\"180.91252899169922\" y2=\"407.84000000000003\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker0)\" /><text transform=\"translate(190.91252899169922 414.84000000000003)\" text-anchor=\"top\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\"> Alboran Sea</text><line x1=\"126.91252899169922\" y1=\"439.84000000000003\" x2=\"153.91252899169922\" y2=\"439.84000000000003\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker1)\" /><line x1=\"153.91252899169922\" y1=\"439.84000000000003\" x2=\"180.91252899169922\" y2=\"439.84000000000003\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker1)\" /><text transform=\"translate(190.91252899169922 446.84000000000003)\" text-anchor=\"top\" fill=\"currentColor\" font-size=\"19.84\" font-family=\"Crimson Text\"> Mauritanian coast</text><line x1=\"129.82734375\" y1=\"169.6\" x2=\"161.95078125\" y2=\"97\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker0)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker0)\" /><line x1=\"129.82734375\" y1=\"272\" x2=\"161.95078125\" y2=\"265.2\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker1)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker1)\" /><line x1=\"161.95078125\" y1=\"97\" x2=\"194.07421875\" y2=\"159.2\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker0)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker0)\" /><line x1=\"161.95078125\" y1=\"265.2\" x2=\"194.07421875\" y2=\"268\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker1)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker1)\" /><line x1=\"194.07421875\" y1=\"159.2\" x2=\"226.19765625\" y2=\"129.6\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker0)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker0)\" /><line x1=\"194.07421875\" y1=\"268\" x2=\"226.19765625\" y2=\"269.4\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker1)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker1)\" /><line x1=\"226.19765625\" y1=\"129.6\" x2=\"258.32109375\" y2=\"231\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker0)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker0)\" /><line x1=\"226.19765625\" y1=\"269.4\" x2=\"258.32109375\" y2=\"263\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker1)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker1)\" /><line x1=\"258.32109375\" y1=\"231\" x2=\"290.44453125\" y2=\"180.2\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker0)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker0)\" /><line x1=\"258.32109375\" y1=\"263\" x2=\"290.44453125\" y2=\"264.4\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker1)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker1)\" /><line x1=\"290.44453125\" y1=\"180.2\" x2=\"322.56796875000003\" y2=\"184.6\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker0)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker0)\" /><line x1=\"290.44453125\" y1=\"264.4\" x2=\"322.56796875000003\" y2=\"257.8\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker1)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker1)\" /><line x1=\"322.56796875000003\" y1=\"184.6\" x2=\"354.69140625000006\" y2=\"168\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker0)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker0)\" /><line x1=\"322.56796875000003\" y1=\"257.8\" x2=\"354.69140625000006\" y2=\"269.6\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker1)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker1)\" /><line x1=\"354.69140625000006\" y1=\"168\" x2=\"386.8148437500001\" y2=\"192.8\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker0)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker0)\" /><line x1=\"354.69140625000006\" y1=\"269.6\" x2=\"386.8148437500001\" y2=\"266.6\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker1)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker1)\" /><line x1=\"386.8148437500001\" y1=\"192.8\" x2=\"418.9382812500001\" y2=\"212.8\" stroke=\"currentColor\" stroke-width=\"2.4\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker0)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker0)\" /><line x1=\"386.8148437500001\" y1=\"266.6\" x2=\"418.9382812500001\" y2=\"271.6\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\" marker-end=\"url(#edu-command-of-evidence-3233c162-marker1)\" marker-start=\"url(#edu-command-of-evidence-3233c162-marker1)\" /></g></svg></figure><div role=\"region\" aria-label=\"Long description for line graph titled Ratio of Manganese to Calcium in Samples from Alboran Sea and Mauritanian Coast\"><ul>\n<li>The following 2 lines are shown:<br />\n<ul>\n<li>Alboran Sea</li>\n<li>Mauritanian coast</li>\n</ul>\n</li>\n<li>The Alboran Sea line:<br />\n<ul>\n<li>Begins at 2 thousand, 63.2 micromoles per mole</li>\n<li>Rises sharply to 4 thousand, 99.5 micromoles per mole</li>\n<li>Falls sharply to 6 thousand, 68.4 micromoles per mole</li>\n<li>Rises sharply to 8 thousand, 83.2 micromoles per mole</li>\n<li>Falls sharply to 10 thousand, 32.5 micromoles per mole</li>\n<li>Rises sharply to 12 thousand, 57.9 micromoles per mole</li>\n<li>Falls gradually to 14 thousand, 55.7 micromoles per mole</li>\n<li>Rises gradually to 16 thousand, 64 micromoles per mole</li>\n<li>Falls sharply to 18 thousand, 51.6 micromoles per mole</li>\n<li>Falls sharply to 20 thousand, 41.6 micromoles per mole</li>\n</ul>\n</li>\n<li>The Mauritanian coast line:<br />\n<ul>\n<li>Begins at 2 thousand, 12 micromoles per mole</li>\n<li>Rises gradually to 4 thousand, 15.4 micromoles per mole</li>\n<li>Falls gradually to 6 thousand, 14 micromoles per mole</li>\n<li>Falls gradually to 8 thousand, 13.3 micromoles per mole</li>\n<li>Rises gradually to 10 thousand, 16.5 micromoles per mole</li>\n<li>Falls gradually to 12 thousand, 15.8 micromoles per mole</li>\n<li>Rises gradually to 14 thousand, 19.1 micromoles per mole</li>\n<li>Falls gradually to 16 thousand, 13.2 micromoles per mole</li>\n<li>Rises gradually to 18 thousand, 14.7 micromoles per mole</li>\n<li>Falls gradually to 20 thousand, 12.2 micromoles per mole</li>\n</ul>\n</li>\n</ul></div>\n<p>The population of the coral <em>Lophelia pertusa</em> declined significantly around 9,000 years ago in the Alboran Sea and around 11,000 years ago near the Mauritanian coast. Using the ratio of manganese to calcium, which inversely correlates with ocean oxygenation levels, marine scientist Rodrigo da Costa Portilho-Ramos and colleagues evaluated whether oxygenation played a role in the declines of <em>L. pertusa</em>. The researchers concluded that oxygenation may have been important in the Alboran Sea but not near the Mauritanian coast, since <span class=\"blank\" id=\"passageBlank\"> </span></p>"
+  },
+  {
+    "id": "missed-p9-m2-q12",
+    "source": "College Board Practice 9, Module 2, Question 12",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "command-of-evidence",
+    "test": "Practice 9",
+    "taken": "2026-08-19",
+    "module": 2,
+    "number": 12,
+    "difficulty": "hard",
+    "hasBlank": false,
+    "passage": "Political scientists who favor the traditional view of voter behavior claim that voting in an election does not change a voter's attitude toward the candidates in that election. Focusing on each US presidential election from 1976 to 1996, Ebonya Washington and Sendhil Mullainathan tested this claim by distinguishing between subjects who had just become old enough to vote (around half of whom actually voted) and otherwise similar subjects who were slightly too young to vote (and thus none of whom voted). Washington and Mullainathan compared the attitudes of the groups of subjects toward the winning candidate two years after each election.",
+    "question": "Which finding from Washington and Mullainathan's study, if true, would most directly weaken the claim made by people who favor the traditional view of voter behavior?",
+    "rule": "Presents a finding that would weaken the claim.",
+    "correctLabel": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Subjects' attitudes toward the winning candidate two years after a given election were strongly predicted by subjects' general political orientation, regardless of whether subjects were old enough to vote at the time of the election.",
+        "why": "Choice A is incorrect because a finding about general political orientation wouldn't address the presence or absence of changes in attitudes among those subjects who did actually vote."
+      },
+      {
+        "label": "B",
+        "text": "Subjects who were not old enough to vote in a given election held significantly more positive attitudes towards the winning candidate two years later than they held at the time of the election.",
+        "why": "Choice B is incorrect because the finding would involve only people who didn't vote."
+      },
+      {
+        "label": "C",
+        "text": "Subjects who voted in a given election held significantly more polarized attitudes toward the winning candidate two years later than did subjects who were not old enough to vote in that election.",
+        "why": "Choice C is the best answer because it presents a finding that would weaken the claim. If attitudes toward the winning candidate were significantly more polarized among subjects who had voted than among subjects who had been too young to vote, that would suggest that the act of voting did have an effect on the voters' attitudes."
+      },
+      {
+        "label": "D",
+        "text": "Two years after a given election, subjects who voted and subjects who were not old enough to vote were significantly more likely to express negative attitudes than positive attitudes toward the winning candidate in that election.",
+        "why": "Choice D is incorrect because the finding would reflect all subjects' attitudes at one particular time whether they voted or not, rather than the presence or absence of a change in voters' attitudes after voting."
+      }
+    ],
+    "chose": "D"
+  },
+  {
+    "id": "missed-p9-m2-q19",
+    "source": "College Board Practice 9, Module 2, Question 19",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "form-structure-sense",
+    "test": "Practice 9",
+    "taken": "2026-08-19",
+    "module": 2,
+    "number": 19,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Recent pollen analyses of the Aran Islands have led some researchers to propose that the now treeless islands were once wooded. This hypothesis ___ that certain trees, such as P. sylvestris, survived without interruption or human intervention throughout the Holocene cannot stand, researchers Michael O'Connell and Karen Molloy counter, unless other explanations can first be ruled out.",
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "rule": "The convention being tested is the use of verb forms within a sentence.",
+    "correctLabel": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "suggesting",
+        "why": "Choice A is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite present participle \"suggesting\" is correctly used to form a restrictive participial phrase (\"suggesting...Holocene\") within the main clause (\"This hypothesis...cannot stand...\"). This participial phrase functions as part of the sentence's subject."
+      },
+      {
+        "label": "B",
+        "text": "suggested",
+        "why": "Choice B is incorrect because it results in an ungrammatical sentence: the finite verb \"suggested\" can't be used in this way within the subject of the sentence."
+      },
+      {
+        "label": "C",
+        "text": "suggests",
+        "why": "Choice C is incorrect because it results in an ungrammatical sentence: the finite verb \"suggests\" can't be used in this way within the subject of the sentence."
+      },
+      {
+        "label": "D",
+        "text": "has suggested",
+        "why": "Choice D is incorrect because it results in an ungrammatical sentence: the finite verb \"has suggested\" can't be used in this way within the subject of the sentence."
+      }
+    ],
+    "chose": "C"
+  },
+  {
+    "id": "missed-p9-m2-q23",
+    "source": "College Board Practice 9, Module 2, Question 23",
+    "skill": "missed-in-test",
+    "domain": "extra",
+    "realSkill": "transitions",
+    "test": "Practice 9",
+    "taken": "2026-08-19",
+    "module": 2,
+    "number": 23,
+    "difficulty": "hard",
+    "hasBlank": true,
+    "passage": "Economist Elinor Ostrom's studies of communities around the world have empirically demonstrated that common pool resources, such as grazing lands, can be sustainably managed by the people who use them (rather than through private entities or centralized governments). ___ Ostrom's work is a repudiation of the “tragedy of the commons,” the view that individuals will inevitably overexploit a finite shared resource if given unfettered access to it.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "rule": "\"As such\" correctly signals that the claim in this sentence—that Ostrom's work is a repudiation of the \"tragedy of the commons\" view—follows logically from the information about Ostrom's studies in the previous sentence.",
+    "correctLabel": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "By contrast,",
+        "why": "Choice A is incorrect because \"by contrast\" illogically signals that the information in this sentence contrasts with the information about Ostrom's studies."
+      },
+      {
+        "label": "B",
+        "text": "For example,",
+        "why": "Choice B is incorrect because \"for example\" illogically signals that the claim exemplifies the information about Ostrom's studies."
+      },
+      {
+        "label": "C",
+        "text": "That said,",
+        "why": "Choice C is incorrect because \"that said\" illogically signals that the information is an exception or caveat to the information about Ostrom's studies."
+      },
+      {
+        "label": "D",
+        "text": "As such,",
+        "why": "Choice D is the best answer. \"As such\" correctly signals that the claim in this sentence—that Ostrom's work is a repudiation of the \"tragedy of the commons\" view—follows logically from the information about Ostrom's studies in the previous sentence."
+      }
+    ],
+    "chose": "A"
   }
 ]

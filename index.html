@@ -6,7 +6,7 @@
   <title>SAT Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=98" />
+  <link rel="stylesheet" href="styles.css?v=99" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -157,21 +157,6 @@
             </div>
             <button type="button" class="btn btn-small day-done-go" id="dayDoneGo">Keep going</button>
           </div>
-
-          <!-- The rule behind the skill he is working, ahead of the questions on
-               it. <details> so it opens once and then folds away: a lesson he has
-               read is furniture, and one he has not is the whole point. Whether it
-               is folded is remembered. -->
-          <details class="concept" id="conceptPanel" hidden>
-            <summary class="concept-head">
-              <span class="concept-kicker">Worth knowing first</span>
-              <span class="concept-title" id="conceptTitle"></span>
-              <!-- What it has cost him, until he has read it; the procedure
-                   afterwards, so the folded line stays worth glancing at. -->
-              <span class="concept-hint" id="conceptHint"></span>
-            </summary>
-            <div class="concept-body" id="conceptBody"></div>
-          </details>
 
           <!-- The pager rides the badge line rather than taking a row of its own:
                that line is mostly empty, and the title below keeps full width to
@@ -477,6 +462,6 @@
   </dialog>
 
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=110"></script>
+  <script src="app.js?v=113"></script>
 </body>
 </html>
