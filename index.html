@@ -6,7 +6,7 @@
   <title>SAT Practice</title>
   <!-- ?v= bumps whenever styles.css changes, so browsers and GitHub Pages
        cannot serve a stale stylesheet against new markup. -->
-  <link rel="stylesheet" href="styles.css?v=99" />
+  <link rel="stylesheet" href="styles.css?v=103" />
   <script>
     // Applied before first paint so a saved dark preference never flashes light.
     try {
@@ -86,61 +86,86 @@
     <!-- One compact bar. The skill list is built from the loaded banks and
          grouped by domain inside the dropdown, so the four score-report
          headings survive without costing four rows of screen. -->
+    <!-- Two rows, and the split is the meaning: the top one NARROWS whatever set
+         is chosen, the bottom one CHOOSES it. They were interleaved before -- a
+         tick sitting between two dropdowns -- so neither group read as a group,
+         and the two ticks that now combine sat on different lines. -->
     <div class="controls">
-      <label class="control">
-        <span>Skill</span>
-        <select id="skillSelect"></select>
-      </label>
-      <label class="control">
-        <span>Difficulty</span>
-        <select id="difficultySelect">
-          <option value="all">Any</option>
-          <option value="easy">Easy</option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard</option>
-          <option value="very-hard">Very hard</option>
-        </select>
-      </label>
-      <!-- A tick rather than a skill. As a skill it OCCUPIED the dropdown, so
-           choosing it cost the skill breakdown entirely -- the one thing worth
-           knowing about a set of mistakes is which skill they fall in. As a tick
-           it narrows the pool and leaves the dropdown free to answer that, with
-           counts. Works the same in both sections; maths misses are grouped by
-           College Board's own skill for the question. -->
-      <label class="switch" title="Only the questions you have missed on a real test. The Skill dropdown then counts them by skill, so you can see where they cluster.">
-        <input type="checkbox" id="missedOnlyToggle" />
-        <span>Missed in a test</span>
-      </label>
-      <!-- Only ever means anything inside the missed set, so it appears with
-           that tick and is absent otherwise rather than sitting there greyed
-           out in every other view. Options are built from the set itself. -->
-      <label class="control" id="testControl" hidden>
-        <span>Test</span>
-        <select id="testSelect"></select>
-      </label>
-      <!-- Questions he has missed are kept out of the ordinary sequence and
-           gathered here, so they can be worked through as a set rather than met
-           one at a time weeks apart. Nothing is deleted; this tick is where they
-           live. -->
-      <label class="switch" title="Questions you have missed are held out of the normal sequence and collected here. Tick to work through them as a set.">
-        <input type="checkbox" id="wrongOnlyToggle" />
-        <span>Wrong answers only</span>
-      </label>
-      <!-- On by default: the useful set is what he has still to get right, not
-           the whole bank. Nothing is deleted -- the counts stay in his history
-           and unticking brings every one of them straight back. -->
-      <label class="switch" title="Hides questions answered correctly first time and never missed since. Nothing is deleted — untick to practise them again.">
-        <input type="checkbox" id="hideAcedToggle" checked />
-        <span>Hide first-time correct</span>
-      </label>
-      <!-- The only set he picks by hand. Inside it the two automatic retirements
-           are off: a question he starred must not disappear because he later got
-           it right. -->
-      <label class="switch" title="Only the questions you have starred. Star and unstar them on the question itself — nothing here is automatic.">
-        <input type="checkbox" id="starredOnlyToggle" />
-        <span>Starred only</span>
-      </label>
-      <button type="button" class="link-btn" id="restartSequence">Restart</button>
+      <div class="controls-row">
+        <label class="control">
+          <span>Skill</span>
+          <select id="skillSelect"></select>
+        </label>
+        <label class="control">
+          <span>Difficulty</span>
+          <select id="difficultySelect">
+            <option value="all">Any</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="very-hard">Very hard</option>
+          </select>
+        </label>
+        <!-- Only ever means anything inside the missed set, so it appears with
+             that tick and is absent otherwise rather than sitting there greyed
+             out in every other view. Options are built from the set itself. Last
+             of the three because it is the narrowest. -->
+        <label class="control" id="testControl" hidden>
+          <span>Test</span>
+          <select id="testSelect"></select>
+        </label>
+      </div>
+
+      <div class="controls-row">
+        <!-- The four set ticks, then the one retirement, then the action. The two
+             that draw a pool out of the bank come first and sit together, because
+             ticking both means the two sets at once. -->
+        <!-- A tick rather than a skill. As a skill it OCCUPIED the dropdown, so
+             choosing it cost the skill breakdown entirely -- the one thing worth
+             knowing about a set of mistakes is which skill they fall in. As a tick
+             it narrows the pool and leaves the dropdown free to answer that, with
+             counts. Works the same in both sections; maths misses are grouped by
+             College Board's own skill for the question. -->
+        <label class="switch" title="Only the questions you have missed on a real test. The Skill dropdown then counts them by skill, so you can see where they cluster.">
+          <input type="checkbox" id="missedOnlyToggle" />
+          <span>Missed in a test</span>
+        </label>
+        <!-- Never answered in the app and never met on a practice test either.
+             Composes with the Difficulty dropdown, which is the point: "never
+             attempted, hard" is the set worth working, and neither half of that is
+             useful on its own. Ticked alongside "Missed in a test" it means the two
+             sets TOGETHER -- his own mistakes plus fresh material -- because ANDing
+             them would be empty by definition. -->
+        <label class="switch" title="Only questions you have never answered here and never met on a practice test. Pair it with Difficulty — or with 'Missed in a test' to work both sets at once.">
+          <input type="checkbox" id="neverOnlyToggle" />
+          <span>Never attempted</span>
+        </label>
+        <!-- Questions he has missed are kept out of the ordinary sequence and
+             gathered here, so they can be worked through as a set rather than met
+             one at a time weeks apart. Nothing is deleted; this tick is where they
+             live. -->
+        <label class="switch" title="Questions you have missed are held out of the normal sequence and collected here. Tick to work through them as a set.">
+          <input type="checkbox" id="wrongOnlyToggle" />
+          <span>Wrong answers only</span>
+        </label>
+        <!-- The only set he picks by hand. Inside it the two automatic retirements
+             are off: a question he starred must not disappear because he later got
+             it right. -->
+        <label class="switch" title="Only the questions you have starred. Star and unstar them on the question itself — nothing here is automatic.">
+          <input type="checkbox" id="starredOnlyToggle" />
+          <span>Starred only</span>
+        </label>
+        <!-- Different in kind from the four above -- it does not choose a set, it
+             takes finished questions out of one -- so it sits after them, with a
+             rule between. On by default: the useful set is what he has still to get
+             right, not the whole bank. Nothing is deleted; unticking brings every
+             one of them straight back. -->
+        <label class="switch is-apart" title="Hides questions answered correctly first time and never missed since. Nothing is deleted — untick to practise them again.">
+          <input type="checkbox" id="hideAcedToggle" checked />
+          <span>Hide first-time correct</span>
+        </label>
+        <button type="button" class="link-btn" id="restartSequence">Restart</button>
+      </div>
     </div>
 
     <div class="layout">
@@ -462,6 +487,6 @@
   </dialog>
 
   <script src="shared.js?v=11"></script>
-  <script src="app.js?v=113"></script>
+  <script src="app.js?v=120"></script>
 </body>
 </html>

@@ -439,6 +439,7 @@ let section = DEFAULT_SECTION;
 let hideAced = true;
 let starredOnly = false;   // show only the questions he has starred
 let missedOnly = false;    // restrict the pool to questions missed on a real test
+let neverOnly = false;     // restrict the pool to questions never attempted at all
 let clearedCount = 0;      // how many the line above set aside, for the readout
 let missedCount = 0;       // and how many "Wrong answers only" is holding back
 let directionAnswered = false;
@@ -478,6 +479,7 @@ const testControl = document.getElementById('testControl');
 const hideAcedToggle = document.getElementById('hideAcedToggle');
 const starredOnlyToggle = document.getElementById('starredOnlyToggle');
 const missedOnlyToggle = document.getElementById('missedOnlyToggle');
+const neverOnlyToggle = document.getElementById('neverOnlyToggle');
 // Rebuilt with the rest of the badge line on every renderMeta, exactly as the
 // timer is, so it is looked up again rather than held: the element this points at
 // is replaced, not mutated.
@@ -710,11 +712,13 @@ testFilter = (store.filters && store.filters.test) || 'all';
 hideAced = !(store.filters && store.filters.hideAced === false);
 starredOnly = !!(store.filters && store.filters.starredOnly);
 missedOnly = !!(store.filters && store.filters.missedOnly);
+neverOnly = !!(store.filters && store.filters.neverOnly);
 
 function rememberFilters() {
   store.filters = {
     skill: skillFilter, difficulty: difficultyFilter, test: testFilter,
-    hideAced: hideAced, starredOnly: starredOnly, missedOnly: missedOnly
+    hideAced: hideAced, starredOnly: starredOnly, missedOnly: missedOnly,
+    neverOnly: neverOnly
   };
   saveStore();
 }
@@ -2695,20 +2699,79 @@ function testFilterApplies() {
   return testFilter !== 'all' && missedOnly;
 }
 
+// The two set ticks are a UNION when both are on, not an intersection: a question
+// he has missed has by definition been attempted, so ANDing them yields nothing.
+// Both on means "my mistakes and anything I have never tried" -- his own errors
+// plus fresh material, which is the set worth sitting down to.
+function inChosenSets(question) {
+  const missed = question.skill === MISSED_SKILL;
+  if (missedOnly && neverOnly) return missed || neverAttempted(question, neverPaperIds);
+  if (missedOnly) return missed;
+  if (neverOnly) return neverAttempted(question, neverPaperIds);
+  return true;
+}
+
+// The dropdown means two different things depending on which side of the missed
+// tick a question sits, and with both ticks on the pool holds both kinds at once --
+// so this is decided per question rather than per view. Outside the missed tick a
+// missed copy is still matched on `skill`, which is how it stays out of ordinary
+// practice.
+function skillMatches(question) {
+  if (skillFilter === 'all') return true;
+  if (missedOnly && question.skill === MISSED_SKILL) {
+    return missedSkillOf(question) === skillFilter;
+  }
+  return question.skill === skillFilter;
+}
+
+// One of his own mistakes every `gap` questions, the rest fresh, in the order each
+// already had. Stable for a given pool: no randomness, so his place in the
+// sequence means the same thing on every render.
+function interleaveMissed(rows) {
+  const mine = rows.filter((q) => q.skill === MISSED_SKILL);
+  const fresh = rows.filter((q) => q.skill !== MISSED_SKILL);
+  if (mine.length === 0 || fresh.length === 0) return rows;
+
+  const gap = Math.max(1, Math.round(fresh.length / mine.length));
+  const out = [];
+  let next = 0;
+  fresh.forEach((q, i) => {
+    out.push(q);
+    if ((i + 1) % gap === 0 && next < mine.length) out.push(mine[next++]);
+  });
+  // Anything left over goes on the end rather than being dropped.
+  while (next < mine.length) out.push(mine[next++]);
+  return out;
+}
+
+// Built once per pass, not once per question. Module-scoped because inChosenSets
+// is called from the filter and from the dropdown counts.
+let neverPaperIds = null;
+
 function applyFilters() {
+  neverPaperIds = neverOnly ? attemptedOnPaper() : null;
   pool = bank.filter((q) =>
     // First and unconditionally: the two sections are scored separately and
     // never share a pool, so nothing below can reach across them.
     sectionOf(q) === section &&
-    // Inside the missed set the dropdown means the skill the question tests;
-    // everywhere else it means the bank the question came from.
-    (missedOnly ? q.skill === MISSED_SKILL : true) &&
-    (skillFilter === 'all'
-      || (missedOnly ? missedSkillOf(q) === skillFilter : q.skill === skillFilter)) &&
+    inChosenSets(q) &&
+    skillMatches(q) &&
     (difficultyFilter === 'all' || difficultyOf(q) === difficultyFilter) &&
     (!testFilterApplies() || q.test === testFilter) &&
     (!starredOnly || isStarred(q.id))
   );
+  // With both set ticks on, the pool is in bank order -- which puts every fresh
+  // question first and his 142 mistakes at position 1,579. He would not reach one
+  // for about 39 days, so ticking both would hide the very thing it was ticked
+  // for. Spread them through instead: one of his own roughly every twelfth
+  // question, which is the ratio of the two sets.
+  //
+  // Deterministic, because applyFilters runs on every render and the cursor is an
+  // index into this list -- a shuffled order would make Next jump at random. Safe
+  // to reorder at all only because this combination has its own cursor key, which
+  // has never held a saved position; the bank's own order is still append-only.
+  if (missedOnly && neverOnly) pool = interleaveMissed(pool);
+
   // Words he has beaten drop out, so the drill is always the ones still costing
   // him something rather than a march through all 952.
   pool = pool.filter((q) => q.skill !== VOCAB_SKILL || !vocabMastered(q.id));
@@ -2721,7 +2784,7 @@ function applyFilters() {
   // started paying off. Same for the missed set: a starred question he has also
   // missed should not need a second tick to be visible.
   const beforeAced = pool.length;
-  if (!starredOnly && !missedOnly) pool = pool.filter((q) => !isAced(q));
+  if (!starredOnly && !missedOnly && !neverOnly) pool = pool.filter((q) => !isAced(q));
   // Kept so the readout can show what was set aside. Questions dropping out of a
   // count with no explanation reads like losing them. Zero under wrong-only: a
   // question he has never missed is not part of that set to begin with, so
@@ -2733,7 +2796,9 @@ function applyFilters() {
   // aside rather than appear to have been lost, and the number is the whole
   // argument for going and looking at them.
   const beforeMissed = pool.length;
-  if (!starredOnly && !missedOnly) pool = pool.filter((q) => !isMissed(q));
+  // Both retirements are skipped under "Never attempted" too, though it changes
+  // nothing: a question with no attempts can be neither aced nor missed.
+  if (!starredOnly && !missedOnly && !neverOnly) pool = pool.filter((q) => !isMissed(q));
   missedCount = beforeMissed - pool.length;
 
   if (wrongOnly) pool = pool.filter((q) => isWrongEver(q.id));
@@ -2766,8 +2831,9 @@ function cursorKey() {
   // was a SKILL are still valid -- they just belong to a skill value nothing
   // selects any more, and no position or count is lost either way.
   const miss = missedOnly ? '|missed' : '';
+  const never = neverOnly ? '|new' : '';
   return `${sec}${skillFilter}|${difficultyFilter}`
-    + `|${wrongOnly ? 'wrong' : 'all'}${test}${left}${star}${miss}`;
+    + `|${wrongOnly ? 'wrong' : 'all'}${test}${left}${star}${miss}${never}`;
 }
 
 function cursorValue() {
@@ -3104,6 +3170,20 @@ function attemptedOnPaper() {
     (set || []).forEach((q) => { if (q.bankId) ids.add(q.bankId); });
   });
   return ids;
+}
+
+// Never answered in the app, and never met on a practice test either -- the same
+// union the "Never attempted" readout counts, so the tick and the number on the
+// page can never disagree. `seenInTests` covers every Reading question in a
+// sitting he took, right answers included; attemptedOnPaper() covers the maths
+// links, which have no matchable text.
+//
+// Called once per question per filter pass, so the paper set is passed in rather
+// than rebuilt each time.
+function neverAttempted(question, onPaper) {
+  if (!countsAsRemaining(question)) return false;     // vocab, defective, missed sets
+  if (statsFor(question.id).seen > 0) return false;
+  return !seenInTests[question.id] && !onPaper.has(question.id);
 }
 
 // What "left to do" is counted over. The vocabulary drill is synthesised from
@@ -3752,23 +3832,33 @@ function buildSkillSelect() {
   // from the missed questions themselves, by the skill each one tests, ordered
   // by how many there are. That ordering is the answer he opened it for.
   if (missedOnly) {
-    const rows = bank.filter((q) =>
-      q.skill === MISSED_SKILL && sectionOf(q) === section);
+    neverPaperIds = neverOnly ? attemptedOnPaper() : null;
+    // With "Never attempted" ticked as well the list covers both sets, so it is
+    // built from the same union the pool uses.
+    const rows = bank.filter((q) => sectionOf(q) === section && inChosenSets(q));
     // Counted within whichever test is selected, so the two controls describe the
     // same set: picking a test rewrites these numbers to say where THAT sitting's
     // mistakes fell. `all` counts everything, as it says.
-    const inTest = rows.filter((q) => !testFilterApplies() || q.test === testFilter);
+    // ...and within the chosen difficulty, for the same reason. `overall` below is
+    // left unscoped so the ORDER of the list never moves under his cursor.
+    const inTest = rows.filter((q) =>
+      (!testFilterApplies() || q.test === testFilter)
+      && (difficultyFilter === 'all' || difficultyOf(q) === difficultyFilter));
 
+    // A missed copy is grouped by the skill it TESTS; a never-attempted one by its
+    // own. For Reading the two key spaces are the same words, so they merge
+    // cleanly rather than listing a skill twice.
+    const keyOf = (q) => (q.skill === MISSED_SKILL ? missedSkillOf(q) : q.skill);
     const tally = {};
     const overall = {};
     rows.forEach((q) => {
-      const key = missedSkillOf(q);
+      const key = keyOf(q);
       if (!key) return;
       overall[key] = (overall[key] || 0) + 1;
       tally[key] = tally[key] || 0;
     });
     inTest.forEach((q) => {
-      const key = missedSkillOf(q);
+      const key = keyOf(q);
       if (key) tally[key] += 1;
     });
 
@@ -3809,6 +3899,7 @@ function buildSkillSelect() {
   const counts = {};
   const present = {};
   let available = 0;
+  neverPaperIds = neverOnly ? attemptedOnPaper() : null;
   bank.forEach((q) => {
     // Only the section on screen. Counting across both would put maths totals on
     // a Reading dropdown, and the pool the numbers describe is section-scoped.
@@ -3816,6 +3907,13 @@ function buildSkillSelect() {
     if (q.skill === VOCAB_SKILL && vocabMastered(q.id)) return;
     present[q.skill] = true;
     if (starredOnly && !isStarred(q.id)) return;
+    // After `present`, so a skill with nothing at this difficulty still lists,
+    // showing (0). Before it, the skill would disappear from the dropdown, which
+    // reads as a bug rather than as an empty set.
+    if (difficultyFilter !== 'all' && difficultyOf(q) !== difficultyFilter) return;
+    // The counts have to describe the same pool the ticks produce, or the dropdown
+    // promises questions that are not there. Same predicate, not a second copy.
+    if (!inChosenSets(q)) return;
     if (starredOnly ? false : (wrongOnly ? !isWrongEver(q.id) : isAced(q) || isMissed(q))) return;
     counts[q.skill] = (counts[q.skill] || 0) + 1;
     if (!EXTRA_SKILLS.has(q.skill)) available += 1;
@@ -3885,8 +3983,11 @@ function buildTestSelect() {
   // so the old test would have counted every sitting as empty -- and beyond that,
   // a count that fell as he practised would stop answering the question he opened
   // the dropdown for, which is where his mistakes ARE, not what is left to do.
+  // Skill is applied further down, gated on the tick; only difficulty is added
+  // here. Doing both in both places would work but says the same thing twice.
   const available = (q) =>
-    missedOnly ? true : (wrongOnly ? isWrongEver(q.id) : !isAced(q) && !isMissed(q));
+    (difficultyFilter === 'all' || difficultyOf(q) === difficultyFilter)
+    && (missedOnly ? true : (wrongOnly ? isWrongEver(q.id) : !isAced(q) && !isMissed(q)));
   // Newest first by the date he sat it, falling back to the label so tests
   // without a date still order predictably rather than by bank position.
   const taken = {};
@@ -4006,6 +4107,11 @@ function setupControls() {
     syncDifficultySelect();
     difficultySelect.addEventListener('change', () => {
       difficultyFilter = difficultySelect.value;
+      // The Skill and Test counts are scoped to the difficulty, so they have to be
+      // rebuilt with it -- otherwise picking "hard" leaves both lists describing
+      // every difficulty and promising questions the pool will not serve.
+      // buildSkillSelect calls buildTestSelect at its foot.
+      if (bank.length > 0) buildSkillSelect();
       rememberFilters();
       current = null;
       nextQuestion({ step: 0, scroll: false });
@@ -4016,6 +4122,20 @@ function setupControls() {
     starredOnlyToggle.checked = starredOnly;
     starredOnlyToggle.addEventListener('change', () => {
       starredOnly = starredOnlyToggle.checked;
+      rememberFilters();
+      if (bank.length > 0) buildSkillSelect();
+      current = null;
+      nextQuestion({ step: 0, scroll: false });
+    });
+  }
+
+  if (neverOnlyToggle) {
+    neverOnlyToggle.checked = neverOnly;
+    neverOnlyToggle.addEventListener('change', () => {
+      neverOnly = neverOnlyToggle.checked;
+      // Both ticks together is legal and means the union -- see inChosenSets. The
+      // skill resets because the list it is chosen from changes shape.
+      skillFilter = 'all';
       rememberFilters();
       if (bank.length > 0) buildSkillSelect();
       current = null;
